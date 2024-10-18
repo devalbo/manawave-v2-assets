@@ -1,0 +1,60 @@
+
+.mw-counters-tokens-sheet {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 3in;
+  height: 5in;
+  border: 1px solid #000;
+  border-radius: 10px;
+  font-family: 'Beleren', 'Garamond', serif;
+  background-color: #f0f0f0;
+  /* padding: 2px; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.mw-counters-tokens-sheet-border-frame {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 3px;
+  padding: 2px;
+  height: 100%;
+}
+
+.mw-counters-tokens-sheet-body {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  max-height: 200px;
+}
+
+.mw-counters-tokens-sheet-table-container {
+  flex-grow: 1; /* Each item grows equally */
+  flex-basis: 0; /* Base width is 0, allowing items to take up equal space */
+  padding: 2px; /* Optional padding */
+  text-align: center; /* Optional: centers text within each item */
+  border: 1px solid #000; /* Optional: adds border for visibility */
+}
+
+.mw-counters-tokens-sheet-table {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2px;
+  width: 100%;
+}
+
+.mw-counters-tokens-sheet-table-grid-header {
+  font-weight: bold;
+  background-color: #f0f0f0;
+  padding: 5px;
+  text-align: center;
+}
+
+.mw-counters-tokens-sheet-table-grid-item {
+  padding: 2px;
+  padding-top: 5px;
+  border: 1px solid #ccc;
+  text-align: center;
+}

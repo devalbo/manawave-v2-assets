@@ -1,0 +1,40 @@
+---
+title: Placement Grid
+sidebar_position: 9
+---
+
+
+import BrowserOnly from "@docusaurus/BrowserOnly";
+import { MwPlacementGrid } from "./mw-placement-grid";
+import { PdfWrapper } from "./PdfWrapper";
+
+
+export const ThisIsCards = () => {
+
+  return (
+    <BrowserOnly>
+      {
+        () => (
+          <>
+            <PdfWrapper filename="mw-placement-grid.pdf">
+              <div 
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  gap: "10px",
+                  justifyContent: "space-around",  /* Adjusts spacing between cards */
+                  alignItems: "flex-start",        /* Aligns cards to the top */
+                  gap: "20px",                     /* Adds space between the cards */
+                }}>
+                <MwPlacementGrid />
+              </div>
+            </PdfWrapper>
+          </>
+          )
+      }    
+    </BrowserOnly>
+  )
+}
+
+
+<ThisIsCards />

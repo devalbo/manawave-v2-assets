@@ -1,0 +1,61 @@
+.mw-big-card-print-sheets {
+  display: "grid";
+  /* grid-template-columns: "1fr 1fr"; */
+}
+
+
+.mw-big-card-print-sheet {
+  display: "grid";
+  grid-template-columns: "1fr 1fr";
+  gap: "10px";
+  grid-auto-rows: "minmax(100px, auto)";
+  justify-content: "space-around";
+  align-items: "flex-start";
+  gap: "20px";
+  padding: "20px";
+  page-break-after: always;
+  width: 8in;
+  height: 10.5in;
+}
+
+
+.mw-medium-card-print-sheets {
+  display: "grid";
+  /* grid-template-columns: "1fr 1fr"; */
+}
+
+
+.mw-medium-card-print-sheet {
+  display: "grid";
+  grid-template-columns: "1fr 1fr 1fr";
+  /* border: '1px solid #000'; */
+  /* gap: "10px"; */
+  /* grid-auto-rows: "minmax(100px, auto)"; */
+  /* justify-content: "space-around"; */
+  justify-content: end;
+  align-items: "flex-start";
+  /* gap: "20px";
+  padding: "20px"; */
+  page-break-after: always;
+}
+
+
+.mw-medium-card-landscape-print-sheets {
+  display: "grid";
+  /* grid-template-columns: "1fr 1fr"; */
+}
+
+
+.mw-medium-card-landscape-print-sheet {
+  display: "grid";
+  grid-template-columns: "1fr 1fr 1fr";
+  /* border: '1px solid #000'; */
+  /* gap: "10px"; */
+  /* grid-auto-rows: "minmax(100px, auto)"; */
+  /* justify-content: "space-around"; */
+  justify-content: end;
+  align-items: "flex-start";
+  /* gap: "20px";
+  padding: "20px"; */
+  page-break-after: always;
+}

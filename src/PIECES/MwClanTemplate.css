@@ -1,0 +1,121 @@
+
+.mw-clan-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 5in;
+  height: 3in;
+  border: 1px solid #000;
+  border-radius: 10px;
+  font-family: 'Beleren', 'Garamond', serif;
+  background-color: #f0f0f0;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.mw-clan-card-border-frame {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 3px;
+  padding: 6px;
+  height: 100%;
+}
+
+.mw-clan-card-body {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  max-height: 200px;
+}
+
+.mw-clan-modes-block {
+  font-size: 0.9rem;
+  flex-grow: 1;
+  align-self: flex-end;
+  width: 100%;
+}
+
+.mw-clan-mode-item {
+  border: 2px solid black;
+  /* margin-bottom: 3px; */
+  margin-left: 0px;
+  margin-right: 0px;
+  min-height: 38px;
+  padding: 6px;
+}
+
+.mw-clan-mode-item-mana-cost {
+
+}
+
+.mw-clan-mode-item-text {
+  /* font-size: 12px; */
+}
+
+.mw-clan-tables {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  max-height: 200px;
+}
+
+.mw-clan-conversion-rates-table-container {
+  flex-grow: 1; /* Each item grows equally */
+  flex-basis: 0; /* Base width is 0, allowing items to take up equal space */
+  padding: 2px; /* Optional padding */
+  text-align: center; /* Optional: centers text within each item */
+  border: 1px solid #000; /* Optional: adds border for visibility */
+}
+
+.mw-clan-conversion-rates-table {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2px;
+  width: 100%;
+}
+
+.mw-clan-conversion-rates-table-grid-header {
+  font-weight: bold;
+  background-color: #f0f0f0;
+  padding: 5px;
+  text-align: center;
+}
+
+.mw-clan-conversion-rates-table-grid-item {
+  padding: 2px;
+  padding-top: 5px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+
+.mw-clan-stockpile-table-container {
+  flex-grow: 1; /* Each item grows equally */
+  flex-basis: 0; /* Base width is 0, allowing items to take up equal space */
+  padding: 10px; /* Optional padding */
+  text-align: center; /* Optional: centers text within each item */
+  border: 1px solid #000; /* Optional: adds border for visibility */
+  font-weight: bold;
+}
+
+.mw-clan-stockpile-table {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 2px;
+  width: 100%;
+}
+
+.mw-clan-stockpile-table-grid-header {
+  font-weight: bold;
+  background-color: #f0f0f0; /* Header background color */
+  padding: 10px;
+  text-align: center; /* Center text in header cells */
+}
+
+.mw-clan-stockpile-table-grid-item {
+  /* padding: 10px; */
+  border: 1px solid #ccc; /* Border around table cells */
+  text-align: center; /* Center text in cells */
+}

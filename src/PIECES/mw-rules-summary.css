@@ -1,0 +1,30 @@
+
+.mw-rules-summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 3in;
+  height: 5in;
+  border: 1px solid #000;
+  border-radius: 10px;
+  font-family: 'Beleren', 'Garamond', serif;
+  background-color: #f0f0f0;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.mw-rules-summary-border-frame {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3px;
+  padding: 6px;
+  height: 100%;
+}
+
+.mw-clan-card-body {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  max-height: 200px;
+}

@@ -1,0 +1,34 @@
+---
+title: Tribe Cards
+sidebar_position: 2
+---
+
+
+import BrowserOnly from "@docusaurus/BrowserOnly";
+import { MwTribeCard } from "./TribeCard";
+import { MwBigCardPrintSheet } from "./mw-print-sheets";
+import { PdfWrapper } from "./PdfWrapper";
+
+
+export const ThisIsCards = () => {
+
+  return (
+    <BrowserOnly>
+      {
+        () => (
+          <>
+            <PdfWrapper filename="mw-tribe-cards.pdf" orientation="landscape">
+              <MwBigCardPrintSheet>
+                <MwTribeCard playerId="PlayerA" />
+                <MwTribeCard playerId="Player1" />
+              </MwBigCardPrintSheet>
+            </PdfWrapper>
+          </>
+          )
+      }    
+    </BrowserOnly>
+  )
+}
+
+export default ThisIsCards;
+

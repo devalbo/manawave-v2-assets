@@ -1,0 +1,101 @@
+
+.mw-tribe-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 5in;
+  height: 3in;
+  border: 1px solid #000;
+  border-radius: 10px;
+  font-family: 'Beleren', 'Garamond', serif;
+  background-color: #f0f0f0;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+}
+
+.mw-tribe-card-border-frame {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  margin-bottom: 3px;
+  height: 100%;
+}
+
+.mw-tribe-player-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+}
+
+.mw-tribe-player-header-id-icon {
+  height: 50px;
+  width: 50px;
+}
+
+.mw-tribe-tables {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  max-height: 200px;
+}
+
+.mw-tribe-conversion-rates-table-container {
+  flex-grow: 1; /* Each item grows equally */
+  flex-basis: 0; /* Base width is 0, allowing items to take up equal space */
+  padding: 2px; /* Optional padding */
+  text-align: center; /* Optional: centers text within each item */
+  border: 1px solid #000; /* Optional: adds border for visibility */
+}
+
+.mw-tribe-conversion-rates-table {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2px;
+  width: 100%;
+}
+
+.mw-tribe-conversion-rates-table-grid-header {
+  font-weight: bold;
+  background-color: #f0f0f0;
+  padding: 5px;
+  text-align: center;
+}
+
+.mw-tribe-conversion-rates-table-grid-item {
+  padding: 2px;
+  padding-top: 5px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+
+.mw-tribe-stockpile-table-container {
+  flex-grow: 1; /* Each item grows equally */
+  flex-basis: 0; /* Base width is 0, allowing items to take up equal space */
+  padding: 10px; /* Optional padding */
+  text-align: center; /* Optional: centers text within each item */
+  border: 1px solid #000; /* Optional: adds border for visibility */
+  font-weight: bold;
+}
+
+.mw-tribe-stockpile-table {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  width: 100%;
+}
+
+.mw-tribe-stockpile-table-grid-header {
+  font-weight: bold;
+  background-color: #f0f0f0; /* Header background color */
+  padding: 10px;
+  text-align: center; /* Center text in header cells */
+}
+
+.mw-tribe-stockpile-table-grid-item {
+  padding: 10px;
+  border: 1px solid #ccc; /* Border around table cells */
+  text-align: center; /* Center text in cells */
+}
