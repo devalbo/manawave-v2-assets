@@ -1,0 +1,1 @@
+# manawave-v2-assets
