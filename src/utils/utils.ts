@@ -21,7 +21,11 @@ export const countDistinctElements = <T>(arr: T[]): Map<T, number> => {
 }
 
 
-export const createChunkedArrays = <T>(arr: T[], chunkSize: number): T[][] => {
+export const createChunkedArrays = <T>(arr: T[] | undefined, chunkSize: number): T[][] => {
+  if (arr === undefined) {
+    return [];
+  }
+
   const retVal: T[][] = [];
   
   for (let i = 0; i < arr.length; i += chunkSize) {

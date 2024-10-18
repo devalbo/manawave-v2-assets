@@ -67,10 +67,14 @@ export const MwConversionRatesTable = (props: { conversionRatios: IMwClanConvers
 
       {
         flattened.map((item, i) => (
-          <div className="mw-clan-conversion-rates-table-grid-item" key={i} >
-            <ConversionRateIcons
-              tags={item!}
-              />
+          <div className="mw-clan-conversion-rates-table-grid-item" key={i} >{
+            item?.map(x => (
+              // <ConversionRateIcons
+              //   tags={x!}
+              //   />
+              "fixme"
+            ))
+          }
           </div>
         ))
       }

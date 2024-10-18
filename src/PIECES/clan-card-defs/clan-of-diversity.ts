@@ -4,6 +4,7 @@ import { IMwClanData } from "../MwClanTemplate";
 export const ClanOfDiversityData: IMwClanData = {
   title: "Clan of Diversity",
   text: "TBD",
+  playerId: 'Player1',
   modes: [
     {
       manaCost: 0,

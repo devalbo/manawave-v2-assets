@@ -4,6 +4,7 @@ import { IMwClanData } from "../MwClanTemplate";
 export const ClanOfSacrificeData: IMwClanData = {
   title: "Clan of Sacrifice",
   text: "TBD",
+  playerId: 'Player1',
   modes: [
     {
       manaCost: 0,

@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { createChunkedArrays } from '../utils/utils';
 import './mw-print-sheets.css';
 import _ from 'lodash';
 
 
-export const MwBigCardPrintSheet = ({ children }) => {
+export const MwBigCardPrintSheet = ({ children }: {children: any}) => {
   return (
     <div className="mw-big-card-print-sheet" style={{
       display: "grid",
@@ -22,7 +22,7 @@ export const MwBigCardPrintSheet = ({ children }) => {
 }
 
 
-export const MwBigCardPrintSheets = ({ children }) => {
+export const MwBigCardPrintSheets = ({ children }: {children: any}) => {
 
   const chunks = createChunkedArrays(children, 4);
 
@@ -43,7 +43,7 @@ export const MwBigCardPrintSheets = ({ children }) => {
 
 
 
-export const MwMediumCardPrintSheet = ({ children }) => {
+export const MwMediumCardPrintSheet = ({ children }: {children: ReactNode}) => {
   return (
     <div className="mw-medium-card-print-sheet" style={{
       display: "grid",
@@ -63,13 +63,13 @@ export const MwMediumCardPrintSheet = ({ children }) => {
 }
 
 
-export const MwMediumCardPrintSheets = ({ children }) => {
+export const MwMediumCardPrintSheets = ({ children }: {children: any}) => {
 
   const chunks = createChunkedArrays(children, 9);
 
   const sheets = chunks.map((chunk, i) => (
     <MwMediumCardPrintSheet key={i}>
-      {chunk}
+      {chunk as ReactNode}
     </MwMediumCardPrintSheet>
   ))
 
@@ -84,7 +84,7 @@ export const MwMediumCardPrintSheets = ({ children }) => {
 
 
 
-export const MwMediumCardLandscapePrintSheet = ({ children }) => {
+export const MwMediumCardLandscapePrintSheet = ({ children }: {children: ReactNode}) => {
   return (
     <div className="mw-medium-card-print-sheet" style={{
       display: "grid",
@@ -104,13 +104,13 @@ export const MwMediumCardLandscapePrintSheet = ({ children }) => {
 }
 
 
-export const MwMediumCardLandscapePrintSheets = ({ children }) => {
+export const MwMediumCardLandscapePrintSheets = ({ children }: {children: any}) => {
 
   const chunks = createChunkedArrays(children, 9);
 
   const sheets = chunks.map((chunk, i) => (
     <MwMediumCardLandscapePrintSheet key={i}>
-      {chunk}
+      {chunk as ReactNode}
     </MwMediumCardLandscapePrintSheet>
   ))
 
