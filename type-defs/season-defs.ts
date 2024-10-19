@@ -1,4 +1,5 @@
 import { SeasonDefinition } from "../../protobufs/protofiles-out/manawave-types"
+import { SeasonZero1 } from "../seasons/season-zero-1/season-zero-1-def"
 import { ClanCard } from "./clan-defs"
 import { FamilyCardInstance } from "./game-data-type-defs"
 import { MonumentCard } from "./monument-defs"
@@ -21,3 +22,7 @@ export interface ISeason {
 
   allFamilyCards: FamilyCardInstance[]
 }
+
+export const SEASON_CHOICES: ISeason[] = [
+  SeasonZero1,
+];
