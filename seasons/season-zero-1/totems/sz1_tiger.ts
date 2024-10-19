@@ -144,6 +144,9 @@ export const CoOpIncreasersTribe1: FamilyCardDataDef = {
   // svgExportTitleLines: ["    Traders", "  of Fortune", ],
   text: " <::on-manawave-proc::>: Add 2 <::population-increase-counter::> counters to this tribe for each opposing tribe.",
   gameLogic: {
+    onManawaveProc: (boardState, playerSide) => {
+      return { };
+    },
     // ...createDefaultTribeTileLogic(),
     // onManawaveProc: (boardState: IMainGameBoardState, playerSide: PlayerSide): SurgePointProcResult => {
 
@@ -175,6 +178,9 @@ export const CoOpIncreasersTribe2: FamilyCardDataDef = {
   // svgExportTitleLines: ["    Artisan", "    Crafters", ],
   text: " <::on-manawave-proc::>: Add 1 <::population-increase-counter::> counter to this tribe for each <::population-count-token::> token on each directly opposing tribe.",
   gameLogic: {
+    onManawaveProc: (boardState, playerSide) => {
+      return { };
+    },
     // ...createDefaultTribeTileLogic(),
     // onManawaveProc: (boardState: IMainGameBoardState, playerSide: PlayerSide): SurgePointProcResult => {
 
@@ -212,6 +218,9 @@ export const CoOpIncreasersTribe3: FamilyCardDataDef = {
   // svgExportTitleLines: [" Enchanters", " of Exchange"],
   text: " <::on-manawave-proc::>: Add 2 <::population-increase-counter::> counters to each directly opposing tribe. Take 1 <::population-increase-counter::> counter for each 2 mana in the manawave (rounded up).",
   gameLogic: {
+    onManawaveProc: (boardState, playerSide) => {
+      return { };
+    },
     // ...createDefaultTribeTileLogic(),
     // onManawaveProc: (boardState: IMainGameBoardState, playerSide: PlayerSide): SurgePointProcResult => {
 

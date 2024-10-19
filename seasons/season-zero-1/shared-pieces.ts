@@ -15,6 +15,9 @@ export const SimpleIncreaserFamily1Def: FamilyCardDataDef = {
   // svgExportTitleLines: ["    Family", ],
   text: " <::on-manawave-proc::>: Add 1 <::population-increase-counter::> counter to this tribe.",
   gameLogic: {
+    onManawaveProc: (boardState, playerSide) => {
+      return { };
+    },
     // ...createDefaultTribeTileLogic(),
     // onManawaveProc: (boardState: IMainGameBoardState, playerSide: PlayerSide): SurgePointProcResult => {
       
@@ -42,6 +45,9 @@ export const SimpleIncreaserFamily2Def: FamilyCardDataDef = {
   text: " <::on-manawave-proc::>: Add 1 <::population-increase-counter::> counter to this tribe. You take 1 <::population-increase-counter::> counter.",
   gameLogic: {
     // ...createDefaultTribeTileLogic(),
+    onManawaveProc: (boardState, playerSide) => {
+      return { };
+    },
     // onManawaveProc: (boardState: IMainGameBoardState, playerSide: PlayerSide): SurgePointProcResult => {
       
     //   const adjacentTribeCounterChanges: TribePlayPieceIntraWaveCounters = {
