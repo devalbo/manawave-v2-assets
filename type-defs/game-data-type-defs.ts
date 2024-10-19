@@ -1,5 +1,4 @@
 import { PlayerSlotId, PlayerSide, PlayerDefaultStrategy } from "../../game-data/game-play-data"
-import { ManaflowProcResult } from "../../game-play/board-data/channel-clan-manaflows/type-defs"
 import { LbsChannelingClanManaflowsBoardState, ManaflowPointProcResult } from "../../game-play/board-data/local-game-state/lbs-channel-clan-manaflows"
 import { PlayerPb } from "../../protobufs/protofiles-out/manawave"
 
@@ -12,10 +11,6 @@ export interface IPlayer {
   defaultStrategy: PlayerDefaultStrategy
 
   rawPb: PlayerPb
-
-  // totem1: ITotemDetails
-  // totem2: ITotemDetails
-  // initialPicks: IPlayerInitialPicks
 }
 
 
@@ -40,7 +35,5 @@ export type FamilyCardDataDef = {
 
 export type FamilyCardInstance = {
   dataDef: FamilyCardDataDef
-  // instanceIndex: number
   instanceId: string
-  // playerSideId: PlayerSideId
 }
