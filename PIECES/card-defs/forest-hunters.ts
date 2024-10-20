@@ -1,14 +1,11 @@
-import { IMwCardData } from "../mw-card-data";
-import { Totems } from "../totems";
+import { ManaflowPointProcResult } from "../../../game-play/board-data/local-game-state/lbs-channel-clan-manaflows";
+import { FamilyCardDefinition } from "../../type-defs/family-defs";
 
 
-export const ForestHuntersCardData: IMwCardData = {
+export const ForestHuntersCardDef: FamilyCardDefinition = {
   title: "MW Forest Hunters",
-  totems: ['ox'] as Totems[],
-  onCardPickData: {
-    singlePickInitialPopulation: 2,
-    multiplePickInitialPopulation: 1,
-  },
+  totemId: 'ox',
+  text: "TODO: fill in text for Forest Hunters",
   modes: [
     {
       manaCost: 0,
@@ -19,4 +16,14 @@ export const ForestHuntersCardData: IMwCardData = {
       modeText: "Add 3 <::population-increase-counter::> to Clan.",
     },
   ],
+  onCardPickData: {
+    singlePickInitialPopulation: 2,
+    multiplePickInitialPopulation: 1,
+  },
+  gameLogic: {
+    onManaflowProc: (boardState, playerSide): ManaflowPointProcResult => {
+      console.log("ON MANAFLOW PROC FOR FOREST HUNTERS");
+      return { };
+    },
+  },
 };

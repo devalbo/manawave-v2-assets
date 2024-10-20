@@ -1,14 +1,11 @@
-import { IMwCardData } from "../mw-card-data";
-import { Totems } from "../totems";
+import { ManaflowPointProcResult } from "../../../game-play/board-data/local-game-state/lbs-channel-clan-manaflows";
+import { FamilyCardDefinition } from "../../type-defs/family-defs";
 
 
-export const MartyrsCardData: IMwCardData = {
+export const MartyrsCardDef: FamilyCardDefinition = {
   title: "Martyrs",
-  totems: ['tiger'] as Totems[],
-  onCardPickData: {
-    singlePickInitialPopulation: 2,
-    multiplePickInitialPopulation: 1,
-  },
+  totemId: 'tiger',
+  text: "TODO: fill in text for Martyrs",
   modes: [
     {
       manaCost: 0,
@@ -19,4 +16,14 @@ export const MartyrsCardData: IMwCardData = {
       modeText: "Add 5 <::attack-counter::> to Clan. Reduce total by 1 for each <::soulstain-token::> your Tribe has. Add 1 <::population-sacrifice-counter::> to Clan.",
     },
   ],
+  onCardPickData: {
+    singlePickInitialPopulation: 2,
+    multiplePickInitialPopulation: 1,
+  },
+  gameLogic: {
+    onManaflowProc: (boardState, playerSide): ManaflowPointProcResult => {
+      console.log("ON MANAFLOW PROC FOR Martyrs");
+      return { };
+    },
+  },
 };

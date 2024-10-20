@@ -18,6 +18,7 @@ export const MwCardsPlayset = () => {
     .map(def => {
       return (
         <MwCardTemplate
+          totems={[def.totemId]}
           {...def}
           />
       ) 
@@ -30,7 +31,8 @@ export const MwFamilySelectorSet = (props: { playerId: PlayerId} ) => {
   const mwFamilySelectorDefs: IMwFamilySelectorData[] = MwCardDefs.map(def => (
     { 
       ...props,
-      ...def
+      ...def,
+      totems: [def.totemId],
     } as IMwFamilySelectorData
   ));
 

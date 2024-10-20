@@ -1,20 +1,27 @@
-import { IMwCardData } from "../mw-card-data";
-import { Totems } from "../totems";
+import { ManaflowPointProcResult } from "../../../game-play/board-data/local-game-state/lbs-channel-clan-manaflows";
+import { FamilyCardDefinition } from "../../type-defs/family-defs";
 
 
-export const ManaChannelersCardData: IMwCardData = {
+export const ManaChannelersCardDef: FamilyCardDefinition = {
   title: "Mana Channelers",
-  totems: ['spirits'] as Totems[],
-  onCardPickData: {
-    singlePickInitialPopulation: 2,
-    multiplePickInitialPopulation: 1,
-  },
+  totemId: 'spirits',
+  text: "TODO: fill in text for Mana Channelers",
   modes: [
     {
       manaCost: 0,
       modeText: "Add 2 <::mana-counter::> to Tribe.",
     },
   ],
+  onCardPickData: {
+    singlePickInitialPopulation: 2,
+    multiplePickInitialPopulation: 1,
+  },
+  gameLogic: {
+    onManaflowProc: (boardState, playerSide): ManaflowPointProcResult => {
+      console.log("ON MANAFLOW PROC FOR Mana Channelers");
+      return { };
+    },
+  }, 
 };
 
 

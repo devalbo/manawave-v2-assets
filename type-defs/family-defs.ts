@@ -9,5 +9,4 @@ export type FamilyCardDefinition = {
   totemId: TotemId
   
   modes: IMwClanModeData[]
-  conversionRatios: IMwClanConversionRatio[]
 } & FamilyCardLogic

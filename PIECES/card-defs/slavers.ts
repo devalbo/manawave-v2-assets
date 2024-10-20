@@ -1,14 +1,11 @@
-import { IMwCardData } from "../mw-card-data";
-import { Totems } from "../totems";
+import { ManaflowPointProcResult } from "../../../game-play/board-data/local-game-state/lbs-channel-clan-manaflows";
+import { FamilyCardDefinition } from "../../type-defs/family-defs";
 
 
-export const SlaversCardData: IMwCardData = {
+export const SlaversCardDef: FamilyCardDefinition = {
   title: "Slavers",
-  totems: ['tiger'] as Totems[],
-  onCardPickData: {
-    singlePickInitialPopulation: 2,
-    multiplePickInitialPopulation: 1,
-  },
+  totemId: 'tiger',
+  text: "TODO: fill in text for Slavers",
   modes: [
     {
       manaCost: 0,
@@ -19,4 +16,14 @@ export const SlaversCardData: IMwCardData = {
       modeText: "Add 1 <::attack-counter::> to Tribe for each <::population-token::> on opposing Clan. Take 1 <::soulstain-token::>.",
     },
   ],
+  onCardPickData: {
+    singlePickInitialPopulation: 2,
+    multiplePickInitialPopulation: 1,
+  },
+  gameLogic: {
+    onManaflowProc: (boardState, playerSide): ManaflowPointProcResult => {
+      console.log("ON MANAFLOW PROC FOR Slavers");
+      return { };
+    },
+  },
 };

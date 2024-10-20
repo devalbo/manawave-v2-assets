@@ -12,14 +12,14 @@
 // import { SimpleIncreaserTribe1, SimpleIncreaserTribe2 } from "./shared-pieces";
 
 
-import { ChannelersCardData } from "../../../PIECES/card-defs/channelers";
-import { EnchantersCardData } from "../../../PIECES/card-defs/enchanters";
-import { ManaChannelersCardData } from "../../../PIECES/card-defs/mana-channelers";
-import { RoadBuildersCardData } from "../../../PIECES/card-defs/road-builders";
-import { SacrificersCardData } from "../../../PIECES/card-defs/sacrificers";
-import { WizardsCardData } from "../../../PIECES/card-defs/wizards";
+import { ChannelersCardDef } from "../../../PIECES/card-defs/channelers";
+import { EnchantersCardDef } from "../../../PIECES/card-defs/enchanters";
+import { ManaChannelersCardDef } from "../../../PIECES/card-defs/mana-channelers";
+import { RoadBuildersCardDef } from "../../../PIECES/card-defs/road-builders";
+import { SacrificersCardDef } from "../../../PIECES/card-defs/sacrificers";
+import { WizardsCardDef } from "../../../PIECES/card-defs/wizards";
 import { ITotemDetails } from "../../../type-defs/totem-defs";
-import { convertToFamilyCardInstance } from "./hack";
+import { convertDefToFamilyCardInstance, convertToFamilyCardInstance } from "./hack";
 
 
 
@@ -314,20 +314,20 @@ export const SPIRITS_TOTEM_DEF: ITotemDetails = {
   // ],
 
   optPlayCards: [
-    convertToFamilyCardInstance(RoadBuildersCardData, TOTEM_ID, "OPT", 1),
-    convertToFamilyCardInstance(ManaChannelersCardData, TOTEM_ID, "OPT", 2),
-    convertToFamilyCardInstance(EnchantersCardData, TOTEM_ID, "OPT", 3),
-    convertToFamilyCardInstance(ChannelersCardData, TOTEM_ID, "OPT", 4),
-    convertToFamilyCardInstance(WizardsCardData, TOTEM_ID, "OPT", 5),
-    convertToFamilyCardInstance(SacrificersCardData, TOTEM_ID, "OPT", 6),
+    convertDefToFamilyCardInstance(RoadBuildersCardDef, TOTEM_ID, "OPT", 1),
+    convertDefToFamilyCardInstance(ManaChannelersCardDef, TOTEM_ID, "OPT", 2),
+    convertDefToFamilyCardInstance(EnchantersCardDef, TOTEM_ID, "OPT", 3),
+    convertDefToFamilyCardInstance(ChannelersCardDef, TOTEM_ID, "OPT", 4),
+    convertDefToFamilyCardInstance(WizardsCardDef, TOTEM_ID, "OPT", 5),
+    convertDefToFamilyCardInstance(SacrificersCardDef, TOTEM_ID, "OPT", 6),
   ],
 
   osbPlayCards: [
-    convertToFamilyCardInstance(RoadBuildersCardData, TOTEM_ID, "OSB", 1),
-    convertToFamilyCardInstance(ManaChannelersCardData, TOTEM_ID, "OSB", 2),
-    convertToFamilyCardInstance(EnchantersCardData, TOTEM_ID, "OSB", 3),
-    convertToFamilyCardInstance(ChannelersCardData, TOTEM_ID, "OSB", 4),
-    convertToFamilyCardInstance(WizardsCardData, TOTEM_ID, "OSB", 5),
-    convertToFamilyCardInstance(SacrificersCardData, TOTEM_ID, "OSB", 6),
+    convertDefToFamilyCardInstance(RoadBuildersCardDef, TOTEM_ID, "OSB", 1),
+    convertDefToFamilyCardInstance(ManaChannelersCardDef, TOTEM_ID, "OSB", 2),
+    convertDefToFamilyCardInstance(EnchantersCardDef, TOTEM_ID, "OSB", 3),
+    convertDefToFamilyCardInstance(ChannelersCardDef, TOTEM_ID, "OSB", 4),
+    convertDefToFamilyCardInstance(WizardsCardDef, TOTEM_ID, "OSB", 5),
+    convertDefToFamilyCardInstance(SacrificersCardDef, TOTEM_ID, "OSB", 6),
   ],
 }

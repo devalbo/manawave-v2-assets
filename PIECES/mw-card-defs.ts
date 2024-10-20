@@ -1,47 +1,47 @@
-import { ChannelersCardData } from "./card-defs/channelers";
-import { ClubWieldersCardData } from "./card-defs/club-wielders";
-import { DefendersCardData } from "./card-defs/defenders";
-import { EnchantersCardData } from "./card-defs/enchanters";
-import { FarmersCardData } from "./card-defs/farmers";
-import { ForestHuntersCardData } from "./card-defs/forest-hunters";
-import { GrasslandShepherdsCardData } from "./card-defs/grassland-shepherds";
-import { ManaChannelersCardData } from "./card-defs/mana-channelers";
-import { MartyrsCardData } from "./card-defs/martyrs";
-import { MysticFarmersCardData } from "./card-defs/mystic-farmers";
-import { RoadBuildersCardData } from "./card-defs/road-builders";
-import { RuggedShepherdsCardData } from "./card-defs/rugged-shepherds";
-import { SacrificersCardData } from "./card-defs/sacrificers";
-import { ShieldCraftersCardData } from "./card-defs/shield-crafters";
-import { SlaversCardData } from "./card-defs/slavers";
-import { SoylentGreenFarmersCardData } from "./card-defs/soylent-green-farmers";
-import { TemplarsCardData } from "./card-defs/templars";
-import { WizardsCardData } from "./card-defs/wizards";
-import { IMwCardData } from "./mw-card-data";
+import { FamilyCardDefinition } from "../type-defs/family-defs";
+import { ChannelersCardDef } from "./card-defs/channelers";
+import { ClubWieldersCardDef } from "./card-defs/club-wielders";
+import { DefendersCardDef } from "./card-defs/defenders";
+import { EnchantersCardDef } from "./card-defs/enchanters";
+import { FarmersCardDef } from "./card-defs/farmers";
+import { ForestHuntersCardDef } from "./card-defs/forest-hunters";
+import { GrasslandShepherdsCardDef } from "./card-defs/grassland-shepherds";
+import { ManaChannelersCardDef } from "./card-defs/mana-channelers";
+import { MartyrsCardDef } from "./card-defs/martyrs";
+import { MysticFarmersCardDef } from "./card-defs/mystic-farmers";
+import { RoadBuildersCardDef } from "./card-defs/road-builders";
+import { RuggedShepherdsCardDef } from "./card-defs/rugged-shepherds";
+import { SacrificersCardDef } from "./card-defs/sacrificers";
+import { ShieldCraftersCardDef } from "./card-defs/shield-crafters";
+import { SlaversCardDef } from "./card-defs/slavers";
+import { SoylentGreenFarmersCardDef } from "./card-defs/soylent-green-farmers";
+import { TemplarsCardDef } from "./card-defs/templars";
+import { WizardsCardDef } from "./card-defs/wizards";
 
 
-export const getCardDefs = (): IMwCardData[] => {
+export const getCardDefs = (): FamilyCardDefinition[] => {
 
   const retVal = [
-    ForestHuntersCardData,
-    GrasslandShepherdsCardData,
-    RuggedShepherdsCardData,
-    FarmersCardData,
-    MysticFarmersCardData,
-    SoylentGreenFarmersCardData,
+    ForestHuntersCardDef,
+    GrasslandShepherdsCardDef,
+    RuggedShepherdsCardDef,
+    FarmersCardDef,
+    MysticFarmersCardDef,
+    SoylentGreenFarmersCardDef,
 
-    RoadBuildersCardData,
-    ManaChannelersCardData,
-    EnchantersCardData,
-    ChannelersCardData,
-    WizardsCardData,
-    SacrificersCardData,
+    RoadBuildersCardDef,
+    ManaChannelersCardDef,
+    EnchantersCardDef,
+    ChannelersCardDef,
+    WizardsCardDef,
+    SacrificersCardDef,
 
-    ClubWieldersCardData,
-    ShieldCraftersCardData,
-    TemplarsCardData,
-    DefendersCardData,
-    MartyrsCardData,
-    SlaversCardData,
+    ClubWieldersCardDef,
+    ShieldCraftersCardDef,
+    TemplarsCardDef,
+    DefendersCardDef,
+    MartyrsCardDef,
+    SlaversCardDef,
   ];
 
   return retVal;

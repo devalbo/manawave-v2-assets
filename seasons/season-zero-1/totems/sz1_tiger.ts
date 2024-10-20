@@ -9,14 +9,14 @@
 // import { getCountOfOpposingTribes, getCurrentSurgeStrength } from "../../effects-utils";
 // import { createTribeTileDef } from "../../tile-typedefs";
 
-import { ClubWieldersCardData } from "../../../PIECES/card-defs/club-wielders";
-import { DefendersCardData } from "../../../PIECES/card-defs/defenders";
-import { MartyrsCardData } from "../../../PIECES/card-defs/martyrs";
-import { ShieldCraftersCardData } from "../../../PIECES/card-defs/shield-crafters";
-import { SlaversCardData } from "../../../PIECES/card-defs/slavers";
-import { TemplarsCardData } from "../../../PIECES/card-defs/templars";
+import { ClubWieldersCardDef } from "../../../PIECES/card-defs/club-wielders";
+import { DefendersCardDef } from "../../../PIECES/card-defs/defenders";
+import { MartyrsCardDef } from "../../../PIECES/card-defs/martyrs";
+import { ShieldCraftersCardDef } from "../../../PIECES/card-defs/shield-crafters";
+import { SlaversCardDef } from "../../../PIECES/card-defs/slavers";
+import { TemplarsCardDef } from "../../../PIECES/card-defs/templars";
 import { ITotemDetails } from "../../../type-defs/totem-defs";
-import { convertToFamilyCardInstance } from "./hack";
+import { convertDefToFamilyCardInstance, convertToFamilyCardInstance } from "./hack";
 
 
 
@@ -310,20 +310,20 @@ export const TIGER_TOTEM_DEF: ITotemDetails = {
   // ],
 
   optPlayCards: [
-    convertToFamilyCardInstance(ClubWieldersCardData, TOTEM_ID, "OPT", 1),
-    convertToFamilyCardInstance(ShieldCraftersCardData, TOTEM_ID, "OPT", 2),
-    convertToFamilyCardInstance(TemplarsCardData, TOTEM_ID, "OPT", 3),
-    convertToFamilyCardInstance(DefendersCardData, TOTEM_ID, "OPT", 4),
-    convertToFamilyCardInstance(MartyrsCardData, TOTEM_ID, "OPT", 5),
-    convertToFamilyCardInstance(SlaversCardData, TOTEM_ID, "OPT", 6),
+    convertDefToFamilyCardInstance(ClubWieldersCardDef, TOTEM_ID, "OPT", 1),
+    convertDefToFamilyCardInstance(ShieldCraftersCardDef, TOTEM_ID, "OPT", 2),
+    convertDefToFamilyCardInstance(TemplarsCardDef, TOTEM_ID, "OPT", 3),
+    convertDefToFamilyCardInstance(DefendersCardDef, TOTEM_ID, "OPT", 4),
+    convertDefToFamilyCardInstance(MartyrsCardDef, TOTEM_ID, "OPT", 5),
+    convertDefToFamilyCardInstance(SlaversCardDef, TOTEM_ID, "OPT", 6),
   ],
 
   osbPlayCards: [
-    convertToFamilyCardInstance(ClubWieldersCardData, TOTEM_ID, "OSB", 1),
-    convertToFamilyCardInstance(ShieldCraftersCardData, TOTEM_ID, "OSB", 2),
-    convertToFamilyCardInstance(TemplarsCardData, TOTEM_ID, "OSB", 3),
-    convertToFamilyCardInstance(DefendersCardData, TOTEM_ID, "OSB", 4),
-    convertToFamilyCardInstance(MartyrsCardData, TOTEM_ID, "OSB", 5),
-    convertToFamilyCardInstance(SlaversCardData, TOTEM_ID, "OSB", 6),
+    convertDefToFamilyCardInstance(ClubWieldersCardDef, TOTEM_ID, "OSB", 1),
+    convertDefToFamilyCardInstance(ShieldCraftersCardDef, TOTEM_ID, "OSB", 2),
+    convertDefToFamilyCardInstance(TemplarsCardDef, TOTEM_ID, "OSB", 3),
+    convertDefToFamilyCardInstance(DefendersCardDef, TOTEM_ID, "OSB", 4),
+    convertDefToFamilyCardInstance(MartyrsCardDef, TOTEM_ID, "OSB", 5),
+    convertDefToFamilyCardInstance(SlaversCardDef, TOTEM_ID, "OSB", 6),
   ],
 }

@@ -1,5 +1,6 @@
+import { ManaflowPointProcResult } from "../../../game-play/board-data/local-game-state/lbs-channel-clan-manaflows";
+import { FamilyCardDefinition } from "../../type-defs/family-defs";
 import { IModePrintSettings, IMwCardData } from "../mw-card-data";
-import { Totems } from "../totems";
 
 
 const ModePrintSettings: IModePrintSettings = {
@@ -8,13 +9,10 @@ const ModePrintSettings: IModePrintSettings = {
 }
 
 
-export const TemplarsCardData: IMwCardData = {
+export const TemplarsCardDef: FamilyCardDefinition = {
   title: "Templars",
-  totems: ['tiger'] as Totems[],
-  onCardPickData: {
-    singlePickInitialPopulation: 2,
-    multiplePickInitialPopulation: 1,
-  },
+  totemId: 'tiger',
+  text: "TODO: fill in text for Templars",
   modes: [
     {
       manaCost: 0,
@@ -32,4 +30,14 @@ export const TemplarsCardData: IMwCardData = {
       modePrintSettings: ModePrintSettings,
     },
   ],
+  onCardPickData: {
+    singlePickInitialPopulation: 2,
+    multiplePickInitialPopulation: 1,
+  },
+  gameLogic: {
+    onManaflowProc: (boardState, playerSide): ManaflowPointProcResult => {
+      console.log("ON MANAFLOW PROC FOR Templars");
+      return { };
+    },
+  },
 };

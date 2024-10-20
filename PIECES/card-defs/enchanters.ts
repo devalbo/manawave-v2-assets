@@ -1,18 +1,25 @@
-import { IMwCardData } from "../mw-card-data";
-import { Totems } from "../totems";
+import { ManaflowPointProcResult } from "../../../game-play/board-data/local-game-state/lbs-channel-clan-manaflows";
+import { FamilyCardDefinition } from "../../type-defs/family-defs";
 
 
-export const EnchantersCardData: IMwCardData = {
+export const EnchantersCardDef: FamilyCardDefinition = {
   title: "Enchanters",
-  totems: ['spirits'] as Totems[],
-  onCardPickData: {
-    singlePickInitialPopulation: 2,
-    multiplePickInitialPopulation: 1,
-  },
+  totemId: 'spirits',
+  text: "TODO: fill in text for Enchanters",
   modes: [
     {
       manaCost: 0,
       modeText: "Add 1 <::mana-counter::> to Tribe, plus 1 for each adjacent Family.",
     },
   ],
+  onCardPickData: {
+    singlePickInitialPopulation: 2,
+    multiplePickInitialPopulation: 1,
+  },
+  gameLogic: {
+    onManaflowProc: (boardState, playerSide): ManaflowPointProcResult => {
+      console.log("ON MANAFLOW PROC FOR Enchanters");
+      return { };
+    },
+  },  
 };

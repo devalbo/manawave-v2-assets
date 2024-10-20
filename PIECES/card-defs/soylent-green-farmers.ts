@@ -1,6 +1,6 @@
-import { IMwCardData } from "../mw-card-data";
-import { Totems } from "../totems";
 import { IModePrintSettings } from "../mw-card-data"
+import { FamilyCardDefinition } from "../../type-defs/family-defs";
+import { ManaflowPointProcResult } from "../../../game-play/board-data/local-game-state/lbs-channel-clan-manaflows";
 
 
 const ModePrintSettings: IModePrintSettings = {
@@ -8,13 +8,10 @@ const ModePrintSettings: IModePrintSettings = {
   imageSize: 12,
 }
 
-export const SoylentGreenFarmersCardData: IMwCardData = {
+export const SoylentGreenFarmersCardDef: FamilyCardDefinition = {
   title: "Soylent Green Farmers",
-  totems: ['ox', 'demon'] as Totems[],
-  onCardPickData: {
-    singlePickInitialPopulation: 2,
-    multiplePickInitialPopulation: 1,
-  },
+  totemId: 'ox',
+  text: "TODO: fill in text for Soylent Green Farmers",
   modes: [
     {
       manaCost: 0,
@@ -32,4 +29,14 @@ export const SoylentGreenFarmersCardData: IMwCardData = {
       modePrintSettings: ModePrintSettings,
     },
   ],
+  onCardPickData: {
+    singlePickInitialPopulation: 2,
+    multiplePickInitialPopulation: 1,
+  },
+  gameLogic: {
+    onManaflowProc: (boardState, playerSide): ManaflowPointProcResult => {
+      console.log("ON MANAFLOW PROC FOR Soylent Green Farmers");
+      return { };
+    },
+  },
 };

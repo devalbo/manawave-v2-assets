@@ -12,10 +12,11 @@ export type TribePlayPieceInstanceTokens = {
 
 
 export type ClanCardIntraManawaveStockpile = {
+  attackCounters: number
+  shieldCounters: number
   populationIncreaseCounters: number
   sacrificeCounters: number
-  damageCounters: number
-  shieldCounters: number
+  manaCounters: number
 }
 
 

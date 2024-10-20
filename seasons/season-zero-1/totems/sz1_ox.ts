@@ -11,14 +11,14 @@
 // import { ITotemDetails } from "../../totem-defs";
 // import { SimpleIncreaserTribe1, SimpleIncreaserTribe2 } from "./shared-pieces";
 
-import { FarmersCardData } from "../../../PIECES/card-defs/farmers";
-import { ForestHuntersCardData } from "../../../PIECES/card-defs/forest-hunters";
-import { GrasslandShepherdsCardData } from "../../../PIECES/card-defs/grassland-shepherds";
-import { MysticFarmersCardData } from "../../../PIECES/card-defs/mystic-farmers";
-import { RuggedShepherdsCardData } from "../../../PIECES/card-defs/rugged-shepherds";
-import { SoylentGreenFarmersCardData } from "../../../PIECES/card-defs/soylent-green-farmers";
+import { FarmersCardDef } from "../../../PIECES/card-defs/farmers";
+import { ForestHuntersCardDef } from "../../../PIECES/card-defs/forest-hunters";
+import { GrasslandShepherdsCardDef } from "../../../PIECES/card-defs/grassland-shepherds";
+import { MysticFarmersCardDef } from "../../../PIECES/card-defs/mystic-farmers";
+import { RuggedShepherdsCardDef } from "../../../PIECES/card-defs/rugged-shepherds";
+import { SoylentGreenFarmersCardDef } from "../../../PIECES/card-defs/soylent-green-farmers";
 import { ITotemDetails } from "../../../type-defs/totem-defs";
-import { convertToFamilyCardInstance } from "./hack";
+import { convertDefToFamilyCardInstance, convertToFamilyCardInstance } from "./hack";
 
 
 
@@ -293,20 +293,20 @@ export const OX_TOTEM_DEF: ITotemDetails = {
   // ],
 
   optPlayCards: [
-    convertToFamilyCardInstance(ForestHuntersCardData, TOTEM_ID, "OPT", 1),
-    convertToFamilyCardInstance(GrasslandShepherdsCardData, TOTEM_ID, "OPT", 2),
-    convertToFamilyCardInstance(RuggedShepherdsCardData, TOTEM_ID, "OPT", 3),
-    convertToFamilyCardInstance(FarmersCardData, TOTEM_ID, "OPT", 4),
-    convertToFamilyCardInstance(MysticFarmersCardData, TOTEM_ID, "OPT", 5),
-    convertToFamilyCardInstance(SoylentGreenFarmersCardData, TOTEM_ID, "OPT", 6),
+    convertDefToFamilyCardInstance(ForestHuntersCardDef, TOTEM_ID, "OPT", 1),
+    convertDefToFamilyCardInstance(GrasslandShepherdsCardDef, TOTEM_ID, "OPT", 2),
+    convertDefToFamilyCardInstance(RuggedShepherdsCardDef, TOTEM_ID, "OPT", 3),
+    convertDefToFamilyCardInstance(FarmersCardDef, TOTEM_ID, "OPT", 4),
+    convertDefToFamilyCardInstance(MysticFarmersCardDef, TOTEM_ID, "OPT", 5),
+    convertDefToFamilyCardInstance(SoylentGreenFarmersCardDef, TOTEM_ID, "OPT", 6),
   ],
 
   osbPlayCards: [
-    convertToFamilyCardInstance(ForestHuntersCardData, TOTEM_ID, "OSB", 1),
-    convertToFamilyCardInstance(GrasslandShepherdsCardData, TOTEM_ID, "OSB", 2),
-    convertToFamilyCardInstance(RuggedShepherdsCardData, TOTEM_ID, "OSB", 3),
-    convertToFamilyCardInstance(FarmersCardData, TOTEM_ID, "OSB", 4),
-    convertToFamilyCardInstance(MysticFarmersCardData, TOTEM_ID, "OSB", 5),
-    convertToFamilyCardInstance(SoylentGreenFarmersCardData, TOTEM_ID, "OSB", 6),
+    convertDefToFamilyCardInstance(ForestHuntersCardDef, TOTEM_ID, "OSB", 1),
+    convertDefToFamilyCardInstance(GrasslandShepherdsCardDef, TOTEM_ID, "OSB", 2),
+    convertDefToFamilyCardInstance(RuggedShepherdsCardDef, TOTEM_ID, "OSB", 3),
+    convertDefToFamilyCardInstance(FarmersCardDef, TOTEM_ID, "OSB", 4),
+    convertDefToFamilyCardInstance(MysticFarmersCardDef, TOTEM_ID, "OSB", 5),
+    convertDefToFamilyCardInstance(SoylentGreenFarmersCardDef, TOTEM_ID, "OSB", 6),
   ],
 }

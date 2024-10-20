@@ -48,6 +48,7 @@ export const MwFamilySelectorSheets = () => {
   const mwPlayerAFamilySelectorDefs: IMwFamilySelectorData[] = MwCardDefs.map(def => (
     { 
       playerId: 'PlayerA',
+      totems: [def.totemId],
       ...def
     } as IMwFamilySelectorData
   ));
@@ -55,6 +56,7 @@ export const MwFamilySelectorSheets = () => {
   const mwPlayer1FamilySelectorDefs: IMwFamilySelectorData[] = MwCardDefs.map(def => (
     { 
       playerId: 'Player1',
+      totems: [def.totemId],
       ...def
     } as IMwFamilySelectorData
   ));
@@ -91,6 +93,7 @@ export const MwFamilyCardSheets = () => {
       return (
         <MwCardTemplate
           {...def}
+          totems={[def.totemId]}
           key={i}
           />
       ) 

@@ -1,6 +1,7 @@
 import { PlayerSlotId, PlayerSide, PlayerDefaultStrategy } from "../../game-data/game-play-data"
 import { LbsChannelingClanManaflowsBoardState, ManaflowPointProcResult } from "../../game-play/board-data/local-game-state/lbs-channel-clan-manaflows"
 import { PlayerPb } from "../../protobufs/protofiles-out/manawave"
+import { OnCardPickData } from "../PIECES/mw-card-data"
 
 
 
@@ -48,4 +49,5 @@ export type FamilyCardLogic = {
   // title: string
   // text: string
   gameLogic: IPlayTileLogic
+  onCardPickData: OnCardPickData
 }
