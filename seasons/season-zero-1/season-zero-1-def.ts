@@ -1,10 +1,9 @@
-// import { SeasonDefinition } from "../../protobufs/protofiles-out/manawave-types";
 import { SeasonDefinition } from "../../../protobufs/protofiles-out/manawave-types";
 import { ISeason } from "../../type-defs/season-defs";
 import { getPlayCardsForTotem } from "../../type-defs/totem-defs";
-import { ClanOfDiversity } from "./clans/clan-of-diversity";
-import { ClanOfLife } from "./clans/clan-of-life";
-import { ClanOfSacrifice } from "./clans/clan-of-sacrifice";
+import { ClanOfDiversityData } from "./clans/clan-of-diversity";
+import { ClanOfLifeData } from "./clans/clan-of-life";
+import { ClanOfSacrificeData } from "./clans/clan-of-sacrifice";
 import { DefaultMonuments, TotemMonuments } from "./monuments";
 import { OX_TOTEM_DEF } from "./totems/sz1_ox";
 import { SPIRITS_TOTEM_DEF } from "./totems/sz1_spirits";
@@ -78,9 +77,9 @@ export const SeasonZero1: ISeason = {
   ],
 
   allClanChoices: [
-    ClanOfDiversity,
-    ClanOfLife,
-    ClanOfSacrifice,
+    ClanOfDiversityData,
+    ClanOfLifeData,
+    ClanOfSacrificeData,
   ],
 
   allFamilyCards,

@@ -1,8 +1,50 @@
-import { ClanCard } from "../../../type-defs/clan-defs";
+import { PlayerSide } from "../../../../game-data/game-play-data";
+import { LbsChannelingClanManaflowsBoardState, ManaflowPointProcResult } from "../../../../game-play/board-data/local-game-state/lbs-channel-clan-manaflows";
+import { ClanCardDefinition } from "../../../type-defs/clan-defs";
 
 
-export const ClanOfLife: ClanCard = {
+export const ClanOfLifeData: ClanCardDefinition = {
   title: "Clan of Life",
   clanId: "sz1-clan-of-life",
   text: "blah",
+  modes: [
+    {
+      manaCost: 0,
+      modeText: "Add <::attack-counter::> to Clan. Add <::shield-counter::> to Clan.",
+      modePrintSettings: {
+        fontSize: 12,
+        imageSize: 12,
+      }
+    },
+    {
+      manaCost: 1,
+      modeText: "Add <::population-increase-counter::> to Tribe.",
+    },
+  ],
+  conversionRatios: [
+    {
+      input: ['<::mana-counter::>'],
+      output: ['<::mana-level-token::>'],
+    },
+    {
+      input: ['<::mana-counter::>'],
+      output: ['<::population-increase-counter::>'],
+    },
+    {
+      input: ['<::mana-counter::>', '<::mana-counter::>'],
+      output: ['<::attack-counter::>'],
+    },
+    {
+      input: ['<::mana-counter::>', '<::mana-counter::>'],
+      output: ['<::shield-counter::>'],
+    },
+  ],
+
+  gameLogic: {
+    onManaflowProc: function (boardState: LbsChannelingClanManaflowsBoardState, playerSide: PlayerSide): ManaflowPointProcResult {
+      console.log("ON MW PROC FOR CLAN OF LIFE");
+      return { };
+    }
+  },
+
 };

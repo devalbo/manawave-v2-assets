@@ -1,6 +1,6 @@
 import { SeasonDefinition } from "../../protobufs/protofiles-out/manawave-types"
 import { SeasonZero1 } from "../seasons/season-zero-1/season-zero-1-def"
-import { ClanCard } from "./clan-defs"
+import { ClanCardDefinition } from "./clan-defs"
 import { FamilyCardInstance } from "./game-data-type-defs"
 import { MonumentCard } from "./monument-defs"
 import { ITotemDetails } from "./totem-defs"
@@ -18,7 +18,7 @@ export interface ISeason {
 
   allMonumentChoices: MonumentCard[]
 
-  allClanChoices: ClanCard[]
+  allClanChoices: ClanCardDefinition[]
 
   allFamilyCards: FamilyCardInstance[]
 }

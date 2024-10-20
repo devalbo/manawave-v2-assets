@@ -7,7 +7,7 @@ import { getClanDefs } from "./mw-clan-defs";
 import { MwClanTemplate } from "./MwClanTemplate";
 import { getBlankCardDefs } from "./mw-blank-card-defs";
 import { IMwFamilySelectorData, MwFamilySelectorTemplate } from "./family-selector-template";
-import { PlayerId } from "./constants";
+import { CardDecoration, PlayerId } from "./constants";
 import { MwSinkCard, MwSourceCard } from "./MwSourceAndSink";
 
 
@@ -79,13 +79,13 @@ export const MwMonuments = () => {
 
 const MwClanDefs = getClanDefs();
 
-export const MwClans = (props: {playerId: PlayerId}) => {
+export const MwClans = (props: {decoration: CardDecoration}) => {
   const mwClans = MwClanDefs
     .map((def, i) => {
       return (
         <MwClanTemplate
           {...def}
-          playerId={props.playerId}
+          decoration={props.decoration}
           key={i}
           />
       )

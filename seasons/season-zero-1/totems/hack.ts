@@ -8,7 +8,7 @@ export const convertToFamilyCardDataDef = (toConvert: IMwCardData): FamilyCardDa
     ...toConvert,
     text: "TODO: fill in text for " + toConvert.title,
     gameLogic: {
-      onManawaveProc: (boardState, playerSide): ManaflowPointProcResult => {
+      onManaflowProc: (boardState, playerSide): ManaflowPointProcResult => {
         return { };
       },
     },

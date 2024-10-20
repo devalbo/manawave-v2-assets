@@ -1,11 +1,10 @@
-import React from 'react';
-import './MwClanTemplate.css';
+import _ from 'lodash';
 import { MwClanTemplateModeBlock } from './MwClanTemplateModeBlock';
 import { IModePrintSettings } from './mw-card-data';
 import { createImgComponentFromTag } from './icons';
 import { TokenCounterTypeTags } from './token-counter-icons';
-import _ from 'lodash';
-import { PlayerId } from './constants';
+import { CardDecoration } from './constants';
+import './MwClanTemplate.css';
 
 
 export interface IMwClanModeData {
@@ -22,7 +21,7 @@ export interface IMwClanConversionRatio {
 export interface IMwClanData {
   title: string
   text: string
-  playerId: PlayerId
+  decoration?: CardDecoration
   modes: IMwClanModeData[]
   conversionRatios: IMwClanConversionRatio[]
 }
@@ -117,9 +116,10 @@ export const MwStockpileTable = () => {
 
 export const MwClanTemplate = (props: IMwClanData) => {
 
-  const playerIdImgSrc = props.playerId === 'Player1' ? 
+  const playerIdImgSrc = props.decoration === 'mw-icon-white-side-up' ? 
     '/img/mw_logo_white_top.svg' :
     '/img/mw_logo_black_top.svg';
+  
     
   return (
     <div className="mw-clan-card">

@@ -17,7 +17,7 @@ export interface IPlayer {
 export interface IPlayTileLogic {
   onManawaveInit?: () => void
   // onManawaveProc: (boardState: IMainGameBoardState, playerSide: PlayerSide) => SurgePointProcResult
-  onManawaveProc: (boardState: LbsChannelingClanManaflowsBoardState, playerSide: PlayerSide) => ManaflowPointProcResult
+  onManaflowProc: (boardState: LbsChannelingClanManaflowsBoardState, playerSide: PlayerSide) => ManaflowPointProcResult
   onManawaveFinalize?: () => void
   
   onPiecePlacement?: () => void // run this when tile is placed by player on board
@@ -29,6 +29,12 @@ export interface IPlayTileLogic {
 export type FamilyCardDataDef = {
   title: string
   text: string
+  gameLogic: IPlayTileLogic
+}
+
+export type ClanCardLogic = {
+  // title: string
+  // text: string
   gameLogic: IPlayTileLogic
 }
 
