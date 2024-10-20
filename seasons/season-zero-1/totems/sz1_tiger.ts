@@ -15,9 +15,8 @@ import { MartyrsCardData } from "../../../PIECES/card-defs/martyrs";
 import { ShieldCraftersCardData } from "../../../PIECES/card-defs/shield-crafters";
 import { SlaversCardData } from "../../../PIECES/card-defs/slavers";
 import { TemplarsCardData } from "../../../PIECES/card-defs/templars";
-import { FamilyCardDataDef } from "../../../type-defs/game-data-type-defs";
 import { ITotemDetails } from "../../../type-defs/totem-defs";
-import { convertToFamilyCardDataDef } from "./hack";
+import { convertToFamilyCardInstance } from "./hack";
 
 
 
@@ -139,125 +138,125 @@ import { convertToFamilyCardDataDef } from "./hack";
 // })
 
 
-export const CoOpIncreasersTribe1: FamilyCardDataDef = {
-  title: "Traders of Fortune",
-  // svgExportTitleLines: ["    Traders", "  of Fortune", ],
-  text: " <::on-manawave-proc::>: Add 2 <::population-increase-counter::> counters to this tribe for each opposing tribe.",
-  gameLogic: {
-    onManaflowProc: (boardState, playerSide) => {
-      return { };
-    },
-    // ...createDefaultTribeTileLogic(),
-    // onManawaveProc: (boardState: IMainGameBoardState, playerSide: PlayerSide): SurgePointProcResult => {
+// export const CoOpIncreasersTribe1: FamilyCardDataDef = {
+//   title: "Traders of Fortune",
+//   // svgExportTitleLines: ["    Traders", "  of Fortune", ],
+//   text: " <::on-manawave-proc::>: Add 2 <::population-increase-counter::> counters to this tribe for each opposing tribe.",
+//   gameLogic: {
+//     onManaflowProc: (boardState, playerSide) => {
+//       return { };
+//     },
+//     // ...createDefaultTribeTileLogic(),
+//     // onManawaveProc: (boardState: IMainGameBoardState, playerSide: PlayerSide): SurgePointProcResult => {
 
-    //   const thisPiece = getCurrentManawaveProcTribe(boardState, playerSide);
+//     //   const thisPiece = getCurrentManawaveProcTribe(boardState, playerSide);
 
-    //   const opposingTribesCount = getCountOfOpposingTribes(boardState, thisPiece.boardLocation);
+//     //   const opposingTribesCount = getCountOfOpposingTribes(boardState, thisPiece.boardLocation);
 
-    //   const numPopulationIncreaseCounters = opposingTribesCount * 2;
+//     //   const numPopulationIncreaseCounters = opposingTribesCount * 2;
 
-    //   const retval: SurgePointProcResult = {
-    //     tribePieceChanges: {
-    //       selfChanges: {
-    //         ...createFreshIntrawaveTribeCounters(),
-    //         populationIncreaseCounters: numPopulationIncreaseCounters,
-    //       },
-    //     },
-    //     playerGameOutcome: 'unchanged',
-    //   }
+//     //   const retval: SurgePointProcResult = {
+//     //     tribePieceChanges: {
+//     //       selfChanges: {
+//     //         ...createFreshIntrawaveTribeCounters(),
+//     //         populationIncreaseCounters: numPopulationIncreaseCounters,
+//     //       },
+//     //     },
+//     //     playerGameOutcome: 'unchanged',
+//     //   }
 
-    //   return retval;
-    // }
-  }
-}
+//     //   return retval;
+//     // }
+//   }
+// }
 
 
 
-export const CoOpIncreasersTribe2: FamilyCardDataDef = {
-  title: "Artisan Crafters",
-  // svgExportTitleLines: ["    Artisan", "    Crafters", ],
-  text: " <::on-manawave-proc::>: Add 1 <::population-increase-counter::> counter to this tribe for each <::population-count-token::> token on each directly opposing tribe.",
-  gameLogic: {
-    onManaflowProc: (boardState, playerSide) => {
-      return { };
-    },
-    // ...createDefaultTribeTileLogic(),
-    // onManawaveProc: (boardState: IMainGameBoardState, playerSide: PlayerSide): SurgePointProcResult => {
+// export const CoOpIncreasersTribe2: FamilyCardDataDef = {
+//   title: "Artisan Crafters",
+//   // svgExportTitleLines: ["    Artisan", "    Crafters", ],
+//   text: " <::on-manawave-proc::>: Add 1 <::population-increase-counter::> counter to this tribe for each <::population-count-token::> token on each directly opposing tribe.",
+//   gameLogic: {
+//     onManaflowProc: (boardState, playerSide) => {
+//       return { };
+//     },
+//     // ...createDefaultTribeTileLogic(),
+//     // onManawaveProc: (boardState: IMainGameBoardState, playerSide: PlayerSide): SurgePointProcResult => {
 
-    //   const thisPiece = getCurrentManawaveProcTribe(boardState, playerSide);
-    //   const opposingPlayerSide = getOpposingPlayerSide(playerSide);
+//     //   const thisPiece = getCurrentManawaveProcTribe(boardState, playerSide);
+//     //   const opposingPlayerSide = getOpposingPlayerSide(playerSide);
 
-    //   const thisPieceTileCoordinate = convertMwBoardPlayerSideCoordinateKeyToCoordinate(thisPiece.boardLocation);
-    //   const directlyOpposingTileCoordinateKeys = getDirectlyOpposingTileCoordinates(thisPieceTileCoordinate, opposingPlayerSide);
-    //   const directlyOpposingTribeTiles = getTribeTilesForCoordinateKeys(directlyOpposingTileCoordinateKeys, boardState);
+//     //   const thisPieceTileCoordinate = convertMwBoardPlayerSideCoordinateKeyToCoordinate(thisPiece.boardLocation);
+//     //   const directlyOpposingTileCoordinateKeys = getDirectlyOpposingTileCoordinates(thisPieceTileCoordinate, opposingPlayerSide);
+//     //   const directlyOpposingTribeTiles = getTribeTilesForCoordinateKeys(directlyOpposingTileCoordinateKeys, boardState);
       
-    //   const populationIncreaseCountersForDirectlyOpposingTribePopulations = Array
-    //     .from(directlyOpposingTribeTiles.values())
-    //     .map(t => t.populationSize)
-    //     .reduce((previous, current) => previous + current, 0);
+//     //   const populationIncreaseCountersForDirectlyOpposingTribePopulations = Array
+//     //     .from(directlyOpposingTribeTiles.values())
+//     //     .map(t => t.populationSize)
+//     //     .reduce((previous, current) => previous + current, 0);
 
-    //   const retval: SurgePointProcResult = {
-    //     tribePieceChanges: {
-    //       selfChanges: {
-    //         ...createFreshIntrawaveTribeCounters(),
-    //         populationIncreaseCounters: populationIncreaseCountersForDirectlyOpposingTribePopulations,
-    //       },
-    //     },
-    //     playerGameOutcome: 'unchanged',
-    //   }
+//     //   const retval: SurgePointProcResult = {
+//     //     tribePieceChanges: {
+//     //       selfChanges: {
+//     //         ...createFreshIntrawaveTribeCounters(),
+//     //         populationIncreaseCounters: populationIncreaseCountersForDirectlyOpposingTribePopulations,
+//     //       },
+//     //     },
+//     //     playerGameOutcome: 'unchanged',
+//     //   }
 
-    //   return retval;
-    // }
-  }
-}
+//     //   return retval;
+//     // }
+//   }
+// }
 
 
 
-export const CoOpIncreasersTribe3: FamilyCardDataDef = {
-  title: "Enchanters of Exchange",
-  // svgExportTitleLines: [" Enchanters", " of Exchange"],
-  text: " <::on-manawave-proc::>: Add 2 <::population-increase-counter::> counters to each directly opposing tribe. Take 1 <::population-increase-counter::> counter for each 2 mana in the manawave (rounded up).",
-  gameLogic: {
-    onManaflowProc: (boardState, playerSide) => {
-      return { };
-    },
-    // ...createDefaultTribeTileLogic(),
-    // onManawaveProc: (boardState: IMainGameBoardState, playerSide: PlayerSide): SurgePointProcResult => {
+// export const CoOpIncreasersTribe3: FamilyCardDataDef = {
+//   title: "Enchanters of Exchange",
+//   // svgExportTitleLines: [" Enchanters", " of Exchange"],
+//   text: " <::on-manawave-proc::>: Add 2 <::population-increase-counter::> counters to each directly opposing tribe. Take 1 <::population-increase-counter::> counter for each 2 mana in the manawave (rounded up).",
+//   gameLogic: {
+//     onManaflowProc: (boardState, playerSide) => {
+//       return { };
+//     },
+//     // ...createDefaultTribeTileLogic(),
+//     // onManawaveProc: (boardState: IMainGameBoardState, playerSide: PlayerSide): SurgePointProcResult => {
 
-    //   const thisPiece = getCurrentManawaveProcTribe(boardState, playerSide);
-    //   const opposingPlayerSide = getOpposingPlayerSide(playerSide);
+//     //   const thisPiece = getCurrentManawaveProcTribe(boardState, playerSide);
+//     //   const opposingPlayerSide = getOpposingPlayerSide(playerSide);
 
-    //   const thisPieceTileCoordinate = convertMwBoardPlayerSideCoordinateKeyToCoordinate(thisPiece.boardLocation);
-    //   const directlyOpposingTileCoordinateKeys = getDirectlyOpposingTileCoordinates(thisPieceTileCoordinate, opposingPlayerSide);
-    //   const directlyOpposingTribeTiles = getTribeTilesForCoordinateKeys(directlyOpposingTileCoordinateKeys, boardState);
+//     //   const thisPieceTileCoordinate = convertMwBoardPlayerSideCoordinateKeyToCoordinate(thisPiece.boardLocation);
+//     //   const directlyOpposingTileCoordinateKeys = getDirectlyOpposingTileCoordinates(thisPieceTileCoordinate, opposingPlayerSide);
+//     //   const directlyOpposingTribeTiles = getTribeTilesForCoordinateKeys(directlyOpposingTileCoordinateKeys, boardState);
 
-    //   const opponentTribeChanges = new Map<MwBoardPlayerSideCoordinateKey, TribePlayPieceIntraWaveCounterChanges>();
-    //   Array.from(directlyOpposingTribeTiles.values())
-    //     .forEach(t => {
-    //       opponentTribeChanges.set(t.boardLocation, {
-    //         ...createFreshIntrawaveTribeCounters(),
-    //         populationIncreaseCounters: 2,
-    //       });
-    //     });
+//     //   const opponentTribeChanges = new Map<MwBoardPlayerSideCoordinateKey, TribePlayPieceIntraWaveCounterChanges>();
+//     //   Array.from(directlyOpposingTribeTiles.values())
+//     //     .forEach(t => {
+//     //       opponentTribeChanges.set(t.boardLocation, {
+//     //         ...createFreshIntrawaveTribeCounters(),
+//     //         populationIncreaseCounters: 2,
+//     //       });
+//     //     });
         
-    //   const surgeStrength = getCurrentSurgeStrength(boardState);
-    //   const selfPopulationIncreaseCounters = Math.ceil(surgeStrength / 2);
+//     //   const surgeStrength = getCurrentSurgeStrength(boardState);
+//     //   const selfPopulationIncreaseCounters = Math.ceil(surgeStrength / 2);
 
-    //   const retval: SurgePointProcResult = {
-    //     tribePieceChanges: {
-    //       selfChanges: {
-    //         ...createFreshIntrawaveTribeCounters(),
-    //         populationIncreaseCounters: selfPopulationIncreaseCounters,
-    //       },
-    //       opponentTribeChanges,
-    //     },
-    //     playerGameOutcome: 'unchanged',
-    //   }
+//     //   const retval: SurgePointProcResult = {
+//     //     tribePieceChanges: {
+//     //       selfChanges: {
+//     //         ...createFreshIntrawaveTribeCounters(),
+//     //         populationIncreaseCounters: selfPopulationIncreaseCounters,
+//     //       },
+//     //       opponentTribeChanges,
+//     //     },
+//     //     playerGameOutcome: 'unchanged',
+//     //   }
 
-    //   return retval;
-    // }
-  }
-}
+//     //   return retval;
+//     // }
+//   }
+// }
 
 
 const TOTEM_NAME = 'Tiger';
@@ -291,22 +290,40 @@ export const TIGER_TOTEM_DEF: ITotemDetails = {
   //   CoOpIncreasersTribe3,
   // ],
 
-  playCards: [
-    // { ...SimpleIncreaserFamily1Def },
-    // { ...SimpleIncreaserFamily2Def },
+  // playCards: [
+  //   // { ...SimpleIncreaserFamily1Def },
+  //   // { ...SimpleIncreaserFamily2Def },
 
-    // { ...CoOpIncreasersFamily1 },
-    // { ...CoOpIncreasersFamily1 },
-    // { ...CoOpIncreasersFamily2 },
-    // { ...CoOpIncreasersFamily2 },
-    // { ...CoOpIncreasersFamily3 },
-    // { ...CoOpIncreasersFamily3 },
+  //   // { ...CoOpIncreasersFamily1 },
+  //   // { ...CoOpIncreasersFamily1 },
+  //   // { ...CoOpIncreasersFamily2 },
+  //   // { ...CoOpIncreasersFamily2 },
+  //   // { ...CoOpIncreasersFamily3 },
+  //   // { ...CoOpIncreasersFamily3 },
 
-    convertToFamilyCardDataDef(ClubWieldersCardData),
-    convertToFamilyCardDataDef(ShieldCraftersCardData),
-    convertToFamilyCardDataDef(TemplarsCardData),
-    convertToFamilyCardDataDef(DefendersCardData),
-    convertToFamilyCardDataDef(MartyrsCardData),
-    convertToFamilyCardDataDef(SlaversCardData),
+  //   convertToFamilyCardInstance(ClubWieldersCardData),
+  //   convertToFamilyCardInstance(ShieldCraftersCardData),
+  //   convertToFamilyCardInstance(TemplarsCardData),
+  //   convertToFamilyCardInstance(DefendersCardData),
+  //   convertToFamilyCardInstance(MartyrsCardData),
+  //   convertToFamilyCardInstance(SlaversCardData),
+  // ],
+
+  optPlayCards: [
+    convertToFamilyCardInstance(ClubWieldersCardData, TOTEM_ID, "OPT", 1),
+    convertToFamilyCardInstance(ShieldCraftersCardData, TOTEM_ID, "OPT", 2),
+    convertToFamilyCardInstance(TemplarsCardData, TOTEM_ID, "OPT", 3),
+    convertToFamilyCardInstance(DefendersCardData, TOTEM_ID, "OPT", 4),
+    convertToFamilyCardInstance(MartyrsCardData, TOTEM_ID, "OPT", 5),
+    convertToFamilyCardInstance(SlaversCardData, TOTEM_ID, "OPT", 6),
+  ],
+
+  osbPlayCards: [
+    convertToFamilyCardInstance(ClubWieldersCardData, TOTEM_ID, "OSB", 1),
+    convertToFamilyCardInstance(ShieldCraftersCardData, TOTEM_ID, "OSB", 2),
+    convertToFamilyCardInstance(TemplarsCardData, TOTEM_ID, "OSB", 3),
+    convertToFamilyCardInstance(DefendersCardData, TOTEM_ID, "OSB", 4),
+    convertToFamilyCardInstance(MartyrsCardData, TOTEM_ID, "OSB", 5),
+    convertToFamilyCardInstance(SlaversCardData, TOTEM_ID, "OSB", 6),
   ],
 }

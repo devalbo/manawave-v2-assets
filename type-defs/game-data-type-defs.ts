@@ -26,11 +26,11 @@ export interface IPlayTileLogic {
 }
 
 
-export type FamilyCardDataDef = {
-  title: string
-  text: string
-  gameLogic: IPlayTileLogic
-}
+// export type FamilyCardDataDef = {
+//   title: string
+//   text: string
+//   gameLogic: IPlayTileLogic
+// }
 
 export type ClanCardLogic = {
   // title: string
@@ -39,7 +39,13 @@ export type ClanCardLogic = {
 }
 
 
-export type FamilyCardInstance = {
-  dataDef: FamilyCardDataDef
-  instanceId: string
+// export type FamilyCardInstance = {
+//   dataDef: FamilyCardDataDef
+//   instanceId: string
+// }
+
+export type FamilyCardLogic = {
+  // title: string
+  // text: string
+  gameLogic: IPlayTileLogic
 }

@@ -5,7 +5,7 @@ import { ClanCardDefinition } from "../../../type-defs/clan-defs";
 
 export const ClanOfLifeData: ClanCardDefinition = {
   title: "Clan of Life",
-  clanId: "sz1-clan-of-life",
+  // clanId: "sz1-clan-of-life",
   text: "blah",
   modes: [
     {

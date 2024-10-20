@@ -1,11 +1,13 @@
 import { IMwClanModeData, IMwClanConversionRatio } from "../PIECES/MwClanTemplate"
-import { ClanCardLogic } from "./game-data-type-defs"
+import { FamilyCardLogic } from "./game-data-type-defs"
+import { TotemId } from "./totem-defs"
 
 
-export type ClanCardDefinition = {
+export type FamilyCardDefinition = {
   title: string
   text: string
+  totemId: TotemId
   
   modes: IMwClanModeData[]
   conversionRatios: IMwClanConversionRatio[]
-} & ClanCardLogic
+} & FamilyCardLogic

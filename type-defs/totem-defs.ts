@@ -1,5 +1,5 @@
 import { PlayerSide } from "../../game-data/game-play-data";
-import { FamilyCardDataDef, FamilyCardInstance } from "./game-data-type-defs";
+import { FamilyCardInstance } from "../PIECES/type-defs/type-defs";
 
 
 export type Totem = 'tiger' | 'ox' | 'spirits';
@@ -10,7 +10,8 @@ export interface ITotemDetails {
   totemId: TotemId
   totemName: string
 
-  playCards: FamilyCardDataDef[]
+  optPlayCards: FamilyCardInstance[]
+  osbPlayCards: FamilyCardInstance[]
 }
 
 export interface ITotemCardSet {
@@ -25,14 +26,26 @@ export const getPlayCardsForTotem = (totemDetails: ITotemDetails, playerSide: Pl
 
   const playCards = [] as FamilyCardInstance[];
 
-  const familyCardDefs = totemDetails.playCards;
+  // const familyCardDefs = totemDetails.playCards;
 
-  familyCardDefs.forEach((fcd, cardIndex) => {
-    const familyCard: FamilyCardInstance = {
-      dataDef: fcd,
-      instanceId: `${playerSide}:${totemDetails.totemId}[${cardIndex}]`,
-    }
-    playCards.push(familyCard);
+  totemDetails.optPlayCards.forEach((fcd, cardIndex) => {
+    // const familyCard: FamilyCardInstance = {
+    //   // dataDef: fcd,
+    //   ...fcd,
+    //   // instanceId: `${playerSide}:${totemDetails.totemId}[${cardIndex}]`,
+      
+    // }
+    playCards.push(fcd);
+  })
+
+  totemDetails.osbPlayCards.forEach((fcd, cardIndex) => {
+    // const familyCard: FamilyCardInstance = {
+    //   // dataDef: fcd,
+    //   ...fcd,
+    //   // instanceId: `${playerSide}:${totemDetails.totemId}[${cardIndex}]`,
+      
+    // }
+    playCards.push(fcd);
   })
 
   return playCards;
