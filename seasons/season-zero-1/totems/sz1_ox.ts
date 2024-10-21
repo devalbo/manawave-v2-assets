@@ -30,8 +30,7 @@ export const OX_TOTEM_DEF: ITotemDetails = {
     .map((cardDef, i) => {
       const retVal: FamilyCardInstance = {
         ...cardDef,
-        // pieceId: createFamilyCardInstanceId(TOTEM_ID, "OPT", i + 1),
-        pieceId: "abc" as FamilyCardInstanceId,
+        pieceId: createFamilyCardInstanceId(TOTEM_ID, "OPT", i + 1),
         pieceType: 'family-card',
       };
       return retVal;
@@ -41,8 +40,7 @@ export const OX_TOTEM_DEF: ITotemDetails = {
     .map((cardDef, i) => {
       const retVal: FamilyCardInstance = {
         ...cardDef,
-        // pieceId: createFamilyCardInstanceId(TOTEM_ID, "OSB", i + 1),
-        pieceId: "abc" as FamilyCardInstanceId,
+        pieceId: createFamilyCardInstanceId(TOTEM_ID, "OSB", i + 1),
         pieceType: 'family-card',
       };
       return retVal;
