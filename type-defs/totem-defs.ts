@@ -1,9 +1,10 @@
 import { PlayerSide } from "../../game-data/game-play-data";
+import { TotemPbId } from "../../protobufs/protofiles-out/manawave-types";
 import { FamilyCardInstance } from "../PIECES/type-defs/type-defs";
-import { TotemId } from "./totem-type-defs";
+
 
 export interface ITotemDetails {
-  totemId: TotemId
+  totemId: TotemPbId
   totemName: string
 
   optPlayCards: FamilyCardInstance[]

@@ -1,4 +1,4 @@
-import { SeasonDefinition } from "../../protobufs/protofiles-out/manawave-types"
+import { SeasonPbId } from "../../protobufs/protofiles-out/manawave-types"
 import { FamilyCardInstance } from "../PIECES/type-defs/type-defs"
 import { SeasonZero1 } from "../seasons/season-zero-1/season-zero-1-def"
 import { ClanCardDefinition } from "./clan-defs"
@@ -8,8 +8,7 @@ import { ITotemDetails } from "./totem-defs"
 
 export interface ISeason {
   seasonName: string
-  seasonId: string
-  seasonDefinitionId: SeasonDefinition
+  seasonId: SeasonPbId
   seasonDescription: string
   allTotemChoices: ITotemDetails[]
 
@@ -26,11 +25,3 @@ export interface ISeason {
 export const SEASON_CHOICES: ISeason[] = [
   SeasonZero1,
 ];
-
-// export const getSeasonChoices = () => {
-//   const SEASON_CHOICES: ISeason[] = [
-//     createSeasonZero1(),
-//   ];
-
-//   return SEASON_CHOICES;
-// }
