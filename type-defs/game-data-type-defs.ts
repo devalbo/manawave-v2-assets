@@ -1,7 +1,10 @@
 import { PlayerSlotId, PlayerSide, PlayerDefaultStrategy } from "../../game-data/game-play-data"
+import { ManaflowProcPoint } from "../../game-play/board-data/channel-clan-manaflows/type-defs"
 import { LbsChannelingClanManaflowsBoardState, ManaflowPointProcResult } from "../../game-play/board-data/local-game-state/lbs-channel-clan-manaflows"
 import { PlayerPb } from "../../protobufs/protofiles-out/manawave"
+import { LeylineDistanceFromSource } from "../../protobufs/protofiles-out/manawave-types"
 import { OnCardPickData } from "../PIECES/mw-card-data"
+import { ISeason } from "./season-defs"
 
 
 
@@ -18,7 +21,14 @@ export interface IPlayer {
 export interface IPlayTileLogic {
   onManawaveInit?: () => void
   // onManawaveProc: (boardState: IMainGameBoardState, playerSide: PlayerSide) => SurgePointProcResult
-  onManaflowProc: (boardState: LbsChannelingClanManaflowsBoardState, playerSide: PlayerSide) => ManaflowPointProcResult
+  onManaflowProc: (
+    boardState: LbsChannelingClanManaflowsBoardState,
+    // season: ISeason,
+    playerSide: PlayerSide,
+    procPoint: ManaflowProcPoint,
+    // leyline: LeylineDistanceFromSource,
+    // rank: number
+  ) => ManaflowPointProcResult
   onManawaveFinalize?: () => void
   
   onPiecePlacement?: () => void // run this when tile is placed by player on board

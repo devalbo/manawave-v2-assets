@@ -6,6 +6,7 @@ export type Totem = 'tiger' | 'ox' | 'spirits';
 export const TotemChoices = ['tiger', 'ox', 'spirits'] as Totem[]
 export type TotemId = (typeof TotemChoices)[number];
 
+
 export interface ITotemDetails {
   totemId: TotemId
   totemName: string
@@ -13,6 +14,7 @@ export interface ITotemDetails {
   optPlayCards: FamilyCardInstance[]
   osbPlayCards: FamilyCardInstance[]
 }
+
 
 export interface ITotemCardSet {
   totemDetails: ITotemDetails
@@ -26,25 +28,11 @@ export const getPlayCardsForTotem = (totemDetails: ITotemDetails, playerSide: Pl
 
   const playCards = [] as FamilyCardInstance[];
 
-  // const familyCardDefs = totemDetails.playCards;
-
   totemDetails.optPlayCards.forEach((fcd, cardIndex) => {
-    // const familyCard: FamilyCardInstance = {
-    //   // dataDef: fcd,
-    //   ...fcd,
-    //   // instanceId: `${playerSide}:${totemDetails.totemId}[${cardIndex}]`,
-      
-    // }
     playCards.push(fcd);
   })
 
   totemDetails.osbPlayCards.forEach((fcd, cardIndex) => {
-    // const familyCard: FamilyCardInstance = {
-    //   // dataDef: fcd,
-    //   ...fcd,
-    //   // instanceId: `${playerSide}:${totemDetails.totemId}[${cardIndex}]`,
-      
-    // }
     playCards.push(fcd);
   })
 

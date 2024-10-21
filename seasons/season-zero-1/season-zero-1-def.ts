@@ -10,43 +10,13 @@ import { SPIRITS_TOTEM_DEF } from "./totems/sz1_spirits";
 import { TIGER_TOTEM_DEF } from "./totems/sz1_tiger";
 
 
+
 const allTotemChoices = [
   TIGER_TOTEM_DEF,
   OX_TOTEM_DEF,
   SPIRITS_TOTEM_DEF,
 ];
 
-
-// const createFamilyCardInstanceRange = (
-//   totem: ITotemDetails, 
-//   playerSideId: PlayerSideId,
-//   rangeIndex: number
-// ) => {
-
-//   const rangeStart = rangeIndex * NUM_CARDS_PER_TOTEM;
-
-//   const familyCardInstaces = totem.playCards
-//     .map((def, i) => {
-//       const familyCardInstance: FamilyCardInstance = {
-//         dataDef: def,
-//         instanceIndex: rangeStart + i,
-//         playerSideId,
-//       };
-//       return familyCardInstance;
-//     });
-//     return familyCardInstaces;
-// }
-
-// const allFamilyCards = [
-//   ...createFamilyCardInstanceRange(TIGER_TOTEM_DEF, PlayerSideId.PlayerSide_Opt, 0),
-//   ...createFamilyCardInstanceRange(TIGER_TOTEM_DEF, PlayerSideId.PlayerSide_Osb, 1),
-
-//   ...createFamilyCardInstanceRange(OX_TOTEM_DEF, PlayerSideId.PlayerSide_Opt, 2),
-//   ...createFamilyCardInstanceRange(OX_TOTEM_DEF, PlayerSideId.PlayerSide_Osb, 3),
-
-//   ...createFamilyCardInstanceRange(SPIRITS_TOTEM_DEF, PlayerSideId.PlayerSide_Opt, 4),
-//   ...createFamilyCardInstanceRange(SPIRITS_TOTEM_DEF, PlayerSideId.PlayerSide_Osb, 5),
-// ];
 
 const allFamilyCards = [
   ...getPlayCardsForTotem(TIGER_TOTEM_DEF, "OPT"),

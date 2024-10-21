@@ -1,4 +1,5 @@
-import { ManaflowPointProcResult } from "../../../game-play/board-data/local-game-state/lbs-channel-clan-manaflows";
+import { EMPTY_CLAN_PLAY_PIECE_INTRAWAVE_COUNTERS, ManaflowPointProcResult } from "../../../game-play/board-data/local-game-state/lbs-channel-clan-manaflows";
+import { ClanCardInstanceId, createClanCardInstanceId } from "../../../game-play/branded-string-types";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
 import { IModePrintSettings } from "../mw-card-data";
 
@@ -39,10 +40,31 @@ export const WizardsCardDef: FamilyCardDefinition = {
     singlePickInitialPopulation: 2,
     multiplePickInitialPopulation: 1,
   },
+
   gameLogic: {
-    onManaflowProc: (boardState, playerSide): ManaflowPointProcResult => {
+    onManaflowProc: (boardState, playerSide, procPoint): ManaflowPointProcResult => {
       console.log("ON MANAFLOW PROC FOR Wizards");
-      return { };
+
+      const playerLeylineCards = playerSide === 'OPT' ?
+        boardState.optLeylineClanCards :
+        boardState.osbLeylineClanCards;
+
+      const clanForCard = playerLeylineCards.get(procPoint.leylineDistance)!;
+      const clanPieceId: ClanCardInstanceId = createClanCardInstanceId(playerSide, clanForCard.title);
+
+      return {
+        clanCardChanges: [
+          {
+            clanPieceId,
+            changes: {
+              ...EMPTY_CLAN_PLAY_PIECE_INTRAWAVE_COUNTERS,
+              manaCounters: 1,
+            },
+          },
+        ],
+      };
     },
+    // onManawaveFinalize
   },
+    
 };
