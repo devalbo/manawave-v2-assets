@@ -2,9 +2,7 @@ import { PlayerSlotId, PlayerSide, PlayerDefaultStrategy } from "../../game-data
 import { ManaflowProcPoint } from "../../game-play/board-data/channel-clan-manaflows/type-defs"
 import { LbsChannelingClanManaflowsBoardState, ManaflowPointProcResult } from "../../game-play/board-data/local-game-state/lbs-channel-clan-manaflows-types"
 import { PlayerPb } from "../../protobufs/protofiles-out/manawave"
-import { LeylineDistanceFromSource } from "../../protobufs/protofiles-out/manawave-types"
 import { OnCardPickData } from "../PIECES/mw-card-data"
-import { ISeason } from "./season-defs"
 
 
 
