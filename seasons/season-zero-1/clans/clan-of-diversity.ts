@@ -1,5 +1,5 @@
-import { EMPTY_CLAN_PLAY_PIECE_INTRAWAVE_COUNTERS, EMPTY_PLAYER_TRIBE_INTRAWAVE_COUNTERS, ManaflowPointProcResult } from "../../../../game-play/board-data/local-game-state/lbs-channel-clan-manaflows";
-import { ClanCardInstanceId, createClanCardInstanceId } from "../../../../game-play/branded-string-types";
+import { EMPTY_CLAN_PLAY_PIECE_INTRAWAVE_COUNTERS, EMPTY_PLAYER_TRIBE_INTRAWAVE_COUNTERS, ManaflowPointProcResult } from "../../../../game-play/board-data/local-game-state/lbs-channel-clan-manaflows-types";
+import { ClanCardInstanceId, createClanCardInstanceId } from "../../../type-defs/branded-string-types";
 import { ClanCardDefinition } from "../../../type-defs/clan-defs";
 
 
@@ -82,8 +82,6 @@ export const ClanOfDiversityData: ClanCardDefinition = {
           }
         }
       };
-
-      return { };
     }
   },
 };

@@ -1,4 +1,4 @@
-import { createFamilyCardInstanceId } from "../../../../game-play/branded-string-types";
+import { createFamilyCardInstanceId } from "../../../type-defs/branded-string-types";
 import { ClubWieldersCardDef } from "../../../PIECES/card-defs/club-wielders";
 import { DefendersCardDef } from "../../../PIECES/card-defs/defenders";
 import { MartyrsCardDef } from "../../../PIECES/card-defs/martyrs";

@@ -53,4 +53,4 @@ export const SeasonZero1: ISeason = {
   ],
 
   allFamilyCards,
-}
+};

@@ -1,6 +1,6 @@
 import { IModePrintSettings } from "../mw-card-data"
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
-import { ManaflowPointProcResult } from "../../../game-play/board-data/local-game-state/lbs-channel-clan-manaflows";
+import { ManaflowPointProcResult } from "../../../game-play/board-data/local-game-state/lbs-channel-clan-manaflows-types";
 
 
 const ModePrintSettings: IModePrintSettings = {

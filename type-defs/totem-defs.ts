@@ -1,11 +1,6 @@
 import { PlayerSide } from "../../game-data/game-play-data";
 import { FamilyCardInstance } from "../PIECES/type-defs/type-defs";
-
-
-export type Totem = 'tiger' | 'ox' | 'spirits';
-export const TotemChoices = ['tiger', 'ox', 'spirits'] as Totem[]
-export type TotemId = (typeof TotemChoices)[number];
-
+import { TotemId } from "./totem-type-defs";
 
 export interface ITotemDetails {
   totemId: TotemId

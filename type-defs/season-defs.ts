@@ -26,3 +26,11 @@ export interface ISeason {
 export const SEASON_CHOICES: ISeason[] = [
   SeasonZero1,
 ];
+
+// export const getSeasonChoices = () => {
+//   const SEASON_CHOICES: ISeason[] = [
+//     createSeasonZero1(),
+//   ];
+
+//   return SEASON_CHOICES;
+// }

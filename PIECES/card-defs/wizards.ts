@@ -1,5 +1,5 @@
-import { EMPTY_CLAN_PLAY_PIECE_INTRAWAVE_COUNTERS, ManaflowPointProcResult } from "../../../game-play/board-data/local-game-state/lbs-channel-clan-manaflows";
-import { ClanCardInstanceId, createClanCardInstanceId } from "../../../game-play/branded-string-types";
+import { EMPTY_CLAN_PLAY_PIECE_INTRAWAVE_COUNTERS, ManaflowPointProcResult } from "../../../game-play/board-data/local-game-state/lbs-channel-clan-manaflows-types";
+import { ClanCardInstanceId, createClanCardInstanceId } from "../../type-defs/branded-string-types";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
 import { IModePrintSettings } from "../mw-card-data";
 
@@ -65,6 +65,5 @@ export const WizardsCardDef: FamilyCardDefinition = {
       };
     },
     // onManawaveFinalize
-  },
-    
+  },    
 };

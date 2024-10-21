@@ -1,4 +1,4 @@
-import { createFamilyCardInstanceId } from "../../../../game-play/branded-string-types";
+import { createFamilyCardInstanceId, FamilyCardInstanceId } from "../../../type-defs/branded-string-types";
 import { FarmersCardDef } from "../../../PIECES/card-defs/farmers";
 import { ForestHuntersCardDef } from "../../../PIECES/card-defs/forest-hunters";
 import { GrasslandShepherdsCardDef } from "../../../PIECES/card-defs/grassland-shepherds";
@@ -30,7 +30,8 @@ export const OX_TOTEM_DEF: ITotemDetails = {
     .map((cardDef, i) => {
       const retVal: FamilyCardInstance = {
         ...cardDef,
-        pieceId: createFamilyCardInstanceId(TOTEM_ID, "OPT", i + 1),
+        // pieceId: createFamilyCardInstanceId(TOTEM_ID, "OPT", i + 1),
+        pieceId: "abc" as FamilyCardInstanceId,
         pieceType: 'family-card',
       };
       return retVal;
@@ -40,7 +41,8 @@ export const OX_TOTEM_DEF: ITotemDetails = {
     .map((cardDef, i) => {
       const retVal: FamilyCardInstance = {
         ...cardDef,
-        pieceId: createFamilyCardInstanceId(TOTEM_ID, "OSB", i + 1),
+        // pieceId: createFamilyCardInstanceId(TOTEM_ID, "OSB", i + 1),
+        pieceId: "abc" as FamilyCardInstanceId,
         pieceType: 'family-card',
       };
       return retVal;

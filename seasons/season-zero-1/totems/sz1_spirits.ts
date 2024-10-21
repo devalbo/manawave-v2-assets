@@ -1,5 +1,3 @@
-
-import { createFamilyCardInstanceId } from "../../../../game-play/branded-string-types";
 import { ChannelersCardDef } from "../../../PIECES/card-defs/channelers";
 import { EnchantersCardDef } from "../../../PIECES/card-defs/enchanters";
 import { ManaChannelersCardDef } from "../../../PIECES/card-defs/mana-channelers";
@@ -7,7 +5,9 @@ import { RoadBuildersCardDef } from "../../../PIECES/card-defs/road-builders";
 import { SacrificersCardDef } from "../../../PIECES/card-defs/sacrificers";
 import { WizardsCardDef } from "../../../PIECES/card-defs/wizards";
 import { FamilyCardInstance } from "../../../PIECES/type-defs/type-defs";
+import { createFamilyCardInstanceId } from "../../../type-defs/branded-string-types";
 import { ITotemDetails } from "../../../type-defs/totem-defs";
+
 
 
 const TOTEM_NAME = 'Spirits';

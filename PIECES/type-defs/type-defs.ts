@@ -1,4 +1,4 @@
-import { ClanCardInstanceId, FamilyCardInstanceId, MwBoardPlayerSideCoordinateKey } from "../../../game-play/branded-string-types"
+import { ClanCardInstanceId, FamilyCardInstanceId, MwBoardPlayerSideCoordinateKey } from "../../type-defs/branded-string-types"
 import { ClanCardDefinition } from "../../type-defs/clan-defs"
 import { FamilyCardDefinition } from "../../type-defs/family-defs"
 import { ClanCardLogic, FamilyCardLogic } from "../../type-defs/game-data-type-defs"

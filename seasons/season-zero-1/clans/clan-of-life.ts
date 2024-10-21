@@ -1,5 +1,5 @@
 import { PlayerSide } from "../../../../game-data/game-play-data";
-import { LbsChannelingClanManaflowsBoardState, ManaflowPointProcResult } from "../../../../game-play/board-data/local-game-state/lbs-channel-clan-manaflows";
+import { LbsChannelingClanManaflowsBoardState, ManaflowPointProcResult } from "../../../../game-play/board-data/local-game-state/lbs-channel-clan-manaflows-types";
 import { ClanCardDefinition } from "../../../type-defs/clan-defs";
 
 
