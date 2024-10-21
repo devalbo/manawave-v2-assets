@@ -53,8 +53,7 @@ export const ClanOfDiversityData: ClanCardDefinition = {
   ],
 
   gameLogic: {
-    onManaflowProc: function (boardState, playerSide, procPoint): ManaflowPointProcResult {
-      console.log("ON MW PROC FOR CLAN OF DIVERSITY");
+    onManaflowProc: (boardState, playerSide, procPoint): ManaflowPointProcResult => {
 
       const playerLeylineCards = playerSide === 'OPT' ?
         boardState.optLeylineClanCards :
