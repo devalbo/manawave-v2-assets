@@ -1,6 +1,7 @@
 import { PlayerSide } from "../../game-data/game-play-data";
-import { LeylineDistanceFromSource } from "../../protobufs/protofiles-out/manawave-types";
+import { LeylineDistanceFromSource, TotemPbId } from "../../protobufs/protofiles-out/manawave-types";
 import { MAX_NUM_RANKS_PER_CLAN_COLUMN } from "../../game-play/phases/constants";
+import { toTotemIdStr } from "../../game-data/pb-id-str-mapping";
 
 
 type BrandedString<T> = string & { __brand: T };
@@ -42,6 +43,12 @@ export const createClanCardInstanceId = (playerSide: PlayerSide, title: string):
 }
 
 
-export const createFamilyCardInstanceId = (totemId: TotemIdStr, playerSide: PlayerSide, playerSideCardIndex: number): FamilyCardInstanceId => {
-  return `${totemId}:${playerSide}[${playerSideCardIndex}]` as FamilyCardInstanceId;
+// export const createFamilyCardInstanceId = (totemId: TotemIdStr, playerSide: PlayerSide, playerSideCardIndex: number): FamilyCardInstanceId => {
+//   return `${totemId}:${playerSide}[${playerSideCardIndex}]` as FamilyCardInstanceId;
+// }
+
+
+export const createFamilyCardInstanceId = (totemId: TotemPbId, playerSide: PlayerSide, playerSideCardIndex: number): FamilyCardInstanceId => {
+  const totemIdStr = toTotemIdStr(totemId);
+  return `${totemIdStr}:${playerSide}[${playerSideCardIndex}]` as FamilyCardInstanceId;
 }

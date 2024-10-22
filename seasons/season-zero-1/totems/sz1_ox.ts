@@ -7,10 +7,17 @@ import { RuggedShepherdsCardDef } from "../../../PIECES/card-defs/rugged-shepher
 import { SoylentGreenFarmersCardDef } from "../../../PIECES/card-defs/soylent-green-farmers";
 import { FamilyCardInstance } from "../../../PIECES/type-defs/type-defs";
 import { ITotemDetails } from "../../../type-defs/totem-defs";
+import { TotemPbId } from "../../../../protobufs/protofiles-out/manawave-types";
+import { TotemDefs } from "../../../../protobufs/protofiles-out/manawave-season-zero-1";
+import { SEASON_ZERO_1_PBID } from "../../season-id-defs";
 
 
 const TOTEM_NAME = 'Ox';
-const TOTEM_ID = 'ox';
+const TOTEM_ID: TotemPbId = {
+  seasonId: SEASON_ZERO_1_PBID,
+  seasonTotemId: TotemDefs.Totem_Ox,
+};
+
 
 const CARD_DEFS = [
   ForestHuntersCardDef,

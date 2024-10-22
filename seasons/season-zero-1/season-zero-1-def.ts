@@ -1,6 +1,7 @@
-import { SeasonDefinition } from "../../../protobufs/protofiles-out/manawave-types";
+import { SeasonDefinition, SeasonPbId } from "../../../protobufs/protofiles-out/manawave-types";
 import { ISeason } from "../../type-defs/season-defs";
 import { getPlayCardsForTotem } from "../../type-defs/totem-defs";
+import { SEASON_ZERO_1_PBID } from "../season-id-defs";
 import { ClanOfDiversityData } from "./clans/clan-of-diversity";
 import { ClanOfLifeData } from "./clans/clan-of-life";
 import { ClanOfSacrificeData } from "./clans/clan-of-sacrifice";
@@ -9,6 +10,10 @@ import { OX_TOTEM_DEF } from "./totems/sz1_ox";
 import { SPIRITS_TOTEM_DEF } from "./totems/sz1_spirits";
 import { TIGER_TOTEM_DEF } from "./totems/sz1_tiger";
 
+
+// export const SEASON_ZERO_1_PBID: SeasonPbId = {
+//   seasonDefinition: SeasonDefinition.SeasonDef_Zero_1,
+// };
 
 
 const allTotemChoices = [
@@ -32,8 +37,9 @@ const allFamilyCards = [
 
 export const SeasonZero1: ISeason = {
   seasonName: "Season Zero - 1",
-  seasonId: 'season-zero-1',
-  seasonDefinitionId: SeasonDefinition.SeasonDef_Zero_1,
+  // seasonId: 'season-zero-1',
+  // seasonDefinitionId: SeasonDefinition.SeasonDef_Zero_1,
+  seasonId: SEASON_ZERO_1_PBID,
   seasonDescription: "First draft development season with the card (not hex) based version",
 
   allTotemChoices,

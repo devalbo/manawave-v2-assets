@@ -1,3 +1,5 @@
+import { TotemDefs } from "../../../../protobufs/protofiles-out/manawave-season-zero-1";
+import { TotemPbId } from "../../../../protobufs/protofiles-out/manawave-types";
 import { ChannelersCardDef } from "../../../PIECES/card-defs/channelers";
 import { EnchantersCardDef } from "../../../PIECES/card-defs/enchanters";
 import { ManaChannelersCardDef } from "../../../PIECES/card-defs/mana-channelers";
@@ -7,11 +9,15 @@ import { WizardsCardDef } from "../../../PIECES/card-defs/wizards";
 import { FamilyCardInstance } from "../../../PIECES/type-defs/type-defs";
 import { createFamilyCardInstanceId } from "../../../type-defs/branded-string-types";
 import { ITotemDetails } from "../../../type-defs/totem-defs";
-
+import { SEASON_ZERO_1_PBID } from "../../season-id-defs";
 
 
 const TOTEM_NAME = 'Spirits';
-const TOTEM_ID = 'spirits';
+const TOTEM_ID: TotemPbId = {
+  seasonId: SEASON_ZERO_1_PBID,
+  seasonTotemId: TotemDefs.Totem_Spirits,
+};
+
 
 const CARD_DEFS = [
   RoadBuildersCardDef,
