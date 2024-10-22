@@ -27,14 +27,14 @@ const mapToLeylineColumnName = (leylineColumn: LeylineDistanceFromSource) => {
 }
 
 
-export const createMwBoardPlayerSideCoordinateKey = (playerSide: PlayerSide, leylineColumn: LeylineDistanceFromSource, leylineRank: number): MwBoardPlayerSideCoordinateKey => {
-  if (leylineRank > MAX_NUM_RANKS_PER_CLAN_COLUMN) {
+export const createMwBoardPlayerSideCoordinateKey = (playerSide: PlayerSide, leylineColumn: LeylineDistanceFromSource, flowRank: number): MwBoardPlayerSideCoordinateKey => {
+  if (flowRank > MAX_NUM_RANKS_PER_CLAN_COLUMN) {
     throw new Error("Unexpected rank value");
   }
 
   const columnName = mapToLeylineColumnName(leylineColumn);
   
-  return `${playerSide}:${columnName}${leylineRank}` as MwBoardPlayerSideCoordinateKey;
+  return `${playerSide}:${columnName}${flowRank}` as MwBoardPlayerSideCoordinateKey;
 }
 
 

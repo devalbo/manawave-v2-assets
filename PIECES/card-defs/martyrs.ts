@@ -1,8 +1,9 @@
-import { ManaflowPointProcResult } from "../../../game-play/board-data/local-game-state/lbs-channel-clan-manaflows-types";
+import { ManaflowPointProcResult } from "../../../game-play/board-data/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
 
 
 export const MartyrsCardDef: FamilyCardDefinition = {
+  pieceType: 'family-card',
   title: "Martyrs",
   totemId: 'tiger',
   text: "TODO: fill in text for Martyrs",

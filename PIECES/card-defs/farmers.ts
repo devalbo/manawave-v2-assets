@@ -1,4 +1,4 @@
-import { ManaflowPointProcResult } from "../../../game-play/board-data/local-game-state/lbs-channel-clan-manaflows-types";
+import { ManaflowPointProcResult } from "../../../game-play/board-data/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
 import { IModePrintSettings } from "../mw-card-data";
 
@@ -10,6 +10,7 @@ const ModePrintSettings: IModePrintSettings = {
 
 
 export const FarmersCardDef: FamilyCardDefinition = {
+  pieceType: 'family-card',
   title: "Farmers",
   totemId: 'ox',
   text: "TODO: fill in text for Farmers",

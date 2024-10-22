@@ -1,5 +1,5 @@
-import { EMPTY_CLAN_PLAY_PIECE_INTRAWAVE_COUNTERS, ManaflowPointProcResult } from "../../../game-play/board-data/local-game-state/lbs-channel-clan-manaflows-types";
-import { ClanCardInstanceId, createClanCardInstanceId } from "../../type-defs/branded-string-types";
+import { EMPTY_CLAN_PLAY_PIECE_INTRAWAVE_COUNTERS, ManaflowPointProcResult } from "../../../game-play/board-data/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types";
+import { createMwBoardPlayerSideCoordinateKey } from "../../type-defs/branded-string-types";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
 import { IModePrintSettings } from "../mw-card-data";
 
@@ -11,6 +11,7 @@ const ModePrintSettings: IModePrintSettings = {
 
 
 export const WizardsCardDef: FamilyCardDefinition = {
+  pieceType: 'family-card',
   title: "Wizards",
   totemId: 'spirits',
   text: "TODO: fill in text for Wizards",
@@ -45,17 +46,13 @@ export const WizardsCardDef: FamilyCardDefinition = {
     onManaflowProc: (boardState, playerSide, procPoint): ManaflowPointProcResult => {
       console.log("ON MANAFLOW PROC FOR Wizards");
 
-      const playerLeylineCards = playerSide === 'OPT' ?
-        boardState.optLeylineClanCards :
-        boardState.osbLeylineClanCards;
-
-      const clanForCard = playerLeylineCards.get(procPoint.leylineDistance)!;
-      const clanPieceId: ClanCardInstanceId = createClanCardInstanceId(playerSide, clanForCard.title);
+      const clanCardCoordinate = createMwBoardPlayerSideCoordinateKey(playerSide, procPoint.leylineDistance, 0);
 
       return {
         clanCardChanges: [
           {
-            clanPieceId,
+            // clanPieceId,
+            clanCardCoordinate,
             changes: {
               ...EMPTY_CLAN_PLAY_PIECE_INTRAWAVE_COUNTERS,
               manaCounters: 1,

@@ -1,10 +1,9 @@
-import { ManaflowPointProcResult } from "../../../game-play/board-data/local-game-state/lbs-channel-clan-manaflows-types";
+import { ManaflowPointProcResult } from "../../../game-play/board-data/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
-import { IMwCardData } from "../mw-card-data";
-import { Totems } from "../totems";
 
 
 export const ShieldCraftersCardDef: FamilyCardDefinition = {
+  pieceType: 'family-card',
   title: "Shield Crafters",
   totemId: 'tiger',
   text: "TODO: fill in text for Shield Crafters",

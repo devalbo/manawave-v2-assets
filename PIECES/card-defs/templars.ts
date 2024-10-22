@@ -1,6 +1,6 @@
-import { ManaflowPointProcResult } from "../../../game-play/board-data/local-game-state/lbs-channel-clan-manaflows-types";
+import { ManaflowPointProcResult } from "../../../game-play/board-data/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
-import { IModePrintSettings, IMwCardData } from "../mw-card-data";
+import { IModePrintSettings } from "../mw-card-data";
 
 
 const ModePrintSettings: IModePrintSettings = {
@@ -10,6 +10,7 @@ const ModePrintSettings: IModePrintSettings = {
 
 
 export const TemplarsCardDef: FamilyCardDefinition = {
+  pieceType: 'family-card',
   title: "Templars",
   totemId: 'tiger',
   text: "TODO: fill in text for Templars",

@@ -22,7 +22,8 @@ export type ClanCardIntraManawaveStockpile = {
 
 export type ClanInPlayData = {
   boardLocation: MwBoardPlayerSideCoordinateKey
-} & ClanCardIntraManawaveStockpile
+  stockPile: ClanCardIntraManawaveStockpile
+}
 
 
 export type FamilyCardIntraManawaveStockpile = {
@@ -54,13 +55,12 @@ export type PieceInstanceData = ClanPieceInstanceData | FamilyPieceInstanceData
 
 
 
-export type ClanCardType = { pieceType: 'clan-card' }
-export type FamilyCardType = { pieceType: 'family-card' }
+// export type ClanCardType = { pieceType: 'clan-card' }
+// export type FamilyCardType = { pieceType: 'family-card' }
 
 
 
-export type ClanCardInstance = ClanCardType &
-  ClanCardLogic &
+export type ClanCardInstance = ClanCardLogic &
   ClanCardDefinition &
   ClanPieceInstanceData
 
@@ -77,8 +77,7 @@ export type ClanCardInPlayInstance = ClanCardInstance &
 
 
 
-export type FamilyCardInstance = FamilyCardType &
-  FamilyCardDefinition &
+export type FamilyCardInstance = FamilyCardDefinition &
   FamilyCardLogic &
   FamilyPieceInstanceData
 

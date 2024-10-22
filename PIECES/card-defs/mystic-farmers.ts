@@ -1,8 +1,9 @@
-import { ManaflowPointProcResult } from "../../../game-play/board-data/local-game-state/lbs-channel-clan-manaflows-types";
+import { ManaflowPointProcResult } from "../../../game-play/board-data/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
 
 
 export const MysticFarmersCardDef: FamilyCardDefinition = {
+  pieceType: 'family-card',
   title: "Mystic Farmers",
   totemId: 'ox',
   text: "TODO: fill in text for Mystic Farmers",
