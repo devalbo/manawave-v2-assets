@@ -8,7 +8,7 @@ export const MonumentOfJusticeData: MonumentCard = {
   // monumentId: "sz1-monument-of-justice",
   monumentId: {
     seasonId: SEASON_ZERO_1_PBID,
-    seasonMonumentCardId: MonumentCardDefs.MonumentOfDiversty,
+    seasonMonumentCardId: MonumentCardDefs.MonumentOfJustice,
   },
   text: 
     "Resolve: Determine COUNT(<::shield-counter::>) for each adjacent Clan. " +

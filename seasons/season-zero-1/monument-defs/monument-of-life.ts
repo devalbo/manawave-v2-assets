@@ -8,7 +8,7 @@ export const MonumentOfLifeData: MonumentCard = {
   // monumentId: "sz1-monument-of-life",
   monumentId: {
     seasonId: SEASON_ZERO_1_PBID,
-    seasonMonumentCardId: MonumentCardDefs.MonumentOfDiversty,
+    seasonMonumentCardId: MonumentCardDefs.MonumentOfLife,
   },
   isDefault: true,
   text: "Resolve: If COUNT(<::manawave-round-token::>) >= 7, determine COUNT(<::population-token::>) for both Tribes. Tribe with greater COUNT(<::population-token::>) wins. If tied...",

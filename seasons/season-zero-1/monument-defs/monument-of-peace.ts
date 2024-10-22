@@ -8,7 +8,7 @@ export const MonumentOfPeaceData: MonumentCard = {
   // monumentId: "sz1-monument-of-peace",
   monumentId: {
     seasonId: SEASON_ZERO_1_PBID,
-    seasonMonumentCardId: MonumentCardDefs.MonumentOfDiversty,
+    seasonMonumentCardId: MonumentCardDefs.MonumentOfPeace,
   },
   text: "Resolve: If COUNT(<::manawave-round-token::>) >= 7, determine " +
   "COUNT(<::attack-counter::>) for each adjacent Clan. The Clan with the lowest " +

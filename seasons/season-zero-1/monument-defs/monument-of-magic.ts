@@ -8,7 +8,7 @@ export const MonumentOfMagicData: MonumentCard = {
   // monumentId: "sz1-monument-of-magic",
   monumentId: {
     seasonId: SEASON_ZERO_1_PBID,
-    seasonMonumentCardId: MonumentCardDefs.MonumentOfDiversty,
+    seasonMonumentCardId: MonumentCardDefs.MonumentOfMagic,
   },
   text: "Resolve: Determine COUNT(<::mana-level-token::>) for each adjacent Clan. " +
   "If either Clan has at least COUNT(<::manawave-round-token::>) x [3] <::mana-level-token::>, " +
