@@ -10,7 +10,6 @@ export type TribePlayPieceInstanceTokens = {
 }
 
 
-
 export type ClanCardIntraManawaveStockpile = {
   attackCounters: number
   shieldCounters: number
@@ -38,10 +37,6 @@ export type FamilyInPlayData = {
   boardLocation: MwBoardPlayerSideCoordinateKey
 } & FamilyCardIntraManawaveStockpile
 
-
-// export type PieceInstanceData = {
-//   pieceId: PieceInstanceId
-// }
 
 export type ClanPieceInstanceData = {
   pieceId: ClanCardInstanceId
