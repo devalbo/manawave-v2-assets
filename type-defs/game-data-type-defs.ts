@@ -1,6 +1,6 @@
 import { PlayerSlotId, PlayerSide, PlayerDefaultStrategy } from "../../game-data/game-play-data"
 import { ManaflowProcPoint } from "../../game-play/board-data/channel-clan-manaflows/type-defs"
-import { LbsChannelingClanManaflowsBoardState, ManaflowPointProcResult } from "../../game-play/board-data/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types"
+import { LbsChannelClanManaflowsBoardState, ManaflowPointProcResult } from "../../game-play/board-data/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types"
 import { PlayerPb } from "../../protobufs/protofiles-out/manawave"
 import { OnCardPickData } from "../PIECES/mw-card-data"
 
@@ -20,7 +20,7 @@ export interface IPlayTileLogic {
   onManawaveInit?: () => void
   // onManawaveProc: (boardState: IMainGameBoardState, playerSide: PlayerSide) => SurgePointProcResult
   onManaflowProc: (
-    boardState: LbsChannelingClanManaflowsBoardState,
+    boardState: LbsChannelClanManaflowsBoardState,
     // season: ISeason,
     playerSide: PlayerSide,
     procPoint: ManaflowProcPoint,
