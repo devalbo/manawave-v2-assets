@@ -1,4 +1,5 @@
-import { EMPTY_CLAN_PLAY_PIECE_INTRAWAVE_COUNTERS, EMPTY_PLAYER_TRIBE_INTRAWAVE_STOCKPILE, ManaflowPointProcResult } from "../../../../game-play/board-data/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types";
+import { ManaflowPointProcResult } from "../../../../game-play/board-data/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types";
+import { NULL_CLAN_CHANGES, NULL_TRIBE_CHANGES } from "../../../PIECES/type-defs/type-defs";
 import { createMwBoardPlayerSideCoordinateKey } from "../../../type-defs/branded-string-types";
 import { ClanCardDefinition } from "../../../type-defs/clan-defs";
 
@@ -66,7 +67,7 @@ export const ClanOfSacrificeData: ClanCardDefinition = {
             // clanPieceId,
             clanCardCoordinate,
             changes: {
-              ...EMPTY_CLAN_PLAY_PIECE_INTRAWAVE_COUNTERS,
+              ...NULL_CLAN_CHANGES,
               attackCounters: 1,
               shieldCounters: 1,
             },
@@ -74,7 +75,7 @@ export const ClanOfSacrificeData: ClanCardDefinition = {
         ],
         tribeCardChanges: {
           changes: {
-            ...EMPTY_PLAYER_TRIBE_INTRAWAVE_STOCKPILE,
+            ...NULL_TRIBE_CHANGES,
             manaCounters: 1,
             soulStainTokenCount: 1,
           }
