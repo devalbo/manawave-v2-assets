@@ -1,5 +1,5 @@
 import { PlayerSlotId, PlayerSide, PlayerDefaultStrategy } from "../../game-data/game-play-data"
-import { ManaflowProcPoint } from "../../game-play/board-data/channel-clan-manaflows/type-defs"
+import { ManaflowProcPoint } from "../../game-play/board-data/local-game-state/channel-clan-manaflows/type-defs"
 import { LbsChannelClanManaflowsBoardState, ManaflowPointProcResult } from "../../game-play/board-data/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types"
 import { PlayerPb } from "../../protobufs/protofiles-out/manawave"
 import { OnCardPickData } from "../PIECES/mw-card-data"

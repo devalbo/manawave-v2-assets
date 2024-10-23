@@ -1,6 +1,6 @@
 import { PlayerSide } from "../../game-data/game-play-data";
 import { LeylineDistanceFromSource, TotemPbId } from "../../protobufs/protofiles-out/manawave-types";
-import { MAX_NUM_RANKS_PER_CLAN_COLUMN } from "../../game-play/phases/constants";
+import { MAX_NUM_RANKS_PER_CLAN_COLUMN } from "../../game-play/phase-views/constants";
 import { toTotemIdStr } from "../../game-data/pb-id-str-mapping";
 
 
