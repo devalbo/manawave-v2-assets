@@ -1,4 +1,4 @@
-import { ManaflowPointProcResult } from "../../../../game-play/board-data/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types";
+import { ManaflowPointProcResult } from "../../../../game-play/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types";
 import { EMPTY_PLAYER_CLAN_CARD, EMPTY_PLAYER_TRIBE_CARD, NULL_CLAN_CHANGES, NULL_TRIBE_CHANGES } from "../../../PIECES/type-defs/type-defs";
 import { createMwBoardPlayerSideCoordinateKey } from "../../../type-defs/branded-string-types";
 import { ClanCardDefinition } from "../../../type-defs/clan-defs";
