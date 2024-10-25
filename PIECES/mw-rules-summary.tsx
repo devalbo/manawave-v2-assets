@@ -14,7 +14,7 @@ export const MwRulesSummarySheet = () => {
           <ul>
             <li>Increase Round Counter</li>
             <li>Select Family/Bloodline</li>
-            <li>Place Family and Change Modalities</li>
+            <li>Place Family and Change Modes</li>
             <li>Add Family Populations</li>
             <li>Channel Clan Manaflows</li>
             <li>Purchase and Place Counters/Tokens</li>
