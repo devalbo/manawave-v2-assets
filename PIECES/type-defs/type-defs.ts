@@ -7,18 +7,19 @@ import { ClanCardLogic, FamilyCardLogic } from "../../type-defs/game-data-type-d
 
 
 
-export type PlayerTribeCardMarkers = {
+export type PlayerTribeCardStockpile = {
   soulStainTokenCount: MwMarkerTypeToken
   populationIncreaseCounters: MwMarkerTypeCounter
   manaCounters: MwMarkerTypeCounter
   attackCounters: MwMarkerTypeCounter
   shieldCounters: MwMarkerTypeCounter
-  sacrificeCounters: MwMarkerTypeCounter
 }
 
 
-export type ClanCardMarkers = {
-  manaStoneTokens: MwMarkerTypeToken
+export type ClanCardStockpile = {
+  manalithTokens: MwMarkerTypeToken
+  populationTokens: MwMarkerTypeToken
+
   populationIncreaseCounters: MwMarkerTypeCounter
   manaCounters: MwMarkerTypeCounter
   attackCounters: MwMarkerTypeCounter
@@ -66,15 +67,15 @@ export type MwTokenTypes<T> = {
 // // Result: "mainColor" | "padding"
 
 
-export type PlayerTribeCounterTypes = MwCounterTypes<PlayerTribeCardMarkers>
-export type PlayerTribeTokenTypes = MwTokenTypes<PlayerTribeCardMarkers>
+export type PlayerTribeCounterTypes = MwCounterTypes<PlayerTribeCardStockpile>
+export type PlayerTribeTokenTypes = MwTokenTypes<PlayerTribeCardStockpile>
 
 export type PlayerTribeCounterChanges = Record<PlayerTribeCounterTypes, number>
 export type PlayerTribeTokenChanges = Record<PlayerTribeTokenTypes, number>
 
 
-export type ClanCounterTypes = MwCounterTypes<ClanCardMarkers>
-export type ClanTokenTypes = MwTokenTypes<ClanCardMarkers>
+export type ClanCounterTypes = MwCounterTypes<ClanCardStockpile>
+export type ClanTokenTypes = MwTokenTypes<ClanCardStockpile>
 
 export type ClanCounterChanges = Record<ClanCounterTypes, number>
 export type ClanTokenChanges = Record<ClanTokenTypes, number>
@@ -87,7 +88,7 @@ export type ClanTokenChanges = Record<ClanTokenTypes, number>
 //   attackCounters: number
 //   shieldCounters: number
 //   manaCounters: number
-//   // manaStoneTokens: number
+//   // manalithTokens: number
 // }
 
 // export const EMPTY_CLAN_PLAY_PIECE_INTRAWAVE_COUNTERS: ClanPlayPieceIntraWaveCounters = {
@@ -96,7 +97,7 @@ export type ClanTokenChanges = Record<ClanTokenTypes, number>
 //   attackCounters: 0,
 //   shieldCounters: 0,
 //   manaCounters: 0,
-//   // manaStoneTokens: 0,
+//   // manalithTokens: 0,
 // }
 
 // export type ClanCardCounterTypes = keyof ClanPlayPieceIntraWaveCounters
@@ -117,21 +118,21 @@ export type ClanTokenChanges = Record<ClanTokenTypes, number>
 //   populationIncreaseCounters: number
 //   sacrificeCounters: number
 //   manaCounters: number
-//   manaStoneTokens: number
+//   manalithTokens: number
 // }
 
 
-export const EMPTY_PLAYER_TRIBE_CARD: PlayerTribeCardMarkers = {
+export const EMPTY_PLAYER_TRIBE_CARD: PlayerTribeCardStockpile = {
   soulStainTokenCount: createMwTokenCount(0),
   populationIncreaseCounters: createMwCounterCount(0),
   manaCounters: createMwCounterCount(0),
   attackCounters: createMwCounterCount(0),
   shieldCounters: createMwCounterCount(0),
-  sacrificeCounters: createMwCounterCount(0),
 }
 
-export const EMPTY_PLAYER_CLAN_CARD: ClanCardMarkers = {
-  manaStoneTokens: createMwTokenCount(0),
+export const EMPTY_PLAYER_CLAN_CARD: ClanCardStockpile = {
+  manalithTokens: createMwTokenCount(0),
+  populationTokens: createMwTokenCount(0),
   populationIncreaseCounters: createMwCounterCount(0),
   manaCounters: createMwCounterCount(0),
   attackCounters: createMwCounterCount(0),
@@ -140,17 +141,17 @@ export const EMPTY_PLAYER_CLAN_CARD: ClanCardMarkers = {
 }
 
 
-export const NULL_TRIBE_CHANGES: PlayerTribeCardMarkers = {
+export const NOOP_TRIBE_CHANGES: PlayerTribeCardStockpile = {
   soulStainTokenCount: createMwTokenCount(0),
   populationIncreaseCounters: createMwCounterCount(0),
   manaCounters: createMwCounterCount(0),
   attackCounters: createMwCounterCount(0),
   shieldCounters: createMwCounterCount(0),
-  sacrificeCounters: createMwCounterCount(0),
 }
 
-export const NULL_CLAN_CHANGES: ClanCardMarkers = {
-  manaStoneTokens: createMwTokenCount(0),
+export const NOOP_CLAN_CHANGES: ClanCardStockpile = {
+  manalithTokens: createMwTokenCount(0),
+  populationTokens: createMwTokenCount(0),
   populationIncreaseCounters: createMwCounterCount(0),
   manaCounters: createMwCounterCount(0),
   attackCounters: createMwCounterCount(0),
@@ -163,7 +164,7 @@ export const NULL_CLAN_CHANGES: ClanCardMarkers = {
 
 export type ClanInPlayData = {
   boardLocation: MwBoardPlayerSideCoordinateKey
-  stockPile: ClanCardMarkers
+  stockPile: ClanCardStockpile
 }
 
 

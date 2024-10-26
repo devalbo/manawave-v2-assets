@@ -2,7 +2,7 @@ import { ManaflowPointProcResult } from "../../../game-play/local-game-state/cha
 import { createMwBoardPlayerSideCoordinateKey } from "../../type-defs/branded-string-types";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
 import { IModePrintSettings } from "../mw-card-data";
-import { EMPTY_PLAYER_CLAN_CARD, NULL_CLAN_CHANGES } from "../type-defs/type-defs";
+import { EMPTY_PLAYER_CLAN_CARD, NOOP_CLAN_CHANGES } from "../type-defs/type-defs";
 
 
 const ModePrintSettings: IModePrintSettings = {
@@ -55,7 +55,7 @@ export const WizardsCardDef: FamilyCardDefinition = {
             // clanPieceId,
             clanCardCoordinate,
             changes: {
-              ...NULL_CLAN_CHANGES,
+              ...NOOP_CLAN_CHANGES,
               manaCounters: 1,
             },
           },

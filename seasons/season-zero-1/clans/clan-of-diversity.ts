@@ -1,5 +1,5 @@
 import { ManaflowPointProcResult } from "../../../../game-play/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types";
-import { NULL_CLAN_CHANGES, NULL_TRIBE_CHANGES } from "../../../PIECES/type-defs/type-defs";
+import { NOOP_CLAN_CHANGES, NOOP_TRIBE_CHANGES } from "../../../PIECES/type-defs/type-defs";
 import { createMwBoardPlayerSideCoordinateKey } from "../../../type-defs/branded-string-types";
 import { ClanCardDefinition } from "../../../type-defs/clan-defs";
 
@@ -72,7 +72,7 @@ export const ClanOfDiversityData: ClanCardDefinition = {
             // clanPieceId,
             clanCardCoordinate,
             changes: {
-              ...NULL_CLAN_CHANGES,
+              ...NOOP_CLAN_CHANGES,
               attackCounters: 1,
               shieldCounters: 1,
             },
@@ -80,7 +80,7 @@ export const ClanOfDiversityData: ClanCardDefinition = {
         ],
         tribeCardChanges: {
           changes: {
-            ...NULL_TRIBE_CHANGES,
+            ...NOOP_TRIBE_CHANGES,
             manaCounters: 1,
             soulStainTokenCount: 1,
           }
