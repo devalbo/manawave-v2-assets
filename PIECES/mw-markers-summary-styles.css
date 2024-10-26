@@ -29,15 +29,22 @@
 
 .mw-markers-summary-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);  /* 3 equal columns */
-  grid-template-rows: repeat(10, 1fr);   /* 10 equal rows */
-  /* gap: 10px;  Optional: Adds space between grid items */
-  width: 80%; /* Adjust as needed */
+  grid-template-columns: 4fr 1.5fr 1.5fr;  /* First column is twice as wide */
+ 
+  grid-template-rows: repeat(9, 1fr);
   margin: 0 auto;
-  /* padding: 20px; */
   background-color: #f1f1f1;
+}
 
-  border: 2px solid #000;  /* Border around the entire grid */
+
+.mw-markers-summary-grid-item-label {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  font-size: 14px;
+  height: 44px;
+
+  border-top: 2px solid #000;
 }
 
 
@@ -45,20 +52,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #4caf50;
-  color: white;
-  font-size: 1.2rem;
-  border-radius: 8px;
-  height: 80px;  /* Adjust height as needed */
-
-  border-bottom: 3px solid #000;  /* Border between rows */
-  border-right: 3px solid #000;   /* Border between columns */
-
-  /* Remove the last column and row borders to avoid double lines */
-  &:nth-child(3n) {
-    border-right: none;
-  }
-  &:nth-last-child(-n+3) {
-    border-bottom: none;
-  }
+  font-size: 14px;
+  height: 40px;
+  border-top: 2px solid #000;
 }
