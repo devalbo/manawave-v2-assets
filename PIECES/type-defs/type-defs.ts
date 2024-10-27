@@ -165,7 +165,7 @@ export const NOOP_CLAN_CHANGES: ClanCardStockpile = {
 
 export type ClanInPlayData = {
   boardLocation: MwBoardPlayerSideCoordinateKey
-  stockPile: ClanCardStockpile
+  stockpile: ClanCardStockpile
   activeModeIndex: number
 }
 

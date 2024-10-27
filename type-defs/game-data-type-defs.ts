@@ -4,6 +4,7 @@ import { LbsChannelClanManaflowsRoundState, ManaflowPointProcResult } from "../.
 import { PlayerPb } from "../../protobufs/protofiles-out/manawave"
 import { OnCardPickData } from "../PIECES/mw-card-data"
 import { GameBoardStatePb } from "../../protobufs/protofiles-out/manawave-board"
+import { ClanCardStockpile } from "../PIECES/type-defs/type-defs"
 
 
 
@@ -31,7 +32,7 @@ export interface IClanCardLogic {
   ) => ManaflowPointProcResult
   onManawaveFinalize?: () => void
   
-  onClanCardPlacement?: (boardState: GameBoardStatePb) => GameBoardStatePb // run this when tile is placed by player on board
+  createInitialStockpile: () => ClanCardStockpile // run this when tile is placed by player on board
   // getTokenOptions?: () => ITileTokenOptions
   onTokenPlacement?: () => void // run this when tokens are placed by player on tile
 }

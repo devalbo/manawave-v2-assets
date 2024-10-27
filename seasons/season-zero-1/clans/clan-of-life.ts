@@ -1,7 +1,8 @@
 import { ManaflowPointProcResult } from "../../../../game-play/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types";
 import { GameBoardStatePb } from "../../../../protobufs/protofiles-out/manawave-board";
 import { ClanCardDefs } from "../../../../protobufs/protofiles-out/manawave-season-zero-1";
-import { NOOP_CLAN_CHANGES, NOOP_TRIBE_CHANGES } from "../../../PIECES/type-defs/type-defs";
+import { ClanCardStockpile, EMPTY_PLAYER_CLAN_CARD, NOOP_CLAN_CHANGES, NOOP_TRIBE_CHANGES } from "../../../PIECES/type-defs/type-defs";
+import { createMwTokenCount } from "../../../type-defs/branded-marker-types";
 import { createMwBoardPlayerSideCoordinateKey } from "../../../type-defs/branded-string-types";
 import { ClanCardDefinition } from "../../../type-defs/clan-defs";
 import { SEASON_ZERO_1_PBID } from "../../season-id-defs";
@@ -49,13 +50,16 @@ export const ClanOfLifeData: ClanCardDefinition = {
   ],
 
   gameLogic: {
-    onClanCardPlacement: (boardState: GameBoardStatePb): GameBoardStatePb => {
-      const updatedState: GameBoardStatePb = {
-        ...boardState,
+    
+    createInitialStockpile: () => {
+      const stockpile: ClanCardStockpile = {
+        ...EMPTY_PLAYER_CLAN_CARD,
+        populationTokens: createMwTokenCount(2),
       };
 
-      return updatedState;
+      return stockpile;
     },
+
     onManaflowProc: (boardState, playerSide, procPoint): ManaflowPointProcResult => {
 
       const clanCardCoordinate = createMwBoardPlayerSideCoordinateKey(playerSide, procPoint.leylineDistance, procPoint.leylineRank);
