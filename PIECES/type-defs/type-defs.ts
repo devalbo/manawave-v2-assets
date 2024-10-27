@@ -165,6 +165,7 @@ export const NOOP_CLAN_CHANGES: ClanCardStockpile = {
 export type ClanInPlayData = {
   boardLocation: MwBoardPlayerSideCoordinateKey
   stockPile: ClanCardStockpile
+  activeModeIndex: number
 }
 
 
@@ -178,6 +179,7 @@ export type FamilyCardIntraManawaveStockpile = {
 
 export type FamilyInPlayData = {
   boardLocation: MwBoardPlayerSideCoordinateKey
+  activeModeIndex: number
 } & FamilyCardIntraManawaveStockpile
 
 
