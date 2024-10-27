@@ -9,11 +9,11 @@ export const MartyrsCardDef: FamilyCardDefinition = {
   text: "TODO: fill in text for Martyrs",
   modes: [
     {
-      manaCost: 0,
+      manaClaimsRequired: 0,
       modeText: "Add 1 <::attack-counter::> to Clan.",
     },
     {
-      manaCost: 2,
+      manaClaimsRequired: 2,
       modeText: "Add 5 <::attack-counter::> to Clan. Reduce total by 1 for each <::soulstain-token::> your Tribe has. Add 1 <::population-sacrifice-counter::> to Clan.",
     },
   ],

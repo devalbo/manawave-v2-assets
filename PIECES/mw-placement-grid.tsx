@@ -10,7 +10,7 @@ const ManaCounterIcon_Placement = () => createImgComponentFromTag('<::mana-count
 const AttackCounterIcon_Placement = () => createImgComponentFromTag('<::attack-counter::>', PlacementIconSize);
 const ShieldCounterIcon_Placement = () => createImgComponentFromTag('<::shield-counter::>', PlacementIconSize);
 const PopulationIncreaseCounterIcon_Placement = () => createImgComponentFromTag('<::population-increase-counter::>', PlacementIconSize);
-const ManaLevelTokenIcon_Placement = () => createImgComponentFromTag('<::mana-level-token::>', PlacementIconSize);
+const ManaLevelTokenIcon_Placement = () => createImgComponentFromTag('<::manalith-token::>', PlacementIconSize);
 
 
 const MwPlacementGridHeader = () => {

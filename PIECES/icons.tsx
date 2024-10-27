@@ -10,14 +10,16 @@ import {
   ShieldCounterDataUrl,
   SoulstainTokenDataUrl,
   ManaLevelTokenDataUrl,
+  ManalithClaimCounterDataUrl,
  } from "./token-counter-icons";
 
 
 export const createImgDataUrlFromTag = (tag: TokenCounterTypeTags) => {
   switch (tag) {
     case '<::mana-counter::>': return ManaCounterDataUrl;
-    case '<::mana-level-token::>': return ManaLevelTokenDataUrl;
+    case '<::manalith-token::>': return ManaLevelTokenDataUrl;
     case '<::manawave-round-token::>': return ManawaveRoundTokenDataUrl;
+    case '<::manalith-claim-counter::>': return ManalithClaimCounterDataUrl;
 
     case '<::attack-counter::>': return AttackCounterDataUrl;
     case '<::shield-counter::>': return ShieldCounterDataUrl;
@@ -51,11 +53,12 @@ export const AttackCounterIcon_DefaultSize = () => createImgComponentFromTag('<:
 export const ShieldCounterIcon_DefaultSize = () => createImgComponentFromTag('<::shield-counter::>', DefaultIconImageSize);
 export const PopulationIncreaseCounterIcon_DefaultSize = () => createImgComponentFromTag('<::population-increase-counter::>', DefaultIconImageSize);
 export const PopulationSacrificeCounterIcon_DefaultSize = () => createImgComponentFromTag('<::population-sacrifice-counter::>', DefaultIconImageSize);
+export const ManalithClaimCounterIcon_DefaultSize = () => createImgComponentFromTag('<::manalith-claim-counter::>', DefaultIconImageSize);
 
 export const PopulationTokenIcon_DefaultSize = () => createImgComponentFromTag('<::population-token::>', DefaultIconImageSize);
 export const SoulstainTokenIcon_DefaultSize = () => createImgComponentFromTag('<::soulstain-token::>', DefaultIconImageSize);
 export const ManawaveRoundTokenIcon_DefaultSize = () => createImgComponentFromTag('<::manawave-round-token::>', DefaultIconImageSize);
-export const ManaLevelTokenIcon_DefaultSize = () => createImgComponentFromTag('<::mana-level-token::>', DefaultIconImageSize);
+export const ManaLevelTokenIcon_DefaultSize = () => createImgComponentFromTag('<::manalith-token::>', DefaultIconImageSize);
 
 
 
@@ -71,21 +74,21 @@ export const MwGameImgIcon = (props: IMwGameIcon) => {
 
 export const getMwIconAscii = (tag: TokenCounterTypeTags) => {
   switch (tag) {
-    // case '<::on-manawave-proc::>': return "On MW:";
 
-    case '<::attack-counter::>': return "Attack";
-    case '<::shield-counter::>': return "Shield";
+    case '<::attack-counter::>': return "Attack Counter";
+    case '<::shield-counter::>': return "Shield Counter";
 
-    case '<::population-increase-counter::>': return "Population Increase";
-    case '<::population-sacrifice-counter::>': return "Population Sacrifice";
+    case '<::population-increase-counter::>': return "Population Increase Counter";
+    case '<::population-sacrifice-counter::>': return "Population Sacrifice Counter";
+    case '<::population-token::>': return 'Population Token';
 
-    // case '<::population-count-token::>': return "Population Count";
-    case '<::soulstain-token::>': return "Soulstain";
-
-    // case '<::manawave-surge-strength::>': return "Surge Strength";
-    // case '<::round-number::>': return "Round Number";
+    case '<::soulstain-token::>': return "Soulstain Token";
+    
+    case '<::mana-counter::>': return 'Mana Counter';
+    case '<::manalith-claim-counter::>': return 'Manalith Claim Counter';
+    case '<::manawave-round-token::>': return 'Manawave Round Token';
+    case '<::manalith-token::>': return 'Manalith Token';
   }
 
   return `Unrecognized token counter type: ${tag}`;
-
 }

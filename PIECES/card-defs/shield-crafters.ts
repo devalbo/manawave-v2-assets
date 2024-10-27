@@ -9,11 +9,11 @@ export const ShieldCraftersCardDef: FamilyCardDefinition = {
   text: "TODO: fill in text for Shield Crafters",
   modes: [
     {
-      manaCost: 0,
+      manaClaimsRequired: 0,
       modeText: "Add 2 <::shield-counter::> to Clan.",
     },
     {
-      manaCost: 2,
+      manaClaimsRequired: 2,
       modeText: "Add 2 <::shield-counter::> to Clan. Add 3 <::shield-counter::> to Tribe.",
     },
   ],

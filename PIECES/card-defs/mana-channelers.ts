@@ -9,7 +9,7 @@ export const ManaChannelersCardDef: FamilyCardDefinition = {
   text: "TODO: fill in text for Mana Channelers",
   modes: [
     {
-      manaCost: 0,
+      manaClaimsRequired: 0,
       modeText: "Add 2 <::mana-counter::> to Tribe.",
     },
   ],

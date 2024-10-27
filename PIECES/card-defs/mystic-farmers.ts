@@ -9,15 +9,15 @@ export const MysticFarmersCardDef: FamilyCardDefinition = {
   text: "TODO: fill in text for Mystic Farmers",
   modes: [
     {
-      manaCost: 0,
+      manaClaimsRequired: 0,
       modeText: "Add 1 <::population-increase-counter::> to Clan.",
     },
     {
-      manaCost: 1,
+      manaClaimsRequired: 1,
       modeText: "Execute M0. Add 1 <::mana-counter::> to Clan.",
     },
     {
-      manaCost: 2,
+      manaClaimsRequired: 2,
       modeText: "Execute M0. Add 1 <::mana-counter::> to Tribe.",
     },
   ],

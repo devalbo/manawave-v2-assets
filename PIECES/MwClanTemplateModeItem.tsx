@@ -1,10 +1,10 @@
 import React from "react"
-import { ICardModeData } from "./mw-card-data"
+import { IMwCardModeData } from "./mw-card-data"
 import { createIconizedStringContent } from "./icon-strings";
 
 
 interface MwClanTemplateModeItemProps {
-  mode: ICardModeData
+  mode: IMwCardModeData
 }
 
 export const MwClanTemplateModeItem = (props: MwClanTemplateModeItemProps) => {
@@ -17,7 +17,7 @@ export const MwClanTemplateModeItem = (props: MwClanTemplateModeItemProps) => {
 
   const item =
     <div className="mw-clan-mode-item" style={{ fontSize: fontSize, }}>
-      <span className="mw-clan-mode-item-mana-cost">[{props.mode.manaCost}]: </span>
+      <span className="mw-clan-mode-item-mana-cost">[{props.mode.manaClaimsRequired}]: </span>
       <span className="mw-clan-mode-item-text">{iconizedModeText}</span>
     </div>
 

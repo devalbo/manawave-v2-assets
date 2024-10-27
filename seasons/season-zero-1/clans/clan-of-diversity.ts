@@ -11,15 +11,15 @@ export const ClanOfDiversityData: ClanCardDefinition = {
   text: "blah",
     modes: [
     {
-      manaCost: 0,
-      modeText: "Add <::attack-counter::> to Clan. Add <::shield-counter::> to Clan.",
+      manaClaimsRequired: 0,
+      modeText: "Add 1 <::attack-counter::> to Clan. Add 1 <::shield-counter::> to Clan.",
       modePrintSettings: {
         fontSize: 12,
         imageSize: 12,
       },
     },
     {
-      manaCost: 2,
+      manaClaimsRequired: 2,
       modeText: "Add <::attack-counter::> <::attack-counter::> to each adjacent Clan.",
       modePrintSettings: {
         fontSize: 12,
@@ -27,7 +27,7 @@ export const ClanOfDiversityData: ClanCardDefinition = {
       },
     },
     {
-      manaCost: 2,
+      manaClaimsRequired: 2,
       modeText: "Add <::shield-counter::> <::shield-counter::> to each adjacent Clan.",
       modePrintSettings: {
         fontSize: 12,
@@ -38,7 +38,7 @@ export const ClanOfDiversityData: ClanCardDefinition = {
   conversionRatios: [
     {
       input: ['<::mana-counter::>'],
-      output: ['<::mana-level-token::>'],
+      output: ['<::manalith-token::>'],
     },
     {
       input: ['<::mana-counter::>', '<::mana-counter::>'],

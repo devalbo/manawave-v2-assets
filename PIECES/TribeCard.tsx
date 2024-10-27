@@ -14,7 +14,7 @@ const ManaCounterIcon = () => createImgComponentFromTag('<::mana-counter::>', 20
 const AttackCounterIcon = () => createImgComponentFromTag('<::attack-counter::>', 20);
 const ShieldCounterIcon = () => createImgComponentFromTag('<::shield-counter::>', 20);
 const PopulationIncreaseCounterIcon = () => createImgComponentFromTag('<::population-increase-counter::>', 20);
-const ManaLevelTokenIcon = () => createImgComponentFromTag('<::mana-level-token::>', 20);
+const ManaLevelTokenIcon = () => createImgComponentFromTag('<::manalith-token::>', 20);
 
 const StockpileImageSize = 40;
 

@@ -16,6 +16,26 @@ export interface IPlayer {
 }
 
 
+
+export interface IClanCardLogic {
+  onManawaveInit?: () => void
+  // onManawaveProc: (boardState: IMainGameBoardState, playerSide: PlayerSide) => SurgePointProcResult
+  onManaflowProc: (
+    boardState: LbsChannelClanManaflowsRoundState,
+    // season: ISeason,
+    playerSide: PlayerSide,
+    procPoint: ManaflowProcPoint,
+    // leyline: LeylineDistanceFromSource,
+    // rank: number
+  ) => ManaflowPointProcResult
+  onManawaveFinalize?: () => void
+  
+  onClanCardPlacement?: () => void // run this when tile is placed by player on board
+  // getTokenOptions?: () => ITileTokenOptions
+  onTokenPlacement?: () => void // run this when tokens are placed by player on tile
+}
+
+
 export interface IPlayTileLogic {
   onManawaveInit?: () => void
   // onManawaveProc: (boardState: IMainGameBoardState, playerSide: PlayerSide) => SurgePointProcResult
@@ -44,7 +64,7 @@ export interface IPlayTileLogic {
 export type ClanCardLogic = {
   // title: string
   // text: string
-  gameLogic: IPlayTileLogic
+  gameLogic: IClanCardLogic
 }
 
 

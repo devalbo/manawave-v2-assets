@@ -29,9 +29,9 @@
 
 .mw-markers-summary-grid {
   display: grid;
-  grid-template-columns: 4fr 1.5fr 1.5fr;  /* First column is twice as wide */
+  grid-template-columns: 1fr 1fr 4fr;  /* First column is twice as wide */
  
-  grid-template-rows: repeat(9, 1fr);
+  grid-template-rows: repeat(10, 1fr);
   margin: 0 auto;
   background-color: #f1f1f1;
 }
@@ -42,7 +42,7 @@
   align-items: center;
   justify-content: left;
   font-size: 14px;
-  height: 44px;
+  height: 36px;
 
   border-top: 2px solid #000;
 }

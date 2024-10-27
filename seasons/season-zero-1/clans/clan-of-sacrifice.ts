@@ -11,20 +11,20 @@ export const ClanOfSacrificeData: ClanCardDefinition = {
   text: "blah",
   modes: [
     {
-      manaCost: 0,
-      modeText: "Add <::attack-counter::> to Clan. Add <::shield-counter::> to Clan.",
+      manaClaimsRequired: 0,
+      modeText: "Add 1 <::attack-counter::> to Clan. Add 1 <::shield-counter::> to Clan.",
       modePrintSettings: {
         fontSize: 12,
         imageSize: 12,
       },
     },
     {
-      manaCost: 0,
-      modeText: "Add <::mana-counter::> to Clan.",
+      manaClaimsRequired: 0,
+      modeText: "Add 1 <::mana-counter::> to Clan.",
     },
     {
-      manaCost: 1,
-      modeText: "Add <::population-sacrifice-counter::> to Clan. Add <::mana-counter::> <::mana-counter::> to Tribe.",
+      manaClaimsRequired: 1,
+      modeText: "Add 1 <::population-sacrifice-counter::> to Clan. Add <::mana-counter::> <::mana-counter::> to Tribe.",
       modePrintSettings: {
         fontSize: 12,
         imageSize: 12,
@@ -34,7 +34,7 @@ export const ClanOfSacrificeData: ClanCardDefinition = {
   conversionRatios: [
     {
       input: ['<::mana-counter::>'],
-      output: ['<::mana-level-token::>'],
+      output: ['<::manalith-token::>'],
     },
     {
       input: ['<::mana-counter::>', '<::mana-counter::>'],

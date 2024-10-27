@@ -9,7 +9,7 @@ export const GrasslandShepherdsCardDef: FamilyCardDefinition = {
   text: "TODO: fill in text for Grassland Shepherds",
   modes: [
     {
-      manaCost: 0,
+      manaClaimsRequired: 0,
       modeText: "Add 1 <::population-increase-counter::> to Tribe.",
     },
   ],

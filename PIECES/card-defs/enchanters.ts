@@ -9,7 +9,7 @@ export const EnchantersCardDef: FamilyCardDefinition = {
   text: "TODO: fill in text for Enchanters",
   modes: [
     {
-      manaCost: 0,
+      manaClaimsRequired: 0,
       modeText: "Add 1 <::mana-counter::> to Tribe, plus 1 for each adjacent Family.",
     },
   ],

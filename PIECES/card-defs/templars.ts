@@ -16,17 +16,17 @@ export const TemplarsCardDef: FamilyCardDefinition = {
   text: "TODO: fill in text for Templars",
   modes: [
     {
-      manaCost: 0,
+      manaClaimsRequired: 0,
       modeText: "Add 1 <::attack-counter::> to Clan. Add 1 <::shield-counter::> to Clan.",
       modePrintSettings: ModePrintSettings,
     },
     {
-      manaCost: 1,
+      manaClaimsRequired: 1,
       modeText: "Add 3 <::shield-counter::> to Clan. Add 1 <::attack-counter::> to Tribe. Reduce each by 1 if your Tribe has any <::soulstain-token::>.",
       modePrintSettings: ModePrintSettings,
     },
     {
-      manaCost: 1,
+      manaClaimsRequired: 1,
       modeText: "Add 3 <::attack-counter::> to Clan. Add 1 <::shield-counter::> to Tribe. Reduce each by 1 if your Tribe has any <::soulstain-token::>.",
       modePrintSettings: ModePrintSettings,
     },

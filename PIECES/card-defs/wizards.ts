@@ -18,22 +18,22 @@ export const WizardsCardDef: FamilyCardDefinition = {
   text: "TODO: fill in text for Wizards",
   modes: [
     {
-      manaCost: 0,
+      manaClaimsRequired: 0,
       modeText: "Add 1 <::mana-counter::> to Tribe.",
       modePrintSettings: ModePrintSettings,
     },
     {
-      manaCost: 1,
+      manaClaimsRequired: 1,
       modeText: "Add 2 <::mana-counter::> to Tribe.",
       modePrintSettings: ModePrintSettings,
     },
     {
-      manaCost: 2,
+      manaClaimsRequired: 2,
       modeText: "Add 4 <::mana-counter::> to Tribe.",
       modePrintSettings: ModePrintSettings,
     },
     {
-      manaCost: 4,
+      manaClaimsRequired: 4,
       modeText: "Add 8 <::mana-counter::> to Tribe. Add 1 <::population-sacrifice-counter::> to Clan.",
       modePrintSettings: ModePrintSettings,
     },

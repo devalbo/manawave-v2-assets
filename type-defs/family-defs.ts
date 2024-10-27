@@ -1,4 +1,4 @@
-import { IMwClanModeData } from "../PIECES/MwClanTemplate"
+import { IMwCardModeData } from "../PIECES/mw-card-data"
 import { FamilyCardLogic } from "./game-data-type-defs"
 import { FamilyCardType } from "./piece-type-defs"
 import { TotemId } from "./totem-type-defs"
@@ -9,6 +9,6 @@ export type FamilyCardDefinition = {
   text: string
   totemId: TotemId
   
-  modes: IMwClanModeData[]
+  modes: IMwCardModeData[]
 } & FamilyCardLogic 
   & FamilyCardType

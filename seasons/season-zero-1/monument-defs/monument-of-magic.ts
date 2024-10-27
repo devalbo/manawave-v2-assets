@@ -10,10 +10,10 @@ export const MonumentOfMagicData: MonumentCard = {
     seasonId: SEASON_ZERO_1_PBID,
     seasonMonumentCardId: MonumentCardDefs.MonumentOfMagic,
   },
-  text: "Resolve: Determine COUNT(<::mana-level-token::>) for each adjacent Clan. " +
-  "If either Clan has at least COUNT(<::manawave-round-token::>) x [3] <::mana-level-token::>, " +
-  "the Tribe of the Clan with higher COUNT(<::mana-level-token::>) wins. If there is a tie, determine " +
-  "COUNT(<::mana-level-token::>) for both Tribes. The Tribe with the highest COUNT(<::mana-level-token::>) " +
+  text: "Resolve: Determine COUNT(<::manalith-token::>) for each adjacent Clan. " +
+  "If either Clan has at least COUNT(<::manawave-round-token::>) x [3] <::manalith-token::>, " +
+  "the Tribe of the Clan with higher COUNT(<::manalith-token::>) wins. If there is a tie, determine " +
+  "COUNT(<::manalith-token::>) for both Tribes. The Tribe with the highest COUNT(<::manalith-token::>) " +
   " wins. If there is still a tie, resume the Manawave.",
   // monumentPrintSettings: {
   //   imageSize: 12,

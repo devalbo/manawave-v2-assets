@@ -1,13 +1,13 @@
 import React from "react"
-import { ICardModeData } from "./mw-card-data"
+import { IMwCardModeData } from "./mw-card-data"
 import { MwClanTemplateModeItem } from "./MwClanTemplateModeItem"
 import { createImgComponentFromTag } from "./icons";
 
 interface MwClanTemplateModeBlockProps {
-  modes: ICardModeData[]
+  modes: IMwCardModeData[]
 }
 
-const ManaLevelTokenIcon = () => createImgComponentFromTag('<::mana-level-token::>', 20);
+const ManaLevelTokenIcon = () => createImgComponentFromTag('<::manalith-token::>', 20);
 const PopulationTokenIcon = () => createImgComponentFromTag('<::population-token::>', 20);
 
 export const MwClanTemplateModeBlock = (props: MwClanTemplateModeBlockProps) => {

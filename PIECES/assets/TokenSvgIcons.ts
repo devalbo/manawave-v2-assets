@@ -222,3 +222,15 @@ export const ManaLevelTokenSvg = `
 export const PopulationIncreaseCounterSvg = `
 <svg fill="#000000" width="800px" height="800px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10,10a1,1,0,1,0-1,1A1,1,0,0,0,10,10Zm4.5,4.06a1,1,0,0,0-1.37.36,1.3,1.3,0,0,1-2.26,0,1,1,0,0,0-1.37-.36,1,1,0,0,0-.37,1.36,3.31,3.31,0,0,0,5.74,0A1,1,0,0,0,14.5,14.06ZM15,9a1,1,0,1,0,1,1A1,1,0,0,0,15,9ZM12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18A8,8,0,0,1,9,4.57,3,3,0,0,0,9,5a3,3,0,0,0,3,3,1,1,0,0,0,0-2,1,1,0,0,1,0-2,8,8,0,0,1,0,16Z"/></svg>
 `
+
+
+export const ManalithClaimCounterSvg = `
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <path d="M30 90 L70 90 L70 60 L80 50 L80 20 L70 10 L60 20 L60 50 L30 90" 
+        fill="none" 
+        stroke="black" 
+        stroke-width="4"
+        stroke-linejoin="round"
+        stroke-linecap="round"/>
+</svg>
+`

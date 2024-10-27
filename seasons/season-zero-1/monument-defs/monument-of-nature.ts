@@ -10,10 +10,10 @@ export const MonumentOfNatureData: MonumentCard = {
     seasonId: SEASON_ZERO_1_PBID,
     seasonMonumentCardId: MonumentCardDefs.MonumentOfNature,
   },
-  text: "Resolve: If COUNT(<::manawave-round-token::>) >= 7, determine COUNT(<::mana-level-token::>) " +
-  "for each adjacent Clan. The Clan with the lowest COUNT(<::mana-level-token::>) " +
-  "wins. If there is a tie, determine COUNT(<::mana-level-token::>) for both Tribes. " +
-  " The Tribe with the lowest COUNT(<::mana-level-token::>) wins. If there is still a tie, " +
+  text: "Resolve: If COUNT(<::manawave-round-token::>) >= 7, determine COUNT(<::manalith-token::>) " +
+  "for each adjacent Clan. The Clan with the lowest COUNT(<::manalith-token::>) " +
+  "wins. If there is a tie, determine COUNT(<::manalith-token::>) for both Tribes. " +
+  " The Tribe with the lowest COUNT(<::manalith-token::>) wins. If there is still a tie, " +
   "resume the Manawave.",
   // monumentPrintSettings: {
   //   imageSize: 12,

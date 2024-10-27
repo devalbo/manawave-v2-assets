@@ -9,7 +9,7 @@ export const RoadBuildersCardDef: FamilyCardDefinition = {
   text: "TODO: fill in text for Road Builders",
   modes: [
     {
-      manaCost: 0,
+      manaClaimsRequired: 0,
       modeText: "Add 1 <::population-increase-counter::> to Clan. Add 1 <::mana-counter::> to Tribe.",
     },
   ],

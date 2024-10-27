@@ -1,5 +1,5 @@
 import { ManaflowPointProcResult } from "../../../../game-play/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types";
-import { EMPTY_PLAYER_CLAN_CARD, EMPTY_PLAYER_TRIBE_CARD, NOOP_CLAN_CHANGES, NOOP_TRIBE_CHANGES } from "../../../PIECES/type-defs/type-defs";
+import { NOOP_CLAN_CHANGES, NOOP_TRIBE_CHANGES } from "../../../PIECES/type-defs/type-defs";
 import { createMwBoardPlayerSideCoordinateKey } from "../../../type-defs/branded-string-types";
 import { ClanCardDefinition } from "../../../type-defs/clan-defs";
 
@@ -11,22 +11,22 @@ export const ClanOfLifeData: ClanCardDefinition = {
   text: "blah",
   modes: [
     {
-      manaCost: 0,
-      modeText: "Add <::attack-counter::> to Clan. Add <::shield-counter::> to Clan.",
+      manaClaimsRequired: 0,
+      modeText: "Add 1 <::attack-counter::> to Clan. Add 1 <::shield-counter::> to Clan.",
       modePrintSettings: {
         fontSize: 12,
         imageSize: 12,
       }
     },
     {
-      manaCost: 1,
-      modeText: "Add <::population-increase-counter::> to Tribe.",
+      manaClaimsRequired: 1,
+      modeText: "Add 1 <::population-increase-counter::> to Tribe.",
     },
   ],
   conversionRatios: [
     {
       input: ['<::mana-counter::>'],
-      output: ['<::mana-level-token::>'],
+      output: ['<::manalith-token::>'],
     },
     {
       input: ['<::mana-counter::>'],

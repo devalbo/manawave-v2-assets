@@ -1,17 +1,11 @@
 import _ from 'lodash';
 import { MwClanTemplateModeBlock } from './MwClanTemplateModeBlock';
-import { IModePrintSettings } from './mw-card-data';
 import { createImgComponentFromTag } from './icons';
 import { TokenCounterTypeTags } from './token-counter-icons';
 import { CardDecoration } from './constants';
+import { IMwCardModeData } from './mw-card-data';
 import './MwClanTemplate.css';
 
-
-export interface IMwClanModeData {
-  manaCost: number;
-  modeText: string;
-  modePrintSettings?: IModePrintSettings
-}
 
 export interface IMwClanConversionRatio {
   input: TokenCounterTypeTags[];
@@ -22,7 +16,7 @@ export interface IMwClanData {
   title: string
   text: string
   decoration?: CardDecoration
-  modes: IMwClanModeData[]
+  modes: IMwCardModeData[]
   conversionRatios: IMwClanConversionRatio[]
 }
 

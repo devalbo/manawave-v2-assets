@@ -9,11 +9,11 @@ export const ForestHuntersCardDef: FamilyCardDefinition = {
   text: "TODO: fill in text for Forest Hunters",
   modes: [
     {
-      manaCost: 0,
+      manaClaimsRequired: 0,
       modeText: "Add 2 <::population-increase-counter::> to Clan.",
     },
     {
-      manaCost: 2,
+      manaClaimsRequired: 2,
       modeText: "Add 3 <::population-increase-counter::> to Clan.",
     },
   ],

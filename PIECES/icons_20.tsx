@@ -11,5 +11,5 @@ export const PopulationSacrificeCounterIcon_20 = () => createImgComponentFromTag
 export const PopulationTokenIcon_20 = () => createImgComponentFromTag('<::population-token::>', ImageSize_20);
 export const SoulstainTokenIcon_20 = () => createImgComponentFromTag('<::soulstain-token::>', ImageSize_20);
 export const ManawaveRoundTokenIcon_20 = () => createImgComponentFromTag('<::manawave-round-token::>', ImageSize_20);
-export const ManaLevelTokenIcon_20 = () => createImgComponentFromTag('<::mana-level-token::>', ImageSize_20);
+export const ManaLevelTokenIcon_20 = () => createImgComponentFromTag('<::manalith-token::>', ImageSize_20);
 

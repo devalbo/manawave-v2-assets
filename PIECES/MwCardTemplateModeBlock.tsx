@@ -1,9 +1,9 @@
 import React from "react"
-import { ICardModeData } from "./mw-card-data"
+import { IMwCardModeData } from "./mw-card-data"
 import { MwCardTemplateModeItem } from "./MwCardTemplateModeItem"
 
 interface MwCardTemplateModeBlockProps {
-  modes: ICardModeData[]
+  modes: IMwCardModeData[]
 }
 
 export const MwCardTemplateModeBlock = (props: MwCardTemplateModeBlockProps) => {

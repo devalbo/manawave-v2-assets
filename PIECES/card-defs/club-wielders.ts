@@ -9,11 +9,11 @@ export const ClubWieldersCardDef: FamilyCardDefinition = {
   text: "TODO: fill in text for Club Wielders",
   modes: [
     {
-      manaCost: 0,
+      manaClaimsRequired: 0,
       modeText: "Add 2 <::attack-counter::> to Clan.",
     },
     {
-      manaCost: 2,
+      manaClaimsRequired: 2,
       modeText: "Add 2 <::attack-counter::> to Clan. Add 2 <::attack-counter::> to Tribe.",
     },
   ],

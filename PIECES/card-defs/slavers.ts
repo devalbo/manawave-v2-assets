@@ -9,11 +9,11 @@ export const SlaversCardDef: FamilyCardDefinition = {
   text: "TODO: fill in text for Slavers",
   modes: [
     {
-      manaCost: 0,
+      manaClaimsRequired: 0,
       modeText: "Add 1 <::attack-counter::> to Tribe.",
     },
     {
-      manaCost: 2,
+      manaClaimsRequired: 2,
       modeText: "Add 1 <::attack-counter::> to Tribe for each <::population-token::> on opposing Clan. Take 1 <::soulstain-token::>.",
     },
   ],

@@ -11,15 +11,15 @@ export const BlankCardDefCardData: IMwCardData = {
   },
   modes: [
     {
-      manaCost: 0,
+      manaClaimsRequired: 0,
       modeText: "",
     },
     {
-      manaCost: 0,
+      manaClaimsRequired: 0,
       modeText: "",
     },
     {
-      manaCost: 0,
+      manaClaimsRequired: 0,
       modeText: "",
     },
   ],
