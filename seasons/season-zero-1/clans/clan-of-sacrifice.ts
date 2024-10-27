@@ -1,13 +1,18 @@
 import { ManaflowPointProcResult } from "../../../../game-play/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types";
+import { ClanCardDefs } from "../../../../protobufs/protofiles-out/manawave-season-zero-1";
 import { NOOP_CLAN_CHANGES, NOOP_TRIBE_CHANGES } from "../../../PIECES/type-defs/type-defs";
 import { createMwBoardPlayerSideCoordinateKey } from "../../../type-defs/branded-string-types";
 import { ClanCardDefinition } from "../../../type-defs/clan-defs";
+import { SEASON_ZERO_1_PBID } from "../../season-id-defs";
 
 
 export const ClanOfSacrificeData: ClanCardDefinition = {
   pieceType: 'clan-card',
   title: "Clan of Sacrifice",
-  // clanId: "sz1-clan-of-sacrifice",
+  clanPbId: {
+    seasonId: SEASON_ZERO_1_PBID,
+    seasonClanCardId: ClanCardDefs.ClanOfSacrifice,
+  },
   text: "blah",
   modes: [
     {

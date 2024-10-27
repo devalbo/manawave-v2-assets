@@ -1,13 +1,19 @@
 import { ManaflowPointProcResult } from "../../../../game-play/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types";
+import { GameBoardStatePb } from "../../../../protobufs/protofiles-out/manawave-board";
+import { ClanCardDefs } from "../../../../protobufs/protofiles-out/manawave-season-zero-1";
 import { NOOP_CLAN_CHANGES, NOOP_TRIBE_CHANGES } from "../../../PIECES/type-defs/type-defs";
 import { createMwBoardPlayerSideCoordinateKey } from "../../../type-defs/branded-string-types";
 import { ClanCardDefinition } from "../../../type-defs/clan-defs";
+import { SEASON_ZERO_1_PBID } from "../../season-id-defs";
 
 
 export const ClanOfLifeData: ClanCardDefinition = {
   pieceType: 'clan-card',
+  clanPbId: {
+    seasonId: SEASON_ZERO_1_PBID,
+    seasonClanCardId: ClanCardDefs.ClanOfLife,
+  },
   title: "Clan of Life",
-  // clanId: "sz1-clan-of-life",
   text: "blah",
   modes: [
     {
@@ -43,20 +49,20 @@ export const ClanOfLifeData: ClanCardDefinition = {
   ],
 
   gameLogic: {
-    onManaflowProc: (boardState, playerSide, procPoint): ManaflowPointProcResult => {
-      // const playerLeylineCards = playerSide === 'OPT' ?
-      //   boardState.optLeylineClanCards :
-      //   boardState.osbLeylineClanCards;
+    onClanCardPlacement: (boardState: GameBoardStatePb): GameBoardStatePb => {
+      const updatedState: GameBoardStatePb = {
+        ...boardState,
+      };
 
-      // const clanForCard = playerLeylineCards[procPoint.leylineDistance - LeylineDistanceFromSource.LeylineDistance_1];
-      // const clanPieceId: ClanCardInstanceId = createClanCardInstanceId(playerSide, clanForCard.title);
+      return updatedState;
+    },
+    onManaflowProc: (boardState, playerSide, procPoint): ManaflowPointProcResult => {
 
       const clanCardCoordinate = createMwBoardPlayerSideCoordinateKey(playerSide, procPoint.leylineDistance, procPoint.leylineRank);
 
       return {
         clanCardChanges: [
           {
-            // clanPieceId,
             clanCardCoordinate,
             changes: {
               ...NOOP_CLAN_CHANGES,

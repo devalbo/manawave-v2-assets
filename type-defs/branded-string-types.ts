@@ -1,5 +1,5 @@
 import { PlayerSide } from "../../game-data/game-play-data";
-import { LeylineDistanceFromSource, TotemPbId } from "../../protobufs/protofiles-out/manawave-types";
+import { ClanCardPbId, LeylineDistanceFromSource, TotemPbId } from "../../protobufs/protofiles-out/manawave-types";
 import { MAX_NUM_RANKS_PER_CLAN_COLUMN } from "../../game-play/phase-views/constants";
 import { toTotemIdStr } from "../../game-data/pb-id-str-mapping";
 
@@ -10,6 +10,7 @@ type BrandedString<T> = string & { __brand: T };
 export type MwBoardPlayerSideCoordinateKey = BrandedString<'MwBoardPlayerSideCoordinateKey'>;
 
 export type SeasonIdStr = BrandedString<'SeasonIdStr'>;
+export type ClanIdStr = BrandedString<'ClanIdStr'>;
 export type TotemIdStr = BrandedString<'TotemIdStr'>;
 export type MonumentIdStr = BrandedString<'MonumentIdStr'>;
 
@@ -38,9 +39,18 @@ export const createMwBoardPlayerSideCoordinateKey = (playerSide: PlayerSide, ley
 }
 
 
-export const createClanCardInstanceId = (playerSide: PlayerSide, title: string): ClanCardInstanceId => {
-  return `${playerSide}[${title}]` as ClanCardInstanceId;
+// export const createClanCardInstanceId = (playerSide: PlayerSide, title: string): ClanCardInstanceId => {
+//   return `${playerSide}[${title}]` as ClanCardInstanceId;
+// }
+
+export const createClanCardInstanceId = (playerSide: PlayerSide, clanId: ClanCardPbId): ClanCardInstanceId => {
+  return `${playerSide}[${clanId.seasonId}:${clanId.seasonClanCardId}]` as ClanCardInstanceId;
 }
+
+
+// export const createClanDefinitionId = (clanId: ClanCardPbId): ClanCardInstanceId => {
+//   return `${playerSide}[${clanId.seasonId}:${clanId.seasonClanCardId}]` as ClanCardInstanceId;
+// }
 
 
 // export const createFamilyCardInstanceId = (totemId: TotemIdStr, playerSide: PlayerSide, playerSideCardIndex: number): FamilyCardInstanceId => {

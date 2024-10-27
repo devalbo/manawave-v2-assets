@@ -1,3 +1,4 @@
+import { ClanCardPbId } from "../../../protobufs/protofiles-out/manawave-types"
 import { MwMarkerTypeToken, MwMarkerTypeCounter, createMwTokenCount, createMwCounterCount } from "../../type-defs/branded-marker-types"
 import { ClanCardInstanceId, FamilyCardInstanceId, MwBoardPlayerSideCoordinateKey } from "../../type-defs/branded-string-types"
 import { ClanCardDefinition } from "../../type-defs/clan-defs"
@@ -184,6 +185,7 @@ export type FamilyInPlayData = {
 
 
 export type ClanPieceInstanceData = {
+  clanPbId: ClanCardPbId
   pieceId: ClanCardInstanceId
 }
 
