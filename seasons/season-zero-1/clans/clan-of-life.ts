@@ -1,5 +1,4 @@
 import { ManaflowPointProcResult } from "../../../../game-play/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types";
-import { GameBoardStatePb } from "../../../../protobufs/protofiles-out/manawave-board";
 import { ClanCardDefs } from "../../../../protobufs/protofiles-out/manawave-season-zero-1";
 import { ClanCardStockpile, EMPTY_PLAYER_CLAN_CARD, NOOP_CLAN_CHANGES, NOOP_TRIBE_CHANGES } from "../../../PIECES/type-defs/type-defs";
 import { createMwCounterCount, createMwTokenCount } from "../../../type-defs/branded-marker-types";
@@ -10,7 +9,7 @@ import { SEASON_ZERO_1_PBID } from "../../season-id-defs";
 
 export const ClanOfLifeData: ClanCardDefinition = {
   pieceType: 'clan-card',
-  clanPbId: {
+  clanDefPbId: {
     seasonId: SEASON_ZERO_1_PBID,
     seasonClanCardId: ClanCardDefs.ClanOfLife,
   },

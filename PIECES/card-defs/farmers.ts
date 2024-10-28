@@ -1,4 +1,6 @@
 import { ManaflowPointProcResult } from "../../../game-play/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types";
+import { FamilyCardDefs } from "../../../protobufs/protofiles-out/manawave-season-zero-1";
+import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
 import { IModePrintSettings } from "../mw-card-data";
 
@@ -13,6 +15,10 @@ export const FarmersCardDef: FamilyCardDefinition = {
   pieceType: 'family-card',
   title: "Farmers",
   totemId: 'ox',
+  familyCardDefPbId: {
+    seasonId: SEASON_ZERO_1_PBID,
+    seasonFamilyCardId: FamilyCardDefs.Farmers,
+  },
   text: "TODO: fill in text for Farmers",
   modes: [
     {

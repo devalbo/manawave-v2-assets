@@ -1,4 +1,6 @@
 import { ManaflowPointProcResult } from "../../../game-play/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types";
+import { FamilyCardDefs } from "../../../protobufs/protofiles-out/manawave-season-zero-1";
+import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
 import { createMwBoardPlayerSideCoordinateKey } from "../../type-defs/branded-string-types";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
 import { IModePrintSettings } from "../mw-card-data";
@@ -15,6 +17,10 @@ export const WizardsCardDef: FamilyCardDefinition = {
   pieceType: 'family-card',
   title: "Wizards",
   totemId: 'spirits',
+  familyCardDefPbId: {
+    seasonId: SEASON_ZERO_1_PBID,
+    seasonFamilyCardId: FamilyCardDefs.Wizards,
+  },
   text: "TODO: fill in text for Wizards",
   modes: [
     {

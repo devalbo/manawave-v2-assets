@@ -1,4 +1,3 @@
-import { createFamilyCardInstanceId, FamilyCardInstanceId } from "../../../type-defs/branded-string-types";
 import { FarmersCardDef } from "../../../PIECES/card-defs/farmers";
 import { ForestHuntersCardDef } from "../../../PIECES/card-defs/forest-hunters";
 import { GrasslandShepherdsCardDef } from "../../../PIECES/card-defs/grassland-shepherds";
@@ -7,7 +6,7 @@ import { RuggedShepherdsCardDef } from "../../../PIECES/card-defs/rugged-shepher
 import { SoylentGreenFarmersCardDef } from "../../../PIECES/card-defs/soylent-green-farmers";
 import { FamilyCardInstance } from "../../../PIECES/type-defs/type-defs";
 import { ITotemDetails } from "../../../type-defs/totem-defs";
-import { TotemPbId } from "../../../../protobufs/protofiles-out/manawave-types";
+import { PlayerSideId, TotemPbId } from "../../../../protobufs/protofiles-out/manawave-types";
 import { TotemDefs } from "../../../../protobufs/protofiles-out/manawave-season-zero-1";
 import { SEASON_ZERO_1_PBID } from "../../season-id-defs";
 
@@ -37,7 +36,11 @@ export const OX_TOTEM_DEF: ITotemDetails = {
     .map((cardDef, i) => {
       const retVal: FamilyCardInstance = {
         ...cardDef,
-        pieceId: createFamilyCardInstanceId(TOTEM_ID, "OPT", i + 1),
+        familyCardInstancePbId: {
+          familyCardDefId: cardDef.familyCardDefPbId,
+          owningPlayerSide: PlayerSideId.PlayerSide_Opt,
+        },
+        // pieceId: createFamilyCardInstanceId(TOTEM_ID, "OPT", i + 1),
         pieceType: 'family-card',
       };
       return retVal;
@@ -47,7 +50,11 @@ export const OX_TOTEM_DEF: ITotemDetails = {
     .map((cardDef, i) => {
       const retVal: FamilyCardInstance = {
         ...cardDef,
-        pieceId: createFamilyCardInstanceId(TOTEM_ID, "OSB", i + 1),
+        familyCardInstancePbId: {
+          familyCardDefId: cardDef.familyCardDefPbId,
+          owningPlayerSide: PlayerSideId.PlayerSide_Osb,
+        },
+        // pieceId: createFamilyCardInstanceId(TOTEM_ID, "OSB", i + 1),
         pieceType: 'family-card',
       };
       return retVal;

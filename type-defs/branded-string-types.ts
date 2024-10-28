@@ -1,5 +1,5 @@
 import { PlayerSide } from "../../game-data/game-play-data";
-import { ClanCardPbId, LeylineDistanceFromSource, TotemPbId } from "../../protobufs/protofiles-out/manawave-types";
+import { ClanCardDefPbId, LeylineDistanceFromSource, TotemPbId } from "../../protobufs/protofiles-out/manawave-types";
 import { MAX_NUM_RANKS_PER_CLAN_COLUMN } from "../../game-play/phase-views/constants";
 import { toTotemIdStr } from "../../game-data/pb-id-str-mapping";
 
@@ -43,7 +43,7 @@ export const createMwBoardPlayerSideCoordinateKey = (playerSide: PlayerSide, ley
 //   return `${playerSide}[${title}]` as ClanCardInstanceId;
 // }
 
-export const createClanCardInstanceId = (playerSide: PlayerSide, clanId: ClanCardPbId): ClanCardInstanceId => {
+export const createClanCardInstanceId = (playerSide: PlayerSide, clanId: ClanCardDefPbId): ClanCardInstanceId => {
   return `${playerSide}[${clanId.seasonId}:${clanId.seasonClanCardId}]` as ClanCardInstanceId;
 }
 

@@ -1,6 +1,6 @@
-import { ClanCardPbId } from "../../../protobufs/protofiles-out/manawave-types"
+import { ClanCardInstancePbId, FamilyCardInstancePbId } from "../../../protobufs/protofiles-out/manawave-types"
 import { MwMarkerTypeToken, MwMarkerTypeCounter, createMwTokenCount, createMwCounterCount } from "../../type-defs/branded-marker-types"
-import { ClanCardInstanceId, FamilyCardInstanceId, MwBoardPlayerSideCoordinateKey } from "../../type-defs/branded-string-types"
+import { MwBoardPlayerSideCoordinateKey } from "../../type-defs/branded-string-types"
 import { ClanCardDefinition } from "../../type-defs/clan-defs"
 import { FamilyCardDefinition } from "../../type-defs/family-defs"
 import { ClanCardLogic, FamilyCardLogic } from "../../type-defs/game-data-type-defs"
@@ -167,7 +167,7 @@ export const NOOP_CLAN_CHANGES: ClanCardStockpile = {
 
 
 export type ClanInPlayData = {
-  boardLocation: MwBoardPlayerSideCoordinateKey
+  // boardLocation: MwBoardPlayerSideCoordinateKey
   stockpile: ClanCardStockpile
   activeModeIndex: number
 }
@@ -188,12 +188,13 @@ export type FamilyInPlayData = {
 
 
 export type ClanPieceInstanceData = {
-  clanPbId: ClanCardPbId
-  pieceId: ClanCardInstanceId
+  clanCardInstancePbId: ClanCardInstancePbId
+  // pieceId: ClanCardInstanceId
 }
 
 export type FamilyPieceInstanceData = {
-  pieceId: FamilyCardInstanceId
+  familyCardInstancePbId: FamilyCardInstancePbId
+  // pieceId: FamilyCardInstanceId
 }
 
 export type PieceInstanceData = ClanPieceInstanceData | FamilyPieceInstanceData

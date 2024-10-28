@@ -1,5 +1,5 @@
 import { TotemDefs } from "../../../../protobufs/protofiles-out/manawave-season-zero-1";
-import { TotemPbId } from "../../../../protobufs/protofiles-out/manawave-types";
+import { PlayerSideId, TotemPbId } from "../../../../protobufs/protofiles-out/manawave-types";
 import { ChannelersCardDef } from "../../../PIECES/card-defs/channelers";
 import { EnchantersCardDef } from "../../../PIECES/card-defs/enchanters";
 import { ManaChannelersCardDef } from "../../../PIECES/card-defs/mana-channelers";
@@ -37,7 +37,11 @@ export const SPIRITS_TOTEM_DEF: ITotemDetails = {
     .map((cardDef, i) => {
       const retVal: FamilyCardInstance = {
         ...cardDef,
-        pieceId: createFamilyCardInstanceId(TOTEM_ID, "OPT", i + 1),
+        familyCardInstancePbId: {
+          familyCardDefId: cardDef.familyCardDefPbId,
+          owningPlayerSide: PlayerSideId.PlayerSide_Opt,
+        },
+        // pieceId: createFamilyCardInstanceId(TOTEM_ID, "OPT", i + 1),
         pieceType: 'family-card',
       };
       return retVal;
@@ -47,7 +51,11 @@ export const SPIRITS_TOTEM_DEF: ITotemDetails = {
     .map((cardDef, i) => {
       const retVal: FamilyCardInstance = {
         ...cardDef,
-        pieceId: createFamilyCardInstanceId(TOTEM_ID, "OSB", i + 1),
+        familyCardInstancePbId: {
+          familyCardDefId: cardDef.familyCardDefPbId,
+          owningPlayerSide: PlayerSideId.PlayerSide_Osb,
+        },
+        // pieceId: createFamilyCardInstanceId(TOTEM_ID, "OSB", i + 1),
         pieceType: 'family-card',
       };
       return retVal;

@@ -10,7 +10,7 @@ import { SEASON_ZERO_1_PBID } from "../../season-id-defs";
 export const ClanOfDiversityData: ClanCardDefinition = {
   pieceType: 'clan-card',
   title: "Clan of Diversity",
-  clanPbId: {
+  clanDefPbId: {
     seasonId: SEASON_ZERO_1_PBID,
     seasonClanCardId: ClanCardDefs.ClanOfDiversity,
   },

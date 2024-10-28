@@ -1,6 +1,8 @@
 import { IModePrintSettings } from "../mw-card-data"
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
 import { ManaflowPointProcResult } from "../../../game-play/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types";
+import { FamilyCardDefs } from "../../../protobufs/protofiles-out/manawave-season-zero-1";
+import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
 
 
 const ModePrintSettings: IModePrintSettings = {
@@ -12,6 +14,10 @@ export const SoylentGreenFarmersCardDef: FamilyCardDefinition = {
   pieceType: 'family-card',
   title: "Soylent Green Farmers",
   totemId: 'ox',
+  familyCardDefPbId: {
+    seasonId: SEASON_ZERO_1_PBID,
+    seasonFamilyCardId: FamilyCardDefs.SoylentGreenFarmers,
+  },
   text: "TODO: fill in text for Soylent Green Farmers",
   modes: [
     {

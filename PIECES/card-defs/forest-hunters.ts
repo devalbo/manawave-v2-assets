@@ -1,4 +1,6 @@
 import { ManaflowPointProcResult } from "../../../game-play/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types";
+import { FamilyCardDefs } from "../../../protobufs/protofiles-out/manawave-season-zero-1";
+import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
 
 
@@ -6,6 +8,10 @@ export const ForestHuntersCardDef: FamilyCardDefinition = {
   pieceType: 'family-card',
   title: "MW Forest Hunters",
   totemId: 'ox',
+  familyCardDefPbId: {
+    seasonId: SEASON_ZERO_1_PBID,
+    seasonFamilyCardId: FamilyCardDefs.MwForestHunters,
+  },
   text: "TODO: fill in text for Forest Hunters",
   modes: [
     {

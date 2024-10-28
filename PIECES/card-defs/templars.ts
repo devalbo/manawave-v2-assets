@@ -1,4 +1,6 @@
 import { ManaflowPointProcResult } from "../../../game-play/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types";
+import { FamilyCardDefs } from "../../../protobufs/protofiles-out/manawave-season-zero-1";
+import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
 import { IModePrintSettings } from "../mw-card-data";
 
@@ -13,6 +15,10 @@ export const TemplarsCardDef: FamilyCardDefinition = {
   pieceType: 'family-card',
   title: "Templars",
   totemId: 'tiger',
+  familyCardDefPbId: {
+    seasonId: SEASON_ZERO_1_PBID,
+    seasonFamilyCardId: FamilyCardDefs.Templars,
+  },
   text: "TODO: fill in text for Templars",
   modes: [
     {
