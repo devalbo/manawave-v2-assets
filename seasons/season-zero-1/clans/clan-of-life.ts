@@ -2,7 +2,7 @@ import { ManaflowPointProcResult } from "../../../../game-play/local-game-state/
 import { GameBoardStatePb } from "../../../../protobufs/protofiles-out/manawave-board";
 import { ClanCardDefs } from "../../../../protobufs/protofiles-out/manawave-season-zero-1";
 import { ClanCardStockpile, EMPTY_PLAYER_CLAN_CARD, NOOP_CLAN_CHANGES, NOOP_TRIBE_CHANGES } from "../../../PIECES/type-defs/type-defs";
-import { createMwTokenCount } from "../../../type-defs/branded-marker-types";
+import { createMwCounterCount, createMwTokenCount } from "../../../type-defs/branded-marker-types";
 import { createMwBoardPlayerSideCoordinateKey } from "../../../type-defs/branded-string-types";
 import { ClanCardDefinition } from "../../../type-defs/clan-defs";
 import { SEASON_ZERO_1_PBID } from "../../season-id-defs";
@@ -55,6 +55,8 @@ export const ClanOfLifeData: ClanCardDefinition = {
       const stockpile: ClanCardStockpile = {
         ...EMPTY_PLAYER_CLAN_CARD,
         populationTokens: createMwTokenCount(2),
+        manalithTokens: createMwTokenCount(2),
+        manalithClaimCounters: createMwCounterCount(2),
       };
 
       return stockpile;

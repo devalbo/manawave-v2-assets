@@ -23,6 +23,7 @@ export type ClanCardStockpile = {
 
   populationIncreaseCounters: MwMarkerTypeCounter
   manaCounters: MwMarkerTypeCounter
+  manalithClaimCounters: MwMarkerTypeCounter
   attackCounters: MwMarkerTypeCounter
   shieldCounters: MwMarkerTypeCounter
   sacrificeCounters: MwMarkerTypeCounter
@@ -134,6 +135,7 @@ export const EMPTY_PLAYER_TRIBE_CARD: PlayerTribeCardStockpile = {
 export const EMPTY_PLAYER_CLAN_CARD: ClanCardStockpile = {
   manalithTokens: createMwTokenCount(0),
   populationTokens: createMwTokenCount(0),
+  manalithClaimCounters: createMwCounterCount(0),
   populationIncreaseCounters: createMwCounterCount(0),
   manaCounters: createMwCounterCount(0),
   attackCounters: createMwCounterCount(0),
@@ -153,6 +155,7 @@ export const NOOP_TRIBE_CHANGES: PlayerTribeCardStockpile = {
 export const NOOP_CLAN_CHANGES: ClanCardStockpile = {
   manalithTokens: createMwTokenCount(0),
   populationTokens: createMwTokenCount(0),
+  manalithClaimCounters: createMwCounterCount(0),
   populationIncreaseCounters: createMwCounterCount(0),
   manaCounters: createMwCounterCount(0),
   attackCounters: createMwCounterCount(0),
