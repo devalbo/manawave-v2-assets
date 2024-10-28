@@ -2,6 +2,7 @@ import { ManaflowPointProcResult } from "../../../game-play/local-game-state/cha
 import { FamilyCardDefs } from "../../../protobufs/protofiles-out/manawave-season-zero-1";
 import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
+import { mapToIndexedModes } from "../mw-mode-utils";
 
 
 export const EnchantersCardDef: FamilyCardDefinition = {
@@ -13,12 +14,12 @@ export const EnchantersCardDef: FamilyCardDefinition = {
     seasonFamilyCardId: FamilyCardDefs.Enchanters,
   },
   text: "TODO: fill in text for Enchanters",
-  modes: [
+  modes: mapToIndexedModes([
     {
-      manaClaimsRequired: 0,
+      manalithClaimsRequired: 0,
       modeText: "Add 1 <::mana-counter::> to Tribe, plus 1 for each adjacent Family.",
     },
-  ],
+  ]),
   onCardPickData: {
     singlePickInitialPopulation: 2,
     multiplePickInitialPopulation: 1,

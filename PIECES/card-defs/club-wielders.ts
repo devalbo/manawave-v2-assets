@@ -2,6 +2,7 @@ import { ManaflowPointProcResult } from "../../../game-play/local-game-state/cha
 import { FamilyCardDefs } from "../../../protobufs/protofiles-out/manawave-season-zero-1";
 import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
+import { mapToIndexedModes } from "../mw-mode-utils";
 
 
 export const ClubWieldersCardDef: FamilyCardDefinition = {
@@ -13,16 +14,16 @@ export const ClubWieldersCardDef: FamilyCardDefinition = {
     seasonFamilyCardId: FamilyCardDefs.ClubWielders,
   },
   text: "TODO: fill in text for Club Wielders",
-  modes: [
+  modes: mapToIndexedModes([
     {
-      manaClaimsRequired: 0,
+      manalithClaimsRequired: 0,
       modeText: "Add 2 <::attack-counter::> to Clan.",
     },
     {
-      manaClaimsRequired: 2,
+      manalithClaimsRequired: 2,
       modeText: "Add 2 <::attack-counter::> to Clan. Add 2 <::attack-counter::> to Tribe.",
     },
-  ],
+  ]),
   onCardPickData: {
     singlePickInitialPopulation: 2,
     multiplePickInitialPopulation: 1,

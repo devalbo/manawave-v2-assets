@@ -12,8 +12,16 @@ export interface IModeDigitalSettings {
   imageSize: number   // defaults to 14
 }
 
+export interface IUnindexedMwCardModeData {
+  manalithClaimsRequired: number;
+  modeText: string;
+  modePrintSettings?: IModePrintSettings
+  modeDigitalSettings?: IModeDigitalSettings
+}
+
 export interface IMwCardModeData {
-  manaClaimsRequired: number;
+  modeIndex: number;
+  manalithClaimsRequired: number;
   modeText: string;
   modePrintSettings?: IModePrintSettings
   modeDigitalSettings?: IModeDigitalSettings

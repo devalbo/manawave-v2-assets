@@ -3,6 +3,7 @@ import { FamilyCardDefs } from "../../../protobufs/protofiles-out/manawave-seaso
 import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
 import { IModePrintSettings } from "../mw-card-data";
+import { mapToIndexedModes } from "../mw-mode-utils";
 
 
 const ModePrintSettings: IModePrintSettings = {
@@ -20,23 +21,23 @@ export const FarmersCardDef: FamilyCardDefinition = {
     seasonFamilyCardId: FamilyCardDefs.Farmers,
   },
   text: "TODO: fill in text for Farmers",
-  modes: [
+  modes: mapToIndexedModes([
     {
-      manaClaimsRequired: 0,
+      manalithClaimsRequired: 0,
       modeText: "No effect",
       modePrintSettings: ModePrintSettings,
     },
     {
-      manaClaimsRequired: 2,
+      manalithClaimsRequired: 2,
       modeText: "Add 2 <::population-increase-counter::> to Clan for each adjacent E-aligned Family.",
       modePrintSettings: ModePrintSettings,
     },
     {
-      manaClaimsRequired: 4,
+      manalithClaimsRequired: 4,
       modeText: "Add 1 <::population-increase-counter::> to Tribe for each adjacent E-aligned Family.",
       modePrintSettings: ModePrintSettings,
     },
-  ],
+  ]),
   onCardPickData: {
     singlePickInitialPopulation: 2,
     multiplePickInitialPopulation: 1,

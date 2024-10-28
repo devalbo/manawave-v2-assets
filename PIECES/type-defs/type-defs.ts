@@ -174,6 +174,7 @@ export type ClanInPlayData = {
 
 
 export type FamilyCardIntraManawaveStockpile = {
+  manalithClaimCounters: MwMarkerTypeCounter
   // populationIncreaseCounters: number
   // sacrificeCounters: number
   // damageCounters: number
@@ -182,7 +183,7 @@ export type FamilyCardIntraManawaveStockpile = {
 
 
 export type FamilyInPlayData = {
-  boardLocation: MwBoardPlayerSideCoordinateKey
+  // boardLocation: MwBoardPlayerSideCoordinateKey
   activeModeIndex: number
 } & FamilyCardIntraManawaveStockpile
 

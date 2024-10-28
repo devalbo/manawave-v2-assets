@@ -1,5 +1,6 @@
 import { ManaflowPointProcResult } from "../../../../game-play/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types";
 import { ClanCardDefs } from "../../../../protobufs/protofiles-out/manawave-season-zero-1";
+import { mapToIndexedModes } from "../../../PIECES/mw-mode-utils";
 import { ClanCardStockpile, EMPTY_PLAYER_CLAN_CARD, NOOP_CLAN_CHANGES, NOOP_TRIBE_CHANGES } from "../../../PIECES/type-defs/type-defs";
 import { createMwCounterCount, createMwTokenCount } from "../../../type-defs/branded-marker-types";
 import { createMwBoardPlayerSideCoordinateKey } from "../../../type-defs/branded-string-types";
@@ -15,9 +16,9 @@ export const ClanOfDiversityData: ClanCardDefinition = {
     seasonClanCardId: ClanCardDefs.ClanOfDiversity,
   },
   text: "blah",
-    modes: [
+  modes: mapToIndexedModes([
     {
-      manaClaimsRequired: 0,
+      manalithClaimsRequired: 0,
       modeText: "Add 1 <::attack-counter::> to Clan. Add 1 <::shield-counter::> to Clan.",
       modePrintSettings: {
         fontSize: 12,
@@ -25,7 +26,7 @@ export const ClanOfDiversityData: ClanCardDefinition = {
       },
     },
     {
-      manaClaimsRequired: 2,
+      manalithClaimsRequired: 2,
       modeText: "Add <::attack-counter::> <::attack-counter::> to each adjacent Clan.",
       modePrintSettings: {
         fontSize: 12,
@@ -33,14 +34,18 @@ export const ClanOfDiversityData: ClanCardDefinition = {
       },
     },
     {
-      manaClaimsRequired: 2,
+      manalithClaimsRequired: 2,
       modeText: "Add <::shield-counter::> <::shield-counter::> to each adjacent Clan.",
       modePrintSettings: {
         fontSize: 12,
         imageSize: 12,
       },
     },
-  ],
+    {
+      manalithClaimsRequired: 3,
+      modeText: "Unattainable.",
+    },
+  ]),
   conversionRatios: [
     {
       input: ['<::mana-counter::>'],

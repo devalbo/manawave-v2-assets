@@ -3,6 +3,7 @@ import { FamilyCardDefs } from "../../../protobufs/protofiles-out/manawave-seaso
 import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
 import { IModePrintSettings } from "../mw-card-data";
+import { mapToIndexedModes } from "../mw-mode-utils";
 
 
 const ModePrintSettings: IModePrintSettings = {
@@ -20,23 +21,13 @@ export const SacrificersCardDef: FamilyCardDefinition = {
     seasonFamilyCardId: FamilyCardDefs.Sacrificers,
   },
   text: "TODO: fill in text for Sacrificers",
-  modes: [
+  modes: mapToIndexedModes([
     {
-      manaClaimsRequired: 0,
-      modeText: "Add 1 <::mana-counter::> to Tribe.",
-      modePrintSettings: ModePrintSettings,
-    },
-    {
-      manaClaimsRequired: 1,
+      manalithClaimsRequired: 1,
       modeText: "Add 1 <::mana-counter::> to Tribe for each adjacent Family. Add 1 <::population-sacrifice-counter::> to Clan. Take 1 <::soulstain-token::>.",
       modePrintSettings: ModePrintSettings,
     },
-    {
-      manaClaimsRequired: 4,
-      modeText: "Add 1 <::mana-counter::> to Tribe. Add 2 <::mana-counter::> for each adjacent Family. Add 2 <::population-sacrifice-counter::> to Clan. Take 2 <::soulstain-token::>.",
-      modePrintSettings: ModePrintSettings,
-    },
-  ],
+  ]),
   onCardPickData: {
     singlePickInitialPopulation: 2,
     multiplePickInitialPopulation: 1,

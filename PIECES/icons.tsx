@@ -72,22 +72,45 @@ export const MwGameImgIcon = (props: IMwGameIcon) => {
 }
 
 
+// export const getMwIconAscii = (tag: TokenCounterTypeTags) => {
+//   switch (tag) {
+
+//     case '<::attack-counter::>': return "Attack Counter";
+//     case '<::shield-counter::>': return "Shield Counter";
+
+//     case '<::population-increase-counter::>': return "Population Increase Counter";
+//     case '<::population-sacrifice-counter::>': return "Population Sacrifice Counter";
+//     case '<::population-token::>': return 'Population Token';
+
+//     case '<::soulstain-token::>': return "Soulstain Token";
+    
+//     case '<::mana-counter::>': return 'Mana Counter';
+//     case '<::manalith-claim-counter::>': return 'Manalith Claim Counter';
+//     case '<::manawave-round-token::>': return 'Manawave Round Token';
+//     case '<::manalith-token::>': return 'Manalith Token';
+//   }
+
+//   return `Unrecognized token counter type: ${tag}`;
+// }
+
+
+
 export const getMwIconAscii = (tag: TokenCounterTypeTags) => {
   switch (tag) {
 
-    case '<::attack-counter::>': return "Attack Counter";
-    case '<::shield-counter::>': return "Shield Counter";
+    case '<::attack-counter::>': return "[ATK]";
+    case '<::shield-counter::>': return "[SHLD]";
 
-    case '<::population-increase-counter::>': return "Population Increase Counter";
-    case '<::population-sacrifice-counter::>': return "Population Sacrifice Counter";
-    case '<::population-token::>': return 'Population Token';
+    case '<::population-increase-counter::>': return "[+POP]";
+    case '<::population-sacrifice-counter::>': return "[-POP]";
+    case '<::population-token::>': return '[POP]';
 
-    case '<::soulstain-token::>': return "Soulstain Token";
+    case '<::soulstain-token::>': return "[SS]";
     
-    case '<::mana-counter::>': return 'Mana Counter';
-    case '<::manalith-claim-counter::>': return 'Manalith Claim Counter';
-    case '<::manawave-round-token::>': return 'Manawave Round Token';
-    case '<::manalith-token::>': return 'Manalith Token';
+    case '<::mana-counter::>': return '[+MANA]';
+    case '<::manalith-claim-counter::>': return '[-MLTH]';
+    case '<::manawave-round-token::>': return '[MWRND]';
+    case '<::manalith-token::>': return '[MLTH]';
   }
 
   return `Unrecognized token counter type: ${tag}`;

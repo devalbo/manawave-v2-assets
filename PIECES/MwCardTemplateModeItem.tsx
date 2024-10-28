@@ -18,7 +18,7 @@ export const MwCardTemplateModeItem = (props: MwCardTemplateModeItemProps) => {
 
   const item =
     <div className="mw-card-mode-item" style={{ fontSize: fontSize, }}>
-      <span className="mw-card-mode-item-mana-claims-required">[{props.mode.manaClaimsRequired}]: </span>
+      <span className="mw-card-mode-item-mana-claims-required">[{props.mode.manalithClaimsRequired}]: </span>
       <span className="mw-card-mode-item-text">{iconizedModeText}</span>
     </div>
 

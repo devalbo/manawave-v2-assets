@@ -3,6 +3,7 @@ import { FamilyCardDefs } from "../../../protobufs/protofiles-out/manawave-seaso
 import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
 import { IModePrintSettings } from "../mw-card-data";
+import { mapToIndexedModes } from "../mw-mode-utils";
 
 
 const ModePrintSettings: IModePrintSettings = {
@@ -20,23 +21,23 @@ export const ChannelersCardDef: FamilyCardDefinition = {
     seasonFamilyCardId: FamilyCardDefs.Channelers,
   },
   text: "TODO: fill in text for Channelers",
-  modes: [
+  modes: mapToIndexedModes([
     {
-      manaClaimsRequired: 0,
+      manalithClaimsRequired: 0,
       modeText: "No effect.",
       modePrintSettings: ModePrintSettings,
     },
     {
-      manaClaimsRequired: 2,
+      manalithClaimsRequired: 2,
       modeText: "Add 1 <::mana-counter::> to Tribe for each adjacent X-aligned Family. Reduce total by 1 for each <::soulstain-token::> your Tribe has.",
       modePrintSettings: ModePrintSettings,
     },
     {
-      manaClaimsRequired: 4,
+      manalithClaimsRequired: 4,
       modeText: "Add 2 <::mana-counter::> to Tribe for each adjacent X-aligned Family. Reduce total by 1 for each <::soulstain-token::> your Tribe has.",
       modePrintSettings: ModePrintSettings,
     },
-  ],
+  ]),
   onCardPickData: {
     singlePickInitialPopulation: 2,
     multiplePickInitialPopulation: 1,

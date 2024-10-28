@@ -1,4 +1,5 @@
 import { IMwCardData } from "../mw-card-data";
+import { mapToIndexedModes } from "../mw-mode-utils";
 import { Totems } from "../totems";
 
 
@@ -9,18 +10,18 @@ export const BlankCardDefCardData: IMwCardData = {
     singlePickInitialPopulation: 2,
     multiplePickInitialPopulation: 1,
   },
-  modes: [
+  modes: mapToIndexedModes([
     {
-      manaClaimsRequired: 0,
+      manalithClaimsRequired: 0,
       modeText: "",
     },
     {
-      manaClaimsRequired: 0,
+      manalithClaimsRequired: 0,
       modeText: "",
     },
     {
-      manaClaimsRequired: 0,
+      manalithClaimsRequired: 0,
       modeText: "",
     },
-  ],
+  ]),
 };

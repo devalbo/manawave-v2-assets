@@ -3,6 +3,7 @@ import { FamilyCardDefinition } from "../../type-defs/family-defs";
 import { ManaflowPointProcResult } from "../../../game-play/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types";
 import { FamilyCardDefs } from "../../../protobufs/protofiles-out/manawave-season-zero-1";
 import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
+import { mapToIndexedModes } from "../mw-mode-utils";
 
 
 const ModePrintSettings: IModePrintSettings = {
@@ -19,23 +20,23 @@ export const SoylentGreenFarmersCardDef: FamilyCardDefinition = {
     seasonFamilyCardId: FamilyCardDefs.SoylentGreenFarmers,
   },
   text: "TODO: fill in text for Soylent Green Farmers",
-  modes: [
+  modes: mapToIndexedModes([
     {
-      manaClaimsRequired: 0,
+      manalithClaimsRequired: 0,
       modeText: "Add 1 <::population-increase-counter::> to Clan.",
       modePrintSettings: ModePrintSettings,
     },
     {
-      manaClaimsRequired: 1,
+      manalithClaimsRequired: 1,
       modeText: "Add 2 <::population-increase-counter::> to Clan. Add 1 <::population-increase-counter::> to Tribe. Add 1 <::population-sacrifice-counter::> to Clan. Take 1 <::soulstain-token::>.",
       modePrintSettings: ModePrintSettings,
     },
     {
-      manaClaimsRequired: 4,
+      manalithClaimsRequired: 4,
       modeText: "Add 4 <::population-increase-counter::> to Clan. Add 2 <::population-increase-counter::> to Tribe. Add 2 <::population-sacrifice-counter::> to Clan. Take 2 <::soulstain-token::>.",
       modePrintSettings: ModePrintSettings,
     },
-  ],
+  ]),
   onCardPickData: {
     singlePickInitialPopulation: 2,
     multiplePickInitialPopulation: 1,

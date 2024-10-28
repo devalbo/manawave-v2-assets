@@ -2,6 +2,7 @@ import { ManaflowPointProcResult } from "../../../game-play/local-game-state/cha
 import { FamilyCardDefs } from "../../../protobufs/protofiles-out/manawave-season-zero-1";
 import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
+import { mapToIndexedModes } from "../mw-mode-utils";
 
 
 export const MysticFarmersCardDef: FamilyCardDefinition = {
@@ -13,20 +14,20 @@ export const MysticFarmersCardDef: FamilyCardDefinition = {
     seasonFamilyCardId: FamilyCardDefs.MysticFarmers,
   },
   text: "TODO: fill in text for Mystic Farmers",
-  modes: [
+  modes: mapToIndexedModes([
     {
-      manaClaimsRequired: 0,
+      manalithClaimsRequired: 0,
       modeText: "Add 1 <::population-increase-counter::> to Clan.",
     },
     {
-      manaClaimsRequired: 1,
+      manalithClaimsRequired: 1,
       modeText: "Execute M0. Add 1 <::mana-counter::> to Clan.",
     },
     {
-      manaClaimsRequired: 2,
+      manalithClaimsRequired: 2,
       modeText: "Execute M0. Add 1 <::mana-counter::> to Tribe.",
     },
-  ],
+  ]),
   onCardPickData: {
     singlePickInitialPopulation: 2,
     multiplePickInitialPopulation: 1,

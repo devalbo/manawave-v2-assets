@@ -5,6 +5,7 @@ import { createMwBoardPlayerSideCoordinateKey } from "../../type-defs/branded-st
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
 import { IModePrintSettings } from "../mw-card-data";
 import { EMPTY_PLAYER_CLAN_CARD, NOOP_CLAN_CHANGES } from "../type-defs/type-defs";
+import { mapToIndexedModes } from "../mw-mode-utils";
 
 
 const ModePrintSettings: IModePrintSettings = {
@@ -22,28 +23,28 @@ export const WizardsCardDef: FamilyCardDefinition = {
     seasonFamilyCardId: FamilyCardDefs.Wizards,
   },
   text: "TODO: fill in text for Wizards",
-  modes: [
+  modes: mapToIndexedModes([
     {
-      manaClaimsRequired: 0,
+      manalithClaimsRequired: 0,
       modeText: "Add 1 <::mana-counter::> to Tribe.",
       modePrintSettings: ModePrintSettings,
     },
     {
-      manaClaimsRequired: 1,
+      manalithClaimsRequired: 1,
       modeText: "Add 2 <::mana-counter::> to Tribe.",
       modePrintSettings: ModePrintSettings,
     },
     {
-      manaClaimsRequired: 2,
+      manalithClaimsRequired: 2,
       modeText: "Add 4 <::mana-counter::> to Tribe.",
       modePrintSettings: ModePrintSettings,
     },
     {
-      manaClaimsRequired: 4,
+      manalithClaimsRequired: 4,
       modeText: "Add 8 <::mana-counter::> to Tribe. Add 1 <::population-sacrifice-counter::> to Clan.",
       modePrintSettings: ModePrintSettings,
     },
-  ],
+  ]),
   onCardPickData: {
     singlePickInitialPopulation: 2,
     multiplePickInitialPopulation: 1,
