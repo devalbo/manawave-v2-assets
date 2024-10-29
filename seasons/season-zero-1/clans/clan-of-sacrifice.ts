@@ -1,7 +1,8 @@
 import { ManaflowPointProcResult } from "../../../../game-play/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types";
+import { ClanCardStockpile } from "../../../../protobufs/protofiles-out/manawave-board";
 import { ClanCardDefs } from "../../../../protobufs/protofiles-out/manawave-season-zero-1";
 import { mapToIndexedModes } from "../../../PIECES/mw-mode-utils";
-import { ClanCardStockpile, EMPTY_PLAYER_CLAN_CARD, NOOP_CLAN_CHANGES, NOOP_TRIBE_CHANGES } from "../../../PIECES/type-defs/type-defs";
+import { EMPTY_PLAYER_CLAN_STOCKPILE, NOOP_CLAN_STOCKPILE_CHANGES, NOOP_TRIBE_STOCKPILE_CHANGES } from "../../../PIECES/type-defs/type-defs";
 import { createMwCounterCount, createMwTokenCount } from "../../../type-defs/branded-marker-types";
 import { createMwBoardPlayerSideCoordinateKey } from "../../../type-defs/branded-string-types";
 import { ClanCardDefinition } from "../../../type-defs/clan-defs";
@@ -64,10 +65,10 @@ export const ClanOfSacrificeData: ClanCardDefinition = {
   gameLogic: {
     createInitialStockpile: () => {
       const stockpile: ClanCardStockpile = {
-        ...EMPTY_PLAYER_CLAN_CARD,
-        populationTokens: createMwTokenCount(2),
-        manalithTokens: createMwTokenCount(2),
-        manalithClaimCounters: createMwCounterCount(2),
+        ...EMPTY_PLAYER_CLAN_STOCKPILE,
+        populationTokensCount: createMwTokenCount(2),
+        manalithTokensCount: createMwTokenCount(2),
+        manalithClaimCountersCount: createMwCounterCount(2),
       };
 
       return stockpile;
@@ -82,17 +83,17 @@ export const ClanOfSacrificeData: ClanCardDefinition = {
           {
             clanCardCoordinate,
             changes: {
-              ...NOOP_CLAN_CHANGES,
-              attackCounters: 1,
-              shieldCounters: 1,
+              ...NOOP_CLAN_STOCKPILE_CHANGES,
+              attackCountersCount: 1,
+              shieldCountersCount: 1,
             },
           },
         ],
         tribeCardChanges: {
           changes: {
-            ...NOOP_TRIBE_CHANGES,
-            manaCounters: 1,
-            soulStainTokenCount: 1,
+            ...NOOP_TRIBE_STOCKPILE_CHANGES,
+            manaCountersCount: 1,
+            soulstainTokenCount: 1,
           }
         }
       };

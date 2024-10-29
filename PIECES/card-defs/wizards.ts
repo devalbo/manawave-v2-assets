@@ -4,7 +4,7 @@ import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
 import { createMwBoardPlayerSideCoordinateKey } from "../../type-defs/branded-string-types";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
 import { IModePrintSettings } from "../mw-card-data";
-import { EMPTY_PLAYER_CLAN_CARD, NOOP_CLAN_CHANGES } from "../type-defs/type-defs";
+import { NOOP_CLAN_STOCKPILE_CHANGES } from "../type-defs/type-defs";
 import { mapToIndexedModes } from "../mw-mode-utils";
 
 
@@ -62,8 +62,8 @@ export const WizardsCardDef: FamilyCardDefinition = {
             // clanPieceId,
             clanCardCoordinate,
             changes: {
-              ...NOOP_CLAN_CHANGES,
-              manaCounters: 1,
+              ...NOOP_CLAN_STOCKPILE_CHANGES,
+              manaCountersCount: 1,
             },
           },
         ],

@@ -12,11 +12,14 @@ export interface IMwFamilySelectorData {
   playerId: PlayerId
 }
 
+// const MW_DOC_SITE_PREFIX = "";
+const MW_DOC_SITE_PREFIX = "http://localhost:3000";
+
 
 export const MwFamilySelectorTemplate = (props: IMwFamilySelectorData) => {
   const playerIdImgSrc = props.playerId === 'Player1' ? 
-    '/img/mw_logo_white_top.svg' :
-    '/img/mw_logo_black_top.svg';
+    `${MW_DOC_SITE_PREFIX}/img/mw_logo_white_top.svg` :
+    `${MW_DOC_SITE_PREFIX}/img/mw_logo_black_top.svg`;
 
   return (
     <div className="mw-family-selector-card" style={{
