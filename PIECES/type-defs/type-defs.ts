@@ -99,14 +99,16 @@ export type ClanInPlayData = {
 }
 
 
-export type FamilyCardIntraManawaveStockpile = {
-  manalithClaimCounters: MwMarkerTypeCounter
-}
+// export type FamilyCardIntraManawaveStockpile = {
+//   manalithClaimCounters: MwMarkerTypeCounter
+// }
 
 
 export type FamilyInPlayData = {
   activeModeIndex: number
-} & FamilyCardIntraManawaveStockpile
+  manalithClaimCountersCount: MwMarkerTypeCounter
+}
+// } & FamilyCardIntraManawaveStockpile
 
 
 export type ClanPieceInstanceData = {
