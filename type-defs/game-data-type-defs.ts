@@ -4,6 +4,7 @@ import { LbsChannelClanManaflowsRoundState, ManaflowPointProcResult } from "../.
 import { OnCardPickData } from "../PIECES/mw-card-data"
 import { ClanCardStockpile } from "../../protobufs/protofiles-out/manawave-board"
 import { PlayerPb } from "../../protobufs/protofiles-out/manawave-types"
+import { BoardPiecesState } from "../../game-play/local-game-state/local-board-state-types"
 
 
 
@@ -22,7 +23,7 @@ export interface IClanCardLogic {
   onManawaveInit?: () => void
   // onManawaveProc: (boardState: IMainGameBoardState, playerSide: PlayerSide) => SurgePointProcResult
   onManaflowProc: (
-    boardState: LbsChannelClanManaflowsRoundState,
+    boardState: BoardPiecesState,
     // season: ISeason,
     playerSide: PlayerSide,
     procPoint: ManaflowProcPoint,
@@ -37,11 +38,11 @@ export interface IClanCardLogic {
 }
 
 
-export interface IPlayTileLogic {
+export interface IFamilyCardLogic {
   onManawaveInit?: () => void
   // onManawaveProc: (boardState: IMainGameBoardState, playerSide: PlayerSide) => SurgePointProcResult
   onManaflowProc: (
-    boardState: LbsChannelClanManaflowsRoundState,
+    boardState: BoardPiecesState,
     // season: ISeason,
     playerSide: PlayerSide,
     procPoint: ManaflowProcPoint,
@@ -77,6 +78,6 @@ export type ClanCardLogic = {
 export type FamilyCardLogic = {
   // title: string
   // text: string
-  gameLogic: IPlayTileLogic
+  gameLogic: IFamilyCardLogic
   onCardPickData: OnCardPickData
 }
