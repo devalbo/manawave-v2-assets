@@ -16,8 +16,4 @@ export const MonumentOfWarData: MonumentCard = {
   "the Tribe of the Clan with higher COUNT(<::attack-counter::>) wins. If there is a tie, determine " +
   "COUNT(<::attack-counter::>) for both Tribes. The Tribe with the highest COUNT(<::attack-counter::>) " +
   "wins. If there is still a tie, resume the Manawave.",
-  // monumentPrintSettings: {
-  //   imageSize: 12,
-  //   fontSize: 12,
-  // },
-};
+}

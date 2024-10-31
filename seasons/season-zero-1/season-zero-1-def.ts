@@ -11,11 +11,6 @@ import { SPIRITS_TOTEM_DEF } from "./totems/sz1_spirits";
 import { TIGER_TOTEM_DEF } from "./totems/sz1_tiger";
 
 
-// export const SEASON_ZERO_1_PBID: SeasonPbId = {
-//   seasonDefinition: SeasonDefinition.SeasonDef_Zero_1,
-// };
-
-
 const allTotemChoices = [
   TIGER_TOTEM_DEF,
   OX_TOTEM_DEF,
@@ -37,10 +32,9 @@ const allFamilyCards = [
 
 export const SeasonZero1: ISeason = {
   seasonName: "Season Zero - 1",
-  // seasonId: 'season-zero-1',
-  // seasonDefinitionId: SeasonDefinition.SeasonDef_Zero_1,
-  seasonId: SEASON_ZERO_1_PBID,
   seasonDescription: "First draft development season with the card (not hex) based version",
+
+  seasonId: SEASON_ZERO_1_PBID,
 
   allTotemChoices,
 

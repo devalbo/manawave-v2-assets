@@ -15,8 +15,4 @@ export const MonumentOfNatureData: MonumentCard = {
   "wins. If there is a tie, determine COUNT(<::manalith-token::>) for both Tribes. " +
   " The Tribe with the lowest COUNT(<::manalith-token::>) wins. If there is still a tie, " +
   "resume the Manawave.",
-  // monumentPrintSettings: {
-  //   imageSize: 12,
-  //   fontSize: 12,
-  // },
-};
+}

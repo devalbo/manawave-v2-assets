@@ -15,8 +15,4 @@ export const MonumentOfMagicData: MonumentCard = {
   "the Tribe of the Clan with higher COUNT(<::manalith-token::>) wins. If there is a tie, determine " +
   "COUNT(<::manalith-token::>) for both Tribes. The Tribe with the highest COUNT(<::manalith-token::>) " +
   " wins. If there is still a tie, resume the Manawave.",
-  // monumentPrintSettings: {
-  //   imageSize: 12,
-  //   fontSize: 12,
-  // },
-};
+}

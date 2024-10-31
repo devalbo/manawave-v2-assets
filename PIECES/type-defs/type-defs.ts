@@ -6,29 +6,6 @@ import { FamilyCardDefinition } from "../../type-defs/family-defs"
 import { ClanCardLogic, FamilyCardLogic } from "../../type-defs/game-data-type-defs"
 
 
-
-// export type PlayerTribeCardStockpile = {
-//   soulStainTokenCount: MwMarkerTypeToken
-//   populationIncreaseCounters: MwMarkerTypeCounter
-//   manaCounters: MwMarkerTypeCounter
-//   attackCounters: MwMarkerTypeCounter
-//   shieldCounters: MwMarkerTypeCounter
-// }
-
-
-// export type ClanCardStockpile = {
-//   manalithTokens: MwMarkerTypeToken
-//   populationTokens: MwMarkerTypeToken
-
-//   populationIncreaseCounters: MwMarkerTypeCounter
-//   manaCounters: MwMarkerTypeCounter
-//   manalithClaimCounters: MwMarkerTypeCounter
-//   attackCounters: MwMarkerTypeCounter
-//   shieldCounters: MwMarkerTypeCounter
-//   sacrificeCounters: MwMarkerTypeCounter
-// }
-
-
 export type MwCounterTypes<T> = {
   [K in keyof T]: T[K] extends MwMarkerTypeCounter ? K : never;
 }[keyof T]
@@ -92,23 +69,16 @@ export const NOOP_CLAN_STOCKPILE_CHANGES: ClanCardStockpile = {
 }
 
 
-
 export type ClanInPlayData = {
   stockpile: ClanCardStockpile
   activeModeIndex: number
 }
 
 
-// export type FamilyCardIntraManawaveStockpile = {
-//   manalithClaimCounters: MwMarkerTypeCounter
-// }
-
-
 export type FamilyInPlayData = {
   activeModeIndex: number
   manalithClaimCountersCount: MwMarkerTypeCounter
 }
-// } & FamilyCardIntraManawaveStockpile
 
 
 export type ClanPieceInstanceData = {
@@ -120,12 +90,6 @@ export type FamilyPieceInstanceData = {
 }
 
 export type PieceInstanceData = ClanPieceInstanceData | FamilyPieceInstanceData
-
-
-
-// export type ClanCardType = { pieceType: 'clan-card' }
-// export type FamilyCardType = { pieceType: 'family-card' }
-
 
 
 export type ClanCardInstance = ClanCardLogic &
@@ -143,6 +107,5 @@ export type FamilyCardInstance = FamilyCardDefinition &
 export type FamilyCardInPlayInstance = FamilyCardInstance &
   FamilyInPlayData
   
-
 
 export type InPlayPieceInstance = ClanCardInPlayInstance | FamilyCardInPlayInstance

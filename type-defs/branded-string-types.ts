@@ -39,23 +39,9 @@ export const createMwBoardPlayerSideCoordinateKey = (playerSide: PlayerSide, ley
 }
 
 
-// export const createClanCardInstanceId = (playerSide: PlayerSide, title: string): ClanCardInstanceId => {
-//   return `${playerSide}[${title}]` as ClanCardInstanceId;
-// }
-
 export const createClanCardInstanceId = (playerSide: PlayerSide, clanId: ClanCardDefPbId): ClanCardInstanceId => {
   return `${playerSide}[${clanId.seasonId}:${clanId.seasonClanCardId}]` as ClanCardInstanceId;
 }
-
-
-// export const createClanDefinitionId = (clanId: ClanCardPbId): ClanCardInstanceId => {
-//   return `${playerSide}[${clanId.seasonId}:${clanId.seasonClanCardId}]` as ClanCardInstanceId;
-// }
-
-
-// export const createFamilyCardInstanceId = (totemId: TotemIdStr, playerSide: PlayerSide, playerSideCardIndex: number): FamilyCardInstanceId => {
-//   return `${totemId}:${playerSide}[${playerSideCardIndex}]` as FamilyCardInstanceId;
-// }
 
 
 export const createFamilyCardInstanceId = (totemId: TotemPbId, playerSide: PlayerSide, playerSideCardIndex: number): FamilyCardInstanceId => {
