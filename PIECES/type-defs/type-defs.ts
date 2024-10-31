@@ -77,7 +77,7 @@ export type ClanInPlayData = {
 
 export type FamilyInPlayData = {
   activeModeIndex: number
-  manalithClaimCountersCount: MwMarkerTypeCounter
+  // manalithClaimCountersCount: MwMarkerTypeCounter
 }
 
 
