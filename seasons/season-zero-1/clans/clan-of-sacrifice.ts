@@ -1,10 +1,10 @@
+import { mapToPlayerSideId } from "../../../../game-data/pb-types-mapping/pb-mapping-player";
 import { ManaflowPointProcResult } from "../../../../game-play/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types";
-import { ClanCardStockpile } from "../../../../protobufs/protofiles-out/manawave-board";
+import { BoardPlayerSideCoordinate, ClanCardStockpile } from "../../../../protobufs/protofiles-out/manawave-board";
 import { ClanCardDefs } from "../../../../protobufs/protofiles-out/manawave-season-zero-1";
 import { mapToIndexedModes } from "../../../PIECES/mw-mode-utils";
 import { EMPTY_PLAYER_CLAN_STOCKPILE, NOOP_CLAN_STOCKPILE_CHANGES, NOOP_TRIBE_STOCKPILE_CHANGES } from "../../../PIECES/type-defs/type-defs";
 import { createMwCounterCount, createMwTokenCount } from "../../../type-defs/branded-marker-types";
-import { createMwBoardPlayerSideCoordinateKey } from "../../../type-defs/branded-string-types";
 import { ClanCardDefinition } from "../../../type-defs/clan-defs";
 import { SEASON_ZERO_1_PBID } from "../../season-id-defs";
 
@@ -76,7 +76,11 @@ export const ClanOfSacrificeData: ClanCardDefinition = {
     
     onManaflowProc: (boardState, playerSide, procPoint): ManaflowPointProcResult => {
 
-      const clanCardCoordinate = createMwBoardPlayerSideCoordinateKey(playerSide, procPoint.leylineDistance, procPoint.leylineRank);
+      const clanCardCoordinate: BoardPlayerSideCoordinate = {
+        playerSideId: mapToPlayerSideId(playerSide),
+        leylineDistance: procPoint.leylineDistance,
+        familyRank: procPoint.leylineRank,
+      };
 
       return {
         clanCardChanges: [

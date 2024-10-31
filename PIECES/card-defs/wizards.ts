@@ -1,16 +1,23 @@
 import { ManaflowPointProcResult } from "../../../game-play/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types";
 import { FamilyCardDefs } from "../../../protobufs/protofiles-out/manawave-season-zero-1";
 import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
-import { createMwBoardPlayerSideCoordinateKey } from "../../type-defs/branded-string-types";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
-import { IModePrintSettings } from "../mw-card-data";
+import { IModePrintSettings, OnCardPickData } from "../mw-card-data";
 import { NOOP_CLAN_STOCKPILE_CHANGES } from "../type-defs/type-defs";
 import { mapToIndexedModes } from "../mw-mode-utils";
+import { BoardPlayerSideCoordinate } from "../../../protobufs/protofiles-out/manawave-board";
+import { mapToPlayerSideId } from "../../../game-data/pb-types-mapping/pb-mapping-player";
 
 
 const ModePrintSettings: IModePrintSettings = {
   fontSize: 12,
   imageSize: 12,
+}
+
+
+const ON_CARD_PICK_DATA: OnCardPickData = {
+  singlePickInitialPopulation: 2,
+  multiplePickInitialPopulation: 1,
 }
 
 
@@ -45,21 +52,21 @@ export const WizardsCardDef: FamilyCardDefinition = {
       modePrintSettings: ModePrintSettings,
     },
   ]),
-  onCardPickData: {
-    singlePickInitialPopulation: 2,
-    multiplePickInitialPopulation: 1,
-  },
+  onCardPickData: ON_CARD_PICK_DATA,
 
   gameLogic: {
     onManaflowProc: (boardState, playerSide, procPoint): ManaflowPointProcResult => {
       console.log("ON MANAFLOW PROC FOR Wizards");
 
-      const clanCardCoordinate = createMwBoardPlayerSideCoordinateKey(playerSide, procPoint.leylineDistance, 0);
+      const clanCardCoordinate: BoardPlayerSideCoordinate = {
+        playerSideId: mapToPlayerSideId(playerSide),
+        leylineDistance: procPoint.leylineDistance,
+        familyRank: 0,
+      };
 
       return {
         clanCardChanges: [
           {
-            // clanPieceId,
             clanCardCoordinate,
             changes: {
               ...NOOP_CLAN_STOCKPILE_CHANGES,
@@ -69,6 +76,11 @@ export const WizardsCardDef: FamilyCardDefinition = {
         ],
       };
     },
-    // onManawaveFinalize
+
+    onFamilyCardPlacement: () => {
+      return {
+        numPopulationTokensToAddToClan: ON_CARD_PICK_DATA.singlePickInitialPopulation,
+      };
+    },
   },    
 };

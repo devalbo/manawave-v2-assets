@@ -17,7 +17,6 @@ export interface IPlayer {
 }
 
 
-
 export interface IClanCardLogic {
   onManawaveInit?: () => void
   onManaflowProc: (
@@ -32,6 +31,10 @@ export interface IClanCardLogic {
 }
 
 
+export type FamilyCardPlacementResult = {
+  numPopulationTokensToAddToClan: number
+}
+
 export interface IFamilyCardLogic {
   onManawaveInit?: () => void
   onManaflowProc: (
@@ -41,7 +44,7 @@ export interface IFamilyCardLogic {
   ) => ManaflowPointProcResult
   onManawaveFinalize?: () => void
   
-  onPiecePlacement?: () => void // run this when tile is placed by player on board
+  onFamilyCardPlacement?: () => FamilyCardPlacementResult  // run this when card is placed by player on board
   onTokenPlacement?: () => void // run this when tokens are placed by player on tile
 }
 
