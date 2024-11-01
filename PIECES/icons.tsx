@@ -72,30 +72,30 @@ export const MwGameImgIcon = (props: IMwGameIcon) => {
 }
 
 
-// export const getMwIconAscii = (tag: TokenCounterTypeTags) => {
-//   switch (tag) {
-
-//     case '<::attack-counter::>': return "Attack Counter";
-//     case '<::shield-counter::>': return "Shield Counter";
-
-//     case '<::population-increase-counter::>': return "Population Increase Counter";
-//     case '<::population-sacrifice-counter::>': return "Population Sacrifice Counter";
-//     case '<::population-token::>': return 'Population Token';
-
-//     case '<::soulstain-token::>': return "Soulstain Token";
-    
-//     case '<::mana-counter::>': return 'Mana Counter';
-//     case '<::manalith-claim-counter::>': return 'Manalith Claim Counter';
-//     case '<::manawave-round-token::>': return 'Manawave Round Token';
-//     case '<::manalith-token::>': return 'Manalith Token';
-//   }
-
-//   return `Unrecognized token counter type: ${tag}`;
-// }
-
-
-
 export const getMwIconAscii = (tag: TokenCounterTypeTags) => {
+  switch (tag) {
+
+    case '<::attack-counter::>': return "Attack Counter";
+    case '<::shield-counter::>': return "Shield Counter";
+
+    case '<::population-increase-counter::>': return "Population Increase Counter";
+    case '<::population-sacrifice-counter::>': return "Population Sacrifice Counter";
+    case '<::population-token::>': return 'Population Token';
+
+    case '<::soulstain-token::>': return "Soulstain Token";
+    
+    case '<::mana-counter::>': return 'Mana Counter';
+    case '<::manalith-claim-counter::>': return 'Manalith Claim Counter';
+    case '<::manawave-round-token::>': return 'Manawave Round Token';
+    case '<::manalith-token::>': return 'Manalith Token';
+  }
+
+  return `Unrecognized token counter type: ${tag}`;
+}
+
+
+
+export const getMwIconShortAscii = (tag: TokenCounterTypeTags) => {
   switch (tag) {
 
     case '<::attack-counter::>': return "[ATK]";
