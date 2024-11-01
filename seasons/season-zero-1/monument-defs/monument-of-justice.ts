@@ -1,11 +1,11 @@
 import { MonumentCardDefs } from "../../../../protobufs/protofiles-out/manawave-season-zero-1";
-import { MonumentCard } from "../../../type-defs/monument-defs";
+import { GameOutcome } from "../../../../protobufs/protofiles-out/manawave-types";
+import { MonumentCard, MonumentInPlayInstance } from "../../../type-defs/monument-defs";
 import { SEASON_ZERO_1_PBID } from "../../season-id-defs";
 
 
 export const MonumentOfJusticeData: MonumentCard = {
   title: "Monument of Justice",
-  // monumentId: "sz1-monument-of-justice",
   monumentId: {
     seasonId: SEASON_ZERO_1_PBID,
     seasonMonumentCardId: MonumentCardDefs.MonumentOfJustice,
@@ -17,3 +17,14 @@ export const MonumentOfJusticeData: MonumentCard = {
     "COUNT(<::shield-counter::>) for both Tribes. The Tribe with the highest COUNT(<::shield-counter::>) " +
     "wins. If there is still a tie, resume the Manawave.",
 }
+
+
+export const MonumentOfJustice: MonumentInPlayInstance = {
+  ...MonumentOfJusticeData,
+  gameLogic: {
+    onPoweredByManawave: (boardState, leyline) => {
+      return GameOutcome.GameOutcome_InProgress;
+    },
+  }
+}
+  

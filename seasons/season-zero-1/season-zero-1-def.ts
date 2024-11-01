@@ -1,4 +1,3 @@
-import { SeasonDefinition, SeasonPbId } from "../../../protobufs/protofiles-out/manawave-types";
 import { ISeason } from "../../type-defs/season-defs";
 import { getPlayCardsForTotem } from "../../type-defs/totem-defs";
 import { SEASON_ZERO_1_PBID } from "../season-id-defs";

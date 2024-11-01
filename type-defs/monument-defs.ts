@@ -1,4 +1,5 @@
 import { MonumentCardPbId } from "../../protobufs/protofiles-out/manawave-types"
+import { MonumentCardLogic } from "./game-data-type-defs"
 
 
 export type MonumentCard = {
@@ -7,3 +8,6 @@ export type MonumentCard = {
   readonly text: string
   readonly isDefault?: boolean
 }
+
+
+export type MonumentInPlayInstance = MonumentCard & MonumentCardLogic

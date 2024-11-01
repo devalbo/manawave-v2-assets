@@ -3,7 +3,7 @@ import { ManaflowProcPoint } from "../../game-play/local-game-state/channel-clan
 import { ManaflowPointProcResult } from "../../game-play/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types"
 import { OnCardPickData } from "../PIECES/mw-card-data"
 import { ClanCardStockpile } from "../../protobufs/protofiles-out/manawave-board"
-import { PlayerPb } from "../../protobufs/protofiles-out/manawave-types"
+import { GameOutcome, LeylineDistanceFromSource, PlayerPb } from "../../protobufs/protofiles-out/manawave-types"
 import { BoardPiecesState } from "../../game-play/local-game-state/local-board-state-types"
 
 
@@ -57,4 +57,13 @@ export type ClanCardLogic = {
 export type FamilyCardLogic = {
   readonly gameLogic: IFamilyCardLogic
   readonly onCardPickData: OnCardPickData
+}
+
+
+export interface IMonumentCardLogic {
+  onPoweredByManawave: (boardState: BoardPiecesState, leyline: LeylineDistanceFromSource) => GameOutcome
+}
+
+export type MonumentCardLogic = {
+  readonly gameLogic: IMonumentCardLogic
 }

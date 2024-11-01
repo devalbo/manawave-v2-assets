@@ -1,11 +1,11 @@
 import { MonumentCardDefs } from "../../../../protobufs/protofiles-out/manawave-season-zero-1";
-import { MonumentCard } from "../../../type-defs/monument-defs";
+import { GameOutcome } from "../../../../protobufs/protofiles-out/manawave-types";
+import { MonumentCard, MonumentInPlayInstance } from "../../../type-defs/monument-defs";
 import { SEASON_ZERO_1_PBID } from "../../season-id-defs";
 
 
 export const MonumentOfNatureData: MonumentCard = {
   title: "Monument of Nature",
-  // monumentId: "sz1-monument-of-nature",
   monumentId: {
     seasonId: SEASON_ZERO_1_PBID,
     seasonMonumentCardId: MonumentCardDefs.MonumentOfNature,
@@ -16,3 +16,14 @@ export const MonumentOfNatureData: MonumentCard = {
   " The Tribe with the lowest COUNT(<::manalith-token::>) wins. If there is still a tie, " +
   "resume the Manawave.",
 }
+
+
+export const MonumentOfNature: MonumentInPlayInstance = {
+  ...MonumentOfNatureData,
+  gameLogic: {
+    onPoweredByManawave: (boardState, leyline) => {
+      return GameOutcome.GameOutcome_InProgress;
+    },
+  }
+}
+  
