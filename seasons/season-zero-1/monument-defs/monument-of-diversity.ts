@@ -19,8 +19,8 @@ export const MonumentOfDiversity: MonumentInPlayInstance = {
   ...MonumentOfDiversityData,
   gameLogic: {
     onPoweredByManawave: (boardState, leyline) => {
-      // return GameOutcome.GameOutcome_InProgress;
-      return GameOutcome.GameOutcome_OptPlayerWins;
+      return GameOutcome.GameOutcome_InProgress;
+      // return GameOutcome.GameOutcome_OptPlayerWins;
     },
   }
 }
