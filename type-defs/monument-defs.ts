@@ -2,8 +2,8 @@ import { MonumentCardPbId } from "../../protobufs/protofiles-out/manawave-types"
 
 
 export type MonumentCard = {
-  title: string
-  monumentId: MonumentCardPbId
-  text: string
-  isDefault?: boolean
+  readonly title: string
+  readonly monumentId: MonumentCardPbId
+  readonly text: string
+  readonly isDefault?: boolean
 }

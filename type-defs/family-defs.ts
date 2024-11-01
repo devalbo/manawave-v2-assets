@@ -6,11 +6,11 @@ import { TotemId } from "./totem-type-defs"
 
 
 export type FamilyCardDefinition = {
-  title: string
-  text: string
-  totemId: TotemId
-  familyCardDefPbId: FamilyCardDefPbId
+  readonly title: string
+  readonly text: string
+  readonly totemId: TotemId
+  readonly familyCardDefPbId: FamilyCardDefPbId
   
-  modes: IMwCardModeData[]
+  readonly modes: IMwCardModeData[]
 } & FamilyCardLogic 
   & FamilyCardType

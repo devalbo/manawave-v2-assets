@@ -32,7 +32,7 @@ export interface IClanCardLogic {
 
 
 export type FamilyCardPlacementResult = {
-  numPopulationTokensToAddToClan: number
+  readonly numPopulationTokensToAddToClan: number
 }
 
 export interface IFamilyCardLogic {
@@ -50,11 +50,11 @@ export interface IFamilyCardLogic {
 
 
 export type ClanCardLogic = {
-  gameLogic: IClanCardLogic
+  readonly gameLogic: IClanCardLogic
 }
 
 
 export type FamilyCardLogic = {
-  gameLogic: IFamilyCardLogic
-  onCardPickData: OnCardPickData
+  readonly gameLogic: IFamilyCardLogic
+  readonly onCardPickData: OnCardPickData
 }

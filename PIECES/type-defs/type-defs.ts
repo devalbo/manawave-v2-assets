@@ -70,23 +70,22 @@ export const NOOP_CLAN_STOCKPILE_CHANGES: ClanCardStockpile = {
 
 
 export type ClanInPlayData = {
-  stockpile: ClanCardStockpile
-  activeModeIndex: number
+  readonly stockpile: ClanCardStockpile
+  readonly activeModeIndex: number
 }
 
 
 export type FamilyInPlayData = {
-  activeModeIndex: number
-  // manalithClaimCountersCount: MwMarkerTypeCounter
+  readonly activeModeIndex: number
 }
 
 
 export type ClanPieceInstanceData = {
-  clanCardInstancePbId: ClanCardInstancePbId
+  readonly clanCardInstancePbId: ClanCardInstancePbId
 }
 
 export type FamilyPieceInstanceData = {
-  familyCardInstancePbId: FamilyCardInstancePbId
+  readonly familyCardInstancePbId: FamilyCardInstancePbId
 }
 
 export type PieceInstanceData = ClanPieceInstanceData | FamilyPieceInstanceData

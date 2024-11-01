@@ -6,11 +6,11 @@ import { ClanCardType } from "./piece-type-defs"
 
 
 export type ClanCardDefinition = {
-  title: string
-  text: string
-  clanDefPbId: ClanCardDefPbId
+  readonly title: string
+  readonly text: string
+  readonly clanDefPbId: ClanCardDefPbId
   
-  modes: IMwCardModeData[]
-  conversionRatios: IMwClanConversionRatio[]
+  readonly modes: IMwCardModeData[]
+  readonly conversionRatios: IMwClanConversionRatio[]
 } & ClanCardLogic
   & ClanCardType
