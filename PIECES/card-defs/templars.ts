@@ -23,17 +23,17 @@ export const TemplarsCardDef: FamilyCardDefinition = {
   text: "TODO: fill in text for Templars",
   modes: mapToIndexedModes([
     {
-      manalithClaimsRequired: 0,
+      numManalithClaimsToActivate: 0,
       modeText: "Add 1 <::attack-counter::> to Clan. Add 1 <::shield-counter::> to Clan.",
       modePrintSettings: ModePrintSettings,
     },
     {
-      manalithClaimsRequired: 1,
+      numManalithClaimsToActivate: 1,
       modeText: "Add 3 <::shield-counter::> to Clan. Add 1 <::attack-counter::> to Tribe. Reduce each by 1 if your Tribe has any <::soulstain-token::>.",
       modePrintSettings: ModePrintSettings,
     },
     {
-      manalithClaimsRequired: 1,
+      numManalithClaimsToActivate: 1,
       modeText: "Add 3 <::attack-counter::> to Clan. Add 1 <::shield-counter::> to Tribe. Reduce each by 1 if your Tribe has any <::soulstain-token::>.",
       modePrintSettings: ModePrintSettings,
     },

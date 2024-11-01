@@ -19,7 +19,7 @@ export const ClanOfSacrificeData: ClanCardDefinition = {
   text: "blah",
   modes: mapToIndexedModes([
     {
-      manalithClaimsRequired: 0,
+      numManalithClaimsToActivate: 0,
       modeText: "Add 1 <::attack-counter::> to Clan. Add 1 <::shield-counter::> to Clan.",
       modePrintSettings: {
         fontSize: 12,
@@ -27,11 +27,11 @@ export const ClanOfSacrificeData: ClanCardDefinition = {
       },
     },
     {
-      manalithClaimsRequired: 0,
+      numManalithClaimsToActivate: 0,
       modeText: "Add 1 <::mana-counter::> to Clan.",
     },
     {
-      manalithClaimsRequired: 1,
+      numManalithClaimsToActivate: 1,
       modeText: "Add 1 <::population-sacrifice-counter::> to Clan. Add <::mana-counter::> <::mana-counter::> to Tribe.",
       modePrintSettings: {
         fontSize: 12,
@@ -39,7 +39,7 @@ export const ClanOfSacrificeData: ClanCardDefinition = {
       },
     },
     {
-      manalithClaimsRequired: 3,
+      numManalithClaimsToActivate: 3,
       modeText: "Unattainable.",
     },
   ]),

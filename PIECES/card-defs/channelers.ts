@@ -23,17 +23,17 @@ export const ChannelersCardDef: FamilyCardDefinition = {
   text: "TODO: fill in text for Channelers",
   modes: mapToIndexedModes([
     {
-      manalithClaimsRequired: 0,
+      numManalithClaimsToActivate: 0,
       modeText: "No effect.",
       modePrintSettings: ModePrintSettings,
     },
     {
-      manalithClaimsRequired: 2,
+      numManalithClaimsToActivate: 2,
       modeText: "Add 1 <::mana-counter::> to Tribe for each adjacent X-aligned Family. Reduce total by 1 for each <::soulstain-token::> your Tribe has.",
       modePrintSettings: ModePrintSettings,
     },
     {
-      manalithClaimsRequired: 4,
+      numManalithClaimsToActivate: 4,
       modeText: "Add 2 <::mana-counter::> to Tribe for each adjacent X-aligned Family. Reduce total by 1 for each <::soulstain-token::> your Tribe has.",
       modePrintSettings: ModePrintSettings,
     },

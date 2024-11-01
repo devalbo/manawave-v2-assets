@@ -16,7 +16,7 @@ export const ManaChannelersCardDef: FamilyCardDefinition = {
   text: "TODO: fill in text for Mana Channelers",
   modes: mapToIndexedModes([
     {
-      manalithClaimsRequired: 0,
+      numManalithClaimsToActivate: 0,
       modeText: "Add 2 <::mana-counter::> to Tribe.",
     },
   ]),

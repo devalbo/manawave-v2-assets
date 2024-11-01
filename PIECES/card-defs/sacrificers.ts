@@ -23,7 +23,7 @@ export const SacrificersCardDef: FamilyCardDefinition = {
   text: "TODO: fill in text for Sacrificers",
   modes: mapToIndexedModes([
     {
-      manalithClaimsRequired: 1,
+      numManalithClaimsToActivate: 1,
       modeText: "Add 1 <::mana-counter::> to Tribe for each adjacent Family. Add 1 <::population-sacrifice-counter::> to Clan. Take 1 <::soulstain-token::>.",
       modePrintSettings: ModePrintSettings,
     },

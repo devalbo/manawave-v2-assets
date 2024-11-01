@@ -16,11 +16,11 @@ export const DefendersCardDef: FamilyCardDefinition = {
   text: "TODO: fill in text for Defenders",
   modes: mapToIndexedModes([
     {
-      manalithClaimsRequired: 0,
+      numManalithClaimsToActivate: 0,
       modeText: "Add 3 <::shield-counter::> to adjacent Clans. Add 1 <::population-sacrifice-counter::> to Clan.",
     },
     {
-      manalithClaimsRequired: 2,
+      numManalithClaimsToActivate: 2,
       modeText: "Add 5 <::shield-counter::> to Clan. Add 1 <::population-sacrifice-counter::> to adjacent Clans. Take 1 <::soulstain-token::>.",
     },
   ]),

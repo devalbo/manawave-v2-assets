@@ -16,7 +16,7 @@ export const GrasslandShepherdsCardDef: FamilyCardDefinition = {
   text: "TODO: fill in text for Grassland Shepherds",
   modes: mapToIndexedModes([
     {
-      manalithClaimsRequired: 0,
+      numManalithClaimsToActivate: 0,
       modeText: "Add 1 <::population-increase-counter::> to Tribe.",
     },
   ]),

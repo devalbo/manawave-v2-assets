@@ -16,15 +16,15 @@ export const MysticFarmersCardDef: FamilyCardDefinition = {
   text: "TODO: fill in text for Mystic Farmers",
   modes: mapToIndexedModes([
     {
-      manalithClaimsRequired: 0,
+      numManalithClaimsToActivate: 0,
       modeText: "Add 1 <::population-increase-counter::> to Clan.",
     },
     {
-      manalithClaimsRequired: 1,
+      numManalithClaimsToActivate: 1,
       modeText: "Execute M0. Add 1 <::mana-counter::> to Clan.",
     },
     {
-      manalithClaimsRequired: 2,
+      numManalithClaimsToActivate: 2,
       modeText: "Execute M0. Add 1 <::mana-counter::> to Tribe.",
     },
   ]),

@@ -16,11 +16,11 @@ export const ForestHuntersCardDef: FamilyCardDefinition = {
   text: "TODO: fill in text for Forest Hunters",
   modes: mapToIndexedModes([
     {
-      manalithClaimsRequired: 0,
+      numManalithClaimsToActivate: 0,
       modeText: "Add 2 <::population-increase-counter::> to Clan.",
     },
     {
-      manalithClaimsRequired: 2,
+      numManalithClaimsToActivate: 2,
       modeText: "Add 3 <::population-increase-counter::> to Clan.",
     },
   ]),

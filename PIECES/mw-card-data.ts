@@ -13,18 +13,14 @@ export interface IModeDigitalSettings {
 }
 
 export interface IUnindexedMwCardModeData {
-  manalithClaimsRequired: number;
+  numManalithClaimsToActivate: number;
   modeText: string;
   modePrintSettings?: IModePrintSettings
   modeDigitalSettings?: IModeDigitalSettings
 }
 
-export interface IMwCardModeData {
+export interface IMwCardModeData extends IUnindexedMwCardModeData {
   modeIndex: number;
-  manalithClaimsRequired: number;
-  modeText: string;
-  modePrintSettings?: IModePrintSettings
-  modeDigitalSettings?: IModeDigitalSettings
 }
 
 export interface OnCardPickData {

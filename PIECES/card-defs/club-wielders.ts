@@ -16,11 +16,11 @@ export const ClubWieldersCardDef: FamilyCardDefinition = {
   text: "TODO: fill in text for Club Wielders",
   modes: mapToIndexedModes([
     {
-      manalithClaimsRequired: 0,
+      numManalithClaimsToActivate: 0,
       modeText: "Add 2 <::attack-counter::> to Clan.",
     },
     {
-      manalithClaimsRequired: 2,
+      numManalithClaimsToActivate: 2,
       modeText: "Add 2 <::attack-counter::> to Clan. Add 2 <::attack-counter::> to Tribe.",
     },
   ]),

@@ -16,11 +16,11 @@ export const ShieldCraftersCardDef: FamilyCardDefinition = {
   text: "TODO: fill in text for Shield Crafters",
   modes: mapToIndexedModes([
     {
-      manalithClaimsRequired: 0,
+      numManalithClaimsToActivate: 0,
       modeText: "Add 2 <::shield-counter::> to Clan.",
     },
     {
-      manalithClaimsRequired: 2,
+      numManalithClaimsToActivate: 2,
       modeText: "Add 2 <::shield-counter::> to Clan. Add 3 <::shield-counter::> to Tribe.",
     },
   ]),

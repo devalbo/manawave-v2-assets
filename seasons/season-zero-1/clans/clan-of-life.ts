@@ -19,7 +19,7 @@ export const ClanOfLifeData: ClanCardDefinition = {
   text: "blah",
   modes: mapToIndexedModes([
     {
-      manalithClaimsRequired: 0,
+      numManalithClaimsToActivate: 0,
       modeText: "Add 1 <::attack-counter::> to Clan. Add 1 <::shield-counter::> to Clan.",
       modePrintSettings: {
         fontSize: 12,
@@ -27,11 +27,11 @@ export const ClanOfLifeData: ClanCardDefinition = {
       }
     },
     {
-      manalithClaimsRequired: 1,
+      numManalithClaimsToActivate: 1,
       modeText: "Add 1 <::population-increase-counter::> to Tribe.",
     },
     {
-      manalithClaimsRequired: 3,
+      numManalithClaimsToActivate: 3,
       modeText: "Unattainable.",
     },
   ]),

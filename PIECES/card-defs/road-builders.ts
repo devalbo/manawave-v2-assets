@@ -16,7 +16,7 @@ export const RoadBuildersCardDef: FamilyCardDefinition = {
   text: "TODO: fill in text for Road Builders",
   modes: mapToIndexedModes([
     {
-      manalithClaimsRequired: 0,
+      numManalithClaimsToActivate: 0,
       modeText: "Add 1 <::population-increase-counter::> to Clan. Add 1 <::mana-counter::> to Tribe.",
     },
   ]),

@@ -19,7 +19,7 @@ export const ClanOfDiversityData: ClanCardDefinition = {
   text: "blah",
   modes: mapToIndexedModes([
     {
-      manalithClaimsRequired: 0,
+      numManalithClaimsToActivate: 0,
       modeText: "Add 1 <::attack-counter::> to Clan. Add 1 <::shield-counter::> to Clan.",
       modePrintSettings: {
         fontSize: 12,
@@ -27,7 +27,7 @@ export const ClanOfDiversityData: ClanCardDefinition = {
       },
     },
     {
-      manalithClaimsRequired: 2,
+      numManalithClaimsToActivate: 2,
       modeText: "Add <::attack-counter::> <::attack-counter::> to each adjacent Clan.",
       modePrintSettings: {
         fontSize: 12,
@@ -35,7 +35,7 @@ export const ClanOfDiversityData: ClanCardDefinition = {
       },
     },
     {
-      manalithClaimsRequired: 2,
+      numManalithClaimsToActivate: 2,
       modeText: "Add <::shield-counter::> <::shield-counter::> to each adjacent Clan.",
       modePrintSettings: {
         fontSize: 12,
@@ -43,7 +43,7 @@ export const ClanOfDiversityData: ClanCardDefinition = {
       },
     },
     {
-      manalithClaimsRequired: 3,
+      numManalithClaimsToActivate: 3,
       modeText: "Unattainable.",
     },
   ]),

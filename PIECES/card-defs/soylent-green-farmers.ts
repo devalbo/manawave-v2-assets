@@ -22,17 +22,17 @@ export const SoylentGreenFarmersCardDef: FamilyCardDefinition = {
   text: "TODO: fill in text for Soylent Green Farmers",
   modes: mapToIndexedModes([
     {
-      manalithClaimsRequired: 0,
+      numManalithClaimsToActivate: 0,
       modeText: "Add 1 <::population-increase-counter::> to Clan.",
       modePrintSettings: ModePrintSettings,
     },
     {
-      manalithClaimsRequired: 1,
+      numManalithClaimsToActivate: 1,
       modeText: "Add 2 <::population-increase-counter::> to Clan. Add 1 <::population-increase-counter::> to Tribe. Add 1 <::population-sacrifice-counter::> to Clan. Take 1 <::soulstain-token::>.",
       modePrintSettings: ModePrintSettings,
     },
     {
-      manalithClaimsRequired: 4,
+      numManalithClaimsToActivate: 4,
       modeText: "Add 4 <::population-increase-counter::> to Clan. Add 2 <::population-increase-counter::> to Tribe. Add 2 <::population-sacrifice-counter::> to Clan. Take 2 <::soulstain-token::>.",
       modePrintSettings: ModePrintSettings,
     },

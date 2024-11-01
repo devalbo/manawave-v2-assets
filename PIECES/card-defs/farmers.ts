@@ -23,17 +23,17 @@ export const FarmersCardDef: FamilyCardDefinition = {
   text: "TODO: fill in text for Farmers",
   modes: mapToIndexedModes([
     {
-      manalithClaimsRequired: 0,
+      numManalithClaimsToActivate: 0,
       modeText: "No effect",
       modePrintSettings: ModePrintSettings,
     },
     {
-      manalithClaimsRequired: 2,
+      numManalithClaimsToActivate: 2,
       modeText: "Add 2 <::population-increase-counter::> to Clan for each adjacent E-aligned Family.",
       modePrintSettings: ModePrintSettings,
     },
     {
-      manalithClaimsRequired: 4,
+      numManalithClaimsToActivate: 4,
       modeText: "Add 1 <::population-increase-counter::> to Tribe for each adjacent E-aligned Family.",
       modePrintSettings: ModePrintSettings,
     },

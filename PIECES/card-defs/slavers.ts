@@ -16,11 +16,11 @@ export const SlaversCardDef: FamilyCardDefinition = {
   text: "TODO: fill in text for Slavers",
   modes: mapToIndexedModes([
     {
-      manalithClaimsRequired: 0,
+      numManalithClaimsToActivate: 0,
       modeText: "Add 1 <::attack-counter::> to Tribe.",
     },
     {
-      manalithClaimsRequired: 2,
+      numManalithClaimsToActivate: 2,
       modeText: "Add 1 <::attack-counter::> to Tribe for each <::population-token::> on opposing Clan. Take 1 <::soulstain-token::>.",
     },
   ]),

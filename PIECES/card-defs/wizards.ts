@@ -7,6 +7,7 @@ import { NOOP_CLAN_STOCKPILE_CHANGES } from "../type-defs/type-defs";
 import { mapToIndexedModes } from "../mw-mode-utils";
 import { BoardPlayerSideCoordinate } from "../../../protobufs/protofiles-out/manawave-board";
 import { mapToPlayerSideId } from "../../../game-data/pb-types-mapping/pb-mapping-player";
+import { FamilyCardPlacementResult } from "../../type-defs/game-data-type-defs";
 
 
 const ModePrintSettings: IModePrintSettings = {
@@ -32,22 +33,22 @@ export const WizardsCardDef: FamilyCardDefinition = {
   text: "TODO: fill in text for Wizards",
   modes: mapToIndexedModes([
     {
-      manalithClaimsRequired: 0,
+      numManalithClaimsToActivate: 0,
       modeText: "Add 1 <::mana-counter::> to Tribe.",
       modePrintSettings: ModePrintSettings,
     },
     {
-      manalithClaimsRequired: 1,
+      numManalithClaimsToActivate: 1,
       modeText: "Add 2 <::mana-counter::> to Tribe.",
       modePrintSettings: ModePrintSettings,
     },
     {
-      manalithClaimsRequired: 2,
+      numManalithClaimsToActivate: 2,
       modeText: "Add 4 <::mana-counter::> to Tribe.",
       modePrintSettings: ModePrintSettings,
     },
     {
-      manalithClaimsRequired: 4,
+      numManalithClaimsToActivate: 4,
       modeText: "Add 8 <::mana-counter::> to Tribe. Add 1 <::population-sacrifice-counter::> to Clan.",
       modePrintSettings: ModePrintSettings,
     },
@@ -77,10 +78,11 @@ export const WizardsCardDef: FamilyCardDefinition = {
       };
     },
 
-    onFamilyCardPlacement: () => {
-      return {
+    onFamilyCardPlacement: (): FamilyCardPlacementResult => {
+      const retVal: FamilyCardPlacementResult = {
         numPopulationTokensToAddToClan: ON_CARD_PICK_DATA.singlePickInitialPopulation,
       };
+      return retVal;
     },
   },    
 };

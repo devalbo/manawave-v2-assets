@@ -16,7 +16,7 @@ export const EnchantersCardDef: FamilyCardDefinition = {
   text: "TODO: fill in text for Enchanters",
   modes: mapToIndexedModes([
     {
-      manalithClaimsRequired: 0,
+      numManalithClaimsToActivate: 0,
       modeText: "Add 1 <::mana-counter::> to Tribe, plus 1 for each adjacent Family.",
     },
   ]),
