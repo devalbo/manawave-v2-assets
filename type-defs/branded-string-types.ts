@@ -13,6 +13,7 @@ export type SeasonIdStr = BrandedString<'SeasonIdStr'>;
 export type ClanIdStr = BrandedString<'ClanIdStr'>;
 export type TotemIdStr = BrandedString<'TotemIdStr'>;
 export type MonumentIdStr = BrandedString<'MonumentIdStr'>;
+export type FamilyCardInstanceIdStr = BrandedString<'FamilyCardInstanceIdStr'>;
 
 export type ClanCardInstanceId = BrandedString<'ClanCardInstanceId'>;
 export type FamilyCardInstanceId = BrandedString<'FamilyCardInstanceId'>;
