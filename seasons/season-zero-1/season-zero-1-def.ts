@@ -1,5 +1,5 @@
 import { ISeason } from "../../type-defs/season-defs";
-import { getPlayCardsForTotem } from "../../type-defs/totem-defs";
+import { getPlayerCardsForTotem } from "../../type-defs/totem-defs";
 import { SEASON_ZERO_1_PBID } from "../season-id-defs";
 import { ClanOfDiversityData } from "./clans/clan-of-diversity";
 import { ClanOfLifeData } from "./clans/clan-of-life";
@@ -18,14 +18,14 @@ const allTotemChoices = [
 
 
 const allFamilyCards = [
-  ...getPlayCardsForTotem(TIGER_TOTEM_DEF, "OPT"),
-  ...getPlayCardsForTotem(TIGER_TOTEM_DEF, "OSB"),
+  ...getPlayerCardsForTotem(TIGER_TOTEM_DEF, "OPT"),
+  ...getPlayerCardsForTotem(TIGER_TOTEM_DEF, "OSB"),
 
-  ...getPlayCardsForTotem(OX_TOTEM_DEF, "OPT"),
-  ...getPlayCardsForTotem(OX_TOTEM_DEF, "OSB"),
-
-  ...getPlayCardsForTotem(SPIRITS_TOTEM_DEF, "OPT"),
-  ...getPlayCardsForTotem(SPIRITS_TOTEM_DEF, "OSB"),
+  ...getPlayerCardsForTotem(OX_TOTEM_DEF, "OPT"),
+  ...getPlayerCardsForTotem(OX_TOTEM_DEF, "OSB"),
+  
+  ...getPlayerCardsForTotem(SPIRITS_TOTEM_DEF, "OPT"),
+  ...getPlayerCardsForTotem(SPIRITS_TOTEM_DEF, "OSB"),
 ];
 
 

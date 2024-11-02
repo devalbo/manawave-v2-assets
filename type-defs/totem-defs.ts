@@ -20,17 +20,19 @@ export interface ITotemCardSet {
 }
 
 
-export const getPlayCardsForTotem = (totemDetails: ITotemDetails, playerSide: PlayerSide): FamilyCardInstance[] => {
+export const getPlayerCardsForTotem = (totemDetails: ITotemDetails, playerSide: PlayerSide): FamilyCardInstance[] => {
 
   const playCards = [] as FamilyCardInstance[];
 
-  totemDetails.optPlayCards.forEach((fcd, cardIndex) => {
-    playCards.push(fcd);
-  })
-
-  totemDetails.osbPlayCards.forEach((fcd, cardIndex) => {
-    playCards.push(fcd);
-  })
+  if (playerSide === 'OPT') {
+    totemDetails.optPlayCards.forEach((fcd, cardIndex) => {
+      playCards.push(fcd);
+    });
+  } else {
+    totemDetails.osbPlayCards.forEach((fcd, cardIndex) => {
+      playCards.push(fcd);
+    });
+  }
 
   return playCards;
 }
