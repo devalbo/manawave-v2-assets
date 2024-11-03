@@ -42,10 +42,10 @@ export const ClanOfDiversityData: ClanCardDefinition = {
         imageSize: 12,
       },
     },
-    {
-      numManalithClaimsToActivate: 3,
-      modeText: "Unattainable.",
-    },
+    // {
+    //   numManalithClaimsToActivate: 3,
+    //   modeText: "Unattainable.",
+    // },
   ]),
   conversionRatios: [
     {

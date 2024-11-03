@@ -30,10 +30,10 @@ export const ClanOfLifeData: ClanCardDefinition = {
       numManalithClaimsToActivate: 1,
       modeText: "Add 1 <::population-increase-counter::> to Tribe.",
     },
-    {
-      numManalithClaimsToActivate: 3,
-      modeText: "Unattainable.",
-    },
+    // {
+    //   numManalithClaimsToActivate: 3,
+    //   modeText: "Unattainable.",
+    // },
   ]),
   conversionRatios: [
     {
