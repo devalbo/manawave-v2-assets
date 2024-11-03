@@ -1,4 +1,3 @@
-import { createFamilyCardInstanceId } from "../../../type-defs/branded-string-types";
 import { ClubWieldersCardDef } from "../../../PIECES/card-defs/club-wielders";
 import { DefendersCardDef } from "../../../PIECES/card-defs/defenders";
 import { MartyrsCardDef } from "../../../PIECES/card-defs/martyrs";
@@ -41,7 +40,6 @@ export const TIGER_TOTEM_DEF: ITotemDetails = {
           familyCardDefId: cardDef.familyCardDefPbId,
           owningPlayerSide: PlayerSideId.PlayerSide_Opt,
         },
-        // pieceId: createFamilyCardInstanceId(TOTEM_ID, "OPT", i + 1),
         pieceType: 'family-card',
       };
       return retVal;
@@ -55,7 +53,6 @@ export const TIGER_TOTEM_DEF: ITotemDetails = {
           familyCardDefId: cardDef.familyCardDefPbId,
           owningPlayerSide: PlayerSideId.PlayerSide_Osb,
         },
-        // pieceId: createFamilyCardInstanceId(TOTEM_ID, "OSB", i + 1),
         pieceType: 'family-card',
       };
       return retVal;

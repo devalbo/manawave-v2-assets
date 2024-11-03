@@ -40,7 +40,6 @@ export const OX_TOTEM_DEF: ITotemDetails = {
           familyCardDefId: cardDef.familyCardDefPbId,
           owningPlayerSide: PlayerSideId.PlayerSide_Opt,
         },
-        // pieceId: createFamilyCardInstanceId(TOTEM_ID, "OPT", i + 1),
         pieceType: 'family-card',
       };
       return retVal;
@@ -54,7 +53,6 @@ export const OX_TOTEM_DEF: ITotemDetails = {
           familyCardDefId: cardDef.familyCardDefPbId,
           owningPlayerSide: PlayerSideId.PlayerSide_Osb,
         },
-        // pieceId: createFamilyCardInstanceId(TOTEM_ID, "OSB", i + 1),
         pieceType: 'family-card',
       };
       return retVal;
