@@ -1,0 +1,32 @@
+
+.mw-print-mode-selection-grid {
+  /* display: flex; */
+  /* flex-direction: row; */
+  display: grid;
+  grid-template-columns: "1fr 1fr 1fr";
+  grid-auto-flow: column;
+
+  /* display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-auto-flow: column;
+  gap: 10px; */
+}
+
+.mw-print-mode-selection-column {
+  /* width: 100%; */
+  /* flex-grow: 1; */
+  background-color: #f0f0f0;
+  border: 3px solid #ccc;
+  /* padding: 20px; */
+  text-align: center;
+}
+
+.mw-print-mode-selection-item {
+  /* width: 100%; */
+  /* flex-grow: 1; */
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  /* padding: 20px; */
+  text-align: center;
+  height: 36px;
+}
