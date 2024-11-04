@@ -1,6 +1,6 @@
 import { ClanCardDefPbId } from "../../protobufs/protofiles-out/manawave-types"
 import { IMwCardModeData } from "../PIECES/mw-card-data"
-import { IMwClanConversionRatio } from "../PIECES/MwClanTemplate"
+import { IMwClanConversionRatio } from "../PIECES/type-defs/type-defs"
 import { ClanCardLogic } from "./game-data-type-defs"
 import { ClanCardType } from "./piece-type-defs"
 

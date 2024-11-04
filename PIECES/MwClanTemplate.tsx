@@ -1,16 +1,17 @@
+/* eslint-disable react/jsx-pascal-case */
 import _ from 'lodash';
 import { MwClanTemplateModeBlock } from './MwClanTemplateModeBlock';
 import { createImgComponentFromTag } from './icons';
-import { TokenCounterTypeTags } from './token-counter-icons';
 import { CardDecoration } from './constants';
 import { IMwCardModeData } from './mw-card-data';
 import './MwClanTemplate.css';
+import { IMwClanConversionRatio } from './type-defs/type-defs';
 
 
-export interface IMwClanConversionRatio {
-  input: TokenCounterTypeTags[];
-  output: TokenCounterTypeTags[];
-}
+// export interface IMwClanConversionRatio {
+//   input: TokenCounterTypeTags[];
+//   output: TokenCounterTypeTags[];
+// }
 
 export interface IMwClanData {
   title: string
@@ -21,20 +22,20 @@ export interface IMwClanData {
 }
 
 
-const ConversionRatesImageSize = 20;
+// const ConversionRatesImageSize = 20;
 
-const ConversionRateIcon = (props: {
-  tag: TokenCounterTypeTags
-}) => createImgComponentFromTag(props.tag, ConversionRatesImageSize);
+// const ConversionRateIcon = (props: {
+//   tag: TokenCounterTypeTags
+// }) => createImgComponentFromTag(props.tag, ConversionRatesImageSize);
 
 
-const ConversionRateIcons = (props: {
-  tags: TokenCounterTypeTags[]
-}) => {
-  return props.tags.map((tag, i) => (
-    <ConversionRateIcon tag={tag} key={i} />
-  ));
-}
+// const ConversionRateIcons = (props: {
+//   tags: TokenCounterTypeTags[]
+// }) => {
+//   return props.tags.map((tag, i) => (
+//     <ConversionRateIcon tag={tag} key={i} />
+//   ));
+// }
 
 
 const StockpileImageSize = 20;

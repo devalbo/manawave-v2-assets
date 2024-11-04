@@ -4,6 +4,7 @@ import { MwMarkerTypeToken, MwMarkerTypeCounter, createMwTokenCount, createMwCou
 import { ClanCardDefinition } from "../../type-defs/clan-defs"
 import { FamilyCardDefinition } from "../../type-defs/family-defs"
 import { ClanCardLogic, FamilyCardLogic } from "../../type-defs/game-data-type-defs"
+import { TokenCounterTypeTags } from "../token-counter-icons"
 
 
 export type MwCounterTypes<T> = {
@@ -13,6 +14,18 @@ export type MwCounterTypes<T> = {
 export type MwTokenTypes<T> = {
   [K in keyof T]: T[K] extends MwMarkerTypeToken ? K : never;
 }[keyof T]
+
+
+
+export interface IMwClanConversionRatio {
+  input: TokenCounterTypeTags[];
+  output: TokenCounterTypeTags[];
+}
+
+export interface IMwTribeConversionRatio {
+  input: TokenCounterTypeTags[];
+  output: TokenCounterTypeTags[];
+}
 
 
 export type PlayerTribeCounterTypes = MwCounterTypes<TribeCardStockpile>
@@ -72,6 +85,7 @@ export const NOOP_CLAN_STOCKPILE_CHANGES: ClanCardStockpile = {
 export type ClanInPlayData = {
   readonly stockpile: ClanCardStockpile
   readonly activeModeIndex: number
+  readonly conversionRatios: IMwClanConversionRatio[]
 }
 
 
@@ -108,3 +122,9 @@ export type FamilyCardInPlayInstance = FamilyCardInstance &
   
 
 export type InPlayPieceInstance = ClanCardInPlayInstance | FamilyCardInPlayInstance
+
+
+export const DefaultTribeConversionRatios: IMwTribeConversionRatio = {
+  input: [],
+  output: [],
+}

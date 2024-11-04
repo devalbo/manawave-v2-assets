@@ -1,13 +1,16 @@
+/* eslint-disable react/jsx-pascal-case */
 import React from "react";
 import './TribeCard.css';
 import { PlayerId } from "./constants";
-import { createImgComponentFromTag, ManaCounterIcon_DefaultSize } from "./icons";
+import { createImgComponentFromTag } from "./icons";
+import { IMwTribeConversionRatio } from "./type-defs/type-defs";
 
 
 export interface IMwTribeCardData {
   title: string
   text: string
   playerId: PlayerId
+  conversionRatios: IMwTribeConversionRatio[]
 }
 
 const ManaCounterIcon = () => createImgComponentFromTag('<::mana-counter::>', 20);
@@ -23,7 +26,7 @@ const AttackCounterIcon_Stockpile = () => createImgComponentFromTag('<::attack-c
 const ShieldCounterIcon_Stockpile = () => createImgComponentFromTag('<::shield-counter::>', StockpileImageSize);
 const PopulationIncreaseCounterIcon_Stockpile = () => createImgComponentFromTag('<::population-increase-counter::>', StockpileImageSize);
 const SoulstainTokenIcon_Stockpile = () => createImgComponentFromTag('<::soulstain-token::>', StockpileImageSize);
-const SacrificeCounterIcon_Stockpile = () => createImgComponentFromTag('<::population-sacrifice-counter::>', StockpileImageSize);
+const ManalithIcon_Stockpile = () => createImgComponentFromTag('<::manalith-token::>', StockpileImageSize);
 
 
 export const MwConversionRatesTable = () => {
@@ -37,7 +40,7 @@ export const MwConversionRatesTable = () => {
         <ManaCounterIcon key={2} />
       </div>
       <div className="mw-tribe-conversion-rates-table-grid-item">
-        Family <ManaLevelTokenIcon />
+        <ManaLevelTokenIcon />
       </div>
 
       <div className="mw-tribe-conversion-rates-table-grid-item">
@@ -45,7 +48,7 @@ export const MwConversionRatesTable = () => {
         <ManaCounterIcon key={2} />
       </div>
       <div className="mw-tribe-conversion-rates-table-grid-item">
-        Clan <PopulationIncreaseCounterIcon />
+        <PopulationIncreaseCounterIcon />
       </div>
 
       <div className="mw-tribe-conversion-rates-table-grid-item">
@@ -53,7 +56,7 @@ export const MwConversionRatesTable = () => {
         <ManaCounterIcon key={2} />
       </div>
       <div className="mw-tribe-conversion-rates-table-grid-item">
-        Clan <AttackCounterIcon />
+        <AttackCounterIcon />
       </div>
         
       <div className="mw-tribe-conversion-rates-table-grid-item">
@@ -61,7 +64,7 @@ export const MwConversionRatesTable = () => {
         <ManaCounterIcon key={2} />
       </div>
       <div className="mw-tribe-conversion-rates-table-grid-item">
-        Clan <ShieldCounterIcon />
+        <ShieldCounterIcon />
       </div>
 
     </div>
@@ -75,27 +78,27 @@ export const MwStockpileTable = () => {
       <div className="mw-tribe-stockpile-table">
 
         <div className="mw-tribe-stockpile-table-grid-item">
-          <ManaCounterIcon_Stockpile />
-        </div>
-
-        <div className="mw-tribe-stockpile-table-grid-item">
           <AttackCounterIcon_Stockpile />
         </div>
 
         <div className="mw-tribe-stockpile-table-grid-item">
-          <SoulstainTokenIcon_Stockpile />
+          <ManaCounterIcon_Stockpile />
         </div>
 
         <div className="mw-tribe-stockpile-table-grid-item">
-          <PopulationIncreaseCounterIcon_Stockpile />
+          <ManalithIcon_Stockpile />
         </div>
-          
+
         <div className="mw-tribe-stockpile-table-grid-item">
           <ShieldCounterIcon_Stockpile />
         </div>
 
         <div className="mw-tribe-stockpile-table-grid-item">
-          <SacrificeCounterIcon_Stockpile />
+          <PopulationIncreaseCounterIcon_Stockpile />
+        </div>
+  
+        <div className="mw-tribe-stockpile-table-grid-item">
+          <SoulstainTokenIcon_Stockpile />
         </div>
           
       </div>
