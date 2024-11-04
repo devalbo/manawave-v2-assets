@@ -1,9 +1,10 @@
 import { ClanCardStockpile, TribeCardStockpile } from "../../../protobufs/protofiles-out/manawave-board"
-import { ClanCardInstancePbId, FamilyCardInstancePbId } from "../../../protobufs/protofiles-out/manawave-types"
+import { ClanCardInstancePbId, FamilyCardInstancePbId, MwMarkerType } from "../../../protobufs/protofiles-out/manawave-types"
 import { MwMarkerTypeToken, MwMarkerTypeCounter, createMwTokenCount, createMwCounterCount } from "../../type-defs/branded-marker-types"
 import { ClanCardDefinition } from "../../type-defs/clan-defs"
 import { FamilyCardDefinition } from "../../type-defs/family-defs"
 import { ClanCardLogic, FamilyCardLogic } from "../../type-defs/game-data-type-defs"
+import { convertToMwMarkerTypes } from "../marker-conversions"
 import { TokenCounterTypeTags } from "../token-counter-icons"
 
 
@@ -18,13 +19,17 @@ export type MwTokenTypes<T> = {
 
 
 export interface IMwClanConversionRatio {
-  input: TokenCounterTypeTags[];
-  output: TokenCounterTypeTags[];
+  // input: TokenCounterTypeTags[];
+  // output: TokenCounterTypeTags[];
+  input: MwMarkerType[];
+  output: MwMarkerType;
 }
 
 export interface IMwTribeConversionRatio {
-  input: TokenCounterTypeTags[];
-  output: TokenCounterTypeTags[];
+  // input: TokenCounterTypeTags[];
+  // output: TokenCounterTypeTags;
+  input: MwMarkerType[];
+  output: MwMarkerType;
 }
 
 
@@ -44,7 +49,6 @@ export type ClanTokenChanges = Record<ClanTokenTypes, number>
 
 export const EMPTY_PLAYER_TRIBE_STOCKPILE: TribeCardStockpile = {
   soulstainTokenCount: createMwTokenCount(0),
-  manalithTokenCount: createMwTokenCount(0),
   populationIncreaseCountersCount: createMwCounterCount(0),
   manaCountersCount: createMwCounterCount(0),
   attackCountersCount: createMwCounterCount(0),
@@ -65,7 +69,6 @@ export const EMPTY_PLAYER_CLAN_STOCKPILE: ClanCardStockpile = {
 
 export const NOOP_TRIBE_STOCKPILE_CHANGES: TribeCardStockpile = {
   soulstainTokenCount: createMwTokenCount(0),
-  manalithTokenCount: createMwTokenCount(0),
   populationIncreaseCountersCount: createMwCounterCount(0),
   manaCountersCount: createMwCounterCount(0),
   attackCountersCount: createMwCounterCount(0),
@@ -127,40 +130,40 @@ export type InPlayPieceInstance = ClanCardInPlayInstance | FamilyCardInPlayInsta
 
 
 export const DefaultTribeConversionRatios: IMwTribeConversionRatio[] = [
+  // {
+  //   input: convertToMwMarkerTypes([
+  //     '<::mana-counter::>',
+  //     '<::mana-counter::>',
+  //   ]),
+  //   // output: convertToMwMarkerTypes([
+  //   //   '<::manalith-token::>',
+  //   // ]),
+  //   output: MwMarkerType.MwMarkerType_ManalithToken,
+  // },
+  
   {
-    input: [
+    input: convertToMwMarkerTypes([
       '<::mana-counter::>',
       '<::mana-counter::>',
-    ],
-    output: [
-      '<::manalith-token::>',
-    ],
+    ]),
+    // output: convertToMwMarkerTypes([
+    output: MwMarkerType.MwMarkerType_AttackCounter,
   },
   {
-    input: [
+    input: convertToMwMarkerTypes([
       '<::mana-counter::>',
       '<::mana-counter::>',
-    ],
-    output: [
-      '<::population-increase-counter::>',
-    ],
+    ]),
+    output: MwMarkerType.MwMarkerType_ShieldCounter,
   },
   {
-    input: [
+    input: convertToMwMarkerTypes([
       '<::mana-counter::>',
       '<::mana-counter::>',
-    ],
-    output: [
-      '<::attack-counter::>',
-    ],
-  },
-  {
-    input: [
-      '<::mana-counter::>',
-      '<::mana-counter::>',
-    ],
-    output: [
-      '<::shield-counter::>',
-    ],
+    ]),
+    // output: convertToMwMarkerTypes([
+    //   '<::population-increase-counter::>',
+    // ]),
+    output: MwMarkerType.MwMarkerType_PopulationIncreaseCounter,
   },
 ]

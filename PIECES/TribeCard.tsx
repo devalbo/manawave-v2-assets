@@ -2,7 +2,7 @@
 import React from "react";
 import './TribeCard.css';
 import { PlayerId } from "./constants";
-import { createImgComponentFromTag } from "./icons";
+import { createImgComponentFromMwMarkerType, createImgComponentFromTag } from "./icons";
 import { IMwTribeConversionRatio } from "./type-defs/type-defs";
 
 
@@ -37,15 +37,13 @@ const MwTribeConversionRatioRow = (props: {conversionRatio: IMwTribeConversionRa
       <div className="mw-tribe-conversion-rates-table-grid-item">
         {
           props.conversionRatio.input.map((input) => 
-            createImgComponentFromTag(input, ConversionImageSize)
+            createImgComponentFromMwMarkerType(input, ConversionImageSize)
           )
         }
       </div>
       <div className="mw-tribe-conversion-rates-table-grid-item">
         {
-          props.conversionRatio.output.map((output) => 
-            createImgComponentFromTag(output, ConversionImageSize)
-          )
+          createImgComponentFromMwMarkerType(props.conversionRatio.output, ConversionImageSize)
         }
       </div>
     </>

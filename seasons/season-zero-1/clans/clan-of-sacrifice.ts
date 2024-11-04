@@ -2,6 +2,7 @@ import { mapToPlayerSideId } from "../../../../game-data/pb-types-mapping/pb-map
 import { ManaflowPointProcResult } from "../../../../game-play/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types";
 import { BoardPlayerSideCoordinate, ClanCardStockpile } from "../../../../protobufs/protofiles-out/manawave-board";
 import { ClanCardDefs } from "../../../../protobufs/protofiles-out/manawave-season-zero-1";
+import { MwMarkerType } from "../../../../protobufs/protofiles-out/manawave-types";
 import { mapToIndexedModes } from "../../../PIECES/mw-mode-utils";
 import { EMPTY_PLAYER_CLAN_STOCKPILE, NOOP_CLAN_STOCKPILE_CHANGES, NOOP_TRIBE_STOCKPILE_CHANGES } from "../../../PIECES/type-defs/type-defs";
 import { createMwCounterCount, createMwTokenCount } from "../../../type-defs/branded-marker-types";
@@ -45,20 +46,20 @@ export const ClanOfSacrificeData: ClanCardDefinition = {
   ]),
   conversionRatios: [
     {
-      input: ['<::mana-counter::>'],
-      output: ['<::manalith-token::>'],
+      input: [MwMarkerType.MwMarkerType_ManaCounter],
+      output: MwMarkerType.MwMarkerType_ManalithToken,
     },
     {
-      input: ['<::mana-counter::>', '<::mana-counter::>'],
-      output: ['<::population-increase-counter::>'],
+      input: [MwMarkerType.MwMarkerType_ManaCounter, MwMarkerType.MwMarkerType_ManaCounter],
+      output: MwMarkerType.MwMarkerType_PopulationIncreaseCounter,
     },
     {
-      input: ['<::mana-counter::>'],
-      output: ['<::attack-counter::>'],
+      input: [MwMarkerType.MwMarkerType_ManaCounter],
+      output: MwMarkerType.MwMarkerType_AttackCounter,
     },
     {
-      input: ['<::mana-counter::>', '<::mana-counter::>'],
-      output: ['<::shield-counter::>'],
+      input: [MwMarkerType.MwMarkerType_ManaCounter, MwMarkerType.MwMarkerType_ManaCounter],
+      output: MwMarkerType.MwMarkerType_ShieldCounter,
     },
   ],
 

@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-pascal-case */
-import _ from 'lodash';
 import { MwClanTemplateModeBlock } from './MwClanTemplateModeBlock';
-import { createImgComponentFromTag } from './icons';
+import { createImgComponentFromMwMarkerType, createImgComponentFromTag } from './icons';
 import { CardDecoration } from './constants';
 import { IMwCardModeData } from './mw-card-data';
 import './MwClanTemplate.css';
@@ -54,15 +53,16 @@ const MwClanConversionRatioRow = (props: {conversionRatio: IMwClanConversionRati
       <div className="mw-tribe-conversion-rates-table-grid-item">
         {
           props.conversionRatio.input.map((input) => 
-            createImgComponentFromTag(input, ConversionImageSize)
+            createImgComponentFromMwMarkerType(input, ConversionImageSize)
           )
         }
       </div>
       <div className="mw-tribe-conversion-rates-table-grid-item">
         {
-          props.conversionRatio.output.map((output) => 
-            createImgComponentFromTag(output, ConversionImageSize)
-          )
+          // props.conversionRatio.output.map((output) => 
+          //   createImgComponentFromTag(output, ConversionImageSize)
+          // )
+          createImgComponentFromMwMarkerType(props.conversionRatio.output, ConversionImageSize)
         }
       </div>
     </>

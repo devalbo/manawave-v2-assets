@@ -12,6 +12,7 @@ import {
   ManaLevelTokenDataUrl,
   ManalithClaimCounterDataUrl,
  } from "./token-counter-icons";
+import { MwMarkerType } from "../../protobufs/protofiles-out/manawave-types";
 
 
 export const createImgDataUrlFromTag = (tag: TokenCounterTypeTags) => {
@@ -35,8 +36,37 @@ export const createImgDataUrlFromTag = (tag: TokenCounterTypeTags) => {
   return `Unrecognized token counter type: ${tag}`;
 }
 
+const mapMwMarkerTypeToTag = (mwMarkerType: MwMarkerType): TokenCounterTypeTags => {
+  switch (mwMarkerType) {
+    case MwMarkerType.MwMarkerType_AttackCounter: return '<::attack-counter::>';  
+    case MwMarkerType.MwMarkerType_ShieldCounter: return '<::shield-counter::>';
+    case MwMarkerType.MwMarkerType_PopulationIncreaseCounter: return '<::population-increase-counter::>';
+    case MwMarkerType.MwMarkerType_SoulstainToken: return '<::soulstain-token::>';
+    case MwMarkerType.MwMarkerType_ManaCounter: return '<::mana-counter::>';
+    case MwMarkerType.MwMarkerType_ManalithClaimCounter: return '<::manalith-claim-counter::>'; 
+    case MwMarkerType.MwMarkerType_PopulationToken: return '<::population-token::>';
+    case MwMarkerType.MwMarkerType_ManalithToken: return '<::manalith-token::>';  
+    case MwMarkerType.MwMarkerType_ManawaveRoundToken: return '<::manawave-round-token::>';
+    case MwMarkerType.MwMarkerType_PopulationSacrificeCounter: return '<::population-sacrifice-counter::>';
+
+    default:
+      throw new Error(`Unrecognized MwMarkerType: ${mwMarkerType}`);
+  }
+}
+
 
 export const createImgComponentFromTag = (tag: TokenCounterTypeTags, imageSize: number) => {
+  const imageDataUrl = createImgDataUrlFromTag(tag);
+
+  const imageSizePx = `${imageSize}px`;
+  return (
+    <img src={imageDataUrl} alt={"Missing tag: " + tag} height={imageSizePx} width={imageSizePx} />
+  )
+}
+
+
+export const createImgComponentFromMwMarkerType = (mwMarkerType: MwMarkerType, imageSize: number) => {
+  const tag = mapMwMarkerTypeToTag(mwMarkerType);
   const imageDataUrl = createImgDataUrlFromTag(tag);
 
   const imageSizePx = `${imageSize}px`;
