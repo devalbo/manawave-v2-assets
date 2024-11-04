@@ -37,7 +37,7 @@ export interface IMwClanData {
 //   ));
 // }
 
-
+const ConversionImageSize = 20;
 const StockpileImageSize = 20;
 
 const ManaCounterIcon_Stockpile = () => createImgComponentFromTag('<::mana-counter::>', StockpileImageSize);
@@ -47,12 +47,30 @@ const PopulationIncreaseCounterIcon_Stockpile = () => createImgComponentFromTag(
 const SacrificeCounterIcon_Stockpile = () => createImgComponentFromTag('<::population-sacrifice-counter::>', StockpileImageSize);
 
 
-export const MwConversionRatesTable = (props: { conversionRatios: IMwClanConversionRatio[] }) => {
 
-  const gridItemInputs = props.conversionRatios.map(cr => cr.input);
-  const gridItemOutputs = props.conversionRatios.map(cr => cr.output);
-  const zipped = _.zip(gridItemInputs, gridItemOutputs);
-  const flattened = _.flatten(zipped);
+const MwClanConversionRatioRow = (props: {conversionRatio: IMwClanConversionRatio}) => {
+  return (
+    <>
+      <div className="mw-tribe-conversion-rates-table-grid-item">
+        {
+          props.conversionRatio.input.map((input) => 
+            createImgComponentFromTag(input, ConversionImageSize)
+          )
+        }
+      </div>
+      <div className="mw-tribe-conversion-rates-table-grid-item">
+        {
+          props.conversionRatio.output.map((output) => 
+            createImgComponentFromTag(output, ConversionImageSize)
+          )
+        }
+      </div>
+    </>
+  )
+}
+
+
+export const MwConversionRatesTable = (props: { conversionRatios: IMwClanConversionRatio[] }) => {
 
   return (
     <div className="mw-clan-conversion-rates-table">
@@ -60,16 +78,8 @@ export const MwConversionRatesTable = (props: { conversionRatios: IMwClanConvers
       <div className="mw-clan-conversion-rates-table-grid-header">Conjuration</div>
 
       {
-        flattened.map((item, i) => (
-          <div className="mw-clan-conversion-rates-table-grid-item" key={i} >{
-            item?.map(x => (
-              // <ConversionRateIcons
-              //   tags={x!}
-              //   />
-              "fixme"
-            ))
-          }
-          </div>
+        props.conversionRatios.map((conversionRatio) => (
+          <MwClanConversionRatioRow conversionRatio={conversionRatio} />
         ))
       }
         

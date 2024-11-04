@@ -44,6 +44,7 @@ export type ClanTokenChanges = Record<ClanTokenTypes, number>
 
 export const EMPTY_PLAYER_TRIBE_STOCKPILE: TribeCardStockpile = {
   soulstainTokenCount: createMwTokenCount(0),
+  manalithTokenCount: createMwTokenCount(0),
   populationIncreaseCountersCount: createMwCounterCount(0),
   manaCountersCount: createMwCounterCount(0),
   attackCountersCount: createMwCounterCount(0),
@@ -64,6 +65,7 @@ export const EMPTY_PLAYER_CLAN_STOCKPILE: ClanCardStockpile = {
 
 export const NOOP_TRIBE_STOCKPILE_CHANGES: TribeCardStockpile = {
   soulstainTokenCount: createMwTokenCount(0),
+  manalithTokenCount: createMwTokenCount(0),
   populationIncreaseCountersCount: createMwCounterCount(0),
   manaCountersCount: createMwCounterCount(0),
   attackCountersCount: createMwCounterCount(0),
@@ -124,7 +126,41 @@ export type FamilyCardInPlayInstance = FamilyCardInstance &
 export type InPlayPieceInstance = ClanCardInPlayInstance | FamilyCardInPlayInstance
 
 
-export const DefaultTribeConversionRatios: IMwTribeConversionRatio = {
-  input: [],
-  output: [],
-}
+export const DefaultTribeConversionRatios: IMwTribeConversionRatio[] = [
+  {
+    input: [
+      '<::mana-counter::>',
+      '<::mana-counter::>',
+    ],
+    output: [
+      '<::manalith-token::>',
+    ],
+  },
+  {
+    input: [
+      '<::mana-counter::>',
+      '<::mana-counter::>',
+    ],
+    output: [
+      '<::population-increase-counter::>',
+    ],
+  },
+  {
+    input: [
+      '<::mana-counter::>',
+      '<::mana-counter::>',
+    ],
+    output: [
+      '<::attack-counter::>',
+    ],
+  },
+  {
+    input: [
+      '<::mana-counter::>',
+      '<::mana-counter::>',
+    ],
+    output: [
+      '<::shield-counter::>',
+    ],
+  },
+]

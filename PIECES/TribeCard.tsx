@@ -13,11 +13,13 @@ export interface IMwTribeCardData {
   conversionRatios: IMwTribeConversionRatio[]
 }
 
-const ManaCounterIcon = () => createImgComponentFromTag('<::mana-counter::>', 20);
-const AttackCounterIcon = () => createImgComponentFromTag('<::attack-counter::>', 20);
-const ShieldCounterIcon = () => createImgComponentFromTag('<::shield-counter::>', 20);
-const PopulationIncreaseCounterIcon = () => createImgComponentFromTag('<::population-increase-counter::>', 20);
-const ManaLevelTokenIcon = () => createImgComponentFromTag('<::manalith-token::>', 20);
+const ConversionImageSize = 20;
+
+// const ManaCounterIcon = () => createImgComponentFromTag('<::mana-counter::>', ConversionImageSize);
+// const AttackCounterIcon = () => createImgComponentFromTag('<::attack-counter::>', ConversionImageSize);
+// const ShieldCounterIcon = () => createImgComponentFromTag('<::shield-counter::>', ConversionImageSize);
+// const PopulationIncreaseCounterIcon = () => createImgComponentFromTag('<::population-increase-counter::>', ConversionImageSize);
+// const ManaLevelTokenIcon = () => createImgComponentFromTag('<::manalith-token::>', ConversionImageSize);
 
 const StockpileImageSize = 40;
 
@@ -29,43 +31,39 @@ const SoulstainTokenIcon_Stockpile = () => createImgComponentFromTag('<::soulsta
 const ManalithIcon_Stockpile = () => createImgComponentFromTag('<::manalith-token::>', StockpileImageSize);
 
 
-export const MwConversionRatesTable = () => {
+const MwTribeConversionRatioRow = (props: {conversionRatio: IMwTribeConversionRatio}) => {
+  return (
+    <>
+      <div className="mw-tribe-conversion-rates-table-grid-item">
+        {
+          props.conversionRatio.input.map((input) => 
+            createImgComponentFromTag(input, ConversionImageSize)
+          )
+        }
+      </div>
+      <div className="mw-tribe-conversion-rates-table-grid-item">
+        {
+          props.conversionRatio.output.map((output) => 
+            createImgComponentFromTag(output, ConversionImageSize)
+          )
+        }
+      </div>
+    </>
+  )
+}
+
+
+export const MwConversionRatesTable = (props: {conversionRatios: IMwTribeConversionRatio[]}) => {
   return (
     <div className="mw-tribe-conversion-rates-table">
       <div className="mw-tribe-conversion-rates-table-grid-header">Mana</div>
       <div className="mw-tribe-conversion-rates-table-grid-header">Conjuration</div>
-        
-      <div className="mw-tribe-conversion-rates-table-grid-item">
-        <ManaCounterIcon key={1} />
-        <ManaCounterIcon key={2} />
-      </div>
-      <div className="mw-tribe-conversion-rates-table-grid-item">
-        <ManaLevelTokenIcon />
-      </div>
 
-      <div className="mw-tribe-conversion-rates-table-grid-item">
-        <ManaCounterIcon key={1}  />
-        <ManaCounterIcon key={2} />
-      </div>
-      <div className="mw-tribe-conversion-rates-table-grid-item">
-        <PopulationIncreaseCounterIcon />
-      </div>
-
-      <div className="mw-tribe-conversion-rates-table-grid-item">
-        <ManaCounterIcon key={1} />
-        <ManaCounterIcon key={2} />
-      </div>
-      <div className="mw-tribe-conversion-rates-table-grid-item">
-        <AttackCounterIcon />
-      </div>
-        
-      <div className="mw-tribe-conversion-rates-table-grid-item">
-        <ManaCounterIcon key={1} />
-        <ManaCounterIcon key={2} />
-      </div>
-      <div className="mw-tribe-conversion-rates-table-grid-item">
-        <ShieldCounterIcon />
-      </div>
+      {
+        props.conversionRatios.map((conversionRatio) => (
+          <MwTribeConversionRatioRow conversionRatio={conversionRatio} />
+        ))
+      }
 
     </div>
   )
@@ -125,7 +123,9 @@ export const MwTribeCard = (props: IMwTribeCardData) => {
           
         <div className="mw-tribe-tables">
           <div className="mw-tribe-conversion-rates-table-container">
-            <MwConversionRatesTable />
+            <MwConversionRatesTable
+              conversionRatios={props.conversionRatios}
+              />
           </div>
 
           <div className="mw-tribe-stockpile-table-container">
