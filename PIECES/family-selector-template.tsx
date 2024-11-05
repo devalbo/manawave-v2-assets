@@ -1,8 +1,8 @@
 import React from 'react';
-import './MwCard.css';
 import { OnCardPickData } from './mw-card-data';
 import { OxTotemDataUrl, SpiritsTotemDataUrl, TurtleTotemDataUrl, TigerTotemDataUrl, Totems } from './totems';
 import { PlayerId } from './constants';
+import './MwCard.css';
 
 
 export interface IMwFamilySelectorData {
@@ -10,6 +10,7 @@ export interface IMwFamilySelectorData {
   totems: Totems[];
   onCardPickData: OnCardPickData;
   playerId: PlayerId
+  // playerSide: PlayerSide
 }
 
 // const MW_DOC_SITE_PREFIX = "";
