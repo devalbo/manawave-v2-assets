@@ -129,10 +129,10 @@ export const MwPlacementGrid = (props: IMwPlacementGrid) => {
           </div>
         </div>
 
-        <div>
-          Tribe Mana Conversions
-        </div>
         <div className='mw-placement-conversion-grid-row'>
+          <div className='mw-placement-conversion-grid-row-item'>
+            Tribe Mana Conversions
+          </div>
           <div className='mw-placement-conversion-grid-row-item'>
             <ManaCounterIcon_Placement />
           </div>

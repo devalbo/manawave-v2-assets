@@ -13,7 +13,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.mw-placement-gird-card-border-frame {
+.mw-placement-grid-card-border-frame {
   border: 2px solid black;
   display: flex;
   flex-direction: column;
@@ -48,6 +48,7 @@
   flex-direction: column;
   flex-grow: 1;
   margin: 4px;
+  margin-top: 0px;
   align-items: center;
   border: 1px solid #000;
 }
