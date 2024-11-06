@@ -2,7 +2,7 @@ import { FamilyCardDefs } from "../../../protobufs/protofiles-out/manawave-seaso
 import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
 import { mapToIndexedModes } from "../mw-mode-utils";
-import { UnimplementedModeLogic } from "../mw-card-data";
+import { UnimplementedFamilyCardModeLogic } from "../mw-card-data";
 
 
 export const RoadBuildersCardDef: FamilyCardDefinition = {
@@ -18,7 +18,7 @@ export const RoadBuildersCardDef: FamilyCardDefinition = {
     {
       numManalithClaimsToActivate: 0,
       modeText: "Add 1 <::population-increase-counter::> to Clan. Add 1 <::mana-counter::> to Tribe.",
-      modeLogic: UnimplementedModeLogic,
+      modeLogic: UnimplementedFamilyCardModeLogic,
     },
   ]),
   onCardPickData: {

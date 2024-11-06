@@ -1,7 +1,7 @@
 import { FamilyCardDefs } from "../../../protobufs/protofiles-out/manawave-season-zero-1";
 import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
-import {  UnimplementedModeLogic } from "../mw-card-data";
+import {  UnimplementedFamilyCardModeLogic } from "../mw-card-data";
 import { mapToIndexedModes } from "../mw-mode-utils";
 
 
@@ -18,12 +18,12 @@ export const ShieldCraftersCardDef: FamilyCardDefinition = {
     {
       numManalithClaimsToActivate: 0,
       modeText: "Add 2 <::shield-counter::> to Clan.",
-      modeLogic: UnimplementedModeLogic,
+      modeLogic: UnimplementedFamilyCardModeLogic,
     },
     {
       numManalithClaimsToActivate: 2,
       modeText: "Add 2 <::shield-counter::> to Clan. Add 3 <::shield-counter::> to Tribe.",
-      modeLogic: UnimplementedModeLogic,
+      modeLogic: UnimplementedFamilyCardModeLogic,
     },
   ]),
   onCardPickData: {

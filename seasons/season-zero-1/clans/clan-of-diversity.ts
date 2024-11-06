@@ -8,7 +8,7 @@ import { EMPTY_PLAYER_CLAN_STOCKPILE, NOOP_CLAN_STOCKPILE_CHANGES, NOOP_TRIBE_ST
 import { createMwCounterCount, createMwTokenCount } from "../../../type-defs/branded-marker-types";
 import { ClanCardDefinition } from "../../../type-defs/clan-defs";
 import { SEASON_ZERO_1_PBID } from "../../season-id-defs";
-import { UnimplementedModeLogic } from "../../../PIECES/mw-card-data";
+import { UnimplementedClanCardModeLogic, UnimplementedFamilyCardModeLogic } from "../../../PIECES/mw-card-data";
 
 
 export const ClanOfDiversityData: ClanCardDefinition = {
@@ -65,7 +65,7 @@ export const ClanOfDiversityData: ClanCardDefinition = {
         fontSize: 12,
         imageSize: 12,
       },
-      modeLogic: UnimplementedModeLogic,
+      modeLogic: UnimplementedClanCardModeLogic,
     },
     {
       numManalithClaimsToActivate: 2,
@@ -74,12 +74,8 @@ export const ClanOfDiversityData: ClanCardDefinition = {
         fontSize: 12,
         imageSize: 12,
       },
-      modeLogic: UnimplementedModeLogic,
+      modeLogic: UnimplementedClanCardModeLogic,
     },
-    // {
-    //   numManalithClaimsToActivate: 3,
-    //   modeText: "Unattainable.",
-    // },
   ]),
   conversionRatios: [
     {

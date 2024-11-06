@@ -5,7 +5,7 @@ import { FamilyCardDefs } from "../../../protobufs/protofiles-out/manawave-seaso
 import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
 import { FamilyCardPlacementResult } from "../../type-defs/game-data-type-defs";
-import { IModePrintSettings, OnCardPickData, UnimplementedModeLogic } from "../mw-card-data";
+import { IModePrintSettings, OnCardPickData, UnimplementedFamilyCardModeLogic } from "../mw-card-data";
 import { mapToIndexedModes } from "../mw-mode-utils";
 import { NOOP_CLAN_STOCKPILE_CHANGES } from "../type-defs/type-defs";
 
@@ -64,19 +64,19 @@ export const WizardsCardDef: FamilyCardDefinition = {
       numManalithClaimsToActivate: 1,
       modeText: "Add 2 <::mana-counter::> to Tribe.",
       modePrintSettings: ModePrintSettings,
-      modeLogic: UnimplementedModeLogic,
+      modeLogic: UnimplementedFamilyCardModeLogic,
     },
     {
       numManalithClaimsToActivate: 2,
       modeText: "Add 4 <::mana-counter::> to Tribe.",
       modePrintSettings: ModePrintSettings,
-      modeLogic: UnimplementedModeLogic,
+      modeLogic: UnimplementedFamilyCardModeLogic,
     },
     {
       numManalithClaimsToActivate: 4,
       modeText: "Add 8 <::mana-counter::> to Tribe. Add 1 <::population-sacrifice-counter::> to Clan.",
       modePrintSettings: ModePrintSettings,
-      modeLogic: UnimplementedModeLogic,
+      modeLogic: UnimplementedFamilyCardModeLogic,
     },
   ]),
   onCardPickData: ON_CARD_PICK_DATA,

@@ -3,7 +3,7 @@ import { ManaflowPointProcResult } from "../../../../game-play/local-game-state/
 import { BoardPlayerSideCoordinate, ClanCardStockpile } from "../../../../protobufs/protofiles-out/manawave-board";
 import { ClanCardDefs } from "../../../../protobufs/protofiles-out/manawave-season-zero-1";
 import { MwMarkerType } from "../../../../protobufs/protofiles-out/manawave-types";
-import { UnimplementedModeLogic } from "../../../PIECES/mw-card-data";
+import { UnimplementedClanCardModeLogic, UnimplementedFamilyCardModeLogic } from "../../../PIECES/mw-card-data";
 import { mapToIndexedModes } from "../../../PIECES/mw-mode-utils";
 import { EMPTY_PLAYER_CLAN_STOCKPILE, NOOP_CLAN_STOCKPILE_CHANGES, NOOP_TRIBE_STOCKPILE_CHANGES } from "../../../PIECES/type-defs/type-defs";
 import { createMwCounterCount, createMwTokenCount } from "../../../type-defs/branded-marker-types";
@@ -61,7 +61,7 @@ export const ClanOfSacrificeData: ClanCardDefinition = {
     {
       numManalithClaimsToActivate: 0,
       modeText: "Add 1 <::mana-counter::> to Clan.",
-      modeLogic: UnimplementedModeLogic,
+      modeLogic: UnimplementedClanCardModeLogic,
     },
     {
       numManalithClaimsToActivate: 1,
@@ -70,7 +70,7 @@ export const ClanOfSacrificeData: ClanCardDefinition = {
         fontSize: 12,
         imageSize: 12,
       },
-      modeLogic: UnimplementedModeLogic,
+      modeLogic: UnimplementedClanCardModeLogic,
     },
   ]),
   conversionRatios: [

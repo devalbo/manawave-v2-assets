@@ -6,7 +6,6 @@ import { createMwBoardPlayerSideCoordinateKey } from "../type-defs/branded-strin
 import { Totems } from "./totems";
 
 
-
 export interface IModePrintSettings {
   fontSize: number    // defaults to 16
   imageSize: number   // defaults to 14
@@ -17,7 +16,17 @@ export interface IModeDigitalSettings {
   imageSize: number   // defaults to 14
 }
 
-export interface IModeLogic {
+export interface IClanCardModeLogic {
+  onManaflowProc: (
+    boardState: BoardPiecesState,
+    playerSide: PlayerSide,
+    procPoint: ManaflowProcPoint,
+  ) => ManaflowPointProcResult
+  mvmInstructions: [],
+}
+
+
+export interface IFamilyCardModeLogic {
   onManaflowProc: (
     boardState: BoardPiecesState,
     playerSide: PlayerSide,
@@ -28,7 +37,7 @@ export interface IModeLogic {
 export interface IUnindexedMwCardModeData {
   numManalithClaimsToActivate: number
   modeText: string
-  modeLogic: IModeLogic
+  modeLogic: IClanCardModeLogic | IFamilyCardModeLogic
   modePrintSettings?: IModePrintSettings
   modeDigitalSettings?: IModeDigitalSettings
 }
@@ -50,14 +59,28 @@ export interface IMwCardData {
 }
 
 
-export const UnimplementedModeLogic: IModeLogic = {
+export const UnimplementedFamilyCardModeLogic: IFamilyCardModeLogic = {
   onManaflowProc: (
     boardState: BoardPiecesState,
     playerSide: PlayerSide,
     procPoint: ManaflowProcPoint,
   ): ManaflowPointProcResult => {
     const coordinate = createMwBoardPlayerSideCoordinateKey(playerSide, procPoint.leylineDistance, procPoint.leylineRank);
-    console.log("UNIMPLEMENTED MODE LOGIC @ " + coordinate);
+    console.log("UNIMPLEMENTED FAMILY CARD MODE LOGIC @ " + coordinate);
     return { };
   },
+};
+
+
+export const UnimplementedClanCardModeLogic: IClanCardModeLogic = {
+  onManaflowProc: (
+    boardState: BoardPiecesState,
+    playerSide: PlayerSide,
+    procPoint: ManaflowProcPoint,
+  ): ManaflowPointProcResult => {
+    const coordinate = createMwBoardPlayerSideCoordinateKey(playerSide, procPoint.leylineDistance, procPoint.leylineRank);
+    console.log("UNIMPLEMENTED CLAN CARD MODE LOGIC @ " + coordinate);
+    return { };
+  },
+  mvmInstructions: [],
 };
