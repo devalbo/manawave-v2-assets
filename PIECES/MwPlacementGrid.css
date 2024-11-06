@@ -77,6 +77,7 @@
   width: 100%;
   justify-content: space-between;
   align-items: center;
+  height: 30px;
 }
 
 .mw-placement-conversion-grid-row-item {
@@ -84,7 +85,7 @@
   /* justify-content: center; */
   /* align-content: center; */
   text-align: center;
-  padding: 4px;
+  /* padding: 4px; */
   /* align-items: center; */
   border: 1px solid #000;
   border-radius: 5px;

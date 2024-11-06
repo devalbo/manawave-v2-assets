@@ -1,12 +1,8 @@
 /* eslint-disable react/jsx-pascal-case */
-import { MwClanTemplateModeBlock } from './MwClanTemplateModeBlock';
-import { createImgComponentFromMwMarkerType, createImgComponentFromTag } from './icons';
-import { CardDecoration } from './constants';
-import { IMwCardModeData } from './mw-card-data';
-import { IMwClanConversionRatio } from './type-defs/type-defs';
-import './MwPlacementGrid.css';
+import { createImgComponentFromTag } from './icons';
 import { PlayerSide } from '../../game-data/game-play-data';
-import { MwLogoPlayerSideIcon, OptMwLogoIcon } from './mw-logo-player-side-icon';
+import { MwLogoPlayerSideIcon } from './mw-logo-player-side-icon';
+import './MwPlacementGrid.css';
 
 
 const PlacementIconSize = 20;
@@ -21,9 +17,6 @@ const ManaLevelTokenIcon_Placement = () => createImgComponentFromTag('<::manalit
 export interface IMwPlacementGrid {
   playerSide: PlayerSide
 }
-
-
-const StockpileImageSize = 20;
 
 
 const ClanPlacementColumn = (props: {
@@ -42,13 +35,13 @@ const ClanPlacementColumn = (props: {
         <div className="mw-placement-grid-clan-counter-item">
           <PopulationIncreaseCounterIcon_Placement />
         </div>
-        <div className="mw-placement-grid-clan-counter-item">
+        {/* <div className="mw-placement-grid-clan-counter-item">
           <ManaCounterIcon_Placement />
-        </div>
+        </div> */}
         <div className="mw-placement-grid-clan-counter-item">
           <ManaLevelTokenIcon_Placement />
         </div>
-        <div>Tribe </div>
+        <div>MW</div>
       </div>
 
       <div className="mw-placement-grid-clan-placement-markers-column">
@@ -61,13 +54,13 @@ const ClanPlacementColumn = (props: {
         <div className="mw-placement-grid-clan-counter-item">
           <PopulationIncreaseCounterIcon_Placement />
         </div>
-        <div className="mw-placement-grid-clan-counter-item">
+        {/* <div className="mw-placement-grid-clan-counter-item">
           <ManaCounterIcon_Placement />
-        </div>
+        </div> */}
         <div className="mw-placement-grid-clan-counter-item">
           <ManaLevelTokenIcon_Placement />
         </div>
-        <div>Clan </div>
+        <div>Tribe</div>
       </div>
 
       <div className="mw-placement-grid-clan-placement-markers-column">
@@ -80,9 +73,9 @@ const ClanPlacementColumn = (props: {
         <div className="mw-placement-grid-clan-counter-item">
           <PopulationIncreaseCounterIcon_Placement />
         </div>
-        <div className="mw-placement-grid-clan-counter-item">
+        {/* <div className="mw-placement-grid-clan-counter-item">
           <ManaCounterIcon_Placement />
-        </div>
+        </div> */}
         <div className="mw-placement-grid-clan-counter-item">
           <ManaLevelTokenIcon_Placement />
         </div>
@@ -131,11 +124,29 @@ export const MwPlacementGrid = (props: IMwPlacementGrid) => {
 
         <div className='mw-placement-conversion-grid-row'>
           <div className='mw-placement-conversion-grid-row-item'>
-            Tribe Mana Conversions
+            Tribe to Clan <ManaCounterIcon_Placement /> Allocations
+          </div>
+          {/* <div className='mw-placement-conversion-grid-row-item'>
+            <ManaCounterIcon_Placement />
+          </div> */}
+          <div className='mw-placement-conversion-grid-row-item'>
+            @ Leyline 1
           </div>
           <div className='mw-placement-conversion-grid-row-item'>
-            <ManaCounterIcon_Placement />
+            @ Leyline 2
           </div>
+          <div className='mw-placement-conversion-grid-row-item'>
+            @ Leyline 3
+          </div>
+        </div>
+
+        <div className='mw-placement-conversion-grid-row'>
+          <div className='mw-placement-conversion-grid-row-item'>
+            Tribe Mana Conversions
+          </div>
+          {/* <div className='mw-placement-conversion-grid-row-item'>
+            <ManaCounterIcon_Placement />
+          </div> */}
           <div className='mw-placement-conversion-grid-row-item'>
             <AttackCounterIcon_Placement />
           </div>
