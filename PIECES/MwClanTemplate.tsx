@@ -7,11 +7,6 @@ import './MwClanTemplate.css';
 import { IMwClanConversionRatio } from './type-defs/type-defs';
 
 
-// export interface IMwClanConversionRatio {
-//   input: TokenCounterTypeTags[];
-//   output: TokenCounterTypeTags[];
-// }
-
 export interface IMwClanData {
   title: string
   text: string
@@ -20,21 +15,6 @@ export interface IMwClanData {
   conversionRatios: IMwClanConversionRatio[]
 }
 
-
-// const ConversionRatesImageSize = 20;
-
-// const ConversionRateIcon = (props: {
-//   tag: TokenCounterTypeTags
-// }) => createImgComponentFromTag(props.tag, ConversionRatesImageSize);
-
-
-// const ConversionRateIcons = (props: {
-//   tags: TokenCounterTypeTags[]
-// }) => {
-//   return props.tags.map((tag, i) => (
-//     <ConversionRateIcon tag={tag} key={i} />
-//   ));
-// }
 
 const ConversionImageSize = 20;
 const StockpileImageSize = 20;
@@ -59,9 +39,6 @@ const MwClanConversionRatioRow = (props: {conversionRatio: IMwClanConversionRati
       </div>
       <div className="mw-tribe-conversion-rates-table-grid-item">
         {
-          // props.conversionRatio.output.map((output) => 
-          //   createImgComponentFromTag(output, ConversionImageSize)
-          // )
           createImgComponentFromMwMarkerType(props.conversionRatio.output, ConversionImageSize)
         }
       </div>

@@ -44,8 +44,8 @@ const MwModeSelectionClanColumn = (props: {
 export const MwPrintModeOsbSelectionGridComponent = () => {
 
   return (
-    <div className="mw-markers-summary-sheet">
-      <div className="mw-markers-summary-border-frame">
+    <div className="print-mode-selection-summary-sheet">
+      <div className="print-mode-selection-border-frame">
         <div style={{fontSize: 24, display: 'flex', flexDirection: 'row', height: 40, }}>
           <MwLogoPlayerSideIcon 
             playerSide="OSB"
@@ -82,8 +82,8 @@ export const MwPrintModeOsbSelectionGridComponent = () => {
 export const MwPrintModeOptSelectionGridComponent = () => {
 
   return (
-    <div className="mw-markers-summary-sheet">
-      <div className="mw-markers-summary-border-frame">
+    <div className="print-mode-selection-summary-sheet">
+      <div className="print-mode-selection-border-frame">
         <div style={{fontSize: 24, display: 'flex', flexDirection: 'row', height: 40, }}>
           <MwLogoPlayerSideIcon 
             playerSide="OPT"

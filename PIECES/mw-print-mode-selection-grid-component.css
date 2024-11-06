@@ -1,4 +1,30 @@
 
+
+.print-mode-selection-summary-sheet {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 4in;
+  height: 6in;
+  border: 1px solid #000;
+  border-radius: 10px;
+  font-family: 'Beleren', 'Garamond', serif;
+  background-color: #f0f0f0;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+.print-mode-selection-border-frame {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3px;
+  padding: 6px;
+  height: 100%;
+}
+
+
 .mw-print-mode-selection-grid {
   /* display: flex; */
   /* flex-direction: row; */
@@ -28,5 +54,5 @@
   border: 1px solid #ccc;
   /* padding: 20px; */
   text-align: center;
-  height: 36px;
+  height: 44px;
 }
