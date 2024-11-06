@@ -1,6 +1,4 @@
 import { PlayerSlotId, PlayerSide, PlayerDefaultStrategy } from "../../game-data/game-play-data"
-import { ManaflowProcPoint } from "../../game-play/local-game-state/channel-clan-manaflows/type-defs"
-import { ManaflowPointProcResult } from "../../game-play/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types"
 import { OnCardPickData } from "../PIECES/mw-card-data"
 import { ClanCardStockpile } from "../../protobufs/protofiles-out/manawave-board"
 import { GameOutcome, LeylineDistanceFromSource, PlayerPb } from "../../protobufs/protofiles-out/manawave-types"
@@ -19,11 +17,11 @@ export interface IPlayer {
 
 export interface IClanCardLogic {
   onManawaveInit?: () => void
-  onManaflowProc: (
-    boardState: BoardPiecesState,
-    playerSide: PlayerSide,
-    procPoint: ManaflowProcPoint,
-  ) => ManaflowPointProcResult
+  // onManaflowProc: (
+  //   boardState: BoardPiecesState,
+  //   playerSide: PlayerSide,
+  //   procPoint: ManaflowProcPoint,
+  // ) => ManaflowPointProcResult
   onManawaveFinalize?: () => void
   
   createInitialStockpile: () => ClanCardStockpile // run this when tile is placed by player on board
@@ -37,11 +35,11 @@ export type FamilyCardPlacementResult = {
 
 export interface IFamilyCardLogic {
   onManawaveInit?: () => void
-  onManaflowProc: (
-    boardState: BoardPiecesState,
-    playerSide: PlayerSide,
-    procPoint: ManaflowProcPoint,
-  ) => ManaflowPointProcResult
+  // onManaflowProc: (
+  //   boardState: BoardPiecesState,
+  //   playerSide: PlayerSide,
+  //   procPoint: ManaflowProcPoint,
+  // ) => ManaflowPointProcResult
   onManawaveFinalize?: () => void
   
   onFamilyCardPlacement?: () => FamilyCardPlacementResult  // run this when card is placed by player on board

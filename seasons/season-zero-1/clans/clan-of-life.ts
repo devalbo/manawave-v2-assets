@@ -3,6 +3,7 @@ import { ManaflowPointProcResult } from "../../../../game-play/local-game-state/
 import { BoardPlayerSideCoordinate, ClanCardStockpile } from "../../../../protobufs/protofiles-out/manawave-board";
 import { ClanCardDefs } from "../../../../protobufs/protofiles-out/manawave-season-zero-1";
 import { MwMarkerType } from "../../../../protobufs/protofiles-out/manawave-types";
+import { UnimplementedModeLogic } from "../../../PIECES/mw-card-data";
 import { mapToIndexedModes } from "../../../PIECES/mw-mode-utils";
 import { EMPTY_PLAYER_CLAN_STOCKPILE, NOOP_CLAN_STOCKPILE_CHANGES, NOOP_TRIBE_STOCKPILE_CHANGES } from "../../../PIECES/type-defs/type-defs";
 import { createMwCounterCount, createMwTokenCount } from "../../../type-defs/branded-marker-types";
@@ -25,16 +26,43 @@ export const ClanOfLifeData: ClanCardDefinition = {
       modePrintSettings: {
         fontSize: 12,
         imageSize: 12,
-      }
+      },
+      modeLogic: {
+        onManaflowProc: (boardState, playerSide, procPoint): ManaflowPointProcResult => {
+
+          const clanCardCoordinate: BoardPlayerSideCoordinate = {
+            playerSideId: mapToPlayerSideId(playerSide),
+            leylineDistance: procPoint.leylineDistance,
+            familyRank: procPoint.leylineRank,
+          };
+    
+          return {
+            clanCardChanges: [
+              {
+                clanCardCoordinate,
+                changes: {
+                  ...NOOP_CLAN_STOCKPILE_CHANGES,
+                  attackCountersCount: 1,
+                  shieldCountersCount: 1,
+                },
+              },
+            ],
+            tribeCardChanges: {
+              changes: {
+                ...NOOP_TRIBE_STOCKPILE_CHANGES,
+                manaCountersCount: 1,
+                soulstainTokenCount: 1,
+              }
+            }
+          };
+        }
+      },
     },
     {
       numManalithClaimsToActivate: 1,
       modeText: "Add 1 <::population-increase-counter::> to Tribe.",
+      modeLogic: UnimplementedModeLogic,
     },
-    // {
-    //   numManalithClaimsToActivate: 3,
-    //   modeText: "Unattainable.",
-    // },
   ]),
   conversionRatios: [
     {
@@ -67,34 +95,5 @@ export const ClanOfLifeData: ClanCardDefinition = {
 
       return stockpile;
     },
-
-    onManaflowProc: (boardState, playerSide, procPoint): ManaflowPointProcResult => {
-
-      const clanCardCoordinate: BoardPlayerSideCoordinate = {
-        playerSideId: mapToPlayerSideId(playerSide),
-        leylineDistance: procPoint.leylineDistance,
-        familyRank: procPoint.leylineRank,
-      };
-
-      return {
-        clanCardChanges: [
-          {
-            clanCardCoordinate,
-            changes: {
-              ...NOOP_CLAN_STOCKPILE_CHANGES,
-              attackCountersCount: 1,
-              shieldCountersCount: 1,
-            },
-          },
-        ],
-        tribeCardChanges: {
-          changes: {
-            ...NOOP_TRIBE_STOCKPILE_CHANGES,
-            manaCountersCount: 1,
-            soulstainTokenCount: 1,
-          }
-        }
-      };
-    }
   },
 };

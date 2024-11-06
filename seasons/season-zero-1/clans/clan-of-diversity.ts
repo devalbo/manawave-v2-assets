@@ -8,6 +8,7 @@ import { EMPTY_PLAYER_CLAN_STOCKPILE, NOOP_CLAN_STOCKPILE_CHANGES, NOOP_TRIBE_ST
 import { createMwCounterCount, createMwTokenCount } from "../../../type-defs/branded-marker-types";
 import { ClanCardDefinition } from "../../../type-defs/clan-defs";
 import { SEASON_ZERO_1_PBID } from "../../season-id-defs";
+import { UnimplementedModeLogic } from "../../../PIECES/mw-card-data";
 
 
 export const ClanOfDiversityData: ClanCardDefinition = {
@@ -26,6 +27,36 @@ export const ClanOfDiversityData: ClanCardDefinition = {
         fontSize: 12,
         imageSize: 12,
       },
+      modeLogic: {
+        onManaflowProc: (boardState, playerSide, procPoint): ManaflowPointProcResult => {
+
+          const clanCardCoordinate: BoardPlayerSideCoordinate = {
+            playerSideId: mapToPlayerSideId(playerSide),
+            leylineDistance: procPoint.leylineDistance,
+            familyRank: procPoint.leylineRank,
+          };
+    
+          return {
+            clanCardChanges: [
+              {
+                clanCardCoordinate,
+                changes: {
+                  ...NOOP_CLAN_STOCKPILE_CHANGES,
+                  attackCountersCount: 1,
+                  shieldCountersCount: 1,
+                },
+              },
+            ],
+            tribeCardChanges: {
+              changes: {
+                ...NOOP_TRIBE_STOCKPILE_CHANGES,
+                manaCountersCount: 1,
+                soulstainTokenCount: 1,
+              }
+            }
+          };
+        }
+      },
     },
     {
       numManalithClaimsToActivate: 2,
@@ -34,6 +65,7 @@ export const ClanOfDiversityData: ClanCardDefinition = {
         fontSize: 12,
         imageSize: 12,
       },
+      modeLogic: UnimplementedModeLogic,
     },
     {
       numManalithClaimsToActivate: 2,
@@ -42,6 +74,7 @@ export const ClanOfDiversityData: ClanCardDefinition = {
         fontSize: 12,
         imageSize: 12,
       },
+      modeLogic: UnimplementedModeLogic,
     },
     // {
     //   numManalithClaimsToActivate: 3,
@@ -78,34 +111,5 @@ export const ClanOfDiversityData: ClanCardDefinition = {
 
       return stockpile;
     },
-    
-    onManaflowProc: (boardState, playerSide, procPoint): ManaflowPointProcResult => {
-
-      const clanCardCoordinate: BoardPlayerSideCoordinate = {
-        playerSideId: mapToPlayerSideId(playerSide),
-        leylineDistance: procPoint.leylineDistance,
-        familyRank: procPoint.leylineRank,
-      };
-
-      return {
-        clanCardChanges: [
-          {
-            clanCardCoordinate,
-            changes: {
-              ...NOOP_CLAN_STOCKPILE_CHANGES,
-              attackCountersCount: 1,
-              shieldCountersCount: 1,
-            },
-          },
-        ],
-        tribeCardChanges: {
-          changes: {
-            ...NOOP_TRIBE_STOCKPILE_CHANGES,
-            manaCountersCount: 1,
-            soulstainTokenCount: 1,
-          }
-        }
-      };
-    }
   },
 };

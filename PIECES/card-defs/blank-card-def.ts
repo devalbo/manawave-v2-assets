@@ -1,4 +1,4 @@
-import { IMwCardData } from "../mw-card-data";
+import { IMwCardData, UnimplementedModeLogic } from "../mw-card-data";
 import { mapToIndexedModes } from "../mw-mode-utils";
 import { Totems } from "../totems";
 
@@ -14,14 +14,17 @@ export const BlankCardDefCardData: IMwCardData = {
     {
       numManalithClaimsToActivate: 0,
       modeText: "",
+      modeLogic: UnimplementedModeLogic,
     },
     {
       numManalithClaimsToActivate: 0,
       modeText: "",
+      modeLogic: UnimplementedModeLogic,  
     },
     {
       numManalithClaimsToActivate: 0,
       modeText: "",
+      modeLogic: UnimplementedModeLogic,
     },
   ]),
 };
