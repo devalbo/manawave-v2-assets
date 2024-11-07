@@ -22,7 +22,7 @@ export interface IClanCardModeLogic {
     playerSide: PlayerSide,
     procPoint: ManaflowProcPoint,
   ) => ManaflowPointProcResult
-  mvmInstructions: ManawaveVmInstruction[],
+  mvmInstructions: ManawaveVmInstruction[]
 }
 
 
@@ -32,6 +32,7 @@ export interface IFamilyCardModeLogic {
     playerSide: PlayerSide,
     procPoint: ManaflowProcPoint,
   ) => ManaflowPointProcResult
+  mvmInstructions: ManawaveVmInstruction[]
 }
 
 export interface IUnindexedMwCardModeData {
@@ -69,6 +70,14 @@ export const UnimplementedFamilyCardModeLogic: IFamilyCardModeLogic = {
     console.log("UNIMPLEMENTED FAMILY CARD MODE LOGIC @ " + coordinate);
     return { };
   },
+  mvmInstructions: [
+    {
+      instruction: {
+        oneofKind: "deferToOnManaflowProcImpl",
+        deferToOnManaflowProcImpl: {}
+      },
+    },  
+  ],
 };
 
 

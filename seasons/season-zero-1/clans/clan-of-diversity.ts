@@ -8,7 +8,7 @@ import { EMPTY_PLAYER_CLAN_STOCKPILE, NOOP_CLAN_STOCKPILE_CHANGES, NOOP_TRIBE_ST
 import { createMwCounterCount, createMwTokenCount } from "../../../type-defs/branded-marker-types";
 import { ClanCardDefinition } from "../../../type-defs/clan-defs";
 import { SEASON_ZERO_1_PBID } from "../../season-id-defs";
-import { UnimplementedClanCardModeLogic, UnimplementedFamilyCardModeLogic } from "../../../PIECES/mw-card-data";
+import { UnimplementedClanCardModeLogic } from "../../../PIECES/mw-card-data";
 import { createAddCountersToMyClanInstructionSet } from "../../../manawave-virtual-machine/mvm-instructions-factory";
 
 

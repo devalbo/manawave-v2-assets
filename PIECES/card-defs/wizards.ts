@@ -58,6 +58,7 @@ export const WizardsCardDef: FamilyCardDefinition = {
             ],
           };
         },
+        mvmInstructions: [],
       },
     },
     {

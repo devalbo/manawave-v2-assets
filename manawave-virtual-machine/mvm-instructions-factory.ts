@@ -1,7 +1,5 @@
-import { BoardPlayerSideCoordinate } from "../../protobufs/protofiles-out/manawave-board";
 import { MwMarkerType } from "../../protobufs/protofiles-out/manawave-types";
 import { ManawaveVmInstruction, MvmRegisterId } from "../../protobufs/protofiles-out/manawave-vm";
-import { ClanCardInPlayInstance } from "../PIECES/type-defs/type-defs";
 
 
 export const createAddCountersToMyClanInstructionSet = (

@@ -55,7 +55,15 @@ export const ClanOfSacrificeData: ClanCardDefinition = {
               }
             }
           };
-        }
+        },
+        mvmInstructions: [
+          {
+            instruction: {
+              oneofKind: "deferToOnManaflowProcImpl",
+              deferToOnManaflowProcImpl: {},
+            },
+          },
+        ],
       },
     },
     {

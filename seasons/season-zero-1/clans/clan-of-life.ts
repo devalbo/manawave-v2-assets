@@ -55,7 +55,15 @@ export const ClanOfLifeData: ClanCardDefinition = {
               }
             }
           };
-        }
+        },
+        mvmInstructions: [
+          {
+            instruction: {
+              oneofKind: "deferToOnManaflowProcImpl",
+              deferToOnManaflowProcImpl: {},
+            },
+          },
+        ],
       },
     },
     {
