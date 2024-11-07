@@ -9,7 +9,7 @@ import { createMwCounterCount, createMwTokenCount } from "../../../type-defs/bra
 import { ClanCardDefinition } from "../../../type-defs/clan-defs";
 import { SEASON_ZERO_1_PBID } from "../../season-id-defs";
 import { UnimplementedClanCardModeLogic, UnimplementedFamilyCardModeLogic } from "../../../PIECES/mw-card-data";
-import { createAddClanCountersInstructionSet } from "../../../manawave-virtual-machine/mvm-instructions-factory";
+import { createAddCountersToMyClanInstructionSet } from "../../../manawave-virtual-machine/mvm-instructions-factory";
 
 
 export const ClanOfDiversityData: ClanCardDefinition = {
@@ -58,8 +58,8 @@ export const ClanOfDiversityData: ClanCardDefinition = {
           };
         },
         mvmInstructions: [
-          ...createAddClanCountersInstructionSet(MwMarkerType.MwMarkerType_AttackCounter, 1),
-          ...createAddClanCountersInstructionSet(MwMarkerType.MwMarkerType_ShieldCounter, 1),
+          ...createAddCountersToMyClanInstructionSet(MwMarkerType.MwMarkerType_AttackCounter, 1),
+          ...createAddCountersToMyClanInstructionSet(MwMarkerType.MwMarkerType_ShieldCounter, 1),
         ],
       },
     },
