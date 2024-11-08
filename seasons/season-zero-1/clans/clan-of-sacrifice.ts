@@ -3,7 +3,7 @@ import { ManaflowPointProcResult } from "../../../../game-play/local-game-state/
 import { BoardPlayerSideCoordinate, ClanCardStockpile } from "../../../../protobufs/protofiles-out/manawave-board";
 import { ClanCardDefs } from "../../../../protobufs/protofiles-out/manawave-season-zero-1";
 import { MwMarkerType } from "../../../../protobufs/protofiles-out/manawave-types";
-import { UnimplementedClanCardModeLogic, UnimplementedFamilyCardModeLogic } from "../../../PIECES/mw-card-data";
+import { UnimplementedClanCardModeLogic } from "../../../PIECES/mw-card-data";
 import { mapToIndexedModes } from "../../../PIECES/mw-mode-utils";
 import { EMPTY_PLAYER_CLAN_STOCKPILE, NOOP_CLAN_STOCKPILE_CHANGES, NOOP_TRIBE_STOCKPILE_CHANGES } from "../../../PIECES/type-defs/type-defs";
 import { createMwCounterCount, createMwTokenCount } from "../../../type-defs/branded-marker-types";

@@ -9,33 +9,30 @@ export const createAddCountersToMyClanInstructionSet = (
   return [
     { 
       instruction: {
-        oneofKind: 'setActiveMarkerTypeToType',
-        setActiveMarkerTypeToType: {
-          markerType,
+        oneofKind: 'setMarkerRegisterData',
+        setMarkerRegisterData: {
+          markerRegisterId: MvmRegisterId.MvmRegister_1,
+          registerData: {
+            markerType,
+            quantity,
+          },
         },
       },
     },
     {
       instruction: {
-        oneofKind: 'setActiveMarkerCountToAmount',
-        setActiveMarkerCountToAmount: {
-          amount: quantity,
-        },
-      },
-    },  
-    {
-      instruction: {
-        oneofKind: 'pushMyPlayerSideValueToRegister',
-        pushMyPlayerSideValueToRegister: {
-          registerId: MvmRegisterId.MvmRegister_1,
+        oneofKind: 'setRegisterToMyClanCoordinate',
+        setRegisterToMyClanCoordinate: {
+          clanCoordinateRegisterId: MvmRegisterId.MvmRegister_2,
         },
       },
     },
     {
       instruction: {
-        oneofKind: 'applyActiveMarkerRegistersToClanForPlayerSideClanCoordinateValueRegister',
-        applyActiveMarkerRegistersToClanForPlayerSideClanCoordinateValueRegister: {
-          registerId: MvmRegisterId.MvmRegister_1,
+        oneofKind: 'applyMarkerRegisterToClanForClanCoordinateRegister',
+        applyMarkerRegisterToClanForClanCoordinateRegister: {
+          markerRegisterId: MvmRegisterId.MvmRegister_1,
+          clanCoordinateRegisterId: MvmRegisterId.MvmRegister_2,
         },
       },
     },
