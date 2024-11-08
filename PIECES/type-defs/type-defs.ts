@@ -19,15 +19,11 @@ export type MwTokenTypes<T> = {
 
 
 export interface IMwClanConversionRatio {
-  // input: TokenCounterTypeTags[];
-  // output: TokenCounterTypeTags[];
   input: MwMarkerType[];
   output: MwMarkerType;
 }
 
 export interface IMwTribeConversionRatio {
-  // input: TokenCounterTypeTags[];
-  // output: TokenCounterTypeTags;
   input: MwMarkerType[];
   output: MwMarkerType;
 }
@@ -130,17 +126,6 @@ export type InPlayPieceInstance = ClanCardInPlayInstance | FamilyCardInPlayInsta
 
 
 export const DefaultTribeConversionRatios: IMwTribeConversionRatio[] = [
-  // {
-  //   input: convertToMwMarkerTypes([
-  //     '<::mana-counter::>',
-  //     '<::mana-counter::>',
-  //   ]),
-  //   // output: convertToMwMarkerTypes([
-  //   //   '<::manalith-token::>',
-  //   // ]),
-  //   output: MwMarkerType.MwMarkerType_ManalithToken,
-  // },
-  
   {
     input: convertToMwMarkerTypes([
       '<::mana-counter::>',
@@ -161,9 +146,6 @@ export const DefaultTribeConversionRatios: IMwTribeConversionRatio[] = [
       '<::mana-counter::>',
       '<::mana-counter::>',
     ]),
-    // output: convertToMwMarkerTypes([
-    //   '<::population-increase-counter::>',
-    // ]),
     output: MwMarkerType.MwMarkerType_PopulationIncreaseCounter,
   },
 ]
