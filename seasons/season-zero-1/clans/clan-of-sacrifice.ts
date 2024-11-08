@@ -1,11 +1,10 @@
-import { mapToPlayerSideId } from "../../../../game-data/pb-types-mapping/pb-mapping-player";
-import { ManaflowPointProcResult } from "../../../../game-play/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types";
-import { BoardPlayerSideCoordinate, ClanCardStockpile } from "../../../../protobufs/protofiles-out/manawave-board";
+import { ClanCardStockpile } from "../../../../protobufs/protofiles-out/manawave-board";
 import { ClanCardDefs } from "../../../../protobufs/protofiles-out/manawave-season-zero-1";
 import { MwMarkerType } from "../../../../protobufs/protofiles-out/manawave-types";
-import { UnimplementedClanCardModeLogic } from "../../../PIECES/mw-card-data";
+import { createAddCountersToMyClanInstructionSet, createAddCountersToMyTribeInstructionSet } from "../../../manawave-virtual-machine/mvm-instructions-factory";
+import { createMvmInstructionsOnlyModeLogic } from "../../../PIECES/mw-card-data";
 import { mapToIndexedModes } from "../../../PIECES/mw-mode-utils";
-import { EMPTY_PLAYER_CLAN_STOCKPILE, NOOP_CLAN_STOCKPILE_CHANGES, NOOP_TRIBE_STOCKPILE_CHANGES } from "../../../PIECES/type-defs/type-defs";
+import { EMPTY_PLAYER_CLAN_STOCKPILE } from "../../../PIECES/type-defs/type-defs";
 import { createMwCounterCount, createMwTokenCount } from "../../../type-defs/branded-marker-types";
 import { ClanCardDefinition } from "../../../type-defs/clan-defs";
 import { SEASON_ZERO_1_PBID } from "../../season-id-defs";
@@ -27,49 +26,21 @@ export const ClanOfSacrificeData: ClanCardDefinition = {
         fontSize: 12,
         imageSize: 12,
       },
-      modeLogic: {
-        onManaflowProc: (boardState, playerSide, procPoint): ManaflowPointProcResult => {
-
-          const clanCardCoordinate: BoardPlayerSideCoordinate = {
-            playerSideId: mapToPlayerSideId(playerSide),
-            leylineDistance: procPoint.leylineDistance,
-            familyRank: procPoint.leylineRank,
-          };
-    
-          return {
-            clanCardChanges: [
-              {
-                clanCardCoordinate,
-                changes: {
-                  ...NOOP_CLAN_STOCKPILE_CHANGES,
-                  attackCountersCount: 1,
-                  shieldCountersCount: 1,
-                },
-              },
-            ],
-            tribeCardChanges: {
-              changes: {
-                ...NOOP_TRIBE_STOCKPILE_CHANGES,
-                manaCountersCount: 1,
-                soulstainTokenCount: 1,
-              }
-            }
-          };
-        },
-        mvmInstructions: [
-          {
-            instruction: {
-              oneofKind: "deferToOnManaflowProcImpl",
-              deferToOnManaflowProcImpl: {},
-            },
-          },
-        ],
-      },
+      modeLogic: createMvmInstructionsOnlyModeLogic(
+        [
+          ...createAddCountersToMyClanInstructionSet(MwMarkerType.MwMarkerType_AttackCounter, 1),
+          ...createAddCountersToMyClanInstructionSet(MwMarkerType.MwMarkerType_ShieldCounter, 1),
+        ]
+      ),
     },
     {
       numManalithClaimsToActivate: 0,
       modeText: "Add 1 <::mana-counter::> to Clan.",
-      modeLogic: UnimplementedClanCardModeLogic,
+      modeLogic: createMvmInstructionsOnlyModeLogic(
+        [
+          ...createAddCountersToMyClanInstructionSet(MwMarkerType.MwMarkerType_ManaCounter, 1),
+        ]
+      ),
     },
     {
       numManalithClaimsToActivate: 1,
@@ -78,7 +49,12 @@ export const ClanOfSacrificeData: ClanCardDefinition = {
         fontSize: 12,
         imageSize: 12,
       },
-      modeLogic: UnimplementedClanCardModeLogic,
+      modeLogic: createMvmInstructionsOnlyModeLogic(
+        [
+          ...createAddCountersToMyClanInstructionSet(MwMarkerType.MwMarkerType_PopulationSacrificeCounter, 1),
+          ...createAddCountersToMyTribeInstructionSet(MwMarkerType.MwMarkerType_ManaCounter, 2),
+        ]
+      ),
     },
   ]),
   conversionRatios: [

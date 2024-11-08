@@ -93,3 +93,13 @@ export const UnimplementedClanCardModeLogic: IClanCardModeLogic = {
   },
   mvmInstructions: [],
 };
+
+
+export const createMvmInstructionsOnlyModeLogic = (mvmInstructions: ManawaveVmInstruction[]): IClanCardModeLogic => {
+  return {
+    onManaflowProc: (boardState: BoardPiecesState, playerSide: PlayerSide, procPoint: ManaflowProcPoint): ManaflowPointProcResult => {
+      throw new Error("UNIMPLEMENTED onManaflowProc - MVM INSTRUCTIONS ONLY");
+    },
+    mvmInstructions,
+  };
+}
