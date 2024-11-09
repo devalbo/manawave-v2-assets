@@ -1,8 +1,11 @@
 import { FamilyCardDefs } from "../../../protobufs/protofiles-out/manawave-season-zero-1";
+import { createAddCountersToMyClanInstructionSet, createAddCountersToMyClanModifiedByFunctionAmountInstructionSet } from "../../manawave-virtual-machine/mvm-instructions-factory";
+import { MwMarkerType } from "../../../protobufs/protofiles-out/manawave-types";
 import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
-import { IModePrintSettings, UnimplementedFamilyCardModeLogic } from "../mw-card-data";
+import { createMvmInstructionsOnlyFamilyModeLogic, IModePrintSettings, UnimplementedFamilyCardModeLogic } from "../mw-card-data";
 import { mapToIndexedModes } from "../mw-mode-utils";
+import { MvmFunctionId } from "../../../protobufs/protofiles-out/manawave-vm";
 
 
 const ModePrintSettings: IModePrintSettings = {
@@ -25,19 +28,32 @@ export const TemplarsCardDef: FamilyCardDefinition = {
       numManalithClaimsToActivate: 0,
       modeText: "Add 1 <::attack-counter::> to Clan. Add 1 <::shield-counter::> to Clan.",
       modePrintSettings: ModePrintSettings,
-      modeLogic: UnimplementedFamilyCardModeLogic,
+      modeLogic: createMvmInstructionsOnlyFamilyModeLogic([
+        ...createAddCountersToMyClanInstructionSet(MwMarkerType.MwMarkerType_AttackCounter, 1),
+        ...createAddCountersToMyClanInstructionSet(MwMarkerType.MwMarkerType_ShieldCounter, 1),
+      ]),
     },
     {
       numManalithClaimsToActivate: 1,
       modeText: "Add 3 <::shield-counter::> to Clan. Add 1 <::attack-counter::> to Tribe. Reduce each by 1 if your Tribe has any <::soulstain-token::>.",
       modePrintSettings: ModePrintSettings,
-      modeLogic: UnimplementedFamilyCardModeLogic,
+      modeLogic: createMvmInstructionsOnlyFamilyModeLogic([
+        ...createAddCountersToMyClanModifiedByFunctionAmountInstructionSet(
+          MwMarkerType.MwMarkerType_ShieldCounter, 3, MvmFunctionId.MvmFunction_ReturnNegative1IfAnySoulstain),
+        ...createAddCountersToMyClanModifiedByFunctionAmountInstructionSet(
+          MwMarkerType.MwMarkerType_AttackCounter, 1, MvmFunctionId.MvmFunction_ReturnNegative1IfAnySoulstain),
+      ]),
     },
     {
       numManalithClaimsToActivate: 1,
       modeText: "Add 3 <::attack-counter::> to Clan. Add 1 <::shield-counter::> to Tribe. Reduce each by 1 if your Tribe has any <::soulstain-token::>.",
       modePrintSettings: ModePrintSettings,
-      modeLogic: UnimplementedFamilyCardModeLogic,
+      modeLogic: createMvmInstructionsOnlyFamilyModeLogic([
+        ...createAddCountersToMyClanModifiedByFunctionAmountInstructionSet(
+          MwMarkerType.MwMarkerType_AttackCounter, 3, MvmFunctionId.MvmFunction_ReturnNegative1IfAnySoulstain),
+        ...createAddCountersToMyClanModifiedByFunctionAmountInstructionSet(
+          MwMarkerType.MwMarkerType_ShieldCounter, 1, MvmFunctionId.MvmFunction_ReturnNegative1IfAnySoulstain),
+      ]),
     },
   ]),
   onCardPickData: {

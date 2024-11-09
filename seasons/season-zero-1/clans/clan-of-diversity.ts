@@ -6,7 +6,7 @@ import { EMPTY_PLAYER_CLAN_STOCKPILE } from "../../../PIECES/type-defs/type-defs
 import { createMwCounterCount, createMwTokenCount } from "../../../type-defs/branded-marker-types";
 import { ClanCardDefinition } from "../../../type-defs/clan-defs";
 import { SEASON_ZERO_1_PBID } from "../../season-id-defs";
-import { createMvmInstructionsOnlyModeLogic } from "../../../PIECES/mw-card-data";
+import { createMvmInstructionsOnlyClanModeLogic } from "../../../PIECES/mw-card-data";
 import { createAddCountersToAdjacentClansInstructionSet, createAddCountersToMyClanInstructionSet } from "../../../manawave-virtual-machine/mvm-instructions-factory";
 
 
@@ -26,7 +26,7 @@ export const ClanOfDiversityData: ClanCardDefinition = {
         fontSize: 12,
         imageSize: 12,
       },
-      modeLogic: createMvmInstructionsOnlyModeLogic(
+      modeLogic: createMvmInstructionsOnlyClanModeLogic(
         [
           ...createAddCountersToMyClanInstructionSet(MwMarkerType.MwMarkerType_AttackCounter, 1),
           ...createAddCountersToMyClanInstructionSet(MwMarkerType.MwMarkerType_ShieldCounter, 1),
@@ -40,7 +40,7 @@ export const ClanOfDiversityData: ClanCardDefinition = {
         fontSize: 12,
         imageSize: 12,
       },
-      modeLogic: createMvmInstructionsOnlyModeLogic(
+      modeLogic: createMvmInstructionsOnlyClanModeLogic(
         [
           ...createAddCountersToAdjacentClansInstructionSet(MwMarkerType.MwMarkerType_AttackCounter, 2),
         ]
@@ -53,7 +53,7 @@ export const ClanOfDiversityData: ClanCardDefinition = {
         fontSize: 12,
         imageSize: 12,
       },
-      modeLogic: createMvmInstructionsOnlyModeLogic(
+      modeLogic: createMvmInstructionsOnlyClanModeLogic(
         [
           ...createAddCountersToAdjacentClansInstructionSet(MwMarkerType.MwMarkerType_ShieldCounter, 2),
         ]

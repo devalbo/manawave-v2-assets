@@ -2,7 +2,7 @@ import { ClanCardStockpile } from "../../../../protobufs/protofiles-out/manawave
 import { ClanCardDefs } from "../../../../protobufs/protofiles-out/manawave-season-zero-1";
 import { MwMarkerType } from "../../../../protobufs/protofiles-out/manawave-types";
 import { createAddCountersToMyClanInstructionSet, createAddCountersToMyTribeInstructionSet } from "../../../manawave-virtual-machine/mvm-instructions-factory";
-import { createMvmInstructionsOnlyModeLogic } from "../../../PIECES/mw-card-data";
+import { createMvmInstructionsOnlyClanModeLogic } from "../../../PIECES/mw-card-data";
 import { mapToIndexedModes } from "../../../PIECES/mw-mode-utils";
 import { EMPTY_PLAYER_CLAN_STOCKPILE } from "../../../PIECES/type-defs/type-defs";
 import { createMwCounterCount, createMwTokenCount } from "../../../type-defs/branded-marker-types";
@@ -26,7 +26,7 @@ export const ClanOfSacrificeData: ClanCardDefinition = {
         fontSize: 12,
         imageSize: 12,
       },
-      modeLogic: createMvmInstructionsOnlyModeLogic(
+      modeLogic: createMvmInstructionsOnlyClanModeLogic(
         [
           ...createAddCountersToMyClanInstructionSet(MwMarkerType.MwMarkerType_AttackCounter, 1),
           ...createAddCountersToMyClanInstructionSet(MwMarkerType.MwMarkerType_ShieldCounter, 1),
@@ -36,7 +36,7 @@ export const ClanOfSacrificeData: ClanCardDefinition = {
     {
       numManalithClaimsToActivate: 0,
       modeText: "Add 1 <::mana-counter::> to Clan.",
-      modeLogic: createMvmInstructionsOnlyModeLogic(
+      modeLogic: createMvmInstructionsOnlyClanModeLogic(
         [
           ...createAddCountersToMyClanInstructionSet(MwMarkerType.MwMarkerType_ManaCounter, 1),
         ]
@@ -49,7 +49,7 @@ export const ClanOfSacrificeData: ClanCardDefinition = {
         fontSize: 12,
         imageSize: 12,
       },
-      modeLogic: createMvmInstructionsOnlyModeLogic(
+      modeLogic: createMvmInstructionsOnlyClanModeLogic(
         [
           ...createAddCountersToMyClanInstructionSet(MwMarkerType.MwMarkerType_PopulationSacrificeCounter, 1),
           ...createAddCountersToMyTribeInstructionSet(MwMarkerType.MwMarkerType_ManaCounter, 2),
