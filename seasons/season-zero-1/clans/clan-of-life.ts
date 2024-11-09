@@ -1,7 +1,7 @@
 import { ClanCardStockpile } from "../../../../protobufs/protofiles-out/manawave-board";
 import { ClanCardDefs } from "../../../../protobufs/protofiles-out/manawave-season-zero-1";
 import { MwMarkerType } from "../../../../protobufs/protofiles-out/manawave-types";
-import { createAddCountersToMyClanInstructionSet, createAddCountersToMyTribeInstructionSet } from "../../../manawave-virtual-machine/mvm-instructions-factory";
+import { createAddMarkersToMyClanInstructionSet, createAddMarkersToMyTribeInstructionSet } from "../../../manawave-virtual-machine/mvm-instructions-factory";
 import { createMvmInstructionsOnlyClanModeLogic } from "../../../PIECES/mw-card-data";
 import { mapToIndexedModes } from "../../../PIECES/mw-mode-utils";
 import { EMPTY_PLAYER_CLAN_STOCKPILE } from "../../../PIECES/type-defs/type-defs";
@@ -28,8 +28,8 @@ export const ClanOfLifeData: ClanCardDefinition = {
       },
       modeLogic: createMvmInstructionsOnlyClanModeLogic(
         [
-          ...createAddCountersToMyClanInstructionSet(MwMarkerType.MwMarkerType_AttackCounter, 1),
-          ...createAddCountersToMyClanInstructionSet(MwMarkerType.MwMarkerType_ShieldCounter, 1),
+          ...createAddMarkersToMyClanInstructionSet(MwMarkerType.MwMarkerType_AttackCounter, 1),
+          ...createAddMarkersToMyClanInstructionSet(MwMarkerType.MwMarkerType_ShieldCounter, 1),
         ]
       ),
     },
@@ -38,7 +38,7 @@ export const ClanOfLifeData: ClanCardDefinition = {
       modeText: "Add 1 <::population-increase-counter::> to Tribe.",
       modeLogic: createMvmInstructionsOnlyClanModeLogic(
         [
-          ...createAddCountersToMyTribeInstructionSet(MwMarkerType.MwMarkerType_PopulationIncreaseCounter, 1),
+          ...createAddMarkersToMyTribeInstructionSet(MwMarkerType.MwMarkerType_PopulationIncreaseCounter, 1),
         ]
       ),
     },

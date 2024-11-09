@@ -1,8 +1,8 @@
 import { FamilyCardDefs } from "../../../protobufs/protofiles-out/manawave-season-zero-1";
-import { createAddCountersToMyClanInstructionSet } from "../../manawave-virtual-machine/mvm-instructions-factory";
+import { createAddMarkersToMyClanInstructionSet } from "../../manawave-virtual-machine/mvm-instructions-factory";
 import { MwMarkerType } from "../../../protobufs/protofiles-out/manawave-types";
 import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
-import { createAddCountersToMyTribeInstructionSet } from "../../manawave-virtual-machine/mvm-instructions-factory";
+import { createAddMarkersToMyTribeInstructionSet } from "../../manawave-virtual-machine/mvm-instructions-factory";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
 import { FamilyCardPlacementResult } from "../../type-defs/game-data-type-defs";
 import { createMvmInstructionsOnlyFamilyModeLogic, IModePrintSettings, OnCardPickData } from "../mw-card-data";
@@ -60,7 +60,7 @@ export const WizardsCardDef: FamilyCardDefinition = {
       //   mvmInstructions: [],
       // },
       modeLogic: createMvmInstructionsOnlyFamilyModeLogic([
-        ...createAddCountersToMyTribeInstructionSet(MwMarkerType.MwMarkerType_ManaCounter, 1),
+        ...createAddMarkersToMyTribeInstructionSet(MwMarkerType.MwMarkerType_ManaCounter, 1),
       ]),
     },
     {
@@ -68,7 +68,7 @@ export const WizardsCardDef: FamilyCardDefinition = {
       modeText: "Add 2 <::mana-counter::> to Tribe.",
       modePrintSettings: ModePrintSettings,
       modeLogic: createMvmInstructionsOnlyFamilyModeLogic([
-        ...createAddCountersToMyTribeInstructionSet(MwMarkerType.MwMarkerType_ManaCounter, 2),
+        ...createAddMarkersToMyTribeInstructionSet(MwMarkerType.MwMarkerType_ManaCounter, 2),
       ]),
     },
     {
@@ -76,7 +76,7 @@ export const WizardsCardDef: FamilyCardDefinition = {
       modeText: "Add 4 <::mana-counter::> to Tribe.",
       modePrintSettings: ModePrintSettings,
       modeLogic: createMvmInstructionsOnlyFamilyModeLogic([
-        ...createAddCountersToMyTribeInstructionSet(MwMarkerType.MwMarkerType_ManaCounter, 4),
+        ...createAddMarkersToMyTribeInstructionSet(MwMarkerType.MwMarkerType_ManaCounter, 4),
       ]),
     },
     {
@@ -84,8 +84,8 @@ export const WizardsCardDef: FamilyCardDefinition = {
       modeText: "Add 8 <::mana-counter::> to Tribe. Add 1 <::population-sacrifice-counter::> to Clan.",
       modePrintSettings: ModePrintSettings,
       modeLogic: createMvmInstructionsOnlyFamilyModeLogic([
-        ...createAddCountersToMyTribeInstructionSet(MwMarkerType.MwMarkerType_ManaCounter, 8),
-        ...createAddCountersToMyClanInstructionSet(MwMarkerType.MwMarkerType_PopulationSacrificeCounter, 1),
+        ...createAddMarkersToMyTribeInstructionSet(MwMarkerType.MwMarkerType_ManaCounter, 8),
+        ...createAddMarkersToMyClanInstructionSet(MwMarkerType.MwMarkerType_PopulationSacrificeCounter, 1),
       ]),
     },
   ]),

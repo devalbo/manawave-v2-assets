@@ -1,5 +1,5 @@
 import { FamilyCardDefs } from "../../../protobufs/protofiles-out/manawave-season-zero-1";
-import { createAddCountersToMyClanInstructionSet, createAddCountersToMyClanModifiedByFunctionAmountInstructionSet } from "../../manawave-virtual-machine/mvm-instructions-factory";
+import { createAddMarkersToMyClanInstructionSet, createAddCountersToMyClanModifiedByFunctionAmountInstructionSet } from "../../manawave-virtual-machine/mvm-instructions-factory";
 import { MwMarkerType } from "../../../protobufs/protofiles-out/manawave-types";
 import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
@@ -29,8 +29,8 @@ export const TemplarsCardDef: FamilyCardDefinition = {
       modeText: "Add 1 <::attack-counter::> to Clan. Add 1 <::shield-counter::> to Clan.",
       modePrintSettings: ModePrintSettings,
       modeLogic: createMvmInstructionsOnlyFamilyModeLogic([
-        ...createAddCountersToMyClanInstructionSet(MwMarkerType.MwMarkerType_AttackCounter, 1),
-        ...createAddCountersToMyClanInstructionSet(MwMarkerType.MwMarkerType_ShieldCounter, 1),
+        ...createAddMarkersToMyClanInstructionSet(MwMarkerType.MwMarkerType_AttackCounter, 1),
+        ...createAddMarkersToMyClanInstructionSet(MwMarkerType.MwMarkerType_ShieldCounter, 1),
       ]),
     },
     {

@@ -21,6 +21,7 @@ export const SlaversCardDef: FamilyCardDefinition = {
       modeLogic: UnimplementedFamilyCardModeLogic,
     },
     {
+      // TODO: figure out how to implement this
       numManalithClaimsToActivate: 2,
       modeText: "Add 1 <::attack-counter::> to Tribe for each <::population-token::> on opposing Clan. Take 1 <::soulstain-token::>.",
       modeLogic: UnimplementedFamilyCardModeLogic,

@@ -7,7 +7,7 @@ import { createMwCounterCount, createMwTokenCount } from "../../../type-defs/bra
 import { ClanCardDefinition } from "../../../type-defs/clan-defs";
 import { SEASON_ZERO_1_PBID } from "../../season-id-defs";
 import { createMvmInstructionsOnlyClanModeLogic } from "../../../PIECES/mw-card-data";
-import { createAddCountersToAdjacentClansInstructionSet, createAddCountersToMyClanInstructionSet } from "../../../manawave-virtual-machine/mvm-instructions-factory";
+import { createAddMarkersToAdjacentClansInstructionSet, createAddMarkersToMyClanInstructionSet } from "../../../manawave-virtual-machine/mvm-instructions-factory";
 
 
 export const ClanOfDiversityData: ClanCardDefinition = {
@@ -28,8 +28,8 @@ export const ClanOfDiversityData: ClanCardDefinition = {
       },
       modeLogic: createMvmInstructionsOnlyClanModeLogic(
         [
-          ...createAddCountersToMyClanInstructionSet(MwMarkerType.MwMarkerType_AttackCounter, 1),
-          ...createAddCountersToMyClanInstructionSet(MwMarkerType.MwMarkerType_ShieldCounter, 1),
+          ...createAddMarkersToMyClanInstructionSet(MwMarkerType.MwMarkerType_AttackCounter, 1),
+          ...createAddMarkersToMyClanInstructionSet(MwMarkerType.MwMarkerType_ShieldCounter, 1),
         ]
       ),
     },
@@ -42,7 +42,7 @@ export const ClanOfDiversityData: ClanCardDefinition = {
       },
       modeLogic: createMvmInstructionsOnlyClanModeLogic(
         [
-          ...createAddCountersToAdjacentClansInstructionSet(MwMarkerType.MwMarkerType_AttackCounter, 2),
+          ...createAddMarkersToAdjacentClansInstructionSet(MwMarkerType.MwMarkerType_AttackCounter, 2),
         ]
       ),
     },
@@ -55,7 +55,7 @@ export const ClanOfDiversityData: ClanCardDefinition = {
       },
       modeLogic: createMvmInstructionsOnlyClanModeLogic(
         [
-          ...createAddCountersToAdjacentClansInstructionSet(MwMarkerType.MwMarkerType_ShieldCounter, 2),
+          ...createAddMarkersToAdjacentClansInstructionSet(MwMarkerType.MwMarkerType_ShieldCounter, 2),
         ]
       ),
     },

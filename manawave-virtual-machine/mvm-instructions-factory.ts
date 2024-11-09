@@ -2,7 +2,7 @@ import { MwMarkerType } from "../../protobufs/protofiles-out/manawave-types";
 import { ManawaveVmInstruction, MvmFunctionId, MvmRegisterId } from "../../protobufs/protofiles-out/manawave-vm";
 
 
-export const createAddCountersToMyClanInstructionSet = (
+export const createAddMarkersToMyClanInstructionSet = (
   markerType: MwMarkerType, 
   quantity: number
 ): ManawaveVmInstruction[] => { 
@@ -40,7 +40,7 @@ export const createAddCountersToMyClanInstructionSet = (
 }
 
 
-export const createAddCountersToAdjacentClansInstructionSet = (
+export const createAddMarkersToAdjacentClansInstructionSet = (
   markerType: MwMarkerType, 
   quantity: number
 ): ManawaveVmInstruction[] => { 
@@ -78,7 +78,7 @@ export const createAddCountersToAdjacentClansInstructionSet = (
 }
 
 
-export const createAddCountersToMyTribeInstructionSet = (
+export const createAddMarkersToMyTribeInstructionSet = (
   markerType: MwMarkerType, 
   quantity: number
 ): ManawaveVmInstruction[] => { 
