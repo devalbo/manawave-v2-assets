@@ -1,7 +1,8 @@
 import { FamilyCardDefs } from "../../../protobufs/protofiles-out/manawave-season-zero-1";
+import { createNoOpInstructionSet } from "../../manawave-virtual-machine/mvm-instructions-factory";
 import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
-import { IModePrintSettings, UnimplementedFamilyCardModeLogic } from "../mw-card-data";
+import { createMvmInstructionsOnlyFamilyModeLogic, IModePrintSettings, UnimplementedFamilyCardModeLogic } from "../mw-card-data";
 import { mapToIndexedModes } from "../mw-mode-utils";
 
 
@@ -25,18 +26,24 @@ export const ChannelersCardDef: FamilyCardDefinition = {
       numManalithClaimsToActivate: 0,
       modeText: "No effect.",
       modePrintSettings: ModePrintSettings,
-      modeLogic: UnimplementedFamilyCardModeLogic,
+      modeLogic: createMvmInstructionsOnlyFamilyModeLogic([
+        ...createNoOpInstructionSet(),
+      ]),
     },
     {
       numManalithClaimsToActivate: 2,
       modeText: "Add 1 <::mana-counter::> to Tribe for each adjacent X-aligned Family. Reduce total by 1 for each <::soulstain-token::> your Tribe has.",
       modePrintSettings: ModePrintSettings,
+      // TODO: figure out how to implement adjacent aligned family counts and adjust by soulstain tokens
+      //  see MvmFunction_CountNumberOfAdjacentFamiliesToThisCardWithSameAlignment
       modeLogic: UnimplementedFamilyCardModeLogic,
     },
     {
       numManalithClaimsToActivate: 4,
       modeText: "Add 2 <::mana-counter::> to Tribe for each adjacent X-aligned Family. Reduce total by 1 for each <::soulstain-token::> your Tribe has.",
       modePrintSettings: ModePrintSettings,
+      // TODO: figure out how to implement adjacent aligned family counts and adjust by soulstain tokens
+      //  see MvmFunction_CountNumberOfAdjacentFamiliesToThisCardWithSameAlignment
       modeLogic: UnimplementedFamilyCardModeLogic,
     },
   ]),

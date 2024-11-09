@@ -2,6 +2,11 @@ import { MwMarkerType } from "../../protobufs/protofiles-out/manawave-types";
 import { ManawaveVmInstruction, MvmFunctionId, MvmRegisterId } from "../../protobufs/protofiles-out/manawave-vm";
 
 
+export const createNoOpInstructionSet = (): ManawaveVmInstruction[] => {
+  return [];
+}
+
+
 export const createAddMarkersToMyClanInstructionSet = (
   markerType: MwMarkerType, 
   quantity: number
@@ -180,7 +185,6 @@ export const createAddCountersToMyTribeModifiedBySoulstainInstructionSet = (
 ): ManawaveVmInstruction[] => { 
 
   throw new Error('Not implemented');
-  return [];
 }
 
 

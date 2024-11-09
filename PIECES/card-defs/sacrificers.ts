@@ -33,6 +33,7 @@ export const SacrificersCardDef: FamilyCardDefinition = {
     },
     {
       // TODO: figure out how to implement adjacent family counts
+      //  see MvmFunction_CountNumberOfAdjacentFamiliesToThisCard
       numManalithClaimsToActivate: 1,
       modeText: "Add 1 <::mana-counter::> to Tribe for each adjacent Family. Add 1 <::population-sacrifice-counter::> to Clan. Take 1 <::soulstain-token::>.",
       modePrintSettings: ModePrintSettings,
@@ -40,6 +41,7 @@ export const SacrificersCardDef: FamilyCardDefinition = {
     },
     {
       // TODO: figure out how to implement adjacent family counts
+      //  see MvmFunction_CountNumberOfAdjacentFamiliesToThisCard
       numManalithClaimsToActivate: 1,
       modeText: "Add 1 <::mana-counter::> to Tribe for each adjacent Family. Add 2 <::population-sacrifice-counter::> to Clan for each adjacent Family. Take 2 <::soulstain-token::>.",
       modePrintSettings: ModePrintSettings,

@@ -17,6 +17,8 @@ export const EnchantersCardDef: FamilyCardDefinition = {
   modes: mapToIndexedModes([
     {
       numManalithClaimsToActivate: 0,
+      // TODO: figure out how to implement adjacent aligned family counts
+      //  see MvmFunction_CountNumberOfAdjacentFamiliesToThisCard
       modeText: "Add 1 <::mana-counter::> to Tribe, plus 1 for each adjacent Family.",
       modeLogic: UnimplementedFamilyCardModeLogic,
     },

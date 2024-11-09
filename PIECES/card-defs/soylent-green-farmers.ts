@@ -1,4 +1,4 @@
-import { createMvmInstructionsOnlyFamilyModeLogic, IModePrintSettings, UnimplementedFamilyCardModeLogic } from "../mw-card-data"
+import { createMvmInstructionsOnlyFamilyModeLogic, IModePrintSettings } from "../mw-card-data"
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
 import { FamilyCardDefs } from "../../../protobufs/protofiles-out/manawave-season-zero-1";
 import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";

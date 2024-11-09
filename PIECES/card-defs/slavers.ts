@@ -22,6 +22,7 @@ export const SlaversCardDef: FamilyCardDefinition = {
     },
     {
       // TODO: figure out how to implement this
+      //  see MvmFunction_CountNumberOfPopulationTokensOnOpposingClan
       numManalithClaimsToActivate: 2,
       modeText: "Add 1 <::attack-counter::> to Tribe for each <::population-token::> on opposing Clan. Take 1 <::soulstain-token::>.",
       modeLogic: UnimplementedFamilyCardModeLogic,

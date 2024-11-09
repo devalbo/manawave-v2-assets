@@ -2,7 +2,9 @@ import { FamilyCardDefs } from "../../../protobufs/protofiles-out/manawave-seaso
 import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
 import { mapToIndexedModes } from "../mw-mode-utils";
-import { UnimplementedFamilyCardModeLogic } from "../mw-card-data";
+import { createMvmInstructionsOnlyFamilyModeLogic } from "../mw-card-data";
+import { createAddMarkersToMyClanInstructionSet, createAddMarkersToMyTribeInstructionSet } from "../../manawave-virtual-machine/mvm-instructions-factory";
+import { MwMarkerType } from "../../../protobufs/protofiles-out/manawave-types";
 
 
 export const RoadBuildersCardDef: FamilyCardDefinition = {
@@ -18,7 +20,10 @@ export const RoadBuildersCardDef: FamilyCardDefinition = {
     {
       numManalithClaimsToActivate: 0,
       modeText: "Add 1 <::population-increase-counter::> to Clan. Add 1 <::mana-counter::> to Tribe.",
-      modeLogic: UnimplementedFamilyCardModeLogic,
+      modeLogic: createMvmInstructionsOnlyFamilyModeLogic([
+        ...createAddMarkersToMyClanInstructionSet(MwMarkerType.MwMarkerType_PopulationIncreaseCounter, 1),
+        ...createAddMarkersToMyTribeInstructionSet(MwMarkerType.MwMarkerType_ManaCounter, 1),
+      ]),
     },
   ]),
   onCardPickData: {

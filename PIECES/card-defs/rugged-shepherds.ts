@@ -25,12 +25,16 @@ export const RuggedShepherdsCardDef: FamilyCardDefinition = {
       numManalithClaimsToActivate: 0,
       modeText: "Add 1 <::population-increase-counter::> to Clan for each adjacent Family.",
       modePrintSettings: ModePrintSettings,
+      // TODO: figure out how to apply adjacent family counts as counters
+      //  see MvmFunction_CountNumberOfAdjacentFamiliesToThisCard
       modeLogic: UnimplementedFamilyCardModeLogic,
     },
     {
       numManalithClaimsToActivate: 2,
       modeText: "Add 2 <::population-increase-counter::> to Clan for each adjacent Family. Reduce total by 1 for each <::soulstain-token::> your Tribe has.",
       modePrintSettings: ModePrintSettings,
+      // TODO: figure out how to apply adjacent family counts as counters, then reduce by soulstain tokens
+      //  see MvmFunction_CountNumberOfAdjacentFamiliesToThisCard
       modeLogic: UnimplementedFamilyCardModeLogic,
     },
   ]),

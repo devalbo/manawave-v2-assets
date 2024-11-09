@@ -1,7 +1,9 @@
 import { FamilyCardDefs } from "../../../protobufs/protofiles-out/manawave-season-zero-1";
+import { MwMarkerType } from "../../../protobufs/protofiles-out/manawave-types";
+import { createAddMarkersToMyClanInstructionSet, createAddMarkersToMyTribeInstructionSet } from "../../manawave-virtual-machine/mvm-instructions-factory";
 import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
-import { UnimplementedFamilyCardModeLogic } from "../mw-card-data";
+import { createMvmInstructionsOnlyFamilyModeLogic } from "../mw-card-data";
 import { mapToIndexedModes } from "../mw-mode-utils";
 
 
@@ -18,17 +20,25 @@ export const MysticFarmersCardDef: FamilyCardDefinition = {
     {
       numManalithClaimsToActivate: 0,
       modeText: "Add 1 <::population-increase-counter::> to Clan.",
-      modeLogic: UnimplementedFamilyCardModeLogic,
+      modeLogic: createMvmInstructionsOnlyFamilyModeLogic([
+        ...createAddMarkersToMyClanInstructionSet(MwMarkerType.MwMarkerType_PopulationIncreaseCounter, 1),
+      ]),
     },
     {
       numManalithClaimsToActivate: 1,
-      modeText: "Execute M0. Add 1 <::mana-counter::> to Clan.",
-      modeLogic: UnimplementedFamilyCardModeLogic,
+      modeText: "Add 1 <::population-increase-counter::> to Clan. Add 1 <::mana-counter::> to Clan.",
+      modeLogic: createMvmInstructionsOnlyFamilyModeLogic([
+        ...createAddMarkersToMyClanInstructionSet(MwMarkerType.MwMarkerType_PopulationIncreaseCounter, 1),
+        ...createAddMarkersToMyClanInstructionSet(MwMarkerType.MwMarkerType_ManaCounter, 1),
+      ]),
     },
     {
       numManalithClaimsToActivate: 2,
-      modeText: "Execute M0. Add 1 <::mana-counter::> to Tribe.",
-      modeLogic: UnimplementedFamilyCardModeLogic,
+      modeText: "Add 1 <::population-increase-counter::> to Clan. Add 1 <::mana-counter::> to Tribe.",
+      modeLogic: createMvmInstructionsOnlyFamilyModeLogic([
+        ...createAddMarkersToMyClanInstructionSet(MwMarkerType.MwMarkerType_PopulationIncreaseCounter, 1),
+        ...createAddMarkersToMyTribeInstructionSet(MwMarkerType.MwMarkerType_ManaCounter, 1),
+      ]),
     },
   ]),
   onCardPickData: {

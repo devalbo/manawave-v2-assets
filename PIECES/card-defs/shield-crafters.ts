@@ -3,7 +3,7 @@ import { MwMarkerType } from "../../../protobufs/protofiles-out/manawave-types";
 import { createAddMarkersToMyClanInstructionSet, createAddMarkersToMyTribeInstructionSet } from "../../manawave-virtual-machine/mvm-instructions-factory";
 import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
-import {  createMvmInstructionsOnlyFamilyModeLogic, UnimplementedFamilyCardModeLogic } from "../mw-card-data";
+import {  createMvmInstructionsOnlyFamilyModeLogic } from "../mw-card-data";
 import { mapToIndexedModes } from "../mw-mode-utils";
 
 
