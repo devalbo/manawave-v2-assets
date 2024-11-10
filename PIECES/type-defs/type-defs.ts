@@ -5,7 +5,6 @@ import { ClanCardDefinition } from "../../type-defs/clan-defs"
 import { FamilyCardDefinition } from "../../type-defs/family-defs"
 import { ClanCardLogic, FamilyCardLogic } from "../../type-defs/game-data-type-defs"
 import { convertToMwMarkerTypes } from "../marker-conversions"
-import { TokenCounterTypeTags } from "../token-counter-icons"
 
 
 export type MwCounterTypes<T> = {

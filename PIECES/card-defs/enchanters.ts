@@ -1,7 +1,10 @@
 import { FamilyCardDefs } from "../../../protobufs/protofiles-out/manawave-season-zero-1";
+import { MwMarkerType } from "../../../protobufs/protofiles-out/manawave-types";
+import { MvmAmountQueryFunctionId } from "../../../protobufs/protofiles-out/manawave-vm";
+import { createAddMarkersToMyTribeForCountFunctionAmountInstructionSet, createAddMarkersToMyTribeInstructionSet } from "../../manawave-virtual-machine/mvm-instructions-factory";
 import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
-import { UnimplementedFamilyCardModeLogic } from "../mw-card-data";
+import { createMvmInstructionsOnlyFamilyModeLogic } from "../mw-card-data";
 import { mapToIndexedModes } from "../mw-mode-utils";
 
 
@@ -17,10 +20,14 @@ export const EnchantersCardDef: FamilyCardDefinition = {
   modes: mapToIndexedModes([
     {
       numManalithClaimsToActivate: 0,
-      // TODO: figure out how to implement adjacent aligned family counts
-      //  see MvmFunction_CountNumberOfAdjacentFamiliesToThisCard
       modeText: "Add 1 <::mana-counter::> to Tribe, plus 1 for each adjacent Family.",
-      modeLogic: UnimplementedFamilyCardModeLogic,
+      modeLogic: createMvmInstructionsOnlyFamilyModeLogic([
+        ...createAddMarkersToMyTribeInstructionSet(MwMarkerType.MwMarkerType_ManaCounter, 1),
+        ...createAddMarkersToMyTribeForCountFunctionAmountInstructionSet(
+          MvmAmountQueryFunctionId.MvmAmountQueryFunction_CountNumberOfAdjacentFamiliesToThisCard,
+          MwMarkerType.MwMarkerType_ManaCounter,
+        ),
+      ]),
     },
   ]),
   onCardPickData: {

@@ -1,11 +1,11 @@
 import { FamilyCardDefs } from "../../../protobufs/protofiles-out/manawave-season-zero-1";
-import { createAddMarkersToMyClanInstructionSet, createAddCountersToMyClanModifiedByFunctionAmountInstructionSet } from "../../manawave-virtual-machine/mvm-instructions-factory";
+import { createAddMarkersToMyClanInstructionSet, createAddMarkersToMyClanOnConditionInstructionSet, createAddMarkersToMyTribeInstructionSet, createAddMarkersToMyTribeOnConditionInstructionSet } from "../../manawave-virtual-machine/mvm-instructions-factory";
 import { MwMarkerType } from "../../../protobufs/protofiles-out/manawave-types";
 import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
 import { createMvmInstructionsOnlyFamilyModeLogic, IModePrintSettings } from "../mw-card-data";
 import { mapToIndexedModes } from "../mw-mode-utils";
-import { MvmFunctionId } from "../../../protobufs/protofiles-out/manawave-vm";
+import { MvmBoolQueryFunctionId } from "../../../protobufs/protofiles-out/manawave-vm";
 
 
 const ModePrintSettings: IModePrintSettings = {
@@ -38,10 +38,20 @@ export const TemplarsCardDef: FamilyCardDefinition = {
       modeText: "Add 3 <::shield-counter::> to Clan. Add 1 <::attack-counter::> to Tribe. Reduce each by 1 if your Tribe has any <::soulstain-token::>.",
       modePrintSettings: ModePrintSettings,
       modeLogic: createMvmInstructionsOnlyFamilyModeLogic([
-        ...createAddCountersToMyClanModifiedByFunctionAmountInstructionSet(
-          MwMarkerType.MwMarkerType_ShieldCounter, 3, MvmFunctionId.MvmFunction_ReturnNegative1IfAnySoulstain),
-        ...createAddCountersToMyClanModifiedByFunctionAmountInstructionSet(
-          MwMarkerType.MwMarkerType_AttackCounter, 1, MvmFunctionId.MvmFunction_ReturnNegative1IfAnySoulstain),
+        ...createAddMarkersToMyClanInstructionSet(MwMarkerType.MwMarkerType_ShieldCounter, 3),
+        ...createAddMarkersToMyTribeInstructionSet(MwMarkerType.MwMarkerType_AttackCounter, 1),
+
+        ...createAddMarkersToMyClanOnConditionInstructionSet(
+          MvmBoolQueryFunctionId.MvmBoolQueryFunction_DoesMyTribeHaveAnySoulstainTokens,
+          MwMarkerType.MwMarkerType_ShieldCounter, -1),
+        ...createAddMarkersToMyTribeOnConditionInstructionSet(
+          MvmBoolQueryFunctionId.MvmBoolQueryFunction_DoesMyTribeHaveAnySoulstainTokens,
+          MwMarkerType.MwMarkerType_AttackCounter, -1),
+
+        // ...createAddCountersToMyClanModifiedByFunctionAmountInstructionSet(
+        //   MwMarkerType.MwMarkerType_ShieldCounter, 3, MvmFunctionId.MvmFunction_ReturnNegative1IfAnySoulstain),
+        // ...createAddCountersToMyClanModifiedByFunctionAmountInstructionSet(
+        //   MwMarkerType.MwMarkerType_AttackCounter, 1, MvmFunctionId.MvmFunction_ReturnNegative1IfAnySoulstain),
       ]),
     },
     {
@@ -49,10 +59,20 @@ export const TemplarsCardDef: FamilyCardDefinition = {
       modeText: "Add 3 <::attack-counter::> to Clan. Add 1 <::shield-counter::> to Tribe. Reduce each by 1 if your Tribe has any <::soulstain-token::>.",
       modePrintSettings: ModePrintSettings,
       modeLogic: createMvmInstructionsOnlyFamilyModeLogic([
-        ...createAddCountersToMyClanModifiedByFunctionAmountInstructionSet(
-          MwMarkerType.MwMarkerType_AttackCounter, 3, MvmFunctionId.MvmFunction_ReturnNegative1IfAnySoulstain),
-        ...createAddCountersToMyClanModifiedByFunctionAmountInstructionSet(
-          MwMarkerType.MwMarkerType_ShieldCounter, 1, MvmFunctionId.MvmFunction_ReturnNegative1IfAnySoulstain),
+        ...createAddMarkersToMyClanInstructionSet(MwMarkerType.MwMarkerType_AttackCounter, 3),
+        ...createAddMarkersToMyTribeInstructionSet(MwMarkerType.MwMarkerType_ShieldCounter, 1),
+
+        ...createAddMarkersToMyClanOnConditionInstructionSet(
+          MvmBoolQueryFunctionId.MvmBoolQueryFunction_DoesMyTribeHaveAnySoulstainTokens,
+          MwMarkerType.MwMarkerType_AttackCounter, -1),
+        ...createAddMarkersToMyTribeOnConditionInstructionSet(
+          MvmBoolQueryFunctionId.MvmBoolQueryFunction_DoesMyTribeHaveAnySoulstainTokens,
+          MwMarkerType.MwMarkerType_ShieldCounter, -1),
+
+        // ...createAddCountersToMyClanModifiedByFunctionAmountInstructionSet(
+        //   MwMarkerType.MwMarkerType_AttackCounter, 3, MvmFunctionId.MvmFunction_ReturnNegative1IfAnySoulstain),
+        // ...createAddCountersToMyClanModifiedByFunctionAmountInstructionSet(
+        //   MwMarkerType.MwMarkerType_ShieldCounter, 1, MvmFunctionId.MvmFunction_ReturnNegative1IfAnySoulstain),
       ]),
     },
   ]),

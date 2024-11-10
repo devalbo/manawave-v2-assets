@@ -1,9 +1,33 @@
 import { MwMarkerType } from "../../protobufs/protofiles-out/manawave-types";
-import { ManawaveVmInstruction, MvmFunctionId, MvmRegisterId } from "../../protobufs/protofiles-out/manawave-vm";
+import { ManawaveVmInstruction, MvmAmountQueryFunctionId, MvmAtomicInstruction, MvmBoolQueryFunctionId, MvmRegisterId } from "../../protobufs/protofiles-out/manawave-vm";
 
 
 export const createNoOpInstructionSet = (): ManawaveVmInstruction[] => {
   return [];
+}
+
+
+export const createAtomicManawaveVmInstruction = (
+  instruction: MvmAtomicInstruction
+): ManawaveVmInstruction => {
+  return {
+    instruction: {
+      oneofKind: 'atomicInstruction',
+      atomicInstruction: instruction,
+    },
+  };
+}
+
+
+export const stripToAtomicInstructions = (instructions: ManawaveVmInstruction[]): MvmAtomicInstruction[] => {
+
+  return instructions.map((instruction) => {
+    if (instruction.instruction.oneofKind !== 'atomicInstruction') {
+      console.log(instruction);
+      throw new Error('Instruction is not an atomic instruction');
+    }
+    return instruction.instruction.atomicInstruction;
+  });
 }
 
 
@@ -12,10 +36,10 @@ export const createAddMarkersToMyClanInstructionSet = (
   quantity: number
 ): ManawaveVmInstruction[] => { 
   return [
-    { 
+    createAtomicManawaveVmInstruction({
       instruction: {
-        oneofKind: 'setMarkerRegisterData',
-        setMarkerRegisterData: {
+        oneofKind: 'setMarkerRegister',
+        setMarkerRegister: {
           markerRegisterId: MvmRegisterId.MvmRegister_1,
           registerData: {
             markerType,
@@ -23,16 +47,16 @@ export const createAddMarkersToMyClanInstructionSet = (
           },
         },
       },
-    },
-    {
+    }),
+    createAtomicManawaveVmInstruction({
       instruction: {
-        oneofKind: 'setRegisterToMyClanCoordinate',
-        setRegisterToMyClanCoordinate: {
+        oneofKind: 'setRegisterDataToMyClanCoordinate',
+        setRegisterDataToMyClanCoordinate: {
           clanCoordinateRegisterId: MvmRegisterId.MvmRegister_2,
         },
       },
-    },
-    {
+    }),
+    createAtomicManawaveVmInstruction({
       instruction: {
         oneofKind: 'applyMarkerRegisterToClanForClanCoordinateRegister',
         applyMarkerRegisterToClanForClanCoordinateRegister: {
@@ -40,7 +64,44 @@ export const createAddMarkersToMyClanInstructionSet = (
           clanCoordinateRegisterId: MvmRegisterId.MvmRegister_2,
         },
       },
-    },
+    }),
+  ];
+}
+
+
+export const createRemoveMarkersFromMyClanForCountFunctionAmountInstructionSet = (
+  mvmAmountQueryFunctionId: MvmAmountQueryFunctionId,
+  markerType: MwMarkerType, 
+): ManawaveVmInstruction[] => { 
+  return [
+    createAtomicManawaveVmInstruction({
+      instruction: {
+        oneofKind: 'setMarkerRegisterAmountToMvmAmountQueryOutput',
+        setMarkerRegisterAmountToMvmAmountQueryOutput: {
+          markerRegisterId: MvmRegisterId.MvmRegister_1,
+          markerType,
+          mvmAmountQueryFunctionId,
+          multiplyOutputByNegative1: true,
+        },
+      },
+    }),
+    createAtomicManawaveVmInstruction({
+      instruction: {
+        oneofKind: 'setRegisterDataToMyClanCoordinate',
+        setRegisterDataToMyClanCoordinate: {
+          clanCoordinateRegisterId: MvmRegisterId.MvmRegister_2,
+        },
+      },
+    }),
+    createAtomicManawaveVmInstruction({
+      instruction: {
+        oneofKind: 'applyMarkerRegisterToClanForClanCoordinateRegister',
+        applyMarkerRegisterToClanForClanCoordinateRegister: {
+          markerRegisterId: MvmRegisterId.MvmRegister_1,
+          clanCoordinateRegisterId: MvmRegisterId.MvmRegister_2,
+        },
+      },
+    }),
   ];
 }
 
@@ -50,27 +111,27 @@ export const createAddMarkersToAdjacentClansInstructionSet = (
   quantity: number
 ): ManawaveVmInstruction[] => { 
   return [
-    { 
+    createAtomicManawaveVmInstruction({
       instruction: {
-        oneofKind: 'setMarkerRegisterData',
-        setMarkerRegisterData: {
+        oneofKind: 'setMarkerRegister',
+        setMarkerRegister: {
           markerRegisterId: MvmRegisterId.MvmRegister_1,
           registerData: {
             markerType,
             quantity,
           },
         },
-      },
-    },
-    {
+        },
+      }),
+    createAtomicManawaveVmInstruction({
       instruction: {
-        oneofKind: 'setRegisterToMyClanCoordinate',
-        setRegisterToMyClanCoordinate: {
+        oneofKind: 'setRegisterDataToMyClanCoordinate',
+        setRegisterDataToMyClanCoordinate: {
           clanCoordinateRegisterId: MvmRegisterId.MvmRegister_2,
         },
       },
-    },
-    {
+    }),
+    createAtomicManawaveVmInstruction({
       instruction: {
         oneofKind: 'applyMarkerRegisterToClanForClanCoordinateRegister',
         applyMarkerRegisterToClanForClanCoordinateRegister: {
@@ -78,7 +139,7 @@ export const createAddMarkersToAdjacentClansInstructionSet = (
           clanCoordinateRegisterId: MvmRegisterId.MvmRegister_2,
         },
       },
-    },
+    }),
   ];
 }
 
@@ -88,10 +149,10 @@ export const createAddMarkersToMyTribeInstructionSet = (
   quantity: number
 ): ManawaveVmInstruction[] => { 
   return [
-    { 
+    createAtomicManawaveVmInstruction({
       instruction: {
-        oneofKind: 'setMarkerRegisterData',
-        setMarkerRegisterData: {
+        oneofKind: 'setMarkerRegister',
+        setMarkerRegister: {
           markerRegisterId: MvmRegisterId.MvmRegister_1,
           registerData: {
             markerType,
@@ -99,133 +160,177 @@ export const createAddMarkersToMyTribeInstructionSet = (
           },
         },
       },
-    },
-    {
+    }),
+    createAtomicManawaveVmInstruction({
       instruction: {
-        oneofKind: 'setRegisterToMyPlayerSide',
-        setRegisterToMyPlayerSide: {
+        oneofKind: 'setRegisterDataToMyPlayerSide',
+        setRegisterDataToMyPlayerSide: {
           playerSideRegisterId: MvmRegisterId.MvmRegister_2,
         },
       },
-    },
-    {
+    }),
+    createAtomicManawaveVmInstruction({
       instruction: {
         oneofKind: 'applyMarkerRegisterToMyTribe',
         applyMarkerRegisterToMyTribe: {
           markerRegisterId: MvmRegisterId.MvmRegister_1,
         },
       },
+    }),
+  ];
+}
+
+
+export const createAddMarkersToMyClanOnConditionInstructionSet = (
+  mvmBoolQueryFunctionId: MvmBoolQueryFunctionId,
+  markerType: MwMarkerType, 
+  quantity: number,
+): ManawaveVmInstruction[] => {
+
+  return [
+    {
+      instruction: {
+        oneofKind: 'conditionalRunAtomicInstructions',
+        conditionalRunAtomicInstructions: {
+          mvmBoolQueryFunctionId,
+          onTrueInstructions: [
+            ...stripToAtomicInstructions(createAddMarkersToMyClanInstructionSet(markerType, quantity)),
+          ],
+          onFalseInstructions: [],
+        },
+      },
     },
   ];
 }
 
 
-
-export const createAddCountersToMyClanModifiedByFunctionAmountInstructionSet = (
+export const createAddMarkersToMyTribeOnConditionInstructionSet = (
+  mvmBoolQueryFunctionId: MvmBoolQueryFunctionId,
   markerType: MwMarkerType, 
   quantity: number,
-  mvmFunctionId: MvmFunctionId
 ): ManawaveVmInstruction[] => { 
-  
+
   return [
-    { 
+    {
       instruction: {
-        oneofKind: 'setMarkerRegisterData',
-        setMarkerRegisterData: {
+        oneofKind: 'conditionalRunAtomicInstructions',
+        conditionalRunAtomicInstructions: {
+          mvmBoolQueryFunctionId,
+          onTrueInstructions: [
+            ...stripToAtomicInstructions(createAddMarkersToMyTribeInstructionSet(markerType, quantity)),
+          ],
+          onFalseInstructions: [],
+        },
+      },
+    },
+  ];
+}
+
+
+export const createAddMarkersToMyTribeForCountFunctionAmountInstructionSet = (
+  mvmAmountQueryFunctionId: MvmAmountQueryFunctionId,
+  markerType: MwMarkerType, 
+): ManawaveVmInstruction[] => { 
+  return [
+    createAtomicManawaveVmInstruction({
+      instruction: {
+        oneofKind: 'setMarkerRegisterAmountToMvmAmountQueryOutput',
+        setMarkerRegisterAmountToMvmAmountQueryOutput: {
           markerRegisterId: MvmRegisterId.MvmRegister_1,
-          registerData: {
-            markerType,
-            quantity,
-          },
+          markerType,
+          mvmAmountQueryFunctionId,
+          multiplyOutputByNegative1: false,
         },
       },
-    },
-    {
+    }),
+    createAtomicManawaveVmInstruction({
       instruction: {
-        oneofKind: 'setRegisterAmountToFunctionOutput',
-        setRegisterAmountToFunctionOutput: {
-          amountRegisterId: MvmRegisterId.MvmRegister_2,
-          mvmFunctionId,
+        oneofKind: 'setRegisterDataToMyPlayerSide',
+        setRegisterDataToMyPlayerSide: {
+          playerSideRegisterId: MvmRegisterId.MvmRegister_2,
         },
       },
-    },
-    {
+    }),
+    createAtomicManawaveVmInstruction({
       instruction: {
-        oneofKind: 'adjustMarkerRegisterDataAmountByRegisterAmount',
-        adjustMarkerRegisterDataAmountByRegisterAmount: {
+        oneofKind: 'applyMarkerRegisterToMyTribe',
+        applyMarkerRegisterToMyTribe: {
           markerRegisterId: MvmRegisterId.MvmRegister_1,
-          amountRegisterId: MvmRegisterId.MvmRegister_2,
         },
       },
-    },
-    {
+    }),
+  ];
+}
+
+
+export const createRemoveMarkersFromMyTribeForCountFunctionAmountInstructionSet = (
+  mvmAmountQueryFunctionId: MvmAmountQueryFunctionId,
+  markerType: MwMarkerType, 
+): ManawaveVmInstruction[] => { 
+  return [
+    createAtomicManawaveVmInstruction({
       instruction: {
-        oneofKind: 'setRegisterToMyClanCoordinate',
-        setRegisterToMyClanCoordinate: {
-          clanCoordinateRegisterId: MvmRegisterId.MvmRegister_3,
+        oneofKind: 'setMarkerRegisterAmountToMvmAmountQueryOutput',
+        setMarkerRegisterAmountToMvmAmountQueryOutput: {
+          markerRegisterId: MvmRegisterId.MvmRegister_1,
+          markerType,
+          mvmAmountQueryFunctionId,
+          multiplyOutputByNegative1: true,
         },
       },
-    },
-    {
+    }),
+    createAtomicManawaveVmInstruction({
+      instruction: {
+        oneofKind: 'setRegisterDataToMyPlayerSide',
+        setRegisterDataToMyPlayerSide: {
+          playerSideRegisterId: MvmRegisterId.MvmRegister_2,
+        },
+      },
+    }),
+    createAtomicManawaveVmInstruction({
+      instruction: {
+        oneofKind: 'applyMarkerRegisterToMyTribe',
+        applyMarkerRegisterToMyTribe: {
+          markerRegisterId: MvmRegisterId.MvmRegister_1,
+        },
+      },
+    }),
+  ];
+}
+
+
+export const createAddMarkersToMyClanForCountFunctionAmountInstructionSet = (
+  mvmAmountQueryFunctionId: MvmAmountQueryFunctionId,
+  markerType: MwMarkerType, 
+): ManawaveVmInstruction[] => { 
+  return [
+    createAtomicManawaveVmInstruction({
+      instruction: {
+        oneofKind: 'setMarkerRegisterAmountToMvmAmountQueryOutput',
+        setMarkerRegisterAmountToMvmAmountQueryOutput: {
+          markerRegisterId: MvmRegisterId.MvmRegister_1,
+          markerType,
+          mvmAmountQueryFunctionId,
+          multiplyOutputByNegative1: false,
+        },
+      },
+    }),
+    createAtomicManawaveVmInstruction({
+      instruction: {
+        oneofKind: 'setRegisterDataToMyClanCoordinate',
+        setRegisterDataToMyClanCoordinate: {
+          clanCoordinateRegisterId: MvmRegisterId.MvmRegister_2,
+        },
+      },
+    }),
+    createAtomicManawaveVmInstruction({
       instruction: {
         oneofKind: 'applyMarkerRegisterToClanForClanCoordinateRegister',
         applyMarkerRegisterToClanForClanCoordinateRegister: {
           markerRegisterId: MvmRegisterId.MvmRegister_1,
-          clanCoordinateRegisterId: MvmRegisterId.MvmRegister_3,
+          clanCoordinateRegisterId: MvmRegisterId.MvmRegister_2,
         },
       },
-    },
+    }),
   ];
 }
-
-
-export const createAddCountersToMyTribeModifiedBySoulstainInstructionSet = (
-  markerType: MwMarkerType, 
-  quantity: number
-): ManawaveVmInstruction[] => { 
-
-  throw new Error('Not implemented');
-}
-
-
-
-// export const createReduceMyClanMarkersIfMyTribeHasSoulstainInstructionSet = (
-//   markerType: MwMarkerType,
-//   quantity: number,
-// ): ManawaveVmInstruction[] => {
-//   return [
-//     { 
-//       instruction: {
-//         oneofKind: 'adjustMarkerRegisterDataAmountByAmount',
-//         adjustMarkerRegisterDataAmountByAmount: {
-//           markerRegisterId: MvmRegisterId.MvmRegister_1,
-//           amount: quantity,
-//         },
-//       },
-//     },
-//     {
-//       instruction: {
-//         oneofKind: 'setRegisterToMyPlayerSide',
-//         setRegisterToMyPlayerSide: {
-//           playerSideRegisterId: MvmRegisterId.MvmRegister_2,
-//         },
-//       },
-//     },
-//     {
-//       instruction: {
-//         oneofKind: 'applyMarkerRegisterToMyTribe',
-//         applyMarkerRegisterToMyTribe: {
-//           markerRegisterId: MvmRegisterId.MvmRegister_1,
-//         },
-//       },
-//     },
-//   ];
-// }
-
-
-// export const createReduceMyTribeMarkersIfMyTribeHasSoulstainInstructionSet = (
-//   markerType: MwMarkerType,
-//   quantity: number,
-// ): ManawaveVmInstruction[] => {
-//   return [];
-// }

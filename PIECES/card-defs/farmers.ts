@@ -1,8 +1,10 @@
 import { FamilyCardDefs } from "../../../protobufs/protofiles-out/manawave-season-zero-1";
-import { createNoOpInstructionSet } from "../../manawave-virtual-machine/mvm-instructions-factory";
+import { MwMarkerType } from "../../../protobufs/protofiles-out/manawave-types";
+import { MvmAmountQueryFunctionId } from "../../../protobufs/protofiles-out/manawave-vm";
+import { createAddMarkersToMyClanForCountFunctionAmountInstructionSet, createAddMarkersToMyTribeForCountFunctionAmountInstructionSet, createNoOpInstructionSet } from "../../manawave-virtual-machine/mvm-instructions-factory";
 import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
-import { createMvmInstructionsOnlyFamilyModeLogic, IModePrintSettings, UnimplementedFamilyCardModeLogic } from "../mw-card-data";
+import { createMvmInstructionsOnlyFamilyModeLogic, IModePrintSettings } from "../mw-card-data";
 import { mapToIndexedModes } from "../mw-mode-utils";
 
 
@@ -34,17 +36,27 @@ export const FarmersCardDef: FamilyCardDefinition = {
       numManalithClaimsToActivate: 2,
       modeText: "Add 2 <::population-increase-counter::> to Clan for each adjacent E-aligned Family.",
       modePrintSettings: ModePrintSettings,
-      // TODO: figure out how to implement adjacent aligned family counts
-      //  see MvmFunction_CountNumberOfAdjacentFamiliesToThisCardWithSameAlignment
-      modeLogic: UnimplementedFamilyCardModeLogic,
+      modeLogic: createMvmInstructionsOnlyFamilyModeLogic([
+        ...createAddMarkersToMyClanForCountFunctionAmountInstructionSet(
+          MvmAmountQueryFunctionId.MvmAmountQueryFunction_CountNumberOfAdjacentFamiliesToThisCardWithSameAlignment,
+          MwMarkerType.MwMarkerType_PopulationIncreaseCounter,
+        ),
+        ...createAddMarkersToMyClanForCountFunctionAmountInstructionSet(
+          MvmAmountQueryFunctionId.MvmAmountQueryFunction_CountNumberOfAdjacentFamiliesToThisCardWithSameAlignment,
+          MwMarkerType.MwMarkerType_PopulationIncreaseCounter,
+        ),
+      ]),
     },
     {
       numManalithClaimsToActivate: 4,
       modeText: "Add 1 <::population-increase-counter::> to Tribe for each adjacent E-aligned Family.",
       modePrintSettings: ModePrintSettings,
-      // TODO: figure out how to implement adjacent aligned family counts
-      //  see MvmFunction_CountNumberOfAdjacentFamiliesToThisCardWithSameAlignment
-      modeLogic: UnimplementedFamilyCardModeLogic,
+      modeLogic: createMvmInstructionsOnlyFamilyModeLogic([
+        ...createAddMarkersToMyTribeForCountFunctionAmountInstructionSet(
+          MvmAmountQueryFunctionId.MvmAmountQueryFunction_CountNumberOfAdjacentFamiliesToThisCardWithSameAlignment,
+          MwMarkerType.MwMarkerType_PopulationIncreaseCounter,
+        ),
+      ]),
     },
   ]),
   onCardPickData: {

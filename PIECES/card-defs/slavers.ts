@@ -1,7 +1,10 @@
 import { FamilyCardDefs } from "../../../protobufs/protofiles-out/manawave-season-zero-1";
+import { MwMarkerType } from "../../../protobufs/protofiles-out/manawave-types";
+import { MvmAmountQueryFunctionId } from "../../../protobufs/protofiles-out/manawave-vm";
+import { createAddMarkersToMyTribeForCountFunctionAmountInstructionSet, createAddMarkersToMyTribeInstructionSet } from "../../manawave-virtual-machine/mvm-instructions-factory";
 import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
-import { UnimplementedFamilyCardModeLogic } from "../mw-card-data";
+import { createMvmInstructionsOnlyFamilyModeLogic } from "../mw-card-data";
 import { mapToIndexedModes } from "../mw-mode-utils";
 
 
@@ -18,14 +21,20 @@ export const SlaversCardDef: FamilyCardDefinition = {
     {
       numManalithClaimsToActivate: 0,
       modeText: "Add 1 <::attack-counter::> to Tribe.",
-      modeLogic: UnimplementedFamilyCardModeLogic,
+      modeLogic: createMvmInstructionsOnlyFamilyModeLogic([
+        ...createAddMarkersToMyTribeInstructionSet(MwMarkerType.MwMarkerType_AttackCounter, 1),
+      ]),
     },
     {
-      // TODO: figure out how to implement this
-      //  see MvmFunction_CountNumberOfPopulationTokensOnOpposingClan
       numManalithClaimsToActivate: 2,
       modeText: "Add 1 <::attack-counter::> to Tribe for each <::population-token::> on opposing Clan. Take 1 <::soulstain-token::>.",
-      modeLogic: UnimplementedFamilyCardModeLogic,
+      modeLogic: createMvmInstructionsOnlyFamilyModeLogic([
+        ...createAddMarkersToMyTribeForCountFunctionAmountInstructionSet(
+          MvmAmountQueryFunctionId.MvmAmountQueryFunction_CountNumberOfPopulationTokensOnOpposingClan,
+          MwMarkerType.MwMarkerType_PopulationIncreaseCounter,
+        ),
+        ...createAddMarkersToMyTribeInstructionSet(MwMarkerType.MwMarkerType_SoulstainToken, 1),
+      ]),
     },
   ]),
   onCardPickData: {

@@ -1,7 +1,14 @@
 import { FamilyCardDefs } from "../../../protobufs/protofiles-out/manawave-season-zero-1";
+import { MwMarkerType } from "../../../protobufs/protofiles-out/manawave-types";
+import { MvmAmountQueryFunctionId } from "../../../protobufs/protofiles-out/manawave-vm";
+import { 
+  createAddMarkersToMyClanForCountFunctionAmountInstructionSet,
+  createAddMarkersToMyTribeForCountFunctionAmountInstructionSet,
+  createRemoveMarkersFromMyTribeForCountFunctionAmountInstructionSet
+} from "../../manawave-virtual-machine/mvm-instructions-factory";
 import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
-import { IModePrintSettings, UnimplementedFamilyCardModeLogic } from "../mw-card-data";
+import { createMvmInstructionsOnlyFamilyModeLogic, IModePrintSettings } from "../mw-card-data";
 import { mapToIndexedModes } from "../mw-mode-utils";
 
 
@@ -25,17 +32,31 @@ export const RuggedShepherdsCardDef: FamilyCardDefinition = {
       numManalithClaimsToActivate: 0,
       modeText: "Add 1 <::population-increase-counter::> to Clan for each adjacent Family.",
       modePrintSettings: ModePrintSettings,
-      // TODO: figure out how to apply adjacent family counts as counters
-      //  see MvmFunction_CountNumberOfAdjacentFamiliesToThisCard
-      modeLogic: UnimplementedFamilyCardModeLogic,
+      modeLogic: createMvmInstructionsOnlyFamilyModeLogic([
+        ...createAddMarkersToMyClanForCountFunctionAmountInstructionSet(
+          MvmAmountQueryFunctionId.MvmAmountQueryFunction_CountNumberOfAdjacentFamiliesToThisCard,
+          MwMarkerType.MwMarkerType_PopulationIncreaseCounter,
+        ),
+      ]),
     },
     {
       numManalithClaimsToActivate: 2,
       modeText: "Add 2 <::population-increase-counter::> to Clan for each adjacent Family. Reduce total by 1 for each <::soulstain-token::> your Tribe has.",
       modePrintSettings: ModePrintSettings,
-      // TODO: figure out how to apply adjacent family counts as counters, then reduce by soulstain tokens
-      //  see MvmFunction_CountNumberOfAdjacentFamiliesToThisCard
-      modeLogic: UnimplementedFamilyCardModeLogic,
+      modeLogic: createMvmInstructionsOnlyFamilyModeLogic([
+        ...createAddMarkersToMyClanForCountFunctionAmountInstructionSet(
+          MvmAmountQueryFunctionId.MvmAmountQueryFunction_CountNumberOfAdjacentFamiliesToThisCard,
+          MwMarkerType.MwMarkerType_PopulationIncreaseCounter,
+        ),
+        ...createAddMarkersToMyTribeForCountFunctionAmountInstructionSet(
+          MvmAmountQueryFunctionId.MvmAmountQueryFunction_CountNumberOfAdjacentFamiliesToThisCard,
+          MwMarkerType.MwMarkerType_PopulationIncreaseCounter,
+        ),
+        ...createRemoveMarkersFromMyTribeForCountFunctionAmountInstructionSet(
+          MvmAmountQueryFunctionId.MvmAmountQueryFunction_CountNumberOfMySoulstainTokens,
+          MwMarkerType.MwMarkerType_PopulationIncreaseCounter,
+        ),
+      ]),
     },
   ]),
   onCardPickData: {
