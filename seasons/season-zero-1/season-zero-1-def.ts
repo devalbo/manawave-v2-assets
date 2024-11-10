@@ -1,4 +1,4 @@
-import { ISeason } from "../../type-defs/season-defs";
+import { INoPickFamilyEffect, ISeason } from "../../type-defs/season-defs";
 import { getPlayerCardsForTotem } from "../../type-defs/totem-defs";
 import { SEASON_ZERO_1_PBID } from "../season-id-defs";
 import { ClanOfDiversityData } from "./clans/clan-of-diversity";
@@ -28,6 +28,16 @@ const allFamilyCards = [
   ...getPlayerCardsForTotem(SPIRITS_TOTEM_DEF, "OSB"),
 ];
 
+const SeasonZero1_NoPickFamilyEffect: INoPickFamilyEffect = {
+  title: "No Family",
+  text: "Add 2 population tokens to clan.",
+  onFamilyCardPlacement: () => {    // run this when card is placed by player on board
+    return {
+      numPopulationTokensToAddToClan: 2,
+    }
+  }
+}
+
 
 export const SeasonZero1: ISeason = {
   seasonName: "Season Zero - 1",
@@ -52,4 +62,6 @@ export const SeasonZero1: ISeason = {
   ],
 
   allFamilyCards,
+
+  noPickFamilyEffect: SeasonZero1_NoPickFamilyEffect,
 };

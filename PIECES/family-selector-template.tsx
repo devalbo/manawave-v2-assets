@@ -10,7 +10,6 @@ export interface IMwFamilySelectorData {
   totems: Totems[];
   onCardPickData: OnCardPickData;
   playerId: PlayerId
-  // playerSide: PlayerSide
 }
 
 // const MW_DOC_SITE_PREFIX = "";
