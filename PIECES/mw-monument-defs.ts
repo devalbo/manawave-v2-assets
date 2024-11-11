@@ -24,52 +24,63 @@ const createMonumentCardWithPrintSettings = (
   return retVal;
 }
 
-const MonumentPrintSettings_FontSize12_ImageSize12 = {
+const MonumentPrintSettings_Size12 = {
   fontSize: 12, 
   imageSize: 12,
 }
 
-const MonumentPrintSettings_FontSize13_ImageSize13 = {
+const MonumentPrintSettings_Size13 = {
   fontSize: 13,
   imageSize: 13,
 }
 
-const MonumentPrintSettings_FontSize14_ImageSize14 = {
+const MonumentPrintSettings_Size14 = {
   fontSize: 14,
   imageSize: 14,
+}
+
+const MonumentPrintSettings_Size15 = {
+  fontSize: 15,
+  imageSize: 15,
 }
 
 
 export const getMonumentDefs = (): IMwMonumentData[] => {
 
   const retVal = [
-    MonumentOfLifeData,
+    createMonumentCardWithPrintSettings(
+      MonumentOfLifeData,
+      MonumentPrintSettings_Size14,
+    ),
     MonumentOfSacrificeData,
-    MonumentOfDiversityData,
-
+    createMonumentCardWithPrintSettings(
+      MonumentOfDiversityData,
+      MonumentPrintSettings_Size14,
+    ),
+    
     createMonumentCardWithPrintSettings(
       MonumentOfJusticeData,
-      MonumentPrintSettings_FontSize12_ImageSize12,
+      MonumentPrintSettings_Size12,
     ),
     createMonumentCardWithPrintSettings(
       MonumentOfTranquilityData,
-      MonumentPrintSettings_FontSize12_ImageSize12,
+      MonumentPrintSettings_Size12,
     ),
     createMonumentCardWithPrintSettings(
       MonumentOfMagicData,
-      MonumentPrintSettings_FontSize12_ImageSize12,
+      MonumentPrintSettings_Size12,
     ),
     createMonumentCardWithPrintSettings(
       MonumentOfNatureData,
-      MonumentPrintSettings_FontSize12_ImageSize12,
+      MonumentPrintSettings_Size12,
     ),
     createMonumentCardWithPrintSettings(
       MonumentOfWarData,
-      MonumentPrintSettings_FontSize12_ImageSize12,
+      MonumentPrintSettings_Size12,
     ),
     createMonumentCardWithPrintSettings(
       MonumentOfPeaceData,
-      MonumentPrintSettings_FontSize12_ImageSize12,
+      MonumentPrintSettings_Size12,
     ),
   ];
 
