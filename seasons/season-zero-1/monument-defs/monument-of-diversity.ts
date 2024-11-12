@@ -12,7 +12,7 @@ export const MonumentOfDiversityData: MonumentCard = {
     seasonMonumentCardId: MonumentCardDefs.MonumentOfDiversty,
   },
   isDefault: true,
-  text: "Resolve: If COUNT(<::manawave-round-token::>) >= 7, count number of Families for each Clan on both Tribes. Take smallest count for each Tribe and compare them. Tribe with higher Family count wins. If there is still a tie, resume the Manawave.",
+  text: "Resolve: If COUNT(<::manawave-round-token::>) >= 7, count number of Families for each Clan on both Tribes. Take smallest count for each Tribe and compare them. Tribe with higher Family count wins. If still tied, resume Manawave.",
 };
 
 

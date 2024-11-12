@@ -12,7 +12,7 @@ export const MonumentOfSacrificeData: MonumentCard = {
     seasonMonumentCardId: MonumentCardDefs.MonumentOfSacrifice,
   },
   isDefault: true,
-  text: "Resolve: If COUNT(<::manawave-round-token::>) >= 7, COUNT(<::soulstain-token::>) for both Tribes. Tribe with lesser COUNT(<::soulstain-token::>) wins. If there is still a tie, resume the Manawave.",
+  text: "Resolve: If COUNT(<::manawave-round-token::>) >= 7, COUNT(<::soulstain-token::>) for both Tribes. Tribe with lesser COUNT(<::soulstain-token::>) wins. If still tied, resume Manawave.",
 };
 
 

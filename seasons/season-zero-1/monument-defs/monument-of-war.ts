@@ -15,7 +15,7 @@ export const MonumentOfWarData: MonumentCard = {
   "If either Clan has at least COUNT(<::manawave-round-token::>) x [2] >= COUNT(<::attack-counter::>), " +
   "the Tribe of the Clan with higher COUNT(<::attack-counter::>) wins. If there is a tie, determine " +
   "COUNT(<::attack-counter::>) for both Tribes. The Tribe with the highest COUNT(<::attack-counter::>) " +
-  "wins. If there is still a tie, resume the Manawave.",
+  "wins. If still tied, resume Manawave.",
 }
 
 

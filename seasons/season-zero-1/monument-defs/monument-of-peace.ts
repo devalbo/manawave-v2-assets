@@ -15,7 +15,7 @@ export const MonumentOfPeaceData: MonumentCard = {
   "COUNT(<::attack-counter::>) for each adjacent Clan. The Clan with the lowest " +
   "COUNT(<::attack-counter::>) wins. If there is a tie, determine COUNT(<::attack-counter::>) " +
   "for both Tribes. The Tribe with the lowest COUNT(<::attack-counter::>) wins. " +
-  "If there is still a tie, resume the Manawave.",
+  "If still tied, resume Manawave.",
 }
 
 
