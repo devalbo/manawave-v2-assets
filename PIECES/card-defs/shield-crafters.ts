@@ -10,6 +10,7 @@ import { mapToIndexedModes } from "../mw-mode-utils";
 export const ShieldCraftersCardDef: FamilyCardDefinition = {
   pieceType: 'family-card',
   title: "Shield Crafters",
+  newName: "Scions of Shcraft, First Shield Crafter",
   totemId: 'tiger',
   familyCardDefPbId: {
     seasonId: SEASON_ZERO_1_PBID,

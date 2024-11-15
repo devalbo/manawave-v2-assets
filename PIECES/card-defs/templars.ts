@@ -17,6 +17,7 @@ const ModePrintSettings: IModePrintSettings = {
 export const TemplarsCardDef: FamilyCardDefinition = {
   pieceType: 'family-card',
   title: "Templars",
+  newName: "Scions of Remtar, Touched by War",
   totemId: 'tiger',
   familyCardDefPbId: {
     seasonId: SEASON_ZERO_1_PBID,

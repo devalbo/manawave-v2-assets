@@ -10,6 +10,7 @@ import { mapToIndexedModes } from "../mw-mode-utils";
 export const ManaChannelersCardDef: FamilyCardDefinition = {
   pieceType: 'family-card',
   title: "Mana Channelers",
+  newName: "Line of Manur, Spirit Friend",
   totemId: 'spirits',
   familyCardDefPbId: {
     seasonId: SEASON_ZERO_1_PBID,

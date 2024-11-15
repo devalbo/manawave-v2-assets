@@ -11,6 +11,7 @@ import { mapToIndexedModes } from "../mw-mode-utils";
 export const SlaversCardDef: FamilyCardDefinition = {
   pieceType: 'family-card',
   title: "Slavers",
+  newName: "Scions of Slavur, Destroyer of Clans",
   totemId: 'tiger',
   familyCardDefPbId: {
     seasonId: SEASON_ZERO_1_PBID,

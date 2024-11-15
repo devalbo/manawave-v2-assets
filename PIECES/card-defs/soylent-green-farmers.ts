@@ -15,6 +15,7 @@ const ModePrintSettings: IModePrintSettings = {
 export const SoylentGreenFarmersCardDef: FamilyCardDefinition = {
   pieceType: 'family-card',
   title: "Soylent Green Farmers",
+  newName: "Scions of Necron, Pragmatic Harvester",
   totemId: 'ox',
   familyCardDefPbId: {
     seasonId: SEASON_ZERO_1_PBID,

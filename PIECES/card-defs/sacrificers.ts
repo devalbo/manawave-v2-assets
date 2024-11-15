@@ -17,6 +17,7 @@ const ModePrintSettings: IModePrintSettings = {
 export const SacrificersCardDef: FamilyCardDefinition = {
   pieceType: 'family-card',
   title: "Sacrificers",
+  newName: "Disciples of Krife, Delver of the Spiritworld",
   totemId: 'spirits',
   familyCardDefPbId: {
     seasonId: SEASON_ZERO_1_PBID,

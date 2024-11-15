@@ -10,6 +10,7 @@ import { MwMarkerType } from "../../../protobufs/protofiles-out/manawave-types";
 export const RoadBuildersCardDef: FamilyCardDefinition = {
   pieceType: 'family-card',
   title: "Road Builders",
+  newName: "Scions of Rild, Builder of Paths",
   totemId: 'spirits',
   familyCardDefPbId: {
     seasonId: SEASON_ZERO_1_PBID,

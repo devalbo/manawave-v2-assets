@@ -10,6 +10,7 @@ import { mapToIndexedModes } from "../mw-mode-utils";
 export const ClubWieldersCardDef: FamilyCardDefinition = {
   pieceType: 'family-card',
   title: "Club Wielders",
+  newName: "Bastards of Klurb, Stick Improver",
   totemId: 'tiger',
   familyCardDefPbId: {
     seasonId: SEASON_ZERO_1_PBID,

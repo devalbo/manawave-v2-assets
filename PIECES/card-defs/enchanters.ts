@@ -11,6 +11,7 @@ import { mapToIndexedModes } from "../mw-mode-utils";
 export const EnchantersCardDef: FamilyCardDefinition = {
   pieceType: 'family-card',
   title: "Enchanters",
+  newName: "Line of Ankant, Spirits Imbuer",
   totemId: 'spirits',
   familyCardDefPbId: {
     seasonId: SEASON_ZERO_1_PBID,

@@ -17,6 +17,7 @@ const ModePrintSettings: IModePrintSettings = {
 export const ChannelersCardDef: FamilyCardDefinition = {
   pieceType: 'family-card',
   title: "Channelers",
+  newName: "Line of Krebor, Spirits Channeler",
   totemId: 'spirits',
   familyCardDefPbId: {
     seasonId: SEASON_ZERO_1_PBID,

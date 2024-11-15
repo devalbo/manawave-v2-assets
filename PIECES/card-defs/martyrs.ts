@@ -14,6 +14,7 @@ import { mapToIndexedModes } from "../mw-mode-utils";
 export const MartyrsCardDef: FamilyCardDefinition = {
   pieceType: 'family-card',
   title: "Martyrs",
+  newName: "Line of Perit, Clan Martyr",
   totemId: 'tiger',
   familyCardDefPbId: {
     seasonId: SEASON_ZERO_1_PBID,

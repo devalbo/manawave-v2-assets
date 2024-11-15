@@ -10,6 +10,7 @@ import { mapToIndexedModes } from "../mw-mode-utils";
 export const GrasslandShepherdsCardDef: FamilyCardDefinition = {
   pieceType: 'family-card',
   title: "Grassland Shepherds",
+  newName: "Line of Brap, Guide of the Broken",
   totemId: 'ox',
   familyCardDefPbId: {
     seasonId: SEASON_ZERO_1_PBID,

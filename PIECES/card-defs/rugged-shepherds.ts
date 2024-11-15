@@ -21,6 +21,7 @@ const ModePrintSettings: IModePrintSettings = {
 export const RuggedShepherdsCardDef: FamilyCardDefinition = {
   pieceType: 'family-card',
   title: "Rugged Shepherds",
+  newName: "Scions of Shug, Uniter of Kin",
   totemId: 'ox',
   familyCardDefPbId: {
     seasonId: SEASON_ZERO_1_PBID,

@@ -10,6 +10,7 @@ import { mapToIndexedModes } from "../mw-mode-utils";
 export const DefendersCardDef: FamilyCardDefinition = {
   pieceType: 'family-card',
   title: "Defenders",
+  newName: "Offspring of Shold, Defender",
   totemId: 'tiger',
   familyCardDefPbId: {
     seasonId: SEASON_ZERO_1_PBID,

@@ -17,6 +17,7 @@ const ModePrintSettings: IModePrintSettings = {
 export const FarmersCardDef: FamilyCardDefinition = {
   pieceType: 'family-card',
   title: "Farmers",
+  newName: "Line of Armish, Harvester",
   totemId: 'ox',
   familyCardDefPbId: {
     seasonId: SEASON_ZERO_1_PBID,

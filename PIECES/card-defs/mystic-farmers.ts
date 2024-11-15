@@ -10,6 +10,7 @@ import { mapToIndexedModes } from "../mw-mode-utils";
 export const MysticFarmersCardDef: FamilyCardDefinition = {
   pieceType: 'family-card',
   title: "Mystic Farmers",
+  newName: "Line of Marm, Clan Mystic",
   totemId: 'ox',
   familyCardDefPbId: {
     seasonId: SEASON_ZERO_1_PBID,

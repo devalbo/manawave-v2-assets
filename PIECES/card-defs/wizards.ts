@@ -24,6 +24,7 @@ const ON_CARD_PICK_DATA: OnCardPickData = {
 export const WizardsCardDef: FamilyCardDefinition = {
   pieceType: 'family-card',
   title: "Wizards",
+  newName: "Scions of Krez, Gazer into the Spirit World",
   totemId: 'spirits',
   familyCardDefPbId: {
     seasonId: SEASON_ZERO_1_PBID,

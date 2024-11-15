@@ -10,6 +10,7 @@ import { mapToIndexedModes } from "../mw-mode-utils";
 export const ForestHuntersCardDef: FamilyCardDefinition = {
   pieceType: 'family-card',
   title: "MW Forest Hunters",
+  newName: "Line of Arbish, Elite Hunter",
   totemId: 'ox',
   familyCardDefPbId: {
     seasonId: SEASON_ZERO_1_PBID,

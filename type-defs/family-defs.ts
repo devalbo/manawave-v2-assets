@@ -7,6 +7,7 @@ import { TotemId } from "./totem-type-defs"
 
 export type FamilyCardDefinition = {
   readonly title: string
+  readonly newName: string
   readonly text: string
   readonly totemId: TotemId
   readonly familyCardDefPbId: FamilyCardDefPbId
