@@ -1,5 +1,5 @@
-import { FamilyCardDefs } from "../../../protobufs/protofiles-out/manawave-season-zero-1";
-import { MwMarkerType } from "../../../protobufs/protofiles-out/manawave-types";
+import { FamilyCardDefs } from "@mw-protobufs/manawave-season-zero-1";
+import { MwMarkerType } from "@mw-protobufs/manawave-types";
 import { createAddMarkersToMyClanInstructionSet, createAddMarkersToMyTribeInstructionSet } from "../../manawave-virtual-machine/mvm-instructions-factory";
 import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";

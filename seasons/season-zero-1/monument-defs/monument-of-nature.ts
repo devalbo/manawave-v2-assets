@@ -1,6 +1,6 @@
 import { bpqCountMarkersForPlayerTribe, bpqGetMarkerCountForClanAtLeyline } from "../../../../game-data/boardpieces-query";
-import { MonumentCardDefs } from "../../../../protobufs/protofiles-out/manawave-season-zero-1";
-import { GameOutcome, MwMarkerType } from "../../../../protobufs/protofiles-out/manawave-types";
+import { MonumentCardDefs } from "@mw-protobufs/manawave-season-zero-1";
+import { GameOutcome, MwMarkerType } from "@mw-protobufs/manawave-types";
 import { MonumentCard, MonumentInPlayInstance } from "../../../type-defs/monument-defs";
 import { SEASON_ZERO_1_PBID } from "../../season-id-defs";
 

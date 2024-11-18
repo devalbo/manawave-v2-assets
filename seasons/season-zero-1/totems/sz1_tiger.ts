@@ -6,8 +6,8 @@ import { SlaversCardDef } from "../../../PIECES/card-defs/slavers";
 import { TemplarsCardDef } from "../../../PIECES/card-defs/templars";
 import { FamilyCardInstance } from "../../../PIECES/type-defs/type-defs";
 import { ITotemDetails } from "../../../type-defs/totem-defs";
-import { TotemDefs } from "../../../../protobufs/protofiles-out/manawave-season-zero-1";
-import { PlayerSideId, TotemPbId } from "../../../../protobufs/protofiles-out/manawave-types";
+import { TotemDefs } from "@mw-protobufs/manawave-season-zero-1";
+import { PlayerSideId, TotemPbId } from "@mw-protobufs/manawave-types";
 import { SEASON_ZERO_1_PBID } from "../../season-id-defs";
 
 

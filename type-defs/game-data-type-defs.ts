@@ -1,7 +1,7 @@
 import { PlayerSlotId, PlayerSide, PlayerDefaultStrategy } from "../../game-data/game-play-data"
 import { OnCardPickData } from "../PIECES/mw-card-data"
-import { ClanCardStockpile } from "../../protobufs/protofiles-out/manawave-board"
-import { GameOutcome, LeylineDistanceFromSource, PlayerPb } from "../../protobufs/protofiles-out/manawave-types"
+import { ClanCardStockpile } from "@mw-protobufs/manawave-board"
+import { GameOutcome, LeylineDistanceFromSource, PlayerPb } from "@mw-protobufs/manawave-types"
 import { BoardPiecesState } from "../../game-play/local-game-state/local-board-state-types"
 
 

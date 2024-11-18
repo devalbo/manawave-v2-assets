@@ -1,5 +1,5 @@
-import { ClanCardStockpile, TribeCardStockpile } from "../../../protobufs/protofiles-out/manawave-board"
-import { ClanCardInstancePbId, FamilyCardInstancePbId, MwMarkerType } from "../../../protobufs/protofiles-out/manawave-types"
+import { ClanCardStockpile, TribeCardStockpile } from "@mw-protobufs/manawave-board"
+import { ClanCardInstancePbId, FamilyCardInstancePbId, MwMarkerType } from "@mw-protobufs/manawave-types"
 import { MwMarkerTypeToken, MwMarkerTypeCounter, createMwTokenCount, createMwCounterCount } from "../../type-defs/branded-marker-types"
 import { ClanCardDefinition } from "../../type-defs/clan-defs"
 import { FamilyCardDefinition } from "../../type-defs/family-defs"

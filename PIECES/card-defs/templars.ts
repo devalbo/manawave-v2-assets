@@ -1,11 +1,11 @@
-import { FamilyCardDefs } from "../../../protobufs/protofiles-out/manawave-season-zero-1";
+import { FamilyCardDefs } from "@mw-protobufs/manawave-season-zero-1";
 import { createAddMarkersToMyClanInstructionSet, createAddMarkersToMyClanOnConditionInstructionSet, createAddMarkersToMyTribeInstructionSet, createAddMarkersToMyTribeOnConditionInstructionSet } from "../../manawave-virtual-machine/mvm-instructions-factory";
-import { MwMarkerType } from "../../../protobufs/protofiles-out/manawave-types";
+import { MwMarkerType } from "@mw-protobufs/manawave-types";
 import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
 import { createMvmInstructionsOnlyFamilyModeLogic, IModePrintSettings } from "../mw-card-data";
 import { mapToIndexedModes } from "../mw-mode-utils";
-import { MvmBoolQueryFunctionId } from "../../../protobufs/protofiles-out/manawave-vm";
+import { MvmBoolQueryFunctionId } from "@mw-protobufs/manawave-vm";
 
 
 const ModePrintSettings: IModePrintSettings = {

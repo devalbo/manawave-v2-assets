@@ -4,7 +4,7 @@ import { ManaflowProcPoint } from "../../game-play/local-game-state/channel-clan
 import { BoardPiecesState } from "../../game-play/local-game-state/local-board-state-types";
 import { createMwBoardPlayerSideCoordinateKey } from "../type-defs/branded-string-types";
 import { Totems } from "./totems";
-import { ManawaveVmInstruction } from "../../protobufs/protofiles-out/manawave-vm";
+import { ManawaveVmInstruction } from "@mw-protobufs/manawave-vm";
 
 export interface IModePrintSettings {
   fontSize: number    // defaults to 16

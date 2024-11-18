@@ -1,5 +1,5 @@
 import { PlayerSide } from "../../game-data/game-play-data";
-import { TotemPbId } from "../../protobufs/protofiles-out/manawave-types";
+import { TotemPbId } from "@mw-protobufs/manawave-types";
 import { FamilyCardInstance } from "../PIECES/type-defs/type-defs";
 
 

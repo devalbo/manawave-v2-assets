@@ -1,4 +1,4 @@
-import { FamilyCardDefPbId } from "../../protobufs/protofiles-out/manawave-types"
+import { FamilyCardDefPbId } from "@mw-protobufs/manawave-types"
 import { IMwCardModeData } from "../PIECES/mw-card-data"
 import { FamilyCardLogic } from "./game-data-type-defs"
 import { FamilyCardType } from "./piece-type-defs"
