@@ -1,6 +1,6 @@
-import { PlayerSide } from "../../mw-v2-game-engine/gameboard/game-play-data";
 import { ClanCardDefPbId, LeylineDistanceFromSource, TotemPbId } from "../mw-v2-protobufs/protofiles-out/manawave-types";
-import { toTotemIdStr } from "../../mw-v2-game-engine/gameboard/pb-id-str-mapping";
+import { toTotemIdStr } from "./pb-id-str-mapping";
+import { PlayerSide } from "./game-play-data";
 
 
 type BrandedString<T> = string & { __brand: T };
