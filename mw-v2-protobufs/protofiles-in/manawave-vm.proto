@@ -1,0 +1,175 @@
+syntax = "proto3";
+
+import "manawave-types.proto";
+import "manawave-board.proto";
+
+enum MvmRegisterId {
+  MvmRegister_NotSet = 0;
+  MvmRegister_1 = 1;
+  MvmRegister_2 = 2;
+  MvmRegister_3 = 3;
+}
+
+enum MvmAmountQueryFunctionId {
+  MvmAmountQueryFunction_NotSet = 0;
+  MvmAmountQueryFunction_CountNumberOfPopulationTokensOnOpposingClan = 1;
+  MvmAmountQueryFunction_CountNumberOfAdjacentFamiliesToThisCard = 2;
+  MvmAmountQueryFunction_CountNumberOfMySoulstainTokens = 3;
+  MvmAmountQueryFunction_CountNumberOfAdjacentFamiliesToThisCardWithSameAlignment = 4;
+}
+
+enum MvmBoolQueryFunctionId {
+  MvmBoolQueryFunction_NotSet = 0;
+  MvmBoolQueryFunction_DoesMyTribeHaveAnySoulstainTokens = 1;
+}
+
+
+message MvmRegisterData_PlayerSide {
+  PlayerSideId playerSideId = 1;
+}
+
+message MvmRegisterData_ClanCoordinateValue {
+  BoardPlayerSideCoordinate clanCoordinate = 1;
+}
+
+message MvmRegisterData_MarkerTypeAndQuantity {
+  MwMarkerType markerType = 1;
+  int32 quantity = 2;
+}
+
+message MvmRegisterData_IntAmount {
+  int32 amount = 1;
+}
+
+
+message MvmRegisterData {
+  oneof data {
+    MvmRegisterData_PlayerSide playerSide = 1;
+    MvmRegisterData_ClanCoordinateValue clanCoordinateValue = 2;
+    MvmRegisterData_MarkerTypeAndQuantity markerTypeAndQuantity = 3;
+    MvmRegisterData_IntAmount intAmount = 4;
+  }
+}
+
+
+message MvmInstruction_DeferToOnManaflowProcImpl { }
+
+
+message MvmInstruction_SetMarkerRegister_ToMarkerTypeAndQuantity {
+  MvmRegisterId markerRegisterId = 1;
+  MvmRegisterData_MarkerTypeAndQuantity registerData = 2;
+}
+
+message MvmInstruction_SetMarkerRegisterAmount_ToRegisterAmount {
+  MvmRegisterId markerRegisterId = 1;
+  MvmRegisterId amountRegisterId = 2;
+}
+
+message MvmInstruction_SetMarkerRegisterAmount_ToMvmAmountQueryOutput {
+  MvmRegisterId markerRegisterId = 1;
+  MwMarkerType markerType = 2;
+  MvmAmountQueryFunctionId mvmAmountQueryFunctionId = 3;
+  bool multiplyOutputByNegative1 = 4;
+}
+
+message MvmInstruction_AdjustMarkerRegisterAmount_ByAmount {
+  MvmRegisterId markerRegisterId = 1;
+  int32 amount = 2;
+}
+
+message MvmInstruction_AdjustMarkerRegisterAmount_ByRegisterAmount {
+  MvmRegisterId markerRegisterId = 1;
+  MvmRegisterId amountRegisterId = 2;
+  bool subtractAdjustmentAmountInsteadOfAdd = 3;
+}
+
+message MvmInstruction_AdjustMarkerRegisterAmount_ByMvmAmountQueryOutput {
+  MvmRegisterId markerRegisterId = 1;
+  MvmAmountQueryFunctionId mvmAmountQueryFunctionId = 2;
+  bool subtractAdjustmentAmountInsteadOfAdd = 3;
+}
+
+
+
+message MvmInstruction_SetAmountRegisterValue_ToMvmAmountQueryOutput {
+  MvmRegisterId amountRegisterId = 1;
+  MvmAmountQueryFunctionId mvmAmountQueryFunctionId = 2;
+}
+
+
+
+message MvmInstruction_ApplyMarkerRegisterToMyTribe {
+  MvmRegisterId markerRegisterId = 1;
+}
+
+message MvmInstruction_ApplyMarkerRegisterToClan_ForClanCoordinateRegister {
+  MvmRegisterId markerRegisterId = 1;
+  MvmRegisterId clanCoordinateRegisterId = 2;
+}
+
+message MvmInstruction_ApplyMarkerRegisterToAdjacentClans_ForClanCoordinateRegister {
+  MvmRegisterId markerRegisterId = 1;
+  MvmRegisterId clanCoordinateRegisterId = 2;
+}
+
+message MvmInstruction_ApplyMarkerRegisterToAdjacentFamilies_ForFamilyCoordinateRegister {
+  MvmRegisterId markerRegisterId = 1;
+  MvmRegisterId familyCoordinateRegisterId = 2;
+}
+
+
+message MvmInstruction_SetRegisterData_ToMyPlayerSide {
+  MvmRegisterId playerSideRegisterId = 1;
+}
+
+message MvmInstruction_SetRegisterData_ToMyClanCoordinate {
+  MvmRegisterId clanCoordinateRegisterId = 1;
+}
+
+message MvmInstruction_SetRegisterData_ToMyFamilyCoordinate {
+  MvmRegisterId familyCoordinateRegisterId = 1;
+}
+
+
+
+message MvmAtomicInstruction {
+  oneof instruction {
+    MvmInstruction_SetMarkerRegister_ToMarkerTypeAndQuantity setMarkerRegister = 1;
+    MvmInstruction_SetMarkerRegisterAmount_ToRegisterAmount setMarkerRegisterAmountToRegisterAmount = 2;
+    MvmInstruction_SetMarkerRegisterAmount_ToMvmAmountQueryOutput setMarkerRegisterAmountToMvmAmountQueryOutput = 3;
+
+    MvmInstruction_AdjustMarkerRegisterAmount_ByAmount adjustMarkerRegisterAmountByAmount = 4;
+    MvmInstruction_AdjustMarkerRegisterAmount_ByRegisterAmount adjustMarkerRegisterAmountByRegisterAmount = 5;
+    MvmInstruction_AdjustMarkerRegisterAmount_ByMvmAmountQueryOutput adjustMarkerRegisterAmountByMvmAmountQueryOutput = 6;
+
+    MvmInstruction_SetAmountRegisterValue_ToMvmAmountQueryOutput setAmountRegisterValueToMvmAmountQueryOutput = 10;
+
+    MvmInstruction_ApplyMarkerRegisterToMyTribe applyMarkerRegisterToMyTribe = 20;
+    MvmInstruction_ApplyMarkerRegisterToClan_ForClanCoordinateRegister applyMarkerRegisterToClanForClanCoordinateRegister = 21;
+    MvmInstruction_ApplyMarkerRegisterToAdjacentClans_ForClanCoordinateRegister applyMarkerRegisterToAdjacentClansForClanCoordinateRegister = 22;
+    MvmInstruction_ApplyMarkerRegisterToAdjacentFamilies_ForFamilyCoordinateRegister applyMarkerRegisterToAdjacentFamiliesForFamilyCoordinateRegister = 23;
+
+    MvmInstruction_SetRegisterData_ToMyPlayerSide setRegisterDataToMyPlayerSide = 30;
+    MvmInstruction_SetRegisterData_ToMyClanCoordinate setRegisterDataToMyClanCoordinate = 31;
+    MvmInstruction_SetRegisterData_ToMyFamilyCoordinate setRegisterDataToMyFamilyCoordinate = 32;
+  }
+}
+
+
+message MvmInstruction_Conditional_RunAtomicInstructions {
+  MvmBoolQueryFunctionId mvmBoolQueryFunctionId = 1;
+  repeated MvmAtomicInstruction onTrueInstructions = 2;
+  repeated MvmAtomicInstruction onFalseInstructions = 3;
+}
+
+
+
+message ManawaveVmInstruction {
+  oneof instruction {
+    MvmAtomicInstruction atomicInstruction = 1;
+
+    MvmInstruction_Conditional_RunAtomicInstructions conditionalRunAtomicInstructions = 10;
+
+    MvmInstruction_DeferToOnManaflowProcImpl deferToOnManaflowProcImpl = 255;
+  }
+}

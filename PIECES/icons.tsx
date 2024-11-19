@@ -12,7 +12,7 @@ import {
   ManaLevelTokenDataUrl,
   ManalithClaimCounterDataUrl,
  } from "./token-counter-icons";
-import { MwMarkerType } from "@mw-protobufs/manawave-types";
+import { MwMarkerType } from "../mw-v2-protobufs/protofiles-out/manawave-types";
 
 
 export const createImgDataUrlFromTag = (tag: TokenCounterTypeTags) => {

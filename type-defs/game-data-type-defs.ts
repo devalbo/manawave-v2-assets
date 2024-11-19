@@ -1,8 +1,8 @@
-import { PlayerSlotId, PlayerSide, PlayerDefaultStrategy } from "../../game-data/game-play-data"
+import { PlayerSlotId, PlayerSide, PlayerDefaultStrategy } from "../../mw-v2-game-engine/gameboard/game-play-data"
 import { OnCardPickData } from "../PIECES/mw-card-data"
 import { ClanCardStockpile } from "@mw-protobufs/manawave-board"
 import { GameOutcome, LeylineDistanceFromSource, PlayerPb } from "@mw-protobufs/manawave-types"
-import { BoardPiecesState } from "../../game-play/local-game-state/local-board-state-types"
+import { BoardPiecesState } from "../../mw-v2-game-engine/local-game-state/local-board-state-types"
 
 
 export interface IPlayer {

@@ -1,10 +1,10 @@
-import { FamilyCardDefs } from "@mw-protobufs/manawave-season-zero-1";
+import { FamilyCardDefs } from "../../mw-v2-protobufs/protofiles-out/manawave-season-zero-1";
 import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
 import { mapToIndexedModes } from "../mw-mode-utils";
 import { createMvmInstructionsOnlyFamilyModeLogic } from "../mw-card-data";
 import { createAddMarkersToMyClanInstructionSet, createAddMarkersToMyTribeInstructionSet } from "../../manawave-virtual-machine/mvm-instructions-factory";
-import { MwMarkerType } from "@mw-protobufs/manawave-types";
+import { MwMarkerType } from "../../mw-v2-protobufs/protofiles-out/manawave-types";
 
 
 export const RoadBuildersCardDef: FamilyCardDefinition = {

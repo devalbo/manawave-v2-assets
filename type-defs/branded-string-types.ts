@@ -1,11 +1,12 @@
-import { PlayerSide } from "../../game-data/game-play-data";
-import { ClanCardDefPbId, LeylineDistanceFromSource, TotemPbId } from "@mw-protobufs/manawave-types";
-import { MAX_NUM_RANKS_PER_CLAN_COLUMN } from "../../game-play/phase-views/constants";
-import { toTotemIdStr } from "../../game-data/pb-id-str-mapping";
+import { PlayerSide } from "../../mw-v2-game-engine/gameboard/game-play-data";
+import { ClanCardDefPbId, LeylineDistanceFromSource, TotemPbId } from "../mw-v2-protobufs/protofiles-out/manawave-types";
+import { toTotemIdStr } from "../../mw-v2-game-engine/gameboard/pb-id-str-mapping";
 
 
 type BrandedString<T> = string & { __brand: T };
 
+
+const MAX_NUM_RANKS_PER_CLAN_COLUMN = 8;
 
 export type MwBoardPlayerSideCoordinateKey = BrandedString<'MwBoardPlayerSideCoordinateKey'>;
 

@@ -1,7 +1,5 @@
-import { bpqCountMarkersForPlayerTribe } from "../../../../game-data/boardpieces-query";
-import { MonumentCardDefs } from "@mw-protobufs/manawave-season-zero-1";
-import { GameOutcome, MwMarkerType } from "@mw-protobufs/manawave-types";
-import { MonumentCard, MonumentInPlayInstance } from "../../../type-defs/monument-defs";
+import { MonumentCardDefs } from "../../../mw-v2-protobufs/protofiles-out/manawave-season-zero-1";
+import { MonumentCard } from "../../../type-defs/monument-defs";
 import { SEASON_ZERO_1_PBID } from "../../season-id-defs";
 
 
@@ -16,27 +14,27 @@ export const MonumentOfSacrificeData: MonumentCard = {
 };
 
 
-export const MonumentOfSacrifice: MonumentInPlayInstance = {
-  ...MonumentOfSacrificeData,
-  gameLogic: {
-    onPoweredByManawave: (boardState, leyline) => {
-      const roundNumber = boardState.mwRoundNumber;
-      if (roundNumber < 7) {
-        return GameOutcome.GameOutcome_InProgress;
-      }
+// export const MonumentOfSacrifice: MonumentInPlayInstance = {
+//   ...MonumentOfSacrificeData,
+//   gameLogic: {
+//     onPoweredByManawave: (boardState, leyline) => {
+//       const roundNumber = boardState.mwRoundNumber;
+//       if (roundNumber < 7) {
+//         return GameOutcome.GameOutcome_InProgress;
+//       }
 
-      const optSoulstainCount = bpqCountMarkersForPlayerTribe(boardState, 'OPT', MwMarkerType.MwMarkerType_SoulstainToken);
-      const osbSoulstainCount = bpqCountMarkersForPlayerTribe(boardState, 'OSB', MwMarkerType.MwMarkerType_SoulstainToken);
+//       const optSoulstainCount = bpqCountMarkersForPlayerTribe(boardState, 'OPT', MwMarkerType.MwMarkerType_SoulstainToken);
+//       const osbSoulstainCount = bpqCountMarkersForPlayerTribe(boardState, 'OSB', MwMarkerType.MwMarkerType_SoulstainToken);
 
-      if (optSoulstainCount > osbSoulstainCount) {
-        return GameOutcome.GameOutcome_OsbPlayerWins;
-      }
+//       if (optSoulstainCount > osbSoulstainCount) {
+//         return GameOutcome.GameOutcome_OsbPlayerWins;
+//       }
 
-      if (osbSoulstainCount > optSoulstainCount) {
-        return GameOutcome.GameOutcome_OptPlayerWins;
-      }
+//       if (osbSoulstainCount > optSoulstainCount) {
+//         return GameOutcome.GameOutcome_OptPlayerWins;
+//       }
 
-      return GameOutcome.GameOutcome_InProgress;
-    },
-  }
-}
+//       return GameOutcome.GameOutcome_InProgress;
+//     },
+//   }
+// }

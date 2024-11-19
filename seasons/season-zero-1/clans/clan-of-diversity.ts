@@ -1,6 +1,6 @@
-import { ClanCardStockpile } from "@mw-protobufs/manawave-board";
-import { ClanCardDefs } from "@mw-protobufs/manawave-season-zero-1";
-import { MwMarkerType } from "@mw-protobufs/manawave-types";
+import { ClanCardStockpile } from "../../../mw-v2-protobufs/protofiles-out/manawave-board";
+import { ClanCardDefs } from "../../../mw-v2-protobufs/protofiles-out/manawave-season-zero-1";
+import { MwMarkerType } from "../../../mw-v2-protobufs/protofiles-out/manawave-types";
 import { mapToIndexedModes } from "../../../PIECES/mw-mode-utils";
 import { EMPTY_PLAYER_CLAN_STOCKPILE } from "../../../PIECES/type-defs/type-defs";
 import { createMwCounterCount, createMwTokenCount } from "../../../type-defs/branded-marker-types";

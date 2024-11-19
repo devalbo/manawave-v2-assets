@@ -1,6 +1,6 @@
-import { PlayerSide } from "../../game-data/game-play-data";
-import { FamilyRanksRange } from "../../game-play/phase-views/constants"
-import { LeylineDistanceFromSource } from "@mw-protobufs/manawave-types";
+import { FamilyRanksRange } from "../utils/game-engine-constants";
+import { PlayerSide } from "../../mw-v2-game-engine/gameboard/game-play-data";
+import { LeylineDistanceFromSource } from "../mw-v2-protobufs/protofiles-out/manawave-types";
 import { createMwBoardPlayerSideCoordinateKey } from "../type-defs/branded-string-types";
 import { createImgComponentFromTag } from "./icons";
 import { MwLogoPlayerSideIcon } from "./mw-logo-player-side-icon";

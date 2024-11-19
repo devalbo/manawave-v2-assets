@@ -1,7 +1,7 @@
-import { PlayerSide } from "../../game-data/game-play-data";
-import { ManaflowPointProcResult } from "../../game-play/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types";
-import { ManaflowProcPoint } from "../../game-play/local-game-state/channel-clan-manaflows/type-defs";
-import { BoardPiecesState } from "../../game-play/local-game-state/local-board-state-types";
+import { PlayerSide } from "../../mw-v2-game-engine/gameboard/game-play-data";
+import { ManaflowPointProcResult } from "../../mw-v2-game-engine/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types";
+import { ManaflowProcPoint } from "../../mw-v2-game-engine/local-game-state/channel-clan-manaflows/type-defs";
+import { BoardPiecesState } from "../../mw-v2-game-engine/local-game-state/local-board-state-types";
 import { createMwBoardPlayerSideCoordinateKey } from "../type-defs/branded-string-types";
 import { Totems } from "./totems";
 import { ManawaveVmInstruction } from "@mw-protobufs/manawave-vm";

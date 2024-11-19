@@ -1,10 +1,10 @@
+import { DefaultMonuments, TotemMonuments } from "./monuments";
 import { INoPickFamilyEffect, ISeason } from "../../type-defs/season-defs";
 import { getPlayerCardsForTotem } from "../../type-defs/totem-defs";
 import { SEASON_ZERO_1_PBID } from "../season-id-defs";
 import { ClanOfDiversityData } from "./clans/clan-of-diversity";
 import { ClanOfLifeData } from "./clans/clan-of-life";
 import { ClanOfSacrificeData } from "./clans/clan-of-sacrifice";
-import { DefaultMonuments, TotemMonuments } from "./monuments";
 import { OX_TOTEM_DEF } from "./totems/sz1_ox";
 import { SPIRITS_TOTEM_DEF } from "./totems/sz1_spirits";
 import { TIGER_TOTEM_DEF } from "./totems/sz1_tiger";

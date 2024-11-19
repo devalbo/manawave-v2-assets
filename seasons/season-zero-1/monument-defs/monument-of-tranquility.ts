@@ -1,7 +1,5 @@
-import { bpqCountMarkersForPlayerTribe, bpqGetMarkerCountForClanAtLeyline } from "../../../../game-data/boardpieces-query";
-import { MonumentCardDefs } from "@mw-protobufs/manawave-season-zero-1";
-import { GameOutcome, MwMarkerType } from "@mw-protobufs/manawave-types";
-import { MonumentCard, MonumentInPlayInstance } from "../../../type-defs/monument-defs";
+import { MonumentCardDefs } from "../../../mw-v2-protobufs/protofiles-out/manawave-season-zero-1";
+import { MonumentCard } from "../../../type-defs/monument-defs";
 import { SEASON_ZERO_1_PBID } from "../../season-id-defs";
 
 
@@ -19,38 +17,38 @@ export const MonumentOfTranquilityData: MonumentCard = {
 }
 
 
-export const MonumentOfTranquility: MonumentInPlayInstance = {
-  ...MonumentOfTranquilityData,
-  gameLogic: {
-    onPoweredByManawave: (boardState, leyline) => {
-      if (boardState.mwRoundNumber < 7) { 
-        return GameOutcome.GameOutcome_InProgress;
-      }
+// export const MonumentOfTranquility: MonumentInPlayInstance = {
+//   ...MonumentOfTranquilityData,
+//   gameLogic: {
+//     onPoweredByManawave: (boardState, leyline) => {
+//       if (boardState.mwRoundNumber < 7) { 
+//         return GameOutcome.GameOutcome_InProgress;
+//       }
 
-      const optShieldCount = bpqGetMarkerCountForClanAtLeyline(boardState, 'OPT', leyline, MwMarkerType.MwMarkerType_ShieldCounter);
-      const osbShieldCount = bpqGetMarkerCountForClanAtLeyline(boardState, 'OSB', leyline, MwMarkerType.MwMarkerType_ShieldCounter);
+//       const optShieldCount = bpqGetMarkerCountForClanAtLeyline(boardState, 'OPT', leyline, MwMarkerType.MwMarkerType_ShieldCounter);
+//       const osbShieldCount = bpqGetMarkerCountForClanAtLeyline(boardState, 'OSB', leyline, MwMarkerType.MwMarkerType_ShieldCounter);
 
-      if (optShieldCount < osbShieldCount) {
-        return GameOutcome.GameOutcome_OptPlayerWins;
-      }
+//       if (optShieldCount < osbShieldCount) {
+//         return GameOutcome.GameOutcome_OptPlayerWins;
+//       }
 
-      if (osbShieldCount < optShieldCount) {
-        return GameOutcome.GameOutcome_OsbPlayerWins;
-      }
+//       if (osbShieldCount < optShieldCount) {
+//         return GameOutcome.GameOutcome_OsbPlayerWins;
+//       }
 
-      const optTribeShieldCount = bpqCountMarkersForPlayerTribe(boardState, 'OPT', MwMarkerType.MwMarkerType_ShieldCounter);
-      const osbTribeShieldCount = bpqCountMarkersForPlayerTribe(boardState, 'OSB', MwMarkerType.MwMarkerType_ShieldCounter);
+//       const optTribeShieldCount = bpqCountMarkersForPlayerTribe(boardState, 'OPT', MwMarkerType.MwMarkerType_ShieldCounter);
+//       const osbTribeShieldCount = bpqCountMarkersForPlayerTribe(boardState, 'OSB', MwMarkerType.MwMarkerType_ShieldCounter);
 
-      if (optTribeShieldCount < osbTribeShieldCount) {
-        return GameOutcome.GameOutcome_OptPlayerWins;
-      }
+//       if (optTribeShieldCount < osbTribeShieldCount) {
+//         return GameOutcome.GameOutcome_OptPlayerWins;
+//       }
 
-      if (osbTribeShieldCount < optTribeShieldCount) {
-        return GameOutcome.GameOutcome_OsbPlayerWins;
-      }
+//       if (osbTribeShieldCount < optTribeShieldCount) {
+//         return GameOutcome.GameOutcome_OsbPlayerWins;
+//       }
 
-      return GameOutcome.GameOutcome_InProgress;
-    },
-  }
-}
+//       return GameOutcome.GameOutcome_InProgress;
+//     },
+//   }
+// }
   

@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+import "manawave.proto";
+
+
+enum ProxyConfigSourceType {
+  ProxyConfigSourceType_NotSet = 0;
+
+  ProxyConfigSourceType_GameStateRandomSeed = 1;
+  ProxyConfigSourceType_QueryParameterDefined = 2;
+}
+
+
+message ProxyConfigPb {
+  ProxyConfigSourceType sourceType = 1;
+  string sourceConfig = 2;
+}
+
+
+// put secret information here
+message GameHostDataPb {
+  GameInitLeylineDrawResults leylineDrawResults = 1;
+  FullGameFamilyDrawResults familyDrawResults = 2;
+}

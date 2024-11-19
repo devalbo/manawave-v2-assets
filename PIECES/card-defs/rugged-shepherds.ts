@@ -1,6 +1,6 @@
-import { FamilyCardDefs } from "@mw-protobufs/manawave-season-zero-1";
-import { MwMarkerType } from "@mw-protobufs/manawave-types";
-import { MvmAmountQueryFunctionId } from "@mw-protobufs/manawave-vm";
+import { FamilyCardDefs } from "../../mw-v2-protobufs/protofiles-out/manawave-season-zero-1";
+import { MwMarkerType } from "../../mw-v2-protobufs/protofiles-out/manawave-types";
+import { MvmAmountQueryFunctionId } from "../../mw-v2-protobufs/protofiles-out/manawave-vm";
 import { 
   createAddMarkersToMyClanForCountFunctionAmountInstructionSet,
   createAddMarkersToMyTribeForCountFunctionAmountInstructionSet,

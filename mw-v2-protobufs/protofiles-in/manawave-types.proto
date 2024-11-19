@@ -1,0 +1,170 @@
+syntax = "proto3";
+
+
+enum SeasonDefinition {
+  SeasonDef_NotSet = 0;
+  SeasonDef_Zero_1 = 1;
+}
+
+enum PlayerSideId {
+  PlayerSide_NotSet = 0;
+  PlayerSide_Opt = 1;
+  PlayerSide_Osb = 2;
+}
+
+enum PlayerSelectionDefault {
+  PlayerSelectionDefault_NotSet = 0;
+  PlayerSelectionDefault_FirstChoice = 1;
+  PlayerSelectionDefault_LastChoice = 2;
+  PlayerSelectionDefault_RandomChoice = 3;
+}
+
+enum PlayerCardChoicePb {
+  PlayerCardChoice_NotSet = 0;
+  PlayerCardChoice_FamilyA = 1;
+  PlayerCardChoice_FamilyB = 2;
+  PlayerCardChoice_FamilyC = 3;
+  
+  PlayerCardChoice_NoFamilyPickChoice = 30;
+}
+
+enum LeylineDistanceFromSource {
+  LeylineDistance_Source = 0;
+  LeylineDistance_1 = 1;
+  LeylineDistance_2 = 2;
+  LeylineDistance_3 = 3;
+  LeylineDistance_Sink = 255;
+}
+
+enum MwMarkerType {
+  MwMarkerType_NotSet = 0;
+
+  MwMarkerType_PopulationIncreaseCounter  = 1;
+  MwMarkerType_PopulationSacrificeCounter = 2;
+  MwMarkerType_AttackCounter = 3;
+  MwMarkerType_ShieldCounter = 4;
+  MwMarkerType_ManaCounter = 5;
+  MwMarkerType_ManalithClaimCounter = 6;
+
+  MwMarkerType_PopulationToken = 7;
+  MwMarkerType_ManalithToken   = 8;
+  MwMarkerType_SoulstainToken  = 9;
+  MwMarkerType_ManawaveRoundToken = 10;
+}
+
+enum PlayerDefaultStrategyPb {
+  PlayerDefaultStrategyPb_NotSet = 0;
+  PlayerDefaultStrategyPb_First = 1;
+  PlayerDefaultStrategyPb_Last = 2;
+  PlayerDefaultStrategyPb_Random = 3;
+}
+
+
+message PlayerPb {
+  string playerId = 1;
+  PlayerSideId playerSide = 2;
+  PlayerDefaultStrategyPb defaultStrategy = 3;
+}
+
+message PlayerRegistration {
+  SeasonPbId seasonId = 1;
+  PlayerPb optPlayer  = 2;
+  PlayerPb osbPlayer  = 3;
+}
+
+
+enum GamePhaseId {
+  GamePhase_NotSet = 0;
+
+  GamePhase_InitialConditionsSet = 1;
+
+  GamePhaseInit_PlayerRegistrationComplete = 11;
+  GamePhaseInit_AllPlayersPickingTotemsAndMonumentVeto = 12;
+  GamePhaseInit_AllPlayersPlacingClans = 13;
+
+  GamePhase_PlayingMainGame = 20;
+
+  GamePhase_GameOver = 100;
+}
+
+enum GameOutcome {
+  GameOutcome_NotSet          = 0;
+  GameOutcome_InProgress      = 1;
+  GameOutcome_OptPlayerWins   = 2;
+  GameOutcome_OsbPlayerWins   = 3;
+  GameOutcome_Draw            = 4;
+  GameOutcome_BothPlayersWin  = 5;
+  GameOutcome_BothPlayersLose = 6;
+}
+
+enum RoundProgress {
+  RoundProgress_NotSet = 0;
+
+  RoundProgress_InProgress_DealFamilies = 20;
+  RoundProgress_InProgress_PickFamilies = 21;
+  RoundProgress_InProgress_PlaceFamiliesAndPickModes = 22;
+  RoundProgress_InProgress_ChannelClanManaflows = 23;
+  RoundProgress_InProgress_PurchaseAndPlaceMarkers = 24;
+  RoundProgress_InProgress_WageClanConflicts = 25;
+  RoundProgress_InProgress_PowerMonuments = 26;
+  RoundProgress_InProgress_ConsolidateMarkers = 27;
+
+  RoundProgress_GameOver = 50;
+
+  RoundProgress_Complete = 255;
+  // go back to RoundProgress_InProgress_DealFamilies
+}
+
+
+message SeasonPbId {
+  SeasonDefinition seasonDefinition = 1;
+}
+
+
+message TotemPbId {
+  SeasonPbId seasonId  = 1;
+  uint32 seasonTotemId = 2;
+}
+
+
+message MonumentCardPbId {
+  SeasonPbId seasonId = 1;
+  uint32 seasonMonumentCardId = 2;
+}
+
+
+message GameBoardMonuments {
+  MonumentCardPbId leyPoint1MonumentId = 1;
+  MonumentCardPbId leyPoint2MonumentId = 2;
+  MonumentCardPbId leyPoint3MonumentId = 3;
+}
+
+
+message ClanCardDefPbId {
+  SeasonPbId seasonId = 1;
+  uint32 seasonClanCardId = 2;
+}
+
+
+message ClanCardInstancePbId {
+  ClanCardDefPbId clanCardDefId = 1;
+  PlayerSideId playerSide = 2;
+}
+
+
+message MonumentCardInPlayPbInstance {
+  MonumentCardPbId sourceCardId = 1;
+  LeylineDistanceFromSource leylineDistance = 2;
+}
+
+
+message FamilyCardDefPbId {
+  SeasonPbId seasonId = 1;
+  uint32 seasonFamilyCardId = 2;
+}
+
+
+message FamilyCardInstancePbId {
+  FamilyCardDefPbId familyCardDefId = 1;
+  PlayerSideId owningPlayerSide = 2;
+}

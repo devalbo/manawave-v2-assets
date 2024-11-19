@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-pascal-case */
 import { createImgComponentFromTag } from './icons';
-import { PlayerSide } from '../../game-data/game-play-data';
+import { PlayerSide } from '../../mw-v2-game-engine/gameboard/game-play-data';
 import { MwLogoPlayerSideIcon } from './mw-logo-player-side-icon';
 import './MwPlacementGrid.css';
 

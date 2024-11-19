@@ -1,4 +1,4 @@
-import { MwMarkerType } from "@mw-protobufs/manawave-types";
+import { MwMarkerType } from "../mw-v2-protobufs/protofiles-out/manawave-types";
 import { TokenCounterTypeTags } from "./token-counter-icons";
 
 

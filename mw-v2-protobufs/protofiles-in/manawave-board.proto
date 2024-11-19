@@ -1,0 +1,91 @@
+syntax = "proto3";
+
+import "manawave-types.proto";
+
+
+message BoardPlayerSideCoordinate {
+  PlayerSideId playerSideId = 1;
+  LeylineDistanceFromSource leylineDistance = 2;
+  uint32 familyRank = 3;
+}
+
+message MyBoardPlayerSideCoordinate {
+  LeylineDistanceFromSource leylineDistance = 1;
+  uint32 familyRank = 2;
+}
+
+message LeylineState {
+  GameBoardMonuments monuments = 1;
+}
+
+message TribeCardStockpile {
+  uint32 soulstainTokenCount = 1;
+
+  uint32 manaCountersCount = 2;
+  uint32 populationIncreaseCountersCount = 3;
+  uint32 attackCountersCount = 4;
+  uint32 shieldCountersCount = 5;
+
+  // uint32 manalithTokenCount = 6;
+}
+
+message ClanCardStockpile {
+  uint32 populationTokensCount = 1;
+  uint32 manalithTokensCount = 2;
+
+  uint32 manaCountersCount = 3;
+  uint32 manalithClaimCountersCount = 4;
+  uint32 attackCountersCount = 5;
+  uint32 shieldCountersCount = 6;
+  uint32 populationIncreaseCountersCount = 7;
+  uint32 sacrificeCountersCount = 8;
+}
+
+message TribeCardState {
+  TribeCardStockpile stockpile = 1;
+}
+
+message ClanCardState {
+  ClanCardInstancePbId clanCardInstanceId = 1;
+  uint32 activeModeIndex = 2;
+
+  ClanCardStockpile stockpile = 3;
+}
+
+message FamilyCardState {
+  FamilyCardInstancePbId familyCardInstanceId = 1;
+  uint32 activeModeIndex = 2;
+}
+
+message ClanColumn {
+  ClanCardState clanCard = 1;
+  repeated FamilyCardState familyCards = 2;
+}
+
+message PlayerBoardSide {
+  TribeCardState tribeCard = 1;
+  ClanColumn leyline1ClanColumn = 2;
+  ClanColumn leyline2ClanColumn = 3;
+  ClanColumn leyline3ClanColumn = 4;
+}
+
+message FamilyCardSelectionArea {
+  FamilyCardInstancePbId choiceA = 1;
+  FamilyCardInstancePbId choiceB = 2;
+  FamilyCardInstancePbId choiceC = 3;
+
+  uint32 numCardsRemainingInPile = 20;
+}
+
+message GameBoardStatePb {
+  uint32 roundNumber = 1;
+  SeasonPbId seasonId = 2;
+
+  LeylineState leylineState = 10;
+  PlayerBoardSide optBoardSide = 11;
+  PlayerBoardSide osbBoardSide = 12;
+
+  FamilyCardSelectionArea familyCardSelectionArea = 13;
+
+  GameOutcome gameOutcome = 20;
+}
