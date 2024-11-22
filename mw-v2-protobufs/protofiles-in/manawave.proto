@@ -311,6 +311,22 @@ message ConsolidateMarkersResults {
 
 }
 
+message PlayerFamilyPlacementAndModalitySelections {
+  PlayerFamilyPlacementResults playerFamilyPlacementResults = 1;
+  ModalitySelection modalitySelection = 2;
+}
+
+message ManawavePlayerMove {
+  oneof move {
+    TotemAndMonumentVetoPlayerChoices totemAndMonumentVetoPlayerChoices = 1;
+    PlayerClanPlacements playerClanPlacements = 2;
+    PlayerCardChoicePb playerCardChoice = 3;
+    PlayerFamilyPlacementAndModalitySelections playerFamilyPlacementAndModalitySelections = 4;
+    PlayerPurchaseAndPlaceMarkersSelections playerPurchaseAndPlaceMarkersSelections = 5;
+  }
+  PlayerSideId playerSide = 10;
+}
+
 message ManawaveRound {
   RoundProgress roundProgress = 1;
   // uint32 roundNumber = 2;

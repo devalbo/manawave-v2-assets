@@ -14,6 +14,7 @@ import { PlayerRegistration } from "./manawave-types";
 import { GamePhaseId } from "./manawave-types";
 import { GameOutcome } from "./manawave-types";
 import { RoundProgress } from "./manawave-types";
+import { PlayerSideId } from "./manawave-types";
 import { MwMarkerType } from "./manawave-types";
 import { MyBoardPlayerSideCoordinate } from "./manawave-board";
 import { PlayerCardChoicePb } from "./manawave-types";
@@ -635,6 +636,64 @@ export interface PowerMonumentsResults {
  * @generated from protobuf message ConsolidateMarkersResults
  */
 export interface ConsolidateMarkersResults {
+}
+/**
+ * @generated from protobuf message PlayerFamilyPlacementAndModalitySelections
+ */
+export interface PlayerFamilyPlacementAndModalitySelections {
+    /**
+     * @generated from protobuf field: PlayerFamilyPlacementResults playerFamilyPlacementResults = 1;
+     */
+    playerFamilyPlacementResults?: PlayerFamilyPlacementResults;
+    /**
+     * @generated from protobuf field: ModalitySelection modalitySelection = 2;
+     */
+    modalitySelection?: ModalitySelection;
+}
+/**
+ * @generated from protobuf message ManawavePlayerMove
+ */
+export interface ManawavePlayerMove {
+    /**
+     * @generated from protobuf oneof: move
+     */
+    move: {
+        oneofKind: "totemAndMonumentVetoPlayerChoices";
+        /**
+         * @generated from protobuf field: TotemAndMonumentVetoPlayerChoices totemAndMonumentVetoPlayerChoices = 1;
+         */
+        totemAndMonumentVetoPlayerChoices: TotemAndMonumentVetoPlayerChoices;
+    } | {
+        oneofKind: "playerClanPlacements";
+        /**
+         * @generated from protobuf field: PlayerClanPlacements playerClanPlacements = 2;
+         */
+        playerClanPlacements: PlayerClanPlacements;
+    } | {
+        oneofKind: "playerCardChoice";
+        /**
+         * @generated from protobuf field: PlayerCardChoicePb playerCardChoice = 3;
+         */
+        playerCardChoice: PlayerCardChoicePb;
+    } | {
+        oneofKind: "playerFamilyPlacementAndModalitySelections";
+        /**
+         * @generated from protobuf field: PlayerFamilyPlacementAndModalitySelections playerFamilyPlacementAndModalitySelections = 4;
+         */
+        playerFamilyPlacementAndModalitySelections: PlayerFamilyPlacementAndModalitySelections;
+    } | {
+        oneofKind: "playerPurchaseAndPlaceMarkersSelections";
+        /**
+         * @generated from protobuf field: PlayerPurchaseAndPlaceMarkersSelections playerPurchaseAndPlaceMarkersSelections = 5;
+         */
+        playerPurchaseAndPlaceMarkersSelections: PlayerPurchaseAndPlaceMarkersSelections;
+    } | {
+        oneofKind: undefined;
+    };
+    /**
+     * @generated from protobuf field: PlayerSideId playerSide = 10;
+     */
+    playerSide: PlayerSideId;
 }
 /**
  * @generated from protobuf message ManawaveRound
@@ -2865,6 +2924,157 @@ class ConsolidateMarkersResults$Type extends MessageType<ConsolidateMarkersResul
  * @generated MessageType for protobuf message ConsolidateMarkersResults
  */
 export const ConsolidateMarkersResults = new ConsolidateMarkersResults$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PlayerFamilyPlacementAndModalitySelections$Type extends MessageType<PlayerFamilyPlacementAndModalitySelections> {
+    constructor() {
+        super("PlayerFamilyPlacementAndModalitySelections", [
+            { no: 1, name: "playerFamilyPlacementResults", kind: "message", T: () => PlayerFamilyPlacementResults },
+            { no: 2, name: "modalitySelection", kind: "message", T: () => ModalitySelection }
+        ]);
+    }
+    create(value?: PartialMessage<PlayerFamilyPlacementAndModalitySelections>): PlayerFamilyPlacementAndModalitySelections {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        if (value !== undefined)
+            reflectionMergePartial<PlayerFamilyPlacementAndModalitySelections>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PlayerFamilyPlacementAndModalitySelections): PlayerFamilyPlacementAndModalitySelections {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* PlayerFamilyPlacementResults playerFamilyPlacementResults */ 1:
+                    message.playerFamilyPlacementResults = PlayerFamilyPlacementResults.internalBinaryRead(reader, reader.uint32(), options, message.playerFamilyPlacementResults);
+                    break;
+                case /* ModalitySelection modalitySelection */ 2:
+                    message.modalitySelection = ModalitySelection.internalBinaryRead(reader, reader.uint32(), options, message.modalitySelection);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PlayerFamilyPlacementAndModalitySelections, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* PlayerFamilyPlacementResults playerFamilyPlacementResults = 1; */
+        if (message.playerFamilyPlacementResults)
+            PlayerFamilyPlacementResults.internalBinaryWrite(message.playerFamilyPlacementResults, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        /* ModalitySelection modalitySelection = 2; */
+        if (message.modalitySelection)
+            ModalitySelection.internalBinaryWrite(message.modalitySelection, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message PlayerFamilyPlacementAndModalitySelections
+ */
+export const PlayerFamilyPlacementAndModalitySelections = new PlayerFamilyPlacementAndModalitySelections$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class ManawavePlayerMove$Type extends MessageType<ManawavePlayerMove> {
+    constructor() {
+        super("ManawavePlayerMove", [
+            { no: 1, name: "totemAndMonumentVetoPlayerChoices", kind: "message", oneof: "move", T: () => TotemAndMonumentVetoPlayerChoices },
+            { no: 2, name: "playerClanPlacements", kind: "message", oneof: "move", T: () => PlayerClanPlacements },
+            { no: 3, name: "playerCardChoice", kind: "enum", oneof: "move", T: () => ["PlayerCardChoicePb", PlayerCardChoicePb] },
+            { no: 4, name: "playerFamilyPlacementAndModalitySelections", kind: "message", oneof: "move", T: () => PlayerFamilyPlacementAndModalitySelections },
+            { no: 5, name: "playerPurchaseAndPlaceMarkersSelections", kind: "message", oneof: "move", T: () => PlayerPurchaseAndPlaceMarkersSelections },
+            { no: 10, name: "playerSide", kind: "enum", T: () => ["PlayerSideId", PlayerSideId] }
+        ]);
+    }
+    create(value?: PartialMessage<ManawavePlayerMove>): ManawavePlayerMove {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.move = { oneofKind: undefined };
+        message.playerSide = 0;
+        if (value !== undefined)
+            reflectionMergePartial<ManawavePlayerMove>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: ManawavePlayerMove): ManawavePlayerMove {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* TotemAndMonumentVetoPlayerChoices totemAndMonumentVetoPlayerChoices */ 1:
+                    message.move = {
+                        oneofKind: "totemAndMonumentVetoPlayerChoices",
+                        totemAndMonumentVetoPlayerChoices: TotemAndMonumentVetoPlayerChoices.internalBinaryRead(reader, reader.uint32(), options, (message.move as any).totemAndMonumentVetoPlayerChoices)
+                    };
+                    break;
+                case /* PlayerClanPlacements playerClanPlacements */ 2:
+                    message.move = {
+                        oneofKind: "playerClanPlacements",
+                        playerClanPlacements: PlayerClanPlacements.internalBinaryRead(reader, reader.uint32(), options, (message.move as any).playerClanPlacements)
+                    };
+                    break;
+                case /* PlayerCardChoicePb playerCardChoice */ 3:
+                    message.move = {
+                        oneofKind: "playerCardChoice",
+                        playerCardChoice: reader.int32()
+                    };
+                    break;
+                case /* PlayerFamilyPlacementAndModalitySelections playerFamilyPlacementAndModalitySelections */ 4:
+                    message.move = {
+                        oneofKind: "playerFamilyPlacementAndModalitySelections",
+                        playerFamilyPlacementAndModalitySelections: PlayerFamilyPlacementAndModalitySelections.internalBinaryRead(reader, reader.uint32(), options, (message.move as any).playerFamilyPlacementAndModalitySelections)
+                    };
+                    break;
+                case /* PlayerPurchaseAndPlaceMarkersSelections playerPurchaseAndPlaceMarkersSelections */ 5:
+                    message.move = {
+                        oneofKind: "playerPurchaseAndPlaceMarkersSelections",
+                        playerPurchaseAndPlaceMarkersSelections: PlayerPurchaseAndPlaceMarkersSelections.internalBinaryRead(reader, reader.uint32(), options, (message.move as any).playerPurchaseAndPlaceMarkersSelections)
+                    };
+                    break;
+                case /* PlayerSideId playerSide */ 10:
+                    message.playerSide = reader.int32();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: ManawavePlayerMove, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* TotemAndMonumentVetoPlayerChoices totemAndMonumentVetoPlayerChoices = 1; */
+        if (message.move.oneofKind === "totemAndMonumentVetoPlayerChoices")
+            TotemAndMonumentVetoPlayerChoices.internalBinaryWrite(message.move.totemAndMonumentVetoPlayerChoices, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        /* PlayerClanPlacements playerClanPlacements = 2; */
+        if (message.move.oneofKind === "playerClanPlacements")
+            PlayerClanPlacements.internalBinaryWrite(message.move.playerClanPlacements, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        /* PlayerCardChoicePb playerCardChoice = 3; */
+        if (message.move.oneofKind === "playerCardChoice")
+            writer.tag(3, WireType.Varint).int32(message.move.playerCardChoice);
+        /* PlayerFamilyPlacementAndModalitySelections playerFamilyPlacementAndModalitySelections = 4; */
+        if (message.move.oneofKind === "playerFamilyPlacementAndModalitySelections")
+            PlayerFamilyPlacementAndModalitySelections.internalBinaryWrite(message.move.playerFamilyPlacementAndModalitySelections, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
+        /* PlayerPurchaseAndPlaceMarkersSelections playerPurchaseAndPlaceMarkersSelections = 5; */
+        if (message.move.oneofKind === "playerPurchaseAndPlaceMarkersSelections")
+            PlayerPurchaseAndPlaceMarkersSelections.internalBinaryWrite(message.move.playerPurchaseAndPlaceMarkersSelections, writer.tag(5, WireType.LengthDelimited).fork(), options).join();
+        /* PlayerSideId playerSide = 10; */
+        if (message.playerSide !== 0)
+            writer.tag(10, WireType.Varint).int32(message.playerSide);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message ManawavePlayerMove
+ */
+export const ManawavePlayerMove = new ManawavePlayerMove$Type();
 // @generated message type with reflection information, may provide speed optimized methods
 class ManawaveRound$Type extends MessageType<ManawaveRound> {
     constructor() {
