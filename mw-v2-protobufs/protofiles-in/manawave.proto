@@ -313,10 +313,10 @@ message ConsolidateMarkersResults {
 
 message PlayerFamilyPlacementAndModalitySelections {
   PlayerFamilyPlacementResults playerFamilyPlacementResults = 1;
-  ModalitySelection modalitySelection = 2;
+  PlayerModalitySelectionResults modalitySelections = 2;
 }
 
-message ManawavePlayerMove {
+message ManawavePlayerMoveSelection {
   oneof move {
     TotemAndMonumentVetoPlayerChoices totemAndMonumentVetoPlayerChoices = 1;
     PlayerClanPlacements playerClanPlacements = 2;
@@ -324,7 +324,11 @@ message ManawavePlayerMove {
     PlayerFamilyPlacementAndModalitySelections playerFamilyPlacementAndModalitySelections = 4;
     PlayerPurchaseAndPlaceMarkersSelections playerPurchaseAndPlaceMarkersSelections = 5;
   }
-  PlayerSideId playerSide = 10;
+}
+
+message ManawavePlayerMove {
+  ManawavePlayerMoveSelection move = 1;
+  PlayerSideId playerSide = 2;
 }
 
 message ManawaveRound {
