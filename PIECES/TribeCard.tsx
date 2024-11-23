@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-pascal-case */
-import React from "react";
 import './TribeCard.css';
 import { PlayerId } from "./constants";
 import { createImgComponentFromMwMarkerType, createImgComponentFromTag } from "./icons";

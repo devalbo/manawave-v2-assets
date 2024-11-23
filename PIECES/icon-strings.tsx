@@ -1,4 +1,3 @@
-import React from "react";
 import { getMwIconAscii, MwGameImgIcon } from "./icons";
 import { TokenCounterTypeTags } from "./token-counter-icons";
 

@@ -92,6 +92,10 @@ export interface MvmRegisterData {
  * @generated from protobuf message MvmInstruction_DeferToOnManaflowProcImpl
  */
 export interface MvmInstruction_DeferToOnManaflowProcImpl {
+    /**
+     * @generated from protobuf field: string dummyValue = 1;
+     */
+    dummyValue: string;
 }
 /**
  * @generated from protobuf message MvmInstruction_SetMarkerRegister_ToMarkerTypeAndQuantity
@@ -753,18 +757,40 @@ export const MvmRegisterData = new MvmRegisterData$Type();
 // @generated message type with reflection information, may provide speed optimized methods
 class MvmInstruction_DeferToOnManaflowProcImpl$Type extends MessageType<MvmInstruction_DeferToOnManaflowProcImpl> {
     constructor() {
-        super("MvmInstruction_DeferToOnManaflowProcImpl", []);
+        super("MvmInstruction_DeferToOnManaflowProcImpl", [
+            { no: 1, name: "dummyValue", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+        ]);
     }
     create(value?: PartialMessage<MvmInstruction_DeferToOnManaflowProcImpl>): MvmInstruction_DeferToOnManaflowProcImpl {
         const message = globalThis.Object.create((this.messagePrototype!));
+        message.dummyValue = "";
         if (value !== undefined)
             reflectionMergePartial<MvmInstruction_DeferToOnManaflowProcImpl>(this, message, value);
         return message;
     }
     internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: MvmInstruction_DeferToOnManaflowProcImpl): MvmInstruction_DeferToOnManaflowProcImpl {
-        return target ?? this.create();
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string dummyValue */ 1:
+                    message.dummyValue = reader.string();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
     }
     internalBinaryWrite(message: MvmInstruction_DeferToOnManaflowProcImpl, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string dummyValue = 1; */
+        if (message.dummyValue !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.dummyValue);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

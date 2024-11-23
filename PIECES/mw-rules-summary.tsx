@@ -1,4 +1,3 @@
-import React from 'react';
 import './mw-rules-summary.css';
 
 
@@ -11,7 +10,7 @@ export const MwRulesSummarySheet = () => {
         </div>
         <div style={{fontSize: 16}}>
 
-          <ul>
+          <ol>
             <li>Increase Round Counter</li>
             <li>Select Family/Bloodline</li>
             <li>Place Family and Change Modes</li>
@@ -22,7 +21,7 @@ export const MwRulesSummarySheet = () => {
             <li>Power Monuments</li>
             <li>Consolidate Clan Counters</li>
             <li>Restart Manawave Execution</li>
-          </ul>
+          </ol>
 
         </div>
       </div>

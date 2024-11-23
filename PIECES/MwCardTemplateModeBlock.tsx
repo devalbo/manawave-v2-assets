@@ -1,4 +1,3 @@
-import React from "react"
 import { IMwCardModeData } from "./mw-card-data"
 import { MwCardTemplateModeItem } from "./MwCardTemplateModeItem"
 

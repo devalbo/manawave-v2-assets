@@ -62,7 +62,7 @@ export interface IMwCardData {
 
 export const UnimplementedFamilyCardModeLogic: IFamilyCardModeLogic = {
   onManaflowProc: (
-    boardState: BoardPiecesState,
+    _boardState: BoardPiecesState,
     playerSide: PlayerSide,
     procPoint: ManaflowProcPoint,
   ): ManaflowPointProcResult => {
@@ -74,7 +74,9 @@ export const UnimplementedFamilyCardModeLogic: IFamilyCardModeLogic = {
     {
       instruction: {
         oneofKind: "deferToOnManaflowProcImpl",
-        deferToOnManaflowProcImpl: {}
+        deferToOnManaflowProcImpl: {
+          dummyValue: "",
+        }
       },
     },  
   ],
@@ -83,7 +85,7 @@ export const UnimplementedFamilyCardModeLogic: IFamilyCardModeLogic = {
 
 export const UnimplementedClanCardModeLogic: IClanCardModeLogic = {
   onManaflowProc: (
-    boardState: BoardPiecesState,
+    _boardState: BoardPiecesState,
     playerSide: PlayerSide,
     procPoint: ManaflowProcPoint,
   ): ManaflowPointProcResult => {
@@ -97,7 +99,7 @@ export const UnimplementedClanCardModeLogic: IClanCardModeLogic = {
 
 export const createMvmInstructionsOnlyClanModeLogic = (mvmInstructions: ManawaveVmInstruction[]): IClanCardModeLogic => {
   return {
-    onManaflowProc: (boardState: BoardPiecesState, playerSide: PlayerSide, procPoint: ManaflowProcPoint): ManaflowPointProcResult => {
+    onManaflowProc: (_boardState: BoardPiecesState, _playerSide: PlayerSide, _procPoint: ManaflowProcPoint): ManaflowPointProcResult => {
       throw new Error("UNIMPLEMENTED onManaflowProc - MVM INSTRUCTIONS ONLY");
     },
     mvmInstructions,
@@ -107,7 +109,7 @@ export const createMvmInstructionsOnlyClanModeLogic = (mvmInstructions: Manawave
 
 export const createMvmInstructionsOnlyFamilyModeLogic = (mvmInstructions: ManawaveVmInstruction[]): IFamilyCardModeLogic => {
   return {
-    onManaflowProc: (boardState: BoardPiecesState, playerSide: PlayerSide, procPoint: ManaflowProcPoint): ManaflowPointProcResult => {
+    onManaflowProc: (_boardState: BoardPiecesState, _playerSide: PlayerSide, _procPoint: ManaflowProcPoint): ManaflowPointProcResult => {
       throw new Error("UNIMPLEMENTED onManaflowProc - MVM INSTRUCTIONS ONLY");
     },
     mvmInstructions,

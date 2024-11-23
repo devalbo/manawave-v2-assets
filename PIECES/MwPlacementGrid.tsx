@@ -19,7 +19,7 @@ export interface IMwPlacementGrid {
 }
 
 
-const ClanPlacementColumn = (props: {
+const ClanPlacementColumn = (_props: {
   // title: string
 }) => {
   return (

@@ -1,5 +1,3 @@
-import React from 'react';
-// import './mw-placement-grid.css';
 import _ from 'lodash';
 import { createImgComponentFromTag } from './icons';
 

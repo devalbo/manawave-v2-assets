@@ -310,11 +310,15 @@ export interface ModalitySelection {
     modalityIndex: number;
 }
 /**
- * LeylineDistanceFromSource leylineDistance = 1;
- *
  * @generated from protobuf message PlayerModalitySelectionDefaults
  */
 export interface PlayerModalitySelectionDefaults {
+    /**
+     * LeylineDistanceFromSource leylineDistance = 1;
+     *
+     * @generated from protobuf field: string dummyValue = 1;
+     */
+    dummyValue: string;
 }
 /**
  * @generated from protobuf message AllPlayerModalitySelectionDefaults
@@ -631,11 +635,19 @@ export interface WageClanConflictsResults {
  * @generated from protobuf message PowerMonumentsResults
  */
 export interface PowerMonumentsResults {
+    /**
+     * @generated from protobuf field: string dummyValue = 1;
+     */
+    dummyValue: string;
 }
 /**
  * @generated from protobuf message ConsolidateMarkersResults
  */
 export interface ConsolidateMarkersResults {
+    /**
+     * @generated from protobuf field: string dummyValue = 1;
+     */
+    dummyValue: string;
 }
 /**
  * @generated from protobuf message PlayerFamilyPlacementAndModalitySelections
@@ -1891,18 +1903,40 @@ export const ModalitySelection = new ModalitySelection$Type();
 // @generated message type with reflection information, may provide speed optimized methods
 class PlayerModalitySelectionDefaults$Type extends MessageType<PlayerModalitySelectionDefaults> {
     constructor() {
-        super("PlayerModalitySelectionDefaults", []);
+        super("PlayerModalitySelectionDefaults", [
+            { no: 1, name: "dummyValue", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+        ]);
     }
     create(value?: PartialMessage<PlayerModalitySelectionDefaults>): PlayerModalitySelectionDefaults {
         const message = globalThis.Object.create((this.messagePrototype!));
+        message.dummyValue = "";
         if (value !== undefined)
             reflectionMergePartial<PlayerModalitySelectionDefaults>(this, message, value);
         return message;
     }
     internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PlayerModalitySelectionDefaults): PlayerModalitySelectionDefaults {
-        return target ?? this.create();
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string dummyValue */ 1:
+                    message.dummyValue = reader.string();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
     }
     internalBinaryWrite(message: PlayerModalitySelectionDefaults, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string dummyValue = 1; */
+        if (message.dummyValue !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.dummyValue);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -2886,18 +2920,40 @@ export const WageClanConflictsResults = new WageClanConflictsResults$Type();
 // @generated message type with reflection information, may provide speed optimized methods
 class PowerMonumentsResults$Type extends MessageType<PowerMonumentsResults> {
     constructor() {
-        super("PowerMonumentsResults", []);
+        super("PowerMonumentsResults", [
+            { no: 1, name: "dummyValue", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+        ]);
     }
     create(value?: PartialMessage<PowerMonumentsResults>): PowerMonumentsResults {
         const message = globalThis.Object.create((this.messagePrototype!));
+        message.dummyValue = "";
         if (value !== undefined)
             reflectionMergePartial<PowerMonumentsResults>(this, message, value);
         return message;
     }
     internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PowerMonumentsResults): PowerMonumentsResults {
-        return target ?? this.create();
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string dummyValue */ 1:
+                    message.dummyValue = reader.string();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
     }
     internalBinaryWrite(message: PowerMonumentsResults, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string dummyValue = 1; */
+        if (message.dummyValue !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.dummyValue);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -2911,18 +2967,40 @@ export const PowerMonumentsResults = new PowerMonumentsResults$Type();
 // @generated message type with reflection information, may provide speed optimized methods
 class ConsolidateMarkersResults$Type extends MessageType<ConsolidateMarkersResults> {
     constructor() {
-        super("ConsolidateMarkersResults", []);
+        super("ConsolidateMarkersResults", [
+            { no: 1, name: "dummyValue", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+        ]);
     }
     create(value?: PartialMessage<ConsolidateMarkersResults>): ConsolidateMarkersResults {
         const message = globalThis.Object.create((this.messagePrototype!));
+        message.dummyValue = "";
         if (value !== undefined)
             reflectionMergePartial<ConsolidateMarkersResults>(this, message, value);
         return message;
     }
     internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: ConsolidateMarkersResults): ConsolidateMarkersResults {
-        return target ?? this.create();
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string dummyValue */ 1:
+                    message.dummyValue = reader.string();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
     }
     internalBinaryWrite(message: ConsolidateMarkersResults, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string dummyValue = 1; */
+        if (message.dummyValue !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.dummyValue);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

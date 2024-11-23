@@ -1,4 +1,3 @@
-import React from "react"
 import { createIconizedStringContent } from "./icon-strings";
 import { MODE_PRINT_SETTINGS_DEFAULT_FONT_SIZE, MODE_PRINT_SETTINGS_DEFAULT_IMAGE_SIZE } from "./constants";
 import { IMwCardModeData } from "./mw-card-data";

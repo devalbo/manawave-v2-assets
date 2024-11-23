@@ -1,5 +1,4 @@
-import React from "react"
-import { OxSvg, OxTotemDataUrl, SpiritsTotemDataUrl, SpiritSvg, TigerSvg, TigerTotemDataUrl, Totems, TurtleSvg, TurtleTotemDataUrl } from "./totems";
+import { OxTotemDataUrl, SpiritsTotemDataUrl, TigerTotemDataUrl, Totems, TurtleTotemDataUrl } from "./totems";
 
 interface MwCardTemplateHeaderProps {
   name: string;

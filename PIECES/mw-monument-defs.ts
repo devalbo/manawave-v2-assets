@@ -29,20 +29,20 @@ const MonumentPrintSettings_Size12 = {
   imageSize: 12,
 }
 
-const MonumentPrintSettings_Size13 = {
-  fontSize: 13,
-  imageSize: 13,
-}
+// const MonumentPrintSettings_Size13 = {
+//   fontSize: 13,
+//   imageSize: 13,
+// }
 
 const MonumentPrintSettings_Size14 = {
   fontSize: 14,
   imageSize: 14,
 }
 
-const MonumentPrintSettings_Size15 = {
-  fontSize: 15,
-  imageSize: 15,
-}
+// const MonumentPrintSettings_Size15 = {
+//   fontSize: 15,
+//   imageSize: 15,
+// }
 
 
 export const getMonumentDefs = (): IMwMonumentData[] => {

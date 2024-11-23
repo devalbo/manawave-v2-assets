@@ -1,4 +1,3 @@
-import React from 'react';
 import './mw-counters-tokens-sheet.css';
 import {
   AttackCounterDataUrl,

@@ -1,4 +1,3 @@
-import React from "react";
 import { getCardDefs } from "./mw-card-defs";
 import { MwCardTemplate } from "./MwCardTemplate";
 import { getMonumentDefs } from "./mw-monument-defs";

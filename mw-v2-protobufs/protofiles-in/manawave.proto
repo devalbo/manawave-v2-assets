@@ -140,6 +140,7 @@ message ModalitySelection {
 
 message PlayerModalitySelectionDefaults {
   // LeylineDistanceFromSource leylineDistance = 1;
+  string dummyValue = 1;
 }
 
 message AllPlayerModalitySelectionDefaults {
@@ -304,11 +305,11 @@ message WageClanConflictsResults {
 }
 
 message PowerMonumentsResults {
-
+  string dummyValue = 1;
 }
 
 message ConsolidateMarkersResults {
-
+  string dummyValue = 1;
 }
 
 message PlayerFamilyPlacementAndModalitySelections {

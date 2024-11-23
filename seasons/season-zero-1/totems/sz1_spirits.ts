@@ -33,7 +33,7 @@ export const SPIRITS_TOTEM_DEF: ITotemDetails = {
   totemName: TOTEM_NAME,
 
   optPlayCards: CARD_DEFS
-    .map((cardDef, i) => {
+    .map((cardDef, ) => {
       const retVal: FamilyCardInstance = {
         ...cardDef,
         familyCardInstancePbId: {
@@ -46,7 +46,7 @@ export const SPIRITS_TOTEM_DEF: ITotemDetails = {
     }),
 
   osbPlayCards: CARD_DEFS
-    .map((cardDef, i) => {
+    .map((cardDef, ) => {
       const retVal: FamilyCardInstance = {
         ...cardDef,
         familyCardInstancePbId: {

@@ -1,7 +1,5 @@
-import React from 'react';
 import './MwCard.css';
 import { createIconizedStringContent } from './icon-strings';
-import { fontWeight } from 'html2canvas/dist/types/css/property-descriptors/font-weight';
 
 
 export interface IMonumentPrintSettings {

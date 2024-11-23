@@ -52,7 +52,9 @@ message MvmRegisterData {
 }
 
 
-message MvmInstruction_DeferToOnManaflowProcImpl { }
+message MvmInstruction_DeferToOnManaflowProcImpl {
+  string dummyValue = 1;
+}
 
 
 message MvmInstruction_SetMarkerRegister_ToMarkerTypeAndQuantity {

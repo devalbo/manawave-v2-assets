@@ -1,4 +1,3 @@
-import React from 'react';
 import './MwCard.css';
 import { MwCardTemplateHeader } from './MwCardTemplateHeader';
 import { IMwCardData } from './mw-card-data';

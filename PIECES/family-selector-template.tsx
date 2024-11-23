@@ -1,4 +1,3 @@
-import React from 'react';
 import { OnCardPickData } from './mw-card-data';
 import { OxTotemDataUrl, SpiritsTotemDataUrl, TurtleTotemDataUrl, TigerTotemDataUrl, Totems } from './totems';
 import { PlayerId } from './constants';

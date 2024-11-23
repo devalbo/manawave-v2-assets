@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { createChunkedArrays } from '../utils/utils';
 import './mw-print-sheets.css';
 import _ from 'lodash';

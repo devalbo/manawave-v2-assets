@@ -25,11 +25,11 @@ export const getPlayerCardsForTotem = (totemDetails: ITotemDetails, playerSide: 
   const playCards = [] as FamilyCardInstance[];
 
   if (playerSide === 'OPT') {
-    totemDetails.optPlayCards.forEach((fcd, cardIndex) => {
+    totemDetails.optPlayCards.forEach((fcd, ) => {
       playCards.push(fcd);
     });
   } else {
-    totemDetails.osbPlayCards.forEach((fcd, cardIndex) => {
+    totemDetails.osbPlayCards.forEach((fcd, ) => {
       playCards.push(fcd);
     });
   }
