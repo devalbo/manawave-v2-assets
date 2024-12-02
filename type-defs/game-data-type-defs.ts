@@ -6,12 +6,13 @@ import { BoardPiecesState } from "../../mw-v2-game-engine/local-game-state/local
 
 
 export interface IPlayer {
-  playerSlotId: PlayerSlotId
-  playerSide: PlayerSide
-  name: string
-  defaultStrategy: PlayerDefaultStrategy
+  readonly playerSlotId: PlayerSlotId
+  readonly playerSide: PlayerSide
+  readonly playerId: string
+  readonly name: string
+  readonly defaultStrategy: PlayerDefaultStrategy
 
-  rawPb: PlayerPb
+  readonly rawPb: PlayerPb
 }
 
 

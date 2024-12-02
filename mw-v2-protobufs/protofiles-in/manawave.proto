@@ -376,8 +376,9 @@ message GameStatePb {
 
   GamePhaseId gamePhaseId = 1;
 
-  InitialConditions initialConditions = 2;
-  PlayerRegistration playerRegistration = 3;
+  GameHostPb gameHost = 2;
+  InitialConditions initialConditions = 3;
+  PlayerRegistration playerRegistration = 4;
   
   // GameBoardStatePb gameBoardState = 10;
 

@@ -45,6 +45,15 @@ export interface PlayerRegistration {
     osbPlayer?: PlayerPb;
 }
 /**
+ * @generated from protobuf message GameHostPb
+ */
+export interface GameHostPb {
+    /**
+     * @generated from protobuf field: string gameHostId = 1;
+     */
+    gameHostId: string;
+}
+/**
  * @generated from protobuf message SeasonPbId
  */
 export interface SeasonPbId {
@@ -572,6 +581,53 @@ class PlayerRegistration$Type extends MessageType<PlayerRegistration> {
  * @generated MessageType for protobuf message PlayerRegistration
  */
 export const PlayerRegistration = new PlayerRegistration$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class GameHostPb$Type extends MessageType<GameHostPb> {
+    constructor() {
+        super("GameHostPb", [
+            { no: 1, name: "gameHostId", kind: "scalar", T: 9 /*ScalarType.STRING*/ }
+        ]);
+    }
+    create(value?: PartialMessage<GameHostPb>): GameHostPb {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.gameHostId = "";
+        if (value !== undefined)
+            reflectionMergePartial<GameHostPb>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: GameHostPb): GameHostPb {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* string gameHostId */ 1:
+                    message.gameHostId = reader.string();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: GameHostPb, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* string gameHostId = 1; */
+        if (message.gameHostId !== "")
+            writer.tag(1, WireType.LengthDelimited).string(message.gameHostId);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message GameHostPb
+ */
+export const GameHostPb = new GameHostPb$Type();
 // @generated message type with reflection information, may provide speed optimized methods
 class SeasonPbId$Type extends MessageType<SeasonPbId> {
     constructor() {

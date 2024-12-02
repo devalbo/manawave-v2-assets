@@ -72,6 +72,10 @@ message PlayerRegistration {
   PlayerPb osbPlayer  = 3;
 }
 
+message GameHostPb {
+  string gameHostId = 1;
+}
+
 
 enum GamePhaseId {
   GamePhase_NotSet = 0;

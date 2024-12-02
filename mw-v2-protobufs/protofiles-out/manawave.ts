@@ -11,6 +11,7 @@ import type { PartialMessage } from "@protobuf-ts/runtime";
 import { reflectionMergePartial } from "@protobuf-ts/runtime";
 import { MessageType } from "@protobuf-ts/runtime";
 import { PlayerRegistration } from "./manawave-types";
+import { GameHostPb } from "./manawave-types";
 import { GamePhaseId } from "./manawave-types";
 import { GameOutcome } from "./manawave-types";
 import { RoundProgress } from "./manawave-types";
@@ -811,11 +812,15 @@ export interface GameStatePb {
      */
     gamePhaseId: GamePhaseId;
     /**
-     * @generated from protobuf field: InitialConditions initialConditions = 2;
+     * @generated from protobuf field: GameHostPb gameHost = 2;
+     */
+    gameHost?: GameHostPb;
+    /**
+     * @generated from protobuf field: InitialConditions initialConditions = 3;
      */
     initialConditions?: InitialConditions;
     /**
-     * @generated from protobuf field: PlayerRegistration playerRegistration = 3;
+     * @generated from protobuf field: PlayerRegistration playerRegistration = 4;
      */
     playerRegistration?: PlayerRegistration;
     // GameBoardStatePb gameBoardState = 10;
@@ -3413,8 +3418,9 @@ class GameStatePb$Type extends MessageType<GameStatePb> {
     constructor() {
         super("GameStatePb", [
             { no: 1, name: "gamePhaseId", kind: "enum", T: () => ["GamePhaseId", GamePhaseId] },
-            { no: 2, name: "initialConditions", kind: "message", T: () => InitialConditions },
-            { no: 3, name: "playerRegistration", kind: "message", T: () => PlayerRegistration },
+            { no: 2, name: "gameHost", kind: "message", T: () => GameHostPb },
+            { no: 3, name: "initialConditions", kind: "message", T: () => InitialConditions },
+            { no: 4, name: "playerRegistration", kind: "message", T: () => PlayerRegistration },
             { no: 20, name: "initGameSetup", kind: "message", T: () => GameInitSetup },
             { no: 21, name: "initPickTotemsAndMonumentVetoResult", kind: "message", T: () => GameInitPickTotemsAndMonumentVetoResult },
             { no: 22, name: "initPlaceClansResult", kind: "message", T: () => GameInitPlaceClansResult },
@@ -3439,10 +3445,13 @@ class GameStatePb$Type extends MessageType<GameStatePb> {
                 case /* GamePhaseId gamePhaseId */ 1:
                     message.gamePhaseId = reader.int32();
                     break;
-                case /* InitialConditions initialConditions */ 2:
+                case /* GameHostPb gameHost */ 2:
+                    message.gameHost = GameHostPb.internalBinaryRead(reader, reader.uint32(), options, message.gameHost);
+                    break;
+                case /* InitialConditions initialConditions */ 3:
                     message.initialConditions = InitialConditions.internalBinaryRead(reader, reader.uint32(), options, message.initialConditions);
                     break;
-                case /* PlayerRegistration playerRegistration */ 3:
+                case /* PlayerRegistration playerRegistration */ 4:
                     message.playerRegistration = PlayerRegistration.internalBinaryRead(reader, reader.uint32(), options, message.playerRegistration);
                     break;
                 case /* GameInitSetup initGameSetup */ 20:
@@ -3478,12 +3487,15 @@ class GameStatePb$Type extends MessageType<GameStatePb> {
         /* GamePhaseId gamePhaseId = 1; */
         if (message.gamePhaseId !== 0)
             writer.tag(1, WireType.Varint).int32(message.gamePhaseId);
-        /* InitialConditions initialConditions = 2; */
+        /* GameHostPb gameHost = 2; */
+        if (message.gameHost)
+            GameHostPb.internalBinaryWrite(message.gameHost, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        /* InitialConditions initialConditions = 3; */
         if (message.initialConditions)
-            InitialConditions.internalBinaryWrite(message.initialConditions, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
-        /* PlayerRegistration playerRegistration = 3; */
+            InitialConditions.internalBinaryWrite(message.initialConditions, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
+        /* PlayerRegistration playerRegistration = 4; */
         if (message.playerRegistration)
-            PlayerRegistration.internalBinaryWrite(message.playerRegistration, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
+            PlayerRegistration.internalBinaryWrite(message.playerRegistration, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
         /* GameInitSetup initGameSetup = 20; */
         if (message.initGameSetup)
             GameInitSetup.internalBinaryWrite(message.initGameSetup, writer.tag(20, WireType.LengthDelimited).fork(), options).join();
