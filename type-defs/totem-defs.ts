@@ -1,6 +1,6 @@
-import { PlayerSide } from "../../mw-v2-game-engine/gameboard/game-play-data";
 import { TotemPbId } from "@mw-protobufs/manawave-types";
 import { FamilyCardInstance } from "../PIECES/type-defs/type-defs";
+import { PlayerSide } from "./game-play-data";
 
 
 export interface ITotemDetails {

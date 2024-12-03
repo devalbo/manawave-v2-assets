@@ -1,8 +1,9 @@
-import './MwCard.css';
+import React from 'react';
 import { MwCardTemplateHeader } from './MwCardTemplateHeader';
 import { IMwCardData } from './mw-card-data';
 import { MwCardTemplateModeBlock } from './MwCardTemplateModeBlock';
 import { MwCardTemplateArtBlock } from './MwCardTemplateArtBlock';
+import './MwCard.css';
 
 
 export const MwCardTemplate = (props: IMwCardData) => {

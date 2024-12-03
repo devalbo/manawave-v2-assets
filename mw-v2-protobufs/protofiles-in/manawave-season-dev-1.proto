@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+
+enum SeasonDev1ClanCardDefs {
+  SeasonDev1ClanCard_NotSet = 0;
+  SeasonDev1ClanOfAttack   = 1;
+  SeasonDev1ClanOfDefense  = 2;
+  SeasonDev1ClanOfMagic    = 3;
+}
+
+enum SeasonDev1TotemDefs {
+  SeasonDev1Totem_NotSet  = 0;
+  SeasonDev1Totem_Attack  = 1;
+  SeasonDev1Totem_Defense = 2;
+  SeasonDev1Totem_Magic   = 3;
+}
+
+enum SeasonDev1MonumentCardDefs {
+  SeasonDev1MonumentCard_NotSet         = 0;
+  
+  SeasonDev1MonumentOfAttack            = 1;
+  SeasonDev1MonumentOfDefense           = 2;
+  SeasonDev1MonumentOfMagic             = 3;
+  
+  SeasonDev1MonumentOfAttackAndDefense  = 4;
+  SeasonDev1MonumentOfAttackAndMagic    = 5;
+  SeasonDev1MonumentOfDefenseAndMagic   = 6;
+}
+
+enum SeasonDev1FamilyCardDefs {
+  SeasonDev1FamilyCard_NotSet  = 0;
+
+  SeasonDev1AttackFamilyCards  = 10;
+  SeasonDev1Attackers1         = 11;
+  SeasonDev1Attackers2         = 12;
+  SeasonDev1Attackers3         = 13;
+  SeasonDev1Attackers4         = 14;
+  SeasonDev1Attackers5         = 15;
+  SeasonDev1Attackers6         = 16;
+
+  SeasonDev1DefenseFamilyCards = 20;
+  SeasonDev1Defenders1         = 21;
+  SeasonDev1Defenders2         = 22;
+  SeasonDev1Defenders3         = 23;
+  SeasonDev1Defenders4         = 24;
+  SeasonDev1Defenders5         = 25;
+  SeasonDev1Defenders6         = 26;
+
+  SeasonDev1MagicFamilyCards   = 30;
+  SeasonDev1Magickers1         = 31;
+  SeasonDev1Magickers2         = 32;
+  SeasonDev1Magickers3         = 33;
+  SeasonDev1Magickers4         = 34;
+  SeasonDev1Magickers5         = 35;
+  SeasonDev1Magickers6         = 36;
+}

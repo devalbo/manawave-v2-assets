@@ -58,7 +58,11 @@ export interface GameHostPb {
  */
 export interface SeasonPbId {
     /**
-     * @generated from protobuf field: SeasonDefinition seasonDefinition = 1;
+     * @generated from protobuf field: SeasonType seasonType = 1;
+     */
+    seasonType: SeasonType;
+    /**
+     * @generated from protobuf field: SeasonDefinition seasonDefinition = 2;
      */
     seasonDefinition: SeasonDefinition;
 }
@@ -169,6 +173,27 @@ export interface FamilyCardInstancePbId {
      * @generated from protobuf field: PlayerSideId owningPlayerSide = 2;
      */
     owningPlayerSide: PlayerSideId;
+}
+/**
+ * @generated from protobuf enum SeasonType
+ */
+export enum SeasonType {
+    /**
+     * @generated from protobuf enum value: SeasonType_NotSet = 0;
+     */
+    SeasonType_NotSet = 0,
+    /**
+     * @generated from protobuf enum value: SeasonType_Dev = 1;
+     */
+    SeasonType_Dev = 1,
+    /**
+     * @generated from protobuf enum value: SeasonType_Playtest = 10;
+     */
+    SeasonType_Playtest = 10,
+    /**
+     * @generated from protobuf enum value: SeasonType_Production = 100;
+     */
+    SeasonType_Production = 100
 }
 /**
  * @generated from protobuf enum SeasonDefinition
@@ -632,11 +657,13 @@ export const GameHostPb = new GameHostPb$Type();
 class SeasonPbId$Type extends MessageType<SeasonPbId> {
     constructor() {
         super("SeasonPbId", [
-            { no: 1, name: "seasonDefinition", kind: "enum", T: () => ["SeasonDefinition", SeasonDefinition] }
+            { no: 1, name: "seasonType", kind: "enum", T: () => ["SeasonType", SeasonType] },
+            { no: 2, name: "seasonDefinition", kind: "enum", T: () => ["SeasonDefinition", SeasonDefinition] }
         ]);
     }
     create(value?: PartialMessage<SeasonPbId>): SeasonPbId {
         const message = globalThis.Object.create((this.messagePrototype!));
+        message.seasonType = 0;
         message.seasonDefinition = 0;
         if (value !== undefined)
             reflectionMergePartial<SeasonPbId>(this, message, value);
@@ -647,7 +674,10 @@ class SeasonPbId$Type extends MessageType<SeasonPbId> {
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* SeasonDefinition seasonDefinition */ 1:
+                case /* SeasonType seasonType */ 1:
+                    message.seasonType = reader.int32();
+                    break;
+                case /* SeasonDefinition seasonDefinition */ 2:
                     message.seasonDefinition = reader.int32();
                     break;
                 default:
@@ -662,9 +692,12 @@ class SeasonPbId$Type extends MessageType<SeasonPbId> {
         return message;
     }
     internalBinaryWrite(message: SeasonPbId, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* SeasonDefinition seasonDefinition = 1; */
+        /* SeasonType seasonType = 1; */
+        if (message.seasonType !== 0)
+            writer.tag(1, WireType.Varint).int32(message.seasonType);
+        /* SeasonDefinition seasonDefinition = 2; */
         if (message.seasonDefinition !== 0)
-            writer.tag(1, WireType.Varint).int32(message.seasonDefinition);
+            writer.tag(2, WireType.Varint).int32(message.seasonDefinition);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

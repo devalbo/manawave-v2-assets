@@ -1,6 +1,13 @@
 syntax = "proto3";
 
 
+enum SeasonType {
+  SeasonType_NotSet = 0;
+  SeasonType_Dev = 1;
+  SeasonType_Playtest = 10;
+  SeasonType_Production = 100;
+}
+
 enum SeasonDefinition {
   SeasonDef_NotSet = 0;
   SeasonDef_Zero_1 = 1;
@@ -121,7 +128,8 @@ enum RoundProgress {
 
 
 message SeasonPbId {
-  SeasonDefinition seasonDefinition = 1;
+  SeasonType seasonType = 1;
+  SeasonDefinition seasonDefinition = 2;
 }
 
 

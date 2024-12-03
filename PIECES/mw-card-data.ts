@@ -1,10 +1,11 @@
-import { PlayerSide } from "../../mw-v2-game-engine/gameboard/game-play-data";
+import { Sd1Totem } from "@mw-assets/type-defs/totem-type-defs";
 import { ManaflowPointProcResult } from "../../mw-v2-game-engine/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types";
 import { ManaflowProcPoint } from "../../mw-v2-game-engine/local-game-state/channel-clan-manaflows/type-defs";
 import { BoardPiecesState } from "../../mw-v2-game-engine/local-game-state/local-board-state-types";
 import { createMwBoardPlayerSideCoordinateKey } from "../type-defs/branded-string-types";
 import { Totems } from "./totems";
 import { ManawaveVmInstruction } from "@mw-protobufs/manawave-vm";
+import { PlayerSide } from "@mw-assets/type-defs/game-play-data";
 
 export interface IModePrintSettings {
   fontSize: number    // defaults to 16
@@ -54,7 +55,7 @@ export interface OnCardPickData {
 
 export interface IMwCardData {
   title: string;
-  totems: Totems[];
+  totems: (Totems | Sd1Totem)[];
   onCardPickData: OnCardPickData;
   modes: IMwCardModeData[]
 }

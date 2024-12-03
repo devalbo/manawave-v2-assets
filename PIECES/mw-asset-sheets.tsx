@@ -1,3 +1,4 @@
+import React from "react";
 import _ from "lodash";
 
 import { MwBigCardPrintSheets, MwMediumCardPrintSheets, MwMediumCardLandscapePrintSheets } from "./mw-print-sheets";

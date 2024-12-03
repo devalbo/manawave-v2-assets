@@ -1,8 +1,11 @@
+import React from "react";
+import { Sd1Totem } from "@mw-assets/type-defs/totem-type-defs";
 import { OxTotemDataUrl, SpiritsTotemDataUrl, TigerTotemDataUrl, Totems, TurtleTotemDataUrl } from "./totems";
+
 
 interface MwCardTemplateHeaderProps {
   name: string;
-  familyTotems: Totems[]
+  familyTotems: (Totems | Sd1Totem)[];
   singlePickInitialPopulation: number
   multiplePickInitialPopulation: number
 }
