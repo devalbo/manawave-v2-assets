@@ -8,6 +8,6 @@ export const SEASON_ZERO_1_PBID: SeasonPbId = {
 
 
 export const SEASON_DEV_1_PBID: SeasonPbId = {
-  seasonType: SeasonType.SeasonType_Playtest,
+  seasonType: SeasonType.SeasonType_Dev,
   seasonDefinition: SeasonDefinition.SeasonDef_Zero_1,
 };

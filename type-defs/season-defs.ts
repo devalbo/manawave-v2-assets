@@ -5,6 +5,7 @@ import { ClanCardDefinition } from "./clan-defs"
 import { FamilyCardPlacementResult } from "./game-data-type-defs"
 import { MonumentCard } from "./monument-defs"
 import { ITotemDetails } from "./totem-defs"
+import { SeasonDev1 } from "@mw-assets/seasons/season-dev-1/season-dev-1-def"
 
 
 export type INoPickFamilyEffect = {
@@ -23,7 +24,6 @@ export interface ISeason {
   defaultMonumentChoices: MonumentCard[]
   totemMonumentChoices: MonumentCard[]
 
-  // allMonumentChoices: MonumentInPlayInstance[]
   allMonumentChoices: MonumentCard[]
 
   allClanDefinitions: ClanCardDefinition[]
@@ -36,4 +36,5 @@ export interface ISeason {
 
 export const SEASON_CHOICES: ISeason[] = [
   SeasonZero1,
+  SeasonDev1,
 ];
