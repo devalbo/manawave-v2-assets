@@ -18,11 +18,6 @@ export interface IPlayer {
 
 export interface IClanCardLogic {
   onManawaveInit?: () => void
-  // onManaflowProc: (
-  //   boardState: BoardPiecesState,
-  //   playerSide: PlayerSide,
-  //   procPoint: ManaflowProcPoint,
-  // ) => ManaflowPointProcResult
   onManawaveFinalize?: () => void
   
   createInitialStockpile: () => ClanCardStockpile // run this when tile is placed by player on board
@@ -36,11 +31,6 @@ export type FamilyCardPlacementResult = {
 
 export interface IFamilyCardLogic {
   onManawaveInit?: () => void
-  // onManaflowProc: (
-  //   boardState: BoardPiecesState,
-  //   playerSide: PlayerSide,
-  //   procPoint: ManaflowProcPoint,
-  // ) => ManaflowPointProcResult
   onManawaveFinalize?: () => void
   
   onFamilyCardPlacement?: () => FamilyCardPlacementResult  // run this when card is placed by player on board
