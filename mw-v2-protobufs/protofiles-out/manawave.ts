@@ -25,6 +25,7 @@ import { ClanCardDefPbId } from "./manawave-types";
 import { LeylineDistanceFromSource } from "./manawave-types";
 import { TotemPbId } from "./manawave-types";
 import { MonumentCardPbId } from "./manawave-types";
+import { SeasonPbId } from "./manawave-types";
 // message BoardPlayerSideCoordinate {
 //   PlayerSideId playerSide = 1;
 //   uint32 rank = 2;
@@ -42,7 +43,11 @@ export interface InitialConditions {
     /**
      * @generated from protobuf field: uint32 randomSeed = 1;
      */
-    randomSeed: number; // bool useFastForwardMode = 2;
+    randomSeed: number;
+    /**
+     * @generated from protobuf field: SeasonPbId seasonId = 2;
+     */
+    seasonId?: SeasonPbId;
 }
 /**
  * @generated from protobuf message GameSetupLeyPointOptions
@@ -854,7 +859,8 @@ export interface GameStatePb {
 class InitialConditions$Type extends MessageType<InitialConditions> {
     constructor() {
         super("InitialConditions", [
-            { no: 1, name: "randomSeed", kind: "scalar", T: 13 /*ScalarType.UINT32*/ }
+            { no: 1, name: "randomSeed", kind: "scalar", T: 13 /*ScalarType.UINT32*/ },
+            { no: 2, name: "seasonId", kind: "message", T: () => SeasonPbId }
         ]);
     }
     create(value?: PartialMessage<InitialConditions>): InitialConditions {
@@ -872,6 +878,9 @@ class InitialConditions$Type extends MessageType<InitialConditions> {
                 case /* uint32 randomSeed */ 1:
                     message.randomSeed = reader.uint32();
                     break;
+                case /* SeasonPbId seasonId */ 2:
+                    message.seasonId = SeasonPbId.internalBinaryRead(reader, reader.uint32(), options, message.seasonId);
+                    break;
                 default:
                     let u = options.readUnknownField;
                     if (u === "throw")
@@ -887,6 +896,9 @@ class InitialConditions$Type extends MessageType<InitialConditions> {
         /* uint32 randomSeed = 1; */
         if (message.randomSeed !== 0)
             writer.tag(1, WireType.Varint).uint32(message.randomSeed);
+        /* SeasonPbId seasonId = 2; */
+        if (message.seasonId)
+            SeasonPbId.internalBinaryWrite(message.seasonId, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);

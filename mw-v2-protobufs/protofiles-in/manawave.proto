@@ -16,7 +16,7 @@ import "manawave-board.proto";
 
 message InitialConditions {
   uint32 randomSeed = 1;
-  // bool useFastForwardMode = 2;
+  SeasonPbId seasonId = 2;
 }
 
 

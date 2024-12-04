@@ -32,15 +32,13 @@ export interface PlayerPb {
  */
 export interface PlayerRegistration {
     /**
-     * @generated from protobuf field: SeasonPbId seasonId = 1;
-     */
-    seasonId?: SeasonPbId;
-    /**
-     * @generated from protobuf field: PlayerPb optPlayer = 2;
+     * SeasonPbId seasonId = 1;
+     *
+     * @generated from protobuf field: PlayerPb optPlayer = 1;
      */
     optPlayer?: PlayerPb;
     /**
-     * @generated from protobuf field: PlayerPb osbPlayer = 3;
+     * @generated from protobuf field: PlayerPb osbPlayer = 2;
      */
     osbPlayer?: PlayerPb;
 }
@@ -550,9 +548,8 @@ export const PlayerPb = new PlayerPb$Type();
 class PlayerRegistration$Type extends MessageType<PlayerRegistration> {
     constructor() {
         super("PlayerRegistration", [
-            { no: 1, name: "seasonId", kind: "message", T: () => SeasonPbId },
-            { no: 2, name: "optPlayer", kind: "message", T: () => PlayerPb },
-            { no: 3, name: "osbPlayer", kind: "message", T: () => PlayerPb }
+            { no: 1, name: "optPlayer", kind: "message", T: () => PlayerPb },
+            { no: 2, name: "osbPlayer", kind: "message", T: () => PlayerPb }
         ]);
     }
     create(value?: PartialMessage<PlayerRegistration>): PlayerRegistration {
@@ -566,13 +563,10 @@ class PlayerRegistration$Type extends MessageType<PlayerRegistration> {
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* SeasonPbId seasonId */ 1:
-                    message.seasonId = SeasonPbId.internalBinaryRead(reader, reader.uint32(), options, message.seasonId);
-                    break;
-                case /* PlayerPb optPlayer */ 2:
+                case /* PlayerPb optPlayer */ 1:
                     message.optPlayer = PlayerPb.internalBinaryRead(reader, reader.uint32(), options, message.optPlayer);
                     break;
-                case /* PlayerPb osbPlayer */ 3:
+                case /* PlayerPb osbPlayer */ 2:
                     message.osbPlayer = PlayerPb.internalBinaryRead(reader, reader.uint32(), options, message.osbPlayer);
                     break;
                 default:
@@ -587,15 +581,12 @@ class PlayerRegistration$Type extends MessageType<PlayerRegistration> {
         return message;
     }
     internalBinaryWrite(message: PlayerRegistration, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* SeasonPbId seasonId = 1; */
-        if (message.seasonId)
-            SeasonPbId.internalBinaryWrite(message.seasonId, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
-        /* PlayerPb optPlayer = 2; */
+        /* PlayerPb optPlayer = 1; */
         if (message.optPlayer)
-            PlayerPb.internalBinaryWrite(message.optPlayer, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
-        /* PlayerPb osbPlayer = 3; */
+            PlayerPb.internalBinaryWrite(message.optPlayer, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        /* PlayerPb osbPlayer = 2; */
         if (message.osbPlayer)
-            PlayerPb.internalBinaryWrite(message.osbPlayer, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
+            PlayerPb.internalBinaryWrite(message.osbPlayer, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
