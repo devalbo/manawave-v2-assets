@@ -38,14 +38,3 @@ export const createMwBoardPlayerSideCoordinateKey = (playerSide: PlayerSide, ley
   
   return `${playerSide}:${columnName}${flowRank}` as MwBoardPlayerSideCoordinateKey;
 }
-
-
-// export const createClanCardInstanceId = (playerSide: PlayerSide, clanId: ClanCardDefPbId): ClanCardInstanceId => {
-//   return `${playerSide}[${clanId.seasonId}:${clanId.seasonClanCardId}]` as ClanCardInstanceId;
-// }
-
-
-// export const createFamilyCardInstanceId = (totemId: TotemPbId, playerSide: PlayerSide, playerSideCardIndex: number): FamilyCardInstanceId => {
-//   const totemIdStr = toTotemIdStr(totemId);
-//   return `${totemIdStr}:${playerSide}[${playerSideCardIndex}]` as FamilyCardInstanceId;
-// }
