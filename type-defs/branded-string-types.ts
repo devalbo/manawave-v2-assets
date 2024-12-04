@@ -1,5 +1,4 @@
-import { ClanCardDefPbId, LeylineDistanceFromSource, TotemPbId } from "../mw-v2-protobufs/protofiles-out/manawave-types";
-import { toTotemIdStr } from "./pb-id-str-mapping";
+import { LeylineDistanceFromSource } from "../mw-v2-protobufs/protofiles-out/manawave-types";
 import { PlayerSide } from "./game-play-data";
 
 
@@ -41,12 +40,12 @@ export const createMwBoardPlayerSideCoordinateKey = (playerSide: PlayerSide, ley
 }
 
 
-export const createClanCardInstanceId = (playerSide: PlayerSide, clanId: ClanCardDefPbId): ClanCardInstanceId => {
-  return `${playerSide}[${clanId.seasonId}:${clanId.seasonClanCardId}]` as ClanCardInstanceId;
-}
+// export const createClanCardInstanceId = (playerSide: PlayerSide, clanId: ClanCardDefPbId): ClanCardInstanceId => {
+//   return `${playerSide}[${clanId.seasonId}:${clanId.seasonClanCardId}]` as ClanCardInstanceId;
+// }
 
 
-export const createFamilyCardInstanceId = (totemId: TotemPbId, playerSide: PlayerSide, playerSideCardIndex: number): FamilyCardInstanceId => {
-  const totemIdStr = toTotemIdStr(totemId);
-  return `${totemIdStr}:${playerSide}[${playerSideCardIndex}]` as FamilyCardInstanceId;
-}
+// export const createFamilyCardInstanceId = (totemId: TotemPbId, playerSide: PlayerSide, playerSideCardIndex: number): FamilyCardInstanceId => {
+//   const totemIdStr = toTotemIdStr(totemId);
+//   return `${totemIdStr}:${playerSide}[${playerSideCardIndex}]` as FamilyCardInstanceId;
+// }

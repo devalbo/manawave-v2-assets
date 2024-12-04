@@ -7,7 +7,7 @@ import { createMwCounterCount, createMwTokenCount } from "../../../type-defs/bra
 import { ClanCardDefinition } from "../../../type-defs/clan-defs";
 import { SEASON_DEV_1_PBID } from "../../season-id-defs";
 import { createMvmInstructionsOnlyClanModeLogic } from "../../../PIECES/mw-card-data";
-import { createAddMarkersToAdjacentClansInstructionSet, createAddMarkersToMyClanInstructionSet } from "../../../manawave-virtual-machine/mvm-instructions-factory";
+import { createAddMarkersToAdjacentClansInstructionSet } from "../../../manawave-virtual-machine/mvm-instructions-factory";
 
 
 export const ClanOfAttackData: ClanCardDefinition = {

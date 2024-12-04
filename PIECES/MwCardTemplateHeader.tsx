@@ -1,4 +1,3 @@
-import React from "react";
 import { Sd1Totem } from "@mw-assets/type-defs/totem-type-defs";
 import { OxTotemDataUrl, SpiritsTotemDataUrl, TigerTotemDataUrl, Totems, TurtleTotemDataUrl } from "./totems";
 

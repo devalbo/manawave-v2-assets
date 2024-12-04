@@ -2,11 +2,12 @@ import { OnCardPickData } from './mw-card-data';
 import { OxTotemDataUrl, SpiritsTotemDataUrl, TurtleTotemDataUrl, TigerTotemDataUrl, Totems } from './totems';
 import { PlayerId } from './constants';
 import './MwCard.css';
+import { Sd1Totem } from '@mw-assets/type-defs/totem-type-defs';
 
 
 export interface IMwFamilySelectorData {
   title: string;
-  totems: Totems[];
+  totems: (Totems | Sd1Totem)[];
   onCardPickData: OnCardPickData;
   playerId: PlayerId
 }

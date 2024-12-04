@@ -1,5 +1,11 @@
 import { MwMarkerType } from "@mw-protobufs/manawave-types";
-import { ManawaveVmInstruction, MvmAmountQueryFunctionId, MvmAtomicInstruction, MvmBoolQueryFunctionId, MvmRegisterId } from "../mw-v2-protobufs/protofiles-out/manawave-vm";
+import { 
+  ManawaveVmInstruction,
+  MvmAmountQueryFunctionId,
+  MvmAtomicInstruction,
+  MvmBoolQueryFunctionId,
+  MvmRegisterId
+} from "../mw-v2-protobufs/protofiles-out/manawave-vm";
 
 
 export const createNoOpInstructionSet = (): ManawaveVmInstruction[] => {
