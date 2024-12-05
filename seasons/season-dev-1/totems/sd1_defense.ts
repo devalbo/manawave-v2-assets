@@ -11,21 +11,22 @@ import { FamilyCardDefinition } from "@mw-assets/type-defs/family-defs";
 
 
 const TOTEM_NAME = 'Defense';
+const TOTEM_ID_STR = 'defense';
 const TOTEM_ID: TotemPbId = {
   seasonId: SEASON_DEV_1_PBID,
   seasonTotemId: SeasonDev1TotemDefs.SeasonDev1Totem_Defense,
 };
 
 
-const createDefenderFamilyCardDef = (defenseNumber: number): FamilyCardDefinition => {
+const createDefenderFamilyCardDef = (defenseNumber: number, seasonFamilyCardId: SeasonDev1FamilyCardDefs): FamilyCardDefinition => {
   const retVal: FamilyCardDefinition = {
     pieceType: 'family-card',
     title: `Defender Family ${defenseNumber}`,
     newName: `Defender Family ${defenseNumber}`,
-    totemId: 'tiger',
+    totemId: TOTEM_ID_STR,
     familyCardDefPbId: {
       seasonId: SEASON_DEV_1_PBID,
-      seasonFamilyCardId: SeasonDev1FamilyCardDefs.SeasonDev1Defenders1,
+      seasonFamilyCardId: seasonFamilyCardId,
     },
     text: "TODO: fill in text for Club Wielders",
     modes: mapToIndexedModes([
@@ -56,12 +57,12 @@ const createDefenderFamilyCardDef = (defenseNumber: number): FamilyCardDefinitio
 
 
 const CARD_DEFS = [
-  createDefenderFamilyCardDef(1),
-  createDefenderFamilyCardDef(2),
-  createDefenderFamilyCardDef(3),
-  createDefenderFamilyCardDef(4),
-  createDefenderFamilyCardDef(5),
-  createDefenderFamilyCardDef(6),
+  createDefenderFamilyCardDef(1, SeasonDev1FamilyCardDefs.SeasonDev1Defenders1),
+  createDefenderFamilyCardDef(2, SeasonDev1FamilyCardDefs.SeasonDev1Defenders2),
+  createDefenderFamilyCardDef(3, SeasonDev1FamilyCardDefs.SeasonDev1Defenders3),
+  createDefenderFamilyCardDef(4, SeasonDev1FamilyCardDefs.SeasonDev1Defenders4),
+  createDefenderFamilyCardDef(5, SeasonDev1FamilyCardDefs.SeasonDev1Defenders5),
+  createDefenderFamilyCardDef(6, SeasonDev1FamilyCardDefs.SeasonDev1Defenders6),
 ];
 
 

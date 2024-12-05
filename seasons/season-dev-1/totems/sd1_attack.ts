@@ -11,21 +11,22 @@ import { mapToIndexedModes } from "@mw-assets/PIECES/mw-mode-utils";
 
 
 const TOTEM_NAME = 'Attack';
+const TOTEM_ID_STR = 'attack';
 const TOTEM_ID: TotemPbId = {
   seasonId: SEASON_DEV_1_PBID,
   seasonTotemId: SeasonDev1TotemDefs.SeasonDev1Totem_Attack,
 };
 
 
-const createAttackerFamilyCardDef = (attackNumber: number): FamilyCardDefinition => {
+const createAttackerFamilyCardDef = (attackNumber: number, seasonFamilyCardId: SeasonDev1FamilyCardDefs): FamilyCardDefinition => {
   const retVal: FamilyCardDefinition = {
     pieceType: 'family-card',
     title: `Attacker Family ${attackNumber}`,
     newName: `Attacker Family ${attackNumber}`,
-    totemId: 'tiger',
+    totemId: TOTEM_ID_STR,
     familyCardDefPbId: {
       seasonId: SEASON_DEV_1_PBID,
-      seasonFamilyCardId: SeasonDev1FamilyCardDefs.SeasonDev1Attackers1,
+      seasonFamilyCardId,
     },
     text: "TODO: fill in text for Club Wielders",
     modes: mapToIndexedModes([
@@ -56,12 +57,12 @@ const createAttackerFamilyCardDef = (attackNumber: number): FamilyCardDefinition
 
 
 const CARD_DEFS = [
-  createAttackerFamilyCardDef(1),
-  createAttackerFamilyCardDef(2),
-  createAttackerFamilyCardDef(3),
-  createAttackerFamilyCardDef(4),
-  createAttackerFamilyCardDef(5),
-  createAttackerFamilyCardDef(6),
+  createAttackerFamilyCardDef(1, SeasonDev1FamilyCardDefs.SeasonDev1Attackers1),
+  createAttackerFamilyCardDef(2, SeasonDev1FamilyCardDefs.SeasonDev1Attackers2),
+  createAttackerFamilyCardDef(3, SeasonDev1FamilyCardDefs.SeasonDev1Attackers3),
+  createAttackerFamilyCardDef(4, SeasonDev1FamilyCardDefs.SeasonDev1Attackers4),
+  createAttackerFamilyCardDef(5, SeasonDev1FamilyCardDefs.SeasonDev1Attackers5),
+  createAttackerFamilyCardDef(6, SeasonDev1FamilyCardDefs.SeasonDev1Attackers6),
 ];
 
 

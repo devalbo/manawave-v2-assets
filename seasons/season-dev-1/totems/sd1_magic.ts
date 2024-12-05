@@ -11,21 +11,22 @@ import { createMvmInstructionsOnlyFamilyModeLogic } from "@mw-assets/PIECES/mw-c
 
 
 const TOTEM_NAME = 'Magic';
+const TOTEM_ID_STR = 'magic';
 const TOTEM_ID: TotemPbId = {
   seasonId: SEASON_DEV_1_PBID,
   seasonTotemId: SeasonDev1TotemDefs.SeasonDev1Totem_Magic,
 };
 
 
-const createMagicFamilyCardDef = (magicNumber: number): FamilyCardDefinition => {
+const createMagicFamilyCardDef = (magicNumber: number, seasonFamilyCardId: SeasonDev1FamilyCardDefs): FamilyCardDefinition => {
   const retVal: FamilyCardDefinition = {
     pieceType: 'family-card',
     title: `Magic Family ${magicNumber}`,
     newName: `Magic Family ${magicNumber}`,
-    totemId: 'tiger',
+    totemId: TOTEM_ID_STR,
     familyCardDefPbId: {
       seasonId: SEASON_DEV_1_PBID,
-      seasonFamilyCardId: SeasonDev1FamilyCardDefs.SeasonDev1Defenders1,
+      seasonFamilyCardId: seasonFamilyCardId,
     },
     text: "TODO: fill in text for Magic Family",
     modes: mapToIndexedModes([
@@ -56,12 +57,12 @@ const createMagicFamilyCardDef = (magicNumber: number): FamilyCardDefinition => 
 
 
 const CARD_DEFS = [
-  createMagicFamilyCardDef(1),
-  createMagicFamilyCardDef(2),
-  createMagicFamilyCardDef(3),
-  createMagicFamilyCardDef(4),
-  createMagicFamilyCardDef(5),
-  createMagicFamilyCardDef(6),
+  createMagicFamilyCardDef(1, SeasonDev1FamilyCardDefs.SeasonDev1Magickers1),
+  createMagicFamilyCardDef(2, SeasonDev1FamilyCardDefs.SeasonDev1Magickers2),
+  createMagicFamilyCardDef(3, SeasonDev1FamilyCardDefs.SeasonDev1Magickers3),
+  createMagicFamilyCardDef(4, SeasonDev1FamilyCardDefs.SeasonDev1Magickers4),
+  createMagicFamilyCardDef(5, SeasonDev1FamilyCardDefs.SeasonDev1Magickers5),
+  createMagicFamilyCardDef(6, SeasonDev1FamilyCardDefs.SeasonDev1Magickers6),
 ];
 
 
