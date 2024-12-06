@@ -107,7 +107,13 @@ export const MwClanTemplate = (props: IMwClanData) => {
     <div className="mw-clan-card">
       <div className="mw-clan-card-border-frame">
         <div style={{display: "flex", fontSize: 24, }}>
-          <img src={playerIdImgSrc} className="mw-tribe-player-header-id-icon"  />
+          <div style={{
+              height: 50,
+              width: 50,
+              overflow: "hidden",
+          }}>
+            <img src={playerIdImgSrc} style={{maxHeight: "100%", maxWidth: "100%", objectFit: "cover", }} />
+          </div>
           <div style={{marginLeft: "20px", }}>
             {props.title}
           </div>
