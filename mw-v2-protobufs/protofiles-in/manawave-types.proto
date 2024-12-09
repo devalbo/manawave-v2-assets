@@ -95,7 +95,8 @@ enum GamePhaseId {
 
   GamePhase_PlayingMainGame = 20;
 
-  GamePhase_GameOver = 100;
+  GamePhase_Uninitialized = 99;
+  GamePhase_GameOver  = 100;
 }
 
 enum GameOutcome {

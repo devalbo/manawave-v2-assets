@@ -393,6 +393,10 @@ export enum GamePhaseId {
      */
     GamePhase_PlayingMainGame = 20,
     /**
+     * @generated from protobuf enum value: GamePhase_Uninitialized = 99;
+     */
+    GamePhase_Uninitialized = 99,
+    /**
      * @generated from protobuf enum value: GamePhase_GameOver = 100;
      */
     GamePhase_GameOver = 100
