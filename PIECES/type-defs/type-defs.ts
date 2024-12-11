@@ -130,7 +130,6 @@ export const DefaultTribeConversionRatios: IMwTribeConversionRatio[] = [
       '<::mana-counter::>',
       '<::mana-counter::>',
     ]),
-    // output: convertToMwMarkerTypes([
     output: MwMarkerType.MwMarkerType_AttackCounter,
   },
   {

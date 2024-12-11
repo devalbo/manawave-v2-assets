@@ -15,39 +15,3 @@ export const MonumentOfPeaceData: MonumentCard = {
   "for both Tribes. The Tribe with the lowest COUNT(<::attack-counter::>) wins. " +
   "If still tied, resume Manawave.",
 }
-
-
-// export const MonumentOfPeace: MonumentInPlayInstance = {
-//   ...MonumentOfPeaceData,
-//   gameLogic: {
-//     onPoweredByManawave: (boardState, leyline) => {
-//       if (boardState.mwRoundNumber < 7) {
-//         return GameOutcome.GameOutcome_InProgress;
-//       }
-
-//       const optAttackCount = bpqGetMarkerCountForClanAtLeyline(boardState, 'OPT', leyline, MwMarkerType.MwMarkerType_AttackCounter);
-//       const osbAttackCount = bpqGetMarkerCountForClanAtLeyline(boardState, 'OSB', leyline, MwMarkerType.MwMarkerType_AttackCounter);
-
-//       if (optAttackCount < osbAttackCount) {
-//         return GameOutcome.GameOutcome_OptPlayerWins;
-//       }
-
-//       if (osbAttackCount < optAttackCount) {
-//         return GameOutcome.GameOutcome_OsbPlayerWins;
-//       }
-
-//       const optTribeAttackCount = bpqCountMarkersForPlayerTribe(boardState, 'OPT', MwMarkerType.MwMarkerType_AttackCounter);
-//       const osbTribeAttackCount = bpqCountMarkersForPlayerTribe(boardState, 'OSB', MwMarkerType.MwMarkerType_AttackCounter);
-
-//       if (optTribeAttackCount < osbTribeAttackCount) {
-//         return GameOutcome.GameOutcome_OptPlayerWins;
-//       }
-
-//       if (osbTribeAttackCount < optTribeAttackCount) {
-//         return GameOutcome.GameOutcome_OsbPlayerWins;
-//       }
-
-//       return GameOutcome.GameOutcome_InProgress;
-//     },
-//   }
-// }

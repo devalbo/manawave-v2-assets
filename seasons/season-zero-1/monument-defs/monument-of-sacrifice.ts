@@ -12,29 +12,3 @@ export const MonumentOfSacrificeData: MonumentCard = {
   isDefault: true,
   text: "Resolve: If COUNT(<::manawave-round-token::>) >= 7, COUNT(<::soulstain-token::>) for both Tribes. Tribe with lesser COUNT(<::soulstain-token::>) wins. If still tied, resume Manawave.",
 };
-
-
-// export const MonumentOfSacrifice: MonumentInPlayInstance = {
-//   ...MonumentOfSacrificeData,
-//   gameLogic: {
-//     onPoweredByManawave: (boardState, leyline) => {
-//       const roundNumber = boardState.mwRoundNumber;
-//       if (roundNumber < 7) {
-//         return GameOutcome.GameOutcome_InProgress;
-//       }
-
-//       const optSoulstainCount = bpqCountMarkersForPlayerTribe(boardState, 'OPT', MwMarkerType.MwMarkerType_SoulstainToken);
-//       const osbSoulstainCount = bpqCountMarkersForPlayerTribe(boardState, 'OSB', MwMarkerType.MwMarkerType_SoulstainToken);
-
-//       if (optSoulstainCount > osbSoulstainCount) {
-//         return GameOutcome.GameOutcome_OsbPlayerWins;
-//       }
-
-//       if (osbSoulstainCount > optSoulstainCount) {
-//         return GameOutcome.GameOutcome_OptPlayerWins;
-//       }
-
-//       return GameOutcome.GameOutcome_InProgress;
-//     },
-//   }
-// }

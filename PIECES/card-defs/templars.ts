@@ -48,11 +48,6 @@ export const TemplarsCardDef: FamilyCardDefinition = {
         ...createAddMarkersToMyTribeOnConditionInstructionSet(
           MvmBoolQueryFunctionId.MvmBoolQueryFunction_DoesMyTribeHaveAnySoulstainTokens,
           MwMarkerType.MwMarkerType_AttackCounter, -1),
-
-        // ...createAddCountersToMyClanModifiedByFunctionAmountInstructionSet(
-        //   MwMarkerType.MwMarkerType_ShieldCounter, 3, MvmFunctionId.MvmFunction_ReturnNegative1IfAnySoulstain),
-        // ...createAddCountersToMyClanModifiedByFunctionAmountInstructionSet(
-        //   MwMarkerType.MwMarkerType_AttackCounter, 1, MvmFunctionId.MvmFunction_ReturnNegative1IfAnySoulstain),
       ]),
     },
     {
@@ -69,11 +64,6 @@ export const TemplarsCardDef: FamilyCardDefinition = {
         ...createAddMarkersToMyTribeOnConditionInstructionSet(
           MvmBoolQueryFunctionId.MvmBoolQueryFunction_DoesMyTribeHaveAnySoulstainTokens,
           MwMarkerType.MwMarkerType_ShieldCounter, -1),
-
-        // ...createAddCountersToMyClanModifiedByFunctionAmountInstructionSet(
-        //   MwMarkerType.MwMarkerType_AttackCounter, 3, MvmFunctionId.MvmFunction_ReturnNegative1IfAnySoulstain),
-        // ...createAddCountersToMyClanModifiedByFunctionAmountInstructionSet(
-        //   MwMarkerType.MwMarkerType_ShieldCounter, 1, MvmFunctionId.MvmFunction_ReturnNegative1IfAnySoulstain),
       ]),
     },
   ]),

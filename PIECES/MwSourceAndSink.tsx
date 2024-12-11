@@ -2,9 +2,7 @@ import './MwSourceAndSink.css';
 import { createImgComponentFromTag } from './icons';
 
 
-export interface IMwSourceCardProps {
-  // title: string
-}
+export interface IMwSourceCardProps { }
 
 
 const RoundIndexIcon = () => createImgComponentFromTag('<::manawave-round-token::>', 50);
@@ -28,9 +26,7 @@ export const MwSourceCard = (_props: IMwSourceCardProps) => {
 };
 
 
-export interface IMwSinkCardProps {
-  // title: string
-}
+export interface IMwSinkCardProps { }
 
 export const MwSinkCard = (_props: IMwSinkCardProps) => {
   return (

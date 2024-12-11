@@ -4,16 +4,6 @@ import "manawave-types.proto";
 import "manawave-board.proto";
 
 
-// message BoardPlayerSideCoordinate {
-//   PlayerSideId playerSide = 1;
-//   uint32 rank = 2;
-//   LeylineDistanceFromSource leylineDistance = 3;
-// }
-
-// message PlayerTilePlacemenPoint {
-//   LeylineDistanceFromSource leylineDistance = 1;
-// }
-
 message InitialConditions {
   uint32 randomSeed = 1;
   SeasonPbId seasonId = 2;
@@ -76,19 +66,6 @@ message DrawFamilyCardsResults {
 message FullGameFamilyDrawResults {
   repeated DrawFamilyCardsResults familyCardDrawSets = 1;
 }
-
-
-// message PlayerPb {
-//   string playerId = 1;
-//   PlayerSideId playerSide = 2;
-//   PlayerDefaultStrategyPb defaultStrategy = 3;
-// }
-
-// message PlayerRegistration {
-//   SeasonPbId seasonId = 1;
-//   PlayerPb optPlayer  = 2;
-//   PlayerPb osbPlayer  = 3;
-// }
 
 
 message AllPlayerFamilyChoiceDefaults {
@@ -162,8 +139,6 @@ message AllPlayerModalitySelectionResults {
 
 
 message MarkerConversion {
-  // BoardPlayerSideCoordinate sourcePiece = 1;
-  // BoardPlayerSideCoordinate destinationPiece = 2;
   MwMarkerType sourceType = 1;
   MwMarkerType destinationType = 2;
   uint32 sourceAmount = 3;
@@ -213,15 +188,11 @@ message PlayerPurchaseAndPlaceMarkersSelections {
 // }
 
 message AllPlayerPurchaseAndPlaceMarkersDefaults {
-  // LeylineDistanceFromSource optPlayerLeylineDistance = 1;
-  // LeylineDistanceFromSource osbPlayerLeylineDistance = 2;
   PlayerPurchaseAndPlaceMarkersSelections optPlayerPurchaseAndPlaceMarkersSelections = 1;
   PlayerPurchaseAndPlaceMarkersSelections osbPlayerPurchaseAndPlaceMarkersSelections = 2;
 }
 
 message AllPlayerPurchaseAndPlaceMarkersResults {
-  // LeylineDistanceFromSource optPlayerLeylineDistance = 1;
-  // LeylineDistanceFromSource osbPlayerLeylineDistance = 2;
   PlayerPurchaseAndPlaceMarkersSelections optPlayerPurchaseAndPlaceMarkersSelections = 1;
   PlayerPurchaseAndPlaceMarkersSelections osbPlayerPurchaseAndPlaceMarkersSelections = 2;
 }
@@ -234,24 +205,6 @@ message PlayerTribeMarkerAllocation {
   uint32 destinationIncrement = 5;
 }
 
-
-// message PlayerMarkerAllocations {
-//   // repeated BoardPlayerSideCoordinate populationIncreaseTokenLocations = 1;
-//   // repeated BoardPlayerSideCoordinate sacrificeTokenLocations = 2;
-//   // repeated BoardPlayerSideCoordinate damageTokenLocations = 3;
-//   // repeated BoardPlayerSideCoordinate shieldTokenLocations = 4;
-
-//   // repeated PlayerMarkerAllocation populationIncreaseAllocations = 1;
-//   // repeated PlayerMarkerAllocation sacrificeAllocations = 2;
-//   // repeated PlayerMarkerAllocation damageAllocations = 3;
-//   // repeated PlayerMarkerAllocation shieldAllocations = 4;
-//   // repeated PlayerMarkerAllocation manalithAllocations = 5;
-
-//   repeated PlayerTribeMarkerAllocation tribeAllocations = 1;
-//   repeated PlayerClanMarkerConversion leyline1ClanConversions = 2;
-//   repeated PlayerClanMarkerConversion leyline2ClanConversions = 3;
-//   repeated PlayerClanMarkerConversion leyline3ClanConversions = 4;
-// }
 
 message PlayerTribeMarkerStockpile {
   repeated MwMarkerType markers = 1;
@@ -271,28 +224,6 @@ message PlayerMarkerStockpiles {
   PlayerClanMarkerStockpile leyline3ClanStockpile = 4;
 }
 
-// message PlayerMarkerAllocationOptions {
-
-// }
-
-// message AllPlayerMarkerAllocationOptions {
-//   PlayerMarkerAllocationOptions optPlayerMarkerPlacementOptions = 1;
-//   PlayerMarkerAllocationOptions osbPlayerMarkerPlacementOptions = 2;
-// }
-
-// message AllPlayerMarkerStockpileAndAllocationDefaults {
-//   PlayerMarkerStockpiles optPlayerStockpiles = 1;
-//   PlayerMarkerStockpiles osbPlayerStockpiles = 2;
-//   // PlayerMarkerAllocations optPlayerAllocations = 3;
-//   // PlayerMarkerAllocations osbPlayerAllocations = 4;
-// }
-
-// message AllPlayerMarkerStockpileAndAllocationResults {
-//   PlayerMarkerStockpiles optPlayerStockpiles = 1;
-//   PlayerMarkerStockpiles osbPlayerStockpiles = 2;
-//   PlayerMarkerAllocations optPlayerAllocations = 3;
-//   PlayerMarkerAllocations osbPlayerAllocations = 4;
-// }
 
 message ManaflowResults {
   PlayerMarkerStockpiles optPlayerManaflowOutcomeStockpiles = 1;
@@ -334,8 +265,6 @@ message ManawavePlayerMove {
 
 message ManawaveRound {
   RoundProgress roundProgress = 1;
-  // uint32 roundNumber = 2;
-  // GameBoardStatePb gameBoardState = 3;
 
   DrawFamilyCardsResults drawFamilyCardsResults = 10;
 
@@ -352,12 +281,8 @@ message ManawaveRound {
   // this might be useful, but it's not strictly necessary since everything can be computed
   ManaflowResults manaflowResults = 40;
 
-  // AllPlayerPurchaseAndPlaceMarkersOptions allPlayerPurchaseAndPlaceMarkersOptions = 50;
   AllPlayerPurchaseAndPlaceMarkersDefaults allPlayerPurchaseAndPlaceMarkersDefaults = 50;
   AllPlayerPurchaseAndPlaceMarkersResults allPlayerPurchaseAndPlaceMarkersResults = 51;
-
-  // AllPlayerMarkerStockpileAndAllocationDefaults allPlayerMarkerStockpileAndAllocationDefaults = 41;
-  // AllPlayerMarkerStockpileAndAllocationResults allPlayerMarkerStockpileAndAllocationsResults = 42;
 
   WageClanConflictsResults wageClanConflictsResults = 60;
 
@@ -380,8 +305,6 @@ message GameStatePb {
   InitialConditions initialConditions = 3;
   PlayerRegistration playerRegistration = 4;
   
-  // GameBoardStatePb gameBoardState = 10;
-
   GameInitSetup initGameSetup = 20;
   GameInitPickTotemsAndMonumentVetoResult initPickTotemsAndMonumentVetoResult = 21;
   GameInitPlaceClansResult initPlaceClansResult = 22;

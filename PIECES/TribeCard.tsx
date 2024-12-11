@@ -14,12 +14,6 @@ export interface IMwTribeCardData {
 
 const ConversionImageSize = 20;
 
-// const ManaCounterIcon = () => createImgComponentFromTag('<::mana-counter::>', ConversionImageSize);
-// const AttackCounterIcon = () => createImgComponentFromTag('<::attack-counter::>', ConversionImageSize);
-// const ShieldCounterIcon = () => createImgComponentFromTag('<::shield-counter::>', ConversionImageSize);
-// const PopulationIncreaseCounterIcon = () => createImgComponentFromTag('<::population-increase-counter::>', ConversionImageSize);
-// const ManaLevelTokenIcon = () => createImgComponentFromTag('<::manalith-token::>', ConversionImageSize);
-
 const StockpileImageSize = 40;
 
 const ManaCounterIcon_Stockpile = () => createImgComponentFromTag('<::mana-counter::>', StockpileImageSize);

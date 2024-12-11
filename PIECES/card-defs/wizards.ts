@@ -36,30 +36,6 @@ export const WizardsCardDef: FamilyCardDefinition = {
       numManalithClaimsToActivate: 0,
       modeText: "Add 1 <::mana-counter::> to Tribe.",
       modePrintSettings: ModePrintSettings,
-      // modeLogic: {
-      //   onManaflowProc: (boardState, playerSide, procPoint): ManaflowPointProcResult => {
-      //     console.log("ON MANAFLOW PROC FOR Wizards");
-
-      //     const clanCardCoordinate: BoardPlayerSideCoordinate = {
-      //       playerSideId: mapToPlayerSideId(playerSide),
-      //       leylineDistance: procPoint.leylineDistance,
-      //       familyRank: 0,
-      //     };
-
-      //     return {
-      //       clanCardChanges: [
-      //         {
-      //           clanCardCoordinate,
-      //           changes: {
-      //             ...NOOP_CLAN_STOCKPILE_CHANGES,
-      //             manaCountersCount: 1,
-      //           },
-      //         },
-      //       ],
-      //     };
-      //   },
-      //   mvmInstructions: [],
-      // },
       modeLogic: createMvmInstructionsOnlyFamilyModeLogic([
         ...createAddMarkersToMyTribeInstructionSet(MwMarkerType.MwMarkerType_ManaCounter, 1),
       ]),

@@ -1,4 +1,3 @@
-// import { ClanOfDiversityData } from "./clan-card-defs/clan-of-diversity";
 import { IMwClanData } from "./MwClanTemplate";
 import { ClanOfDiversityData } from "../seasons/season-zero-1/clans/clan-of-diversity";
 import { ClanOfLifeData } from "../seasons/season-zero-1/clans/clan-of-life";
