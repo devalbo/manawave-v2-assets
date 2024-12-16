@@ -58,3 +58,5 @@ export const TIGER_TOTEM_DEF: ITotemDetails = {
       return retVal;
     }),
 }
+
+export const TIGER_TOTEM_ID = TOTEM_ID;

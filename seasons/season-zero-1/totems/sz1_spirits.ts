@@ -58,3 +58,5 @@ export const SPIRITS_TOTEM_DEF: ITotemDetails = {
       return retVal;
     }),
 }
+
+export const SPIRITS_TOTEM_ID = TOTEM_ID;

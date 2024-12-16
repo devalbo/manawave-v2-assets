@@ -58,3 +58,5 @@ export const OX_TOTEM_DEF: ITotemDetails = {
       return retVal;
     }),
 }
+
+export const OX_TOTEM_ID = TOTEM_ID;
