@@ -26,16 +26,6 @@ import { LeylineDistanceFromSource } from "./manawave-types";
 import { TotemPbId } from "./manawave-types";
 import { MonumentCardPbId } from "./manawave-types";
 import { SeasonPbId } from "./manawave-types";
-// message BoardPlayerSideCoordinate {
-//   PlayerSideId playerSide = 1;
-//   uint32 rank = 2;
-//   LeylineDistanceFromSource leylineDistance = 3;
-// }
-
-// message PlayerTilePlacemenPoint {
-//   LeylineDistanceFromSource leylineDistance = 1;
-// }
-
 /**
  * @generated from protobuf message InitialConditions
  */
@@ -198,18 +188,6 @@ export interface FullGameFamilyDrawResults {
      */
     familyCardDrawSets: DrawFamilyCardsResults[];
 }
-// message PlayerPb {
-//   string playerId = 1;
-//   PlayerSideId playerSide = 2;
-//   PlayerDefaultStrategyPb defaultStrategy = 3;
-// }
-
-// message PlayerRegistration {
-//   SeasonPbId seasonId = 1;
-//   PlayerPb optPlayer  = 2;
-//   PlayerPb osbPlayer  = 3;
-// }
-
 /**
  * @generated from protobuf message AllPlayerFamilyChoiceDefaults
  */
@@ -368,9 +346,6 @@ export interface AllPlayerModalitySelectionResults {
  */
 export interface MarkerConversion {
     /**
-     * BoardPlayerSideCoordinate sourcePiece = 1;
-     * BoardPlayerSideCoordinate destinationPiece = 2;
-     *
      * @generated from protobuf field: MwMarkerType sourceType = 1;
      */
     sourceType: MwMarkerType;
@@ -477,9 +452,6 @@ export interface PlayerPurchaseAndPlaceMarkersSelections {
  */
 export interface AllPlayerPurchaseAndPlaceMarkersDefaults {
     /**
-     * LeylineDistanceFromSource optPlayerLeylineDistance = 1;
-     * LeylineDistanceFromSource osbPlayerLeylineDistance = 2;
-     *
      * @generated from protobuf field: PlayerPurchaseAndPlaceMarkersSelections optPlayerPurchaseAndPlaceMarkersSelections = 1;
      */
     optPlayerPurchaseAndPlaceMarkersSelections?: PlayerPurchaseAndPlaceMarkersSelections;
@@ -493,9 +465,6 @@ export interface AllPlayerPurchaseAndPlaceMarkersDefaults {
  */
 export interface AllPlayerPurchaseAndPlaceMarkersResults {
     /**
-     * LeylineDistanceFromSource optPlayerLeylineDistance = 1;
-     * LeylineDistanceFromSource osbPlayerLeylineDistance = 2;
-     *
      * @generated from protobuf field: PlayerPurchaseAndPlaceMarkersSelections optPlayerPurchaseAndPlaceMarkersSelections = 1;
      */
     optPlayerPurchaseAndPlaceMarkersSelections?: PlayerPurchaseAndPlaceMarkersSelections;
@@ -529,24 +498,6 @@ export interface PlayerTribeMarkerAllocation {
      */
     destinationIncrement: number;
 }
-// message PlayerMarkerAllocations {
-//   // repeated BoardPlayerSideCoordinate populationIncreaseTokenLocations = 1;
-//   // repeated BoardPlayerSideCoordinate sacrificeTokenLocations = 2;
-//   // repeated BoardPlayerSideCoordinate damageTokenLocations = 3;
-//   // repeated BoardPlayerSideCoordinate shieldTokenLocations = 4;
-
-//   // repeated PlayerMarkerAllocation populationIncreaseAllocations = 1;
-//   // repeated PlayerMarkerAllocation sacrificeAllocations = 2;
-//   // repeated PlayerMarkerAllocation damageAllocations = 3;
-//   // repeated PlayerMarkerAllocation shieldAllocations = 4;
-//   // repeated PlayerMarkerAllocation manalithAllocations = 5;
-
-//   repeated PlayerTribeMarkerAllocation tribeAllocations = 1;
-//   repeated PlayerClanMarkerConversion leyline1ClanConversions = 2;
-//   repeated PlayerClanMarkerConversion leyline2ClanConversions = 3;
-//   repeated PlayerClanMarkerConversion leyline3ClanConversions = 4;
-// }
-
 /**
  * @generated from protobuf message PlayerTribeMarkerStockpile
  */
@@ -588,29 +539,6 @@ export interface PlayerMarkerStockpiles {
      */
     leyline3ClanStockpile?: PlayerClanMarkerStockpile;
 }
-// message PlayerMarkerAllocationOptions {
-
-// }
-
-// message AllPlayerMarkerAllocationOptions {
-//   PlayerMarkerAllocationOptions optPlayerMarkerPlacementOptions = 1;
-//   PlayerMarkerAllocationOptions osbPlayerMarkerPlacementOptions = 2;
-// }
-
-// message AllPlayerMarkerStockpileAndAllocationDefaults {
-//   PlayerMarkerStockpiles optPlayerStockpiles = 1;
-//   PlayerMarkerStockpiles osbPlayerStockpiles = 2;
-//   // PlayerMarkerAllocations optPlayerAllocations = 3;
-//   // PlayerMarkerAllocations osbPlayerAllocations = 4;
-// }
-
-// message AllPlayerMarkerStockpileAndAllocationResults {
-//   PlayerMarkerStockpiles optPlayerStockpiles = 1;
-//   PlayerMarkerStockpiles osbPlayerStockpiles = 2;
-//   PlayerMarkerAllocations optPlayerAllocations = 3;
-//   PlayerMarkerAllocations osbPlayerAllocations = 4;
-// }
-
 /**
  * @generated from protobuf message ManaflowResults
  */
@@ -729,8 +657,7 @@ export interface ManawaveRound {
     /**
      * @generated from protobuf field: RoundProgress roundProgress = 1;
      */
-    roundProgress: RoundProgress; // uint32 roundNumber = 2;
-    // GameBoardStatePb gameBoardState = 3;
+    roundProgress: RoundProgress;
     /**
      * @generated from protobuf field: DrawFamilyCardsResults drawFamilyCardsResults = 10;
      */
@@ -770,8 +697,6 @@ export interface ManawaveRound {
      */
     manaflowResults?: ManaflowResults;
     /**
-     * AllPlayerPurchaseAndPlaceMarkersOptions allPlayerPurchaseAndPlaceMarkersOptions = 50;
-     *
      * @generated from protobuf field: AllPlayerPurchaseAndPlaceMarkersDefaults allPlayerPurchaseAndPlaceMarkersDefaults = 50;
      */
     allPlayerPurchaseAndPlaceMarkersDefaults?: AllPlayerPurchaseAndPlaceMarkersDefaults;
@@ -779,9 +704,6 @@ export interface ManawaveRound {
      * @generated from protobuf field: AllPlayerPurchaseAndPlaceMarkersResults allPlayerPurchaseAndPlaceMarkersResults = 51;
      */
     allPlayerPurchaseAndPlaceMarkersResults?: AllPlayerPurchaseAndPlaceMarkersResults;
-    // AllPlayerMarkerStockpileAndAllocationDefaults allPlayerMarkerStockpileAndAllocationDefaults = 41;
-    // AllPlayerMarkerStockpileAndAllocationResults allPlayerMarkerStockpileAndAllocationsResults = 42;
-
     /**
      * @generated from protobuf field: WageClanConflictsResults wageClanConflictsResults = 60;
      */
@@ -828,8 +750,6 @@ export interface GameStatePb {
      * @generated from protobuf field: PlayerRegistration playerRegistration = 4;
      */
     playerRegistration?: PlayerRegistration;
-    // GameBoardStatePb gameBoardState = 10;
-
     /**
      * @generated from protobuf field: GameInitSetup initGameSetup = 20;
      */

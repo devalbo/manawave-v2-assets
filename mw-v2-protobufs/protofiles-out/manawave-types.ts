@@ -327,21 +327,25 @@ export enum MwMarkerType {
      */
     MwMarkerType_ManalithClaimCounter = 6,
     /**
-     * @generated from protobuf enum value: MwMarkerType_PopulationToken = 7;
+     * @generated from protobuf enum value: MwMarkerType_PopulationSlaughterCounter = 7;
      */
-    MwMarkerType_PopulationToken = 7,
+    MwMarkerType_PopulationSlaughterCounter = 7,
     /**
-     * @generated from protobuf enum value: MwMarkerType_ManalithToken = 8;
+     * @generated from protobuf enum value: MwMarkerType_PopulationToken = 100;
      */
-    MwMarkerType_ManalithToken = 8,
+    MwMarkerType_PopulationToken = 100,
     /**
-     * @generated from protobuf enum value: MwMarkerType_SoulstainToken = 9;
+     * @generated from protobuf enum value: MwMarkerType_ManalithToken = 101;
      */
-    MwMarkerType_SoulstainToken = 9,
+    MwMarkerType_ManalithToken = 101,
     /**
-     * @generated from protobuf enum value: MwMarkerType_ManawaveRoundToken = 10;
+     * @generated from protobuf enum value: MwMarkerType_SoulstainToken = 102;
      */
-    MwMarkerType_ManawaveRoundToken = 10
+    MwMarkerType_SoulstainToken = 102,
+    /**
+     * @generated from protobuf enum value: MwMarkerType_ManawaveRoundToken = 103;
+     */
+    MwMarkerType_ManawaveRoundToken = 103
 }
 /**
  * @generated from protobuf enum PlayerDefaultStrategyPb

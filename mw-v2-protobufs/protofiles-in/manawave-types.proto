@@ -52,11 +52,12 @@ enum MwMarkerType {
   MwMarkerType_ShieldCounter = 4;
   MwMarkerType_ManaCounter = 5;
   MwMarkerType_ManalithClaimCounter = 6;
+  MwMarkerType_PopulationSlaughterCounter = 7;
 
-  MwMarkerType_PopulationToken = 7;
-  MwMarkerType_ManalithToken   = 8;
-  MwMarkerType_SoulstainToken  = 9;
-  MwMarkerType_ManawaveRoundToken = 10;
+  MwMarkerType_PopulationToken = 100;
+  MwMarkerType_ManalithToken   = 101;
+  MwMarkerType_SoulstainToken  = 102;
+  MwMarkerType_ManawaveRoundToken = 103;
 }
 
 enum PlayerDefaultStrategyPb {

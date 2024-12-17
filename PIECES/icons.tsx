@@ -10,6 +10,7 @@ import {
   SoulstainTokenDataUrl,
   ManaLevelTokenDataUrl,
   ManalithClaimCounterDataUrl,
+  SlaughterCounterDataUrl,
  } from "./token-counter-icons";
 import { MwMarkerType } from "../mw-v2-protobufs/protofiles-out/manawave-types";
 
@@ -26,6 +27,7 @@ export const createImgDataUrlFromTag = (tag: TokenCounterTypeTags) => {
 
     case '<::population-increase-counter::>': return PopulationIncreaseCounterDataUrl;
     case '<::population-sacrifice-counter::>': return SacrificeCounterDataUrl;
+    case '<::population-slaughter-counter::>': return SlaughterCounterDataUrl;
 
     case '<::population-token::>': return PopulationTokenDataUrl;
     case '<::soulstain-token::>': return SoulstainTokenDataUrl;
@@ -47,6 +49,7 @@ const mapMwMarkerTypeToTag = (mwMarkerType: MwMarkerType): TokenCounterTypeTags 
     case MwMarkerType.MwMarkerType_ManalithToken: return '<::manalith-token::>';  
     case MwMarkerType.MwMarkerType_ManawaveRoundToken: return '<::manawave-round-token::>';
     case MwMarkerType.MwMarkerType_PopulationSacrificeCounter: return '<::population-sacrifice-counter::>';
+    case MwMarkerType.MwMarkerType_PopulationSlaughterCounter: return '<::population-slaughter-counter::>';
 
     default:
       throw new Error(`Unrecognized MwMarkerType: ${mwMarkerType}`);
@@ -83,6 +86,7 @@ export const ShieldCounterIcon_DefaultSize = () => createImgComponentFromTag('<:
 export const PopulationIncreaseCounterIcon_DefaultSize = () => createImgComponentFromTag('<::population-increase-counter::>', DefaultIconImageSize);
 export const PopulationSacrificeCounterIcon_DefaultSize = () => createImgComponentFromTag('<::population-sacrifice-counter::>', DefaultIconImageSize);
 export const ManalithClaimCounterIcon_DefaultSize = () => createImgComponentFromTag('<::manalith-claim-counter::>', DefaultIconImageSize);
+export const PopulationSlaughterCounterIcon_DefaultSize = () => createImgComponentFromTag('<::population-slaughter-counter::>', DefaultIconImageSize);
 
 export const PopulationTokenIcon_DefaultSize = () => createImgComponentFromTag('<::population-token::>', DefaultIconImageSize);
 export const SoulstainTokenIcon_DefaultSize = () => createImgComponentFromTag('<::soulstain-token::>', DefaultIconImageSize);
