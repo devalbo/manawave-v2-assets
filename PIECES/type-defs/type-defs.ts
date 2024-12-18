@@ -59,6 +59,7 @@ export const EMPTY_PLAYER_CLAN_STOCKPILE: ClanCardStockpile = {
   attackCountersCount: createMwCounterCount(0),
   shieldCountersCount: createMwCounterCount(0),
   sacrificeCountersCount: createMwCounterCount(0),
+  populationSlaughterCountersCount: createMwCounterCount(0),
 }
 
 
@@ -79,6 +80,7 @@ export const NOOP_CLAN_STOCKPILE_CHANGES: ClanCardStockpile = {
   attackCountersCount: createMwCounterCount(0),
   shieldCountersCount: createMwCounterCount(0),
   sacrificeCountersCount: createMwCounterCount(0),
+  populationSlaughterCountersCount: createMwCounterCount(0),
 }
 
 

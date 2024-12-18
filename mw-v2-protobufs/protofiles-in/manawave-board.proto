@@ -39,6 +39,7 @@ message ClanCardStockpile {
   uint32 shieldCountersCount = 6;
   uint32 populationIncreaseCountersCount = 7;
   uint32 sacrificeCountersCount = 8;
+  uint32 populationSlaughterCountersCount = 9;
 }
 
 message TribeCardState {

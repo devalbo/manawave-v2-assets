@@ -139,8 +139,8 @@ export const createAddMarkersToAdjacentClansInstructionSet = (
     }),
     createAtomicManawaveVmInstruction({
       instruction: {
-        oneofKind: 'applyMarkerRegisterToClanForClanCoordinateRegister',
-        applyMarkerRegisterToClanForClanCoordinateRegister: {
+        oneofKind: 'applyMarkerRegisterToAdjacentClansForClanCoordinateRegister',
+        applyMarkerRegisterToAdjacentClansForClanCoordinateRegister: {
           markerRegisterId: MvmRegisterId.MvmRegister_1,
           clanCoordinateRegisterId: MvmRegisterId.MvmRegister_2,
         },

@@ -117,6 +117,10 @@ export interface ClanCardStockpile {
      * @generated from protobuf field: uint32 sacrificeCountersCount = 8;
      */
     sacrificeCountersCount: number;
+    /**
+     * @generated from protobuf field: uint32 populationSlaughterCountersCount = 9;
+     */
+    populationSlaughterCountersCount: number;
 }
 /**
  * @generated from protobuf message TribeCardState
@@ -499,7 +503,8 @@ class ClanCardStockpile$Type extends MessageType<ClanCardStockpile> {
             { no: 5, name: "attackCountersCount", kind: "scalar", T: 13 /*ScalarType.UINT32*/ },
             { no: 6, name: "shieldCountersCount", kind: "scalar", T: 13 /*ScalarType.UINT32*/ },
             { no: 7, name: "populationIncreaseCountersCount", kind: "scalar", T: 13 /*ScalarType.UINT32*/ },
-            { no: 8, name: "sacrificeCountersCount", kind: "scalar", T: 13 /*ScalarType.UINT32*/ }
+            { no: 8, name: "sacrificeCountersCount", kind: "scalar", T: 13 /*ScalarType.UINT32*/ },
+            { no: 9, name: "populationSlaughterCountersCount", kind: "scalar", T: 13 /*ScalarType.UINT32*/ }
         ]);
     }
     create(value?: PartialMessage<ClanCardStockpile>): ClanCardStockpile {
@@ -512,6 +517,7 @@ class ClanCardStockpile$Type extends MessageType<ClanCardStockpile> {
         message.shieldCountersCount = 0;
         message.populationIncreaseCountersCount = 0;
         message.sacrificeCountersCount = 0;
+        message.populationSlaughterCountersCount = 0;
         if (value !== undefined)
             reflectionMergePartial<ClanCardStockpile>(this, message, value);
         return message;
@@ -544,6 +550,9 @@ class ClanCardStockpile$Type extends MessageType<ClanCardStockpile> {
                     break;
                 case /* uint32 sacrificeCountersCount */ 8:
                     message.sacrificeCountersCount = reader.uint32();
+                    break;
+                case /* uint32 populationSlaughterCountersCount */ 9:
+                    message.populationSlaughterCountersCount = reader.uint32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -581,6 +590,9 @@ class ClanCardStockpile$Type extends MessageType<ClanCardStockpile> {
         /* uint32 sacrificeCountersCount = 8; */
         if (message.sacrificeCountersCount !== 0)
             writer.tag(8, WireType.Varint).uint32(message.sacrificeCountersCount);
+        /* uint32 populationSlaughterCountersCount = 9; */
+        if (message.populationSlaughterCountersCount !== 0)
+            writer.tag(9, WireType.Varint).uint32(message.populationSlaughterCountersCount);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
