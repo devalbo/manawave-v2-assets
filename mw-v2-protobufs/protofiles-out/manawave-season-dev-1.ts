@@ -74,7 +74,27 @@ export enum SeasonDev1MonumentCardDefs {
     /**
      * @generated from protobuf enum value: SeasonDev1MonumentOfDefenseAndMagic = 6;
      */
-    SeasonDev1MonumentOfDefenseAndMagic = 6
+    SeasonDev1MonumentOfDefenseAndMagic = 6,
+    /**
+     * @generated from protobuf enum value: SeasonDev1Monument_OptPlayerWins = 7;
+     */
+    SeasonDev1Monument_OptPlayerWins = 7,
+    /**
+     * @generated from protobuf enum value: SeasonDev1Monument_OsbPlayerWins = 8;
+     */
+    SeasonDev1Monument_OsbPlayerWins = 8,
+    /**
+     * @generated from protobuf enum value: SeasonDev1Monument_BothPlayersLose = 9;
+     */
+    SeasonDev1Monument_BothPlayersLose = 9,
+    /**
+     * @generated from protobuf enum value: SeasonDev1Monument_BothPlayersWin = 10;
+     */
+    SeasonDev1Monument_BothPlayersWin = 10,
+    /**
+     * @generated from protobuf enum value: SeasonDev1Monument_ForcedDraw = 11;
+     */
+    SeasonDev1Monument_ForcedDraw = 11
 }
 /**
  * @generated from protobuf enum SeasonDev1FamilyCardDefs

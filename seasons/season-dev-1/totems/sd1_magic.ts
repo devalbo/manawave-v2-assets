@@ -32,14 +32,14 @@ const createMagicFamilyCardDef = (magicNumber: number, seasonFamilyCardId: Seaso
     modes: mapToIndexedModes([
       {
         numManalithClaimsToActivate: 0,
-        modeText: `Add ${magicNumber} <::magic-counter::> to Clan.`,
+        modeText: `Add ${magicNumber} <::mana-counter::> to Clan.`,
         modeLogic: createMvmInstructionsOnlyFamilyModeLogic([
           ...createAddMarkersToMyClanInstructionSet(MwMarkerType.MwMarkerType_ManaCounter, magicNumber),
         ]),
       },
       {
         numManalithClaimsToActivate: 1,
-        modeText: `Add ${magicNumber} <::magic-counter::> to Tribe.`,
+        modeText: `Add ${magicNumber} <::mana-counter::> to Tribe.`,
         modeLogic: createMvmInstructionsOnlyFamilyModeLogic([
           ...createAddMarkersToMyTribeInstructionSet(MwMarkerType.MwMarkerType_ManaCounter, magicNumber),
         ]),

@@ -86,6 +86,8 @@ export const NOOP_CLAN_STOCKPILE_CHANGES: ClanCardStockpile = {
 
 export type ClanInPlayData = {
   readonly stockpile: ClanCardStockpile
+  // readonly initStockpile: ClanCardStockpile
+  // readonly finalStockpile: ClanCardStockpile
   readonly activeModeIndex: number
   readonly conversionRatios: IMwClanConversionRatio[]
 }
@@ -93,6 +95,8 @@ export type ClanInPlayData = {
 
 export type FamilyInPlayData = {
   readonly activeModeIndex: number
+  // readonly initActiveModeIndex: number
+  // readonly finalActiveModeIndex: number
 }
 
 

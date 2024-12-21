@@ -78,15 +78,54 @@ message FamilyCardSelectionArea {
   uint32 numCardsRemainingInPile = 20;
 }
 
+message PlayerFamilyCardSelectionIndicators {
+  PlayerCardChoicePb optPlayerCardChoice = 1;
+  PlayerCardChoicePb osbPlayerCardChoice = 2;
+}
+
+message TribeCardMarkerAdjustments {
+  TribeCardStockpile initStockpile = 1;
+  TribeCardStockpile finalStockpile = 2;
+}
+
+message ClanCardMarkerAdjustments {
+  ClanCardStockpile initStockpile = 1;
+  ClanCardStockpile finalStockpile = 2;
+}
+
+message PlayerSideMarkerAdjustments {
+  TribeCardMarkerAdjustments tribeAdjustments = 1;
+  ClanCardMarkerAdjustments leyline1ClanAdjustments = 2;
+  ClanCardMarkerAdjustments leyline2ClanAdjustments = 3;
+  ClanCardMarkerAdjustments leyline3ClanAdjustments = 4;
+}
+
+message IntraRoundBoardAdjustments {
+  PlayerSideMarkerAdjustments optPlayerSideAdjustments = 1;
+  PlayerSideMarkerAdjustments osbPlayerSideAdjustments = 2;
+}
+
+
 message GameBoardStatePb {
   uint32 roundNumber = 1;
   SeasonPbId seasonId = 2;
 
   LeylineState leylineState = 10;
+
   PlayerBoardSide optBoardSide = 11;
   PlayerBoardSide osbBoardSide = 12;
 
-  FamilyCardSelectionArea familyCardSelectionArea = 13;
+  // PlayerBoardSide optBoardSideInit = 11;
+  // PlayerBoardSide osbBoardSideInit = 12;
 
-  GameOutcome gameOutcome = 20;
+  // PlayerBoardSide optBoardSideFinal = 13;
+  // PlayerBoardSide osbBoardSideFinal = 14;
+
+  FamilyCardSelectionArea familyCardSelectionArea = 20;
+  PlayerFamilyCardSelectionIndicators playerFamilyCardSelectionIndicators = 21;
+
+
+  // IntraRoundBoardAdjustments appliedBoardAdjustments = 30;
+
+  GameOutcome gameOutcome = 40;
 }

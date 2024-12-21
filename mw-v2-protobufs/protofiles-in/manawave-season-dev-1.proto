@@ -25,6 +25,12 @@ enum SeasonDev1MonumentCardDefs {
   SeasonDev1MonumentOfAttackAndDefense  = 4;
   SeasonDev1MonumentOfAttackAndMagic    = 5;
   SeasonDev1MonumentOfDefenseAndMagic   = 6;
+
+  SeasonDev1Monument_OptPlayerWins = 7;
+  SeasonDev1Monument_OsbPlayerWins = 8;
+  SeasonDev1Monument_BothPlayersLose = 9;
+  SeasonDev1Monument_BothPlayersWin = 10;
+  SeasonDev1Monument_ForcedDraw = 11;
 }
 
 enum SeasonDev1FamilyCardDefs {

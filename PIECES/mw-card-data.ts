@@ -1,11 +1,11 @@
 import { Sd1Totem } from "@mw-assets/type-defs/totem-type-defs";
 import { ManaflowPointProcResult } from "../../mw-v2-game-engine/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types";
 import { ManaflowProcPoint } from "../../mw-v2-game-engine/local-game-state/channel-clan-manaflows/type-defs";
-import { BoardPiecesState } from "../../mw-v2-game-engine/local-game-state/local-board-state-types";
 import { createMwBoardPlayerSideCoordinateKey } from "../type-defs/branded-string-types";
 import { Totems } from "./totems";
 import { ManawaveVmInstruction } from "@mw-protobufs/manawave-vm";
 import { PlayerSide } from "@mw-assets/type-defs/game-play-data";
+import { GameBoardStatePb } from "@mw-assets/mw-v2-protobufs/protofiles-out/manawave-board";
 
 export interface IModePrintSettings {
   fontSize: number    // defaults to 16
@@ -19,7 +19,7 @@ export interface IModeDigitalSettings {
 
 export interface IClanCardModeLogic {
   onManaflowProc: (
-    boardState: BoardPiecesState,
+    boardState: GameBoardStatePb,
     playerSide: PlayerSide,
     procPoint: ManaflowProcPoint,
   ) => ManaflowPointProcResult
@@ -29,7 +29,7 @@ export interface IClanCardModeLogic {
 
 export interface IFamilyCardModeLogic {
   onManaflowProc: (
-    boardState: BoardPiecesState,
+    boardState: GameBoardStatePb,
     playerSide: PlayerSide,
     procPoint: ManaflowProcPoint,
   ) => ManaflowPointProcResult
@@ -63,7 +63,7 @@ export interface IMwCardData {
 
 export const UnimplementedFamilyCardModeLogic: IFamilyCardModeLogic = {
   onManaflowProc: (
-    _boardState: BoardPiecesState,
+    _boardState: GameBoardStatePb,
     playerSide: PlayerSide,
     procPoint: ManaflowProcPoint,
   ): ManaflowPointProcResult => {
@@ -86,7 +86,7 @@ export const UnimplementedFamilyCardModeLogic: IFamilyCardModeLogic = {
 
 export const UnimplementedClanCardModeLogic: IClanCardModeLogic = {
   onManaflowProc: (
-    _boardState: BoardPiecesState,
+    _boardState: GameBoardStatePb,
     playerSide: PlayerSide,
     procPoint: ManaflowProcPoint,
   ): ManaflowPointProcResult => {
@@ -100,7 +100,7 @@ export const UnimplementedClanCardModeLogic: IClanCardModeLogic = {
 
 export const createMvmInstructionsOnlyClanModeLogic = (mvmInstructions: ManawaveVmInstruction[]): IClanCardModeLogic => {
   return {
-    onManaflowProc: (_boardState: BoardPiecesState, _playerSide: PlayerSide, _procPoint: ManaflowProcPoint): ManaflowPointProcResult => {
+    onManaflowProc: (_boardState: GameBoardStatePb, _playerSide: PlayerSide, _procPoint: ManaflowProcPoint): ManaflowPointProcResult => {
       throw new Error("UNIMPLEMENTED onManaflowProc - MVM INSTRUCTIONS ONLY");
     },
     mvmInstructions,
@@ -110,7 +110,7 @@ export const createMvmInstructionsOnlyClanModeLogic = (mvmInstructions: Manawave
 
 export const createMvmInstructionsOnlyFamilyModeLogic = (mvmInstructions: ManawaveVmInstruction[]): IFamilyCardModeLogic => {
   return {
-    onManaflowProc: (_boardState: BoardPiecesState, _playerSide: PlayerSide, _procPoint: ManaflowProcPoint): ManaflowPointProcResult => {
+    onManaflowProc: (_boardState: GameBoardStatePb, _playerSide: PlayerSide, _procPoint: ManaflowProcPoint): ManaflowPointProcResult => {
       throw new Error("UNIMPLEMENTED onManaflowProc - MVM INSTRUCTIONS ONLY");
     },
     mvmInstructions,

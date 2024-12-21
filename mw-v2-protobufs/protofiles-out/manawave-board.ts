@@ -12,6 +12,7 @@ import { reflectionMergePartial } from "@protobuf-ts/runtime";
 import { MessageType } from "@protobuf-ts/runtime";
 import { GameOutcome } from "./manawave-types";
 import { SeasonPbId } from "./manawave-types";
+import { PlayerCardChoicePb } from "./manawave-types";
 import { FamilyCardInstancePbId } from "./manawave-types";
 import { ClanCardInstancePbId } from "./manawave-types";
 import { GameBoardMonuments } from "./manawave-types";
@@ -217,6 +218,79 @@ export interface FamilyCardSelectionArea {
     numCardsRemainingInPile: number;
 }
 /**
+ * @generated from protobuf message PlayerFamilyCardSelectionIndicators
+ */
+export interface PlayerFamilyCardSelectionIndicators {
+    /**
+     * @generated from protobuf field: PlayerCardChoicePb optPlayerCardChoice = 1;
+     */
+    optPlayerCardChoice: PlayerCardChoicePb;
+    /**
+     * @generated from protobuf field: PlayerCardChoicePb osbPlayerCardChoice = 2;
+     */
+    osbPlayerCardChoice: PlayerCardChoicePb;
+}
+/**
+ * @generated from protobuf message TribeCardMarkerAdjustments
+ */
+export interface TribeCardMarkerAdjustments {
+    /**
+     * @generated from protobuf field: TribeCardStockpile initStockpile = 1;
+     */
+    initStockpile?: TribeCardStockpile;
+    /**
+     * @generated from protobuf field: TribeCardStockpile finalStockpile = 2;
+     */
+    finalStockpile?: TribeCardStockpile;
+}
+/**
+ * @generated from protobuf message ClanCardMarkerAdjustments
+ */
+export interface ClanCardMarkerAdjustments {
+    /**
+     * @generated from protobuf field: ClanCardStockpile initStockpile = 1;
+     */
+    initStockpile?: ClanCardStockpile;
+    /**
+     * @generated from protobuf field: ClanCardStockpile finalStockpile = 2;
+     */
+    finalStockpile?: ClanCardStockpile;
+}
+/**
+ * @generated from protobuf message PlayerSideMarkerAdjustments
+ */
+export interface PlayerSideMarkerAdjustments {
+    /**
+     * @generated from protobuf field: TribeCardMarkerAdjustments tribeAdjustments = 1;
+     */
+    tribeAdjustments?: TribeCardMarkerAdjustments;
+    /**
+     * @generated from protobuf field: ClanCardMarkerAdjustments leyline1ClanAdjustments = 2;
+     */
+    leyline1ClanAdjustments?: ClanCardMarkerAdjustments;
+    /**
+     * @generated from protobuf field: ClanCardMarkerAdjustments leyline2ClanAdjustments = 3;
+     */
+    leyline2ClanAdjustments?: ClanCardMarkerAdjustments;
+    /**
+     * @generated from protobuf field: ClanCardMarkerAdjustments leyline3ClanAdjustments = 4;
+     */
+    leyline3ClanAdjustments?: ClanCardMarkerAdjustments;
+}
+/**
+ * @generated from protobuf message IntraRoundBoardAdjustments
+ */
+export interface IntraRoundBoardAdjustments {
+    /**
+     * @generated from protobuf field: PlayerSideMarkerAdjustments optPlayerSideAdjustments = 1;
+     */
+    optPlayerSideAdjustments?: PlayerSideMarkerAdjustments;
+    /**
+     * @generated from protobuf field: PlayerSideMarkerAdjustments osbPlayerSideAdjustments = 2;
+     */
+    osbPlayerSideAdjustments?: PlayerSideMarkerAdjustments;
+}
+/**
  * @generated from protobuf message GameBoardStatePb
  */
 export interface GameBoardStatePb {
@@ -240,12 +314,24 @@ export interface GameBoardStatePb {
      * @generated from protobuf field: PlayerBoardSide osbBoardSide = 12;
      */
     osbBoardSide?: PlayerBoardSide;
+    // PlayerBoardSide optBoardSideInit = 11;
+    // PlayerBoardSide osbBoardSideInit = 12;
+
+    // PlayerBoardSide optBoardSideFinal = 13;
+    // PlayerBoardSide osbBoardSideFinal = 14;
+
     /**
-     * @generated from protobuf field: FamilyCardSelectionArea familyCardSelectionArea = 13;
+     * @generated from protobuf field: FamilyCardSelectionArea familyCardSelectionArea = 20;
      */
     familyCardSelectionArea?: FamilyCardSelectionArea;
     /**
-     * @generated from protobuf field: GameOutcome gameOutcome = 20;
+     * @generated from protobuf field: PlayerFamilyCardSelectionIndicators playerFamilyCardSelectionIndicators = 21;
+     */
+    playerFamilyCardSelectionIndicators?: PlayerFamilyCardSelectionIndicators;
+    // IntraRoundBoardAdjustments appliedBoardAdjustments = 30;
+
+    /**
+     * @generated from protobuf field: GameOutcome gameOutcome = 40;
      */
     gameOutcome: GameOutcome;
 }
@@ -954,6 +1040,287 @@ class FamilyCardSelectionArea$Type extends MessageType<FamilyCardSelectionArea> 
  */
 export const FamilyCardSelectionArea = new FamilyCardSelectionArea$Type();
 // @generated message type with reflection information, may provide speed optimized methods
+class PlayerFamilyCardSelectionIndicators$Type extends MessageType<PlayerFamilyCardSelectionIndicators> {
+    constructor() {
+        super("PlayerFamilyCardSelectionIndicators", [
+            { no: 1, name: "optPlayerCardChoice", kind: "enum", T: () => ["PlayerCardChoicePb", PlayerCardChoicePb] },
+            { no: 2, name: "osbPlayerCardChoice", kind: "enum", T: () => ["PlayerCardChoicePb", PlayerCardChoicePb] }
+        ]);
+    }
+    create(value?: PartialMessage<PlayerFamilyCardSelectionIndicators>): PlayerFamilyCardSelectionIndicators {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        message.optPlayerCardChoice = 0;
+        message.osbPlayerCardChoice = 0;
+        if (value !== undefined)
+            reflectionMergePartial<PlayerFamilyCardSelectionIndicators>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PlayerFamilyCardSelectionIndicators): PlayerFamilyCardSelectionIndicators {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* PlayerCardChoicePb optPlayerCardChoice */ 1:
+                    message.optPlayerCardChoice = reader.int32();
+                    break;
+                case /* PlayerCardChoicePb osbPlayerCardChoice */ 2:
+                    message.osbPlayerCardChoice = reader.int32();
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PlayerFamilyCardSelectionIndicators, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* PlayerCardChoicePb optPlayerCardChoice = 1; */
+        if (message.optPlayerCardChoice !== 0)
+            writer.tag(1, WireType.Varint).int32(message.optPlayerCardChoice);
+        /* PlayerCardChoicePb osbPlayerCardChoice = 2; */
+        if (message.osbPlayerCardChoice !== 0)
+            writer.tag(2, WireType.Varint).int32(message.osbPlayerCardChoice);
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message PlayerFamilyCardSelectionIndicators
+ */
+export const PlayerFamilyCardSelectionIndicators = new PlayerFamilyCardSelectionIndicators$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class TribeCardMarkerAdjustments$Type extends MessageType<TribeCardMarkerAdjustments> {
+    constructor() {
+        super("TribeCardMarkerAdjustments", [
+            { no: 1, name: "initStockpile", kind: "message", T: () => TribeCardStockpile },
+            { no: 2, name: "finalStockpile", kind: "message", T: () => TribeCardStockpile }
+        ]);
+    }
+    create(value?: PartialMessage<TribeCardMarkerAdjustments>): TribeCardMarkerAdjustments {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        if (value !== undefined)
+            reflectionMergePartial<TribeCardMarkerAdjustments>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: TribeCardMarkerAdjustments): TribeCardMarkerAdjustments {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* TribeCardStockpile initStockpile */ 1:
+                    message.initStockpile = TribeCardStockpile.internalBinaryRead(reader, reader.uint32(), options, message.initStockpile);
+                    break;
+                case /* TribeCardStockpile finalStockpile */ 2:
+                    message.finalStockpile = TribeCardStockpile.internalBinaryRead(reader, reader.uint32(), options, message.finalStockpile);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: TribeCardMarkerAdjustments, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* TribeCardStockpile initStockpile = 1; */
+        if (message.initStockpile)
+            TribeCardStockpile.internalBinaryWrite(message.initStockpile, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        /* TribeCardStockpile finalStockpile = 2; */
+        if (message.finalStockpile)
+            TribeCardStockpile.internalBinaryWrite(message.finalStockpile, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message TribeCardMarkerAdjustments
+ */
+export const TribeCardMarkerAdjustments = new TribeCardMarkerAdjustments$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class ClanCardMarkerAdjustments$Type extends MessageType<ClanCardMarkerAdjustments> {
+    constructor() {
+        super("ClanCardMarkerAdjustments", [
+            { no: 1, name: "initStockpile", kind: "message", T: () => ClanCardStockpile },
+            { no: 2, name: "finalStockpile", kind: "message", T: () => ClanCardStockpile }
+        ]);
+    }
+    create(value?: PartialMessage<ClanCardMarkerAdjustments>): ClanCardMarkerAdjustments {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        if (value !== undefined)
+            reflectionMergePartial<ClanCardMarkerAdjustments>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: ClanCardMarkerAdjustments): ClanCardMarkerAdjustments {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* ClanCardStockpile initStockpile */ 1:
+                    message.initStockpile = ClanCardStockpile.internalBinaryRead(reader, reader.uint32(), options, message.initStockpile);
+                    break;
+                case /* ClanCardStockpile finalStockpile */ 2:
+                    message.finalStockpile = ClanCardStockpile.internalBinaryRead(reader, reader.uint32(), options, message.finalStockpile);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: ClanCardMarkerAdjustments, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* ClanCardStockpile initStockpile = 1; */
+        if (message.initStockpile)
+            ClanCardStockpile.internalBinaryWrite(message.initStockpile, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        /* ClanCardStockpile finalStockpile = 2; */
+        if (message.finalStockpile)
+            ClanCardStockpile.internalBinaryWrite(message.finalStockpile, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message ClanCardMarkerAdjustments
+ */
+export const ClanCardMarkerAdjustments = new ClanCardMarkerAdjustments$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class PlayerSideMarkerAdjustments$Type extends MessageType<PlayerSideMarkerAdjustments> {
+    constructor() {
+        super("PlayerSideMarkerAdjustments", [
+            { no: 1, name: "tribeAdjustments", kind: "message", T: () => TribeCardMarkerAdjustments },
+            { no: 2, name: "leyline1ClanAdjustments", kind: "message", T: () => ClanCardMarkerAdjustments },
+            { no: 3, name: "leyline2ClanAdjustments", kind: "message", T: () => ClanCardMarkerAdjustments },
+            { no: 4, name: "leyline3ClanAdjustments", kind: "message", T: () => ClanCardMarkerAdjustments }
+        ]);
+    }
+    create(value?: PartialMessage<PlayerSideMarkerAdjustments>): PlayerSideMarkerAdjustments {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        if (value !== undefined)
+            reflectionMergePartial<PlayerSideMarkerAdjustments>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PlayerSideMarkerAdjustments): PlayerSideMarkerAdjustments {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* TribeCardMarkerAdjustments tribeAdjustments */ 1:
+                    message.tribeAdjustments = TribeCardMarkerAdjustments.internalBinaryRead(reader, reader.uint32(), options, message.tribeAdjustments);
+                    break;
+                case /* ClanCardMarkerAdjustments leyline1ClanAdjustments */ 2:
+                    message.leyline1ClanAdjustments = ClanCardMarkerAdjustments.internalBinaryRead(reader, reader.uint32(), options, message.leyline1ClanAdjustments);
+                    break;
+                case /* ClanCardMarkerAdjustments leyline2ClanAdjustments */ 3:
+                    message.leyline2ClanAdjustments = ClanCardMarkerAdjustments.internalBinaryRead(reader, reader.uint32(), options, message.leyline2ClanAdjustments);
+                    break;
+                case /* ClanCardMarkerAdjustments leyline3ClanAdjustments */ 4:
+                    message.leyline3ClanAdjustments = ClanCardMarkerAdjustments.internalBinaryRead(reader, reader.uint32(), options, message.leyline3ClanAdjustments);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: PlayerSideMarkerAdjustments, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* TribeCardMarkerAdjustments tribeAdjustments = 1; */
+        if (message.tribeAdjustments)
+            TribeCardMarkerAdjustments.internalBinaryWrite(message.tribeAdjustments, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        /* ClanCardMarkerAdjustments leyline1ClanAdjustments = 2; */
+        if (message.leyline1ClanAdjustments)
+            ClanCardMarkerAdjustments.internalBinaryWrite(message.leyline1ClanAdjustments, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        /* ClanCardMarkerAdjustments leyline2ClanAdjustments = 3; */
+        if (message.leyline2ClanAdjustments)
+            ClanCardMarkerAdjustments.internalBinaryWrite(message.leyline2ClanAdjustments, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
+        /* ClanCardMarkerAdjustments leyline3ClanAdjustments = 4; */
+        if (message.leyline3ClanAdjustments)
+            ClanCardMarkerAdjustments.internalBinaryWrite(message.leyline3ClanAdjustments, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message PlayerSideMarkerAdjustments
+ */
+export const PlayerSideMarkerAdjustments = new PlayerSideMarkerAdjustments$Type();
+// @generated message type with reflection information, may provide speed optimized methods
+class IntraRoundBoardAdjustments$Type extends MessageType<IntraRoundBoardAdjustments> {
+    constructor() {
+        super("IntraRoundBoardAdjustments", [
+            { no: 1, name: "optPlayerSideAdjustments", kind: "message", T: () => PlayerSideMarkerAdjustments },
+            { no: 2, name: "osbPlayerSideAdjustments", kind: "message", T: () => PlayerSideMarkerAdjustments }
+        ]);
+    }
+    create(value?: PartialMessage<IntraRoundBoardAdjustments>): IntraRoundBoardAdjustments {
+        const message = globalThis.Object.create((this.messagePrototype!));
+        if (value !== undefined)
+            reflectionMergePartial<IntraRoundBoardAdjustments>(this, message, value);
+        return message;
+    }
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: IntraRoundBoardAdjustments): IntraRoundBoardAdjustments {
+        let message = target ?? this.create(), end = reader.pos + length;
+        while (reader.pos < end) {
+            let [fieldNo, wireType] = reader.tag();
+            switch (fieldNo) {
+                case /* PlayerSideMarkerAdjustments optPlayerSideAdjustments */ 1:
+                    message.optPlayerSideAdjustments = PlayerSideMarkerAdjustments.internalBinaryRead(reader, reader.uint32(), options, message.optPlayerSideAdjustments);
+                    break;
+                case /* PlayerSideMarkerAdjustments osbPlayerSideAdjustments */ 2:
+                    message.osbPlayerSideAdjustments = PlayerSideMarkerAdjustments.internalBinaryRead(reader, reader.uint32(), options, message.osbPlayerSideAdjustments);
+                    break;
+                default:
+                    let u = options.readUnknownField;
+                    if (u === "throw")
+                        throw new globalThis.Error(`Unknown field ${fieldNo} (wire type ${wireType}) for ${this.typeName}`);
+                    let d = reader.skip(wireType);
+                    if (u !== false)
+                        (u === true ? UnknownFieldHandler.onRead : u)(this.typeName, message, fieldNo, wireType, d);
+            }
+        }
+        return message;
+    }
+    internalBinaryWrite(message: IntraRoundBoardAdjustments, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* PlayerSideMarkerAdjustments optPlayerSideAdjustments = 1; */
+        if (message.optPlayerSideAdjustments)
+            PlayerSideMarkerAdjustments.internalBinaryWrite(message.optPlayerSideAdjustments, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        /* PlayerSideMarkerAdjustments osbPlayerSideAdjustments = 2; */
+        if (message.osbPlayerSideAdjustments)
+            PlayerSideMarkerAdjustments.internalBinaryWrite(message.osbPlayerSideAdjustments, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+        let u = options.writeUnknownFields;
+        if (u !== false)
+            (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
+        return writer;
+    }
+}
+/**
+ * @generated MessageType for protobuf message IntraRoundBoardAdjustments
+ */
+export const IntraRoundBoardAdjustments = new IntraRoundBoardAdjustments$Type();
+// @generated message type with reflection information, may provide speed optimized methods
 class GameBoardStatePb$Type extends MessageType<GameBoardStatePb> {
     constructor() {
         super("GameBoardStatePb", [
@@ -962,8 +1329,9 @@ class GameBoardStatePb$Type extends MessageType<GameBoardStatePb> {
             { no: 10, name: "leylineState", kind: "message", T: () => LeylineState },
             { no: 11, name: "optBoardSide", kind: "message", T: () => PlayerBoardSide },
             { no: 12, name: "osbBoardSide", kind: "message", T: () => PlayerBoardSide },
-            { no: 13, name: "familyCardSelectionArea", kind: "message", T: () => FamilyCardSelectionArea },
-            { no: 20, name: "gameOutcome", kind: "enum", T: () => ["GameOutcome", GameOutcome] }
+            { no: 20, name: "familyCardSelectionArea", kind: "message", T: () => FamilyCardSelectionArea },
+            { no: 21, name: "playerFamilyCardSelectionIndicators", kind: "message", T: () => PlayerFamilyCardSelectionIndicators },
+            { no: 40, name: "gameOutcome", kind: "enum", T: () => ["GameOutcome", GameOutcome] }
         ]);
     }
     create(value?: PartialMessage<GameBoardStatePb>): GameBoardStatePb {
@@ -994,10 +1362,13 @@ class GameBoardStatePb$Type extends MessageType<GameBoardStatePb> {
                 case /* PlayerBoardSide osbBoardSide */ 12:
                     message.osbBoardSide = PlayerBoardSide.internalBinaryRead(reader, reader.uint32(), options, message.osbBoardSide);
                     break;
-                case /* FamilyCardSelectionArea familyCardSelectionArea */ 13:
+                case /* FamilyCardSelectionArea familyCardSelectionArea */ 20:
                     message.familyCardSelectionArea = FamilyCardSelectionArea.internalBinaryRead(reader, reader.uint32(), options, message.familyCardSelectionArea);
                     break;
-                case /* GameOutcome gameOutcome */ 20:
+                case /* PlayerFamilyCardSelectionIndicators playerFamilyCardSelectionIndicators */ 21:
+                    message.playerFamilyCardSelectionIndicators = PlayerFamilyCardSelectionIndicators.internalBinaryRead(reader, reader.uint32(), options, message.playerFamilyCardSelectionIndicators);
+                    break;
+                case /* GameOutcome gameOutcome */ 40:
                     message.gameOutcome = reader.int32();
                     break;
                 default:
@@ -1027,12 +1398,15 @@ class GameBoardStatePb$Type extends MessageType<GameBoardStatePb> {
         /* PlayerBoardSide osbBoardSide = 12; */
         if (message.osbBoardSide)
             PlayerBoardSide.internalBinaryWrite(message.osbBoardSide, writer.tag(12, WireType.LengthDelimited).fork(), options).join();
-        /* FamilyCardSelectionArea familyCardSelectionArea = 13; */
+        /* FamilyCardSelectionArea familyCardSelectionArea = 20; */
         if (message.familyCardSelectionArea)
-            FamilyCardSelectionArea.internalBinaryWrite(message.familyCardSelectionArea, writer.tag(13, WireType.LengthDelimited).fork(), options).join();
-        /* GameOutcome gameOutcome = 20; */
+            FamilyCardSelectionArea.internalBinaryWrite(message.familyCardSelectionArea, writer.tag(20, WireType.LengthDelimited).fork(), options).join();
+        /* PlayerFamilyCardSelectionIndicators playerFamilyCardSelectionIndicators = 21; */
+        if (message.playerFamilyCardSelectionIndicators)
+            PlayerFamilyCardSelectionIndicators.internalBinaryWrite(message.playerFamilyCardSelectionIndicators, writer.tag(21, WireType.LengthDelimited).fork(), options).join();
+        /* GameOutcome gameOutcome = 40; */
         if (message.gameOutcome !== 0)
-            writer.tag(20, WireType.Varint).int32(message.gameOutcome);
+            writer.tag(40, WireType.Varint).int32(message.gameOutcome);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
