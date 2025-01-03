@@ -30,6 +30,7 @@ const CARD_DEFS = [
 
 export const SPIRITS_TOTEM_DEF: ITotemDetails = {
   totemId: TOTEM_ID,
+  totemIconId: 'spirits',
   totemName: TOTEM_NAME,
 
   optPlayCards: CARD_DEFS

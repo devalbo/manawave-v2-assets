@@ -1,0 +1,61 @@
+syntax = "proto3";
+
+
+enum SeasonFlavor1ClanCardDefs {
+  SeasonFlavor1ClanCard_NotSet = 0;
+  SeasonFlavor1ClanOfAttack   = 1;
+  SeasonFlavor1ClanOfDefense  = 2;
+  SeasonFlavor1ClanOfMagic    = 3;
+}
+
+enum SeasonFlavor1TotemDefs {
+  SeasonFlavor1Totem_NotSet  = 0;
+  SeasonFlavor1Totem_Attack  = 1;
+  SeasonFlavor1Totem_Defense = 2;
+  SeasonFlavor1Totem_Magic   = 3;
+}
+
+enum SeasonFlavor1MonumentCardDefs {
+  SeasonFlavor1MonumentCard_NotSet         = 0;
+  
+  ManalithCliffs        = 1;
+  RuinsOfErkul          = 2;
+  SeaOfLyrtif           = 3;
+  
+  BirthplaceOfGenghis  = 4;
+  TombOfGenghis        = 5;
+  
+  GravepitsOfLeruk     = 6;
+  FieldsOfLeruk        = 7;
+
+  PeaksOfTheoden       = 8;
+  PlainsOfTheoden      = 9;
+}
+
+enum SeasonFlavor1FamilyCardDefs {
+  SeasonFlavor1FamilyCard_NotSet  = 0;
+
+  SeasonFlavor1AttackFamilyCards  = 10;
+  SeasonFlavor1Attackers1         = 11;
+  SeasonFlavor1Attackers2         = 12;
+  SeasonFlavor1Attackers3         = 13;
+  SeasonFlavor1Attackers4         = 14;
+  SeasonFlavor1Attackers5         = 15;
+  SeasonFlavor1Attackers6         = 16;
+
+  SeasonFlavor1DefenseFamilyCards = 20;
+  SeasonFlavor1Defenders1         = 21;
+  SeasonFlavor1Defenders2         = 22;
+  SeasonFlavor1Defenders3         = 23;
+  SeasonFlavor1Defenders4         = 24;
+  SeasonFlavor1Defenders5         = 25;
+  SeasonFlavor1Defenders6         = 26;
+
+  SeasonFlavor1MagicFamilyCards   = 30;
+  SeasonFlavor1Magickers1         = 31;
+  SeasonFlavor1Magickers2         = 32;
+  SeasonFlavor1Magickers3         = 33;
+  SeasonFlavor1Magickers4         = 34;
+  SeasonFlavor1Magickers5         = 35;
+  SeasonFlavor1Magickers6         = 36;
+}

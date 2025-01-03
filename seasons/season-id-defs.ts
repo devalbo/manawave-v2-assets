@@ -11,3 +11,9 @@ export const SEASON_DEV_1_PBID: SeasonPbId = {
   seasonType: SeasonType.SeasonType_Dev,
   seasonDefinition: SeasonDefinition.SeasonDef_Zero_1,
 };
+
+
+export const SEASON_FLAVOR_1_PBID: SeasonPbId = {
+  seasonType: SeasonType.SeasonType_Flavor,
+  seasonDefinition: SeasonDefinition.SeasonDef_Zero_1,
+};

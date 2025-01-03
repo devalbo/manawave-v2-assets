@@ -1,20 +1,21 @@
 import { FamilyCardInstance } from "../../../PIECES/type-defs/type-defs";
 import { ITotemDetails } from "../../../type-defs/totem-defs";
 import { MwMarkerType, PlayerSideId, TotemPbId } from "@mw-protobufs/manawave-types";
-import { SEASON_DEV_1_PBID } from "../../season-id-defs";
-import { SeasonDev1FamilyCardDefs, SeasonDev1TotemDefs } from "@mw-assets/mw-v2-protobufs/protofiles-out/manawave-season-dev-1";
+import { SEASON_DEV_1_PBID, SEASON_FLAVOR_1_PBID } from "../../season-id-defs";
+import { SeasonDev1FamilyCardDefs } from "@mw-assets/mw-v2-protobufs/protofiles-out/manawave-season-dev-1";
 import { createAddMarkersToMyTribeInstructionSet } from "@mw-assets/manawave-virtual-machine/mvm-instructions-factory";
 import { createAddMarkersToMyClanInstructionSet } from "@mw-assets/manawave-virtual-machine/mvm-instructions-factory";
 import { createMvmInstructionsOnlyFamilyModeLogic } from "@mw-assets/PIECES/mw-card-data";
 import { mapToIndexedModes } from "@mw-assets/PIECES/mw-mode-utils";
 import { FamilyCardDefinition } from "@mw-assets/type-defs/family-defs";
+import { SeasonFlavor1TotemDefs } from "@mw-assets/mw-v2-protobufs/protofiles-out/manawave-season-flavor-1";
 
 
 const TOTEM_NAME = 'Defense';
 const TOTEM_ID_STR = 'defense';
 const TOTEM_ID: TotemPbId = {
-  seasonId: SEASON_DEV_1_PBID,
-  seasonTotemId: SeasonDev1TotemDefs.SeasonDev1Totem_Defense,
+  seasonId: SEASON_FLAVOR_1_PBID,
+  seasonTotemId: SeasonFlavor1TotemDefs.SeasonFlavor1Totem_Defense,
 };
 
 
@@ -68,7 +69,7 @@ const CARD_DEFS = [
 
 export const DEFENSE_TOTEM_DEF: ITotemDetails = {
   totemId: TOTEM_ID,
-  totemIconId: 'turtle',
+  totemIconId: 'ox',
   totemName: TOTEM_NAME,
 
   optPlayCards: CARD_DEFS

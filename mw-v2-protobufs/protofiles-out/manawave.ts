@@ -23,7 +23,6 @@ import { FamilyCardInstancePbId } from "./manawave-types";
 import { GameBoardMonuments } from "./manawave-types";
 import { ClanCardDefPbId } from "./manawave-types";
 import { LeylineDistanceFromSource } from "./manawave-types";
-import { TotemPbId } from "./manawave-types";
 import { MonumentCardPbId } from "./manawave-types";
 import { SeasonPbId } from "./manawave-types";
 /**
@@ -69,22 +68,26 @@ export interface GameInitLeylineDrawResults {
      */
     leyPoint3Options?: GameSetupLeyPointOptions;
 }
+// message TotemAndMonumentVetoPlayerChoices {
+//   TotemPbId selectedTotem1Id = 1;
+//   TotemPbId selectedTotem2Id = 2;
+
+//   LeylineDistanceFromSource vetoedMonumentLeylineDistance = 3;
+// }
+
 /**
- * @generated from protobuf message TotemAndMonumentVetoPlayerChoices
+ * TotemPbId selectedTotem1Id = 1;
+ * TotemPbId selectedTotem2Id = 2;
+ *
+ * @generated from protobuf message PlayerMonumentVenerationChoices
  */
-export interface TotemAndMonumentVetoPlayerChoices {
+export interface PlayerMonumentVenerationChoices {
+    // LeylineDistanceFromSource vetoedMonumentLeylineDistance = 3;
+
     /**
-     * @generated from protobuf field: TotemPbId selectedTotem1Id = 1;
+     * @generated from protobuf field: LeylineDistanceFromSource veneratedMonumentLeylineDistance = 3;
      */
-    selectedTotem1Id?: TotemPbId;
-    /**
-     * @generated from protobuf field: TotemPbId selectedTotem2Id = 2;
-     */
-    selectedTotem2Id?: TotemPbId;
-    /**
-     * @generated from protobuf field: LeylineDistanceFromSource vetoedMonumentLeylineDistance = 3;
-     */
-    vetoedMonumentLeylineDistance: LeylineDistanceFromSource;
+    veneratedMonumentLeylineDistance: LeylineDistanceFromSource;
 }
 /**
  * @generated from protobuf message PlayerClanPlacements
@@ -111,35 +114,44 @@ export interface GameInitSetup {
      * @generated from protobuf field: GameInitLeylineDrawResults leylineDrawResults = 1;
      */
     leylineDrawResults?: GameInitLeylineDrawResults;
+    // TotemAndMonumentVetoPlayerChoices defaultOptPlayerTotemAndMonumentVetoChoices = 4;
+    // TotemAndMonumentVetoPlayerChoices defaultOsbPlayerTotemAndMonumentVetoChoices = 5;
+
     /**
-     * @generated from protobuf field: TotemAndMonumentVetoPlayerChoices defaultOptPlayerTotemAndMonumentVetoChoices = 4;
+     * @generated from protobuf field: PlayerMonumentVenerationChoices defaultOptPlayerMonumentVenerationChoices = 6;
      */
-    defaultOptPlayerTotemAndMonumentVetoChoices?: TotemAndMonumentVetoPlayerChoices;
+    defaultOptPlayerMonumentVenerationChoices?: PlayerMonumentVenerationChoices;
     /**
-     * @generated from protobuf field: TotemAndMonumentVetoPlayerChoices defaultOsbPlayerTotemAndMonumentVetoChoices = 5;
+     * @generated from protobuf field: PlayerMonumentVenerationChoices defaultOsbPlayerMonumentVenerationChoices = 7;
      */
-    defaultOsbPlayerTotemAndMonumentVetoChoices?: TotemAndMonumentVetoPlayerChoices;
+    defaultOsbPlayerMonumentVenerationChoices?: PlayerMonumentVenerationChoices;
     /**
-     * @generated from protobuf field: PlayerClanPlacements defaultOptPlayerClanPlacements = 6;
+     * @generated from protobuf field: PlayerClanPlacements defaultOptPlayerClanPlacements = 8;
      */
     defaultOptPlayerClanPlacements?: PlayerClanPlacements;
     /**
-     * @generated from protobuf field: PlayerClanPlacements defaultOsbPlayerClanPlacements = 7;
+     * @generated from protobuf field: PlayerClanPlacements defaultOsbPlayerClanPlacements = 9;
      */
     defaultOsbPlayerClanPlacements?: PlayerClanPlacements;
 }
+// message GameInitPickTotemsAndMonumentVetoResult {
+//   TotemAndMonumentVetoPlayerChoices finalOptPlayerTotemAndMonumentVetoChoices = 1;
+//   TotemAndMonumentVetoPlayerChoices finalOsbPlayerTotemAndMonumentVetoChoices = 2;
+//   GameBoardMonuments finalMonuments = 3;
+// }
+
 /**
- * @generated from protobuf message GameInitPickTotemsAndMonumentVetoResult
+ * @generated from protobuf message GameInitPickVeneratedMonumentsResult
  */
-export interface GameInitPickTotemsAndMonumentVetoResult {
+export interface GameInitPickVeneratedMonumentsResult {
     /**
-     * @generated from protobuf field: TotemAndMonumentVetoPlayerChoices finalOptPlayerTotemAndMonumentVetoChoices = 1;
+     * @generated from protobuf field: PlayerMonumentVenerationChoices finalOptPlayerMonumentVenerationChoices = 1;
      */
-    finalOptPlayerTotemAndMonumentVetoChoices?: TotemAndMonumentVetoPlayerChoices;
+    finalOptPlayerMonumentVenerationChoices?: PlayerMonumentVenerationChoices;
     /**
-     * @generated from protobuf field: TotemAndMonumentVetoPlayerChoices finalOsbPlayerTotemAndMonumentVetoChoices = 2;
+     * @generated from protobuf field: PlayerMonumentVenerationChoices finalOsbPlayerMonumentVenerationChoices = 2;
      */
-    finalOsbPlayerTotemAndMonumentVetoChoices?: TotemAndMonumentVetoPlayerChoices;
+    finalOsbPlayerMonumentVenerationChoices?: PlayerMonumentVenerationChoices;
     /**
      * @generated from protobuf field: GameBoardMonuments finalMonuments = 3;
      */
@@ -604,11 +616,13 @@ export interface ManawavePlayerMoveSelection {
      * @generated from protobuf oneof: move
      */
     move: {
-        oneofKind: "totemAndMonumentVetoPlayerChoices";
+        oneofKind: "playerMonumentVenerationChoices";
         /**
-         * @generated from protobuf field: TotemAndMonumentVetoPlayerChoices totemAndMonumentVetoPlayerChoices = 1;
+         * TotemAndMonumentVetoPlayerChoices totemAndMonumentVetoPlayerChoices = 1;
+         *
+         * @generated from protobuf field: PlayerMonumentVenerationChoices playerMonumentVenerationChoices = 1;
          */
-        totemAndMonumentVetoPlayerChoices: TotemAndMonumentVetoPlayerChoices;
+        playerMonumentVenerationChoices: PlayerMonumentVenerationChoices;
     } | {
         oneofKind: "playerClanPlacements";
         /**
@@ -755,9 +769,11 @@ export interface GameStatePb {
      */
     initGameSetup?: GameInitSetup;
     /**
-     * @generated from protobuf field: GameInitPickTotemsAndMonumentVetoResult initPickTotemsAndMonumentVetoResult = 21;
+     * GameInitPickTotemsAndMonumentVetoResult initPickTotemsAndMonumentVetoResult = 21;
+     *
+     * @generated from protobuf field: GameInitPickVeneratedMonumentsResult initPickVeneratedMonumentsResult = 21;
      */
-    initPickTotemsAndMonumentVetoResult?: GameInitPickTotemsAndMonumentVetoResult;
+    initPickVeneratedMonumentsResult?: GameInitPickVeneratedMonumentsResult;
     /**
      * @generated from protobuf field: GameInitPlaceClansResult initPlaceClansResult = 22;
      */
@@ -943,34 +959,26 @@ class GameInitLeylineDrawResults$Type extends MessageType<GameInitLeylineDrawRes
  */
 export const GameInitLeylineDrawResults = new GameInitLeylineDrawResults$Type();
 // @generated message type with reflection information, may provide speed optimized methods
-class TotemAndMonumentVetoPlayerChoices$Type extends MessageType<TotemAndMonumentVetoPlayerChoices> {
+class PlayerMonumentVenerationChoices$Type extends MessageType<PlayerMonumentVenerationChoices> {
     constructor() {
-        super("TotemAndMonumentVetoPlayerChoices", [
-            { no: 1, name: "selectedTotem1Id", kind: "message", T: () => TotemPbId },
-            { no: 2, name: "selectedTotem2Id", kind: "message", T: () => TotemPbId },
-            { no: 3, name: "vetoedMonumentLeylineDistance", kind: "enum", T: () => ["LeylineDistanceFromSource", LeylineDistanceFromSource] }
+        super("PlayerMonumentVenerationChoices", [
+            { no: 3, name: "veneratedMonumentLeylineDistance", kind: "enum", T: () => ["LeylineDistanceFromSource", LeylineDistanceFromSource] }
         ]);
     }
-    create(value?: PartialMessage<TotemAndMonumentVetoPlayerChoices>): TotemAndMonumentVetoPlayerChoices {
+    create(value?: PartialMessage<PlayerMonumentVenerationChoices>): PlayerMonumentVenerationChoices {
         const message = globalThis.Object.create((this.messagePrototype!));
-        message.vetoedMonumentLeylineDistance = 0;
+        message.veneratedMonumentLeylineDistance = 0;
         if (value !== undefined)
-            reflectionMergePartial<TotemAndMonumentVetoPlayerChoices>(this, message, value);
+            reflectionMergePartial<PlayerMonumentVenerationChoices>(this, message, value);
         return message;
     }
-    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: TotemAndMonumentVetoPlayerChoices): TotemAndMonumentVetoPlayerChoices {
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: PlayerMonumentVenerationChoices): PlayerMonumentVenerationChoices {
         let message = target ?? this.create(), end = reader.pos + length;
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* TotemPbId selectedTotem1Id */ 1:
-                    message.selectedTotem1Id = TotemPbId.internalBinaryRead(reader, reader.uint32(), options, message.selectedTotem1Id);
-                    break;
-                case /* TotemPbId selectedTotem2Id */ 2:
-                    message.selectedTotem2Id = TotemPbId.internalBinaryRead(reader, reader.uint32(), options, message.selectedTotem2Id);
-                    break;
-                case /* LeylineDistanceFromSource vetoedMonumentLeylineDistance */ 3:
-                    message.vetoedMonumentLeylineDistance = reader.int32();
+                case /* LeylineDistanceFromSource veneratedMonumentLeylineDistance */ 3:
+                    message.veneratedMonumentLeylineDistance = reader.int32();
                     break;
                 default:
                     let u = options.readUnknownField;
@@ -983,16 +991,10 @@ class TotemAndMonumentVetoPlayerChoices$Type extends MessageType<TotemAndMonumen
         }
         return message;
     }
-    internalBinaryWrite(message: TotemAndMonumentVetoPlayerChoices, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* TotemPbId selectedTotem1Id = 1; */
-        if (message.selectedTotem1Id)
-            TotemPbId.internalBinaryWrite(message.selectedTotem1Id, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
-        /* TotemPbId selectedTotem2Id = 2; */
-        if (message.selectedTotem2Id)
-            TotemPbId.internalBinaryWrite(message.selectedTotem2Id, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
-        /* LeylineDistanceFromSource vetoedMonumentLeylineDistance = 3; */
-        if (message.vetoedMonumentLeylineDistance !== 0)
-            writer.tag(3, WireType.Varint).int32(message.vetoedMonumentLeylineDistance);
+    internalBinaryWrite(message: PlayerMonumentVenerationChoices, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* LeylineDistanceFromSource veneratedMonumentLeylineDistance = 3; */
+        if (message.veneratedMonumentLeylineDistance !== 0)
+            writer.tag(3, WireType.Varint).int32(message.veneratedMonumentLeylineDistance);
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -1000,9 +1002,9 @@ class TotemAndMonumentVetoPlayerChoices$Type extends MessageType<TotemAndMonumen
     }
 }
 /**
- * @generated MessageType for protobuf message TotemAndMonumentVetoPlayerChoices
+ * @generated MessageType for protobuf message PlayerMonumentVenerationChoices
  */
-export const TotemAndMonumentVetoPlayerChoices = new TotemAndMonumentVetoPlayerChoices$Type();
+export const PlayerMonumentVenerationChoices = new PlayerMonumentVenerationChoices$Type();
 // @generated message type with reflection information, may provide speed optimized methods
 class PlayerClanPlacements$Type extends MessageType<PlayerClanPlacements> {
     constructor() {
@@ -1068,10 +1070,10 @@ class GameInitSetup$Type extends MessageType<GameInitSetup> {
     constructor() {
         super("GameInitSetup", [
             { no: 1, name: "leylineDrawResults", kind: "message", T: () => GameInitLeylineDrawResults },
-            { no: 4, name: "defaultOptPlayerTotemAndMonumentVetoChoices", kind: "message", T: () => TotemAndMonumentVetoPlayerChoices },
-            { no: 5, name: "defaultOsbPlayerTotemAndMonumentVetoChoices", kind: "message", T: () => TotemAndMonumentVetoPlayerChoices },
-            { no: 6, name: "defaultOptPlayerClanPlacements", kind: "message", T: () => PlayerClanPlacements },
-            { no: 7, name: "defaultOsbPlayerClanPlacements", kind: "message", T: () => PlayerClanPlacements }
+            { no: 6, name: "defaultOptPlayerMonumentVenerationChoices", kind: "message", T: () => PlayerMonumentVenerationChoices },
+            { no: 7, name: "defaultOsbPlayerMonumentVenerationChoices", kind: "message", T: () => PlayerMonumentVenerationChoices },
+            { no: 8, name: "defaultOptPlayerClanPlacements", kind: "message", T: () => PlayerClanPlacements },
+            { no: 9, name: "defaultOsbPlayerClanPlacements", kind: "message", T: () => PlayerClanPlacements }
         ]);
     }
     create(value?: PartialMessage<GameInitSetup>): GameInitSetup {
@@ -1088,16 +1090,16 @@ class GameInitSetup$Type extends MessageType<GameInitSetup> {
                 case /* GameInitLeylineDrawResults leylineDrawResults */ 1:
                     message.leylineDrawResults = GameInitLeylineDrawResults.internalBinaryRead(reader, reader.uint32(), options, message.leylineDrawResults);
                     break;
-                case /* TotemAndMonumentVetoPlayerChoices defaultOptPlayerTotemAndMonumentVetoChoices */ 4:
-                    message.defaultOptPlayerTotemAndMonumentVetoChoices = TotemAndMonumentVetoPlayerChoices.internalBinaryRead(reader, reader.uint32(), options, message.defaultOptPlayerTotemAndMonumentVetoChoices);
+                case /* PlayerMonumentVenerationChoices defaultOptPlayerMonumentVenerationChoices */ 6:
+                    message.defaultOptPlayerMonumentVenerationChoices = PlayerMonumentVenerationChoices.internalBinaryRead(reader, reader.uint32(), options, message.defaultOptPlayerMonumentVenerationChoices);
                     break;
-                case /* TotemAndMonumentVetoPlayerChoices defaultOsbPlayerTotemAndMonumentVetoChoices */ 5:
-                    message.defaultOsbPlayerTotemAndMonumentVetoChoices = TotemAndMonumentVetoPlayerChoices.internalBinaryRead(reader, reader.uint32(), options, message.defaultOsbPlayerTotemAndMonumentVetoChoices);
+                case /* PlayerMonumentVenerationChoices defaultOsbPlayerMonumentVenerationChoices */ 7:
+                    message.defaultOsbPlayerMonumentVenerationChoices = PlayerMonumentVenerationChoices.internalBinaryRead(reader, reader.uint32(), options, message.defaultOsbPlayerMonumentVenerationChoices);
                     break;
-                case /* PlayerClanPlacements defaultOptPlayerClanPlacements */ 6:
+                case /* PlayerClanPlacements defaultOptPlayerClanPlacements */ 8:
                     message.defaultOptPlayerClanPlacements = PlayerClanPlacements.internalBinaryRead(reader, reader.uint32(), options, message.defaultOptPlayerClanPlacements);
                     break;
-                case /* PlayerClanPlacements defaultOsbPlayerClanPlacements */ 7:
+                case /* PlayerClanPlacements defaultOsbPlayerClanPlacements */ 9:
                     message.defaultOsbPlayerClanPlacements = PlayerClanPlacements.internalBinaryRead(reader, reader.uint32(), options, message.defaultOsbPlayerClanPlacements);
                     break;
                 default:
@@ -1115,18 +1117,18 @@ class GameInitSetup$Type extends MessageType<GameInitSetup> {
         /* GameInitLeylineDrawResults leylineDrawResults = 1; */
         if (message.leylineDrawResults)
             GameInitLeylineDrawResults.internalBinaryWrite(message.leylineDrawResults, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
-        /* TotemAndMonumentVetoPlayerChoices defaultOptPlayerTotemAndMonumentVetoChoices = 4; */
-        if (message.defaultOptPlayerTotemAndMonumentVetoChoices)
-            TotemAndMonumentVetoPlayerChoices.internalBinaryWrite(message.defaultOptPlayerTotemAndMonumentVetoChoices, writer.tag(4, WireType.LengthDelimited).fork(), options).join();
-        /* TotemAndMonumentVetoPlayerChoices defaultOsbPlayerTotemAndMonumentVetoChoices = 5; */
-        if (message.defaultOsbPlayerTotemAndMonumentVetoChoices)
-            TotemAndMonumentVetoPlayerChoices.internalBinaryWrite(message.defaultOsbPlayerTotemAndMonumentVetoChoices, writer.tag(5, WireType.LengthDelimited).fork(), options).join();
-        /* PlayerClanPlacements defaultOptPlayerClanPlacements = 6; */
+        /* PlayerMonumentVenerationChoices defaultOptPlayerMonumentVenerationChoices = 6; */
+        if (message.defaultOptPlayerMonumentVenerationChoices)
+            PlayerMonumentVenerationChoices.internalBinaryWrite(message.defaultOptPlayerMonumentVenerationChoices, writer.tag(6, WireType.LengthDelimited).fork(), options).join();
+        /* PlayerMonumentVenerationChoices defaultOsbPlayerMonumentVenerationChoices = 7; */
+        if (message.defaultOsbPlayerMonumentVenerationChoices)
+            PlayerMonumentVenerationChoices.internalBinaryWrite(message.defaultOsbPlayerMonumentVenerationChoices, writer.tag(7, WireType.LengthDelimited).fork(), options).join();
+        /* PlayerClanPlacements defaultOptPlayerClanPlacements = 8; */
         if (message.defaultOptPlayerClanPlacements)
-            PlayerClanPlacements.internalBinaryWrite(message.defaultOptPlayerClanPlacements, writer.tag(6, WireType.LengthDelimited).fork(), options).join();
-        /* PlayerClanPlacements defaultOsbPlayerClanPlacements = 7; */
+            PlayerClanPlacements.internalBinaryWrite(message.defaultOptPlayerClanPlacements, writer.tag(8, WireType.LengthDelimited).fork(), options).join();
+        /* PlayerClanPlacements defaultOsbPlayerClanPlacements = 9; */
         if (message.defaultOsbPlayerClanPlacements)
-            PlayerClanPlacements.internalBinaryWrite(message.defaultOsbPlayerClanPlacements, writer.tag(7, WireType.LengthDelimited).fork(), options).join();
+            PlayerClanPlacements.internalBinaryWrite(message.defaultOsbPlayerClanPlacements, writer.tag(9, WireType.LengthDelimited).fork(), options).join();
         let u = options.writeUnknownFields;
         if (u !== false)
             (u == true ? UnknownFieldHandler.onWrite : u)(this.typeName, message, writer);
@@ -1138,30 +1140,30 @@ class GameInitSetup$Type extends MessageType<GameInitSetup> {
  */
 export const GameInitSetup = new GameInitSetup$Type();
 // @generated message type with reflection information, may provide speed optimized methods
-class GameInitPickTotemsAndMonumentVetoResult$Type extends MessageType<GameInitPickTotemsAndMonumentVetoResult> {
+class GameInitPickVeneratedMonumentsResult$Type extends MessageType<GameInitPickVeneratedMonumentsResult> {
     constructor() {
-        super("GameInitPickTotemsAndMonumentVetoResult", [
-            { no: 1, name: "finalOptPlayerTotemAndMonumentVetoChoices", kind: "message", T: () => TotemAndMonumentVetoPlayerChoices },
-            { no: 2, name: "finalOsbPlayerTotemAndMonumentVetoChoices", kind: "message", T: () => TotemAndMonumentVetoPlayerChoices },
+        super("GameInitPickVeneratedMonumentsResult", [
+            { no: 1, name: "finalOptPlayerMonumentVenerationChoices", kind: "message", T: () => PlayerMonumentVenerationChoices },
+            { no: 2, name: "finalOsbPlayerMonumentVenerationChoices", kind: "message", T: () => PlayerMonumentVenerationChoices },
             { no: 3, name: "finalMonuments", kind: "message", T: () => GameBoardMonuments }
         ]);
     }
-    create(value?: PartialMessage<GameInitPickTotemsAndMonumentVetoResult>): GameInitPickTotemsAndMonumentVetoResult {
+    create(value?: PartialMessage<GameInitPickVeneratedMonumentsResult>): GameInitPickVeneratedMonumentsResult {
         const message = globalThis.Object.create((this.messagePrototype!));
         if (value !== undefined)
-            reflectionMergePartial<GameInitPickTotemsAndMonumentVetoResult>(this, message, value);
+            reflectionMergePartial<GameInitPickVeneratedMonumentsResult>(this, message, value);
         return message;
     }
-    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: GameInitPickTotemsAndMonumentVetoResult): GameInitPickTotemsAndMonumentVetoResult {
+    internalBinaryRead(reader: IBinaryReader, length: number, options: BinaryReadOptions, target?: GameInitPickVeneratedMonumentsResult): GameInitPickVeneratedMonumentsResult {
         let message = target ?? this.create(), end = reader.pos + length;
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* TotemAndMonumentVetoPlayerChoices finalOptPlayerTotemAndMonumentVetoChoices */ 1:
-                    message.finalOptPlayerTotemAndMonumentVetoChoices = TotemAndMonumentVetoPlayerChoices.internalBinaryRead(reader, reader.uint32(), options, message.finalOptPlayerTotemAndMonumentVetoChoices);
+                case /* PlayerMonumentVenerationChoices finalOptPlayerMonumentVenerationChoices */ 1:
+                    message.finalOptPlayerMonumentVenerationChoices = PlayerMonumentVenerationChoices.internalBinaryRead(reader, reader.uint32(), options, message.finalOptPlayerMonumentVenerationChoices);
                     break;
-                case /* TotemAndMonumentVetoPlayerChoices finalOsbPlayerTotemAndMonumentVetoChoices */ 2:
-                    message.finalOsbPlayerTotemAndMonumentVetoChoices = TotemAndMonumentVetoPlayerChoices.internalBinaryRead(reader, reader.uint32(), options, message.finalOsbPlayerTotemAndMonumentVetoChoices);
+                case /* PlayerMonumentVenerationChoices finalOsbPlayerMonumentVenerationChoices */ 2:
+                    message.finalOsbPlayerMonumentVenerationChoices = PlayerMonumentVenerationChoices.internalBinaryRead(reader, reader.uint32(), options, message.finalOsbPlayerMonumentVenerationChoices);
                     break;
                 case /* GameBoardMonuments finalMonuments */ 3:
                     message.finalMonuments = GameBoardMonuments.internalBinaryRead(reader, reader.uint32(), options, message.finalMonuments);
@@ -1177,13 +1179,13 @@ class GameInitPickTotemsAndMonumentVetoResult$Type extends MessageType<GameInitP
         }
         return message;
     }
-    internalBinaryWrite(message: GameInitPickTotemsAndMonumentVetoResult, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* TotemAndMonumentVetoPlayerChoices finalOptPlayerTotemAndMonumentVetoChoices = 1; */
-        if (message.finalOptPlayerTotemAndMonumentVetoChoices)
-            TotemAndMonumentVetoPlayerChoices.internalBinaryWrite(message.finalOptPlayerTotemAndMonumentVetoChoices, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
-        /* TotemAndMonumentVetoPlayerChoices finalOsbPlayerTotemAndMonumentVetoChoices = 2; */
-        if (message.finalOsbPlayerTotemAndMonumentVetoChoices)
-            TotemAndMonumentVetoPlayerChoices.internalBinaryWrite(message.finalOsbPlayerTotemAndMonumentVetoChoices, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
+    internalBinaryWrite(message: GameInitPickVeneratedMonumentsResult, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
+        /* PlayerMonumentVenerationChoices finalOptPlayerMonumentVenerationChoices = 1; */
+        if (message.finalOptPlayerMonumentVenerationChoices)
+            PlayerMonumentVenerationChoices.internalBinaryWrite(message.finalOptPlayerMonumentVenerationChoices, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        /* PlayerMonumentVenerationChoices finalOsbPlayerMonumentVenerationChoices = 2; */
+        if (message.finalOsbPlayerMonumentVenerationChoices)
+            PlayerMonumentVenerationChoices.internalBinaryWrite(message.finalOsbPlayerMonumentVenerationChoices, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
         /* GameBoardMonuments finalMonuments = 3; */
         if (message.finalMonuments)
             GameBoardMonuments.internalBinaryWrite(message.finalMonuments, writer.tag(3, WireType.LengthDelimited).fork(), options).join();
@@ -1194,9 +1196,9 @@ class GameInitPickTotemsAndMonumentVetoResult$Type extends MessageType<GameInitP
     }
 }
 /**
- * @generated MessageType for protobuf message GameInitPickTotemsAndMonumentVetoResult
+ * @generated MessageType for protobuf message GameInitPickVeneratedMonumentsResult
  */
-export const GameInitPickTotemsAndMonumentVetoResult = new GameInitPickTotemsAndMonumentVetoResult$Type();
+export const GameInitPickVeneratedMonumentsResult = new GameInitPickVeneratedMonumentsResult$Type();
 // @generated message type with reflection information, may provide speed optimized methods
 class GameInitPlaceClansResult$Type extends MessageType<GameInitPlaceClansResult> {
     constructor() {
@@ -3005,7 +3007,7 @@ export const PlayerFamilyPlacementAndModalitySelections = new PlayerFamilyPlacem
 class ManawavePlayerMoveSelection$Type extends MessageType<ManawavePlayerMoveSelection> {
     constructor() {
         super("ManawavePlayerMoveSelection", [
-            { no: 1, name: "totemAndMonumentVetoPlayerChoices", kind: "message", oneof: "move", T: () => TotemAndMonumentVetoPlayerChoices },
+            { no: 1, name: "playerMonumentVenerationChoices", kind: "message", oneof: "move", T: () => PlayerMonumentVenerationChoices },
             { no: 2, name: "playerClanPlacements", kind: "message", oneof: "move", T: () => PlayerClanPlacements },
             { no: 3, name: "playerCardChoice", kind: "enum", oneof: "move", T: () => ["PlayerCardChoicePb", PlayerCardChoicePb] },
             { no: 4, name: "playerFamilyPlacementAndModalitySelections", kind: "message", oneof: "move", T: () => PlayerFamilyPlacementAndModalitySelections },
@@ -3024,10 +3026,10 @@ class ManawavePlayerMoveSelection$Type extends MessageType<ManawavePlayerMoveSel
         while (reader.pos < end) {
             let [fieldNo, wireType] = reader.tag();
             switch (fieldNo) {
-                case /* TotemAndMonumentVetoPlayerChoices totemAndMonumentVetoPlayerChoices */ 1:
+                case /* PlayerMonumentVenerationChoices playerMonumentVenerationChoices */ 1:
                     message.move = {
-                        oneofKind: "totemAndMonumentVetoPlayerChoices",
-                        totemAndMonumentVetoPlayerChoices: TotemAndMonumentVetoPlayerChoices.internalBinaryRead(reader, reader.uint32(), options, (message.move as any).totemAndMonumentVetoPlayerChoices)
+                        oneofKind: "playerMonumentVenerationChoices",
+                        playerMonumentVenerationChoices: PlayerMonumentVenerationChoices.internalBinaryRead(reader, reader.uint32(), options, (message.move as any).playerMonumentVenerationChoices)
                     };
                     break;
                 case /* PlayerClanPlacements playerClanPlacements */ 2:
@@ -3066,9 +3068,9 @@ class ManawavePlayerMoveSelection$Type extends MessageType<ManawavePlayerMoveSel
         return message;
     }
     internalBinaryWrite(message: ManawavePlayerMoveSelection, writer: IBinaryWriter, options: BinaryWriteOptions): IBinaryWriter {
-        /* TotemAndMonumentVetoPlayerChoices totemAndMonumentVetoPlayerChoices = 1; */
-        if (message.move.oneofKind === "totemAndMonumentVetoPlayerChoices")
-            TotemAndMonumentVetoPlayerChoices.internalBinaryWrite(message.move.totemAndMonumentVetoPlayerChoices, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
+        /* PlayerMonumentVenerationChoices playerMonumentVenerationChoices = 1; */
+        if (message.move.oneofKind === "playerMonumentVenerationChoices")
+            PlayerMonumentVenerationChoices.internalBinaryWrite(message.move.playerMonumentVenerationChoices, writer.tag(1, WireType.LengthDelimited).fork(), options).join();
         /* PlayerClanPlacements playerClanPlacements = 2; */
         if (message.move.oneofKind === "playerClanPlacements")
             PlayerClanPlacements.internalBinaryWrite(message.move.playerClanPlacements, writer.tag(2, WireType.LengthDelimited).fork(), options).join();
@@ -3354,7 +3356,7 @@ class GameStatePb$Type extends MessageType<GameStatePb> {
             { no: 3, name: "initialConditions", kind: "message", T: () => InitialConditions },
             { no: 4, name: "playerRegistration", kind: "message", T: () => PlayerRegistration },
             { no: 20, name: "initGameSetup", kind: "message", T: () => GameInitSetup },
-            { no: 21, name: "initPickTotemsAndMonumentVetoResult", kind: "message", T: () => GameInitPickTotemsAndMonumentVetoResult },
+            { no: 21, name: "initPickVeneratedMonumentsResult", kind: "message", T: () => GameInitPickVeneratedMonumentsResult },
             { no: 22, name: "initPlaceClansResult", kind: "message", T: () => GameInitPlaceClansResult },
             { no: 30, name: "currentRound", kind: "message", T: () => ManawaveRound },
             { no: 31, name: "completedRounds", kind: "message", repeat: 1 /*RepeatType.PACKED*/, T: () => ManawaveRound },
@@ -3389,8 +3391,8 @@ class GameStatePb$Type extends MessageType<GameStatePb> {
                 case /* GameInitSetup initGameSetup */ 20:
                     message.initGameSetup = GameInitSetup.internalBinaryRead(reader, reader.uint32(), options, message.initGameSetup);
                     break;
-                case /* GameInitPickTotemsAndMonumentVetoResult initPickTotemsAndMonumentVetoResult */ 21:
-                    message.initPickTotemsAndMonumentVetoResult = GameInitPickTotemsAndMonumentVetoResult.internalBinaryRead(reader, reader.uint32(), options, message.initPickTotemsAndMonumentVetoResult);
+                case /* GameInitPickVeneratedMonumentsResult initPickVeneratedMonumentsResult */ 21:
+                    message.initPickVeneratedMonumentsResult = GameInitPickVeneratedMonumentsResult.internalBinaryRead(reader, reader.uint32(), options, message.initPickVeneratedMonumentsResult);
                     break;
                 case /* GameInitPlaceClansResult initPlaceClansResult */ 22:
                     message.initPlaceClansResult = GameInitPlaceClansResult.internalBinaryRead(reader, reader.uint32(), options, message.initPlaceClansResult);
@@ -3431,9 +3433,9 @@ class GameStatePb$Type extends MessageType<GameStatePb> {
         /* GameInitSetup initGameSetup = 20; */
         if (message.initGameSetup)
             GameInitSetup.internalBinaryWrite(message.initGameSetup, writer.tag(20, WireType.LengthDelimited).fork(), options).join();
-        /* GameInitPickTotemsAndMonumentVetoResult initPickTotemsAndMonumentVetoResult = 21; */
-        if (message.initPickTotemsAndMonumentVetoResult)
-            GameInitPickTotemsAndMonumentVetoResult.internalBinaryWrite(message.initPickTotemsAndMonumentVetoResult, writer.tag(21, WireType.LengthDelimited).fork(), options).join();
+        /* GameInitPickVeneratedMonumentsResult initPickVeneratedMonumentsResult = 21; */
+        if (message.initPickVeneratedMonumentsResult)
+            GameInitPickVeneratedMonumentsResult.internalBinaryWrite(message.initPickVeneratedMonumentsResult, writer.tag(21, WireType.LengthDelimited).fork(), options).join();
         /* GameInitPlaceClansResult initPlaceClansResult = 22; */
         if (message.initPlaceClansResult)
             GameInitPlaceClansResult.internalBinaryWrite(message.initPlaceClansResult, writer.tag(22, WireType.LengthDelimited).fork(), options).join();

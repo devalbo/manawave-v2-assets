@@ -3,8 +3,11 @@ import { FamilyCardInstance } from "../PIECES/type-defs/type-defs";
 import { PlayerSide } from "./game-play-data";
 
 
+export type TotemIconId = 'ox' | 'tiger' | 'spirits' | 'turtle' | 'unknown';
+
 export interface ITotemDetails {
   totemId: TotemPbId
+  totemIconId: TotemIconId
   totemName: string
 
   optPlayCards: FamilyCardInstance[]
@@ -18,6 +21,7 @@ export interface ITotemCardSet {
   selectorCards: []
   playCards: []
 }
+
 
 
 export const getPlayerCardsForTotem = (totemDetails: ITotemDetails, playerSide: PlayerSide): FamilyCardInstance[] => {

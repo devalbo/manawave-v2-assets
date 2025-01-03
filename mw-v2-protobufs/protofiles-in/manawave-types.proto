@@ -4,6 +4,7 @@ syntax = "proto3";
 enum SeasonType {
   SeasonType_NotSet = 0;
   SeasonType_Dev = 1;
+  SeasonType_Flavor = 2;
   SeasonType_Playtest = 10;
   SeasonType_Production = 100;
 }

@@ -68,6 +68,7 @@ const CARD_DEFS = [
 
 export const ATTACK_TOTEM_DEF: ITotemDetails = {
   totemId: TOTEM_ID,
+  totemIconId: 'tiger',
   totemName: TOTEM_NAME,
   
   optPlayCards: CARD_DEFS

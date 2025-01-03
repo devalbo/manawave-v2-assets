@@ -1,4 +1,4 @@
-import { MonumentCard } from "../../type-defs/monument-defs";
+import { MonumentCard, TotemMonumentCard } from "../../type-defs/monument-defs";
 import { MonumentOfDiversityData } from "./monument-defs/monument-of-diversity";
 import { MonumentOfJusticeData } from "./monument-defs/monument-of-justice";
 import { MonumentOfLifeData } from "./monument-defs/monument-of-life";
@@ -16,7 +16,7 @@ export const DefaultMonuments: MonumentCard[] = [
   MonumentOfDiversityData,
 ]
 
-export const TotemMonuments: MonumentCard[] = [
+export const TotemMonuments: TotemMonumentCard[] = [
   MonumentOfJusticeData,
   MonumentOfTranquilityData,
   MonumentOfMagicData,

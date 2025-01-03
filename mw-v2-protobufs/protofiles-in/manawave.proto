@@ -21,11 +21,20 @@ message GameInitLeylineDrawResults {
   GameSetupLeyPointOptions leyPoint3Options = 3;
 }
 
-message TotemAndMonumentVetoPlayerChoices {
-  TotemPbId selectedTotem1Id = 1;
-  TotemPbId selectedTotem2Id = 2;
+// message TotemAndMonumentVetoPlayerChoices {
+//   TotemPbId selectedTotem1Id = 1;
+//   TotemPbId selectedTotem2Id = 2;
   
-  LeylineDistanceFromSource vetoedMonumentLeylineDistance = 3;
+//   LeylineDistanceFromSource vetoedMonumentLeylineDistance = 3;
+// }
+
+message PlayerMonumentVenerationChoices {
+  // TotemPbId selectedTotem1Id = 1;
+  // TotemPbId selectedTotem2Id = 2;
+  
+  // LeylineDistanceFromSource vetoedMonumentLeylineDistance = 3;
+
+  LeylineDistanceFromSource veneratedMonumentLeylineDistance = 3;
 }
 
 message PlayerClanPlacements {
@@ -37,16 +46,25 @@ message PlayerClanPlacements {
 message GameInitSetup {
   GameInitLeylineDrawResults leylineDrawResults = 1;
 
-  TotemAndMonumentVetoPlayerChoices defaultOptPlayerTotemAndMonumentVetoChoices = 4;
-  TotemAndMonumentVetoPlayerChoices defaultOsbPlayerTotemAndMonumentVetoChoices = 5;
+  // TotemAndMonumentVetoPlayerChoices defaultOptPlayerTotemAndMonumentVetoChoices = 4;
+  // TotemAndMonumentVetoPlayerChoices defaultOsbPlayerTotemAndMonumentVetoChoices = 5;
 
-  PlayerClanPlacements defaultOptPlayerClanPlacements = 6;
-  PlayerClanPlacements defaultOsbPlayerClanPlacements = 7;
+  PlayerMonumentVenerationChoices defaultOptPlayerMonumentVenerationChoices = 6;
+  PlayerMonumentVenerationChoices defaultOsbPlayerMonumentVenerationChoices = 7;
+
+  PlayerClanPlacements defaultOptPlayerClanPlacements = 8;
+  PlayerClanPlacements defaultOsbPlayerClanPlacements = 9;
 }
 
-message GameInitPickTotemsAndMonumentVetoResult {
-  TotemAndMonumentVetoPlayerChoices finalOptPlayerTotemAndMonumentVetoChoices = 1;
-  TotemAndMonumentVetoPlayerChoices finalOsbPlayerTotemAndMonumentVetoChoices = 2;
+// message GameInitPickTotemsAndMonumentVetoResult {
+//   TotemAndMonumentVetoPlayerChoices finalOptPlayerTotemAndMonumentVetoChoices = 1;
+//   TotemAndMonumentVetoPlayerChoices finalOsbPlayerTotemAndMonumentVetoChoices = 2;
+//   GameBoardMonuments finalMonuments = 3;
+// }
+
+message GameInitPickVeneratedMonumentsResult {
+  PlayerMonumentVenerationChoices finalOptPlayerMonumentVenerationChoices = 1;
+  PlayerMonumentVenerationChoices finalOsbPlayerMonumentVenerationChoices = 2;
   GameBoardMonuments finalMonuments = 3;
 }
 
@@ -250,7 +268,8 @@ message PlayerFamilyPlacementAndModalitySelections {
 
 message ManawavePlayerMoveSelection {
   oneof move {
-    TotemAndMonumentVetoPlayerChoices totemAndMonumentVetoPlayerChoices = 1;
+    // TotemAndMonumentVetoPlayerChoices totemAndMonumentVetoPlayerChoices = 1;
+    PlayerMonumentVenerationChoices playerMonumentVenerationChoices = 1;
     PlayerClanPlacements playerClanPlacements = 2;
     PlayerCardChoicePb playerCardChoice = 3;
     PlayerFamilyPlacementAndModalitySelections playerFamilyPlacementAndModalitySelections = 4;
@@ -306,7 +325,8 @@ message GameStatePb {
   PlayerRegistration playerRegistration = 4;
   
   GameInitSetup initGameSetup = 20;
-  GameInitPickTotemsAndMonumentVetoResult initPickTotemsAndMonumentVetoResult = 21;
+  // GameInitPickTotemsAndMonumentVetoResult initPickTotemsAndMonumentVetoResult = 21;
+  GameInitPickVeneratedMonumentsResult initPickVeneratedMonumentsResult = 21;
   GameInitPlaceClansResult initPlaceClansResult = 22;
   // GameInitfamilyDrawResults familyDrawResults = 23;
 

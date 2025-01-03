@@ -185,6 +185,10 @@ export enum SeasonType {
      */
     SeasonType_Dev = 1,
     /**
+     * @generated from protobuf enum value: SeasonType_Flavor = 2;
+     */
+    SeasonType_Flavor = 2,
+    /**
      * @generated from protobuf enum value: SeasonType_Playtest = 10;
      */
     SeasonType_Playtest = 10,

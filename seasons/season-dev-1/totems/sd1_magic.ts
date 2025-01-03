@@ -68,6 +68,7 @@ const CARD_DEFS = [
 
 export const MAGIC_TOTEM_DEF: ITotemDetails = {
   totemId: TOTEM_ID,
+  totemIconId: 'spirits',
   totemName: TOTEM_NAME,
 
   optPlayCards: CARD_DEFS
