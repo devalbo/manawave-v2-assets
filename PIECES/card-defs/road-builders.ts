@@ -1,4 +1,4 @@
-import { FamilyCardDefs } from "../../mw-v2-protobufs/protofiles-out/manawave-season-zero-1";
+import { MwFamilyCardIds } from "@mw-assets/mw-asset-ids/manawave-family-ids";
 import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
 import { mapToIndexedModes } from "../mw-mode-utils";
@@ -14,7 +14,7 @@ export const RoadBuildersCardDef: FamilyCardDefinition = {
   totemId: 'spirits',
   familyCardDefPbId: {
     seasonId: SEASON_ZERO_1_PBID,
-    seasonFamilyCardId: FamilyCardDefs.RoadBuilders,
+    seasonFamilyCardId: MwFamilyCardIds.RoadBuilders,
   },
   text: "TODO: fill in text for Road Builders",
   modes: mapToIndexedModes([

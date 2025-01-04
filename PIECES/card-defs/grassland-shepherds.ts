@@ -1,4 +1,4 @@
-import { FamilyCardDefs } from "../../mw-v2-protobufs/protofiles-out/manawave-season-zero-1";
+import { MwFamilyCardIds } from "@mw-assets/mw-asset-ids/manawave-family-ids";
 import { MwMarkerType } from "../../mw-v2-protobufs/protofiles-out/manawave-types";
 import { createAddMarkersToMyTribeInstructionSet } from "../../manawave-virtual-machine/mvm-instructions-factory";
 import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
@@ -14,7 +14,7 @@ export const GrasslandShepherdsCardDef: FamilyCardDefinition = {
   totemId: 'ox',
   familyCardDefPbId: {
     seasonId: SEASON_ZERO_1_PBID,
-    seasonFamilyCardId: FamilyCardDefs.GrasslandShepherds,
+    seasonFamilyCardId: MwFamilyCardIds.GrasslandShepherds,
   },
   text: "TODO: fill in text for Grassland Shepherds",
   modes: mapToIndexedModes([

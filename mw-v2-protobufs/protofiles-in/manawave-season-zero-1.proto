@@ -32,30 +32,3 @@ enum MonumentCardDefs {
   MonumentOfPeace       = 9;
 }
 
-enum FamilyCardDefs {
-  FamilyCard_NotSet  = 0;
-
-  OxFamilyCards       = 10;
-  MwForestHunters     = 11;
-  GrasslandShepherds  = 12;
-  RuggedShepherds     = 13;
-  Farmers             = 14;
-  MysticFarmers       = 15;
-  SoylentGreenFarmers = 16;
-
-  SpiritsFamilyCards  = 20;
-  RoadBuilders        = 21;
-  ManaChannelers      = 22;
-  Enchanters          = 23;
-  Channelers          = 24;
-  Wizards             = 25;
-  Sacrificers         = 26;
-
-  TigerFamilyCards    = 30;
-  ClubWielders        = 31;
-  ShieldCrafters      = 32;
-  Templars            = 33;
-  Defenders           = 34;
-  Martyrs             = 35;
-  Slavers             = 36;
-}

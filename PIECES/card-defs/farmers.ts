@@ -1,4 +1,3 @@
-import { FamilyCardDefs } from "../../mw-v2-protobufs/protofiles-out/manawave-season-zero-1";
 import { MwMarkerType } from "../../mw-v2-protobufs/protofiles-out/manawave-types";
 import { MvmAmountQueryFunctionId } from "../../mw-v2-protobufs/protofiles-out/manawave-vm";
 import { createAddMarkersToMyClanForCountFunctionAmountInstructionSet, createAddMarkersToMyTribeForCountFunctionAmountInstructionSet, createNoOpInstructionSet } from "../../manawave-virtual-machine/mvm-instructions-factory";
@@ -6,6 +5,7 @@ import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
 import { createMvmInstructionsOnlyFamilyModeLogic, IModePrintSettings } from "../mw-card-data";
 import { mapToIndexedModes } from "../mw-mode-utils";
+import { MwFamilyCardIds } from "@mw-assets/mw-asset-ids/manawave-family-ids";
 
 
 const ModePrintSettings: IModePrintSettings = {
@@ -21,7 +21,7 @@ export const FarmersCardDef: FamilyCardDefinition = {
   totemId: 'ox',
   familyCardDefPbId: {
     seasonId: SEASON_ZERO_1_PBID,
-    seasonFamilyCardId: FamilyCardDefs.Farmers,
+    seasonFamilyCardId: MwFamilyCardIds.Farmers,
   },
   text: "TODO: fill in text for Farmers",
   modes: mapToIndexedModes([

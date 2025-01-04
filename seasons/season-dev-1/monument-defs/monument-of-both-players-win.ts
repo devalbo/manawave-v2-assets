@@ -14,4 +14,5 @@ export const MonumentOfBothPlayersWinData: TotemMonumentCard = {
   totem2Id: ATTACK_TOTEM_DEF.totemId,
   text:
     "Resolve: Both players win.",
+  text2: "",
 }

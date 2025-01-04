@@ -1,6 +1,6 @@
 import { FamilyCardInstance } from "../../../PIECES/type-defs/type-defs";
 import { ITotemDetails } from "../../../type-defs/totem-defs";
-import { SeasonDev1FamilyCardDefs, SeasonDev1TotemDefs } from "@mw-protobufs/manawave-season-dev-1";
+import { SeasonDev1TotemDefs } from "@mw-protobufs/manawave-season-dev-1";
 import { MwMarkerType, PlayerSideId, TotemPbId } from "@mw-protobufs/manawave-types";
 import { SEASON_DEV_1_PBID } from "../../season-id-defs";
 import { FamilyCardDefinition } from "@mw-assets/type-defs/family-defs";
@@ -8,6 +8,7 @@ import { createAddMarkersToMyTribeInstructionSet } from "@mw-assets/manawave-vir
 import { createAddMarkersToMyClanInstructionSet } from "@mw-assets/manawave-virtual-machine/mvm-instructions-factory";
 import { createMvmInstructionsOnlyFamilyModeLogic } from "@mw-assets/PIECES/mw-card-data";
 import { mapToIndexedModes } from "@mw-assets/PIECES/mw-mode-utils";
+import { MwFamilyCardIds } from "@mw-assets/mw-asset-ids/manawave-family-ids";
 
 
 const TOTEM_NAME = 'Attack';
@@ -18,7 +19,7 @@ const TOTEM_ID: TotemPbId = {
 };
 
 
-const createAttackerFamilyCardDef = (attackNumber: number, seasonFamilyCardId: SeasonDev1FamilyCardDefs): FamilyCardDefinition => {
+const createAttackerFamilyCardDef = (attackNumber: number, seasonFamilyCardId: MwFamilyCardIds): FamilyCardDefinition => {
   const retVal: FamilyCardDefinition = {
     pieceType: 'family-card',
     title: `Attacker Family ${attackNumber}`,
@@ -57,12 +58,12 @@ const createAttackerFamilyCardDef = (attackNumber: number, seasonFamilyCardId: S
 
 
 const CARD_DEFS = [
-  createAttackerFamilyCardDef(1, SeasonDev1FamilyCardDefs.SeasonDev1Attackers1),
-  createAttackerFamilyCardDef(2, SeasonDev1FamilyCardDefs.SeasonDev1Attackers2),
-  createAttackerFamilyCardDef(3, SeasonDev1FamilyCardDefs.SeasonDev1Attackers3),
-  createAttackerFamilyCardDef(4, SeasonDev1FamilyCardDefs.SeasonDev1Attackers4),
-  createAttackerFamilyCardDef(5, SeasonDev1FamilyCardDefs.SeasonDev1Attackers5),
-  createAttackerFamilyCardDef(6, SeasonDev1FamilyCardDefs.SeasonDev1Attackers6),
+  createAttackerFamilyCardDef(1, MwFamilyCardIds.DevSet_Attackers1),
+  createAttackerFamilyCardDef(2, MwFamilyCardIds.DevSet_Attackers2),
+  createAttackerFamilyCardDef(3, MwFamilyCardIds.DevSet_Attackers3),
+  createAttackerFamilyCardDef(4, MwFamilyCardIds.DevSet_Attackers4),
+  createAttackerFamilyCardDef(5, MwFamilyCardIds.DevSet_Attackers5),
+  createAttackerFamilyCardDef(6, MwFamilyCardIds.DevSet_Attackers6),
 ];
 
 

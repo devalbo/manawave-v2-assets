@@ -19,4 +19,5 @@ export const MonumentOfJusticeData: TotemMonumentCard = {
     "the Tribe of the Clan with higher COUNT(<::shield-counter::>) wins. If there is a tie, determine " +
     "COUNT(<::shield-counter::>) for both Tribes. The Tribe with the highest COUNT(<::shield-counter::>) " +
     "wins. If still tied, resume Manawave.",
+  text2: "",
 }

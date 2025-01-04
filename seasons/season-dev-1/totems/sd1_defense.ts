@@ -2,12 +2,13 @@ import { FamilyCardInstance } from "../../../PIECES/type-defs/type-defs";
 import { ITotemDetails } from "../../../type-defs/totem-defs";
 import { MwMarkerType, PlayerSideId, TotemPbId } from "@mw-protobufs/manawave-types";
 import { SEASON_DEV_1_PBID } from "../../season-id-defs";
-import { SeasonDev1FamilyCardDefs, SeasonDev1TotemDefs } from "@mw-assets/mw-v2-protobufs/protofiles-out/manawave-season-dev-1";
+import { SeasonDev1TotemDefs } from "@mw-assets/mw-v2-protobufs/protofiles-out/manawave-season-dev-1";
 import { createAddMarkersToMyTribeInstructionSet } from "@mw-assets/manawave-virtual-machine/mvm-instructions-factory";
 import { createAddMarkersToMyClanInstructionSet } from "@mw-assets/manawave-virtual-machine/mvm-instructions-factory";
 import { createMvmInstructionsOnlyFamilyModeLogic } from "@mw-assets/PIECES/mw-card-data";
 import { mapToIndexedModes } from "@mw-assets/PIECES/mw-mode-utils";
 import { FamilyCardDefinition } from "@mw-assets/type-defs/family-defs";
+import { MwFamilyCardIds } from "@mw-assets/mw-asset-ids/manawave-family-ids";
 
 
 const TOTEM_NAME = 'Defense';
@@ -18,7 +19,7 @@ const TOTEM_ID: TotemPbId = {
 };
 
 
-const createDefenderFamilyCardDef = (defenseNumber: number, seasonFamilyCardId: SeasonDev1FamilyCardDefs): FamilyCardDefinition => {
+const createDefenderFamilyCardDef = (defenseNumber: number, seasonFamilyCardId: MwFamilyCardIds): FamilyCardDefinition => {
   const retVal: FamilyCardDefinition = {
     pieceType: 'family-card',
     title: `Defender Family ${defenseNumber}`,
@@ -57,12 +58,12 @@ const createDefenderFamilyCardDef = (defenseNumber: number, seasonFamilyCardId: 
 
 
 const CARD_DEFS = [
-  createDefenderFamilyCardDef(1, SeasonDev1FamilyCardDefs.SeasonDev1Defenders1),
-  createDefenderFamilyCardDef(2, SeasonDev1FamilyCardDefs.SeasonDev1Defenders2),
-  createDefenderFamilyCardDef(3, SeasonDev1FamilyCardDefs.SeasonDev1Defenders3),
-  createDefenderFamilyCardDef(4, SeasonDev1FamilyCardDefs.SeasonDev1Defenders4),
-  createDefenderFamilyCardDef(5, SeasonDev1FamilyCardDefs.SeasonDev1Defenders5),
-  createDefenderFamilyCardDef(6, SeasonDev1FamilyCardDefs.SeasonDev1Defenders6),
+  createDefenderFamilyCardDef(1, MwFamilyCardIds.DevSet_Defenders1),
+  createDefenderFamilyCardDef(2, MwFamilyCardIds.DevSet_Defenders2),
+  createDefenderFamilyCardDef(3, MwFamilyCardIds.DevSet_Defenders3),
+  createDefenderFamilyCardDef(4, MwFamilyCardIds.DevSet_Defenders4),
+  createDefenderFamilyCardDef(5, MwFamilyCardIds.DevSet_Defenders5),
+  createDefenderFamilyCardDef(6, MwFamilyCardIds.DevSet_Defenders6),
 ];
 
 

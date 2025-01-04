@@ -32,31 +32,3 @@ enum SeasonDev1MonumentCardDefs {
   SeasonDev1Monument_BothPlayersWin = 10;
   SeasonDev1Monument_ForcedDraw = 11;
 }
-
-enum SeasonDev1FamilyCardDefs {
-  SeasonDev1FamilyCard_NotSet  = 0;
-
-  SeasonDev1AttackFamilyCards  = 10;
-  SeasonDev1Attackers1         = 11;
-  SeasonDev1Attackers2         = 12;
-  SeasonDev1Attackers3         = 13;
-  SeasonDev1Attackers4         = 14;
-  SeasonDev1Attackers5         = 15;
-  SeasonDev1Attackers6         = 16;
-
-  SeasonDev1DefenseFamilyCards = 20;
-  SeasonDev1Defenders1         = 21;
-  SeasonDev1Defenders2         = 22;
-  SeasonDev1Defenders3         = 23;
-  SeasonDev1Defenders4         = 24;
-  SeasonDev1Defenders5         = 25;
-  SeasonDev1Defenders6         = 26;
-
-  SeasonDev1MagicFamilyCards   = 30;
-  SeasonDev1Magickers1         = 31;
-  SeasonDev1Magickers2         = 32;
-  SeasonDev1Magickers3         = 33;
-  SeasonDev1Magickers4         = 34;
-  SeasonDev1Magickers5         = 35;
-  SeasonDev1Magickers6         = 36;
-}

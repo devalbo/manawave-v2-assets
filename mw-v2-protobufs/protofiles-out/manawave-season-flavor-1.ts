@@ -56,13 +56,13 @@ export enum SeasonFlavor1MonumentCardDefs {
      */
     ManalithCliffs = 1,
     /**
-     * @generated from protobuf enum value: RuinsOfErkul = 2;
+     * @generated from protobuf enum value: JungleOfPyrhhus = 2;
      */
-    RuinsOfErkul = 2,
+    JungleOfPyrhhus = 2,
     /**
-     * @generated from protobuf enum value: SeaOfLyrtif = 3;
+     * @generated from protobuf enum value: RiverOfLyrtif = 3;
      */
-    SeaOfLyrtif = 3,
+    RiverOfLyrtif = 3,
     /**
      * @generated from protobuf enum value: BirthplaceOfGenghis = 4;
      */
@@ -87,97 +87,4 @@ export enum SeasonFlavor1MonumentCardDefs {
      * @generated from protobuf enum value: PlainsOfTheoden = 9;
      */
     PlainsOfTheoden = 9
-}
-/**
- * @generated from protobuf enum SeasonFlavor1FamilyCardDefs
- */
-export enum SeasonFlavor1FamilyCardDefs {
-    /**
-     * @generated from protobuf enum value: SeasonFlavor1FamilyCard_NotSet = 0;
-     */
-    SeasonFlavor1FamilyCard_NotSet = 0,
-    /**
-     * @generated from protobuf enum value: SeasonFlavor1AttackFamilyCards = 10;
-     */
-    SeasonFlavor1AttackFamilyCards = 10,
-    /**
-     * @generated from protobuf enum value: SeasonFlavor1Attackers1 = 11;
-     */
-    SeasonFlavor1Attackers1 = 11,
-    /**
-     * @generated from protobuf enum value: SeasonFlavor1Attackers2 = 12;
-     */
-    SeasonFlavor1Attackers2 = 12,
-    /**
-     * @generated from protobuf enum value: SeasonFlavor1Attackers3 = 13;
-     */
-    SeasonFlavor1Attackers3 = 13,
-    /**
-     * @generated from protobuf enum value: SeasonFlavor1Attackers4 = 14;
-     */
-    SeasonFlavor1Attackers4 = 14,
-    /**
-     * @generated from protobuf enum value: SeasonFlavor1Attackers5 = 15;
-     */
-    SeasonFlavor1Attackers5 = 15,
-    /**
-     * @generated from protobuf enum value: SeasonFlavor1Attackers6 = 16;
-     */
-    SeasonFlavor1Attackers6 = 16,
-    /**
-     * @generated from protobuf enum value: SeasonFlavor1DefenseFamilyCards = 20;
-     */
-    SeasonFlavor1DefenseFamilyCards = 20,
-    /**
-     * @generated from protobuf enum value: SeasonFlavor1Defenders1 = 21;
-     */
-    SeasonFlavor1Defenders1 = 21,
-    /**
-     * @generated from protobuf enum value: SeasonFlavor1Defenders2 = 22;
-     */
-    SeasonFlavor1Defenders2 = 22,
-    /**
-     * @generated from protobuf enum value: SeasonFlavor1Defenders3 = 23;
-     */
-    SeasonFlavor1Defenders3 = 23,
-    /**
-     * @generated from protobuf enum value: SeasonFlavor1Defenders4 = 24;
-     */
-    SeasonFlavor1Defenders4 = 24,
-    /**
-     * @generated from protobuf enum value: SeasonFlavor1Defenders5 = 25;
-     */
-    SeasonFlavor1Defenders5 = 25,
-    /**
-     * @generated from protobuf enum value: SeasonFlavor1Defenders6 = 26;
-     */
-    SeasonFlavor1Defenders6 = 26,
-    /**
-     * @generated from protobuf enum value: SeasonFlavor1MagicFamilyCards = 30;
-     */
-    SeasonFlavor1MagicFamilyCards = 30,
-    /**
-     * @generated from protobuf enum value: SeasonFlavor1Magickers1 = 31;
-     */
-    SeasonFlavor1Magickers1 = 31,
-    /**
-     * @generated from protobuf enum value: SeasonFlavor1Magickers2 = 32;
-     */
-    SeasonFlavor1Magickers2 = 32,
-    /**
-     * @generated from protobuf enum value: SeasonFlavor1Magickers3 = 33;
-     */
-    SeasonFlavor1Magickers3 = 33,
-    /**
-     * @generated from protobuf enum value: SeasonFlavor1Magickers4 = 34;
-     */
-    SeasonFlavor1Magickers4 = 34,
-    /**
-     * @generated from protobuf enum value: SeasonFlavor1Magickers5 = 35;
-     */
-    SeasonFlavor1Magickers5 = 35,
-    /**
-     * @generated from protobuf enum value: SeasonFlavor1Magickers6 = 36;
-     */
-    SeasonFlavor1Magickers6 = 36
 }

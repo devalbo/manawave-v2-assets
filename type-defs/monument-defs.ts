@@ -6,6 +6,7 @@ export type MonumentCard = {
   readonly title: string
   readonly monumentId: MonumentCardPbId
   readonly text: string
+  readonly text2: string
   readonly isDefault?: boolean
 }
 

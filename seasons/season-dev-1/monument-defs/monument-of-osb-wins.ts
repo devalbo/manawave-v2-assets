@@ -14,4 +14,5 @@ export const MonumentOfOsbPlayerWinsData: TotemMonumentCard = {
   totem2Id: ATTACK_TOTEM_DEF.totemId,
   text:
     "Resolve: OSB player wins.",
+  text2: "",
 }

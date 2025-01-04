@@ -12,4 +12,5 @@ export const MonumentOfDefenseData: MonumentCard = {
   text:
     "Resolve: If COUNT(<::manawave-round-token::>) >= 2, count number of <::defense-counter::> on each adjacent Clan. " +
     "The Tribe of the Clan with with higher amount of <::defense-counter::> count wins. If tied, resume Manawave.",
+  text2: "",
 }

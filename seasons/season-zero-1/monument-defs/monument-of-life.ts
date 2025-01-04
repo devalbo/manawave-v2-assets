@@ -13,4 +13,5 @@ export const MonumentOfLifeData: MonumentCard = {
   text: "Resolve: If COUNT(<::manawave-round-token::>) >= 7, determine COUNT(<::population-token::>) for both Tribes. Tribe with greater COUNT(<::population-token::>) wins. " +
         "If tied, determine COUNT(<::population-increase-counter::>) for both Tribes. Tribe with greater COUNT(<::population-increase-counter::>) wins. " +
         "If still tied, resume Manawave.",
+  text2: "",
 };

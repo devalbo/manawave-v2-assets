@@ -14,4 +14,5 @@ export const MonumentOfForcedDrawData: TotemMonumentCard = {
   totem2Id: ATTACK_TOTEM_DEF.totemId,
   text:
     "Resolve: Forced draw.",
+  text2: "",
 }

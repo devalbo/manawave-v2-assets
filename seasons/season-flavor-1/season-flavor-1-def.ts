@@ -5,9 +5,9 @@ import { SEASON_FLAVOR_1_PBID } from "../season-id-defs";
 import { ClanOfAttackData } from "./clans/clan-of-attack";
 import { ClanOfDefenseData } from "./clans/clan-of-defense";
 import { ClanOfMagicData } from "./clans/clan-of-magic";
-import { DEFENSE_TOTEM_DEF } from "./totems/sf1_defense";
-import { MAGIC_TOTEM_DEF } from "./totems/sf1_magic";
-import { ATTACK_TOTEM_DEF } from "./totems/sf1_attack";
+import { DEFENSE_TOTEM_DEF } from "./totems/sf1_ox";
+import { MAGIC_TOTEM_DEF } from "./totems/sf1_spirits";
+import { ATTACK_TOTEM_DEF } from "./totems/sf1_tiger";
 
 
 const allTotemChoices = [

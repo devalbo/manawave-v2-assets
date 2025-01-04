@@ -1,4 +1,4 @@
-import { FamilyCardDefs } from "../../mw-v2-protobufs/protofiles-out/manawave-season-zero-1";
+import { MwFamilyCardIds } from "@mw-assets/mw-asset-ids/manawave-family-ids";
 import { MwMarkerType } from "../../mw-v2-protobufs/protofiles-out/manawave-types";
 import { createAddMarkersToMyClanInstructionSet, createAddMarkersToMyTribeInstructionSet } from "../../manawave-virtual-machine/mvm-instructions-factory";
 import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
@@ -14,7 +14,7 @@ export const ClubWieldersCardDef: FamilyCardDefinition = {
   totemId: 'tiger',
   familyCardDefPbId: {
     seasonId: SEASON_ZERO_1_PBID,
-    seasonFamilyCardId: FamilyCardDefs.ClubWielders,
+    seasonFamilyCardId: MwFamilyCardIds.ClubWielders,
   },
   text: "TODO: fill in text for Club Wielders",
   modes: mapToIndexedModes([

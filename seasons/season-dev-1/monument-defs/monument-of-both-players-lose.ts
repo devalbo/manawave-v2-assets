@@ -14,4 +14,5 @@ export const MonumentOfBothPlayersLoseData: TotemMonumentCard = {
   totem2Id: ATTACK_TOTEM_DEF.totemId,
   text:
     "Resolve: Both players lose.",
+  text2: "",
 }

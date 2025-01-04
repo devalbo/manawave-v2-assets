@@ -2,12 +2,13 @@ import { MwMarkerType, PlayerSideId, TotemPbId } from "@mw-protobufs/manawave-ty
 import { FamilyCardInstance } from "../../../PIECES/type-defs/type-defs";
 import { ITotemDetails } from "../../../type-defs/totem-defs";
 import { SEASON_DEV_1_PBID } from "../../season-id-defs";
-import { SeasonDev1FamilyCardDefs, SeasonDev1TotemDefs } from "@mw-assets/mw-v2-protobufs/protofiles-out/manawave-season-dev-1";
+import { SeasonDev1TotemDefs } from "@mw-assets/mw-v2-protobufs/protofiles-out/manawave-season-dev-1";
 import { mapToIndexedModes } from "@mw-assets/PIECES/mw-mode-utils";
 import { createAddMarkersToMyTribeInstructionSet } from "@mw-assets/manawave-virtual-machine/mvm-instructions-factory";
 import { createAddMarkersToMyClanInstructionSet } from "@mw-assets/manawave-virtual-machine/mvm-instructions-factory";
 import { FamilyCardDefinition } from "@mw-assets/type-defs/family-defs";
 import { createMvmInstructionsOnlyFamilyModeLogic } from "@mw-assets/PIECES/mw-card-data";
+import { MwFamilyCardIds } from "@mw-assets/mw-asset-ids/manawave-family-ids";
 
 
 const TOTEM_NAME = 'Magic';
@@ -18,7 +19,7 @@ const TOTEM_ID: TotemPbId = {
 };
 
 
-const createMagicFamilyCardDef = (magicNumber: number, seasonFamilyCardId: SeasonDev1FamilyCardDefs): FamilyCardDefinition => {
+const createMagicFamilyCardDef = (magicNumber: number, seasonFamilyCardId: MwFamilyCardIds): FamilyCardDefinition => {
   const retVal: FamilyCardDefinition = {
     pieceType: 'family-card',
     title: `Magic Family ${magicNumber}`,
@@ -57,12 +58,12 @@ const createMagicFamilyCardDef = (magicNumber: number, seasonFamilyCardId: Seaso
 
 
 const CARD_DEFS = [
-  createMagicFamilyCardDef(1, SeasonDev1FamilyCardDefs.SeasonDev1Magickers1),
-  createMagicFamilyCardDef(2, SeasonDev1FamilyCardDefs.SeasonDev1Magickers2),
-  createMagicFamilyCardDef(3, SeasonDev1FamilyCardDefs.SeasonDev1Magickers3),
-  createMagicFamilyCardDef(4, SeasonDev1FamilyCardDefs.SeasonDev1Magickers4),
-  createMagicFamilyCardDef(5, SeasonDev1FamilyCardDefs.SeasonDev1Magickers5),
-  createMagicFamilyCardDef(6, SeasonDev1FamilyCardDefs.SeasonDev1Magickers6),
+  createMagicFamilyCardDef(1, MwFamilyCardIds.DevSet_Magickers1),
+  createMagicFamilyCardDef(2, MwFamilyCardIds.DevSet_Magickers2),
+  createMagicFamilyCardDef(3, MwFamilyCardIds.DevSet_Magickers3),
+  createMagicFamilyCardDef(4, MwFamilyCardIds.DevSet_Magickers4),
+  createMagicFamilyCardDef(5, MwFamilyCardIds.DevSet_Magickers5),
+  createMagicFamilyCardDef(6, MwFamilyCardIds.DevSet_Magickers6),
 ];
 
 
