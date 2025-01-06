@@ -6,16 +6,16 @@ import { mapToIndexedModes } from "../../../PIECES/mw-mode-utils";
 import { EMPTY_PLAYER_CLAN_STOCKPILE } from "../../../PIECES/type-defs/type-defs";
 import { createMwCounterCount, createMwTokenCount } from "../../../type-defs/branded-marker-types";
 import { ClanCardDefinition } from "../../../type-defs/clan-defs";
-import { SEASON_DEV_1_PBID } from "../../season-id-defs";
-import { SeasonDev1ClanCardDefs } from "@mw-assets/mw-v2-protobufs/protofiles-out/manawave-season-dev-1";
+import { SEASON_FLAVOR_1_PBID } from "../../season-id-defs";
+import { SeasonFlavor1ClanCardDefs } from "@mw-assets/mw-v2-protobufs/protofiles-out/manawave-season-flavor-1";
 
 
 export const ClanOfMagicData: ClanCardDefinition = {
   pieceType: 'clan-card',
   title: "Clan of Magic",
   clanDefPbId: {
-    seasonId: SEASON_DEV_1_PBID,
-    seasonClanCardId: SeasonDev1ClanCardDefs.SeasonDev1ClanOfMagic,
+    seasonId: SEASON_FLAVOR_1_PBID,
+    seasonClanCardId: SeasonFlavor1ClanCardDefs.SeasonFlavor1ClanOfMagic,
   },
   text: "blah",
   modes: mapToIndexedModes([
@@ -67,14 +67,11 @@ export const ClanOfMagicData: ClanCardDefinition = {
       const stockpile: ClanCardStockpile = {
         ...EMPTY_PLAYER_CLAN_STOCKPILE,
         populationTokensCount: createMwTokenCount(2),
-        manalithTokensCount: createMwTokenCount(2),
-        manalithClaimCountersCount: createMwCounterCount(2),
+        manalithTokensCount: createMwTokenCount(0),
+        manalithClaimCountersCount: createMwCounterCount(0),
       };
 
       return stockpile;
     },
-    
-    
   },
-
 };

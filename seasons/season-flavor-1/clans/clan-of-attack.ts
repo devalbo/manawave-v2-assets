@@ -71,8 +71,8 @@ export const ClanOfAttackData: ClanCardDefinition = {
       const stockpile: ClanCardStockpile = {
         ...EMPTY_PLAYER_CLAN_STOCKPILE,
         populationTokensCount: createMwTokenCount(2),
-        manalithTokensCount: createMwTokenCount(2),
-        manalithClaimCountersCount: createMwCounterCount(2),
+        manalithTokensCount: createMwTokenCount(0),
+        manalithClaimCountersCount: createMwCounterCount(0),
       };
 
       return stockpile;
