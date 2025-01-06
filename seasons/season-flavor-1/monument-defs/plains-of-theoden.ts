@@ -14,7 +14,12 @@ export const PlainsOfTheodenData: TotemMonumentCard = {
   totem1Id: ATTACK_TOTEM_DEF.totemId,
   totem2Id: DEFENSE_TOTEM_DEF.totemId,
   text:
-  "[1-3] <::manawave-round-token::>: Count number of <::shield-counter::> for each adjacent Clan. If either Clan has 3 or more <::shield-counter::> than the other, that Clan's Player wins.",
-  text2:
-    "[4-8] <::manawave-round-token::>: Count number of <::population-token::> counters for each Tribe. If either Tribe has 4 or more <::population-token::> than the other, that Tribe's Player loses.",
+    "If current manawave round number is 1, Shield Threshold is 2.\n" +
+    "If current manawave round number is 2, Shield Threshold is 4.\n" +
+    "Otherwise, Shield Threshold is 2 + current Manawave round number.\n" +
+    "If neither Clan has more Shield counters than Shield Threshold, continue the Manawave.\n" +
+    "Otherwise, If ONLY your Clan has more Shield counters than Shield Threshold, you win the game.\n" +
+    "Otherwise, If your Clan has more Population Increase counters than the opposing Clan, you win the game.\n" +
+    "Otherwise, continue the Manawave.",
+  text2: "",
 }

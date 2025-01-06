@@ -10,7 +10,6 @@ export const ManalithCliffsData: MonumentCard = {
     seasonMonumentCardId: SeasonFlavor1MonumentCardDefs.ManalithCliffs,
   },
   text:
-    "[1-5] <::manawave-round-token::>: If a Tribe has 2 or fewer <::mana-counter::> than the <::manawave-round-token::> number, that Tribe's player loses the game.",
-  text2:
-    "[6-8] <::manawave-round-token::>: Count number of <::manalith-token::> for each adjacent Clan. If either Clan has more <::manalith-token::> than the other, that Clan's Player wins the game.",
+    "If only your Tribe and its Clans have 4 or more Sacrifice counters + Manalith tokens than the current manawave round number, you win the game.",
+  text2: "",
 }

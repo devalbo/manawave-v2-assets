@@ -14,8 +14,13 @@ export const BirthplaceOfGenghisData: TotemMonumentCard = {
   totem1Id: ATTACK_TOTEM_DEF.totemId,
   totem2Id: MAGIC_TOTEM_DEF.totemId,
   text:
-    "[1-3] <::manawave-round-token::>: Count number of <::attack-counter::> for each adjacent Clan. If either Clan has 3 or more <::attack-counter::> than the other, that Clan's Player wins.",
-  text2:
-    "[4-8] <::manawave-round-token::>: Count number of <::population-slaughter-counter::> counters for each Tribe. If either Tribe has 4 or more <::population-slaughter-counter::> than the other, that Tribe's Player loses.",
+    "If current manawave round number is 1, set Attack threshold to 2.\n" +
+    "If current manawave round number is 2, set Attack threshold to 4.\n" +
+    "Otherwise, set Attack threshold to 2 + current Manawave round number.\n" +
+    "If neither Clan has more Attack counters than the Attack threshold, continue the Manawave.\n" +
+    "Otherwise, If ONLY your Clan has more Attack counters than the Attack threshold, you win the game.\n" +
+    "Otherwise, If your Clan has fewer Slaughter counters than the opposing Clan, you win the game.\n" +
+    "Otherwise, continue the Manawave.",
+  text2: "",
 }
 

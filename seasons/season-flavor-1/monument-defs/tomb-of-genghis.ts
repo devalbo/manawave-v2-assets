@@ -15,7 +15,12 @@ export const TombOfGenghisData: TotemMonumentCard = {
   totem2Id: DEFENSE_TOTEM_DEF.totemId,
   isDefault: true,
   text:
-    "[1-3] <::manawave-round-token::>: Count number of <::population-token::> for each adjacent Clan. If either Clan has 3 or more <::population-token::> than the other, that Clan's Player wins.",
-  text2:
-    "[4-8] <::manawave-round-token::>: Count number of <::mana-counter::> counters for each Tribe. If either Tribe has 4 or more <::mana-counter::> than the other, that Tribe's Player wins.",
+    "If current manawave round number is 1, set Attack threshold to 2.\n" +
+    "If current manawave round number is 2, set Attack threshold to 4.\n" +
+    "Otherwise, set Attack threshold to 2 + current Manawave round number.\n" +
+    "If neither Clan has more Attack counters than the Attack threshold, continue the Manawave.\n" +
+    "Otherwise, If ONLY your Clan has more Attack counters than the Attack threshold, you win the game.\n" +
+    "Otherwise, If your Clan has more Manalith tokens than the opposing Clan, you win the game.\n" +
+    "Otherwise, continue the Manawave.",
+  text2: "",
 };
