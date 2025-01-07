@@ -14,12 +14,10 @@ export const FieldsOfLerukData: TotemMonumentCard = {
   totem1Id: ATTACK_TOTEM_DEF.totemId,
   totem2Id: DEFENSE_TOTEM_DEF.totemId,
   text:
-    "If current manawave round number is 1, Population Increase Threshold is 2.\n" +
-    "If current manawave round number is 2, Population Increase Threshold is 4.\n" +
-    "Otherwise, Population Increase Threshold is 2 + current Manawave round number.\n" +
-    "If neither Clan has more Population Increase counters than Population Increase Threshold, continue the Manawave.\n" +
-    "Otherwise, If ONLY your Clan has more Population Increase counters than Population Increase Threshold, you win the game.\n" +
-    "Otherwise, If your Clan has more Shield counters than the opposing Clan, you win the game.\n" +
+    "Define Population Increase Threshold as 2 + number of <::manawave-round-token::>. " +
+    "If neither Clan has more <::population-increase-counter::> than Population Increase Threshold, continue the Manawave. " +
+    "Otherwise, if ONLY your Clan has more <::population-increase-counter::> than Population Increase Threshold, you win the game. " +
+    "Otherwise, if your Clan has more <::shield-counter::> than the opposing Clan, you win the game. " +
     "Otherwise, continue the Manawave.",
   text2: "",
 }

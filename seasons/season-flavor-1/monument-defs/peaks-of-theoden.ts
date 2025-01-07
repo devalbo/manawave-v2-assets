@@ -14,12 +14,10 @@ export const PeaksOfTheodenData: TotemMonumentCard = {
   totem1Id: MAGIC_TOTEM_DEF.totemId,
   totem2Id: DEFENSE_TOTEM_DEF.totemId,
   text:
-    "If current manawave round number is 1, Shield Threshold is 2.\n" +
-    "If current manawave round number is 2, Shield Threshold is 4.\n" +
-    "Otherwise, Shield Threshold is 2 + current Manawave round number.\n" +
-    "If neither Clan has more Shield counters than Shield Threshold, continue the Manawave.\n" +
-    "Otherwise, If ONLY your Clan has more Shield counters than Shield Threshold, you win the game.\n" +
-    "Otherwise, If your Clan has more Manalith tokens than the opposing Clan, you win the game.\n" +
+    "Define Shield Threshold as 2 + number of <::manawave-round-token::>. " +
+    "If neither Clan has more <::shield-counter::> than Shield Threshold, continue the Manawave. " +
+    "Otherwise, if ONLY your Clan has more <::shield-counter::> than Shield Threshold, you win the game. " +
+    "Otherwise, if your Clan has more <::manalith-token::> than the opposing Clan, you win the game. " +
     "Otherwise, continue the Manawave.",
   text2: "",
 }

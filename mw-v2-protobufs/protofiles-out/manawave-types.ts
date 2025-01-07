@@ -389,9 +389,9 @@ export enum GamePhaseId {
      */
     GamePhaseInit_PlayerRegistrationComplete = 11,
     /**
-     * @generated from protobuf enum value: GamePhaseInit_AllPlayersPickingTotemsAndMonumentVeto = 12;
+     * @generated from protobuf enum value: GamePhaseInit_AllPlayersPickVeneratedMonument = 12;
      */
-    GamePhaseInit_AllPlayersPickingTotemsAndMonumentVeto = 12,
+    GamePhaseInit_AllPlayersPickVeneratedMonument = 12,
     /**
      * @generated from protobuf enum value: GamePhaseInit_AllPlayersPlacingClans = 13;
      */

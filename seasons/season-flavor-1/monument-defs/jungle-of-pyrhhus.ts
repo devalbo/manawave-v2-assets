@@ -10,6 +10,6 @@ export const JungleOfPyrhhusData: MonumentCard = {
     seasonMonumentCardId: SeasonFlavor1MonumentCardDefs.JungleOfPyrhhus,
   },
   text:
-    "If only your Tribe and its Clans have 4 or more Sacrifice counters + Soulstain tokens than the current manawave round number, you win the game.",
+    "If only your Tribe and its Clans have 4 or more <::population-sacrifice-counter::> + <::soulstain-token::> than the number of <::manawave-round-token::>, you win the game.",
   text2: "",
 }

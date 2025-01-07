@@ -92,7 +92,7 @@ enum GamePhaseId {
   GamePhase_InitialConditionsSet = 1;
 
   GamePhaseInit_PlayerRegistrationComplete = 11;
-  GamePhaseInit_AllPlayersPickingTotemsAndMonumentVeto = 12;
+  GamePhaseInit_AllPlayersPickVeneratedMonument = 12;
   GamePhaseInit_AllPlayersPlacingClans = 13;
 
   GamePhase_PlayingMainGame = 20;
