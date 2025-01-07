@@ -50,7 +50,7 @@ const createMagicFamilyCardDef = (magicNumber: number, seasonFamilyCardId: MwFam
       singlePickInitialPopulation: 2,
       multiplePickInitialPopulation: 1,
     },
-    gameLogic: { },
+    // gameLogic: { },
   };
 
   return retVal;

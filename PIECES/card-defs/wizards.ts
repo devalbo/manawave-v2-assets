@@ -4,7 +4,6 @@ import { MwMarkerType } from "../../mw-v2-protobufs/protofiles-out/manawave-type
 import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
 import { createAddMarkersToMyTribeInstructionSet } from "../../manawave-virtual-machine/mvm-instructions-factory";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
-import { FamilyCardPlacementResult } from "../../type-defs/game-data-type-defs";
 import { createMvmInstructionsOnlyFamilyModeLogic, IModePrintSettings, OnCardPickData } from "../mw-card-data";
 import { mapToIndexedModes } from "../mw-mode-utils";
 
@@ -68,12 +67,12 @@ export const WizardsCardDef: FamilyCardDefinition = {
   ]),
   onCardPickData: ON_CARD_PICK_DATA,
 
-  gameLogic: {
-    onFamilyCardPlacement: (): FamilyCardPlacementResult => {
-      const retVal: FamilyCardPlacementResult = {
-        numPopulationTokensToAddToClan: ON_CARD_PICK_DATA.singlePickInitialPopulation,
-      };
-      return retVal;
-    },
-  },    
+  // gameLogic: {
+  //   onFamilyCardPlacement: (): FamilyCardPlacementResult => {
+  //     const retVal: FamilyCardPlacementResult = {
+  //       numPopulationTokensToAddToClan: ON_CARD_PICK_DATA.singlePickInitialPopulation,
+  //     };
+  //     return retVal;
+  //   },
+  // },    
 };

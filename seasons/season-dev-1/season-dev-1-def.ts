@@ -31,11 +31,15 @@ const allFamilyCards = [
 const SeasonDev1_NoPickFamilyEffect: INoPickFamilyEffect = {
   title: "No Family",
   text: "Add 2 population tokens to clan.",
-  onFamilyCardPlacement: () => {    // run this when card is placed by player on board
-    return {
-      numPopulationTokensToAddToClan: 2,
-    }
+  onCardPickData: {
+    singlePickInitialPopulation: 2,
+    multiplePickInitialPopulation: 1,
   }
+  // onFamilyCardPlacement: () => {    // run this when card is placed by player on board
+  //   return {
+  //     numPopulationTokensToAddToClan: 2,
+  //   }
+  // }
 }
 
 

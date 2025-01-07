@@ -72,5 +72,5 @@ export const ChannelersCardDef: FamilyCardDefinition = {
     singlePickInitialPopulation: 2,
     multiplePickInitialPopulation: 1,
   },
-  gameLogic: { },
+  // gameLogic: { },
 };

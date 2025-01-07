@@ -28,13 +28,13 @@ export type FamilyCardPlacementResult = {
   readonly numPopulationTokensToAddToClan: number
 }
 
-export interface IFamilyCardLogic {
-  onManawaveInit?: () => void
-  onManawaveFinalize?: () => void
+// export interface IFamilyCardLogic {
+//   onManawaveInit?: () => void
+//   onManawaveFinalize?: () => void
   
-  onFamilyCardPlacement?: () => FamilyCardPlacementResult  // run this when card is placed by player on board
-  onTokenPlacement?: () => void // run this when tokens are placed by player on tile
-}
+//   // onFamilyCardPlacement?: () => FamilyCardPlacementResult  // run this when card is placed by player on board
+//   // onTokenPlacement?: () => void // run this when tokens are placed by player on tile
+// }
 
 
 export type ClanCardLogic = {
@@ -43,7 +43,7 @@ export type ClanCardLogic = {
 
 
 export type FamilyCardLogic = {
-  readonly gameLogic: IFamilyCardLogic
+  // readonly gameLogic: IFamilyCardLogic
   readonly onCardPickData: OnCardPickData
 }
 

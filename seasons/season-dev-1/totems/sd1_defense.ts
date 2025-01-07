@@ -50,7 +50,7 @@ const createDefenderFamilyCardDef = (defenseNumber: number, seasonFamilyCardId: 
       singlePickInitialPopulation: 2,
       multiplePickInitialPopulation: 1,
     },
-    gameLogic: { },
+    // gameLogic: { },
   };
 
   return retVal;

@@ -50,7 +50,7 @@ const createAttackerFamilyCardDef = (attackNumber: number, seasonFamilyCardId: M
       singlePickInitialPopulation: 2,
       multiplePickInitialPopulation: 1,
     },
-    gameLogic: { },
+    // gameLogic: { },
   };
 
   return retVal;

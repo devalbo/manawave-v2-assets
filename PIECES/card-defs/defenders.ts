@@ -40,5 +40,5 @@ export const DefendersCardDef: FamilyCardDefinition = {
     singlePickInitialPopulation: 2,
     multiplePickInitialPopulation: 1,
   },
-  gameLogic: { },
+  // gameLogic: { },
 };
