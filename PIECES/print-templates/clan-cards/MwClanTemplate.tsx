@@ -3,8 +3,9 @@ import { MwClanTemplateModeBlock } from './MwClanTemplateModeBlock';
 import { createImgComponentFromMwMarkerType, createImgComponentFromTag } from '../../icons';
 import { CardDecoration } from '../../constants';
 import { IMwCardModeData } from '../../mw-card-data';
-import './MwClanTemplate.css';
+// import './MwClanTemplate.css';
 import { IMwClanConversionRatio } from '../../type-defs/type-defs';
+import { MwClanCardBodyDiv, MwClanCardBorderFrameDiv, MwClanCardDiv, MwClanConversionRatesTableContainerDiv, MwClanConversionRatesTableDiv, MwClanConversionRatesTableGridHeaderDiv, MwClanConversionRatesTableGridItemDiv, MwClanStockpileTableContainerDiv, MwClanStockpileTableDiv, MwClanStockpileTableGridItemDiv, MwClanTablesDiv } from './clan-card-styles';
 
 
 export interface IMwClanData {
@@ -30,18 +31,19 @@ const SacrificeCounterIcon_Stockpile = () => createImgComponentFromTag('<::popul
 const MwClanConversionRatioRow = (props: {conversionRatio: IMwClanConversionRatio}) => {
   return (
     <>
-      <div className="mw-tribe-conversion-rates-table-grid-item">
+      {/* <div className="mw-tribe-conversion-rates-table-grid-item"> */}
+      <MwClanConversionRatesTableGridItemDiv>
         {
           props.conversionRatio.input.map((input) => 
             createImgComponentFromMwMarkerType(input, ConversionImageSize)
           )
         }
-      </div>
-      <div className="mw-tribe-conversion-rates-table-grid-item">
+      </MwClanConversionRatesTableGridItemDiv>
+      <MwClanConversionRatesTableGridItemDiv>
         {
           createImgComponentFromMwMarkerType(props.conversionRatio.output, ConversionImageSize)
         }
-      </div>
+      </MwClanConversionRatesTableGridItemDiv>
     </>
   )
 }
@@ -50,9 +52,9 @@ const MwClanConversionRatioRow = (props: {conversionRatio: IMwClanConversionRati
 export const MwConversionRatesTable = (props: { conversionRatios: IMwClanConversionRatio[] }) => {
 
   return (
-    <div className="mw-clan-conversion-rates-table">
-      <div className="mw-clan-conversion-rates-table-grid-header">Mana</div>
-      <div className="mw-clan-conversion-rates-table-grid-header">Conjuration</div>
+    <MwClanConversionRatesTableDiv>
+      <MwClanConversionRatesTableGridHeaderDiv>Mana</MwClanConversionRatesTableGridHeaderDiv>
+      <MwClanConversionRatesTableGridHeaderDiv>Conjuration</MwClanConversionRatesTableGridHeaderDiv>
 
       {
         props.conversionRatios.map((conversionRatio) => (
@@ -60,7 +62,7 @@ export const MwConversionRatesTable = (props: { conversionRatios: IMwClanConvers
         ))
       }
         
-    </div>
+    </MwClanConversionRatesTableDiv>
   )
 }
 
@@ -68,29 +70,29 @@ export const MwStockpileTable = () => {
   return (
     <div>
       Stockpiles
-      <div className="mw-clan-stockpile-table">
+      <MwClanStockpileTableDiv>
 
-        <div className="mw-clan-stockpile-table-grid-item">
+        <MwClanStockpileTableGridItemDiv>
           <ManaCounterIcon_Stockpile />
-        </div>
+        </MwClanStockpileTableGridItemDiv>
 
-        <div className="mw-clan-stockpile-table-grid-item">
+        <MwClanStockpileTableGridItemDiv>
           <AttackCounterIcon_Stockpile />
-        </div>
+        </MwClanStockpileTableGridItemDiv>
 
-        <div className="mw-clan-stockpile-table-grid-item">
+        <MwClanStockpileTableGridItemDiv>
           <PopulationIncreaseCounterIcon_Stockpile />
-        </div>
+        </MwClanStockpileTableGridItemDiv>
           
-        <div className="mw-clan-stockpile-table-grid-item">
+        <MwClanStockpileTableGridItemDiv>
           <ShieldCounterIcon_Stockpile />
-        </div>
+        </MwClanStockpileTableGridItemDiv>
 
-        <div className="mw-clan-stockpile-table-grid-item">
+        <MwClanStockpileTableGridItemDiv>
           <SacrificeCounterIcon_Stockpile />
-        </div>
+        </MwClanStockpileTableGridItemDiv>
           
-      </div>
+      </MwClanStockpileTableDiv>
     </div>
   )
 }
@@ -104,14 +106,18 @@ export const MwClanTemplate = (props: IMwClanData) => {
   
     
   return (
-    <div className="mw-clan-card">
-      <div className="mw-clan-card-border-frame">
-        <div style={{display: "flex", fontSize: 24, }}>
-          <div style={{
+    <MwClanCardDiv>
+      <MwClanCardBorderFrameDiv>
+        <div
+          style={{display: "flex", fontSize: 24, }}
+        >
+          <div
+            style={{
               height: 50,
               width: 50,
               overflow: "hidden",
-          }}>
+            }}
+          >
             <img src={playerIdImgSrc} style={{maxHeight: "100%", maxWidth: "100%", objectFit: "cover", }} />
           </div>
           <div style={{marginLeft: "20px", }}>
@@ -119,24 +125,24 @@ export const MwClanTemplate = (props: IMwClanData) => {
           </div>
         </div>
 
-        <div className="mw-clan-card-body">
+        <MwClanCardBodyDiv>
           <MwClanTemplateModeBlock
             modes={props.modes}
             />
 
-          <div className="mw-clan-tables">
-            <div className="mw-clan-conversion-rates-table-container">
+          <MwClanTablesDiv>
+            <MwClanConversionRatesTableContainerDiv>
               <MwConversionRatesTable
                 conversionRatios={props.conversionRatios}
                 />
-            </div>
+            </MwClanConversionRatesTableContainerDiv>
 
-            <div className="mw-clan-stockpile-table-container">
+            <MwClanStockpileTableContainerDiv>
               <MwStockpileTable />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+            </MwClanStockpileTableContainerDiv>
+          </MwClanTablesDiv>
+        </MwClanCardBodyDiv>
+      </MwClanCardBorderFrameDiv>
+    </MwClanCardDiv>
   );
 };

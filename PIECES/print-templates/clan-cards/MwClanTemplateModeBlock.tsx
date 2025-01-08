@@ -1,6 +1,7 @@
 import { IMwCardModeData } from "../../mw-card-data"
 import { MwClanTemplateModeItem } from "./MwClanTemplateModeItem"
 import { createImgComponentFromTag } from "../../icons";
+import { MwClanModeItemDiv, MwClanModesBlockDiv } from "./clan-card-styles";
 
 interface MwClanTemplateModeBlockProps {
   modes: IMwCardModeData[]
@@ -11,23 +12,23 @@ const PopulationTokenIcon = () => createImgComponentFromTag('<::population-token
 
 export const MwClanTemplateModeBlock = (props: MwClanTemplateModeBlockProps) => {
   const block =
-    <div className="mw-clan-modes-block">
+    <MwClanModesBlockDiv>
       {props.modes.map((m, i) => (
         <MwClanTemplateModeItem
           mode={m}
           key={i}
           />
       ))}
-      <div className="mw-clan-mode-item" style={{ 
+      <MwClanModeItemDiv style={{ 
         fontSize: 14,
         display: 'flex',
         justifyContent: "space-evenly",
         }}>
         <ManaLevelTokenIcon />
         <PopulationTokenIcon />
-      </div>
+      </MwClanModeItemDiv>
 
-    </div>
+    </MwClanModesBlockDiv>
 
   return block;
 }

@@ -1,5 +1,6 @@
-// import './MwCard.css';
+import './MwCard.css';
 import { createIconizedStringContent } from '../../icon-strings';
+import { MwMonumentCardDiv, MwMonumentCardBorderFrameDiv, MwMonumentCardTopHalfDiv, MwMonumentCardBottomHalfDiv } from './monument-card-styles';
 
 
 export interface IMonumentPrintSettings {
@@ -25,9 +26,9 @@ export const MwMonumentTemplate = (props: IMwMonumentData) => {
   const iconizedModeText2 = createIconizedStringContent(props.text2, 'is-mode-img-icons', imageSize);
 
   return (
-    <div className="mw-monument-card">
-      <div className="mw-monument-card-border-frame">
-        <div className="mw-monument-card-top-half">
+    <MwMonumentCardDiv>
+      <MwMonumentCardBorderFrameDiv>
+        <MwMonumentCardTopHalfDiv>
           <div style={{ textAlign: 'center'}}>
             {props.isDefault ?
               <span style={{fontSize: 12, fontStyle: 'italic', fontWeight: 'bold', }}>
@@ -49,8 +50,8 @@ export const MwMonumentTemplate = (props: IMwMonumentData) => {
           <div style={{ fontSize: fontSize, }}>
             {iconizedModeText2}
           </div>
-        </div>
-        <div className="mw-monument-card-bottom-half">
+        </MwMonumentCardTopHalfDiv>
+        <MwMonumentCardBottomHalfDiv>
           <div style={{ textAlign: 'center'}}>
             {props.isDefault ?
               <span style={{fontSize: 12, fontStyle: 'italic', fontWeight: 'bold', }}>
@@ -72,8 +73,8 @@ export const MwMonumentTemplate = (props: IMwMonumentData) => {
           <div style={{ fontSize: fontSize, }}>
             {iconizedModeText2}
           </div>
-        </div>
-      </div>
-    </div>
+        </MwMonumentCardBottomHalfDiv>
+      </MwMonumentCardBorderFrameDiv>
+    </MwMonumentCardDiv>
   );
 };

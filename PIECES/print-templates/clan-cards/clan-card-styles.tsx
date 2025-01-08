@@ -1,5 +1,7 @@
-/* 
-.mw-clan-card {
+import styled from 'styled-components';
+
+
+export const MwClanCardDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -11,9 +13,9 @@
   background-color: #f0f0f0;
   padding: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
+`;
 
-.mw-clan-card-border-frame {
+export const MwClanCardBorderFrameDiv = styled.div`
   border: 2px solid black;
   display: flex;
   flex-direction: column;
@@ -21,99 +23,99 @@
   margin-bottom: 3px;
   padding: 6px;
   height: 100%;
-}
+`;
 
-.mw-clan-card-body {
+export const MwClanCardBodyDiv = styled.div`
   display: flex;
   flex-direction: row;
   flex-grow: 1;
   max-height: 200px;
-}
+`;
 
-.mw-clan-modes-block {
+export const MwClanModesBlockDiv = styled.div`
   font-size: 0.9rem;
   flex-grow: 1;
   align-self: flex-end;
   width: 100%;
-}
+`;
 
-.mw-clan-mode-item {
+export const MwClanModeItemDiv = styled.div`
   border: 2px solid black;
   margin-left: 0px;
   margin-right: 0px;
   min-height: 38px;
   padding: 6px;
-}
+`;
 
-.mw-clan-mode-item-mana-cost {
+export const MwClanModeItemManaCostSpan = styled.span`
 
-}
+`;
 
-.mw-clan-mode-item-text {
-  
-}
+export const MwClanModeItemTextSpan = styled.span`
 
-.mw-clan-tables {
+`;
+
+export const MwClanTablesDiv = styled.div`
   display: flex;
   flex-direction: row;
   flex-grow: 1;
   max-height: 200px;
-}
+`;
 
-.mw-clan-conversion-rates-table-container {
+export const MwClanConversionRatesTableContainerDiv = styled.div`
   flex-grow: 1;
   flex-basis: 0;
   padding: 2px;
   text-align: center;
   border: 1px solid #000;
-}
+`;
 
-.mw-clan-conversion-rates-table {
+export const MwClanConversionRatesTableDiv = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2px;
   width: 100%;
-}
+`;
 
-.mw-clan-conversion-rates-table-grid-header {
+export const MwClanConversionRatesTableGridHeaderDiv = styled.div`
   font-weight: bold;
   background-color: #f0f0f0;
   padding: 5px;
   text-align: center;
-}
+`;
 
-.mw-clan-conversion-rates-table-grid-item {
+export const MwClanConversionRatesTableGridItemDiv = styled.div`
   padding: 2px;
   padding-top: 5px;
   border: 1px solid #ccc;
   text-align: center;
-}
+`;
 
 
-.mw-clan-stockpile-table-container {
+export const MwClanStockpileTableContainerDiv = styled.div`
   flex-grow: 1;
   flex-basis: 0;
   padding: 10px;
   text-align: center;
   border: 1px solid #000;
   font-weight: bold;
-}
+`;
 
-.mw-clan-stockpile-table {
+export const MwClanStockpileTableDiv = styled.div`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 2px;
   width: 100%;
-}
+`;
 
-.mw-clan-stockpile-table-grid-header {
+export const MwClanStockpileTableGridHeaderDiv = styled.div`
   font-weight: bold;
   background-color: #f0f0f0;
   padding: 10px;
   text-align: center;
-}
+`;
 
-.mw-clan-stockpile-table-grid-item {
+export const MwClanStockpileTableGridItemDiv = styled.div`
   border: 1px solid #ccc;
   text-align: center;
-} */
+`;

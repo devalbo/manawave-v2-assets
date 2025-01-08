@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-pascal-case */
-import './TribeCard.css';
+// import './TribeCard.css';
 import { PlayerId } from "../../constants";
 import { createImgComponentFromMwMarkerType, createImgComponentFromTag } from "../../icons";
 import { IMwTribeConversionRatio } from "../../type-defs/type-defs";

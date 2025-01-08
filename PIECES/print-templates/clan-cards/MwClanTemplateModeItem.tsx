@@ -1,5 +1,6 @@
 import { IMwCardModeData } from "../../mw-card-data"
 import { createIconizedStringContent } from "../../icon-strings";
+import { MwClanModeItemDiv, MwClanModeItemManaCostSpan, MwClanModeItemTextSpan } from "./clan-card-styles";
 
 
 interface MwClanTemplateModeItemProps {
@@ -15,10 +16,10 @@ export const MwClanTemplateModeItem = (props: MwClanTemplateModeItemProps) => {
   const iconizedModeText = createIconizedStringContent(rawModeText, 'is-mode-img-icons', imageSize);
 
   const item =
-    <div className="mw-clan-mode-item" style={{ fontSize: fontSize, }}>
-      <span className="mw-clan-mode-item-mana-cost">[{props.mode.numManalithClaimsToActivate}]: </span>
-      <span className="mw-clan-mode-item-text">{iconizedModeText}</span>
-    </div>
+    <MwClanModeItemDiv style={{ fontSize: fontSize, }}>
+      <MwClanModeItemManaCostSpan>[{props.mode.numManalithClaimsToActivate}]: </MwClanModeItemManaCostSpan>
+      <MwClanModeItemTextSpan>{iconizedModeText}</MwClanModeItemTextSpan>
+    </MwClanModeItemDiv>
 
   return item;
 }
