@@ -8,7 +8,7 @@ import { MonumentOfSacrificeData } from "../seasons/season-zero-1/monument-defs/
 import { MonumentOfTranquilityData } from "../seasons/season-zero-1/monument-defs/monument-of-tranquility";
 import { MonumentOfWarData } from "../seasons/season-zero-1/monument-defs/monument-of-war";
 import { MonumentCard } from "../type-defs/monument-defs";
-import { IMonumentPrintSettings, IMwMonumentData } from "./MwMonumentTemplate";
+import { IMonumentPrintSettings, IMwMonumentData } from "./print-templates/monument-cards/MwMonumentTemplate";
 
 
 const createMonumentCardWithPrintSettings = (

@@ -2,11 +2,11 @@ import _ from "lodash";
 
 import { MwBigCardPrintSheets, MwMediumCardPrintSheets, MwMediumCardLandscapePrintSheets } from "./mw-print-sheets";
 import { getMonumentDefs } from "./mw-monument-defs";
-import { MwMonumentTemplate } from "./MwMonumentTemplate";
+import { MwMonumentTemplate } from "./print-templates/monument-cards/MwMonumentTemplate";
 import { MwSinkCard, MwSourceCard } from "./MwSourceAndSink";
-import { IMwFamilySelectorData, MwFamilySelectorTemplate } from "./family-selector-template";
+import { IMwFamilySelectorData, MwFamilySelectorTemplate } from "./print-templates/family-selector-cards/family-selector-template";
 import { getCardDefs } from "./mw-card-defs";
-import { MwCardTemplate } from "./MwCardTemplate";
+import { MwCardTemplate } from "./print-templates/family-cards/MwCardTemplate";
 import { getBlankCardDefs } from "./mw-blank-card-defs";
 
 

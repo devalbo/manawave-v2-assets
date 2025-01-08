@@ -1,5 +1,5 @@
-import './MwCard.css';
-import { createIconizedStringContent } from './icon-strings';
+// import './MwCard.css';
+import { createIconizedStringContent } from '../../icon-strings';
 
 
 export interface IMonumentPrintSettings {

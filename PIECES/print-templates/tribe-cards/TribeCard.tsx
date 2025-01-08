@@ -1,8 +1,9 @@
 /* eslint-disable react/jsx-pascal-case */
 import './TribeCard.css';
-import { PlayerId } from "./constants";
-import { createImgComponentFromMwMarkerType, createImgComponentFromTag } from "./icons";
-import { IMwTribeConversionRatio } from "./type-defs/type-defs";
+import { PlayerId } from "../../constants";
+import { createImgComponentFromMwMarkerType, createImgComponentFromTag } from "../../icons";
+import { IMwTribeConversionRatio } from "../../type-defs/type-defs";
+import { MwTribeCardBorderFrameDiv, MwTribeCardDiv, MwTribeConversionRatesTableContainerDiv, MwTribeConversionRatesTableDiv, MwTribeConversionRatesTableGridHeaderDiv, MwTribeConversionRatesTableGridItemDiv, MwTribePlayerHeaderDiv, MwTribePlayerHeaderIdIcon, MwTribeTablesDiv } from './tribe-card-styles';
 
 
 export interface IMwTribeCardData {
@@ -27,18 +28,18 @@ const ManalithIcon_Stockpile = () => createImgComponentFromTag('<::manalith-toke
 const MwTribeConversionRatioRow = (props: {conversionRatio: IMwTribeConversionRatio}) => {
   return (
     <>
-      <div className="mw-tribe-conversion-rates-table-grid-item">
+      <MwTribeConversionRatesTableGridItemDiv>
         {
           props.conversionRatio.input.map((input) => 
             createImgComponentFromMwMarkerType(input, ConversionImageSize)
           )
         }
-      </div>
-      <div className="mw-tribe-conversion-rates-table-grid-item">
+      </MwTribeConversionRatesTableGridItemDiv>
+      <MwTribeConversionRatesTableGridItemDiv>
         {
           createImgComponentFromMwMarkerType(props.conversionRatio.output, ConversionImageSize)
         }
-      </div>
+      </MwTribeConversionRatesTableGridItemDiv>
     </>
   )
 }
@@ -46,9 +47,9 @@ const MwTribeConversionRatioRow = (props: {conversionRatio: IMwTribeConversionRa
 
 export const MwConversionRatesTable = (props: {conversionRatios: IMwTribeConversionRatio[]}) => {
   return (
-    <div className="mw-tribe-conversion-rates-table">
-      <div className="mw-tribe-conversion-rates-table-grid-header">Mana</div>
-      <div className="mw-tribe-conversion-rates-table-grid-header">Conjuration</div>
+    <MwTribeConversionRatesTableDiv>
+      <MwTribeConversionRatesTableGridHeaderDiv>Mana</MwTribeConversionRatesTableGridHeaderDiv>
+      <MwTribeConversionRatesTableGridHeaderDiv>Conjuration</MwTribeConversionRatesTableGridHeaderDiv>
 
       {
         props.conversionRatios.map((conversionRatio) => (
@@ -56,7 +57,7 @@ export const MwConversionRatesTable = (props: {conversionRatios: IMwTribeConvers
         ))
       }
 
-    </div>
+    </MwTribeConversionRatesTableDiv>
   )
 }
 
@@ -102,29 +103,29 @@ export const MwTribeCard = (props: IMwTribeCardData) => {
     '/img/mw_logo_black_top.svg';
 
   return (
-    <div className="mw-tribe-card">
-      <div className="mw-tribe-card-border-frame">
+    <MwTribeCardDiv>
+      <MwTribeCardBorderFrameDiv>
 
-        <div className="mw-tribe-player-header">
+        <MwTribePlayerHeaderDiv>
           <div style={{fontSize: 24, alignContent: "center"}}>
             Tribe Chief:
           </div>
-          <img src={playerIdImgSrc} className="mw-tribe-player-header-id-icon" />
-        </div>
+          <MwTribePlayerHeaderIdIcon src={playerIdImgSrc} />
+        </MwTribePlayerHeaderDiv>
           
-        <div className="mw-tribe-tables">
-          <div className="mw-tribe-conversion-rates-table-container">
+        <MwTribeTablesDiv>
+          <MwTribeConversionRatesTableContainerDiv>
             <MwConversionRatesTable
               conversionRatios={props.conversionRatios}
               />
-          </div>
+          </MwTribeConversionRatesTableContainerDiv>
 
           <div className="mw-tribe-stockpile-table-container">
             <MwStockpileTable />
           </div>
-        </div>
+        </MwTribeTablesDiv>
         
-      </div>
-    </div>
+      </MwTribeCardBorderFrameDiv>
+    </MwTribeCardDiv>
   );
 };

@@ -1,6 +1,6 @@
-import { IMwCardModeData } from "./mw-card-data"
+import { IMwCardModeData } from "../../mw-card-data"
 import { MwClanTemplateModeItem } from "./MwClanTemplateModeItem"
-import { createImgComponentFromTag } from "./icons";
+import { createImgComponentFromTag } from "../../icons";
 
 interface MwClanTemplateModeBlockProps {
   modes: IMwCardModeData[]

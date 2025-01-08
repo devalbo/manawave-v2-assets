@@ -1,5 +1,5 @@
-import { IMwCardModeData } from "./mw-card-data"
-import { createIconizedStringContent } from "./icon-strings";
+import { IMwCardModeData } from "../../mw-card-data"
+import { createIconizedStringContent } from "../../icon-strings";
 
 
 interface MwClanTemplateModeItemProps {

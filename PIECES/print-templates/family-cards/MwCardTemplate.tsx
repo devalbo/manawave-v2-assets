@@ -1,14 +1,16 @@
 import { MwCardTemplateHeader } from './MwCardTemplateHeader';
-import { IMwCardData } from './mw-card-data';
+import { IMwCardData } from '../../mw-card-data';
 import { MwCardTemplateModeBlock } from './MwCardTemplateModeBlock';
 import { MwCardTemplateArtBlock } from './MwCardTemplateArtBlock';
-import './MwCard.css';
+// import './MwCard.css';
+import { MwCardDiv } from './family-card-styles';
+import { MwCardBorderFrameDiv } from './family-card-styles';
 
 
 export const MwCardTemplate = (props: IMwCardData) => {
   return (
-    <div className="mw-card">
-      <div className="mw-card-border-frame">
+    <MwCardDiv>
+      <MwCardBorderFrameDiv>
         <MwCardTemplateHeader
           name={props.title}
           familyTotems={props.totems}
@@ -21,7 +23,7 @@ export const MwCardTemplate = (props: IMwCardData) => {
         <MwCardTemplateModeBlock
           modes={props.modes}
           />
-      </div>
-    </div>
+      </MwCardBorderFrameDiv>
+    </MwCardDiv>
   );
 };

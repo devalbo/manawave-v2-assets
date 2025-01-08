@@ -1,10 +1,10 @@
 /* eslint-disable react/jsx-pascal-case */
 import { MwClanTemplateModeBlock } from './MwClanTemplateModeBlock';
-import { createImgComponentFromMwMarkerType, createImgComponentFromTag } from './icons';
-import { CardDecoration } from './constants';
-import { IMwCardModeData } from './mw-card-data';
+import { createImgComponentFromMwMarkerType, createImgComponentFromTag } from '../../icons';
+import { CardDecoration } from '../../constants';
+import { IMwCardModeData } from '../../mw-card-data';
 import './MwClanTemplate.css';
-import { IMwClanConversionRatio } from './type-defs/type-defs';
+import { IMwClanConversionRatio } from '../../type-defs/type-defs';
 
 
 export interface IMwClanData {

@@ -1,11 +1,11 @@
 import { getCardDefs } from "./mw-card-defs";
-import { MwCardTemplate } from "./MwCardTemplate";
+import { MwCardTemplate } from "./print-templates/family-cards/MwCardTemplate";
 import { getMonumentDefs } from "./mw-monument-defs";
-import { MwMonumentTemplate } from "./MwMonumentTemplate";
+import { MwMonumentTemplate } from "./print-templates/monument-cards/MwMonumentTemplate";
 import { getClanDefs } from "./mw-clan-defs";
-import { MwClanTemplate } from "./MwClanTemplate";
+import { MwClanTemplate } from "./print-templates/clan-cards/MwClanTemplate";
 import { getBlankCardDefs } from "./mw-blank-card-defs";
-import { IMwFamilySelectorData, MwFamilySelectorTemplate } from "./family-selector-template";
+import { IMwFamilySelectorData, MwFamilySelectorTemplate } from "./print-templates/family-selector-cards/family-selector-template";
 import { CardDecoration, PlayerId } from "./constants";
 import { MwSinkCard, MwSourceCard } from "./MwSourceAndSink";
 

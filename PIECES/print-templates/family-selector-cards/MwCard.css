@@ -1,0 +1,209 @@
+/* .mw-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 2.5in;
+  width: 3.35in;
+  border: 1px solid #000;
+  border-radius: 10px;
+  font-family: 'Beleren', 'Garamond', serif;
+  background-color: #f0f0f0;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.mw-card-border-frame {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 3px;
+  height: 100%;
+}
+
+.mw-card-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.mw-card-header-name-and-totems {
+  display: flex;
+  flex-direction: column;
+}
+
+.mw-card-header-name {
+  flex: 1;
+}
+
+.mw-card-header-totems {
+  flex: 1;
+  height: 0.33in;
+}
+
+.mw-card-header-init {
+  flex: 0 0 auto;
+}
+
+.mw-card-image {
+  width: 100%;
+  height: 1.61in;
+  background-color: #ddd;
+  margin: 10px 0;
+}
+
+.mw-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.placeholder-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #999;
+}
+
+.mw-card-type {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  font-style: italic;
+}
+
+.mw-card-text {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.mw-card-art-block {
+
+}
+
+.mw-card-modes-block {
+  font-size: 0.9rem;
+  align-self: flex-end;
+  width: 100%;
+}
+
+.mw-card-mode-item {
+  border: 2px solid black;
+  margin-left: 0px;
+  margin-right: 0px;
+  min-height: 28px;
+}
+
+.mw-card-mode-item-mana-claims-required {
+
+}
+
+.mw-card-mode-item-text {
+
+}
+
+.mw-card-power-toughness {
+  text-align: right;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+}
+
+.mw-monument-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 5in;
+  height: 3in;
+  border: 1px solid #000;
+  border-radius: 10px;
+  font-family: 'Beleren', 'Garamond', serif;
+  background-color: #f0f0f0;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.mw-monument-card-border-frame {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 3px;
+  height: 100%;
+}
+
+.mw-monument-card-top-half {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 6px;
+  height: 100%;
+  transform: rotate(180deg);
+}
+  
+
+.mw-monument-card-bottom-half {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 6px;
+  height: 100%;
+} */
+
+/*   
+.mw-family-selector-card {
+  border-radius: 10px;
+  border: 2px solid black;
+  height: 3.4in;
+  width: 2.5in;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: content-box;
+  
+  margin-left: 0px;
+  margin-right: 0px;
+  min-height: 38px;
+  padding: 6px;
+}
+
+.mw-family-selector-name {
+  font-family: 'Beleren', 'Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.mw-family-selector-details-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.mw-family-selector-totems {
+  flex: 1;
+  height: 0.33in;
+}
+
+.mw-family-selector-init {
+
+}
+
+.mw-family-selector-label {
+  font-size: 0.9rem;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 0.33in;
+} */

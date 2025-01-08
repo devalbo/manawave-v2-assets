@@ -1,5 +1,8 @@
 import { Sd1Totem } from "@mw-assets/type-defs/totem-type-defs";
-import { OxTotemDataUrl, SpiritsTotemDataUrl, TigerTotemDataUrl, Totems, TurtleTotemDataUrl } from "./totems";
+import { OxTotemDataUrl, SpiritsTotemDataUrl, TigerTotemDataUrl, Totems, TurtleTotemDataUrl } from "../../totems";
+import { MwCardHeaderInitDiv, MwCardHeaderNameDiv, MwCardHeaderTotemsDiv } from "./family-card-styles";
+import { MwCardHeaderNameAndTotemsDiv } from "./family-card-styles";
+import { MwCardHeaderDiv } from "./family-card-styles";
 
 
 interface MwCardTemplateHeaderProps {
@@ -12,12 +15,12 @@ interface MwCardTemplateHeaderProps {
 
 export const MwCardTemplateHeader = (props: MwCardTemplateHeaderProps) => {
   return (
-    <div className="mw-card-header">
-      <div className="mw-card-name-and-totems">
-        <div className="mw-card-header-name">
+    <MwCardHeaderDiv>
+      <MwCardHeaderNameAndTotemsDiv>
+        <MwCardHeaderNameDiv>
           {props.name}
-        </div>
-        <div className="mw-card-header-totems">
+        </MwCardHeaderNameDiv>
+        <MwCardHeaderTotemsDiv>
           { props.familyTotems.includes("ox") ? 
             <img src={OxTotemDataUrl} alt="Flying Icon" height="100%" width="auto" /> :
             null }
@@ -30,11 +33,15 @@ export const MwCardTemplateHeader = (props: MwCardTemplateHeaderProps) => {
           { props.familyTotems.includes("tiger") ? 
             <img src={TigerTotemDataUrl} alt="Flying Icon" height="100%" width="auto" /> :
             null }
-        </div>
-      </div>
-      <div className="mw-card-header-init">
-        <span className="mw-card-mana">{props.singlePickInitialPopulation} [{props.multiplePickInitialPopulation}]</span>
-      </div>
-    </div>
+        </MwCardHeaderTotemsDiv>
+      </MwCardHeaderNameAndTotemsDiv>
+      <MwCardHeaderInitDiv>
+        <span
+          // className="mw-card-mana"
+        >
+          {props.singlePickInitialPopulation} [{props.multiplePickInitialPopulation}]
+        </span>
+      </MwCardHeaderInitDiv>
+    </MwCardHeaderDiv>
   )
 }

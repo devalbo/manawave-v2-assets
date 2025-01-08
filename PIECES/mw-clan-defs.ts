@@ -1,4 +1,4 @@
-import { IMwClanData } from "./MwClanTemplate";
+import { IMwClanData } from "./print-templates/clan-cards/MwClanTemplate";
 import { ClanOfDiversityData } from "../seasons/season-zero-1/clans/clan-of-diversity";
 import { ClanOfLifeData } from "../seasons/season-zero-1/clans/clan-of-life";
 import { ClanOfSacrificeData } from "../seasons/season-zero-1/clans/clan-of-sacrifice";

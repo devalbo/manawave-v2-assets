@@ -1,3 +1,5 @@
+import { MwCardArtBlockDiv } from "./family-card-styles";
+
 
 interface MwCardTemplateArtBlockProps {
 
@@ -5,9 +7,9 @@ interface MwCardTemplateArtBlockProps {
 
 export const MwCardTemplateArtBlock = (_props: MwCardTemplateArtBlockProps) => {
   const block =
-    <div className="mw-card-art-block">
+    <MwCardArtBlockDiv>
       ART BLOCK
-    </div>
+    </MwCardArtBlockDiv>
     
   return block;
 }

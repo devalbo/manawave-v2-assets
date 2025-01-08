@@ -1,9 +1,7 @@
-.mw-card {
+/* .mw-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* height: 2.5in;
-  width: 3.4in; */
   height: 2.5in;
   width: 3.35in;
   border: 1px solid #000;
@@ -20,10 +18,9 @@
   flex-direction: column;
   justify-content: space-between;
   margin-bottom: 3px;
-  /* padding: 6px; */
   height: 100%;
-}
-
+} */
+/* 
 .mw-card-header {
   display: flex;
   justify-content: space-between;
@@ -47,12 +44,10 @@
 
 .mw-card-header-init {
   flex: 0 0 auto;
-  /* align-self: flex-end; */
-}
+} */
 
 .mw-card-image {
   width: 100%;
-  /* height: 200px; */
   height: 1.61in;
   background-color: #ddd;
   margin: 10px 0;
@@ -82,25 +77,22 @@
   font-size: 0.9rem;
   margin-bottom: 10px;
 }
-
+/* 
 .mw-card-art-block {
 
-}
-
+} */
+/* 
 .mw-card-modes-block {
   font-size: 0.9rem;
-  /* margin-bottom: 10px; */
   align-self: flex-end;
   width: 100%;
 }
 
 .mw-card-mode-item {
   border: 2px solid black;
-  /* margin-bottom: 3px; */
   margin-left: 0px;
   margin-right: 0px;
   min-height: 28px;
-  /* padding: 6px; */
 }
 
 .mw-card-mode-item-mana-claims-required {
@@ -109,8 +101,9 @@
 
 .mw-card-mode-item-text {
 
-}
+} */
 
+/* 
 .mw-card-power-toughness {
   text-align: right;
   font-size: 1rem;
@@ -119,9 +112,9 @@
 
 .card-container {
   display: flex;
-  justify-content: space-around; /* Adjusts spacing between cards */
-  align-items: flex-start;       /* Aligns cards to the top */
-  gap: 20px;                     /* Adds space between the cards */
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 20px;
   padding: 20px;
 }
 
@@ -145,7 +138,6 @@
   flex-direction: column;
   justify-content: space-between;
   margin-bottom: 3px;
-  /* padding: 6px; */
   height: 100%;
 }
 
@@ -154,7 +146,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* margin-bottom: 3px; */
   padding: 6px;
   height: 100%;
   transform: rotate(180deg);
@@ -166,7 +157,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* margin-bottom: 3px; */
   padding: 6px;
   height: 100%;
 }
@@ -182,7 +172,6 @@
   justify-content: space-between;
   box-sizing: content-box;
 
-  /* margin-bottom: 3px; */
   margin-left: 0px;
   margin-right: 0px;
   min-height: 38px;
@@ -213,12 +202,8 @@
 }
 
 .mw-family-selector-label {
-  /* display: flex; */
   font-size: 0.9rem;
-  /* align-self: flex-end; */
   align-items: center;
   text-align: center;
   margin-bottom: 0.33in;
-  /* width: 100%; */
-  /* height: 100%; */
-}
+} */
