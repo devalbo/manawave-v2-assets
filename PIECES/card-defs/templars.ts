@@ -1,4 +1,4 @@
-import { MwFamilyCardIds } from "@mw-assets/mw-asset-ids/manawave-family-ids";
+import { MwFamilyCardIds } from "../../mw-asset-ids/manawave-family-ids";
 import { createAddMarkersToMyClanInstructionSet, createAddMarkersToMyClanOnConditionInstructionSet, createAddMarkersToMyTribeInstructionSet, createAddMarkersToMyTribeOnConditionInstructionSet } from "../../manawave-virtual-machine/mvm-instructions-factory";
 import { MwMarkerType } from "../../mw-v2-protobufs/protofiles-out/manawave-types";
 import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";

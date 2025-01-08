@@ -1,3 +1,5 @@
+import { PlayerSideId, TotemPbId } from "../../../mw-v2-protobufs/protofiles-out/manawave-types";
+import { TotemDefs } from "../../../mw-v2-protobufs/protofiles-out/manawave-season-zero-1";
 import { FarmersCardDef } from "../../../PIECES/card-defs/farmers";
 import { ForestHuntersCardDef } from "../../../PIECES/card-defs/forest-hunters";
 import { GrasslandShepherdsCardDef } from "../../../PIECES/card-defs/grassland-shepherds";
@@ -6,8 +8,6 @@ import { RuggedShepherdsCardDef } from "../../../PIECES/card-defs/rugged-shepher
 import { SoylentGreenFarmersCardDef } from "../../../PIECES/card-defs/soylent-green-farmers";
 import { FamilyCardInstance } from "../../../PIECES/type-defs/type-defs";
 import { ITotemDetails } from "../../../type-defs/totem-defs";
-import { PlayerSideId, TotemPbId } from "@mw-protobufs/manawave-types";
-import { TotemDefs } from "@mw-protobufs/manawave-season-zero-1";
 import { SEASON_ZERO_1_PBID } from "../../season-id-defs";
 
 

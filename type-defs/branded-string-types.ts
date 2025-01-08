@@ -1,4 +1,3 @@
-import { throwUnexpectedStateError } from "@mw-game-engine/game-engine-utils";
 import { LeylineDistanceFromSource } from "../mw-v2-protobufs/protofiles-out/manawave-types";
 import { PlayerSide } from "./game-play-data";
 
@@ -34,7 +33,7 @@ const mapToLeylineColumnName = (leylineColumn: LeylineDistanceFromSource): Leyli
     case LeylineDistanceFromSource.LeylineDistance_1: return 'A';
     case LeylineDistanceFromSource.LeylineDistance_2: return 'B';
     case LeylineDistanceFromSource.LeylineDistance_3: return 'C';
-    default: return throwUnexpectedStateError(`UNHANDLED LEYLINE COLUMN: ${leylineColumn}`);
+    default: throw new Error(`UNHANDLED LEYLINE COLUMN: ${leylineColumn}`);
   }
 }
 
