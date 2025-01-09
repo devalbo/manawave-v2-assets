@@ -8,7 +8,7 @@ import { createAddMarkersToMyClanInstructionSet } from "@mw-assets/manawave-virt
 import { createMvmInstructionsOnlyFamilyModeLogic } from "@mw-assets/PIECES/mw-card-data";
 import { mapToIndexedModes } from "@mw-assets/PIECES/mw-mode-utils";
 import { FamilyCardDefinition } from "@mw-assets/type-defs/family-defs";
-import { MwFamilyCardIds } from "@mw-assets/mw-asset-ids/manawave-family-ids";
+import { MwFamilyCardIds } from "../../mw-asset-ids/manawave-family-ids";
 
 
 const TOTEM_NAME = 'Defense';

@@ -1,5 +1,5 @@
-import { TotemDefs } from "@mw-protobufs/manawave-season-zero-1";
-import { PlayerSideId, TotemPbId } from "@mw-protobufs/manawave-types";
+import { PlayerSideId, TotemPbId } from "../../../mw-v2-protobufs/protofiles-out/manawave-types";
+import { TotemDefs } from "../../../mw-v2-protobufs/protofiles-out/manawave-season-zero-1";
 import { ChannelersCardDef } from "../../../PIECES/card-defs/channelers";
 import { EnchantersCardDef } from "../../../PIECES/card-defs/enchanters";
 import { ManaChannelersCardDef } from "../../../PIECES/card-defs/mana-channelers";

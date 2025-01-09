@@ -1,4 +1,4 @@
-import { MwFamilyCardIds } from "@mw-assets/mw-asset-ids/manawave-family-ids";
+import { MwFamilyCardIds } from "../../mw-asset-ids/manawave-family-ids";
 import { MwMarkerType } from "../../mw-v2-protobufs/protofiles-out/manawave-types";
 import { MvmAmountQueryFunctionId } from "../../mw-v2-protobufs/protofiles-out/manawave-vm";
 import { createAddMarkersToMyClanInstructionSet, createAddMarkersToMyTribeForCountFunctionAmountInstructionSet, createAddMarkersToMyTribeInstructionSet } from "../../manawave-virtual-machine/mvm-instructions-factory";

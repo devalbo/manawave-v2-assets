@@ -8,7 +8,7 @@ import { createAddMarkersToMyTribeInstructionSet } from "@mw-assets/manawave-vir
 import { createAddMarkersToMyClanInstructionSet } from "@mw-assets/manawave-virtual-machine/mvm-instructions-factory";
 import { FamilyCardDefinition } from "@mw-assets/type-defs/family-defs";
 import { createMvmInstructionsOnlyFamilyModeLogic } from "@mw-assets/PIECES/mw-card-data";
-import { MwFamilyCardIds } from "@mw-assets/mw-asset-ids/manawave-family-ids";
+import { MwFamilyCardIds } from "../../mw-asset-ids/manawave-family-ids";
 
 
 const TOTEM_NAME = 'Magic';

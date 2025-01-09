@@ -5,7 +5,7 @@ import { SEASON_ZERO_1_PBID } from "../../seasons/season-id-defs";
 import { FamilyCardDefinition } from "../../type-defs/family-defs";
 import { createMvmInstructionsOnlyFamilyModeLogic, IModePrintSettings } from "../mw-card-data";
 import { mapToIndexedModes } from "../mw-mode-utils";
-import { MwFamilyCardIds } from "@mw-assets/mw-asset-ids/manawave-family-ids";
+import { MwFamilyCardIds } from "../../mw-asset-ids/manawave-family-ids";
 
 
 const ModePrintSettings: IModePrintSettings = {
