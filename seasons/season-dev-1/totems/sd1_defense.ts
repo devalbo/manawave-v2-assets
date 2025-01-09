@@ -6,9 +6,9 @@ import { SeasonDev1TotemDefs } from "@mw-assets/mw-v2-protobufs/protofiles-out/m
 import { createAddMarkersToMyTribeInstructionSet } from "@mw-assets/manawave-virtual-machine/mvm-instructions-factory";
 import { createAddMarkersToMyClanInstructionSet } from "@mw-assets/manawave-virtual-machine/mvm-instructions-factory";
 import { createMvmInstructionsOnlyFamilyModeLogic } from "@mw-assets/PIECES/mw-card-data";
-import { mapToIndexedModes } from "@mw-assets/PIECES/mw-mode-utils";
+import { mapToIndexedModes } from "../../../PIECES/mw-mode-utils";
+import { MwFamilyCardIds } from "../../../mw-asset-ids/manawave-family-ids";
 import { FamilyCardDefinition } from "@mw-assets/type-defs/family-defs";
-import { MwFamilyCardIds } from "../../mw-asset-ids/manawave-family-ids";
 
 
 const TOTEM_NAME = 'Defense';

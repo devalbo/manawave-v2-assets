@@ -1,7 +1,7 @@
 import _ from "lodash";
 import { MarkerConjurationAreaDiv } from "./marker-conjuration-area-styles";
 import { IMarkerConjurationIconProps, MarkerConjurationIcon } from "../marker-conjuration-icon/marker-conjuration-icon";
-import { ManaCounter_MarkerView } from "@mw-game-ui/board-pieces/tally-marker-views/marker-view";
+import { ManaCounter_MarkerView } from "../../../tally-marker-views/marker-view";
 
 
 interface IMarkerConjurationAreaProps extends IMarkerConjurationIconProps {

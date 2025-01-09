@@ -3,7 +3,7 @@ import { MwPlacementGridCardConversionGridRowDiv, MwPlacementGridCardConversionG
 import { MwTribePlacementsCardBorderFrameDiv, MwTribePlacementsCardDiv, TribePlacementsCardHeaderDiv, TribePlacementsGridDiv, TribeToClanAllocationsAreaDiv, TribeToClanAllocationSectionDiv, TribeToClanAllocationSectionHeaderDiv, TribeToClanAllocationSectionMarkerItemDiv, TribeToClanAllocationSectionMarkersDiv } from "./tribe-placements-card-styles";
 import { MarkerConjurationArea } from "../../game-symbols/marker-conjuration-area/marker-conjuration-area";
 import { LeylineDistanceFromSource, MwMarkerType } from "@mw-assets/mw-v2-protobufs/protofiles-out/manawave-types";
-import { AttackCounter_MarkerView, ManaCounter_MarkerView, ShieldCounter_MarkerView } from "@mw-game-ui/board-pieces/tally-marker-views/marker-view";
+import { AttackCounter_MarkerView, ManaCounter_MarkerView, ShieldCounter_MarkerView } from "@mw-assets/PIECES/tally-marker-views/marker-view";
 import { MwLogoPlayerSideIcon } from "@mw-assets/PIECES/mw-logo-player-side-icon";
 
 

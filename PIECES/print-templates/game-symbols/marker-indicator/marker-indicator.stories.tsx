@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { MwMarkerView } from '../../../../../game-ui/board-pieces/tally-marker-views/marker-view';
-import { SoulstainTokenIcon_MarkerIcon } from '@mw-game-ui/board-pieces/tally-marker-views/marker-icon';
+import { MwMarkerView } from '../../../tally-marker-views/marker-view';
+import { SoulstainTokenIcon_MarkerIcon } from '@mw-assets/PIECES/tally-marker-views/marker-icon';
 
 
 const meta: Meta<typeof MwMarkerView> = {

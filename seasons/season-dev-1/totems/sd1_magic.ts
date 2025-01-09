@@ -2,13 +2,14 @@ import { MwMarkerType, PlayerSideId, TotemPbId } from "@mw-protobufs/manawave-ty
 import { FamilyCardInstance } from "../../../PIECES/type-defs/type-defs";
 import { ITotemDetails } from "../../../type-defs/totem-defs";
 import { SEASON_DEV_1_PBID } from "../../season-id-defs";
-import { SeasonDev1TotemDefs } from "@mw-assets/mw-v2-protobufs/protofiles-out/manawave-season-dev-1";
-import { mapToIndexedModes } from "@mw-assets/PIECES/mw-mode-utils";
-import { createAddMarkersToMyTribeInstructionSet } from "@mw-assets/manawave-virtual-machine/mvm-instructions-factory";
-import { createAddMarkersToMyClanInstructionSet } from "@mw-assets/manawave-virtual-machine/mvm-instructions-factory";
-import { FamilyCardDefinition } from "@mw-assets/type-defs/family-defs";
-import { createMvmInstructionsOnlyFamilyModeLogic } from "@mw-assets/PIECES/mw-card-data";
-import { MwFamilyCardIds } from "../../mw-asset-ids/manawave-family-ids";
+import { SeasonDev1TotemDefs } from "../../../mw-v2-protobufs/protofiles-out/manawave-season-dev-1";
+import { createAddMarkersToMyTribeInstructionSet } from "../../../manawave-virtual-machine/mvm-instructions-factory";
+import { createAddMarkersToMyClanInstructionSet } from "../../../manawave-virtual-machine/mvm-instructions-factory";
+import { FamilyCardDefinition } from "../../../type-defs/family-defs";
+import { createMvmInstructionsOnlyFamilyModeLogic } from "../../../PIECES/mw-card-data";
+import { mapToIndexedModes } from "../../../PIECES/mw-mode-utils";
+import { MwFamilyCardIds } from "../../../mw-asset-ids/manawave-family-ids";
+
 
 
 const TOTEM_NAME = 'Magic';
