@@ -1,4 +1,4 @@
-
+/* 
 .mw-placement-grid-card {
   display: flex;
   flex-direction: column;
@@ -82,12 +82,8 @@
 
 .mw-placement-conversion-grid-row-item {
   flex-grow: 1;
-  /* justify-content: center; */
-  /* align-content: center; */
   text-align: center;
-  /* padding: 4px; */
-  /* align-items: center; */
   height: 40px;
   border: 1px solid #000;
   border-radius: 5px;
-}
+} */

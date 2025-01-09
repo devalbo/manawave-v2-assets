@@ -3,11 +3,31 @@ import { MwMarkerType } from "../../../mw-v2-protobufs/protofiles-out/manawave-t
 import { createAddMarkersToMyClanInstructionSet, createAddMarkersToMyTribeInstructionSet } from "../../../manawave-virtual-machine/mvm-instructions-factory";
 import { createMvmInstructionsOnlyClanModeLogic } from "../../../PIECES/mw-card-data";
 import { mapToIndexedModes } from "../../../PIECES/mw-mode-utils";
-import { EMPTY_PLAYER_CLAN_STOCKPILE } from "../../../PIECES/type-defs/type-defs";
+import { EMPTY_PLAYER_CLAN_STOCKPILE, IMwClanConversionRatio } from "../../../PIECES/type-defs/type-defs";
 import { createMwCounterCount, createMwTokenCount } from "../../../type-defs/branded-marker-types";
 import { ClanCardDefinition } from "../../../type-defs/clan-defs";
 import { SEASON_FLAVOR_1_PBID } from "../../season-id-defs";
 import { SeasonFlavor1ClanCardDefs } from "@mw-assets/mw-v2-protobufs/protofiles-out/manawave-season-flavor-1";
+
+
+export const ClanOfDefenseConversionRatios: IMwClanConversionRatio[] = [
+  {
+    input: [MwMarkerType.MwMarkerType_ManaCounter],
+    output: MwMarkerType.MwMarkerType_ManalithToken,
+  },
+  {
+    input: [MwMarkerType.MwMarkerType_ManaCounter],
+    output: MwMarkerType.MwMarkerType_PopulationIncreaseCounter,
+  },
+  {
+    input: [MwMarkerType.MwMarkerType_ManaCounter, MwMarkerType.MwMarkerType_ManaCounter],
+    output: MwMarkerType.MwMarkerType_AttackCounter,
+  },
+  {
+    input: [MwMarkerType.MwMarkerType_ManaCounter, MwMarkerType.MwMarkerType_ManaCounter],
+    output: MwMarkerType.MwMarkerType_ShieldCounter,
+  },
+]
 
 
 export const ClanOfDefenseData: ClanCardDefinition = {
@@ -43,24 +63,7 @@ export const ClanOfDefenseData: ClanCardDefinition = {
       ),
     },
   ]),
-  conversionRatios: [
-    {
-      input: [MwMarkerType.MwMarkerType_ManaCounter],
-      output: MwMarkerType.MwMarkerType_ManalithToken,
-    },
-    {
-      input: [MwMarkerType.MwMarkerType_ManaCounter],
-      output: MwMarkerType.MwMarkerType_PopulationIncreaseCounter,
-    },
-    {
-      input: [MwMarkerType.MwMarkerType_ManaCounter, MwMarkerType.MwMarkerType_ManaCounter],
-      output: MwMarkerType.MwMarkerType_AttackCounter,
-    },
-    {
-      input: [MwMarkerType.MwMarkerType_ManaCounter, MwMarkerType.MwMarkerType_ManaCounter],
-      output: MwMarkerType.MwMarkerType_ShieldCounter,
-    },
-  ],
+  conversionRatios: ClanOfDefenseConversionRatios,
 
   gameLogic: {
     

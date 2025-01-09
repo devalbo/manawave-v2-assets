@@ -1,9 +1,8 @@
 /* eslint-disable react/jsx-pascal-case */
-// import './TribeCard.css';
 import { PlayerId } from "../../constants";
 import { createImgComponentFromMwMarkerType, createImgComponentFromTag } from "../../icons";
 import { IMwTribeConversionRatio } from "../../type-defs/type-defs";
-import { MwTribeCardBorderFrameDiv, MwTribeCardDiv, MwTribeConversionRatesTableContainerDiv, MwTribeConversionRatesTableDiv, MwTribeConversionRatesTableGridHeaderDiv, MwTribeConversionRatesTableGridItemDiv, MwTribePlayerHeaderDiv, MwTribePlayerHeaderIdIcon, MwTribeTablesDiv } from './tribe-card-styles';
+import { MwTribeCardBorderFrameDiv, MwTribeCardDiv, MwTribeConversionRatesTableContainerDiv, MwTribeConversionRatesTableDiv, MwTribeConversionRatesTableGridHeaderDiv, MwTribeConversionRatesTableGridItemDiv, MwTribePlayerHeaderDiv, MwTribePlayerHeaderIdIcon, MwTribeStockpileTableContainerDiv, MwTribeStockpileTableDiv, MwTribeStockpileTableGridItemDiv, MwTribeTablesDiv } from './tribe-card-styles';
 
 
 export interface IMwTribeCardData {
@@ -65,33 +64,33 @@ export const MwStockpileTable = () => {
   return (
     <div>
       Stockpiles
-      <div className="mw-tribe-stockpile-table">
+      <MwTribeStockpileTableDiv>
 
-        <div className="mw-tribe-stockpile-table-grid-item">
+        <MwTribeStockpileTableGridItemDiv>
           <AttackCounterIcon_Stockpile />
-        </div>
+        </MwTribeStockpileTableGridItemDiv>
 
-        <div className="mw-tribe-stockpile-table-grid-item">
+        <MwTribeStockpileTableGridItemDiv>
           <ManaCounterIcon_Stockpile />
-        </div>
+        </MwTribeStockpileTableGridItemDiv>
 
-        <div className="mw-tribe-stockpile-table-grid-item">
+        <MwTribeStockpileTableGridItemDiv>
           <ManalithIcon_Stockpile />
-        </div>
+        </MwTribeStockpileTableGridItemDiv>
 
-        <div className="mw-tribe-stockpile-table-grid-item">
+        <MwTribeStockpileTableGridItemDiv>
           <ShieldCounterIcon_Stockpile />
-        </div>
+        </MwTribeStockpileTableGridItemDiv>
 
-        <div className="mw-tribe-stockpile-table-grid-item">
+        <MwTribeStockpileTableGridItemDiv>
           <PopulationIncreaseCounterIcon_Stockpile />
-        </div>
+        </MwTribeStockpileTableGridItemDiv>
   
-        <div className="mw-tribe-stockpile-table-grid-item">
+        <MwTribeStockpileTableGridItemDiv>
           <SoulstainTokenIcon_Stockpile />
-        </div>
+        </MwTribeStockpileTableGridItemDiv>
           
-      </div>
+      </MwTribeStockpileTableDiv>
     </div>
   )
 }
@@ -120,9 +119,13 @@ export const MwTribeCard = (props: IMwTribeCardData) => {
               />
           </MwTribeConversionRatesTableContainerDiv>
 
-          <div className="mw-tribe-stockpile-table-container">
+          {/* <div className="mw-tribe-stockpile-table-container">
             <MwStockpileTable />
-          </div>
+          </div> */}
+          <MwTribeStockpileTableContainerDiv>
+            <MwStockpileTable />
+          </MwTribeStockpileTableContainerDiv>
+
         </MwTribeTablesDiv>
         
       </MwTribeCardBorderFrameDiv>
