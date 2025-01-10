@@ -1,4 +1,4 @@
-import { createImgComponentFromTag } from "@mw-assets/PIECES/icons";
+import { createImgComponentFromTag } from "../icons";
 
 
 const MARKER_VIEW_ICON_SIZE = 16;

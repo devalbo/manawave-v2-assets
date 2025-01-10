@@ -1,10 +1,10 @@
-import { createImgComponentFromTag } from "@mw-assets/PIECES/icons";
+import { createImgComponentFromTag } from "../../../../PIECES/icons";
 import { MwPlacementGridCardConversionGridRowDiv, MwPlacementGridCardConversionGridRowItemDiv } from "../purchase-and-place-grid-styles"
 import { MwTribePlacementsCardBorderFrameDiv, MwTribePlacementsCardDiv, TribePlacementsCardHeaderDiv, TribePlacementsGridDiv, TribeToClanAllocationsAreaDiv, TribeToClanAllocationSectionDiv, TribeToClanAllocationSectionHeaderDiv, TribeToClanAllocationSectionMarkerItemDiv, TribeToClanAllocationSectionMarkersDiv } from "./tribe-placements-card-styles";
 import { MarkerConjurationArea } from "../../game-symbols/marker-conjuration-area/marker-conjuration-area";
-import { LeylineDistanceFromSource, MwMarkerType } from "@mw-assets/mw-v2-protobufs/protofiles-out/manawave-types";
-import { AttackCounter_MarkerView, ManaCounter_MarkerView, ShieldCounter_MarkerView } from "@mw-assets/PIECES/tally-marker-views/marker-view";
-import { MwLogoPlayerSideIcon } from "@mw-assets/PIECES/mw-logo-player-side-icon";
+import { LeylineDistanceFromSource, MwMarkerType } from "../../../../mw-v2-protobufs/protofiles-out/manawave-types";
+import { AttackCounter_MarkerView, ManaCounter_MarkerView, ShieldCounter_MarkerView } from "../../../../PIECES/tally-marker-views/marker-view";
+import { MwLogoPlayerSideIcon } from "../../../../PIECES/mw-logo-player-side-icon";
 
 
 const PlacementIconSize = 20;

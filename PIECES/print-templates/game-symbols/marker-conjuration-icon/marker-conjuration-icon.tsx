@@ -1,6 +1,6 @@
 import _ from "lodash";
-import { MwMarkerType } from "@mw-assets/mw-v2-protobufs/protofiles-out/manawave-types";
-import { createImgComponentFromMwMarkerType, createImgComponentFromTag } from "@mw-assets/PIECES/icons";
+import { MwMarkerType } from "../../../../mw-v2-protobufs/protofiles-out/manawave-types";
+import { createImgComponentFromMwMarkerType, createImgComponentFromTag } from "../../../../PIECES/icons";
 import { MarkerConjurationIconDiv } from "./marker-conjuration-icon-styles";
 import { RightArrowIcon } from "./arrow-icons";
 

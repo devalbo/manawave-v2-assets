@@ -1,4 +1,4 @@
-import { createImgComponentFromTag } from "@mw-assets/PIECES/icons";
+import { createImgComponentFromTag } from "../../../../PIECES/icons";
 import { MwPlacementGridCardClanCounterItemDiv, MwPlacementGridCardClanPlacementColumnDiv, MwPlacementGridCardClanPlacementColumnsRowDiv, MwPlacementGridCardClanPlacementMarkersColumnDiv } from "../purchase-and-place-grid-styles";
 import { MwClanPlacementsCardDiv, MwClanPlacementsCardBorderFrameDiv } from "./clan-placements-card-styles";
 

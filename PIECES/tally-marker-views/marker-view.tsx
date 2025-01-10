@@ -22,7 +22,7 @@ import {
   HEX_COLOR_CODE_SHIELD_COUNTER_TEXT,
   HEX_COLOR_CODE_SOULSTAIN_TOKEN,
   HEX_COLOR_CODE_SOULSTAIN_TOKEN_TEXT
-} from "@mw-assets/PIECES/constants";
+} from "../../PIECES/constants";
 import {
   AttackCounterIcon_MarkerIcon,
   ManaCounterIcon_MarkerIcon,
