@@ -1,6 +1,7 @@
 import { MwMarkerType } from "@mw-assets/mw-v2-protobufs/protofiles-out/manawave-types";
 import { throwUnexpectedStateError } from "@mw-game-engine/game-engine-utils";
 import { ClanCardMarkerTypes } from "@mw-game-engine/local-game-state/channel-clan-manaflows/lbs-channel-clan-manaflows-types";
+import { TokenCounterTypeTags } from "../token-counter-icons";
 
 
 export const mapMwMarkerTypeToClanCardMarkerType = (markerType: MwMarkerType): ClanCardMarkerTypes => {
@@ -29,5 +30,20 @@ export const mapClanCardMarkerTypeToMwMarkerType = (markerType: ClanCardMarkerTy
     case 'manaCountersCount': return MwMarkerType.MwMarkerType_ManaCounter;
     case 'populationTokensCount': return MwMarkerType.MwMarkerType_PopulationToken;
     default: return throwUnexpectedStateError(`Unknown marker type: ${markerType}`);
+  }
+}
+
+
+export const mapTokenCounterTypeTagToMwMarkerType = (markerTag: TokenCounterTypeTags): MwMarkerType => {
+  switch (markerTag) {
+    case '<::attack-counter::>': return MwMarkerType.MwMarkerType_AttackCounter;
+    case '<::shield-counter::>': return MwMarkerType.MwMarkerType_ShieldCounter;
+    case '<::population-increase-counter::>': return MwMarkerType.MwMarkerType_PopulationIncreaseCounter;
+    case '<::population-sacrifice-counter::>': return MwMarkerType.MwMarkerType_PopulationSacrificeCounter;
+    case '<::manalith-claim-counter::>': return MwMarkerType.MwMarkerType_ManalithClaimCounter;
+    case '<::manalith-token::>': return MwMarkerType.MwMarkerType_ManalithToken; 
+    case '<::mana-counter::>': return MwMarkerType.MwMarkerType_ManaCounter;
+    case '<::population-token::>': return MwMarkerType.MwMarkerType_PopulationToken;
+    default: return throwUnexpectedStateError(`Unknown marker type: ${markerTag}`);
   }
 }

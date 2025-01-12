@@ -11,8 +11,10 @@ import {
   ManaLevelTokenDataUrl,
   ManalithClaimCounterDataUrl,
   SlaughterCounterDataUrl,
+  StockpileIconDataUrl,
  } from "./token-counter-icons";
 import { MwMarkerType } from "../mw-v2-protobufs/protofiles-out/manawave-types";
+import { ExpendedManaCounterSvg, StockpileIconSvg, TribeIconSvg } from "./assets/TokenSvgIcons";
 
 
 export const createImgDataUrlFromTag = (tag: TokenCounterTypeTags) => {
@@ -78,6 +80,17 @@ export const createImgComponentFromMwMarkerType = (mwMarkerType: MwMarkerType, i
 }
 
 
+export const createImgComponentFromRawSvg = (rawSvg: string, imageSize: number) => {
+  const encodedSvg = encodeURIComponent(rawSvg);
+  const encodedSvgUrl = `data:image/svg+xml;charset=utf-8,${encodedSvg}`;
+
+  const imageSizePx = `${imageSize}px`;
+  return (
+    <img src={encodedSvgUrl} alt={"Missing SVG"} height={imageSizePx} width={imageSizePx} />
+  )
+}
+
+
 const DefaultIconImageSize = 40;
 
 export const ManaCounterIcon_DefaultSize = () => createImgComponentFromTag('<::mana-counter::>', DefaultIconImageSize);
@@ -93,6 +106,9 @@ export const SoulstainTokenIcon_DefaultSize = () => createImgComponentFromTag('<
 export const ManawaveRoundTokenIcon_DefaultSize = () => createImgComponentFromTag('<::manawave-round-token::>', DefaultIconImageSize);
 export const ManaLevelTokenIcon_DefaultSize = () => createImgComponentFromTag('<::manalith-token::>', DefaultIconImageSize);
 
+export const StockpileIcon_DefaultSize = () => createImgComponentFromRawSvg(StockpileIconSvg, DefaultIconImageSize);
+export const ExpendedManaCounterIcon_DefaultSize = () => createImgComponentFromRawSvg(ExpendedManaCounterSvg, DefaultIconImageSize);
+export const TribeIcon_DefaultSize = () => createImgComponentFromRawSvg(TribeIconSvg, DefaultIconImageSize);
 
 
 export interface IMwGameIcon {

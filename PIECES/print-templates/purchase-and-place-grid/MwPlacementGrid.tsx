@@ -1,88 +1,91 @@
 /* eslint-disable react/jsx-pascal-case */
-import { createImgComponentFromTag } from '../../icons';
 import { PlayerSide } from '../../../../mw-v2-game-engine/gameboard/game-play-data';
 import { MwLogoPlayerSideIcon } from '../../mw-logo-player-side-icon';
-import { MwPlacementGridCardBorderFrameDiv, MwPlacementGridCardClanCounterItemDiv, MwPlacementGridCardClanPlacementColumnsRowDiv, MwPlacementGridCardClanPlacementContainerDiv, MwPlacementGridCardClanPlacementMarkersColumnDiv, MwPlacementGridCardClanPlacementRowDiv } from './purchase-and-place-grid-styles';
+import { MwPlacementGridCardBorderFrameDiv, MwPlacementGridCardClanPlacementContainerDiv, MwPlacementGridCardPlacementRowDiv } from './purchase-and-place-grid-styles';
 import { MwPlacementGridCardDiv } from './purchase-and-place-grid-styles';
 import { ClanPlacementCard } from './components/clan-placements-card';
-import { TribePlacementsCard } from './components/tribe-placements-card';
+import { TribeToClanMarkerPlacementsCard } from './components/tribe-to-clan-marker-placements-card';
+import { TribeManaConjurationCard } from './components/tribe-mana-conjuration-card';
 // import './MwPlacementGrid.css';
 
 
-const PlacementIconSize = 20;
+// const PlacementIconSize = 20;
 
-const ManaCounterIcon_Placement = () => createImgComponentFromTag('<::mana-counter::>', PlacementIconSize);
-const AttackCounterIcon_Placement = () => createImgComponentFromTag('<::attack-counter::>', PlacementIconSize);
-const ShieldCounterIcon_Placement = () => createImgComponentFromTag('<::shield-counter::>', PlacementIconSize);
-const PopulationIncreaseCounterIcon_Placement = () => createImgComponentFromTag('<::population-increase-counter::>', PlacementIconSize);
-const ManaLevelTokenIcon_Placement = () => createImgComponentFromTag('<::manalith-token::>', PlacementIconSize);
+// const ManaCounterIcon_Placement = () => createImgComponentFromTag('<::mana-counter::>', PlacementIconSize);
+// const AttackCounterIcon_Placement = () => createImgComponentFromTag('<::attack-counter::>', PlacementIconSize);
+// const ShieldCounterIcon_Placement = () => createImgComponentFromTag('<::shield-counter::>', PlacementIconSize);
+// const PopulationIncreaseCounterIcon_Placement = () => createImgComponentFromTag('<::population-increase-counter::>', PlacementIconSize);
+// const ManaLevelTokenIcon_Placement = () => createImgComponentFromTag('<::manalith-token::>', PlacementIconSize);
 
 
 export interface IMwPlacementGrid {
   readonly playerSide: PlayerSide
+  clanName1: string
+  clanName2: string
+  clanName3: string
 }
 
 
-const ClanPlacementColumn = (_props: {
-  // title: string
-}) => {
-  return (
-    <MwPlacementGridCardClanPlacementColumnsRowDiv>
+// const ClanPlacementColumn = (_props: {
+//   // title: string
+// }) => {
+//   return (
+//     <MwPlacementGridCardClanPlacementColumnsRowDiv>
 
-      <MwPlacementGridCardClanPlacementMarkersColumnDiv>        
-        <MwPlacementGridCardClanCounterItemDiv>
-          <AttackCounterIcon_Placement />
-        </MwPlacementGridCardClanCounterItemDiv>
-        <MwPlacementGridCardClanCounterItemDiv>
-          <ShieldCounterIcon_Placement />
-        </MwPlacementGridCardClanCounterItemDiv>
-        <MwPlacementGridCardClanCounterItemDiv>
-          <PopulationIncreaseCounterIcon_Placement />
-        </MwPlacementGridCardClanCounterItemDiv>
-        {/* <div className="mw-placement-grid-clan-counter-item">
-          <ManaCounterIcon_Placement />
-        </div> */}
-        <MwPlacementGridCardClanCounterItemDiv>
-          <ManaLevelTokenIcon_Placement />
-        </MwPlacementGridCardClanCounterItemDiv>
-        <div>MW</div>
-      </MwPlacementGridCardClanPlacementMarkersColumnDiv>
+//       <MwPlacementGridCardClanPlacementMarkersColumnDiv>        
+//         <MwPlacementGridCardClanCounterItemDiv>
+//           <AttackCounterIcon_Placement />
+//         </MwPlacementGridCardClanCounterItemDiv>
+//         <MwPlacementGridCardClanCounterItemDiv>
+//           <ShieldCounterIcon_Placement />
+//         </MwPlacementGridCardClanCounterItemDiv>
+//         <MwPlacementGridCardClanCounterItemDiv>
+//           <PopulationIncreaseCounterIcon_Placement />
+//         </MwPlacementGridCardClanCounterItemDiv>
+//         {/* <div className="mw-placement-grid-clan-counter-item">
+//           <ManaCounterIcon_Placement />
+//         </div> */}
+//         <MwPlacementGridCardClanCounterItemDiv>
+//           <ManaLevelTokenIcon_Placement />
+//         </MwPlacementGridCardClanCounterItemDiv>
+//         <div>MW</div>
+//       </MwPlacementGridCardClanPlacementMarkersColumnDiv>
 
-      <MwPlacementGridCardClanPlacementMarkersColumnDiv>
-        <MwPlacementGridCardClanCounterItemDiv>
-          <AttackCounterIcon_Placement />
-        </MwPlacementGridCardClanCounterItemDiv>
-        <MwPlacementGridCardClanCounterItemDiv>
-          <ShieldCounterIcon_Placement />
-        </MwPlacementGridCardClanCounterItemDiv>
-        <MwPlacementGridCardClanCounterItemDiv>
-          <PopulationIncreaseCounterIcon_Placement />
-        </MwPlacementGridCardClanCounterItemDiv>
-        <MwPlacementGridCardClanCounterItemDiv>
-          <ManaLevelTokenIcon_Placement />
-        </MwPlacementGridCardClanCounterItemDiv>
-        <div>Tribe</div>
-      </MwPlacementGridCardClanPlacementMarkersColumnDiv>
+//       <MwPlacementGridCardClanPlacementMarkersColumnDiv>
+//         <MwPlacementGridCardClanCounterItemDiv>
+//           <AttackCounterIcon_Placement />
+//         </MwPlacementGridCardClanCounterItemDiv>
+//         <MwPlacementGridCardClanCounterItemDiv>
+//           <ShieldCounterIcon_Placement />
+//         </MwPlacementGridCardClanCounterItemDiv>
+//         <MwPlacementGridCardClanCounterItemDiv>
+//           <PopulationIncreaseCounterIcon_Placement />
+//         </MwPlacementGridCardClanCounterItemDiv>
+//         <MwPlacementGridCardClanCounterItemDiv>
+//           <ManaLevelTokenIcon_Placement />
+//         </MwPlacementGridCardClanCounterItemDiv>
+//         <div>Tribe</div>
+//       </MwPlacementGridCardClanPlacementMarkersColumnDiv>
 
-      <MwPlacementGridCardClanPlacementMarkersColumnDiv>
-        <MwPlacementGridCardClanCounterItemDiv>
-          <AttackCounterIcon_Placement />
-        </MwPlacementGridCardClanCounterItemDiv>
-        <MwPlacementGridCardClanCounterItemDiv>
-          <ShieldCounterIcon_Placement />
-        </MwPlacementGridCardClanCounterItemDiv>
-        <MwPlacementGridCardClanCounterItemDiv>
-          <PopulationIncreaseCounterIcon_Placement />
-        </MwPlacementGridCardClanCounterItemDiv>
-        <MwPlacementGridCardClanCounterItemDiv>
-          <ManaLevelTokenIcon_Placement />
-        </MwPlacementGridCardClanCounterItemDiv>
-        <div>Purch.</div>
-      </MwPlacementGridCardClanPlacementMarkersColumnDiv>
+//       <MwPlacementGridCardClanPlacementMarkersColumnDiv>
+//         <MwPlacementGridCardClanCounterItemDiv>
+//           <AttackCounterIcon_Placement />
+//         </MwPlacementGridCardClanCounterItemDiv>
+//         <MwPlacementGridCardClanCounterItemDiv>
+//           <ShieldCounterIcon_Placement />
+//         </MwPlacementGridCardClanCounterItemDiv>
+//         <MwPlacementGridCardClanCounterItemDiv>
+//           <PopulationIncreaseCounterIcon_Placement />
+//         </MwPlacementGridCardClanCounterItemDiv>
+//         <MwPlacementGridCardClanCounterItemDiv>
+//           <ManaLevelTokenIcon_Placement />
+//         </MwPlacementGridCardClanCounterItemDiv>
+//         <div>Purch.</div>
+//       </MwPlacementGridCardClanPlacementMarkersColumnDiv>
 
-    </MwPlacementGridCardClanPlacementColumnsRowDiv>
-  )
-}
+//     </MwPlacementGridCardClanPlacementColumnsRowDiv>
+//   )
+// }
 
 export const MwPlacementGrid = (props: IMwPlacementGrid) => {
 
@@ -92,6 +95,7 @@ export const MwPlacementGrid = (props: IMwPlacementGrid) => {
     ['Clan @ Leyline 3', 'Clan @ Leyline 2', 'Clan @ Leyline 1']
 
   return (
+    <div style={{ overflowX: 'auto', display: 'flex' }}>
     <MwPlacementGridCardDiv>
       <MwPlacementGridCardBorderFrameDiv>
 
@@ -104,7 +108,7 @@ export const MwPlacementGrid = (props: IMwPlacementGrid) => {
             <div style={{width: 10}} />
             Player Marker Placements ({props.playerSide})
           </div>
-          <MwPlacementGridCardClanPlacementRowDiv>
+          <MwPlacementGridCardPlacementRowDiv>
             {/* <MwPlacementGridCardClanPlacementColumnDiv>
               {columnTitles[0]}
               <ClanPlacementColumn />
@@ -118,14 +122,17 @@ export const MwPlacementGrid = (props: IMwPlacementGrid) => {
               <ClanPlacementColumn />
             </MwPlacementGridCardClanPlacementColumnDiv> */}
 
-            <ClanPlacementCard columnTitle={columnTitles[0]} />
-            <ClanPlacementCard columnTitle={columnTitles[1]} />
-            <ClanPlacementCard columnTitle={columnTitles[2]} />
+            <TribeManaConjurationCard />
+            <TribeToClanMarkerPlacementsCard />
 
-          </MwPlacementGridCardClanPlacementRowDiv>
+            <ClanPlacementCard columnTitle={columnTitles[0]} clanName={props.clanName1} />
+            <ClanPlacementCard columnTitle={columnTitles[1]} clanName={props.clanName2} />
+            <ClanPlacementCard columnTitle={columnTitles[2]} clanName={props.clanName3} />
+
+          </MwPlacementGridCardPlacementRowDiv>
         </MwPlacementGridCardClanPlacementContainerDiv>
 
-        <TribePlacementsCard />
+        {/* <TribePlacementsCard /> */}
 
         {/* <MwPlacementGridCardConversionGridRowDiv>
           <MwPlacementGridCardConversionGridRowItemDiv>
@@ -159,5 +166,6 @@ export const MwPlacementGrid = (props: IMwPlacementGrid) => {
 
       </MwPlacementGridCardBorderFrameDiv>
     </MwPlacementGridCardDiv>
+    </div>
   );
 };

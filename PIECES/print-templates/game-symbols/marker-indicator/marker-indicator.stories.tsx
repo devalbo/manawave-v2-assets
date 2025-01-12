@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { MwMarkerView } from '../../../tally-marker-views/marker-view';
-import { SoulstainTokenIcon_MarkerIcon } from '@mw-assets/PIECES/tally-marker-views/marker-icon';
+import { MwMarkerIndicator } from './marker-indicator';
+import { createImgComponentFromTag } from '@mw-assets/PIECES/icons';
 
 
-const meta: Meta<typeof MwMarkerView> = {
+const meta: Meta<typeof MwMarkerIndicator> = {
   title: 'Game Icons/Raw Marker Indicator',
-  component: MwMarkerView,
+  component: MwMarkerIndicator,
   parameters: {
     layout: 'centered',
   },
@@ -13,13 +13,15 @@ const meta: Meta<typeof MwMarkerView> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof MwMarkerView>;
+type Story = StoryObj<typeof MwMarkerIndicator>;
 
 
 export const Default: Story = {
   args: {
     quantity: 1,
-    mode: 'show-stack',
-    icon: <SoulstainTokenIcon_MarkerIcon />,
+    markerType: '<::soulstain-token::>',
+    markerSize: 44,
+    // $backgroundColorHexCode: '#0000ff',
+    // $textColorHexCode: '#ffffff',
   },
 };

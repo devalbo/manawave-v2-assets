@@ -14,13 +14,13 @@ export const MarkerConjurationArea = (props: IMarkerConjurationAreaProps) => {
 
   return (
     <MarkerConjurationAreaDiv>
-      <MarkerConjurationIcon
-        {...props}
-      />
       <ManaCounter_MarkerView
         mode='show-stack'
         quantity={props.numManaSpent}
         $hideLabel={true}
+      />
+      <MarkerConjurationIcon
+        {...props}
       />
     </MarkerConjurationAreaDiv>
   )

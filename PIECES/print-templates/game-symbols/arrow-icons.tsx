@@ -7,3 +7,7 @@ export const RightArrowDataUrl = `data:image/svg+xml;charset=utf-8,${encodedRigh
 export const RightArrowIcon = ({size, style}: {size: number, style?: React.CSSProperties}) => (
   <img src={RightArrowDataUrl} alt="Right Arrow" style={{ width: size, height: size, ...style }} />
 );
+
+export const UpArrowIcon = ({size, style}: {size: number, style?: React.CSSProperties}) => (
+  <img src={RightArrowDataUrl} alt="Right Arrow" style={{ width: size, height: size, ...style, transform: 'rotate(-90deg)' }} />
+);

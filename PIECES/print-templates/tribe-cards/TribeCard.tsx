@@ -116,7 +116,7 @@ export const MwTribeCard = (props: IMwTribeCardData) => {
           <MwTribeConversionRatesTableContainerDiv>
             <MwConversionRatesTable
               conversionRatios={props.conversionRatios}
-              />
+            />
           </MwTribeConversionRatesTableContainerDiv>
 
           {/* <div className="mw-tribe-stockpile-table-container">

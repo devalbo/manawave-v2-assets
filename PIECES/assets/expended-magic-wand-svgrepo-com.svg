@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   fill="#000000"
+   height="800px"
+   width="800px"
+   version="1.1"
+   id="Layer_1"
+   viewBox="0 0 512 512"
+   xml:space="preserve"
+   sodipodi:docname="expended-magic-wand-svgrepo-com.svg"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs2" /><sodipodi:namedview
+   id="namedview2"
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1.0"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   inkscape:zoom="1.47625"
+   inkscape:cx="376.96867"
+   inkscape:cy="297.03641"
+   inkscape:window-width="3440"
+   inkscape:window-height="1377"
+   inkscape:window-x="-8"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="g2" />&#10;<g
+   id="g2">&#10;	<path
+   sodipodi:type="star"
+   style="vector-effect:non-scaling-stroke;fill:#1e1e1e;fill-opacity:1;stroke-width:0.64;stroke-linejoin:bevel;-inkscape-stroke:hairline;paint-order:markers stroke fill"
+   id="path2"
+   inkscape:flatsided="false"
+   sodipodi:sides="5"
+   sodipodi:cx="305.20575"
+   sodipodi:cy="41.618965"
+   sodipodi:r1="92.77562"
+   sodipodi:r2="45.638954"
+   sodipodi:arg1="1.5707964"
+   sodipodi:arg2="2.2648289"
+   inkscape:rounded="0"
+   inkscape:randomized="0"
+   d="m 305.20574,134.39458 -29.19259,-57.694189 -59.04226,-6.412189 45.84943,-45.592289 -12.14671,-58.134005 57.5291,29.5166097 51.53519,-29.5166017 -10.2945,63.834557 43.9972,39.891742 -63.89144,9.935316 z"
+   transform="matrix(1.2594705,0.18297484,-0.19056302,1.3117022,-11.893172,36.370037)" /><g
+   id="g1">&#10;		<path
+   d="M508.053,199.349l-50.258-67.348l26.988-79.582c2.429-7.164,0.58-15.086-4.768-20.435    c-5.349-5.349-13.271-7.197-20.435-4.768l-79.582,26.988L312.65,3.947c-6.061-4.524-14.168-5.215-20.908-1.781    c-6.74,3.434-10.946,10.398-10.849,17.961l1.074,84.026l-68.611,48.52c-6.177,4.368-9.336,11.863-8.153,19.335    c1.184,7.471,6.506,13.624,13.73,15.868l58.806,18.279L5.822,478.073c-7.761,7.761-7.761,20.344,0,28.105    C9.702,510.059,14.788,512,19.873,512c5.085,0,10.172-1.94,14.052-5.822l271.917-271.917l18.279,58.806    c2.244,7.223,8.397,12.545,15.868,13.73c1.04,0.164,2.08,0.245,3.112,0.245c6.385,0,12.463-3.083,16.223-8.398l48.52-68.611    l84.026,1.074c7.585,0.078,14.527-4.11,17.962-10.849C513.267,213.519,512.578,205.413,508.053,199.349z M397.907,190.156    c-6.586-0.125-12.704,3.055-16.48,8.396l-31.302,44.263l-16.092-51.77c-1.941-6.245-6.832-11.137-13.078-13.078l-51.77-16.092    l44.263-31.302c5.341-3.777,8.481-9.939,8.396-16.48l-0.693-54.209L364.6,92.307c5.241,3.911,12.072,4.993,18.269,2.894    l51.341-17.41l-17.41,51.341c-2.1,6.195-1.019,13.026,2.894,18.269l32.424,43.448L397.907,190.156z"
+   id="path1" />&#10;	</g>&#10;</g>&#10;</svg>

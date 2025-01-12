@@ -220,6 +220,62 @@ export const ManaCounterSvg = `
 `
 
 
+export const ExpendedManaCounterSvg = `
+<svg
+   fill="#000000"
+   height="800px"
+   width="800px"
+   version="1.1"
+   id="Layer_1"
+   viewBox="0 0 512 512"
+   xml:space="preserve"
+   sodipodi:docname="expended-magic-wand-svgrepo-com.svg"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs2" /><sodipodi:namedview
+   id="namedview2"
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1.0"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   inkscape:zoom="1.47625"
+   inkscape:cx="376.96867"
+   inkscape:cy="297.03641"
+   inkscape:window-width="3440"
+   inkscape:window-height="1377"
+   inkscape:window-x="-8"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="g2" />&#10;<g
+   id="g2">&#10;	<path
+   sodipodi:type="star"
+   style="vector-effect:non-scaling-stroke;fill:#1e1e1e;fill-opacity:1;stroke-width:0.64;stroke-linejoin:bevel;-inkscape-stroke:hairline;paint-order:markers stroke fill"
+   id="path2"
+   inkscape:flatsided="false"
+   sodipodi:sides="5"
+   sodipodi:cx="305.20575"
+   sodipodi:cy="41.618965"
+   sodipodi:r1="92.77562"
+   sodipodi:r2="45.638954"
+   sodipodi:arg1="1.5707964"
+   sodipodi:arg2="2.2648289"
+   inkscape:rounded="0"
+   inkscape:randomized="0"
+   d="m 305.20574,134.39458 -29.19259,-57.694189 -59.04226,-6.412189 45.84943,-45.592289 -12.14671,-58.134005 57.5291,29.5166097 51.53519,-29.5166017 -10.2945,63.834557 43.9972,39.891742 -63.89144,9.935316 z"
+   transform="matrix(1.2594705,0.18297484,-0.19056302,1.3117022,-11.893172,36.370037)" />
+   <g
+   id="g1">&#10;		<path
+   d="M508.053,199.349l-50.258-67.348l26.988-79.582c2.429-7.164,0.58-15.086-4.768-20.435    c-5.349-5.349-13.271-7.197-20.435-4.768l-79.582,26.988L312.65,3.947c-6.061-4.524-14.168-5.215-20.908-1.781    c-6.74,3.434-10.946,10.398-10.849,17.961l1.074,84.026l-68.611,48.52c-6.177,4.368-9.336,11.863-8.153,19.335    c1.184,7.471,6.506,13.624,13.73,15.868l58.806,18.279L5.822,478.073c-7.761,7.761-7.761,20.344,0,28.105    C9.702,510.059,14.788,512,19.873,512c5.085,0,10.172-1.94,14.052-5.822l271.917-271.917l18.279,58.806    c2.244,7.223,8.397,12.545,15.868,13.73c1.04,0.164,2.08,0.245,3.112,0.245c6.385,0,12.463-3.083,16.223-8.398l48.52-68.611    l84.026,1.074c7.585,0.078,14.527-4.11,17.962-10.849C513.267,213.519,512.578,205.413,508.053,199.349z M397.907,190.156    c-6.586-0.125-12.704,3.055-16.48,8.396l-31.302,44.263l-16.092-51.77c-1.941-6.245-6.832-11.137-13.078-13.078l-51.77-16.092    l44.263-31.302c5.341-3.777,8.481-9.939,8.396-16.48l-0.693-54.209L364.6,92.307c5.241,3.911,12.072,4.993,18.269,2.894    l51.341-17.41l-17.41,51.341c-2.1,6.195-1.019,13.026,2.894,18.269l32.424,43.448L397.907,190.156z"
+   id="path1" />&#10;	</g>&#10;</g>&#10;
+</svg>
+`;
+
 
 export const ManaLevelTokenSvg = `
 <svg width="800px" height="800px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--emojione-monotone" preserveAspectRatio="xMidYMid meet"><path d="M54.5 9.454L41 4H23L9.5 9.454L2 20.057L32 60l30-39.943l-7.5-10.603zM5.865 18.057l4.929-6.968L20.05 7.35l-2.82 10.708H5.865zM32 57L18.77 20.057h25.71L32 57zM43.756 7.271l9.451 3.818l4.928 6.968H46.094L43.756 7.271z" fill="#000000"></path></svg>
@@ -239,5 +295,79 @@ export const ManalithClaimCounterSvg = `
         stroke-width="4"
         stroke-linejoin="round"
         stroke-linecap="round"/>
+</svg>
+`
+
+
+export const StockpileIconSvg = `
+<svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="12" cy="6" rx="7" ry="3" stroke="#222222"/>
+<path d="M19 18C19 18.394 18.8189 18.7841 18.4672 19.1481C18.1154 19.512 17.5998 19.8427 16.9497 20.1213C16.2997 20.3999 15.5281 20.6209 14.6788 20.7716C13.8295 20.9224 12.9193 21 12 21C11.0807 21 10.1705 20.9224 9.32122 20.7716C8.47194 20.6209 7.70026 20.3999 7.05025 20.1213C6.40024 19.8427 5.88463 19.512 5.53284 19.1481C5.18106 18.7841 5 18.394 5 18" stroke="#222222"/>
+<path d="M19 6V18" stroke="#222222"/>
+<path d="M5 6V18" stroke="#222222"/>
+</svg>
+`
+
+
+export const TribeIconSvg = `
+<svg
+   width="100"
+   height="100"
+   viewBox="0 0 26.458333 26.458333"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="tribe-icon.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="4.2083894"
+     inkscape:cx="61.543734"
+     inkscape:cy="83.048398"
+     inkscape:window-width="1350"
+     inkscape:window-height="1237"
+     inkscape:window-x="2041"
+     inkscape:window-y="158"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="vector-effect:non-scaling-stroke;fill:#1e1e1e;stroke-width:0.264583;stroke-linejoin:bevel;-inkscape-stroke:hairline;paint-order:markers stroke fill"
+       id="rect1"
+       width="10.583333"
+       height="10.583333"
+       x="3.1789142e-07"
+       y="11.159717" />
+    <rect
+       style="vector-effect:non-scaling-stroke;fill:#1e1e1e;stroke-width:0.264583;stroke-linejoin:bevel;-inkscape-stroke:hairline;paint-order:markers stroke fill"
+       id="rect1-8"
+       width="10.583333"
+       height="10.583333"
+       x="15.875"
+       y="11.159717" />
+    <rect
+       style="vector-effect:non-scaling-stroke;fill:#1e1e1e;stroke-width:0.264583;stroke-linejoin:bevel;-inkscape-stroke:hairline;paint-order:markers stroke fill"
+       id="rect1-9"
+       width="10.583333"
+       height="10.583333"
+       x="7.9375"
+       y="3.4108276" />
+  </g>
 </svg>
 `

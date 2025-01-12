@@ -2,7 +2,7 @@ import _ from "lodash";
 import { MwMarkerType } from "../../../../mw-v2-protobufs/protofiles-out/manawave-types";
 import { createImgComponentFromMwMarkerType, createImgComponentFromTag } from "../../../../PIECES/icons";
 import { MarkerConjurationIconDiv } from "./marker-conjuration-icon-styles";
-import { RightArrowIcon } from "./arrow-icons";
+import { RightArrowIcon } from "../arrow-icons";
 
 
 export interface IMarkerConjurationIconProps {
@@ -11,7 +11,7 @@ export interface IMarkerConjurationIconProps {
 }
 
 
-const SMALL_MARKER_ICON_SIZE = 12;
+const SMALL_MARKER_ICON_SIZE = 10;
 const SmallManaCounterIcon_MarkerIcon = () => createImgComponentFromTag('<::mana-counter::>', SMALL_MARKER_ICON_SIZE);
 
 
