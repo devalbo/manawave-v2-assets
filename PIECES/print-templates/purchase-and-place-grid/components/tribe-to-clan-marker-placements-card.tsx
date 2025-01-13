@@ -1,5 +1,15 @@
 import { createImgComponentFromRawSvg } from "../../../icons";
-import { FromTribeToClanIconDiv, TribeToClanAllocationsAreaDiv, TribeToClanAllocationSectionDiv, TribeToClanAllocationSectionHeaderDiv, TribeToClanAllocationSectionMarkerItemDiv, TribeToClanAllocationSectionMarkersDiv, TribeToClanMarkerPlacementsCardBorderFrameDiv, TribeToClanMarkerPlacementsCardDiv, TribeToClanMarkerPlacementsCardHeaderDiv } from "./tribe-to-clan-marker-placements-card-styles";
+import {
+  FromTribeToClanIconDiv,
+  TribeToClanAllocationsAreaDiv,
+  TribeToClanAllocationSectionDiv,
+  TribeToClanAllocationSectionHeaderDiv,
+  TribeToClanAllocationSectionMarkerItemDiv,
+  TribeToClanAllocationSectionMarkersDiv,
+  TribeToClanMarkerPlacementsCardBorderFrameDiv,
+  TribeToClanMarkerPlacementsCardDiv,
+  TribeToClanMarkerPlacementsCardHeaderDiv,
+} from "./tribe-to-clan-marker-placements-card-styles";
 import { LeylineDistanceFromSource, MwMarkerType } from "../../../../mw-v2-protobufs/protofiles-out/manawave-types";
 import { MwLogoPlayerSideIcon } from "../../../mw-logo-player-side-icon";
 import { TribeIconSvg } from "@mw-assets/PIECES/assets/TokenSvgIcons";
@@ -7,12 +17,6 @@ import { UpArrowIcon } from "../../game-symbols/arrow-icons";
 import { AttackCounter_MarkerIndicator, PopulationIncreaseCounter_MarkerIndicator, ShieldCounter_MarkerIndicator } from "../../game-symbols/marker-indicator/marker-indicator";
 import { PlayerSide } from "@mw-game-engine/gameboard/game-play-data";
 
-
-// const PlacementIconSize = 20;
-
-// const StockpileIcon = () => createImgComponentFromRawSvg(StockpileIconSvg, PlacementIconSize);
-// const ConjurationIcon = () => createImgComponentFromRawSvg(ExpendedManaCounterSvg, PlacementIconSize);
-// const ManaCounterIcon_Key = () => createImgComponentFromTag('<::mana-counter::>', 12);
 
 const TribeIcon = () => createImgComponentFromRawSvg(TribeIconSvg, 16);
 
@@ -32,12 +36,6 @@ export interface ITribeToClanMarkerPlacementsCardProps {
   interactions: ITribeToClanMarkerPlacementsCardInteractions | null
 }
 
-// const ManaCounterIcon_Placement = () => createImgComponentFromTag('<::mana-counter::>', PlacementIconSize);
-// const AttackCounterIcon_Placement = () => createImgComponentFromTag('<::attack-counter::>', PlacementIconSize);
-// const ShieldCounterIcon_Placement = () => createImgComponentFromTag('<::shield-counter::>', PlacementIconSize);
-// const PopulationIncreaseCounterIcon_Placement = () => createImgComponentFromTag('<::population-increase-counter::>', PlacementIconSize);
-// const ManaLevelTokenIcon_Placement = () => createImgComponentFromTag('<::manalith-token::>', PlacementIconSize);
-
 
 const FromTribeToClanIcon = () => {
   return (
@@ -46,8 +44,6 @@ const FromTribeToClanIcon = () => {
     </FromTribeToClanIconDiv>
   )
 }
-
-
 
 
 export const TribeToClanMarkerPlacementsCard = (props: ITribeToClanMarkerPlacementsCardProps) => {
@@ -74,12 +70,6 @@ export const TribeToClanMarkerPlacementsCard = (props: ITribeToClanMarkerPlaceme
               props.interactions?.onAttackCounterPlaced(thisLeyline);
             }}
           >
-            {/* <AttackCounter_MarkerView
-              mode='show-stack'
-              quantity={6}
-              $hideLabel={true}
-              // isVertical={true}
-            /> */}
             <AttackCounter_MarkerIndicator
               quantity={thisLeyineAttackCounterCount}
               $onZeroAmountBehavior='dim'
@@ -90,12 +80,6 @@ export const TribeToClanMarkerPlacementsCard = (props: ITribeToClanMarkerPlaceme
               props.interactions?.onShieldCounterPlaced(thisLeyline);
             }}
           >
-            {/* <ShieldCounter_MarkerView
-              mode='show-stack'
-              quantity={6}
-              $hideLabel={true}
-              // isVertical={true}
-            /> */}
             <ShieldCounter_MarkerIndicator
               quantity={thisLeyineShieldCounterCount}
               $onZeroAmountBehavior='dim'
@@ -107,12 +91,6 @@ export const TribeToClanMarkerPlacementsCard = (props: ITribeToClanMarkerPlaceme
               props.interactions?.onPopulationIncreaseCounterPlaced(thisLeyline);
             }}
           >
-            {/* <PopulationIncreaseCounter_MarkerView
-              mode='show-stack'
-              quantity={6}
-              $hideLabel={true}
-              // isVertical={true}
-            /> */}
             <PopulationIncreaseCounter_MarkerIndicator
               quantity={thisLeyinePopulationIncreaseCounterCount}
               $onZeroAmountBehavior='dim'

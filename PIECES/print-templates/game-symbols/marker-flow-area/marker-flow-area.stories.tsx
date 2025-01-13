@@ -1,8 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { MwMarkerType } from '@mw-assets/mw-v2-protobufs/protofiles-out/manawave-types';
 import { MarkerFlowArea } from './marker-flow-area';
-import { ManaCounter_MarkerView } from '@mw-assets/PIECES/tally-marker-views/marker-view';
-import { AttackCounter_MarkerView } from '@mw-assets/PIECES/tally-marker-views/marker-view';
 
 
 const meta: Meta<typeof MarkerFlowArea> = {

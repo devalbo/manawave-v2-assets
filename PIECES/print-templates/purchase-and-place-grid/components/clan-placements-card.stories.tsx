@@ -17,5 +17,10 @@ type Story = StoryObj<typeof ClanPlacementCard>;
 export const DefaultClan: Story = {
   args: {
     clanName: 'My Best Clan',
+    numStockpileAttackCounters: 1,
+    numStockpileShieldCounters: 2,
+    numStockpilePopulationIncreaseCounters: 3,
+    numStockpileManaCounters: 4,
+    numStockpileManalithTokens: 5,
   },
 };

@@ -11,7 +11,6 @@ import {
   ManaLevelTokenDataUrl,
   ManalithClaimCounterDataUrl,
   SlaughterCounterDataUrl,
-  StockpileIconDataUrl,
  } from "./token-counter-icons";
 import { MwMarkerType } from "../mw-v2-protobufs/protofiles-out/manawave-types";
 import { ExpendedManaCounterSvg, StockpileIconSvg, TribeIconSvg } from "./assets/TokenSvgIcons";

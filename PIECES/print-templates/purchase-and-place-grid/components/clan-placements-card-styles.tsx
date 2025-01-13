@@ -31,6 +31,18 @@ export const MwClanPlacementsCardBorderFrameDiv = styled.div.withConfig({
 `;
 
 
+
+export const MwClanPlacementsCardHeaderDiv = styled.div.withConfig({
+  componentId: 'MwClanPlacementsCardHeaderDiv'
+})`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 6px;
+`;
+
+
 export const MwClanPlacementsCardGridDiv = styled.div.withConfig({
   componentId: 'MwClanPlacementsCardGridDiv'
 })`
@@ -38,7 +50,7 @@ export const MwClanPlacementsCardGridDiv = styled.div.withConfig({
   grid-template-columns: 1fr 1fr 1fr;
   flex-direction: row;
   /* flex-grow: 1; */
-  width: 100%;
+  /* width: 100%; */
 `;
 
 
@@ -48,8 +60,8 @@ export const MwClanPlacementsCardGridItemDiv = styled.div.withConfig({
   display: flex;
   flex-direction: row;
   flex-grow: 1;
-  margin: 4px;
-  height: 0.75in;
+  /* margin: 4px; */
+  height: 0.7in;
   width: 1in;
   margin-top: 0px;
   align-items: center;
@@ -57,6 +69,31 @@ export const MwClanPlacementsCardGridItemDiv = styled.div.withConfig({
   justify-content: space-around;
   align-content: space-around;
 `;
+
+
+export const MwClanPlacementsCardInteractiveGridItemDiv = styled(MwClanPlacementsCardGridItemDiv).withConfig({
+  componentId: 'MwClanPlacementsCardInteractiveGridItemDiv'
+})`
+  cursor: pointer;
+  
+  /* Add hover effect */
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: scale(0.95);
+    border: 1px solid gray;
+      /* translate(-4px, -4px); Added scale */
+  }
+  
+  /* Add active/click effect */
+  &:active {
+    transform: scale(0.9);
+      /* translate(-2px, -2px); Added scale */
+  }
+
+  /* Updated transition to include scale */
+  transition: all 0.2s ease;
+`;
+
 
 
 export const ClanManaManagementAreaDiv = styled.div.withConfig({

@@ -34,7 +34,6 @@ export interface ITribeManaConjurationCardProps {
 
 export const TribeManaConjurationCard = (props: ITribeManaConjurationCardProps) => {
   const { playerSide } = props;
-
   
   return (
     <TribeManaConjurationCardDiv>

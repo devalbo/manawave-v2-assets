@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { MwMarkerIndicator } from './marker-indicator';
-import { createImgComponentFromTag } from '@mw-assets/PIECES/icons';
 
 
 const meta: Meta<typeof MwMarkerIndicator> = {
@@ -20,7 +19,7 @@ export const Default: Story = {
   args: {
     quantity: 1,
     markerType: '<::soulstain-token::>',
-    markerSize: 44,
+    // markerSize: 44,
     // $backgroundColorHexCode: '#0000ff',
     // $textColorHexCode: '#ffffff',
   },
