@@ -7,8 +7,8 @@ export const TribeToClanMarkerPlacementsCardDiv = styled.div.withConfig({
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 2.5in;
-  height: 2.5in;
+  width: 3.5in;
+  height: 3.5in;
   border: 1px solid #000;
   border-radius: 10px;
   font-family: 'Beleren', 'Garamond', serif;
@@ -122,11 +122,30 @@ export const TribeToClanAllocationSectionMarkerItemDiv = styled.div.withConfig({
   display: flex;
   flex-direction: column;
   border: 1px solid #000;
-  height: 0.5in;
+  height: 0.75in;
+  width: 1in;
   justify-content: space-around;
   align-items: center;
   font-size: 12px;
-  /* transform: rotate(90deg); */
+  
+  cursor: pointer;
+  
+  /* Add hover effect */
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: scale(0.95);
+    border: 1px solid gray;
+      /* translate(-4px, -4px); Added scale */
+  }
+  
+  /* Add active/click effect */
+  &:active {
+    transform: scale(0.9);
+      /* translate(-2px, -2px); Added scale */
+  }
+
+  /* Updated transition to include scale */
+  transition: all 0.2s ease;
 `;
 
 export const MwTribePlacementCardConversionGridRowItemDiv = styled.div.withConfig({

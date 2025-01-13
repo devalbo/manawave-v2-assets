@@ -2,9 +2,11 @@ import { MarkerFlowAreaDiv } from "./marker-flow-area-styles";
 import { MwMarkerType } from "@mw-assets/mw-v2-protobufs/protofiles-out/manawave-types";
 import { MarkerFlowIcon } from "../marker-flow-icon/marker-flow-icon";
 import { MarkerTypeView } from "@mw-assets/PIECES/tally-marker-views/marker-type-view";
+import { MarkerSourceIcon } from "../marker-source-icon/marker-source-icon";
+import { AttackCounter_MarkerIndicator } from "../marker-indicator/marker-indicator";
 
 
-export type MarkerFlowSource = 'from-manawave' | 'from-stockpile' | 'from-conjuration' | 'from-tribe';
+export type MarkerFlowSource = 'from-manawave' | 'from-stockpile' | 'from-conjuration' | 'from-tribe' | 'from-expended-mana';
 
 
 interface IMarkerFlowAreaProps {
@@ -33,6 +35,15 @@ export const MarkerFlowArea = (props: IMarkerFlowAreaProps) => {
 
   return (
     <MarkerFlowAreaDiv>
+      {/* <MarkerSourceIcon
+        source='from-stockpile'
+        markerManaCost={0}
+        markerToConjure={MwMarkerType.MwMarkerType_AttackCounter}
+      />
+      <AttackCounter_MarkerIndicator
+        quantity={0}
+        $onZeroAmountBehavior='show-stockpile-to-marker-icon'
+      /> */}
       <MarkerTypeView
         $markerType={props.sinkMarkerType}
         $hideLabel={true}

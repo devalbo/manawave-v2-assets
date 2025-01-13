@@ -44,6 +44,8 @@ export const mapTokenCounterTypeTagToMwMarkerType = (markerTag: TokenCounterType
     case '<::manalith-token::>': return MwMarkerType.MwMarkerType_ManalithToken; 
     case '<::mana-counter::>': return MwMarkerType.MwMarkerType_ManaCounter;
     case '<::population-token::>': return MwMarkerType.MwMarkerType_PopulationToken;
+    case '<::manawave-round-token::>': return MwMarkerType.MwMarkerType_ManawaveRoundToken;
+    case '<::soulstain-token::>': return MwMarkerType.MwMarkerType_SoulstainToken;
     default: return throwUnexpectedStateError(`Unknown marker type: ${markerTag}`);
   }
 }

@@ -73,36 +73,17 @@ export const TribeManaConjurationGridItemDiv = styled.div.withConfig({
   display: flex;
   flex-grow: 1;
   text-align: center;
-  /* height: 0.25in; */
-  /* border: 1px solid #000; */
   justify-content: center;
   align-items: center;
   border-radius: 5px;
   height: 0.66in;
 
   margin: 3px;
+`;
 
-  /* box-shadow: 
-    1px 1px 0 gray,
-    2px 2px 0 gray,
-    3px 3px 0 gray; */
-/* 
-  position: relative;
-  border: 2px solid gray;
-  transform: translate(-5px, -5px);
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    right: -5px;
-    bottom: -5px;
-    background: gray;
-    z-index: -1;
-  } */
-
-  /* Add cursor pointer */
+export const TribeManaConjurationInteractiveGridItemDiv = styled(TribeManaConjurationGridItemDiv).withConfig({
+  componentId: 'TribeManaConjurationInteractiveGridItemDiv'
+})`
   cursor: pointer;
   
   /* Add hover effect */

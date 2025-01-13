@@ -7,8 +7,8 @@ export const MwClanPlacementsCardDiv = styled.div.withConfig({
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 2.5in;
-  height: 2.5in;
+  width: 3.5in;
+  height: 3.5in;
   border: 1px solid #000;
   border-radius: 10px;
   font-family: 'Beleren', 'Garamond', serif;
@@ -46,9 +46,11 @@ export const MwClanPlacementsCardGridItemDiv = styled.div.withConfig({
   componentId: 'MwClanPlacementsCardGridItemDiv'
 })`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-grow: 1;
   margin: 4px;
+  height: 0.75in;
+  width: 1in;
   margin-top: 0px;
   align-items: center;
   border: 1px solid #000;

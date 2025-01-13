@@ -25,19 +25,6 @@ import {
   HEX_COLOR_CODE_SOULSTAIN_TOKEN_TEXT
 } from "../../../constants";
 import {
-  AttackCounterIcon_MarkerIcon,
-  ManaCounterIcon_MarkerIcon,
-  ManalithClaimCounterIcon_MarkerIcon,
-  ManalithTokenIcon_MarkerIcon,
-  ManawaveRoundTokenIcon_MarkerIcon,
-  PopulationIncreaseCounterIcon_MarkerIcon,
-  PopulationSacrificeCounterIcon_MarkerIcon,
-  PopulationSlaughterCounterIcon_MarkerIcon,
-  PopulationTokenIcon_MarkerIcon,
-  ShieldCounterIcon_MarkerIcon,
-  SoulstainTokenIcon_MarkerIcon
-} from "./marker-indicator-icon";
-import {
   MarkerIndicatorDiv,
   MarkerIndicatorIconDiv,
   TooltipContainerDiv,
@@ -45,9 +32,6 @@ import {
   TooltipWrapperDiv
 } from "./marker-indicator-styles";
 import { createImgComponentFromTag } from "@mw-assets/PIECES/icons";
-import { MarkerFlowIcon } from "../marker-flow-icon/marker-flow-icon";
-import { mapClanCardMarkerTypeToMwMarkerType, mapTokenCounterTypeTagToMwMarkerType } from "@mw-assets/PIECES/tally-marker-views/marker-utils";
-import { MarkerConjurationIcon } from "../marker-conjuration-icon/marker-conjuration-icon";
 
 
 export type MarkerIndicatorMode = 'show-stack' | 'add-to-stack' | 'remove-from-stack'
@@ -115,63 +99,63 @@ const MwMarkerIndicatorContent = (props: IInternalMarkerIndicatorProps) => {
   //   )
   // }
 
-  const icon = createImgComponentFromTag(props.markerType, props.markerSize);
+  const icon = createImgComponentFromTag(props.markerType, 30);
 
-  if (props.quantity === 0) {
-    switch (props.$onZeroAmountBehavior) {
-      case 'show-stockpile-to-marker-icon':
-        return (
-          <MarkerIndicatorDiv
-            {...props}
-            style={{ opacity }}
-          >
-            <MarkerFlowIcon
-              source='from-stockpile'
-              markerManaCost={1}
-              markerToConjure={mapTokenCounterTypeTagToMwMarkerType(props.markerType)}
-            />
-          </MarkerIndicatorDiv>
-        )
-      case 'show-expended-mana-to-marker-icon':
-        return (
-          <MarkerIndicatorDiv
-            {...props}
-            style={{ opacity }}
-          >
-            <MarkerFlowIcon
-              source='from-conjuration'
-              markerManaCost={1}
-              markerToConjure={mapTokenCounterTypeTagToMwMarkerType(props.markerType)}
-            />
-          </MarkerIndicatorDiv>
-        )
-      case 'show-tribe-to-clan-marker-stockpile-icon':
-        return (
-          <MarkerIndicatorDiv
-            {...props}
-            style={{ opacity }}
-          >
-            <MarkerFlowIcon
-              source='from-tribe'
-              markerManaCost={1}
-              markerToConjure={mapTokenCounterTypeTagToMwMarkerType(props.markerType)}
-            />
-          </MarkerIndicatorDiv>
-        )
-      case 'show-mana-conjuration-to-marker-icon':
-        return (
-          <MarkerIndicatorDiv
-            {...props}
-            style={{ opacity }}
-          >
-            <MarkerConjurationIcon
-              markerManaCost={2}
-              markerToConjure={mapTokenCounterTypeTagToMwMarkerType(props.markerType)}
-            />
-          </MarkerIndicatorDiv>
-        )
-    }
-  }
+  // if (props.quantity === 0) {
+  //   switch (props.$onZeroAmountBehavior) {
+  //     case 'show-stockpile-to-marker-icon':
+  //       return (
+  //         <MarkerIndicatorDiv
+  //           {...props}
+  //           style={{ opacity }}
+  //         >
+  //           <MarkerFlowIcon
+  //             source='from-stockpile'
+  //             markerManaCost={1}
+  //             markerToConjure={mapTokenCounterTypeTagToMwMarkerType(props.markerType)}
+  //           />
+  //         </MarkerIndicatorDiv>
+  //       )
+  //     case 'show-expended-mana-to-marker-icon':
+  //       return (
+  //         <MarkerIndicatorDiv
+  //           {...props}
+  //           style={{ opacity }}
+  //         >
+  //           <MarkerFlowIcon
+  //             source='from-conjuration'
+  //             markerManaCost={1}
+  //             markerToConjure={mapTokenCounterTypeTagToMwMarkerType(props.markerType)}
+  //           />
+  //         </MarkerIndicatorDiv>
+  //       )
+  //     case 'show-tribe-to-clan-marker-stockpile-icon':
+  //       return (
+  //         <MarkerIndicatorDiv
+  //           {...props}
+  //           style={{ opacity }}
+  //         >
+  //           <MarkerFlowIcon
+  //             source='from-tribe'
+  //             markerManaCost={1}
+  //             markerToConjure={mapTokenCounterTypeTagToMwMarkerType(props.markerType)}
+  //           />
+  //         </MarkerIndicatorDiv>
+  //       )
+  //     case 'show-mana-conjuration-to-marker-icon':
+  //       return (
+  //         <MarkerIndicatorDiv
+  //           {...props}
+  //           style={{ opacity }}
+  //         >
+  //           <MarkerConjurationIcon
+  //             markerManaCost={2}
+  //             markerToConjure={mapTokenCounterTypeTagToMwMarkerType(props.markerType)}
+  //           />
+  //         </MarkerIndicatorDiv>
+  //       )
+  //   }
+  // }
 
   return (    
     // <div style={{ opacity }}>
@@ -211,6 +195,10 @@ export const MwMarkerIndicator = (props: IInternalMarkerIndicatorProps) => {
   // if (!props.$tooltipText || props.$hideLabel) {
   //   return <MwMarkerIndicatorContent {...props} />;
   // }
+
+  if (!props.$tooltipText) {
+    return <MwMarkerIndicatorContent {...props} />;
+  }
 
   
   return (
@@ -279,7 +267,8 @@ export const ManalithClaimCounter_MarkerIndicator = (props: IMarkerIndicatorProp
   <MwMarkerIndicator
     {...props}
     // $label="Manalith Claims"
-    icon={<ManalithClaimCounterIcon_MarkerIcon />}
+    // icon={<ManalithClaimCounterIcon_MarkerIcon />}
+    markerType='<::manalith-claim-counter::>'
     $backgroundColorHexCode={HEX_COLOR_CODE_MANALITH_CLAIM_COUNTER}
     $textColorHexCode={HEX_COLOR_CODE_MANALITH_CLAIM_COUNTER_TEXT}
     />
@@ -290,7 +279,8 @@ export const ManaCounter_MarkerIndicator = (props: IMarkerIndicatorProps) => (
   <MwMarkerIndicator
     {...props}
     // $label="Mana"
-    icon={<ManaCounterIcon_MarkerIcon />}
+    // icon={<ManaCounterIcon_MarkerIcon />}
+    markerType='<::mana-counter::>'
     $backgroundColorHexCode={HEX_COLOR_CODE_MANA_COUNTER}
     $textColorHexCode={HEX_COLOR_CODE_MANA_COUNTER_TEXT}
     />
@@ -301,7 +291,8 @@ export const AttackCounter_MarkerIndicator = (props: IMarkerIndicatorProps) => (
   <MwMarkerIndicator
     {...props}
     // $label="Attack"
-    icon={<AttackCounterIcon_MarkerIcon />}
+    // icon={<AttackCounterIcon_MarkerIcon />}
+    markerType='<::attack-counter::>'
     $backgroundColorHexCode={HEX_COLOR_CODE_ATTACK_COUNTER}
     $textColorHexCode={HEX_COLOR_CODE_ATTACK_COUNTER_TEXT}
     />
@@ -312,7 +303,8 @@ export const ShieldCounter_MarkerIndicator = (props: IMarkerIndicatorProps) => (
   <MwMarkerIndicator
     {...props}
     // $label="Shield"
-    icon={<ShieldCounterIcon_MarkerIcon />}
+    // icon={<ShieldCounterIcon_MarkerIcon />}
+    markerType='<::shield-counter::>'
     $backgroundColorHexCode={HEX_COLOR_CODE_SHIELD_COUNTER}
     $textColorHexCode={HEX_COLOR_CODE_SHIELD_COUNTER_TEXT}
     />
@@ -323,7 +315,8 @@ export const PopulationSacrificeCounter_MarkerIndicator = (props: IMarkerIndicat
   <MwMarkerIndicator
     {...props}
     // $label="Population Sacrifice"
-    icon={<PopulationSacrificeCounterIcon_MarkerIcon />}
+    // icon={<PopulationSacrificeCounterIcon_MarkerIcon />}
+    markerType='<::population-sacrifice-counter::>'
     $backgroundColorHexCode={HEX_COLOR_CODE_POPULATION_SACRIFICE_COUNTER}
     $textColorHexCode={HEX_COLOR_CODE_POPULATION_SACRIFICE_COUNTER_TEXT}
     />
@@ -334,7 +327,8 @@ export const PopulationSlaughterCounter_MarkerIndicator = (props: IMarkerIndicat
   <MwMarkerIndicator
     {...props}
     // $label="Population Slaughter"
-    icon={<PopulationSlaughterCounterIcon_MarkerIcon />}
+    // icon={<PopulationSlaughterCounterIcon_MarkerIcon />}
+    markerType='<::population-slaughter-counter::>'
     $backgroundColorHexCode={HEX_COLOR_CODE_POPULATION_SLAUGHTER_COUNTER}
     $textColorHexCode={HEX_COLOR_CODE_POPULATION_SLAUGHTER_COUNTER_TEXT}
     />
@@ -345,7 +339,8 @@ export const ManawaveRoundToken_MarkerIndicator = (props: IMarkerIndicatorProps)
   <MwMarkerIndicator
     {...props}
     // $label="Manawave Round"
-    icon={<ManawaveRoundTokenIcon_MarkerIcon />}
+    // icon={<ManawaveRoundTokenIcon_MarkerIcon />}
+    markerType='<::manawave-round-token::>'
     $backgroundColorHexCode={HEX_COLOR_CODE_MANAWAVE_ROUND_TOKEN}
     $textColorHexCode={HEX_COLOR_CODE_MANAWAVE_ROUND_TOKEN_TEXT}
     />

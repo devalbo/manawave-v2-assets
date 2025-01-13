@@ -9,6 +9,8 @@ import {
 import { MarkerConjurationArea } from "../../game-symbols/marker-conjuration-area/marker-conjuration-area";
 
 import { MarkerFlowArea } from "../../game-symbols/marker-flow-area/marker-flow-area";
+import { AttackCounter_MarkerIndicator, ManaCounter_MarkerIndicator, ManalithToken_MarkerIndicator, PopulationIncreaseCounter_MarkerIndicator, ShieldCounter_MarkerIndicator } from "../../game-symbols/marker-indicator/marker-indicator";
+import { MarkerSourceIcon } from "../../game-symbols/marker-source-icon/marker-source-icon";
 
 
 // const PlacementIconSize = 20;
@@ -73,91 +75,192 @@ const MainClanPlacementGrid = () => {
 
       {/* Row 1 */}
       <MwClanPlacementsCardGridItemDiv>
-        <MarkerFlowArea
+        {/* <MarkerFlowArea
           source='from-tribe'
           sinkMarkerType={MwMarkerType.MwMarkerType_AttackCounter}
+        /> */}
+        <MarkerSourceIcon
+          source='from-tribe'
+          sourceIconCount={1}
         />
+        <AttackCounter_MarkerIndicator
+          quantity={0}
+          $onZeroAmountBehavior='show-stockpile-to-marker-icon'
+        />
+
       </MwClanPlacementsCardGridItemDiv>
       <MwClanPlacementsCardGridItemDiv>
-        <MarkerFlowArea
+        {/* <MarkerFlowArea
           source='from-tribe'
           sinkMarkerType={MwMarkerType.MwMarkerType_ShieldCounter}
+        /> */}
+        <MarkerSourceIcon
+          source='from-tribe'
+          sourceIconCount={1}
         />
+        <ShieldCounter_MarkerIndicator
+          quantity={0}
+          $onZeroAmountBehavior='show-stockpile-to-marker-icon'
+        />
+
       </MwClanPlacementsCardGridItemDiv>
       <MwClanPlacementsCardGridItemDiv>
-        <MarkerFlowArea
+        {/* <MarkerFlowArea
           source='from-tribe'
           sinkMarkerType={MwMarkerType.MwMarkerType_PopulationIncreaseCounter}
+        /> */}
+        <MarkerSourceIcon
+          source='from-tribe'
+          sourceIconCount={1}
         />
+        <PopulationIncreaseCounter_MarkerIndicator
+          quantity={0}
+          $onZeroAmountBehavior='show-stockpile-to-marker-icon'
+        />
+
       </MwClanPlacementsCardGridItemDiv>
       
       {/* Row 2 */}
       <MwClanPlacementsCardGridItemDiv>
-        <MarkerFlowArea
+        {/* <MarkerFlowArea
           source='from-conjuration'
           sinkMarkerType={MwMarkerType.MwMarkerType_AttackCounter}
+        /> */}
+        <MarkerSourceIcon
+          source='from-expended-mana'
+          sourceIconCount={1}
         />
+        <AttackCounter_MarkerIndicator
+          quantity={0}
+          $onZeroAmountBehavior='show-stockpile-to-marker-icon'
+        />
+
       </MwClanPlacementsCardGridItemDiv>
       <MwClanPlacementsCardGridItemDiv>
-        <MarkerFlowArea
+        {/* <MarkerFlowArea
           source='from-conjuration'
           sinkMarkerType={MwMarkerType.MwMarkerType_ShieldCounter}
+        /> */}
+        <MarkerSourceIcon
+          source='from-expended-mana'
+          sourceIconCount={1}
         />
+        <ShieldCounter_MarkerIndicator
+          quantity={0}
+          $onZeroAmountBehavior='show-stockpile-to-marker-icon'
+        />
+
       </MwClanPlacementsCardGridItemDiv>
       <MwClanPlacementsCardGridItemDiv>
-        <MarkerFlowArea
+        {/* <MarkerFlowArea
           source='from-conjuration'
           sinkMarkerType={MwMarkerType.MwMarkerType_PopulationIncreaseCounter}
+        /> */}
+        <MarkerSourceIcon
+          source='from-expended-mana'
+          sourceIconCount={1}
+        />
+        <PopulationIncreaseCounter_MarkerIndicator
+          quantity={0}
+          $onZeroAmountBehavior='show-stockpile-to-marker-icon'
         />
       </MwClanPlacementsCardGridItemDiv>
       
       {/* Row 3 */}
       <MwClanPlacementsCardGridItemDiv>
-        <MarkerConjurationArea
+        {/* <MarkerConjurationArea
           markerManaCost={2}
           markerToConjure={MwMarkerType.MwMarkerType_AttackCounter}
           numAvailableMana={2}
           numManaSpent={6}
-        />        
+        />         */}
+        <MarkerSourceIcon
+          source='from-conjuration'
+          sourceIconCount={2}
+        />
+        <AttackCounter_MarkerIndicator
+          quantity={0}
+          $onZeroAmountBehavior='show-stockpile-to-marker-icon'
+        />
       </MwClanPlacementsCardGridItemDiv>
       <MwClanPlacementsCardGridItemDiv>
-        <MarkerConjurationArea
+        {/* <MarkerConjurationArea
           markerManaCost={2}
           markerToConjure={MwMarkerType.MwMarkerType_ShieldCounter}
           numAvailableMana={2}
           numManaSpent={6}
+        /> */}
+        <MarkerSourceIcon
+          source='from-conjuration'
+          sourceIconCount={2}
+        />
+        <ShieldCounter_MarkerIndicator
+          quantity={0}
+          $onZeroAmountBehavior='show-stockpile-to-marker-icon'
         />
       </MwClanPlacementsCardGridItemDiv>
       <MwClanPlacementsCardGridItemDiv>
-        <MarkerConjurationArea
+        {/* <MarkerConjurationArea
           markerManaCost={2}
           markerToConjure={MwMarkerType.MwMarkerType_PopulationIncreaseCounter}
           numAvailableMana={2}
           numManaSpent={6}
+        /> */}
+        <MarkerSourceIcon
+          source='from-conjuration'
+          sourceIconCount={2}
+        />
+        <PopulationIncreaseCounter_MarkerIndicator
+          quantity={0}
+          $onZeroAmountBehavior='show-stockpile-to-marker-icon'
         />
       </MwClanPlacementsCardGridItemDiv>
 
       {/* Row 4 */}
       <MwClanPlacementsCardGridItemDiv>
         <StartingManaCounterDiv>
-        <MarkerFlowArea
+        {/* <MarkerFlowArea
           source='from-manawave'
           sinkMarkerType={MwMarkerType.MwMarkerType_ManaCounter}
-        />
+        /> */}
+          <MarkerSourceIcon
+            source='from-stockpile'
+            sourceIconCount={1}
+          />
+          <ManaCounter_MarkerIndicator
+            quantity={0}
+            $onZeroAmountBehavior='show-stockpile-to-marker-icon'
+          />
         </StartingManaCounterDiv>
       </MwClanPlacementsCardGridItemDiv>
       <MwClanPlacementsCardGridItemDiv>
-        <MarkerConjurationArea
+        {/* <MarkerConjurationArea
           markerManaCost={2}
           markerToConjure={MwMarkerType.MwMarkerType_ManalithToken}
           numAvailableMana={2}
           numManaSpent={6}
+        /> */}
+        <MarkerSourceIcon
+          source='from-conjuration'
+          sourceIconCount={1}
+        />
+        <ManalithToken_MarkerIndicator
+          quantity={0}
+          $onZeroAmountBehavior='show-stockpile-to-marker-icon'
         />
       </MwClanPlacementsCardGridItemDiv>
       <MwClanPlacementsCardGridItemDiv>
-        <MarkerFlowArea
+        {/* <MarkerFlowArea
           source='from-conjuration'
           sinkMarkerType={MwMarkerType.MwMarkerType_ManalithToken}
+        /> */}
+        <MarkerSourceIcon
+          source='from-expended-mana'
+          sourceIconCount={1}
+        />
+        <ManalithToken_MarkerIndicator
+          quantity={0}
+          $onZeroAmountBehavior='show-stockpile-to-marker-icon'
         />
       </MwClanPlacementsCardGridItemDiv>
 

@@ -1,10 +1,11 @@
 import { createImgComponentFromRawSvg } from "../../../icons";
 import { FromTribeToClanIconDiv, TribeToClanAllocationsAreaDiv, TribeToClanAllocationSectionDiv, TribeToClanAllocationSectionHeaderDiv, TribeToClanAllocationSectionMarkerItemDiv, TribeToClanAllocationSectionMarkersDiv, TribeToClanMarkerPlacementsCardBorderFrameDiv, TribeToClanMarkerPlacementsCardDiv, TribeToClanMarkerPlacementsCardHeaderDiv } from "./tribe-to-clan-marker-placements-card-styles";
-import { LeylineDistanceFromSource } from "../../../../mw-v2-protobufs/protofiles-out/manawave-types";
-import { AttackCounter_MarkerView, PopulationIncreaseCounter_MarkerView, ShieldCounter_MarkerView } from "../../../tally-marker-views/marker-view";
+import { LeylineDistanceFromSource, MwMarkerType } from "../../../../mw-v2-protobufs/protofiles-out/manawave-types";
 import { MwLogoPlayerSideIcon } from "../../../mw-logo-player-side-icon";
 import { TribeIconSvg } from "@mw-assets/PIECES/assets/TokenSvgIcons";
 import { UpArrowIcon } from "../../game-symbols/arrow-icons";
+import { AttackCounter_MarkerIndicator, PopulationIncreaseCounter_MarkerIndicator, ShieldCounter_MarkerIndicator } from "../../game-symbols/marker-indicator/marker-indicator";
+import { PlayerSide } from "@mw-game-engine/gameboard/game-play-data";
 
 
 // const PlacementIconSize = 20;
@@ -14,6 +15,22 @@ import { UpArrowIcon } from "../../game-symbols/arrow-icons";
 // const ManaCounterIcon_Key = () => createImgComponentFromTag('<::mana-counter::>', 12);
 
 const TribeIcon = () => createImgComponentFromRawSvg(TribeIconSvg, 16);
+
+
+export interface ITribeToClanMarkerPlacementsCardInteractions {
+  onAttackCounterPlaced: (leyline: LeylineDistanceFromSource) => void
+  onShieldCounterPlaced: (leyline: LeylineDistanceFromSource) => void
+  onPopulationIncreaseCounterPlaced: (leyline: LeylineDistanceFromSource) => void
+}
+
+
+export interface ITribeToClanMarkerPlacementsCardProps {
+  playerSide: PlayerSide
+
+  tribeToClanAllocations: Map<LeylineDistanceFromSource, MwMarkerType[]>
+
+  interactions: ITribeToClanMarkerPlacementsCardInteractions | null
+}
 
 // const ManaCounterIcon_Placement = () => createImgComponentFromTag('<::mana-counter::>', PlacementIconSize);
 // const AttackCounterIcon_Placement = () => createImgComponentFromTag('<::attack-counter::>', PlacementIconSize);
@@ -31,54 +48,89 @@ const FromTribeToClanIcon = () => {
 }
 
 
-const TribeToClanAllocationSection = ({ leyline }: { leyline: LeylineDistanceFromSource }) => {
-  return (
-    <TribeToClanAllocationSectionDiv>
-      <TribeToClanAllocationSectionHeaderDiv>
-        Leyline {leyline}
-        <FromTribeToClanIcon />
-      </TribeToClanAllocationSectionHeaderDiv>
-
-      <TribeToClanAllocationSectionMarkersDiv>
-        <TribeToClanAllocationSectionMarkerItemDiv>
-          <AttackCounter_MarkerView
-            mode='show-stack'
-            quantity={6}
-            $hideLabel={true}
-            // isVertical={true}
-          />
-        </TribeToClanAllocationSectionMarkerItemDiv>
-        <TribeToClanAllocationSectionMarkerItemDiv>
-          <ShieldCounter_MarkerView
-            mode='show-stack'
-            quantity={6}
-            $hideLabel={true}
-            // isVertical={true}
-          />
-        </TribeToClanAllocationSectionMarkerItemDiv>
-        <TribeToClanAllocationSectionMarkerItemDiv>
-          <PopulationIncreaseCounter_MarkerView
-            mode='show-stack'
-            quantity={6}
-            $hideLabel={true}
-            // isVertical={true}
-          />
-        </TribeToClanAllocationSectionMarkerItemDiv>
-      </TribeToClanAllocationSectionMarkersDiv>
-    </TribeToClanAllocationSectionDiv>
-  )
-}
 
 
-export const TribeToClanMarkerPlacementsCard = () => {
+export const TribeToClanMarkerPlacementsCard = (props: ITribeToClanMarkerPlacementsCardProps) => {
 
+  const TribeToClanAllocationSection = ({ thisLeyline }: { thisLeyline: LeylineDistanceFromSource }) => {
+
+    const thisLeyineAttackCounterCount = props.tribeToClanAllocations.get(thisLeyline)?.
+      filter(marker => marker === MwMarkerType.MwMarkerType_AttackCounter).length ?? 0;
+    const thisLeyineShieldCounterCount = props.tribeToClanAllocations.get(thisLeyline)?.
+      filter(marker => marker === MwMarkerType.MwMarkerType_ShieldCounter).length ?? 0;
+    const thisLeyinePopulationIncreaseCounterCount = props.tribeToClanAllocations.get(thisLeyline)?.
+      filter(marker => marker === MwMarkerType.MwMarkerType_PopulationIncreaseCounter).length ?? 0;
+  
+    return (
+      <TribeToClanAllocationSectionDiv>
+        <TribeToClanAllocationSectionHeaderDiv>
+          Leyline {thisLeyline}
+          <FromTribeToClanIcon />
+        </TribeToClanAllocationSectionHeaderDiv>
+  
+        <TribeToClanAllocationSectionMarkersDiv>
+          <TribeToClanAllocationSectionMarkerItemDiv
+            onClick={() => {
+              props.interactions?.onAttackCounterPlaced(thisLeyline);
+            }}
+          >
+            {/* <AttackCounter_MarkerView
+              mode='show-stack'
+              quantity={6}
+              $hideLabel={true}
+              // isVertical={true}
+            /> */}
+            <AttackCounter_MarkerIndicator
+              quantity={thisLeyineAttackCounterCount}
+              $onZeroAmountBehavior='dim'
+            />
+          </TribeToClanAllocationSectionMarkerItemDiv>
+          <TribeToClanAllocationSectionMarkerItemDiv
+            onClick={() => {
+              props.interactions?.onShieldCounterPlaced(thisLeyline);
+            }}
+          >
+            {/* <ShieldCounter_MarkerView
+              mode='show-stack'
+              quantity={6}
+              $hideLabel={true}
+              // isVertical={true}
+            /> */}
+            <ShieldCounter_MarkerIndicator
+              quantity={thisLeyineShieldCounterCount}
+              $onZeroAmountBehavior='dim'
+            />
+  
+          </TribeToClanAllocationSectionMarkerItemDiv>
+          <TribeToClanAllocationSectionMarkerItemDiv
+            onClick={() => {
+              props.interactions?.onPopulationIncreaseCounterPlaced(thisLeyline);
+            }}
+          >
+            {/* <PopulationIncreaseCounter_MarkerView
+              mode='show-stack'
+              quantity={6}
+              $hideLabel={true}
+              // isVertical={true}
+            /> */}
+            <PopulationIncreaseCounter_MarkerIndicator
+              quantity={thisLeyinePopulationIncreaseCounterCount}
+              $onZeroAmountBehavior='dim'
+            />
+  
+          </TribeToClanAllocationSectionMarkerItemDiv>
+        </TribeToClanAllocationSectionMarkersDiv>
+      </TribeToClanAllocationSectionDiv>
+    )
+  }
+  
   return (
     <TribeToClanMarkerPlacementsCardDiv>
       <TribeToClanMarkerPlacementsCardBorderFrameDiv>
 
         <TribeToClanMarkerPlacementsCardHeaderDiv>
           <MwLogoPlayerSideIcon 
-            playerSide='OSB'
+            playerSide={props.playerSide}
             size={30}
           />
           <div style={{width: 10}} />
@@ -96,15 +148,15 @@ export const TribeToClanMarkerPlacementsCard = () => {
         <TribeToClanAllocationsAreaDiv>
 
           <TribeToClanAllocationSection
-            leyline={LeylineDistanceFromSource.LeylineDistance_1}
+            thisLeyline={LeylineDistanceFromSource.LeylineDistance_1}
           />
 
           <TribeToClanAllocationSection
-            leyline={LeylineDistanceFromSource.LeylineDistance_2}
+            thisLeyline={LeylineDistanceFromSource.LeylineDistance_2}
           />
 
           <TribeToClanAllocationSection
-            leyline={LeylineDistanceFromSource.LeylineDistance_3}
+            thisLeyline={LeylineDistanceFromSource.LeylineDistance_3}
           />
 
         </TribeToClanAllocationsAreaDiv>

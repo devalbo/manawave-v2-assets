@@ -16,6 +16,6 @@ type Story = StoryObj<typeof ClanPlacementCard>;
 
 export const DefaultClan: Story = {
   args: {
-    columnTitle: 'Clan Name',
+    clanName: 'My Best Clan',
   },
 };

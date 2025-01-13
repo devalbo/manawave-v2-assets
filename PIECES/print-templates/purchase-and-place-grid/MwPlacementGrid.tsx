@@ -1,11 +1,11 @@
 /* eslint-disable react/jsx-pascal-case */
 import { PlayerSide } from '../../../../mw-v2-game-engine/gameboard/game-play-data';
 import { MwLogoPlayerSideIcon } from '../../mw-logo-player-side-icon';
-import { MwPlacementGridCardBorderFrameDiv, MwPlacementGridCardClanPlacementContainerDiv, MwPlacementGridCardPlacementRowDiv } from './purchase-and-place-grid-styles';
-import { MwPlacementGridCardDiv } from './purchase-and-place-grid-styles';
+import { MwPlacementGridCardBorderFrameDiv, MwPlacementGridCardClanPlacementContainerDiv, MwPlacementGridCardPlacementItemDiv, MwPlacementGridCardPlacementRowDiv } from './MwPlacementGrid-styles';
+import { MwPlacementGridCardDiv } from './MwPlacementGrid-styles';
 import { ClanPlacementCard } from './components/clan-placements-card';
-import { TribeToClanMarkerPlacementsCard } from './components/tribe-to-clan-marker-placements-card';
-import { TribeManaConjurationCard } from './components/tribe-mana-conjuration-card';
+import { ITribeToClanMarkerPlacementsCardProps, TribeToClanMarkerPlacementsCard } from './components/tribe-to-clan-marker-placements-card';
+import { ITribeManaConjurationCardProps, TribeManaConjurationCard } from './components/tribe-mana-conjuration-card';
 // import './MwPlacementGrid.css';
 
 
@@ -23,6 +23,11 @@ export interface IMwPlacementGrid {
   clanName1: string
   clanName2: string
   clanName3: string
+  
+  onReset?: () => void
+
+  tribeManaConjurationCardProps: ITribeManaConjurationCardProps
+  tribeToClanMarkerPlacementsCardProps: ITribeToClanMarkerPlacementsCardProps
 }
 
 
@@ -95,7 +100,10 @@ export const MwPlacementGrid = (props: IMwPlacementGrid) => {
     ['Clan @ Leyline 3', 'Clan @ Leyline 2', 'Clan @ Leyline 1']
 
   return (
-    <div style={{ overflowX: 'auto', display: 'flex' }}>
+    <div style={{ overflowX: 'auto', display: 'flex', 
+    // minWidth: '16in',
+    // height: '5in',
+    }}>
     <MwPlacementGridCardDiv>
       <MwPlacementGridCardBorderFrameDiv>
 
@@ -107,27 +115,46 @@ export const MwPlacementGrid = (props: IMwPlacementGrid) => {
               />
             <div style={{width: 10}} />
             Player Marker Placements ({props.playerSide})
+            {props.onReset && (
+              <div style={{marginLeft: 10}}>
+                <button onClick={props.onReset}>
+                  Reset
+                </button>
+              </div>
+            )}
           </div>
           <MwPlacementGridCardPlacementRowDiv>
-            {/* <MwPlacementGridCardClanPlacementColumnDiv>
-              {columnTitles[0]}
-              <ClanPlacementColumn />
-            </MwPlacementGridCardClanPlacementColumnDiv> */}
-            {/* <MwPlacementGridCardClanPlacementColumnDiv>
-              {columnTitles[1]}
-              <ClanPlacementColumn />
-            </MwPlacementGridCardClanPlacementColumnDiv>
-            <MwPlacementGridCardClanPlacementColumnDiv>
-              {columnTitles[2]}
-              <ClanPlacementColumn />
-            </MwPlacementGridCardClanPlacementColumnDiv> */}
 
-            <TribeManaConjurationCard />
-            <TribeToClanMarkerPlacementsCard />
+            <MwPlacementGridCardPlacementItemDiv>
+              <TribeManaConjurationCard
+                {...props.tribeManaConjurationCardProps}
+              />
+            </MwPlacementGridCardPlacementItemDiv>
 
-            <ClanPlacementCard columnTitle={columnTitles[0]} clanName={props.clanName1} />
-            <ClanPlacementCard columnTitle={columnTitles[1]} clanName={props.clanName2} />
-            <ClanPlacementCard columnTitle={columnTitles[2]} clanName={props.clanName3} />
+            <MwPlacementGridCardPlacementItemDiv>
+              <TribeToClanMarkerPlacementsCard
+                {...props.tribeToClanMarkerPlacementsCardProps}
+              />
+            </MwPlacementGridCardPlacementItemDiv>
+
+            <MwPlacementGridCardPlacementItemDiv>
+              <ClanPlacementCard columnTitle={columnTitles[0]} clanName={props.clanName1} />
+              <div style={{ marginTop: "0.2in" }}>
+                {columnTitles[0]}
+              </div>
+            </MwPlacementGridCardPlacementItemDiv>
+            <MwPlacementGridCardPlacementItemDiv>
+              <ClanPlacementCard columnTitle={columnTitles[1]} clanName={props.clanName2} />
+              <div style={{ marginTop: "0.2in" }}>
+                {columnTitles[1]}
+              </div>
+            </MwPlacementGridCardPlacementItemDiv>
+            <MwPlacementGridCardPlacementItemDiv>
+              <ClanPlacementCard columnTitle={columnTitles[2]} clanName={props.clanName3} />
+              <div style={{ marginTop: "0.2in" }}>
+                {columnTitles[2]}
+              </div>
+            </MwPlacementGridCardPlacementItemDiv>
 
           </MwPlacementGridCardPlacementRowDiv>
         </MwPlacementGridCardClanPlacementContainerDiv>
