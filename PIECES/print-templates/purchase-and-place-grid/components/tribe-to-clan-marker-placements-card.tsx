@@ -101,6 +101,16 @@ export const TribeToClanMarkerPlacementsCard = (props: ITribeToClanMarkerPlaceme
       </TribeToClanAllocationSectionDiv>
     )
   }
+
+  const playerSideLeylinesForPlacementColumns = props.playerSide === "OSB" ? [
+    LeylineDistanceFromSource.LeylineDistance_1,
+    LeylineDistanceFromSource.LeylineDistance_2,
+    LeylineDistanceFromSource.LeylineDistance_3,
+  ] : [
+    LeylineDistanceFromSource.LeylineDistance_3,
+    LeylineDistanceFromSource.LeylineDistance_2,
+    LeylineDistanceFromSource.LeylineDistance_1,
+  ];
   
   return (
     <TribeToClanMarkerPlacementsCardDiv>
@@ -115,149 +125,23 @@ export const TribeToClanMarkerPlacementsCard = (props: ITribeToClanMarkerPlaceme
           Tribe to Clan Marker Placements
         </TribeToClanMarkerPlacementsCardHeaderDiv>
 
-        {/* <TribeToClanAllocationsAreaDiv>
-
-          <TribeToClanAllocationSection
-            leyline={LeylineDistanceFromSource.LeylineDistance_2}
-          />
-
-        </TribeToClanAllocationsAreaDiv> */}
-
         <TribeToClanAllocationsAreaDiv>
 
           <TribeToClanAllocationSection
-            thisLeyline={LeylineDistanceFromSource.LeylineDistance_1}
+            thisLeyline={playerSideLeylinesForPlacementColumns[0]}
           />
 
           <TribeToClanAllocationSection
-            thisLeyline={LeylineDistanceFromSource.LeylineDistance_2}
+            thisLeyline={playerSideLeylinesForPlacementColumns[1]}
           />
 
           <TribeToClanAllocationSection
-            thisLeyline={LeylineDistanceFromSource.LeylineDistance_3}
+            thisLeyline={playerSideLeylinesForPlacementColumns[2]}
           />
 
         </TribeToClanAllocationsAreaDiv>
-
-        {/* Clan Allocations         */}
-
-{/*         
-        <TribePlacementsGridDiv>
-
-          <MwTribePlacementCardConversionGridRowItemDiv>
-            <StockpileIcon />
-          </MwTribePlacementCardConversionGridRowItemDiv>
-          <MwTribePlacementCardConversionGridRowItemDiv>
-            <MarkerFlowArea
-              source='from-stockpile'
-              sinkMarkerType={MwMarkerType.MwMarkerType_AttackCounter}
-            />
-          </MwTribePlacementCardConversionGridRowItemDiv>
-          <MwTribePlacementCardConversionGridRowItemDiv>
-            <MarkerFlowArea
-              source='from-stockpile'
-              sinkMarkerType={MwMarkerType.MwMarkerType_ShieldCounter}
-            />
-          </MwTribePlacementCardConversionGridRowItemDiv>
-          <MwTribePlacementCardConversionGridRowItemDiv>
-            <MarkerFlowArea
-              source='from-stockpile'
-              sinkMarkerType={MwMarkerType.MwMarkerType_PopulationIncreaseCounter}
-            />
-          </MwTribePlacementCardConversionGridRowItemDiv>
-          
-          <MwTribePlacementCardConversionGridRowItemDiv>
-            <ConjurationIcon />
-          </MwTribePlacementCardConversionGridRowItemDiv>
-          <MwTribePlacementCardConversionGridRowItemDiv>
-            <MarkerFlowArea
-              source='from-conjuration'
-              sinkMarkerType={MwMarkerType.MwMarkerType_AttackCounter}
-            />
-          </MwTribePlacementCardConversionGridRowItemDiv>
-          <MwTribePlacementCardConversionGridRowItemDiv>
-            <MarkerFlowArea
-              source='from-conjuration'
-              sinkMarkerType={MwMarkerType.MwMarkerType_ShieldCounter}
-            />
-          </MwTribePlacementCardConversionGridRowItemDiv>
-          <MwTribePlacementCardConversionGridRowItemDiv>
-            <MarkerFlowArea
-              source='from-conjuration'
-              sinkMarkerType={MwMarkerType.MwMarkerType_PopulationIncreaseCounter}
-            />
-          </MwTribePlacementCardConversionGridRowItemDiv>
-          
-          <MwTribePlacementCardConversionGridRowItemDiv>
-            Starting <ManaCounterIcon_Key />
-            <ManaCounter_MarkerView
-              mode='show-stack'
-              quantity={6}
-              $hideLabel={true}
-            />
-          </MwTribePlacementCardConversionGridRowItemDiv>
-          <MwTribePlacementCardConversionGridRowItemDiv>
-            <MarkerConjurationArea
-              markerManaCost={2}
-              markerToConjure={MwMarkerType.MwMarkerType_AttackCounter}
-              numAvailableMana={2}
-              numManaSpent={6}
-            />
-          </MwTribePlacementCardConversionGridRowItemDiv>
-          <MwTribePlacementCardConversionGridRowItemDiv>
-            <MarkerConjurationArea
-              markerManaCost={2}
-              markerToConjure={MwMarkerType.MwMarkerType_ShieldCounter}
-              numAvailableMana={2}
-              numManaSpent={6}
-            />
-          </MwTribePlacementCardConversionGridRowItemDiv>
-          <MwTribePlacementCardConversionGridRowItemDiv>
-            <MarkerConjurationArea
-              markerManaCost={2}
-              markerToConjure={MwMarkerType.MwMarkerType_PopulationIncreaseCounter}
-              numAvailableMana={2}
-              numManaSpent={6}
-            />
-          </MwTribePlacementCardConversionGridRowItemDiv>
-          
-        </TribePlacementsGridDiv> */}
-
+        
       </TribeToClanMarkerPlacementsCardBorderFrameDiv>
     </TribeToClanMarkerPlacementsCardDiv>
   )
-
-  // return (
-  //   <>
-  //     <MwPlacementGridCardConversionGridRowDiv>
-  //       <MwPlacementGridCardConversionGridRowItemDiv>
-  //         Tribe to Clan <ManaCounterIcon_Placement /> Allocations
-  //       </MwPlacementGridCardConversionGridRowItemDiv>
-  //       <MwPlacementGridCardConversionGridRowItemDiv>
-  //         @ Leyline 1
-  //       </MwPlacementGridCardConversionGridRowItemDiv>
-  //       <MwPlacementGridCardConversionGridRowItemDiv>
-  //         @ Leyline 2
-  //       </MwPlacementGridCardConversionGridRowItemDiv>
-  //       <MwPlacementGridCardConversionGridRowItemDiv>
-  //         @ Leyline 3
-  //       </MwPlacementGridCardConversionGridRowItemDiv>
-  //     </MwPlacementGridCardConversionGridRowDiv>
-
-  //     <MwPlacementGridCardConversionGridRowDiv>
-  //       <MwPlacementGridCardConversionGridRowItemDiv>
-  //         Tribe Mana Conversions
-  //       </MwPlacementGridCardConversionGridRowItemDiv>
-  //       <MwPlacementGridCardConversionGridRowItemDiv>
-  //         <AttackCounterIcon_Placement />
-  //       </MwPlacementGridCardConversionGridRowItemDiv>
-  //       <MwPlacementGridCardConversionGridRowItemDiv>
-  //         <ShieldCounterIcon_Placement />
-  //       </MwPlacementGridCardConversionGridRowItemDiv>
-  //       <MwPlacementGridCardConversionGridRowItemDiv>
-  //         <PopulationIncreaseCounterIcon_Placement />          
-  //       </MwPlacementGridCardConversionGridRowItemDiv>
-  //     </MwPlacementGridCardConversionGridRowDiv>
-  //   </>
-  // )
 }

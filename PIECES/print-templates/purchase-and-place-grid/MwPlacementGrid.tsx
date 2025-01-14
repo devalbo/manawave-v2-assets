@@ -23,10 +23,10 @@ export interface IMwPlacementGrid {
 
 export const MwPlacementGrid = (props: IMwPlacementGrid) => {
 
-  // const columnTitles = props.playerSide === 'OSB' ?
-  //   ['Clan @ Leyline 1', 'Clan @ Leyline 2', 'Clan @ Leyline 3']
-  //   :
-  //   ['Clan @ Leyline 3', 'Clan @ Leyline 2', 'Clan @ Leyline 1']
+  const columnTitles = props.playerSide === 'OSB' ?
+    ['Clan @ Leyline 1', 'Clan @ Leyline 2', 'Clan @ Leyline 3']
+    :
+    ['Clan @ Leyline 3', 'Clan @ Leyline 2', 'Clan @ Leyline 1']
 
   const clanCardProps = props.playerSide === 'OSB' ?
     [
@@ -82,7 +82,7 @@ export const MwPlacementGrid = (props: IMwPlacementGrid) => {
                 {...clanCardProps[0]}
               />
               <div style={{ marginTop: "0.2in" }}>
-                {clanCardProps[0].clanName}
+                {columnTitles[0]}
               </div>
             </MwPlacementGridCardPlacementItemDiv>
             <MwPlacementGridCardPlacementItemDiv>
@@ -90,7 +90,7 @@ export const MwPlacementGrid = (props: IMwPlacementGrid) => {
                 {...clanCardProps[1]}
               />
               <div style={{ marginTop: "0.2in" }}>
-                {clanCardProps[1].clanName}
+                {columnTitles[1]}
               </div>
             </MwPlacementGridCardPlacementItemDiv>
             <MwPlacementGridCardPlacementItemDiv>
@@ -98,7 +98,7 @@ export const MwPlacementGrid = (props: IMwPlacementGrid) => {
                 {...clanCardProps[2]}
               />
               <div style={{ marginTop: "0.2in" }}>
-                {clanCardProps[2].clanName}
+                {columnTitles[2]}
               </div>
             </MwPlacementGridCardPlacementItemDiv>
 

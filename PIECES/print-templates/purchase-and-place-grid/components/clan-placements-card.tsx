@@ -13,16 +13,35 @@ import { MwLogoPlayerSideIcon } from "@mw-assets/PIECES/mw-logo-player-side-icon
 import { PlayerSide } from "@mw-game-engine/gameboard/game-play-data";
 
 
+export interface IClanPlacementCardInteractions {
+  onAttackCounterConjured: () => void
+  onShieldCounterConjured: () => void
+  onPopulationIncreaseCounterConjured: () => void
+  onManalithTokenConjured: () => void
+  
+  onAttackTransferredFromTribe: () => void
+  onShieldTransferredFromTribe: () => void
+  onPopulationIncreaseTransferredFromTribe: () => void
+}
+
+
 export interface IClanPlacementCardProps {
   playerSide: PlayerSide
   clanName: string
 
-  numStockpileAttackCounters: number
-  numStockpileShieldCounters: number
-  numStockpilePopulationIncreaseCounters: number
-  numStockpileManaCounters: number
+  numAttackCountersFromTribe: number
+  numShieldCountersFromTribe: number
+  numPopulationIncreaseCountersFromTribe: number
 
-  numStockpileManalithTokens: number
+  numPurchasedAttackCounters: number
+  numPurchasedShieldCounters: number
+  numPurchasedPopulationIncreaseCounters: number
+  numPurchasedManalithTokens: number
+
+  numStockpileManaCounters: number
+  // numStockpileManalithTokens: number
+
+  interactions: IClanPlacementCardInteractions | null
 }
 
 
@@ -33,35 +52,47 @@ export const ClanPlacementCard = (props: IClanPlacementCardProps) => {
       <MwClanPlacementsCardGridDiv>      
   
         {/* Row 1 */}
-        <MwClanPlacementsCardInteractiveGridItemDiv>
+        <MwClanPlacementsCardInteractiveGridItemDiv
+          onClick={() => {
+            props.interactions?.onAttackTransferredFromTribe();
+          }}
+        >
           <MarkerSourceIcon
             source='from-tribe'
             sourceIconCount={1}
           />
           <AttackCounter_MarkerIndicator
-            quantity={props.numStockpileAttackCounters}
+            quantity={props.numAttackCountersFromTribe}
             $onZeroAmountBehavior='show-stockpile-to-marker-icon'
           />
   
         </MwClanPlacementsCardInteractiveGridItemDiv>
-        <MwClanPlacementsCardInteractiveGridItemDiv>
+        <MwClanPlacementsCardInteractiveGridItemDiv
+          onClick={() => {
+            props.interactions?.onShieldTransferredFromTribe();
+          }}
+        >
           <MarkerSourceIcon
             source='from-tribe'
             sourceIconCount={1}
           />
           <ShieldCounter_MarkerIndicator
-            quantity={props.numStockpileShieldCounters}
+            quantity={props.numShieldCountersFromTribe}
             $onZeroAmountBehavior='show-stockpile-to-marker-icon'
           />
   
         </MwClanPlacementsCardInteractiveGridItemDiv>
-        <MwClanPlacementsCardInteractiveGridItemDiv>
+        <MwClanPlacementsCardInteractiveGridItemDiv
+          onClick={() => {
+            props.interactions?.onPopulationIncreaseTransferredFromTribe();
+          }}
+        >
           <MarkerSourceIcon
             source='from-tribe'
             sourceIconCount={1}
           />
           <PopulationIncreaseCounter_MarkerIndicator
-            quantity={0}
+            quantity={props.numPopulationIncreaseCountersFromTribe}
             $onZeroAmountBehavior='show-stockpile-to-marker-icon'
           />
   
@@ -74,7 +105,7 @@ export const ClanPlacementCard = (props: IClanPlacementCardProps) => {
             sourceIconCount={1}
           />
           <AttackCounter_MarkerIndicator
-            quantity={0}
+            quantity={props.numPurchasedAttackCounters}
             $onZeroAmountBehavior='show-stockpile-to-marker-icon'
           />
   
@@ -85,7 +116,7 @@ export const ClanPlacementCard = (props: IClanPlacementCardProps) => {
             sourceIconCount={1}
           />
           <ShieldCounter_MarkerIndicator
-            quantity={0}
+            quantity={props.numPurchasedShieldCounters}
             $onZeroAmountBehavior='show-stockpile-to-marker-icon'
           />
   
@@ -96,13 +127,17 @@ export const ClanPlacementCard = (props: IClanPlacementCardProps) => {
             sourceIconCount={1}
           />
           <PopulationIncreaseCounter_MarkerIndicator
-            quantity={0}
+            quantity={props.numPurchasedPopulationIncreaseCounters}
             $onZeroAmountBehavior='show-stockpile-to-marker-icon'
           />
         </MwClanPlacementsCardGridItemDiv>
         
         {/* Row 3 */}
-        <MwClanPlacementsCardInteractiveGridItemDiv>
+        <MwClanPlacementsCardInteractiveGridItemDiv
+          onClick={() => {
+            props.interactions?.onAttackCounterConjured();
+          }}
+        >
           <MarkerSourceIcon
             source='from-conjuration'
             sourceIconCount={2}
@@ -112,7 +147,11 @@ export const ClanPlacementCard = (props: IClanPlacementCardProps) => {
             $onZeroAmountBehavior='show-stockpile-to-marker-icon'
           />
         </MwClanPlacementsCardInteractiveGridItemDiv>
-        <MwClanPlacementsCardInteractiveGridItemDiv>
+        <MwClanPlacementsCardInteractiveGridItemDiv
+          onClick={() => {
+            props.interactions?.onShieldCounterConjured();
+          }}
+        >
           <MarkerSourceIcon
             source='from-conjuration'
             sourceIconCount={2}
@@ -122,7 +161,11 @@ export const ClanPlacementCard = (props: IClanPlacementCardProps) => {
             $onZeroAmountBehavior='show-stockpile-to-marker-icon'
           />
         </MwClanPlacementsCardInteractiveGridItemDiv>
-        <MwClanPlacementsCardInteractiveGridItemDiv>
+        <MwClanPlacementsCardInteractiveGridItemDiv
+          onClick={() => {
+            props.interactions?.onPopulationIncreaseCounterConjured();
+          }}
+        >
           <MarkerSourceIcon
             source='from-conjuration'
             sourceIconCount={2}
@@ -141,12 +184,16 @@ export const ClanPlacementCard = (props: IClanPlacementCardProps) => {
               sourceIconCount={1}
             />
             <ManaCounter_MarkerIndicator
-              quantity={0}
+              quantity={props.numStockpileManaCounters}
               $onZeroAmountBehavior='show-stockpile-to-marker-icon'
             />
           </StartingManaCounterDiv>
         </MwClanPlacementsCardGridItemDiv>
-        <MwClanPlacementsCardInteractiveGridItemDiv>
+        <MwClanPlacementsCardInteractiveGridItemDiv
+          onClick={() => {
+            props.interactions?.onManalithTokenConjured();
+          }}
+        >
           <MarkerSourceIcon
             source='from-conjuration'
             sourceIconCount={1}
@@ -162,7 +209,7 @@ export const ClanPlacementCard = (props: IClanPlacementCardProps) => {
             sourceIconCount={1}
           />
           <ManalithToken_MarkerIndicator
-            quantity={0}
+            quantity={props.numPurchasedManalithTokens}
             $onZeroAmountBehavior='show-stockpile-to-marker-icon'
           />
         </MwClanPlacementsCardGridItemDiv>
