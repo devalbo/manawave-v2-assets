@@ -19,8 +19,5 @@ export const Default: Story = {
   args: {
     quantity: 1,
     markerType: '<::soulstain-token::>',
-    // markerSize: 44,
-    // $backgroundColorHexCode: '#0000ff',
-    // $textColorHexCode: '#ffffff',
   },
 };
