@@ -1,8 +1,7 @@
 import _ from "lodash";
-import { ConjurationMarkersAreaDiv, HorizontalConjurationMarkersAreaDiv, NewMarkerConjurationAreaDiv } from "./marker-conjuration-area-styles";
+import { HorizontalConjurationMarkersAreaDiv, NewMarkerConjurationAreaDiv } from "./marker-conjuration-area-styles";
 import { IMarkerConjurationIconProps } from "../marker-conjuration-icon/marker-conjuration-icon";
 import { AttackCounter_MarkerIndicator, ManaCounter_MarkerIndicator, ManalithToken_MarkerIndicator, PopulationIncreaseCounter_MarkerIndicator, ShieldCounter_MarkerIndicator } from "../marker-indicator/marker-indicator";
-import { MarkerFlowUpIcon } from "../marker-flow-icon/marker-flow-up-icon";
 import { MwMarkerType } from "@mw-assets/mw-v2-protobufs/protofiles-out/manawave-types";
 import { MarkerFlowIcon } from "../marker-flow-icon/marker-flow-icon";
 

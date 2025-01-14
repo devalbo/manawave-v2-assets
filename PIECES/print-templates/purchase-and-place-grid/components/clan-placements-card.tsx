@@ -8,7 +8,7 @@ import {
   MwClanPlacementsCardInteractiveGridItemDiv,
   MwClanPlacementsCardInteractive2GridItemsDiv
 } from "./clan-placements-card-styles";
-import { AttackCounter_MarkerIndicator, ManaCounter_MarkerIndicator, ManalithToken_MarkerIndicator, PopulationIncreaseCounter_MarkerIndicator, ShieldCounter_MarkerIndicator } from "../../game-symbols/marker-indicator/marker-indicator";
+import { AttackCounter_MarkerIndicator, ManaCounter_MarkerIndicator, PopulationIncreaseCounter_MarkerIndicator, ShieldCounter_MarkerIndicator } from "../../game-symbols/marker-indicator/marker-indicator";
 import { MarkerSourceIcon } from "../../game-symbols/marker-source-icon/marker-source-icon";
 import { MwLogoPlayerSideIcon } from "@mw-assets/PIECES/mw-logo-player-side-icon";
 import { PlayerSide } from "@mw-game-engine/gameboard/game-play-data";
@@ -53,7 +53,6 @@ export interface IClanPlacementCardProps {
   numExpendedManaForManalithTokens: number
 
   numStockpileManaCounters: number
-  // numStockpileManalithTokens: number
 
   interactions: IClanPlacementCardInteractions | null
 }

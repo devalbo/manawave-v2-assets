@@ -16,11 +16,28 @@ type Story = StoryObj<typeof ClanPlacementCard>;
 
 export const DefaultClan: Story = {
   args: {
-    clanName: 'My Best Clan',
-    numStockpileAttackCounters: 1,
-    numStockpileShieldCounters: 2,
-    numStockpilePopulationIncreaseCounters: 3,
-    numStockpileManaCounters: 4,
-    numStockpileManalithTokens: 5,
+    playerSide: "OPT",
+    clanName: 'The Best Clan',
+
+    attackCounterManaCost: 3,
+    shieldCounterManaCost: 2,
+    populationIncreaseCounterManaCost: 1,
+    manalithTokenManaCost: 4,
+
+    numAttackCountersFromTribe: 1,
+    numShieldCountersFromTribe: 2,
+    numPopulationIncreaseCountersFromTribe: 3,
+
+    numPurchasedAttackCounters: 1,
+    numPurchasedShieldCounters: 2,
+    numPurchasedPopulationIncreaseCounters: 3,
+    numPurchasedManalithTokens: 4,
+
+    numExpendedManaForAttackCounters: 4,
+    numExpendedManaForShieldCounters: 6,
+    numExpendedManaForPopulationIncreaseCounters: 9,
+    numExpendedManaForManalithTokens: 12,
+
+    numStockpileManaCounters: 5,
   },
 };
