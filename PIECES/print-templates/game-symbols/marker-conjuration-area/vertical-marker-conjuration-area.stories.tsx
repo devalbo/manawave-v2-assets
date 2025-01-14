@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { MwMarkerType } from '@mw-assets/mw-v2-protobufs/protofiles-out/manawave-types';
-import { MarkerConjurationArea } from './marker-conjuration-area';
+import { VerticalMarkerConjurationArea } from './vertical-marker-conjuration-area';
 
 
-const meta: Meta<typeof MarkerConjurationArea> = {
-  title: 'Game Icons/Marker Conjuration Area',
-  component: MarkerConjurationArea,
+const meta: Meta<typeof VerticalMarkerConjurationArea> = {
+  title: 'Game Icons/Vertical Marker Conjuration Area',
+  component: VerticalMarkerConjurationArea,
   parameters: {
     layout: 'centered',
   },
@@ -13,13 +13,13 @@ const meta: Meta<typeof MarkerConjurationArea> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof MarkerConjurationArea>;
+type Story = StoryObj<typeof VerticalMarkerConjurationArea>;
 
 export const Attack: Story = {
   args: {
     markerManaCost: 2,
     markerToConjure: MwMarkerType.MwMarkerType_AttackCounter,
-    numAvailableMana: 2,
+    numConjuredMarkers: 3,
     numManaSpent: 6,
   },
 };
@@ -28,7 +28,7 @@ export const Shield: Story = {
   args: {
     markerManaCost: 2,
     markerToConjure: MwMarkerType.MwMarkerType_ShieldCounter,
-    numAvailableMana: 2,
+    numConjuredMarkers: 2,
     numManaSpent: 4,
   },
 };
@@ -37,7 +37,7 @@ export const PopuluationIncrease: Story = {
   args: {
     markerManaCost: 2,
     markerToConjure: MwMarkerType.MwMarkerType_PopulationIncreaseCounter,
-    numAvailableMana: 2,
+    numConjuredMarkers: 2,
     numManaSpent: 2,
   },
 };

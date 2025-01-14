@@ -48,9 +48,7 @@ export const MwClanPlacementsCardGridDiv = styled.div.withConfig({
 })`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  flex-direction: row;
-  /* flex-grow: 1; */
-  /* width: 100%; */
+  gap: 4px;
 `;
 
 
@@ -73,9 +71,9 @@ export const MwClanPlacementsCardGridItemDiv = styled.div.withConfig({
 
 export const MwClanPlacementsCardInteractiveGridItemDiv = styled(MwClanPlacementsCardGridItemDiv).withConfig({
   componentId: 'MwClanPlacementsCardInteractiveGridItemDiv'
-})`
+})<{gridItemHeight?: string, spanTwo?: boolean}>`
   cursor: pointer;
-  
+  height: ${props => props.gridItemHeight || '0.7in'};
   /* Add hover effect */
   &:hover {
     background-color: rgba(0, 0, 0, 0.05);
@@ -92,7 +90,40 @@ export const MwClanPlacementsCardInteractiveGridItemDiv = styled(MwClanPlacement
 
   /* Updated transition to include scale */
   transition: all 0.2s ease;
+
+  /* grid-row: span 2; */
+
 `;
+
+
+export const MwClanPlacementsCardInteractive2GridItemsDiv = styled(MwClanPlacementsCardGridItemDiv).withConfig({
+  componentId: 'MwClanPlacementsCardInteractive2GridItemsDiv'
+})<{gridItemHeight?: string}>`
+  cursor: pointer;
+  height: ${props => props.gridItemHeight || '0.7in'};
+  /* width: 2in; */
+  /* width: calc(2in + 4px); */
+  width: calc(100% - 8px);
+  /* Add hover effect */
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: scale(0.95);
+    border: 1px solid gray;
+      /* translate(-4px, -4px); Added scale */
+  }
+  
+  /* Add active/click effect */
+  &:active {
+    transform: scale(0.9);
+      /* translate(-2px, -2px); Added scale */
+  }
+
+  /* Updated transition to include scale */
+  transition: all 0.2s ease;
+
+  grid-column: span 2;
+`;
+
 
 
 

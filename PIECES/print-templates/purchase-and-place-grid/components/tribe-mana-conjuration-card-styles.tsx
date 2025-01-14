@@ -83,9 +83,9 @@ export const TribeManaConjurationGridItemDiv = styled.div.withConfig({
 
 export const TribeManaConjurationInteractiveGridItemDiv = styled(TribeManaConjurationGridItemDiv).withConfig({
   componentId: 'TribeManaConjurationInteractiveGridItemDiv'
-})`
+})<{gridItemHeight?: string}>`
   cursor: pointer;
-  
+  height: ${props => props.gridItemHeight || '0.66in'};
   /* Add hover effect */
   &:hover {
     background-color: rgba(0, 0, 0, 0.05);
