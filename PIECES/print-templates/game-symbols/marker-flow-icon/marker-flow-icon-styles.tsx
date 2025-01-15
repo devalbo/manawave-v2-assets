@@ -3,6 +3,13 @@ import styled from 'styled-components';
 
 export const MarkerFlowIconDiv = styled.div`
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-grow: 0.5;
+`;
+
+export const MarkerFlowUpIconDiv = styled.div`
+  display: flex;
   flex-direction: column;
   align-items: center;
   flex-grow: 0.5;

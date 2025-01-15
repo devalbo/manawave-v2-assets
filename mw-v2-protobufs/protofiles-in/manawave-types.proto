@@ -52,8 +52,9 @@ enum MwMarkerType {
   MwMarkerType_AttackCounter = 3;
   MwMarkerType_ShieldCounter = 4;
   MwMarkerType_ManaCounter = 5;
-  MwMarkerType_ManalithClaimCounter = 6;
-  MwMarkerType_PopulationSlaughterCounter = 7;
+  MwMarkerType_ExpendedManaCounter = 6;
+  MwMarkerType_ManalithClaimCounter = 7;
+  MwMarkerType_PopulationSlaughterCounter = 8;
 
   MwMarkerType_PopulationToken = 100;
   MwMarkerType_ManalithToken   = 101;

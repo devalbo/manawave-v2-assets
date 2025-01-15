@@ -3,6 +3,8 @@ import { TokenCounterTypeTags } from "@mw-assets/PIECES/token-counter-icons";
 import {
   HEX_COLOR_CODE_ATTACK_COUNTER,
   HEX_COLOR_CODE_ATTACK_COUNTER_TEXT,
+  HEX_COLOR_CODE_EXPENDED_MANA_COUNTER,
+  HEX_COLOR_CODE_EXPENDED_MANA_COUNTER_TEXT,
   HEX_COLOR_CODE_MANA_COUNTER,
   HEX_COLOR_CODE_MANA_COUNTER_TEXT,
   HEX_COLOR_CODE_MANALITH_CLAIM_COUNTER,
@@ -37,17 +39,19 @@ import { createImgComponentFromTag } from "@mw-assets/PIECES/icons";
 export type MarkerIndicatorMode = 'show-stack' | 'add-to-stack' | 'remove-from-stack'
 export type OnZeroAmountBehavior = 'do-nothing' |
   'dim' |
-  'show-stockpile-to-marker-icon' |
-  'show-expended-mana-to-marker-icon' |
-  'show-mana-conjuration-to-marker-icon' |
-  'show-tribe-to-clan-marker-stockpile-icon'
+  'hide-badge' |
+  'dim-and-hide-badge'
+  // 'show-stockpile-to-marker-icon' |
+  // 'show-expended-mana-to-marker-icon' |
+  // 'show-mana-conjuration-to-marker-icon' |
+  // 'show-tribe-to-clan-marker-stockpile-icon'
 
 
 export interface IMarkerIndicatorProps {
   quantity: number
   // mode: MarkerIndicatorMode
   // $onZeroAmountLabel?: string
-  $onZeroAmountBehavior?: OnZeroAmountBehavior
+  $onZeroAmountBehavior: OnZeroAmountBehavior
   // $hideZeroAmounts?: boolean
   // $hideLabel?: boolean
   $tooltipText?: string
@@ -86,7 +90,21 @@ const MwMarkerIndicatorContent = (props: IInternalMarkerIndicatorProps) => {
 
   // const viewLabel = getQuantityLabel();
 
-  const opacity = (props.quantity === 0 && props.$onZeroAmountBehavior === 'dim') ? 0.25 : 1;
+  const opacity = (
+    props.quantity === 0 &&
+    (
+      props.$onZeroAmountBehavior === 'dim' ||
+      props.$onZeroAmountBehavior === 'dim-and-hide-badge'
+    )
+  ) ? 0.25 : 1;
+
+  const showBadge = (
+    props.quantity !== 0 ||
+    (
+      props.$onZeroAmountBehavior !== 'dim-and-hide-badge' &&
+      props.$onZeroAmountBehavior !== 'hide-badge'
+    )
+  )
 
   // if (props.isVertical) {
   //   return (
@@ -168,11 +186,13 @@ const MwMarkerIndicatorContent = (props: IInternalMarkerIndicatorProps) => {
         >
           {icon}
         </MarkerIndicatorIconDiv>
-        <div
-          style={{ position: 'absolute', bottom: '-5px', right: '-5px', backgroundColor: 'red', color: 'white', borderRadius: '50%', width: '20px', height: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1 }}
-        >
-          {props.quantity}
-        </div>
+        {showBadge && (
+          <div
+            style={{ position: 'absolute', bottom: '-5px', right: '-5px', backgroundColor: 'red', color: 'white', borderRadius: '50%', width: '20px', height: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1 }}
+          >
+            {props.quantity}
+          </div>
+        )}
         {/* <div style={{ position: 'absolute', bottom: '10px', right: '110px', backgroundColor: 'red', color: 'white', borderRadius: '50%', width: '20px', height: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           3
         </div> */}
@@ -283,6 +303,16 @@ export const ManaCounter_MarkerIndicator = (props: IMarkerIndicatorProps) => (
     markerType='<::mana-counter::>'
     $backgroundColorHexCode={HEX_COLOR_CODE_MANA_COUNTER}
     $textColorHexCode={HEX_COLOR_CODE_MANA_COUNTER_TEXT}
+    />
+)
+
+
+export const ExpendedManaCounter_MarkerIndicator = (props: IMarkerIndicatorProps) => (
+  <MwMarkerIndicator
+    {...props}
+    markerType='<::expended-mana-counter::>'
+    $backgroundColorHexCode={HEX_COLOR_CODE_EXPENDED_MANA_COUNTER}
+    $textColorHexCode={HEX_COLOR_CODE_EXPENDED_MANA_COUNTER_TEXT}
     />
 )
 

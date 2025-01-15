@@ -327,13 +327,17 @@ export enum MwMarkerType {
      */
     MwMarkerType_ManaCounter = 5,
     /**
-     * @generated from protobuf enum value: MwMarkerType_ManalithClaimCounter = 6;
+     * @generated from protobuf enum value: MwMarkerType_ExpendedManaCounter = 6;
      */
-    MwMarkerType_ManalithClaimCounter = 6,
+    MwMarkerType_ExpendedManaCounter = 6,
     /**
-     * @generated from protobuf enum value: MwMarkerType_PopulationSlaughterCounter = 7;
+     * @generated from protobuf enum value: MwMarkerType_ManalithClaimCounter = 7;
      */
-    MwMarkerType_PopulationSlaughterCounter = 7,
+    MwMarkerType_ManalithClaimCounter = 7,
+    /**
+     * @generated from protobuf enum value: MwMarkerType_PopulationSlaughterCounter = 8;
+     */
+    MwMarkerType_PopulationSlaughterCounter = 8,
     /**
      * @generated from protobuf enum value: MwMarkerType_PopulationToken = 100;
      */

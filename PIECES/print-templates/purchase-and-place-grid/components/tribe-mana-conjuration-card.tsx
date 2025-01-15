@@ -1,7 +1,7 @@
 import { MwLogoPlayerSideIcon } from "../../../mw-logo-player-side-icon";
 import { TribeManaConjurationCardBorderFrameDiv, TribeManaConjurationCardHeaderDiv, TribeManaConjurationGridDiv, TribeManaConjurationGridItemDiv, TribeManaConjurationInteractiveGridItemDiv, TribeManaConjurationStartingManaDiv } from "./tribe-mana-conjuration-card-styles";
 import { TribeManaConjurationCardDiv } from "./tribe-mana-conjuration-card-styles";
-import { AttackCounter_MarkerIndicator, ManaCounter_MarkerIndicator, PopulationIncreaseCounter_MarkerIndicator, ShieldCounter_MarkerIndicator } from "../../game-symbols/marker-indicator/marker-indicator";
+import { AttackCounter_MarkerIndicator, ManaCounter_MarkerIndicator, OnZeroAmountBehavior, PopulationIncreaseCounter_MarkerIndicator, ShieldCounter_MarkerIndicator } from "../../game-symbols/marker-indicator/marker-indicator";
 import { MarkerSourceIcon } from "../../game-symbols/marker-source-icon/marker-source-icon";
 import { PlayerSide } from "@mw-game-engine/gameboard/game-play-data";
 import { MwMarkerType } from "@mw-assets/mw-v2-protobufs/protofiles-out/manawave-types";
@@ -16,6 +16,7 @@ export interface ITribeManaConjurationCardInteractions {
 
 export interface ITribeManaConjurationCardProps {
   playerSide: PlayerSide
+  renderMode: 'print' | 'interactive'
 
   attackCounterManaCost: number
   shieldCounterManaCost: number
@@ -40,6 +41,11 @@ export interface ITribeManaConjurationCardProps {
 
 export const TribeManaConjurationCard = (props: ITribeManaConjurationCardProps) => {
   const { playerSide } = props;
+
+  const onZeroAmountBehaviorForMarkers: OnZeroAmountBehavior = props.renderMode === 'print' ?
+    'hide-badge' :
+    'dim';
+
   
   return (
     <TribeManaConjurationCardDiv>
@@ -63,7 +69,7 @@ export const TribeManaConjurationCard = (props: ITribeManaConjurationCardProps) 
             />
             <AttackCounter_MarkerIndicator
               quantity={props.numStockpileAttackCounters}
-              $onZeroAmountBehavior='show-stockpile-to-marker-icon'
+              $onZeroAmountBehavior={onZeroAmountBehaviorForMarkers}
             />
           </TribeManaConjurationGridItemDiv>
           <TribeManaConjurationGridItemDiv>
@@ -73,7 +79,7 @@ export const TribeManaConjurationCard = (props: ITribeManaConjurationCardProps) 
             />
             <ShieldCounter_MarkerIndicator
               quantity={props.numStockpileShieldCounters}
-              $onZeroAmountBehavior='show-stockpile-to-marker-icon'
+              $onZeroAmountBehavior={onZeroAmountBehaviorForMarkers}
             />
           </TribeManaConjurationGridItemDiv>
           <TribeManaConjurationGridItemDiv>
@@ -83,7 +89,7 @@ export const TribeManaConjurationCard = (props: ITribeManaConjurationCardProps) 
             />
             <PopulationIncreaseCounter_MarkerIndicator
               quantity={props.numStockpilePopulationIncreaseCounters}
-              $onZeroAmountBehavior='show-stockpile-to-marker-icon'
+              $onZeroAmountBehavior={onZeroAmountBehaviorForMarkers}
             />
           </TribeManaConjurationGridItemDiv>
 
@@ -99,6 +105,7 @@ export const TribeManaConjurationCard = (props: ITribeManaConjurationCardProps) 
               markerManaCost={props.attackCounterManaCost}
               numConjuredMarkers={props.numConjuredAttackCounters}
               numManaSpent={props.numExpendedManaForAttackCounters}
+              $onZeroAmountBehavior={onZeroAmountBehaviorForMarkers}
             />
           </TribeManaConjurationInteractiveGridItemDiv>
           <TribeManaConjurationInteractiveGridItemDiv
@@ -112,6 +119,7 @@ export const TribeManaConjurationCard = (props: ITribeManaConjurationCardProps) 
               markerManaCost={props.shieldCounterManaCost}
               numConjuredMarkers={props.numConjuredShieldCounters}
               numManaSpent={props.numExpendedManaForShieldCounters}
+              $onZeroAmountBehavior={onZeroAmountBehaviorForMarkers}
             />
           </TribeManaConjurationInteractiveGridItemDiv>
           <TribeManaConjurationInteractiveGridItemDiv
@@ -125,6 +133,7 @@ export const TribeManaConjurationCard = (props: ITribeManaConjurationCardProps) 
               markerManaCost={props.populationIncreaseCounterManaCost}
               numConjuredMarkers={props.numConjuredPopulationIncreaseCounters}
               numManaSpent={props.numExpendedManaForPopulationIncreaseCounters}
+              $onZeroAmountBehavior={onZeroAmountBehaviorForMarkers}
             />
           </TribeManaConjurationInteractiveGridItemDiv>
           
@@ -218,7 +227,7 @@ export const TribeManaConjurationCard = (props: ITribeManaConjurationCardProps) 
             // markerSize={30}
             // $backgroundColorHexCode='#0000ff'
             // $textColorHexCode='#ffffff'
-            $onZeroAmountBehavior='show-stockpile-to-marker-icon'
+            $onZeroAmountBehavior={onZeroAmountBehaviorForMarkers}
           />
 
           {/* <MarkerFlowArea

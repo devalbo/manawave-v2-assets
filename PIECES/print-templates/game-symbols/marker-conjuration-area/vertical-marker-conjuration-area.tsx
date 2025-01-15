@@ -25,18 +25,21 @@ export const VerticalMarkerConjurationArea = (props: IMarkerConjurationAreaProps
         return (
           <AttackCounter_MarkerIndicator
             quantity={props.numConjuredMarkers}
+            $onZeroAmountBehavior={props.$onZeroAmountBehavior}
           />
         )
       case MwMarkerType.MwMarkerType_ShieldCounter:
         return (
           <ShieldCounter_MarkerIndicator
             quantity={props.numConjuredMarkers}
+            $onZeroAmountBehavior={props.$onZeroAmountBehavior}
           />
         )
       case MwMarkerType.MwMarkerType_PopulationIncreaseCounter:
         return (
           <PopulationIncreaseCounter_MarkerIndicator
             quantity={props.numConjuredMarkers}
+            $onZeroAmountBehavior={props.$onZeroAmountBehavior}
           />
         )
       default:
@@ -56,6 +59,7 @@ export const VerticalMarkerConjurationArea = (props: IMarkerConjurationAreaProps
         <div style={{ height: '0.0625in' }} />
         <ManaCounter_MarkerIndicator
           quantity={props.numManaSpent}
+          $onZeroAmountBehavior={props.$onZeroAmountBehavior}
         />
       </ConjurationMarkersAreaDiv>
     </NewMarkerConjurationAreaDiv>

@@ -11,6 +11,7 @@ import {
   ManalithClaimCounterSvg,
   SlaughterCounterSvg,
   StockpileIconSvg,
+  ExpendedManaCounterSvg,
  } from "./assets/TokenSvgIcons";
 
 export type TokenCounterTypes = 'soulstain-token' | 'population-token' |
@@ -23,6 +24,7 @@ export type TokenCounterTypeTags =
   '<::population-sacrifice-counter::>' |
   '<::population-slaughter-counter::>' |
   '<::mana-counter::>'                 |
+  '<::expended-mana-counter::>'        |
   '<::manalith-claim-counter::>'       |
 
   '<::manawave-round-token::>'         |
@@ -52,6 +54,9 @@ export const SlaughterCounterDataUrl = `data:image/svg+xml;charset=utf-8,${encod
 
 const encodedManaCounterSvg = encodeURIComponent(ManaCounterSvg);
 export const ManaCounterDataUrl = `data:image/svg+xml;charset=utf-8,${encodedManaCounterSvg}`;
+
+const encodedExpendedManaCounterSvg = encodeURIComponent(ExpendedManaCounterSvg);
+export const ExpendedManaCounterDataUrl = `data:image/svg+xml;charset=utf-8,${encodedExpendedManaCounterSvg}`;
 
 const encodedManaLevelTokenSvg = encodeURIComponent(ManaLevelTokenSvg);
 export const ManaLevelTokenDataUrl = `data:image/svg+xml;charset=utf-8,${encodedManaLevelTokenSvg}`;

@@ -3,7 +3,7 @@ import { PlayerSide } from '../../../../mw-v2-game-engine/gameboard/game-play-da
 import { MwLogoPlayerSideIcon } from '../../mw-logo-player-side-icon';
 import { MwPlacementGridCardBorderFrameDiv, MwPlacementGridCardClanPlacementContainerDiv, MwPlacementGridCardPlacementItemDiv, MwPlacementGridCardPlacementRowDiv } from './MwPlacementGrid-styles';
 import { MwPlacementGridCardDiv } from './MwPlacementGrid-styles';
-import { ClanPlacementCard, IClanPlacementCardProps } from './components/clan-placements-card';
+import { ClanPlacementCard, IClanPlacementCardProps } from './components/clan-placement-card';
 import { ITribeToClanMarkerPlacementsCardProps, TribeToClanMarkerPlacementsCard } from './components/tribe-to-clan-marker-placements-card';
 import { ITribeManaConjurationCardProps, TribeManaConjurationCard } from './components/tribe-mana-conjuration-card';
 import { LeylineDistanceFromSource } from '@mw-assets/mw-v2-protobufs/protofiles-out/manawave-types';

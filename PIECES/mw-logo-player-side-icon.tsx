@@ -6,6 +6,7 @@ import { MW_DOC_SITE_PREFIX } from "./constants";
 export const MwLogoPlayerSideIcon = (props: {
   playerSide: PlayerSide | PlayerId
   size: number
+  style?: React.CSSProperties
 }) => {
 
   const playerIdImgSrc = props.playerSide === 'OPT' ? 
@@ -13,7 +14,7 @@ export const MwLogoPlayerSideIcon = (props: {
     `${MW_DOC_SITE_PREFIX}/img/mw_logo_white_top.svg`;
 
     return (
-      <div className="mw-family-selector-label">
+      <div style={props.style}>
         <img src={playerIdImgSrc} height={props.size} width={props.size} />
       </div>
     )

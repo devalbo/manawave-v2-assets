@@ -7,13 +7,9 @@ import { MarkerFlowIcon } from "../marker-flow-icon/marker-flow-icon";
 
 
 interface IMarkerConjurationAreaProps extends IMarkerConjurationIconProps {
-  // markerToConjure: MwMarkerType;
-  // numAvailableMana: number;
   numConjuredMarkers: number;
   numManaSpent: number;
-  // conversionRate: number;
-  // backgroundColorHexCode: string;
-  // textColorHexCode: string;
+
 }
 
 
@@ -25,24 +21,28 @@ export const HorizontalMarkerConjurationArea = (props: IMarkerConjurationAreaPro
         return (
           <AttackCounter_MarkerIndicator
             quantity={props.numConjuredMarkers}
+            $onZeroAmountBehavior={props.$onZeroAmountBehavior}
           />
         )
       case MwMarkerType.MwMarkerType_ShieldCounter:
         return (
           <ShieldCounter_MarkerIndicator
             quantity={props.numConjuredMarkers}
+            $onZeroAmountBehavior={props.$onZeroAmountBehavior}
           />
         )
       case MwMarkerType.MwMarkerType_PopulationIncreaseCounter:
         return (
           <PopulationIncreaseCounter_MarkerIndicator
             quantity={props.numConjuredMarkers}
+            $onZeroAmountBehavior={props.$onZeroAmountBehavior}
           />
         )
       case MwMarkerType.MwMarkerType_ManalithToken:
         return (
           <ManalithToken_MarkerIndicator
             quantity={props.numConjuredMarkers}
+            $onZeroAmountBehavior={props.$onZeroAmountBehavior}
           />
         )
       default:
@@ -60,24 +60,10 @@ export const HorizontalMarkerConjurationArea = (props: IMarkerConjurationAreaPro
       <HorizontalConjurationMarkersAreaDiv>
         <ManaCounter_MarkerIndicator
           quantity={props.numManaSpent}
+          $onZeroAmountBehavior={props.$onZeroAmountBehavior}
         />
-        {/* <div style={{ width: '0.25in' }} /> */}
         <ConjuredMarker />
       </HorizontalConjurationMarkersAreaDiv>
     </NewMarkerConjurationAreaDiv>
   )
-
-
-  // return (
-  //   <MarkerConjurationAreaDiv>
-  //     <ManaCounter_MarkerView
-  //       mode='show-stack'
-  //       quantity={props.numManaSpent}
-  //       $hideLabel={true}
-  //     />
-  //     <MarkerConjurationIcon
-  //       {...props}
-  //     />
-  //   </MarkerConjurationAreaDiv>
-  // )
 }

@@ -11,6 +11,7 @@ import {
   ManaLevelTokenDataUrl,
   ManalithClaimCounterDataUrl,
   SlaughterCounterDataUrl,
+  ExpendedManaCounterDataUrl,
  } from "./token-counter-icons";
 import { MwMarkerType } from "../mw-v2-protobufs/protofiles-out/manawave-types";
 import { ExpendedManaCounterSvg, StockpileIconSvg, TribeIconSvg } from "./assets/TokenSvgIcons";
@@ -19,6 +20,7 @@ import { ExpendedManaCounterSvg, StockpileIconSvg, TribeIconSvg } from "./assets
 export const createImgDataUrlFromTag = (tag: TokenCounterTypeTags) => {
   switch (tag) {
     case '<::mana-counter::>': return ManaCounterDataUrl;
+    case '<::expended-mana-counter::>': return ExpendedManaCounterDataUrl;
     case '<::manalith-token::>': return ManaLevelTokenDataUrl;
     case '<::manawave-round-token::>': return ManawaveRoundTokenDataUrl;
     case '<::manalith-claim-counter::>': return ManalithClaimCounterDataUrl;
@@ -51,6 +53,7 @@ const mapMwMarkerTypeToTag = (mwMarkerType: MwMarkerType): TokenCounterTypeTags 
     case MwMarkerType.MwMarkerType_ManawaveRoundToken: return '<::manawave-round-token::>';
     case MwMarkerType.MwMarkerType_PopulationSacrificeCounter: return '<::population-sacrifice-counter::>';
     case MwMarkerType.MwMarkerType_PopulationSlaughterCounter: return '<::population-slaughter-counter::>';
+    case MwMarkerType.MwMarkerType_ExpendedManaCounter: return '<::expended-mana-counter::>';
 
     default:
       throw new Error(`Unrecognized MwMarkerType: ${mwMarkerType}`);

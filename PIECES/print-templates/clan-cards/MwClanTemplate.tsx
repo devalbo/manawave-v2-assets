@@ -3,9 +3,10 @@ import { MwClanTemplateModeBlock } from './MwClanTemplateModeBlock';
 import { createImgComponentFromMwMarkerType, createImgComponentFromTag } from '../../icons';
 import { CardDecoration } from '../../constants';
 import { IMwCardModeData } from '../../mw-card-data';
-// import './MwClanTemplate.css';
 import { IMwClanConversionRatio } from '../../type-defs/type-defs';
-import { MwClanCardBodyDiv, MwClanCardBorderFrameDiv, MwClanCardDiv, MwClanConversionRatesTableContainerDiv, MwClanConversionRatesTableDiv, MwClanConversionRatesTableGridHeaderDiv, MwClanConversionRatesTableGridItemDiv, MwClanStockpileTableContainerDiv, MwClanStockpileTableDiv, MwClanStockpileTableGridItemDiv, MwClanTablesDiv } from './clan-card-styles';
+import { MwClanCardBodyDiv, MwClanCardBorderFrameDiv, MwClanCardDiv, MwClanCardHeaderDiv, MwClanConversionRatesTableContainerDiv, MwClanConversionRatesTableDiv, MwClanConversionRatesTableGridHeaderDiv, MwClanConversionRatesTableGridItemDiv, MwClanStockpileTableContainerDiv, MwClanStockpileTableDiv, MwClanStockpileTableGridItemDiv, MwClanTablesDiv } from './clan-card-styles';
+import { MwLogoPlayerSideIcon } from '@mw-assets/PIECES/mw-logo-player-side-icon';
+import { PlayerSide } from '@mw-assets/type-defs/game-play-data';
 
 
 export interface IMwClanData {
@@ -31,7 +32,6 @@ const SacrificeCounterIcon_Stockpile = () => createImgComponentFromTag('<::popul
 const MwClanConversionRatioRow = (props: {conversionRatio: IMwClanConversionRatio}) => {
   return (
     <>
-      {/* <div className="mw-tribe-conversion-rates-table-grid-item"> */}
       <MwClanConversionRatesTableGridItemDiv>
         {
           props.conversionRatio.input.map((input) => 
@@ -100,30 +100,26 @@ export const MwStockpileTable = () => {
 
 export const MwClanTemplate = (props: IMwClanData) => {
 
-  const playerIdImgSrc = props.decoration === 'mw-icon-white-side-up' ? 
-    '/img/mw_logo_white_top.svg' :
-    '/img/mw_logo_black_top.svg';
-  
+  const playerSide: PlayerSide = props.decoration === 'mw-icon-black-side-up' ? 
+    'OPT' :
+    'OSB';
     
   return (
     <MwClanCardDiv>
       <MwClanCardBorderFrameDiv>
-        <div
+        <MwClanCardHeaderDiv
           style={{display: "flex", fontSize: 24, }}
         >
-          <div
-            style={{
-              height: 50,
-              width: 50,
-              overflow: "hidden",
-            }}
-          >
-            <img src={playerIdImgSrc} style={{maxHeight: "100%", maxWidth: "100%", objectFit: "cover", }} />
-          </div>
-          <div style={{marginLeft: "20px", }}>
+          <MwLogoPlayerSideIcon
+            playerSide={playerSide}
+            size={30}
+            style={{marginRight: 6}}
+          />
+
+          <div >
             {props.title}
           </div>
-        </div>
+        </MwClanCardHeaderDiv>
 
         <MwClanCardBodyDiv>
           <MwClanTemplateModeBlock

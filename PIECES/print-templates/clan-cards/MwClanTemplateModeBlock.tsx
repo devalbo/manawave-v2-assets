@@ -1,14 +1,13 @@
 import { IMwCardModeData } from "../../mw-card-data"
 import { MwClanTemplateModeItem } from "./MwClanTemplateModeItem"
-import { createImgComponentFromTag } from "../../icons";
-import { MwClanModeItemDiv, MwClanModesBlockDiv } from "./clan-card-styles";
+import { MwClanModesBlockDiv } from "./clan-card-styles";
 
 interface MwClanTemplateModeBlockProps {
   modes: IMwCardModeData[]
 }
 
-const ManaLevelTokenIcon = () => createImgComponentFromTag('<::manalith-token::>', 20);
-const PopulationTokenIcon = () => createImgComponentFromTag('<::population-token::>', 20);
+// const ManaLevelTokenIcon = () => createImgComponentFromTag('<::manalith-token::>', 20);
+// const PopulationTokenIcon = () => createImgComponentFromTag('<::population-token::>', 20);
 
 export const MwClanTemplateModeBlock = (props: MwClanTemplateModeBlockProps) => {
   const block =
@@ -19,14 +18,14 @@ export const MwClanTemplateModeBlock = (props: MwClanTemplateModeBlockProps) => 
           key={i}
           />
       ))}
-      <MwClanModeItemDiv style={{ 
+      {/* <MwClanModeItemDiv style={{ 
         fontSize: 14,
         display: 'flex',
         justifyContent: "space-evenly",
         }}>
         <ManaLevelTokenIcon />
         <PopulationTokenIcon />
-      </MwClanModeItemDiv>
+      </MwClanModeItemDiv> */}
 
     </MwClanModesBlockDiv>
 

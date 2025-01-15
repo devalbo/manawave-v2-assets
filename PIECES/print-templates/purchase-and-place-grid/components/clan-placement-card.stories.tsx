@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ClanPlacementCard } from './clan-placements-card';
+import { ClanPlacementCard } from './clan-placement-card';
 
 
 const meta: Meta<typeof ClanPlacementCard> = {

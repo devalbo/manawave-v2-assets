@@ -3,11 +3,13 @@ import { MwMarkerType } from "../../../../mw-v2-protobufs/protofiles-out/manawav
 import { createImgComponentFromMwMarkerType, createImgComponentFromTag } from "../../../../PIECES/icons";
 import { MarkerConjurationIconDiv } from "./marker-conjuration-icon-styles";
 import { RightArrowIcon } from "../arrow-icons";
+import { OnZeroAmountBehavior } from "../marker-indicator/marker-indicator";
 
 
 export interface IMarkerConjurationIconProps {
   markerManaCost: number;
   markerToConjure: MwMarkerType;
+  $onZeroAmountBehavior: OnZeroAmountBehavior;
 }
 
 
