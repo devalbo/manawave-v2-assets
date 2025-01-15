@@ -14,7 +14,8 @@ const meta: Meta<typeof MwClanTemplate> = {
   tags: ['autodocs'],
 };
 
-export default meta;
+// export default meta;
+export default { };
 type Story = StoryObj<typeof MwClanTemplate>;
 
 export const Default: Story = {

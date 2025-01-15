@@ -7,6 +7,7 @@ import { MwLogoPlayerSideIcon } from '@mw-assets/PIECES/mw-logo-player-side-icon
 import { PlayerSide } from '@mw-assets/type-defs/game-play-data';
 import { AttackCounter_MarkerIndicator, ExpendedManaCounter_MarkerIndicator, ManaCounter_MarkerIndicator, ManalithToken_MarkerIndicator, PopulationIncreaseCounter_MarkerIndicator, PopulationSacrificeCounter_MarkerIndicator, PopulationToken_MarkerIndicator, ShieldCounter_MarkerIndicator } from '../game-symbols/marker-indicator/marker-indicator';
 import { MwClanTemplateModeBlock } from './MwClanTemplateModeBlock';
+import { MwModeMarker } from '../game-symbols/mode-marker/mode-marker';
 
 
 export interface IMwClanData {
@@ -16,87 +17,6 @@ export interface IMwClanData {
   modes: IMwCardModeData[]
   conversionRatios: IMwClanConversionRatio[]
 }
-
-
-// const ConversionImageSize = 20;
-// const StockpileImageSize = 20;
-
-// const ManaCounterIcon_Stockpile = () => createImgComponentFromTag('<::mana-counter::>', StockpileImageSize);
-// const AttackCounterIcon_Stockpile = () => createImgComponentFromTag('<::attack-counter::>', StockpileImageSize);
-// const ShieldCounterIcon_Stockpile = () => createImgComponentFromTag('<::shield-counter::>', StockpileImageSize);
-// const PopulationIncreaseCounterIcon_Stockpile = () => createImgComponentFromTag('<::population-increase-counter::>', StockpileImageSize);
-// const SacrificeCounterIcon_Stockpile = () => createImgComponentFromTag('<::population-sacrifice-counter::>', StockpileImageSize);
-
-
-
-// const MwClanConversionRatioRow = (props: {conversionRatio: IMwClanConversionRatio}) => {
-//   return (
-//     <>
-//       {/* <div className="mw-tribe-conversion-rates-table-grid-item"> */}
-//       <MwClanConversionRatesTableGridItemDiv>
-//         {
-//           props.conversionRatio.input.map((input) => 
-//             createImgComponentFromMwMarkerType(input, ConversionImageSize)
-//           )
-//         }
-//       </MwClanConversionRatesTableGridItemDiv>
-//       <MwClanConversionRatesTableGridItemDiv>
-//         {
-//           createImgComponentFromMwMarkerType(props.conversionRatio.output, ConversionImageSize)
-//         }
-//       </MwClanConversionRatesTableGridItemDiv>
-//     </>
-//   )
-// }
-
-
-// export const MwConversionRatesTable = (props: { conversionRatios: IMwClanConversionRatio[] }) => {
-
-//   return (
-//     <MwClanConversionRatesTableDiv>
-//       <MwClanConversionRatesTableGridHeaderDiv>Mana</MwClanConversionRatesTableGridHeaderDiv>
-//       <MwClanConversionRatesTableGridHeaderDiv>Conjuration</MwClanConversionRatesTableGridHeaderDiv>
-
-//       {
-//         props.conversionRatios.map((conversionRatio) => (
-//           <MwClanConversionRatioRow conversionRatio={conversionRatio} />
-//         ))
-//       }
-        
-//     </MwClanConversionRatesTableDiv>
-//   )
-// }
-
-// export const MwStockpileTable = () => {
-//   return (
-//     <div>
-//       Stockpiles
-//       <MwClanStockpileTableDiv>
-
-//         <MwClanStockpileTableGridItemDiv>
-//           <ManaCounterIcon_Stockpile />
-//         </MwClanStockpileTableGridItemDiv>
-
-//         <MwClanStockpileTableGridItemDiv>
-//           <AttackCounterIcon_Stockpile />
-//         </MwClanStockpileTableGridItemDiv>
-
-//         <MwClanStockpileTableGridItemDiv>
-//           <PopulationIncreaseCounterIcon_Stockpile />
-//         </MwClanStockpileTableGridItemDiv>
-          
-//         <MwClanStockpileTableGridItemDiv>
-//           <ShieldCounterIcon_Stockpile />
-//         </MwClanStockpileTableGridItemDiv>
-
-//         <MwClanStockpileTableGridItemDiv>
-//           <SacrificeCounterIcon_Stockpile />
-//         </MwClanStockpileTableGridItemDiv>
-          
-//       </MwClanStockpileTableDiv>
-//     </div>
-//   )
-// }
 
 
 export const NewMwClanTemplate = (props: IMwClanData) => {
@@ -138,7 +58,10 @@ export const NewMwClanTemplate = (props: IMwClanData) => {
               />
             </NewMwClanTemplateBodyBottomGridItemDiv>
             <NewMwClanTemplateBodyBottomGridMarkerItemDiv>
-              Mode marker goes here
+              <MwModeMarker
+                modeIndex='blank'
+                renderMode='print'
+              />
             </NewMwClanTemplateBodyBottomGridMarkerItemDiv>
           </NewMwClanTemplateBodyMarkersDiv>
 

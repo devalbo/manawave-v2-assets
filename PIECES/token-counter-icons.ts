@@ -12,6 +12,7 @@ import {
   SlaughterCounterSvg,
   StockpileIconSvg,
   ExpendedManaCounterSvg,
+  ModeConstellationIconMode1Svg,
  } from "./assets/TokenSvgIcons";
 
 export type TokenCounterTypes = 'soulstain-token' | 'population-token' |
@@ -72,3 +73,6 @@ export const ManalithClaimCounterDataUrl = `data:image/svg+xml;charset=utf-8,${e
 
 const encodedStockpileIconSvg = encodeURIComponent(StockpileIconSvg);
 export const StockpileIconDataUrl = `data:image/svg+xml;charset=utf-8,${encodedStockpileIconSvg}`;
+
+const encodedModeConstellationIconMode1Svg = encodeURIComponent(ModeConstellationIconMode1Svg);
+export const ModeConstellationIconMode1DataUrl = `data:image/svg+xml;charset=utf-8,${encodedModeConstellationIconMode1Svg}`;

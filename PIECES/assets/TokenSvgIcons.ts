@@ -371,3 +371,576 @@ export const TribeIconSvg = `
   </g>
 </svg>
 `
+
+
+export const ModeConstellationIconMode1Svg = `
+<svg
+   width="96"
+   height="96"
+   viewBox="0 0 25.399999 25.4"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="mode-marker-mode-1.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="2.9757808"
+     inkscape:cx="-89.388306"
+     inkscape:cy="24.6994"
+     inkscape:window-width="2307"
+     inkscape:window-height="1237"
+     inkscape:window-x="1181"
+     inkscape:window-y="160"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="vector-effect:non-scaling-stroke;fill:#000000;stroke-width:0.264583;stroke-linejoin:bevel;-inkscape-stroke:hairline;paint-order:markers stroke fill;fill-opacity:1"
+       id="rect1"
+       width="25.4"
+       height="25.4"
+       x="0"
+       y="0" />
+    <g
+       id="g2-8"
+       transform="matrix(0.03361025,0,0,0.03361025,5.400865,2.8028529)"
+       style="stroke-width:1.01159619;stroke-dasharray:none;stroke:#19ffff;stroke-opacity:1;fill:#c6d866;fill-opacity:1">
+      <polygon
+         points="387.52,53.089 360.918,58.23 379.416,78.029 376.083,104.918 400.631,93.441 425.177,104.918 421.848,78.029 440.345,58.23 413.743,53.089 400.631,29.377 "
+         style="fill:#c6d866;stroke-width:1.01159619;stroke-dasharray:none;stroke:#19ffff;stroke-opacity:1;fill-opacity:1"
+         id="polygon2-4" />
+    </g>
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 18.63489,20.932087 -6.130633,0.616629"
+       id="path3-0-4"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 11.504257,6.0596972 7.8825154,9.7569427"
+       id="path3-0-2"
+       sodipodi:nodetypes="cc" />
+    <polygon
+       points="440.345,58.23 413.743,53.089 400.631,29.377 387.52,53.089 360.918,58.23 379.416,78.029 376.083,104.918     400.631,93.441 425.177,104.918 421.848,78.029"
+       style="fill:white;"
+       id="polygon1" />
+    <g
+       id="g2-8-3"
+       transform="matrix(0.03361025,0,0,0.03361025,8.1372447,12.272623)"
+       style="fill:#c6d866;fill-opacity:1;stroke:#19ffff;stroke-width:1.0116;stroke-dasharray:none;stroke-opacity:1">
+      <polygon
+         points="413.743,53.089 400.631,29.377 387.52,53.089 360.918,58.23 379.416,78.029 376.083,104.918 400.631,93.441 425.177,104.918 421.848,78.029 440.345,58.23 "
+         style="fill:#c6d866;fill-opacity:1;stroke:#19ffff;stroke-width:1.0116;stroke-dasharray:none;stroke-opacity:1"
+         id="polygon2-4-8" />
+    </g>
+    <g
+       id="g2-8-5"
+       transform="matrix(0.03361025,0,0,0.03361025,-8.9704162,1.5049546)"
+       style="fill:#c6d866;fill-opacity:1;stroke:#19ffff;stroke-width:1.0116;stroke-dasharray:none;stroke-opacity:1">
+      <polygon
+         points="440.345,58.23 413.743,53.089 400.631,29.377 387.52,53.089 360.918,58.23 379.416,78.029 376.083,104.918 400.631,93.441 425.177,104.918 421.848,78.029 "
+         style="fill:#c6d866;fill-opacity:1;stroke:#19ffff;stroke-width:1.0116;stroke-dasharray:none;stroke-opacity:1"
+         id="polygon2-4-9" />
+    </g>
+  </g>
+  <circle
+     style="vector-effect:non-scaling-stroke;fill:#ffffff;fill-opacity:1;stroke-width:0.132291;stroke-linejoin:bevel;-inkscape-stroke:hairline;paint-order:markers stroke fill"
+     id="path2"
+     cx="11.504257"
+     cy="6.0596972"
+     r="1" />
+  <circle
+     style="vector-effect:non-scaling-stroke;fill:#ffffff;fill-opacity:1;stroke-width:0.198437;stroke-linejoin:bevel;-inkscape-stroke:hairline;paint-order:markers stroke fill"
+     id="path2-0"
+     cx="7.1310334"
+     cy="21.85013"
+     r="1.5" />
+  <circle
+     style="vector-effect:non-scaling-stroke;fill:#ffffff;fill-opacity:1;stroke-width:0.264583;stroke-linejoin:bevel;-inkscape-stroke:hairline;paint-order:markers stroke fill"
+     id="path2-8"
+     cx="17.125999"
+     cy="20.949158"
+     r="2" />
+  <circle
+     style="vector-effect:non-scaling-stroke;fill:#ffffff;fill-opacity:1;stroke-width:0.132291;stroke-linejoin:bevel;-inkscape-stroke:hairline;paint-order:markers stroke fill"
+     id="path2-9"
+     cx="12.504257"
+     cy="21.548716"
+     r="1" />
+  <circle
+     style="vector-effect:non-scaling-stroke;fill:#ffffff;fill-opacity:1;stroke-width:0.198437;stroke-linejoin:bevel;-inkscape-stroke:hairline;paint-order:markers stroke fill"
+     id="path2-4"
+     cx="7.7039247"
+     cy="9.9318867"
+     r="1.5" />
+  <path
+     style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+     d="m 11.504257,6.0596972 1,14.8723898"
+     id="path3"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+     d="M 12.504257,21.548716 7.1310334,21.85013"
+     id="path3-0"
+     sodipodi:nodetypes="cc" />
+</svg>
+`
+
+
+export const ModeConstellationIconMode2Svg = `
+<svg
+   width="96"
+   height="96"
+   viewBox="0 0 25.399999 25.4"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="mode-marker-mode-2.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="11.903123"
+     inkscape:cx="27.975851"
+     inkscape:cy="51.121038"
+     inkscape:window-width="2307"
+     inkscape:window-height="1237"
+     inkscape:window-x="1181"
+     inkscape:window-y="160"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="vector-effect:non-scaling-stroke;fill:#000000;stroke-width:0.264583;stroke-linejoin:bevel;-inkscape-stroke:hairline;paint-order:markers stroke fill;fill-opacity:1"
+       id="rect1"
+       width="25.4"
+       height="25.4"
+       x="0"
+       y="0" />
+    <circle
+       style="vector-effect:non-scaling-stroke;fill:#ffffff;fill-opacity:1;stroke-width:0.198437;stroke-linejoin:bevel;-inkscape-stroke:hairline;paint-order:markers stroke fill"
+       id="path2-8-8"
+       cx="6.5842552"
+       cy="17.910627"
+       r="1.5" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 6.5842554,18.213963 0.546778,3.636167"
+       id="path3-1"
+       sodipodi:nodetypes="cc" />
+    <g
+       id="g2-8"
+       transform="matrix(0.03361025,0,0,0.03361025,5.400865,2.8028529)"
+       style="stroke-width:1.01159619;stroke-dasharray:none;stroke:#19ffff;stroke-opacity:1;fill:#c6d866;fill-opacity:1">
+      <polygon
+         points="387.52,53.089 360.918,58.23 379.416,78.029 376.083,104.918 400.631,93.441 425.177,104.918 421.848,78.029 440.345,58.23 413.743,53.089 400.631,29.377 "
+         style="fill:#c6d866;stroke-width:1.01159619;stroke-dasharray:none;stroke:#19ffff;stroke-opacity:1;fill-opacity:1"
+         id="polygon2-4" />
+    </g>
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 16.717617,8.2321463 6.5925217,8.0647297"
+       id="path3-0-2"
+       sodipodi:nodetypes="cc" />
+    <polygon
+       points="440.345,58.23 413.743,53.089 400.631,29.377 387.52,53.089 360.918,58.23 379.416,78.029 376.083,104.918     400.631,93.441 425.177,104.918 421.848,78.029"
+       style="fill:white;"
+       id="polygon1" />
+    <g
+       id="g2-8-3"
+       transform="matrix(0.03361025,0,0,0.03361025,8.1372447,12.272623)"
+       style="fill:#c6d866;fill-opacity:1;stroke:#19ffff;stroke-width:1.0116;stroke-dasharray:none;stroke-opacity:1">
+      <polygon
+         points="413.743,53.089 400.631,29.377 387.52,53.089 360.918,58.23 379.416,78.029 376.083,104.918 400.631,93.441 425.177,104.918 421.848,78.029 440.345,58.23 "
+         style="fill:#c6d866;fill-opacity:1;stroke:#19ffff;stroke-width:1.0116;stroke-dasharray:none;stroke-opacity:1"
+         id="polygon2-4-8" />
+    </g>
+    <g
+       id="g2-8-5"
+       transform="matrix(0.03361025,0,0,0.03361025,-8.9704162,1.5049546)"
+       style="fill:#c6d866;fill-opacity:1;stroke:#19ffff;stroke-width:1.0116;stroke-dasharray:none;stroke-opacity:1">
+      <polygon
+         points="440.345,58.23 413.743,53.089 400.631,29.377 387.52,53.089 360.918,58.23 379.416,78.029 376.083,104.918 400.631,93.441 425.177,104.918 421.848,78.029 "
+         style="fill:#c6d866;fill-opacity:1;stroke:#19ffff;stroke-width:1.0116;stroke-dasharray:none;stroke-opacity:1"
+         id="polygon2-4-9" />
+    </g>
+  </g>
+  <circle
+     style="vector-effect:non-scaling-stroke;fill:#ffffff;fill-opacity:1;stroke-width:0.264582;stroke-linejoin:bevel;-inkscape-stroke:hairline;paint-order:markers stroke fill"
+     id="path2"
+     cx="16.717617"
+     cy="8.2321463"
+     r="2" />
+  <circle
+     style="vector-effect:non-scaling-stroke;fill:#ffffff;fill-opacity:1;stroke-width:0.198437;stroke-linejoin:bevel;-inkscape-stroke:hairline;paint-order:markers stroke fill"
+     id="path2-0"
+     cx="7.1310334"
+     cy="21.85013"
+     r="1.5" />
+  <circle
+     style="vector-effect:non-scaling-stroke;fill:#ffffff;fill-opacity:1;stroke-width:0.198437;stroke-linejoin:bevel;-inkscape-stroke:hairline;paint-order:markers stroke fill"
+     id="path2-8"
+     cx="17.217617"
+     cy="20.915947"
+     r="1.5" />
+  <circle
+     style="vector-effect:non-scaling-stroke;fill:#ffffff;fill-opacity:1;stroke-width:0.198437;stroke-linejoin:bevel;-inkscape-stroke:hairline;paint-order:markers stroke fill"
+     id="path2-4"
+     cx="6.5925217"
+     cy="8.0647297"
+     r="1.5" />
+  <path
+     style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+     d="M 16.717617,8.2321463 6.3308232,18.249184"
+     id="path3"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+     d="M 17.125999,20.949158 7.1310334,21.85013"
+     id="path3-0"
+     sodipodi:nodetypes="cc" />
+</svg>
+`
+
+export const ModeConstellationIconMode3Svg = `
+<svg
+   width="96"
+   height="96"
+   viewBox="0 0 25.399999 25.4"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="mode-marker-mode-3.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="11.903123"
+     inkscape:cx="27.975851"
+     inkscape:cy="51.121038"
+     inkscape:window-width="2307"
+     inkscape:window-height="1237"
+     inkscape:window-x="1181"
+     inkscape:window-y="160"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="vector-effect:non-scaling-stroke;fill:#000000;stroke-width:0.264583;stroke-linejoin:bevel;-inkscape-stroke:hairline;paint-order:markers stroke fill;fill-opacity:1"
+       id="rect1"
+       width="25.4"
+       height="25.4"
+       x="0"
+       y="0" />
+    <circle
+       style="vector-effect:non-scaling-stroke;fill:#ffffff;fill-opacity:1;stroke-width:0.198437;stroke-linejoin:bevel;-inkscape-stroke:hairline;paint-order:markers stroke fill"
+       id="path2-8-8"
+       cx="11.655069"
+       cy="14.591627"
+       r="1.5" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 11.655069,14.591627 4.931581,4.634987"
+       id="path3-1"
+       sodipodi:nodetypes="cc" />
+    <g
+       id="g2-8"
+       transform="matrix(0.03361025,0,0,0.03361025,1.1853466,21.09664)"
+       style="fill:#c6d866;fill-opacity:1;stroke:#19ffff;stroke-width:1.0116;stroke-dasharray:none;stroke-opacity:1">
+      <polygon
+         points="360.918,58.23 379.416,78.029 376.083,104.918 400.631,93.441 425.177,104.918 421.848,78.029 440.345,58.23 413.743,53.089 400.631,29.377 387.52,53.089 "
+         style="fill:#c6d866;fill-opacity:1;stroke:#19ffff;stroke-width:1.0116;stroke-dasharray:none;stroke-opacity:1"
+         id="polygon2-4" />
+    </g>
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 16.317513,9.0323563 6.5925217,8.0647297"
+       id="path3-0-2"
+       sodipodi:nodetypes="cc" />
+    <polygon
+       points="440.345,58.23 413.743,53.089 400.631,29.377 387.52,53.089 360.918,58.23 379.416,78.029 376.083,104.918     400.631,93.441 425.177,104.918 421.848,78.029"
+       style="fill:white;"
+       id="polygon1" />
+    <g
+       id="g2-8-3"
+       transform="matrix(0.03361025,0,0,0.03361025,8.1372447,12.272623)"
+       style="fill:#c6d866;fill-opacity:1;stroke:#19ffff;stroke-width:1.0116;stroke-dasharray:none;stroke-opacity:1">
+      <polygon
+         points="413.743,53.089 400.631,29.377 387.52,53.089 360.918,58.23 379.416,78.029 376.083,104.918 400.631,93.441 425.177,104.918 421.848,78.029 440.345,58.23 "
+         style="fill:#c6d866;fill-opacity:1;stroke:#19ffff;stroke-width:1.0116;stroke-dasharray:none;stroke-opacity:1"
+         id="polygon2-4-8" />
+    </g>
+    <g
+       id="g2-8-5"
+       transform="matrix(0.03361025,0,0,0.03361025,-8.9704162,1.5049546)"
+       style="fill:#c6d866;fill-opacity:1;stroke:#19ffff;stroke-width:1.0116;stroke-dasharray:none;stroke-opacity:1">
+      <polygon
+         points="440.345,58.23 413.743,53.089 400.631,29.377 387.52,53.089 360.918,58.23 379.416,78.029 376.083,104.918 400.631,93.441 425.177,104.918 421.848,78.029 "
+         style="fill:#c6d866;fill-opacity:1;stroke:#19ffff;stroke-width:1.0116;stroke-dasharray:none;stroke-opacity:1"
+         id="polygon2-4-9" />
+    </g>
+  </g>
+  <circle
+     style="vector-effect:non-scaling-stroke;fill:#ffffff;fill-opacity:1;stroke-width:0.264582;stroke-linejoin:bevel;-inkscape-stroke:hairline;paint-order:markers stroke fill"
+     id="path2"
+     cx="16.317513"
+     cy="9.0323563"
+     r="2" />
+  <circle
+     style="vector-effect:non-scaling-stroke;fill:#ffffff;fill-opacity:1;stroke-width:0.198437;stroke-linejoin:bevel;-inkscape-stroke:hairline;paint-order:markers stroke fill"
+     id="path2-0"
+     cx="7.1310334"
+     cy="21.85013"
+     r="1.5" />
+  <circle
+     style="vector-effect:non-scaling-stroke;fill:#ffffff;fill-opacity:1;stroke-width:0.198437;stroke-linejoin:bevel;-inkscape-stroke:hairline;paint-order:markers stroke fill"
+     id="path2-8"
+     cx="16.150671"
+     cy="19.043863"
+     r="1.5" />
+  <circle
+     style="vector-effect:non-scaling-stroke;fill:#ffffff;fill-opacity:1;stroke-width:0.198437;stroke-linejoin:bevel;-inkscape-stroke:hairline;paint-order:markers stroke fill"
+     id="path2-4"
+     cx="6.5925217"
+     cy="8.0647297"
+     r="1.5" />
+  <path
+     style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+     d="M 16.317513,9.0323563 11.655069,14.591627"
+     id="path3"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+     d="M 16.725883,19.237597 7.1310334,21.85013"
+     id="path3-0"
+     sodipodi:nodetypes="cc" />
+</svg>
+`
+
+export const ModeConstellationIconMode4Svg = `
+<svg
+   width="96"
+   height="96"
+   viewBox="0 0 25.399999 25.4"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="mode-marker-mode-4.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="5.9515615"
+     inkscape:cx="40.829621"
+     inkscape:cy="45.450257"
+     inkscape:window-width="2307"
+     inkscape:window-height="1237"
+     inkscape:window-x="1181"
+     inkscape:window-y="160"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="vector-effect:non-scaling-stroke;fill:#000000;fill-opacity:1;stroke-width:0.264583;stroke-linejoin:bevel;-inkscape-stroke:hairline;paint-order:markers stroke fill"
+       id="rect1"
+       width="25.4"
+       height="25.4"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     id="g4"
+     transform="rotate(-17,6.6865482,8.440224)">
+    <circle
+       style="vector-effect:non-scaling-stroke;fill:#ffffff;fill-opacity:1;stroke-width:0.198437;stroke-linejoin:bevel;-inkscape-stroke:hairline;paint-order:markers stroke fill"
+       id="path2-8-8"
+       cx="13.836222"
+       cy="17.370134"
+       r="1.5" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 5.3497677,16.909121 8.4864543,0.461013"
+       id="path3-1"
+       sodipodi:nodetypes="cc" />
+    <polygon
+       points="440.345,58.23 413.743,53.089 400.631,29.377 387.52,53.089 360.918,58.23 379.416,78.029 376.083,104.918 400.631,93.441 425.177,104.918 421.848,78.029 "
+       style="fill:#c6d866;fill-opacity:1;stroke:#19ffff;stroke-width:1.0116;stroke-dasharray:none;stroke-opacity:1"
+       id="polygon2-4"
+       transform="matrix(0.03361025,0,0,0.03361025,-10.462157,18.091626)" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 13.986291,6.8317785 5.0925217,16.711445"
+       id="path3-0-2"
+       sodipodi:nodetypes="cc" />
+    <polygon
+       points="376.083,104.918 400.631,93.441 425.177,104.918 421.848,78.029 440.345,58.23 413.743,53.089 400.631,29.377 387.52,53.089 360.918,58.23 379.416,78.029 "
+       style="fill:#c6d866;fill-opacity:1;stroke:#19ffff;stroke-width:1.0116;stroke-dasharray:none;stroke-opacity:1"
+       id="polygon2-4-8"
+       transform="matrix(0.03361025,0,0,0.03361025,8.1372448,12.272623)" />
+    <polygon
+       points="379.416,78.029 376.083,104.918 400.631,93.441 425.177,104.918 421.848,78.029 440.345,58.23 413.743,53.089 400.631,29.377 387.52,53.089 360.918,58.23 "
+       style="fill:#c6d866;fill-opacity:1;stroke:#19ffff;stroke-width:1.0116;stroke-dasharray:none;stroke-opacity:1"
+       id="polygon2-4-9"
+       transform="matrix(0.03361025,0,0,0.03361025,-8.9704161,1.5049546)" />
+    <circle
+       style="vector-effect:non-scaling-stroke;fill:#ffffff;fill-opacity:1;stroke-width:0.264582;stroke-linejoin:bevel;-inkscape-stroke:hairline;paint-order:markers stroke fill"
+       id="path2"
+       cx="13.986291"
+       cy="6.8317785"
+       r="2" />
+    <circle
+       style="vector-effect:non-scaling-stroke;fill:#ffffff;fill-opacity:1;stroke-width:0.198437;stroke-linejoin:bevel;-inkscape-stroke:hairline;paint-order:markers stroke fill"
+       id="path2-0"
+       cx="13.486291"
+       cy="22.850391"
+       r="1.5" />
+    <circle
+       style="vector-effect:non-scaling-stroke;fill:#ffffff;fill-opacity:1;stroke-width:0.264583;stroke-linejoin:bevel;-inkscape-stroke:hairline;paint-order:markers stroke fill"
+       id="path2-4"
+       cx="5.3226461"
+       cy="16.409857"
+       r="2" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 14.186152,6.678743 13.486291,22.850391"
+       id="path3-0"
+       sodipodi:nodetypes="cc" />
+  </g>
+</svg>
+`
+
+export const ModeConstellationIconBlankSvg = `
+<svg
+   width="96"
+   height="96"
+   viewBox="0 0 25.399999 25.4"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="mode-marker-mode-blank.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="5.9515615"
+     inkscape:cx="40.829621"
+     inkscape:cy="45.450257"
+     inkscape:window-width="2307"
+     inkscape:window-height="1237"
+     inkscape:window-x="1181"
+     inkscape:window-y="160"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="vector-effect:non-scaling-stroke;fill:#000000;fill-opacity:1;stroke-width:0.264583;stroke-linejoin:bevel;-inkscape-stroke:hairline;paint-order:markers stroke fill"
+       id="rect1"
+       width="25.4"
+       height="25.4"
+       x="0"
+       y="0" />
+    <polygon
+       points="379.416,78.029 376.083,104.918 400.631,93.441 425.177,104.918 421.848,78.029 440.345,58.23 413.743,53.089 400.631,29.377 387.52,53.089 360.918,58.23 "
+       style="fill:#c6d866;fill-opacity:1;stroke:#19ffff;stroke-width:1.0116;stroke-dasharray:none;stroke-opacity:1"
+       id="polygon2-4-8-3"
+       transform="matrix(0.03214164,-0.00982669,0.00982669,0.03214164,3.9955424,20.224165)" />
+  </g>
+  <polygon
+     points="400.631,29.377 387.52,53.089 360.918,58.23 379.416,78.029 376.083,104.918 400.631,93.441 425.177,104.918 421.848,78.029 440.345,58.23 413.743,53.089 "
+     style="fill:#c6d866;fill-opacity:1;stroke:#19ffff;stroke-width:1.0116;stroke-dasharray:none;stroke-opacity:1"
+     id="polygon2-4"
+     transform="matrix(0.03214164,-0.00982669,0.00982669,0.03214164,-6.8910433,22.683702)" />
+  <polygon
+     points="425.177,104.918 421.848,78.029 440.345,58.23 413.743,53.089 400.631,29.377 387.52,53.089 360.918,58.23 379.416,78.029 376.083,104.918 400.631,93.441 "
+     style="fill:#c6d866;fill-opacity:1;stroke:#19ffff;stroke-width:1.0116;stroke-dasharray:none;stroke-opacity:1"
+     id="polygon2-4-8"
+     transform="matrix(0.03214164,-0.00982669,0.00982669,0.03214164,9.1943413,11.681023)" />
+  <polygon
+     points="400.631,93.441 425.177,104.918 421.848,78.029 440.345,58.23 413.743,53.089 400.631,29.377 387.52,53.089 360.918,58.23 379.416,78.029 376.083,104.918 "
+     style="fill:#c6d866;fill-opacity:1;stroke:#19ffff;stroke-width:1.0116;stroke-dasharray:none;stroke-opacity:1"
+     id="polygon2-4-9"
+     transform="matrix(0.03214164,-0.00982669,0.00982669,0.03214164,-10.313958,6.3856462)" />
+  <polygon
+     points="425.177,104.918 421.848,78.029 440.345,58.23 413.743,53.089 400.631,29.377 387.52,53.089 360.918,58.23 379.416,78.029 376.083,104.918 400.631,93.441 "
+     style="fill:#c6d866;fill-opacity:1;stroke:#19ffff;stroke-width:1.0116;stroke-dasharray:none;stroke-opacity:1"
+     id="polygon2-4-8-1"
+     transform="matrix(0.0580164,-0.01773741,0.01773741,0.0580164,-11.570316,12.225548)" />
+</svg>
+`

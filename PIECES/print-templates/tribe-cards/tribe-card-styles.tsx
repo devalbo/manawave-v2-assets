@@ -15,6 +15,22 @@ export const MwTribeCardDiv = styled.div`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 `;
 
+export const NewMwTribeCardDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* width: 2.5in;
+  height: 3.5in; */
+  width: 3.5in;
+  height: 2.5in;
+  border: 1px solid #000;
+  border-radius: 10px;
+  font-family: 'Beleren', 'Garamond', serif;
+  background-color: #f0f0f0;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+`;
+
 
 export const MwTribeCardBorderFrameDiv = styled.div`
   border: 2px solid black;
@@ -27,7 +43,7 @@ export const MwTribeCardBorderFrameDiv = styled.div`
 
 export const MwTribePlayerHeaderDiv = styled.div`
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   margin: 5px;
 `;
 

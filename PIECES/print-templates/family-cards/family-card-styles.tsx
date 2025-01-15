@@ -34,20 +34,34 @@ export const MwCardHeaderDiv = styled.div`
 
 export const MwCardHeaderNameAndTotemsDiv = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-grow: 1;
 `;
 
 export const MwCardHeaderNameDiv = styled.div`
   flex: 1;
+  flex-grow: 1;
 `;
 
-export const MwCardHeaderTotemsDiv = styled.div`
+export const MwCardHeaderDetailsDiv = styled.div`
   flex: 1;
+  flex-grow: 0;
   height: 0.33in;
 `;
 
+export const MwCardHeaderTotemsDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 0.5in;
+  height: 0.33in;
+  align-content: center;
+`;
+
 export const MwCardHeaderInitDiv = styled.div`
-  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0;
 `;
 
 export const MwCardArtBlockDiv = styled.div`
@@ -74,4 +88,16 @@ export const MwCardModeItemManaClaimsRequiredSpan = styled.span`
 
 export const MwCardModeItemTextSpan = styled.span`
 
+`;
+
+export const MwCardIconContainerDiv = styled.div`
+  border: 1px solid #ccc;
+  text-align: center;
+  width: 0.75in;
+  height: 0.75in;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* height: 0.75in; */
 `;

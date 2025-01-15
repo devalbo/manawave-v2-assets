@@ -2,7 +2,7 @@
 import { PlayerSide } from "@mw-game-engine/gameboard/game-play-data";
 import { createImgComponentFromMwMarkerType, createImgComponentFromTag } from "../../icons";
 import { IMwTribeConversionRatio } from "../../type-defs/type-defs";
-import { MwTribeCardBorderFrameDiv, MwTribeCardDiv, MwTribeConversionRatesTableContainerDiv, MwTribeConversionRatesTableDiv, MwTribeConversionRatesTableGridHeaderDiv, MwTribeConversionRatesTableGridItemDiv, MwTribePlayerHeaderDiv, MwTribeStockpileTableContainerDiv, MwTribeStockpileTableDiv, MwTribeStockpileTableGridItemDiv, MwTribeTablesDiv } from './tribe-card-styles';
+import { MwTribeCardBorderFrameDiv, MwTribeCardDiv, MwTribeConversionRatesTableContainerDiv, MwTribeConversionRatesTableDiv, MwTribeConversionRatesTableGridHeaderDiv, MwTribeConversionRatesTableGridItemDiv, MwTribePlayerHeaderDiv, MwTribeStockpileTableContainerDiv, MwTribeStockpileTableDiv, MwTribeStockpileTableGridItemDiv, MwTribeTablesDiv, NewMwTribeCardDiv } from './tribe-card-styles';
 import { MwLogoPlayerSideIcon } from "@mw-assets/PIECES/mw-logo-player-side-icon";
 
 
@@ -96,13 +96,13 @@ export const MwStockpileTable = () => {
 }
 
 
-export const MwTribeCard = (props: IMwTribeCardData) => {
+export const NewMwTribeCard = (props: IMwTribeCardData) => {
   // const playerIdImgSrc = props.playerSide === 'OPT' ? 
   //   '/img/mw_logo_white_top.svg' :
   //   '/img/mw_logo_black_top.svg';
 
   return (
-    <MwTribeCardDiv>
+    <NewMwTribeCardDiv>
       <MwTribeCardBorderFrameDiv>
 
         <MwTribePlayerHeaderDiv>
@@ -112,16 +112,16 @@ export const MwTribeCard = (props: IMwTribeCardData) => {
             style={{marginRight: 10}}
           />
           <div style={{fontSize: 24, alignContent: "center"}}>
-            Tribe Chief:
+            Tribe Chief: {props.playerName}
           </div>
         </MwTribePlayerHeaderDiv>
           
         <MwTribeTablesDiv>
-          <MwTribeConversionRatesTableContainerDiv>
+          {/* <MwTribeConversionRatesTableContainerDiv>
             <MwConversionRatesTable
               conversionRatios={props.conversionRatios}
             />
-          </MwTribeConversionRatesTableContainerDiv>
+          </MwTribeConversionRatesTableContainerDiv> */}
 
           {/* <div className="mw-tribe-stockpile-table-container">
             <MwStockpileTable />
@@ -133,6 +133,6 @@ export const MwTribeCard = (props: IMwTribeCardData) => {
         </MwTribeTablesDiv>
         
       </MwTribeCardBorderFrameDiv>
-    </MwTribeCardDiv>
+    </NewMwTribeCardDiv>
   );
 };
