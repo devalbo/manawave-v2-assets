@@ -14,7 +14,7 @@ import { LeylineDistanceFromSource, MwMarkerType } from "../../../../mw-v2-proto
 import { MwLogoPlayerSideIcon } from "../../../mw-logo-player-side-icon";
 import { TribeIconSvg } from "@mw-assets/PIECES/assets/TokenSvgIcons";
 import { UpArrowIcon } from "../../game-symbols/arrow-icons";
-import { AttackCounter_MarkerIndicator, PopulationIncreaseCounter_MarkerIndicator, ShieldCounter_MarkerIndicator } from "../../game-symbols/marker-indicator/marker-indicator";
+import { AttackCounter_MarkerIndicator, OnZeroAmountBehavior, PopulationIncreaseCounter_MarkerIndicator, ShieldCounter_MarkerIndicator } from "../../game-symbols/marker-indicator/marker-indicator";
 import { PlayerSide } from "@mw-game-engine/gameboard/game-play-data";
 
 
@@ -30,6 +30,7 @@ export interface ITribeToClanMarkerPlacementsCardInteractions {
 
 export interface ITribeToClanMarkerPlacementsCardProps {
   playerSide: PlayerSide
+  renderMode: 'print' | 'interactive'
 
   tribeToClanAllocations: Map<LeylineDistanceFromSource, MwMarkerType[]>
 
@@ -56,6 +57,10 @@ export const TribeToClanMarkerPlacementsCard = (props: ITribeToClanMarkerPlaceme
       filter(marker => marker === MwMarkerType.MwMarkerType_ShieldCounter).length ?? 0;
     const thisLeyinePopulationIncreaseCounterCount = props.tribeToClanAllocations.get(thisLeyline)?.
       filter(marker => marker === MwMarkerType.MwMarkerType_PopulationIncreaseCounter).length ?? 0;
+
+    const onZeroAmountBehaviorForMarkers: OnZeroAmountBehavior = props.renderMode === 'print' ?
+      'hide-badge' :
+      'dim';
   
     return (
       <TribeToClanAllocationSectionDiv>
@@ -72,7 +77,7 @@ export const TribeToClanMarkerPlacementsCard = (props: ITribeToClanMarkerPlaceme
           >
             <AttackCounter_MarkerIndicator
               quantity={thisLeyineAttackCounterCount}
-              $onZeroAmountBehavior='dim'
+              $onZeroAmountBehavior={onZeroAmountBehaviorForMarkers}
             />
           </TribeToClanAllocationSectionMarkerItemDiv>
           <TribeToClanAllocationSectionMarkerItemDiv
@@ -82,7 +87,7 @@ export const TribeToClanMarkerPlacementsCard = (props: ITribeToClanMarkerPlaceme
           >
             <ShieldCounter_MarkerIndicator
               quantity={thisLeyineShieldCounterCount}
-              $onZeroAmountBehavior='dim'
+              $onZeroAmountBehavior={onZeroAmountBehaviorForMarkers}
             />
   
           </TribeToClanAllocationSectionMarkerItemDiv>
@@ -93,7 +98,7 @@ export const TribeToClanMarkerPlacementsCard = (props: ITribeToClanMarkerPlaceme
           >
             <PopulationIncreaseCounter_MarkerIndicator
               quantity={thisLeyinePopulationIncreaseCounterCount}
-              $onZeroAmountBehavior='dim'
+              $onZeroAmountBehavior={onZeroAmountBehaviorForMarkers}
             />
   
           </TribeToClanAllocationSectionMarkerItemDiv>

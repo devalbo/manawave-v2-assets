@@ -106,6 +106,13 @@ export const MwTribeStockpileTableDiv = styled.div`
   width: 100%;
 `;
 
+export const NewMwTribeStockpileTableDiv = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  width: 100%;
+`;
+
 export const MwTribeStockpileTableGridHeaderDiv = styled.div`
   font-weight: bold;
   background-color: #f0f0f0;
@@ -114,6 +121,16 @@ export const MwTribeStockpileTableGridHeaderDiv = styled.div`
 `;
 
 export const MwTribeStockpileTableGridItemDiv = styled.div`
+  padding: 2px;
+  padding-top: 5px;
+  border: 1px solid #ccc;
+  text-align: center;
+`;
+
+export const NewMwTribeStockpileTableGridItemDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   padding: 2px;
   padding-top: 5px;
   border: 1px solid #ccc;
