@@ -32,12 +32,14 @@ export const ClanOfDefenseConversionRatios: IMwClanConversionRatio[] = [
 
 export const ClanOfDefenseData: ClanCardDefinition = {
   pieceType: 'clan-card',
+  // title: "Clan of Defense",
+  title: "Senvara's Guard",
+  text: "blah",
+  backgroundImageUrl: '/card-images/sunny-turtle.jpeg',
   clanDefPbId: {
     seasonId: SEASON_FLAVOR_1_PBID,
     seasonClanCardId: SeasonFlavor1ClanCardDefs.SeasonFlavor1ClanOfDefense,
   },
-  title: "Clan of Defense",
-  text: "blah",
   modes: mapToIndexedModes([
     {
       numManalithClaimsToActivate: 0,

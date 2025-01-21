@@ -1,0 +1,46 @@
+import { MwFamilyCardIds } from "../../../../mw-asset-ids/manawave-family-ids";
+import { MwMarkerType } from "../../../../mw-v2-protobufs/protofiles-out/manawave-types";
+import { MvmAmountQueryFunctionId } from "../../../../mw-v2-protobufs/protofiles-out/manawave-vm";
+import { createAddMarkersToMyTribeForCountFunctionAmountInstructionSet, createAddMarkersToMyTribeInstructionSet } from "../../../../manawave-virtual-machine/mvm-instructions-factory";
+import { SEASON_FLAVOR_1_PBID } from "../../../season-id-defs";
+import { FamilyCardDefinition } from "../../../../type-defs/family-defs";
+import { createMvmInstructionsOnlyFamilyModeLogic } from "../../../../PIECES/mw-card-data";
+import { mapToIndexedModes } from "../../../../PIECES/mw-mode-utils";
+
+
+export const EnchantersCardDef: FamilyCardDefinition = {
+  pieceType: 'family-card',
+  title: "Enchanters",
+  newName: "Line of Ankant, Spirits Imbuer",
+  totemId: 'spirits',
+  familyCardDefPbId: {
+    seasonId: SEASON_FLAVOR_1_PBID,
+    seasonFamilyCardId: MwFamilyCardIds.Enchanters,
+  },
+  text: "TODO: fill in text for Enchanters",
+  modes: mapToIndexedModes([
+    {
+      numManalithClaimsToActivate: 0,
+      modeText: "Add 1 <::attack-counter::> to Tribe.",
+      modeLogic: createMvmInstructionsOnlyFamilyModeLogic([
+        ...createAddMarkersToMyTribeInstructionSet(MwMarkerType.MwMarkerType_AttackCounter, 1),
+      ]),
+    },
+    {
+      numManalithClaimsToActivate: 0,
+      modeText: "Add 1 <::mana-counter::> to Tribe, plus 1 for each adjacent Family.",
+      modeLogic: createMvmInstructionsOnlyFamilyModeLogic([
+        ...createAddMarkersToMyTribeInstructionSet(MwMarkerType.MwMarkerType_ManaCounter, 1),
+        ...createAddMarkersToMyTribeForCountFunctionAmountInstructionSet(
+          MvmAmountQueryFunctionId.MvmAmountQueryFunction_CountNumberOfAdjacentFamiliesToThisCard,
+          MwMarkerType.MwMarkerType_ManaCounter,
+        ),
+      ]),
+    },
+  ]),
+  onCardPickData: {
+    singlePickInitialPopulation: 2,
+    multiplePickInitialPopulation: 1,
+  },
+  // gameLogic: { },
+};

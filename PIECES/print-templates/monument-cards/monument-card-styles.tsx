@@ -15,13 +15,19 @@ export const MwMonumentCardDiv = styled.div`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 `;
 
-export const MwMonumentCardBorderFrameDiv = styled.div`
+export const MwMonumentCardBorderFrameDiv = styled.div<{ backgroundImageUrl?: string }>`
   border: 2px solid black;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin-bottom: 3px;
   height: 100%;
+  background-image: url(${props => props.backgroundImageUrl});
+  /* background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center; */
+  background-size: 100% 100%;
+  /* opacity: 0.5; */
 `;
 
 export const MwMonumentCardTopHalfDiv = styled.div`

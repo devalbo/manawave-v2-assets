@@ -8,6 +8,7 @@ import { ClanCardType } from "./piece-type-defs"
 export type ClanCardDefinition = {
   readonly title: string
   readonly text: string
+  readonly backgroundImageUrl: string
   readonly clanDefPbId: ClanCardDefPbId
   
   readonly modes: IMwCardModeData[]

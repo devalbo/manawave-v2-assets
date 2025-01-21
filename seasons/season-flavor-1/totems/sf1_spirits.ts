@@ -3,12 +3,12 @@ import { FamilyCardInstance } from "../../../PIECES/type-defs/type-defs";
 import { ITotemDetails } from "../../../type-defs/totem-defs";
 import { SEASON_FLAVOR_1_PBID } from "../../season-id-defs";
 import { SeasonFlavor1TotemDefs } from "@mw-assets/mw-v2-protobufs/protofiles-out/manawave-season-flavor-1";
-import { ChannelersCardDef } from "@mw-assets/PIECES/card-defs/channelers";
-import { EnchantersCardDef } from "@mw-assets/PIECES/card-defs/enchanters";
-import { ManaChannelersCardDef } from "@mw-assets/PIECES/card-defs/mana-channelers";
-import { RoadBuildersCardDef } from "@mw-assets/PIECES/card-defs/road-builders";
-import { SacrificersCardDef } from "@mw-assets/PIECES/card-defs/sacrificers";
-import { WizardsCardDef } from "@mw-assets/PIECES/card-defs/wizards";
+import { ChannelersCardDef } from "../family-card-defs/spirits/channelers";
+import { EnchantersCardDef } from "../family-card-defs/spirits/enchanters";
+import { ManaChannelersCardDef } from "../family-card-defs/spirits/mana-channelers";
+import { RoadBuildersCardDef } from "../family-card-defs/spirits/road-builders";
+import { SacrificersCardDef } from "../family-card-defs/spirits/sacrificers";
+import { WizardsCardDef } from "../family-card-defs/spirits/wizards";
 
 
 const TOTEM_NAME = 'Magic';
@@ -37,6 +37,7 @@ export const MAGIC_TOTEM_DEF: ITotemDetails = {
     .map((cardDef, ) => {
       const retVal: FamilyCardInstance = {
         ...cardDef,
+        title: cardDef.newName,
         familyCardInstancePbId: {
           familyCardDefId: cardDef.familyCardDefPbId,
           owningPlayerSide: PlayerSideId.PlayerSide_Opt,
@@ -50,6 +51,7 @@ export const MAGIC_TOTEM_DEF: ITotemDetails = {
     .map((cardDef, ) => {
       const retVal: FamilyCardInstance = {
         ...cardDef,
+        title: cardDef.newName,
         familyCardInstancePbId: {
           familyCardDefId: cardDef.familyCardDefPbId,
           owningPlayerSide: PlayerSideId.PlayerSide_Osb,

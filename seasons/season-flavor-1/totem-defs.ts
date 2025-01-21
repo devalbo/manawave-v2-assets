@@ -1,9 +1,9 @@
 import { TotemPbId } from "@mw-protobufs/manawave-types";
-import { FamilyCardInstance } from "../PIECES/type-defs/type-defs";
-import { PlayerSide } from "./game-play-data";
+import { FamilyCardInstance } from "../../PIECES/type-defs/type-defs";
+import { PlayerSide } from "../../type-defs/game-play-data";
 
 
-export type TotemIconId = 'ox' | 'tiger' | 'spirits' | 'turtle' | 'shark' | 'unknown';
+export type TotemIconId = 'shark' | 'turtle' | 'spirits';
 
 export interface ITotemDetails {
   totemId: TotemPbId

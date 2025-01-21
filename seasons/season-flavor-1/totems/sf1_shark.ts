@@ -1,42 +1,43 @@
 import { FamilyCardInstance } from "../../../PIECES/type-defs/type-defs";
 import { ITotemDetails } from "../../../type-defs/totem-defs";
+import { SeasonDev1TotemDefs } from "@mw-protobufs/manawave-season-dev-1";
 import { PlayerSideId, TotemPbId } from "@mw-protobufs/manawave-types";
 import { SEASON_FLAVOR_1_PBID } from "../../season-id-defs";
-import { SeasonFlavor1TotemDefs } from "@mw-assets/mw-v2-protobufs/protofiles-out/manawave-season-flavor-1";
-import { FarmersCardDef } from "@mw-assets/PIECES/card-defs/farmers";
-import { ForestHuntersCardDef } from "@mw-assets/PIECES/card-defs/forest-hunters";
-import { GrasslandShepherdsCardDef } from "@mw-assets/PIECES/card-defs/grassland-shepherds";
-import { MysticFarmersCardDef } from "@mw-assets/PIECES/card-defs/mystic-farmers";
-import { RuggedShepherdsCardDef } from "@mw-assets/PIECES/card-defs/rugged-shepherds";
-import { SoylentGreenFarmersCardDef } from "@mw-assets/PIECES/card-defs/soylent-green-farmers";
+import { ClubWieldersCardDef } from "../family-card-defs/shark/club-wielders";
+import { DefendersCardDef } from "../family-card-defs/turtle/defenders";
+import { MartyrsCardDef } from "../family-card-defs/shark/martyrs";
+import { ShieldCraftersCardDef } from "../family-card-defs/turtle/shield-crafters";
+import { SlaversCardDef } from "../family-card-defs/shark/slavers";
+import { TemplarsCardDef } from "../family-card-defs/shark/templars";
 
 
-const TOTEM_NAME = 'Defense';
+const TOTEM_NAME = 'Attack';
 const TOTEM_ID: TotemPbId = {
   seasonId: SEASON_FLAVOR_1_PBID,
-  seasonTotemId: SeasonFlavor1TotemDefs.SeasonFlavor1Totem_Defense,
+  seasonTotemId: SeasonDev1TotemDefs.SeasonDev1Totem_Attack,
 };
 
 
 const CARD_DEFS = [
-  ForestHuntersCardDef,
-  GrasslandShepherdsCardDef,
-  RuggedShepherdsCardDef,
-  FarmersCardDef,
-  MysticFarmersCardDef,
-  SoylentGreenFarmersCardDef,
+  ClubWieldersCardDef,
+  ShieldCraftersCardDef,
+  TemplarsCardDef,
+  DefendersCardDef,
+  MartyrsCardDef,
+  SlaversCardDef,
 ];
 
 
-export const DEFENSE_TOTEM_DEF: ITotemDetails = {
+export const ATTACK_TOTEM_DEF: ITotemDetails = {
   totemId: TOTEM_ID,
-  totemIconId: 'ox',
+  totemIconId: 'shark',
   totemName: TOTEM_NAME,
-
+  
   optPlayCards: CARD_DEFS
     .map((cardDef, ) => {
       const retVal: FamilyCardInstance = {
         ...cardDef,
+        title: cardDef.newName,
         familyCardInstancePbId: {
           familyCardDefId: cardDef.familyCardDefPbId,
           owningPlayerSide: PlayerSideId.PlayerSide_Opt,
@@ -50,6 +51,7 @@ export const DEFENSE_TOTEM_DEF: ITotemDetails = {
     .map((cardDef, ) => {
       const retVal: FamilyCardInstance = {
         ...cardDef,
+        title: cardDef.newName,
         familyCardInstancePbId: {
           familyCardDefId: cardDef.familyCardDefPbId,
           owningPlayerSide: PlayerSideId.PlayerSide_Osb,

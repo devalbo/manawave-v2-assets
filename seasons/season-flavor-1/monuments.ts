@@ -1,28 +1,28 @@
 import { MonumentCard, TotemMonumentCard } from "../../type-defs/monument-defs";
-import { JungleOfPyrhhusData } from "./monument-defs/jungle-of-pyrhhus";
-import { TombOfGenghisData } from "./monument-defs/tomb-of-genghis";
-import { FieldsOfLerukData } from "./monument-defs/fields-of-leruk";
-import { GravepitsOfLerukData } from "./monument-defs/gravepits-of-leruk";
-import { ManalithCliffsData } from "./monument-defs/manalith-cliffs";
-import { PlainsOfTheodenData } from "./monument-defs/plains-of-theoden";
-import { RiverOfLyrtifData } from "./monument-defs/river-of-lyrtif";
-import { BirthplaceOfGenghisData } from "./monument-defs/birthplace-of-genghis";
-import { PeaksOfTheodenData } from "./monument-defs/peaks-of-theoden";
+import { CayOfThalumorTheSteadfastData } from "./monument-defs/cay-of-thalumor";
+import { TombOfKolrathData } from "./monument-defs/tomb-of-kolrath";
+import { FieldsOfMaltherionData } from "./monument-defs/fields-of-maltherion";
+import { GravepitsOfMaltherionData } from "./monument-defs/gravepits-of-maltherion";
+import { AtollOfArchulorTheTimeless } from "./monument-defs/atoll-of-archulor";
+import { PlainsOfSenvaraData } from "./monument-defs/plains-of-senvara";
+import { IsleOfMalcaraxTheRelentlessData } from "./monument-defs/isle-of-malcarax";
+import { BirthplaceOfKolrathData } from "./monument-defs/birthplace-of-kolrath";
+import { PeaksOfSenvaraData } from "./monument-defs/peaks-of-senvara";
 
 
 export const DefaultMonuments: MonumentCard[] = [
-  ManalithCliffsData,
-  JungleOfPyrhhusData,
-  RiverOfLyrtifData,
+  AtollOfArchulorTheTimeless,
+  CayOfThalumorTheSteadfastData,
+  IsleOfMalcaraxTheRelentlessData,
 ]
 
 export const TotemMonuments: TotemMonumentCard[] = [
-  BirthplaceOfGenghisData,
-  TombOfGenghisData,
+  BirthplaceOfKolrathData,
+  TombOfKolrathData,
 
-  GravepitsOfLerukData,
-  FieldsOfLerukData,
+  GravepitsOfMaltherionData,
+  FieldsOfMaltherionData,
   
-  PeaksOfTheodenData,
-  PlainsOfTheodenData,
+  PeaksOfSenvaraData,
+  PlainsOfSenvaraData,
 ]

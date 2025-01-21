@@ -1,12 +1,12 @@
 import { TotemMonumentCard } from "../../../type-defs/monument-defs";
 import { SEASON_FLAVOR_1_PBID } from "../../season-id-defs";
 import { SeasonFlavor1MonumentCardDefs } from "@mw-assets/mw-v2-protobufs/protofiles-out/manawave-season-flavor-1";
-import { ATTACK_TOTEM_DEF } from "../totems/sf1_tiger";
-import { DEFENSE_TOTEM_DEF } from "../totems/sf1_ox";
+import { ATTACK_TOTEM_DEF } from "../totems/sf1_shark";
+import { DEFENSE_TOTEM_DEF } from "../totems/sf1_turtle";
 
 
-export const PlainsOfTheodenData: TotemMonumentCard = {
-  title: "Plains of Theoden",
+export const PlainsOfSenvaraData: TotemMonumentCard = {
+  title: "Plains of Senvara",
   monumentId: {
     seasonId: SEASON_FLAVOR_1_PBID,
     seasonMonumentCardId: SeasonFlavor1MonumentCardDefs.PlainsOfTheoden,

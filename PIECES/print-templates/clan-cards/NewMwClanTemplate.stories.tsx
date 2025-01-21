@@ -34,6 +34,7 @@ export const ClanOfAttack: Story = {
     decoration: 'mw-icon-black-side-up',
     modes: ClanOfAttackData.modes,
     conversionRatios: ClanOfAttackData.conversionRatios,
+    backgroundImageUrl: '/card-images/attack-turtle.png',
   },
 };
 
@@ -44,6 +45,7 @@ export const ClanOfDefense: Story = {
     decoration: 'mw-icon-black-side-up',
     modes: ClanOfDefenseData.modes,
     conversionRatios: ClanOfDefenseData.conversionRatios,
+    backgroundImageUrl: '/card-images/sunny-turtle.jpeg',
   },
 };
 
@@ -54,5 +56,6 @@ export const ClanOfMagic: Story = {
     decoration: 'mw-icon-black-side-up',
     modes: ClanOfMagicData.modes,
     conversionRatios: ClanOfMagicData.conversionRatios,
+    backgroundImageUrl: '/card-images/dark-turtle-2.jpeg',
   },
 };

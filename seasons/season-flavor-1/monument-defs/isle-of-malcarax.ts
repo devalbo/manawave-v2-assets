@@ -3,8 +3,8 @@ import { SEASON_FLAVOR_1_PBID } from "../../season-id-defs";
 import { SeasonFlavor1MonumentCardDefs } from "@mw-assets/mw-v2-protobufs/protofiles-out/manawave-season-flavor-1";
 
 
-export const RiverOfLyrtifData: MonumentCard = {
-  title: "River of Lyrtif",
+export const IsleOfMalcaraxTheRelentlessData: MonumentCard = {
+  title: "Malcarax the Relentless",
   monumentId: {
     seasonId: SEASON_FLAVOR_1_PBID,
     seasonMonumentCardId: SeasonFlavor1MonumentCardDefs.RiverOfLyrtif,

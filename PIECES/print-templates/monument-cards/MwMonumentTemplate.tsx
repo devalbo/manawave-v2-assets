@@ -1,4 +1,3 @@
-import './MwCard.css';
 import { createIconizedStringContent } from '../../icon-strings';
 import { MwMonumentCardDiv, MwMonumentCardBorderFrameDiv, MwMonumentCardTopHalfDiv, MwMonumentCardBottomHalfDiv } from './monument-card-styles';
 
@@ -12,6 +11,7 @@ export interface IMwMonumentData {
   title: string
   text: string
   text2: string
+  backgroundImageUrl?: string
   isDefault?: boolean
   monumentPrintSettings?: IMonumentPrintSettings
 }
@@ -25,9 +25,14 @@ export const MwMonumentTemplate = (props: IMwMonumentData) => {
   const iconizedModeText = createIconizedStringContent(props.text, 'is-mode-img-icons', imageSize);
   const iconizedModeText2 = createIconizedStringContent(props.text2, 'is-mode-img-icons', imageSize);
 
+  // const backgroundUrl = '/card-images/monument-1.jpeg';
+  const backgroundImageUrl = props.backgroundImageUrl;
+
   return (
     <MwMonumentCardDiv>
-      <MwMonumentCardBorderFrameDiv>
+      <MwMonumentCardBorderFrameDiv
+        backgroundImageUrl={backgroundImageUrl}
+      >
         <MwMonumentCardTopHalfDiv>
           <div style={{ textAlign: 'center'}}>
             {props.isDefault ?

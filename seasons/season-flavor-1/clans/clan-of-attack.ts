@@ -32,7 +32,9 @@ export const ClanOfAttackConversionRatios: IMwClanConversionRatio[] = [
 
 export const ClanOfAttackData: ClanCardDefinition = {
   pieceType: 'clan-card',
-  title: "Clan of Attack",
+  // title: "Clan of Attack",
+  title: "Voyagers of Kolrath",
+  backgroundImageUrl: '/card-images/attack-turtle.png',
   clanDefPbId: {
     seasonId: SEASON_FLAVOR_1_PBID,
     seasonClanCardId: SeasonFlavor1ClanCardDefs.SeasonFlavor1ClanOfAttack,

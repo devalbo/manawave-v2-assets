@@ -15,7 +15,7 @@ export const MwClanCardDiv = styled.div`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 `;
 
-export const MwClanCardBorderFrameDiv = styled.div`
+export const MwClanCardBorderFrameDiv = styled.div<{ backgroundImageUrl?: string }>`
   border: 2px solid black;
   display: flex;
   flex-direction: row;
@@ -23,6 +23,9 @@ export const MwClanCardBorderFrameDiv = styled.div`
   margin-bottom: 3px;
   padding: 6px;
   height: 100%;
+  background-image: url(${props => props.backgroundImageUrl});
+  background-size: 100% 100%;
+  /* transform: scaleX(-1); */
 `;
 
 export const MwClanCardHeaderDiv = styled.div`

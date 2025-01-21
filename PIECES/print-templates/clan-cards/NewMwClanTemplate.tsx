@@ -14,6 +14,7 @@ export interface IMwClanData {
   title: string
   text: string
   decoration?: CardDecoration
+  backgroundImageUrl?: string
   modes: IMwCardModeData[]
   conversionRatios: IMwClanConversionRatio[]
 }
@@ -24,10 +25,14 @@ export const NewMwClanTemplate = (props: IMwClanData) => {
   const playerSide: PlayerSide = props.decoration === 'mw-icon-black-side-up' ? 
     'OPT' :
     'OSB';
+
+  const backgroundImageUrl = props.backgroundImageUrl;
     
   return (
     <MwClanCardDiv>
-      <MwClanCardBorderFrameDiv>
+      <MwClanCardBorderFrameDiv
+        backgroundImageUrl={backgroundImageUrl}
+      >
 
         <NewMwClanTemplateBodyDiv>
           <MwClanCardHeaderDiv

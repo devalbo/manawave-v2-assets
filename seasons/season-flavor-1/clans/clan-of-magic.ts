@@ -32,12 +32,14 @@ export const ClanOfMagicConversionRatios: IMwClanConversionRatio[] = [
 
 export const ClanOfMagicData: ClanCardDefinition = {
   pieceType: 'clan-card',
-  title: "Clan of Magic",
+  // title: "Clan of Magic",
+  title: "Shamans of Maltherion",
+  text: "blah",
+  backgroundImageUrl: '/card-images/dark-turtle-2.jpeg',
   clanDefPbId: {
     seasonId: SEASON_FLAVOR_1_PBID,
     seasonClanCardId: SeasonFlavor1ClanCardDefs.SeasonFlavor1ClanOfMagic,
   },
-  text: "blah",
   modes: mapToIndexedModes([
     {
       numManalithClaimsToActivate: 0,
